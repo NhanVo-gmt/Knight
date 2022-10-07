@@ -1,0 +1,50 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GroundState : State
+{
+    protected Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
+    private Movement _movement;
+
+    protected CollisionSenses collisionSenses { get => _collisionSenses ??= core.GetCoreComponent<CollisionSenses>(); }
+    private CollisionSenses _collisionSenses;
+    
+    public GroundState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
+    {
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+
+    public override void LogicsUpdate()
+    {
+        base.LogicsUpdate();
+
+        if (!stateMachine.canChangeState) return;
+
+        if (player.inputManager.jumpInput && collisionSenses.isGround)
+        {
+            stateMachine.ChangeState(player.jumpState);
+        }
+        else if (player.inputManager.meleeAttackInput)
+        {
+            stateMachine.ChangeState(player.meleeAttackState);
+        }
+    }
+
+    public override void PhysicsUpdate()
+    {
+        base.PhysicsUpdate();
+    }
+
+}

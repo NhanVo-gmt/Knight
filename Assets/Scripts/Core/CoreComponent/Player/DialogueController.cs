@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System;
+
+public class DialogueController : MonoBehaviour
+{
+    [SerializeField] float typingSpeed = 0.05f;
+    [SerializeField] public Dialogue currentDialogue;
+    DialogueUI dialogueUI;
+    DialogueNode currentNode;
+
+    public Action onFinishDialogue;
+
+    void Start() 
+    {
+        dialogueUI = FindObjectOfType<DialogueUI>();
+    }
+
+    public void StartConversation()
+    {
+        dialogueUI.StartConversation();
+
+        currentNode = currentDialogue.GetRootNode();
+
+        StartCoroutine(TextTypingCoroutine(currentNode.text));
+    }
+
+    IEnumerator TextTypingCoroutine(string text)
+    {
+        string textType = "";
+        foreach(char character in text)
+        {
+            textType += character;
+            dialogueUI.DisplayText(textType);
+            yield return new WaitForSeconds(typingSpeed);
+        }
+
+        dialogueUI.DisplayText(text);
+        
+        if (HaveNextNode())
+        {
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+            StartCoroutine(TextTypingCoroutine(currentNode.text));
+        }
+        else
+        {
+            yield return new WaitForSeconds(2f);
+            dialogueUI.EndConversation();
+            onFinishDialogue?.Invoke();
+        }
+    }
+
+    bool HaveNextNode()
+    {
+        currentNode = currentDialogue.GetNodeFromString(currentNode.GetNextNode());
+
+        if (currentNode == null)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+}
