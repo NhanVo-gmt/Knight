@@ -6,17 +6,23 @@ using System.Linq;
 public class Combat : CoreComponent, IDamageable
 {
     Movement movement;
+    Health health;
+
+    Collider2D col;
 
     Vector2 attackPosition;
 
     protected override void Awake()
     {
         base.Awake();
+
+        col = GetComponent<Collider2D>();
     }
 
     void Start() 
     {
         movement = core.GetCoreComponent<Movement>();
+        health = core.GetCoreComponent<Health>();
     }
 
     #region Deal Damage Method
@@ -36,6 +42,9 @@ public class Combat : CoreComponent, IDamageable
         Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(attackPosition, attackData.radius);
         foreach(Collider2D col in collider2DArray)
         {
+            if (col == this.col) continue;
+
+            
             IDamageable idamageable = col.GetComponent<IDamageable>();
             if (idamageable != null)
             {
@@ -61,15 +70,9 @@ public class Combat : CoreComponent, IDamageable
         damageableEntity.TakeDamage(attackData);
     }
 
-    #endregion
-
-
-
-    #region Take Damage method
-
     public void TakeDamage(AttackData attackData)
     {
-        
+        health.TakeDamage(attackData);
     }
 
     #endregion

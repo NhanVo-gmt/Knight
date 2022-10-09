@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class AttackState : AbilityState
 {
+    float lastActiveTime;
+    
     public AttackState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
 
@@ -31,5 +33,12 @@ public class AttackState : AbilityState
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
+
+        lastActiveTime = Time.time;
+    }
+
+    public bool CanAttack()
+    {
+        return Time.time > lastActiveTime + data.meleeAttackData.coolDown;
     }
 }

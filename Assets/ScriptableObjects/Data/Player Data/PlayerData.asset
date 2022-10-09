@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 396ad1792173ba445b698a0e0ef4db59, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
+  healthData: {fileID: 11400000, guid: 2572fab73853dab48987cccff9d9d043, type: 2}
   jumpData: {fileID: 11400000, guid: de30b5330dd75e04aab5bd32cc74840c, type: 2}
   moveData: {fileID: 11400000, guid: a4e8b9d9837f2714f97b0d402931305f, type: 2}
   meleeAttackData: {fileID: 11400000, guid: a6ef5f1f6255e0d488a3a7736dcdf33e, type: 2}
