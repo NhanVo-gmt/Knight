@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
     #region Core Component
 
     Movement movement;
+    Health health;
     InteractionController interactionController;
 
     #endregion
@@ -65,8 +66,16 @@ public class Player : MonoBehaviour
 
     void GetCoreComponent()
     {
+        SetUpHealth();
+
         movement = core.GetCoreComponent<Movement>();
         interactionController = core.GetCoreComponent<InteractionController>();
+    }
+
+    void SetUpHealth()
+    {   
+        health = core.GetCoreComponent<Health>();
+        health.SetHealth(data.healthData);
     }
 
     void Update() 

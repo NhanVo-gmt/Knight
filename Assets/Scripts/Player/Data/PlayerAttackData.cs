@@ -10,4 +10,6 @@ public class PlayerAttackData : AttackData
     public Vector2 rightAttackPos;
     public Vector2 upAttackPos;
     public Vector2 downAttackPos;
+
+    public float coolDown;
 }

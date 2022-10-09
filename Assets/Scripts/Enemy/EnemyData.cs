@@ -5,5 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Data/Enemy/EnemyData", fileName = "Enemy Data")]
 public class EnemyData : ScriptableObject
 {
-    public int health;
+    public HealthData healthData;
+
+    void Awake() 
+    {
+        healthData = Instantiate(healthData);
+    }
 }

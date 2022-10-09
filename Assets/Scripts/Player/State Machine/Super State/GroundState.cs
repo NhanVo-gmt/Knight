@@ -36,7 +36,7 @@ public class GroundState : State
         {
             stateMachine.ChangeState(player.jumpState);
         }
-        else if (player.inputManager.meleeAttackInput)
+        else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
         {
             stateMachine.ChangeState(player.meleeAttackState);
         }

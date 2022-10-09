@@ -36,7 +36,7 @@ public class InAirState : State
 
     void ChangeState()
     {
-        if (player.inputManager.meleeAttackInput)
+        if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
         {
             stateMachine.ChangeState(player.meleeAttackState);
         }
