@@ -9,7 +9,10 @@ public class AnimatorController : CoreComponent
     public Action onAnimationTrigger;
     public Action onAnimationFinishTrigger;
 
+    Coroutine blinkingCoroutine;
+
     Animator anim;
+    SpriteRenderer sprite;
     Player player;
 
     protected override void Awake() 
@@ -17,6 +20,7 @@ public class AnimatorController : CoreComponent
         base.Awake();
         
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
         player = GetComponentInParent<Player>();
     }
     
@@ -33,5 +37,22 @@ public class AnimatorController : CoreComponent
     public void AnimationFinishTrigger()
     {
         onAnimationFinishTrigger?.Invoke();
+    }
+
+    public void StartBlinking(float cooldown, float blinkTime)
+    {
+        blinkingCoroutine = StartCoroutine(Blinking(cooldown, blinkTime));
+    }
+
+    IEnumerator Blinking(float cooldown, float blinkTime)
+    {
+        float startTime = Time.time;
+        while (startTime + blinkTime < Time.time)
+        {
+            sprite.enabled = !sprite.enabled;
+            yield return new WaitForSeconds(cooldown);
+        }
+
+        sprite.enabled = true;
     }
 }

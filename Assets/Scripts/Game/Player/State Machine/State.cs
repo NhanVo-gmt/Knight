@@ -1,10 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class State
 {
-    public AnimatorController anim {get; private set;}
+    protected AnimatorController anim;
+    protected CollisionSenses collisionSenses;
+    protected Health health;
+
 
     protected Player player;
     protected Core core;
@@ -23,9 +27,11 @@ public abstract class State
         GetCoreComponent();
     }
 
-    void GetCoreComponent()
+    private void GetCoreComponent()
     {
         anim = core.GetCoreComponent<AnimatorController>();
+        collisionSenses = core.GetCoreComponent<CollisionSenses>();
+        health = core.GetCoreComponent<Health>();
     }
 
     public virtual void Enter() 
@@ -42,7 +48,10 @@ public abstract class State
     }
 
     public virtual void PhysicsUpdate() {}
-    public virtual void LogicsUpdate() {}
+    public virtual void LogicsUpdate() 
+    {
+        
+    }
 
     public virtual void AnimationTrigger() {}
     public virtual void AnimationFinishTrigger() {}

@@ -6,9 +6,6 @@ public class GroundState : State
 {
     protected Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
     private Movement _movement;
-
-    protected CollisionSenses collisionSenses { get => _collisionSenses ??= core.GetCoreComponent<CollisionSenses>(); }
-    private CollisionSenses _collisionSenses;
     
     public GroundState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {

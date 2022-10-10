@@ -6,9 +6,6 @@ public class AbilityState : State
 {
     protected Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
     private Movement _movement;
-    
-    protected CollisionSenses collisionSenses { get => _collisionSenses ??= core.GetCoreComponent<CollisionSenses>(); }
-    private CollisionSenses _collisionSenses;
 
     protected Combat combat { get => _combat ??= core.GetCoreComponent<Combat>(); }
     private Combat _combat;

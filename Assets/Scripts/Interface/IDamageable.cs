@@ -1,4 +1,12 @@
 public interface IDamageable
 {
-    public void TakeDamage(AttackData attackData);
+    public enum DamagerType
+    {
+        Player,
+        Enemy,
+        Trap
+    }
+    
+    public DamagerType GetDamagerType();
+    public void TakeDamage(AttackData attackData, DamagerType damagerType);
 }

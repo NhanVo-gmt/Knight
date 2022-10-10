@@ -5,12 +5,21 @@ using System.Linq;
 
 public class Combat : CoreComponent, IDamageable
 {
+    Collider2D col;
+    IDamageable.DamagerType damagerType;
     Movement movement;
     Health health;
 
-    Collider2D col;
 
     Vector2 attackPosition;
+
+
+    #region Set up
+    
+    public void SetUpDamagerType(IDamageable.DamagerType damagerType)
+    {
+        this.damagerType = damagerType;
+    }
 
     protected override void Awake()
     {
@@ -24,10 +33,12 @@ public class Combat : CoreComponent, IDamageable
         movement = core.GetCoreComponent<Movement>();
         health = core.GetCoreComponent<Health>();
     }
+    
+    #endregion
 
-    #region Deal Damage Method
+    #region Damage Method
 
-    public void MeleeAttack(PlayerAttackData attackData)
+    public void MeleeAttack(MeleeAttackData attackData)
     {
         List<IDamageable> enemiesFound = FindDamageableEntityInRange(attackData).ToList();
         
@@ -35,7 +46,7 @@ public class Combat : CoreComponent, IDamageable
     }
 
     
-    IEnumerable<IDamageable> FindDamageableEntityInRange(PlayerAttackData attackData)
+    IEnumerable<IDamageable> FindDamageableEntityInRange(MeleeAttackData attackData)
     {
         SetAttackPosition(attackData);
         
@@ -53,7 +64,7 @@ public class Combat : CoreComponent, IDamageable
         }
     }
 
-    void SetAttackPosition(PlayerAttackData attackData)
+    void SetAttackPosition(MeleeAttackData attackData)
     {
         if (movement.direction == Vector2.left)
         {
@@ -65,14 +76,19 @@ public class Combat : CoreComponent, IDamageable
         }
     }
 
-    void DealDamage(IDamageable damageableEntity, PlayerAttackData attackData)
+    void DealDamage(IDamageable damageableEntity, AttackData attackData)
     {
-        damageableEntity.TakeDamage(attackData);
+        damageableEntity.TakeDamage(attackData, GetDamagerType());
     }
 
-    public void TakeDamage(AttackData attackData)
+    public IDamageable.DamagerType GetDamagerType()
     {
-        health.TakeDamage(attackData);
+        return IDamageable.DamagerType.Player;
+    }
+
+    public void TakeDamage(AttackData attackData, IDamageable.DamagerType damagerType)
+    {
+        
     }
 
     #endregion

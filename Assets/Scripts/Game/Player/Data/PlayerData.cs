@@ -7,7 +7,9 @@ public class PlayerData : ScriptableObject
 {
     public HealthData healthData;
 
+    public HitData hitData;
     public JumpData jumpData;
     public MoveData moveData;
-    public PlayerAttackData meleeAttackData;
+    public MeleeAttackData meleeAttackData;
+    public RangeAttackData rangeAttackData;
 }

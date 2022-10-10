@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     public IdleState idleState {get; private set;}
     public InAirState inAirState {get; private set;}
+    public HitState hitState {get; private set;}
     public JumpState jumpState {get; private set;}
     public MoveState moveState {get; private set;}
     public MeleeAttackState meleeAttackState {get; private set;}
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
 
     int idleId = Animator.StringToHash("Idle");
     int inAirId = Animator.StringToHash("In Air");
+    int hitId = Animator.StringToHash("Hit");
     int jumpId = Animator.StringToHash("Jump");
     int meleeAttackId = Animator.StringToHash("Melee Attack");
     int moveId = Animator.StringToHash("Move");
@@ -29,6 +31,7 @@ public class Player : MonoBehaviour
 
     Movement movement;
     Health health;
+    Combat combat;
     InteractionController interactionController;
 
     #endregion
@@ -38,6 +41,8 @@ public class Player : MonoBehaviour
     Core core;
     public InputManager inputManager {get; private set;}
 
+    #region Set up
+    
     void Awake() 
     {
         inputManager = GetComponent<InputManager>();
@@ -59,6 +64,7 @@ public class Player : MonoBehaviour
         
         idleState = new IdleState(this, core, stateMachine, data, idleId);
         inAirState = new InAirState(this, core, stateMachine, data, inAirId);
+        hitState = new HitState(this, core, stateMachine, data, hitId);
         jumpState = new JumpState(this, core, stateMachine, data, jumpId);
         moveState = new MoveState(this, core, stateMachine, data, moveId);
         meleeAttackState = new MeleeAttackState(this, core, stateMachine, data, meleeAttackId);
@@ -66,17 +72,21 @@ public class Player : MonoBehaviour
 
     void GetCoreComponent()
     {
-        SetUpHealth();
-
         movement = core.GetCoreComponent<Movement>();
         interactionController = core.GetCoreComponent<InteractionController>();
+        combat = core.GetCoreComponent<Combat>();
+        health = core.GetCoreComponent<Health>();
+
+        SetUpComponent();
     }
 
-    void SetUpHealth()
-    {   
-        health = core.GetCoreComponent<Health>();
+    void SetUpComponent()
+    {
+        combat.SetUpDamagerType(IDamageable.DamagerType.Player);
         health.SetHealth(data.healthData);
     }
+
+    #endregion
 
     void Update() 
     {

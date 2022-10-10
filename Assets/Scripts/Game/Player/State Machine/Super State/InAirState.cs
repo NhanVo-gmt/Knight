@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class InAirState : State
 {
-    protected CollisionSenses collisionSenses {get => _collisionSenses ??= core.GetCoreComponent<CollisionSenses>();}
-    private CollisionSenses _collisionSenses;
-
     protected Movement movement {get => _movement ??= core.GetCoreComponent<Movement>();}
     private Movement _movement;
 

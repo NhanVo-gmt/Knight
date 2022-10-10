@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f8e06d37090cc42bceae65553e145c, type: 3}
   m_Name: Apple
   m_EditorClassIdentifier: 
-  healthData: {fileID: 11400000, guid: 4f66d367589cb664f90d6dbe46b15037, type: 2}
+  healthData: {fileID: 11400000, guid: ee41f9fdfd0545842b55935ee95980e6, type: 2}
+  touchAttackData: {fileID: 0}
+  meleeAttackData: {fileID: 0}
+  rangeAttackData: {fileID: 0}
