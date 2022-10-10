@@ -6,4 +6,5 @@ using UnityEngine;
 public class HitData : ScriptableObject
 {
     public float blinkCooldown;
+    public float invulnerableTime;
 }

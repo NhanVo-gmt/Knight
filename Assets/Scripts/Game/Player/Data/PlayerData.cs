@@ -10,5 +10,6 @@ public class PlayerData : ScriptableObject
     public HitData hitData;
     public JumpData jumpData;
     public MoveData moveData;
-    public PlayerAttackData meleeAttackData;
+    public MeleeAttackData meleeAttackData;
+    public RangeAttackData rangeAttackData;
 }

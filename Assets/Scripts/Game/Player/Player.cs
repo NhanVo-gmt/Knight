@@ -31,6 +31,7 @@ public class Player : MonoBehaviour
 
     Movement movement;
     Health health;
+    Combat combat;
     InteractionController interactionController;
 
     #endregion
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
     Core core;
     public InputManager inputManager {get; private set;}
 
+    #region Set up
+    
     void Awake() 
     {
         inputManager = GetComponent<InputManager>();
@@ -69,17 +72,21 @@ public class Player : MonoBehaviour
 
     void GetCoreComponent()
     {
-        SetUpHealth();
-
         movement = core.GetCoreComponent<Movement>();
         interactionController = core.GetCoreComponent<InteractionController>();
+        combat = core.GetCoreComponent<Combat>();
+        health = core.GetCoreComponent<Health>();
+
+        SetUpComponent();
     }
 
-    void SetUpHealth()
-    {   
-        health = core.GetCoreComponent<Health>();
+    void SetUpComponent()
+    {
+        combat.SetUpDamagerType(IDamageable.DamagerType.Player);
         health.SetHealth(data.healthData);
     }
+
+    #endregion
 
     void Update() 
     {

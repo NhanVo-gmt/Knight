@@ -6,6 +6,9 @@ public abstract class State
 {
     public AnimatorController anim {get; private set;}
 
+    protected CollisionSenses collisionSenses { get => _collisionSenses ??= core.GetCoreComponent<CollisionSenses>(); }
+    private CollisionSenses _collisionSenses;
+
     protected Player player;
     protected Core core;
     protected PlayerData data;
@@ -42,7 +45,10 @@ public abstract class State
     }
 
     public virtual void PhysicsUpdate() {}
-    public virtual void LogicsUpdate() {}
+    public virtual void LogicsUpdate() 
+    {
+        
+    }
 
     public virtual void AnimationTrigger() {}
     public virtual void AnimationFinishTrigger() {}

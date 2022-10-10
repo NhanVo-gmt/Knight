@@ -9,17 +9,20 @@ public class Health : CoreComponent
 
     public Action onTakeDamageAction;
     public Action onDieAction;
-    
-    protected override void Awake() 
-    {
-        base.Awake();
-    }
 
+    #region Set up
+    
     public void SetHealth(HealthData data)
     {
         this.data = Instantiate(data);
     }
 
+    #endregion
+    
+    protected override void Awake() 
+    {
+        base.Awake();
+    }
     
     public void TakeDamage(AttackData attackData)
     {

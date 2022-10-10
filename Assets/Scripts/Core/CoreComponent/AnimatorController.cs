@@ -39,24 +39,20 @@ public class AnimatorController : CoreComponent
         onAnimationFinishTrigger?.Invoke();
     }
 
-    public void StartBlinking(float cooldown)
+    public void StartBlinking(float cooldown, float blinkTime)
     {
-        blinkingCoroutine = StartCoroutine(Blinking(cooldown));
+        blinkingCoroutine = StartCoroutine(Blinking(cooldown, blinkTime));
     }
 
-    IEnumerator Blinking(float cooldown)
+    IEnumerator Blinking(float cooldown, float blinkTime)
     {
-        while (true)
+        float startTime = Time.time;
+        while (startTime + blinkTime < Time.time)
         {
             sprite.enabled = !sprite.enabled;
             yield return new WaitForSeconds(cooldown);
         }
-    }
 
-    public void StopBlinking()
-    {
-        StopCoroutine(blinkingCoroutine);
         sprite.enabled = true;
     }
-    
 }
