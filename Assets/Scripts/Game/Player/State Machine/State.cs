@@ -1,13 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class State
 {
-    public AnimatorController anim {get; private set;}
+    protected AnimatorController anim;
+    protected CollisionSenses collisionSenses;
+    protected Health health;
 
-    protected CollisionSenses collisionSenses { get => _collisionSenses ??= core.GetCoreComponent<CollisionSenses>(); }
-    private CollisionSenses _collisionSenses;
 
     protected Player player;
     protected Core core;
@@ -26,9 +27,11 @@ public abstract class State
         GetCoreComponent();
     }
 
-    void GetCoreComponent()
+    private void GetCoreComponent()
     {
         anim = core.GetCoreComponent<AnimatorController>();
+        collisionSenses = core.GetCoreComponent<CollisionSenses>();
+        health = core.GetCoreComponent<Health>();
     }
 
     public virtual void Enter() 

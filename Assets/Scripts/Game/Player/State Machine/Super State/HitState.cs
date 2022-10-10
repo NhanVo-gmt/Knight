@@ -24,11 +24,6 @@ public class HitState : State
         base.Exit();
     }
 
-    public bool IsInInverabilityTime()
-    {
-        return hitTime + data.hitData.invulnerableTime < Time.time;
-    }
-
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();

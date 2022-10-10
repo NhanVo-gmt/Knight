@@ -86,15 +86,9 @@ public class Combat : CoreComponent, IDamageable
         return IDamageable.DamagerType.Player;
     }
 
-    public void TakeDamage(AttackData attackData)
-    {
-        health.TakeDamage(attackData);
-    }
-
-
     public void TakeDamage(AttackData attackData, IDamageable.DamagerType damagerType)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     #endregion

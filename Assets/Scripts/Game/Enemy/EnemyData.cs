@@ -10,9 +10,4 @@ public class EnemyData : ScriptableObject
     public AttackData touchAttackData;
     public MeleeAttackData meleeAttackData;
     public RangeAttackData rangeAttackData;
-
-    void Awake() 
-    {
-        healthData = Instantiate(healthData);
-    }
 }
