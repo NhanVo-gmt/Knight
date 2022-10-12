@@ -46,12 +46,15 @@ public class AnimatorController : CoreComponent
 
     IEnumerator Blinking(float cooldown, float blinkTime)
     {
-        float startTime = Time.time;
-        while (startTime + blinkTime < Time.time)
+        float startTime = 0;
+
+        while (startTime + blinkTime < cooldown)
         {
             sprite.enabled = !sprite.enabled;
-            yield return new WaitForSeconds(cooldown);
+            yield return new WaitForSeconds(blinkTime);
         }
+
+        yield return null;
 
         sprite.enabled = true;
     }

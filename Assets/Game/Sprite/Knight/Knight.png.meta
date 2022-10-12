@@ -1069,6 +1069,48 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Knight46
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight47
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1098,6 +1140,7 @@ TextureImporter:
       Knight00: 1331526107294834511
       Knight24: -1236199260781807999
       Knight45: 0
+      Knight47: 0
       Knight12: -2143791395732998375
       Knight16: -7735023214012169472
       Knight21: -2464661754218842672
@@ -1111,6 +1154,7 @@ TextureImporter:
       Knight15: 2884858992697706108
       Knight09: -6177401596339961833
       Knight42: 0
+      Knight46: 0
       Knight35: 0
       Knight22: 2098430883461984481
       Knight07: -2444581169846472746

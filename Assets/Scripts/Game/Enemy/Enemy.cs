@@ -46,9 +46,8 @@ public class Enemy : MonoBehaviour
     #endregion
 
 
-    private void OnCollisionEnter2D(Collision2D other) {
+    private void OnCollisionStay2D(Collision2D other) {
         if (other.collider == col) return;
-
 
         if (other.collider.TryGetComponent<IDamageable>(out IDamageable target))
         {

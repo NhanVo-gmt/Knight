@@ -37,14 +37,39 @@ public abstract class State
     public virtual void Enter() 
     {
         anim.Play(animId);
+
+        AddEvent();
+    }
+
+    void AddEvent()
+    {
         anim.onAnimationFinishTrigger += AnimationFinishTrigger;
         anim.onAnimationTrigger += AnimationTrigger;
+
+        health.onTakeDamage += ChangeToHitState;
+    }
+
+    void ChangeToHitState()
+    {
+        stateMachine.ChangeState(player.hitState);
+    }
+
+    void ChangeToDieState()
+    {
+
     }
 
     public virtual void Exit() 
     {
+        RemoveEvent();
+    }
+
+    void RemoveEvent()
+    {
         anim.onAnimationFinishTrigger -= AnimationFinishTrigger;
         anim.onAnimationTrigger -= AnimationTrigger;
+
+        health.onTakeDamage -= ChangeToHitState;
     }
 
     public virtual void PhysicsUpdate() {}

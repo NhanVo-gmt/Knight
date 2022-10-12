@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class HitState : State
 {
-    float hitTime;
-    
     public HitState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
     }
@@ -14,9 +12,7 @@ public class HitState : State
     {
         base.Enter();
 
-        hitTime = Time.time;
-
-        anim.StartBlinking(data.hitData.blinkCooldown, data.hitData.invulnerableTime);
+        anim.StartBlinking(data.hitData.invulnerableTime, data.hitData.blinkCooldown);
     }
 
     public override void Exit()

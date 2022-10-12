@@ -84,6 +84,7 @@ public class Player : MonoBehaviour
     {
         combat.SetUpDamagerType(IDamageable.DamagerType.Player);
         health.SetHealth(data.healthData);
+        health.SetHitData(data.hitData);
     }
 
     #endregion

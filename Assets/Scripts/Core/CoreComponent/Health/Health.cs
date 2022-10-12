@@ -8,10 +8,12 @@ public class Health : CoreComponent
     [SerializeField] HealthData healthData; //todo set private
     HitData hitData;
 
-    public Action onTakeDamageAction;
-    public Action onDieAction;
+    public Action onRecover;
+    public Action onTakeDamage;
+    public Action onDie;
 
-
+    private bool isDie = false;
+    private bool isInvulnerable;
     float hitTime;
 
     #region Set up
@@ -32,6 +34,22 @@ public class Health : CoreComponent
     {
         base.Awake();
     }
+
+    void Update() 
+    {
+        Recover();
+    }
+
+    void Recover()
+    {
+        if (!isInvulnerable || isDie) return;
+
+        if (hitTime + hitData.invulnerableTime < Time.time)
+        {
+            isInvulnerable = false;
+            onRecover?.Invoke();
+        }
+    }
     
     public void TakeDamage(AttackData attackData)
     {
@@ -39,15 +57,27 @@ public class Health : CoreComponent
 
         healthData.health -= attackData.damage;
 
-        if (healthData.health <= 0)
+        if (healthData.health > 0)
         {
-            Die();
+            TakeDamage();
         }
         else
         {
-            onTakeDamageAction?.Invoke();
-            hitTime = Time.time;
+            Die();
         }
+    }
+
+    void TakeDamage()
+    {
+        hitTime = Time.time;
+        isInvulnerable = true;
+        onTakeDamage?.Invoke();
+    }
+
+    private void Die()
+    {
+        isDie = true;
+        onDie?.Invoke();
     }
 
     public bool IsInInvulnerabiltyTime()
@@ -55,10 +85,5 @@ public class Health : CoreComponent
         if (hitData == null) return false;
 
         return hitTime + hitData.invulnerableTime < Time.time;
-    }
-
-    private void Die()
-    {
-        onDieAction?.Invoke();
     }
 }

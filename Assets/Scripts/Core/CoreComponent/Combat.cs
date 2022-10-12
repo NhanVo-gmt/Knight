@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using System;
 
 public class Combat : CoreComponent, IDamageable
 {
@@ -32,6 +33,18 @@ public class Combat : CoreComponent, IDamageable
     {
         movement = core.GetCoreComponent<Movement>();
         health = core.GetCoreComponent<Health>();
+
+        health.onRecover += EnableCollider;
+        health.onTakeDamage += DisableCollider;
+        health.onDie += DisableCollider;   
+    }
+
+
+    void OnDisable() 
+    {
+        health.onRecover -= EnableCollider;
+        health.onTakeDamage -= DisableCollider;
+        health.onDie -= DisableCollider;
     }
     
     #endregion
@@ -88,7 +101,23 @@ public class Combat : CoreComponent, IDamageable
 
     public void TakeDamage(AttackData attackData, IDamageable.DamagerType damagerType)
     {
+        if (this.damagerType == damagerType) return ;
         
+        health.TakeDamage(attackData);
+    }
+
+    #endregion
+
+    #region Collider
+
+    private void EnableCollider()
+    {
+        col.enabled = true;
+    }
+
+    private void DisableCollider()
+    {
+        col.enabled = false;
     }
 
     #endregion
