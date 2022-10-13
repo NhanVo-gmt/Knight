@@ -15,7 +15,7 @@ TagManager:
   - ClimableWall
   - 
   - 
-  - Player
+  - IgnoreEnemy
   - Enemy
   - 
   - 

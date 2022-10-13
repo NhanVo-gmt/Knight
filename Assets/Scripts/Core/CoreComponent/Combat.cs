@@ -102,7 +102,6 @@ public class Combat : CoreComponent, IDamageable
     public void TakeDamage(AttackData attackData, IDamageable.DamagerType damagerType)
     {
         if (this.damagerType == damagerType) return ;
-        
         health.TakeDamage(attackData);
     }
 

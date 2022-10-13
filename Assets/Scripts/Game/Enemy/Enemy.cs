@@ -7,10 +7,11 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] EnemyData data;
 
+    AttackData touchAttackData;
+
     Core core;
     Health health;
     Combat combat;
-
     Collider2D col;
 
     #region Set up
@@ -18,8 +19,8 @@ public class Enemy : MonoBehaviour
     void Awake() 
     {
         col = GetComponent<Collider2D>();
-
         core = GetComponentInChildren<Core>();
+        touchAttackData = FindObjectOfType<GameSettings>().TouchAttackSettings;
         
         data = Instantiate(data);
     }
@@ -45,13 +46,16 @@ public class Enemy : MonoBehaviour
 
     #endregion
 
+    private void OnCollisionEnter2D(Collision2D other) {
+        
+    }
 
-    private void OnCollisionStay2D(Collision2D other) {
-        if (other.collider == col) return;
+    private void OnTriggerEnter2D(Collider2D other) {
+        if (other == col) return;
 
-        if (other.collider.TryGetComponent<IDamageable>(out IDamageable target))
+        if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(data.touchAttackData, IDamageable.DamagerType.Enemy);
+            target.TakeDamage(touchAttackData, IDamageable.DamagerType.Enemy);
         }
     }
 }

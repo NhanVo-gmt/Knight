@@ -4,8 +4,6 @@ public class GameSettings : MonoBehaviour
 {
     private static GameSettings instance;
 
-    public AttackData TrapSettings;
-
     void Awake() 
     {
         if (instance != null)
@@ -17,5 +15,12 @@ public class GameSettings : MonoBehaviour
             instance = this;
         }
     }
+
+    [Header("Player")]
+    public int maxHealth;
+
+    [Header("Trap")]
+    public AttackData TouchAttackSettings;
+    public AttackData TrapSettings;
     
 }

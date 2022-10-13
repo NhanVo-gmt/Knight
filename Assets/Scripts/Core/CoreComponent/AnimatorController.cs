@@ -41,14 +41,15 @@ public class AnimatorController : CoreComponent
 
     public void StartBlinking(float cooldown, float blinkTime)
     {
+        StopBlinking();
         blinkingCoroutine = StartCoroutine(Blinking(cooldown, blinkTime));
     }
 
     IEnumerator Blinking(float cooldown, float blinkTime)
     {
-        float startTime = 0;
+        float startTime = Time.time;
 
-        while (startTime + blinkTime < cooldown)
+        while (startTime + cooldown > Time.time)
         {
             sprite.enabled = !sprite.enabled;
             yield return new WaitForSeconds(blinkTime);
@@ -57,5 +58,14 @@ public class AnimatorController : CoreComponent
         yield return null;
 
         sprite.enabled = true;
+    }
+
+    void StopBlinking()
+    {
+        if (blinkingCoroutine != null)
+        {
+            StopCoroutine(blinkingCoroutine);
+            sprite.enabled = true;
+        }
     }
 }
