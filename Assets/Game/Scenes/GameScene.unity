@@ -1721,8 +1721,7 @@ GameObject:
   m_Component:
   - component: {fileID: 154833938}
   - component: {fileID: 154833939}
-  - component: {fileID: 154833940}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: CollisionSenses
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1769,32 +1768,6 @@ MonoBehaviour:
   climableMask:
     serializedVersion: 2
     m_Bits: 8
---- !u!61 &154833940
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 154833937}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.063877106, y: -0.52755284}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.14772224, y: 0.19869807}
-  m_EdgeRadius: 0
 --- !u!1 &236734512
 GameObject:
   m_ObjectHideFlags: 0
@@ -19035,7 +19008,7 @@ GameObject:
   - component: {fileID: 1311542267}
   - component: {fileID: 1311542265}
   - component: {fileID: 1311542266}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -19115,7 +19088,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311542262}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -19461,7 +19434,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.017179012, y: -0.1007556}
@@ -20241,7 +20214,7 @@ GameObject:
   - component: {fileID: 7092356875616484336}
   - component: {fileID: 7092356875616484352}
   - component: {fileID: 7092356875616484337}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
