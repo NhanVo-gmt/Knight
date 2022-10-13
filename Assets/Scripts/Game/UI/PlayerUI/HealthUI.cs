@@ -45,9 +45,9 @@ public class HealthUI : MonoBehaviour
     {
         if (currentHealth > newHealth)
         {
-            for (int i = newHealth; i <= currentHealth; i++)
+            for (int i = newHealth; i < currentHealth; i++)
             {
-                healthImageList[i - 1].Disable();
+                healthImageList[i].Disable();
             }
         }
         else

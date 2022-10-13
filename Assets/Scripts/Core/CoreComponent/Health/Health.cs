@@ -58,6 +58,7 @@ public class Health : CoreComponent
         if (healthData.health <= 0 || isInvulnerable) return;
 
         healthData.health -= attackData.damage;
+        onUpdateHealth?.Invoke(healthData.health);
 
         if (healthData.health > 0)
         {
@@ -74,7 +75,6 @@ public class Health : CoreComponent
         hitTime = Time.time;
         isInvulnerable = true;
         onTakeDamage?.Invoke();
-        onUpdateHealth?.Invoke(healthData.health);
     }
 
     private void Die()

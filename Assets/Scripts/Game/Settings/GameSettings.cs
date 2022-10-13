@@ -20,6 +20,7 @@ public class GameSettings : MonoBehaviour
     public int maxHealth;
 
     [Header("Trap")]
+    public AttackData TouchAttackSettings;
     public AttackData TrapSettings;
     
 }

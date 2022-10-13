@@ -7,7 +7,6 @@ public class EnemyData : ScriptableObject
 {
     public HealthData healthData;
 
-    public AttackData touchAttackData;
     public MeleeAttackData meleeAttackData;
     public RangeAttackData rangeAttackData;
 }
