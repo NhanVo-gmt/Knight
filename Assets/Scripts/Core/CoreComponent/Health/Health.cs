@@ -11,6 +11,7 @@ public class Health : CoreComponent
     public Action onRecover;
     public Action onTakeDamage;
     public Action onDie;
+    public Action<int> onUpdateHealth;
 
     private bool isDie = false;
     private bool isInvulnerable;
@@ -21,6 +22,7 @@ public class Health : CoreComponent
     public void SetHealth(HealthData data)
     {
         this.healthData = Instantiate(data);
+        onUpdateHealth?.Invoke(healthData.health);
     }
 
     public void SetHitData(HitData hitData)
@@ -72,6 +74,7 @@ public class Health : CoreComponent
         hitTime = Time.time;
         isInvulnerable = true;
         onTakeDamage?.Invoke();
+        onUpdateHealth?.Invoke(healthData.health);
     }
 
     private void Die()
@@ -83,5 +86,10 @@ public class Health : CoreComponent
     public bool IsInInvulnerabiltyTime()
     {
         return isInvulnerable;
+    }
+
+    public int GetHealth()
+    {
+        return healthData.health;
     }
 }

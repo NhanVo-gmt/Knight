@@ -29,8 +29,8 @@ public class Player : MonoBehaviour
 
     #region Core Component
 
-    Movement movement;
     Health health;
+    Movement movement;
     Combat combat;
     InteractionController interactionController;
 
@@ -125,6 +125,16 @@ public class Player : MonoBehaviour
             interactionController.UnsetDialogue(npcDialogue.GetDialogue());
         }
     }
+
+
+    #region Get 
+
+    public T GetCoreComponent<T>() where T : CoreComponent
+    {
+        return core.GetCoreComponent<T>();
+    }
+
+    #endregion
 
     #region On Draw Gizmos
     
