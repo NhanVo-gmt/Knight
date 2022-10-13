@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b4d4dcb55c33b43a7c3b51c1de240f, type: 3}
   m_Name: HitData
   m_EditorClassIdentifier: 
-  blinkCooldown: 0.5
-  invulnerableTime: 5
+  blinkCooldown: 0.2
+  invulnerableTime: 1

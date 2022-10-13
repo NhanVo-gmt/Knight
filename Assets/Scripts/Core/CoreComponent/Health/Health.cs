@@ -42,7 +42,7 @@ public class Health : CoreComponent
 
     void Recover()
     {
-        if (!isInvulnerable || isDie) return;
+        if (!IsInInvulnerabiltyTime() || isDie) return;
 
         if (hitTime + hitData.invulnerableTime < Time.time)
         {
@@ -53,7 +53,7 @@ public class Health : CoreComponent
     
     public void TakeDamage(AttackData attackData)
     {
-        if (healthData.health <= 0 || IsInInvulnerabiltyTime()) return;
+        if (healthData.health <= 0 || isInvulnerable) return;
 
         healthData.health -= attackData.damage;
 
@@ -82,8 +82,6 @@ public class Health : CoreComponent
 
     public bool IsInInvulnerabiltyTime()
     {
-        if (hitData == null) return false;
-
-        return hitTime + hitData.invulnerableTime < Time.time;
+        return isInvulnerable;
     }
 }
