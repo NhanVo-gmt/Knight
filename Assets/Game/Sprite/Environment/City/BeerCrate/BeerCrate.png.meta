@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1cc7e9cfffc33349ad6ddcbfed447d3
+guid: c34b4ba1fc1de7a4fa4a4dd667fc906c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -80,13 +80,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: House20
+      name: BeerCrate0
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 235
-        height: 184
+        width: 48
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -94,8 +94,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79e2b0ad7e1a5dc00800000000000000
-      internalID: 924823315662188183
+      spriteID: e0bb8de51dd587830800000000000000
+      internalID: 4069105417150053134
       vertices: []
       indices: 
       edges: []
@@ -111,7 +111,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      House20: 924823315662188183
+      BeerCrate0: 4069105417150053134
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

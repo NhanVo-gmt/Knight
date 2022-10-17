@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c1cc7e9cfffc33349ad6ddcbfed447d3
+guid: fd97df4131949d049b1ab2e5796b7f23
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -80,13 +80,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: House20
+      name: Well0
       rect:
         serializedVersion: 2
         x: 1
         y: 1
-        width: 235
-        height: 184
+        width: 64
+        height: 36
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -94,8 +94,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79e2b0ad7e1a5dc00800000000000000
-      internalID: 924823315662188183
+      spriteID: 71caa9863763c7610800000000000000
+      internalID: 1620229835250641943
       vertices: []
       indices: 
       edges: []
@@ -111,7 +111,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      House20: 924823315662188183
+      Well0: 1620229835250641943
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
