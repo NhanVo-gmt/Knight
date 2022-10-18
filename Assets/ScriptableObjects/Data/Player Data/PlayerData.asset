@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: PlayerData
   m_EditorClassIdentifier: 
   healthData: {fileID: 11400000, guid: 2572fab73853dab48987cccff9d9d043, type: 2}
-  hitData: {fileID: 11400000, guid: 701fa0baaa7606348a07e004333988d5, type: 2}
+  dashData: {fileID: 11400000, guid: 639a5a07817f11b4dbc8844360fe44ed, type: 2}
   jumpData: {fileID: 11400000, guid: de30b5330dd75e04aab5bd32cc74840c, type: 2}
+  hitData: {fileID: 11400000, guid: 701fa0baaa7606348a07e004333988d5, type: 2}
   moveData: {fileID: 11400000, guid: a4e8b9d9837f2714f97b0d402931305f, type: 2}
   meleeAttackData: {fileID: 11400000, guid: a6ef5f1f6255e0d488a3a7736dcdf33e, type: 2}
+  rangeAttackData: {fileID: 0}
