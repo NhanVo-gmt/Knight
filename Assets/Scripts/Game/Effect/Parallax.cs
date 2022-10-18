@@ -22,4 +22,5 @@ public class Parallax : MonoBehaviour
         float dist = (cam.transform.position.x * parralaxEffect);
         transform.position = new Vector2(startPos + dist, transform.position.y);
     }
+
 }

@@ -1,19 +1,10 @@
 using UnityEngine;
 
-public class GameSettings : MonoBehaviour
+public class GameSettings : SingletonObject<GameSettings>
 {
-    private static GameSettings instance;
-
-    void Awake() 
+    protected override void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(this);
-        }
-        else
-        {
-            instance = this;
-        }
+        base.Awake();
     }
 
     [Header("Player")]

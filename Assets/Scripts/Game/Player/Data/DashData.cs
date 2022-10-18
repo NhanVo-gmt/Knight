@@ -6,6 +6,5 @@ using UnityEngine;
 public class DashData : ScriptableObject
 {
     public float initialVelocity;
-    public float decreaseFactor;
     public float cooldown;
 }
