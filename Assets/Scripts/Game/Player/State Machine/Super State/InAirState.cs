@@ -33,7 +33,11 @@ public class InAirState : State
 
     void ChangeState()
     {
-        if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
+        if (player.inputManager.dashInput && player.dashState.CanDash())
+        {
+            stateMachine.ChangeState(player.dashState);
+        }
+        else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
         {
             stateMachine.ChangeState(player.meleeAttackState);
         }

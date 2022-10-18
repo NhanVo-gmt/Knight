@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 {
     #region State
 
+    public DashState dashState {get; private set;}
     public IdleState idleState {get; private set;}
     public InAirState inAirState {get; private set;}
     public HitState hitState {get; private set;}
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
 
     #region Animation Clip Data
 
+    int dashId = Animator.StringToHash("Dash");
     int idleId = Animator.StringToHash("Idle");
     int inAirId = Animator.StringToHash("In Air");
     int hitId = Animator.StringToHash("Hit");
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
     {
         stateMachine = new StateMachine();
         
+        dashState = new DashState(this, core, stateMachine, data, dashId);
         idleState = new IdleState(this, core, stateMachine, data, idleId);
         inAirState = new InAirState(this, core, stateMachine, data, inAirId);
         hitState = new HitState(this, core, stateMachine, data, hitId);

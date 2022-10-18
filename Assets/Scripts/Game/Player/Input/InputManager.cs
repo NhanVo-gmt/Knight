@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,10 +8,11 @@ public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControls;
 
-    public Vector2 movementInput; //{get; private set;}
+    public bool dashInput; //{get; private set;}
     public bool jumpInput; //{get; private set;}
     public bool meleeAttackInput; //{get; private set;}
     public bool interactionInput; //{get; private set;}
+    public Vector2 movementInput; //{get; private set;}
 
     void Awake() 
     {
@@ -27,6 +29,7 @@ public class InputManager : MonoBehaviour
 
     void Start() 
     {
+        DashInputRegister();
         JumpInputRegister();
         MeleeAttackRegister();
         InteractionRegister();
@@ -34,6 +37,12 @@ public class InputManager : MonoBehaviour
 
 
     #region Register
+
+    void DashInputRegister()
+    {
+        playerControls.Ground.Dash.started += OnDashInput;
+        playerControls.Ground.Dash.canceled += OnDashInput;
+    }
 
     void JumpInputRegister()
     {
@@ -63,6 +72,22 @@ public class InputManager : MonoBehaviour
     {
         jumpInput = false;
         meleeAttackInput = false;
+    }
+
+    private void OnDashInput(InputAction.CallbackContext context)
+    {
+        if (context.started) 
+        {
+            ResetInput();
+            dashInput = true;
+        }
+        
+        if (context.canceled) dashInput = false;
+    }
+
+    public void UseDashInput()
+    {
+        dashInput = true;
     }
 
     void OnJumpInput(InputAction.CallbackContext context) 

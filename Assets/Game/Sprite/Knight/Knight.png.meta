@@ -1153,6 +1153,174 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: Knight50
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 39
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight51
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 39
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight52
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 39
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight53
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 39
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight54
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 39
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight55
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 39
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight56
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Knight57
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 1
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00000000000000000800000000000000
+      internalID: 0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -1168,7 +1336,10 @@ TextureImporter:
       Knight23: -135693205820277330
       Knight18: -73860243243254604
       Knight36: 0
+      Knight52: 0
       Knight30: -4074314689178435731
+      Knight53: 0
+      Knight57: 0
       Knight31: 4055353187618551195
       Knight29: -8383942843140278849
       Knight08: -2999206064614869990
@@ -1180,10 +1351,12 @@ TextureImporter:
       Knight25: 7851930169101179892
       Knight41: 0
       Knight00: 1331526107294834511
+      Knight56: 0
       Knight24: -1236199260781807999
       Knight45: 0
       Knight47: 0
       Knight12: -2143791395732998375
+      Knight50: 0
       Knight16: -7735023214012169472
       Knight21: -2464661754218842672
       Knight43: 0
@@ -1198,6 +1371,7 @@ TextureImporter:
       Knight15: 2884858992697706108
       Knight09: -6177401596339961833
       Knight42: 0
+      Knight54: 0
       Knight46: 0
       Knight35: 0
       Knight22: 2098430883461984481
@@ -1213,6 +1387,8 @@ TextureImporter:
       Knight27: 1009043638083012278
       Knight13: -4438058464174924074
       Knight39: 0
+      Knight55: 0
+      Knight51: 0
       Knight44: 0
   spritePackingTag: 
   pSDRemoveMatte: 0

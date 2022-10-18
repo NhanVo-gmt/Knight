@@ -71,6 +71,15 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""OpenMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""7acf65f7-26c7-4863-b42f-d5c2b1d5c341"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -150,6 +159,17 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                     ""action"": ""Interaction"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a6feae06-56e4-425e-a810-c4da9a66a74d"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""OpenMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -180,6 +200,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         m_Ground_MeleeAttack = m_Ground.FindAction("MeleeAttack", throwIfNotFound: true);
         m_Ground_Dash = m_Ground.FindAction("Dash", throwIfNotFound: true);
         m_Ground_Interaction = m_Ground.FindAction("Interaction", throwIfNotFound: true);
+        m_Ground_OpenMenu = m_Ground.FindAction("OpenMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -244,6 +265,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Ground_MeleeAttack;
     private readonly InputAction m_Ground_Dash;
     private readonly InputAction m_Ground_Interaction;
+    private readonly InputAction m_Ground_OpenMenu;
     public struct GroundActions
     {
         private @PlayerControls m_Wrapper;
@@ -253,6 +275,7 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         public InputAction @MeleeAttack => m_Wrapper.m_Ground_MeleeAttack;
         public InputAction @Dash => m_Wrapper.m_Ground_Dash;
         public InputAction @Interaction => m_Wrapper.m_Ground_Interaction;
+        public InputAction @OpenMenu => m_Wrapper.m_Ground_OpenMenu;
         public InputActionMap Get() { return m_Wrapper.m_Ground; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -277,6 +300,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interaction.started -= m_Wrapper.m_GroundActionsCallbackInterface.OnInteraction;
                 @Interaction.performed -= m_Wrapper.m_GroundActionsCallbackInterface.OnInteraction;
                 @Interaction.canceled -= m_Wrapper.m_GroundActionsCallbackInterface.OnInteraction;
+                @OpenMenu.started -= m_Wrapper.m_GroundActionsCallbackInterface.OnOpenMenu;
+                @OpenMenu.performed -= m_Wrapper.m_GroundActionsCallbackInterface.OnOpenMenu;
+                @OpenMenu.canceled -= m_Wrapper.m_GroundActionsCallbackInterface.OnOpenMenu;
             }
             m_Wrapper.m_GroundActionsCallbackInterface = instance;
             if (instance != null)
@@ -296,6 +322,9 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
                 @Interaction.started += instance.OnInteraction;
                 @Interaction.performed += instance.OnInteraction;
                 @Interaction.canceled += instance.OnInteraction;
+                @OpenMenu.started += instance.OnOpenMenu;
+                @OpenMenu.performed += instance.OnOpenMenu;
+                @OpenMenu.canceled += instance.OnOpenMenu;
             }
         }
     }
@@ -316,5 +345,6 @@ public partial class @PlayerControls : IInputActionCollection2, IDisposable
         void OnMeleeAttack(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
+        void OnOpenMenu(InputAction.CallbackContext context);
     }
 }
