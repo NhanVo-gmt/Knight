@@ -27,14 +27,39 @@ public class DashState : AbilityState
 
     public override void Exit() 
     {
+        movement.SetVelocityZero();
+        movement.SetGravityNormal();
+        
         base.Exit();
+    }
+
+    public override void LogicsUpdate()
+    {
+        base.LogicsUpdate();
+
+        if (player.inputManager.movementInput.x * movement.direction.x == -1)
+        {
+            if (collisionSenses.isGround)
+            {
+                stateMachine.ChangeState(player.moveState);
+            }
+            else
+            {
+                stateMachine.ChangeState(player.inAirState);
+            }
+        }
+        else if (player.inputManager.jumpInput && collisionSenses.isGround)
+        {
+            stateMachine.ChangeState(player.jumpState);
+        }
+        else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
+        {
+            stateMachine.ChangeState(player.meleeAttackState);
+        }
     }
 
     public override void AnimationFinishTrigger()
     {
-        movement.SetVelocityZero();
-        movement.SetGravityNormal();
-
         base.AnimationFinishTrigger();
     }
 
