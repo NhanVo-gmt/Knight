@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.Pool;
 
 [System.Serializable]
-public class ObjectPooling 
+public class ObjectPooling
 {
     public PooledObject prefab;
     public int amountToPool;
-
     public IObjectPool<PooledObject> pool;
 
     void Awake() 

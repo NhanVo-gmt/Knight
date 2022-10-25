@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d6f82b18c1eeb44cb03b982701a3c7f
+guid: c68498e784ba07d4d8c9ab6ba6d250aa
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -136,8 +136,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 00000000000000000800000000000000
-      internalID: 0
+      spriteID: 04e5db086e2d0b7a0800000000000000
+      internalID: -6363354386030305728
       vertices: []
       indices: 
       edges: []
@@ -153,7 +153,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Knight melee attack2: 0
+      Knight melee attack2: -6363354386030305728
       Knight melee attack1: 1648652574982295679
       Knight melee attack0: 1779309011626087270
   spritePackingTag: 
