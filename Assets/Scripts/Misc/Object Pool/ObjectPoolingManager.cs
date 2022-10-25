@@ -17,6 +17,7 @@ public class ObjectPoolingManager : SingletonObject<ObjectPoolingManager>
         {
             if (pooling.prefab.gameObject == go)
             {
+                
                 return pooling.pool.Get();
             }
         }
