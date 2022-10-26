@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vfx: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
   needPlayerDirection: 1
-  vfxSpawnPos: {x: -0.75, y: 0}
+  vfxSpawnPos: {x: -0.75, y: 0.1}

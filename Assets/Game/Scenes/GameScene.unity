@@ -286,8 +286,8 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -441984543
-  m_SortingLayer: 4
+  m_SortingLayerID: 1242986017
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -35964,7 +35964,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -441984543
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 293045462, guid: c9b37e474774fa447bda3e53929d95a6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -36168,7 +36168,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledPrefabList:
   - prefab: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
-    amountToPool: 10
+    amountToPool: 4
+  - prefab: {fileID: 7822202127624302198, guid: b2ffeacc688f60443b3a786e29891f88, type: 3}
+    amountToPool: 4
+  - prefab: {fileID: 6972856228208889475, guid: 0db8397266948244e9b6bad0ae6e1c93, type: 3}
+    amountToPool: 4
 --- !u!1 &1592724784
 GameObject:
   m_ObjectHideFlags: 0

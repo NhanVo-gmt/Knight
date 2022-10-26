@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,8 +19,14 @@ public class JumpState : AbilityState
     {
         player.inputManager.UseJumpInput();
         movement.SetVelocityY(data.jumpData.velocity);
+
+        SpawnVFX();
     }
 
+    private void SpawnVFX()
+    {
+        vfx.SpawnVFX(data.jumpData.jumpVFX);
+    }
 
     public override void Exit()
     {

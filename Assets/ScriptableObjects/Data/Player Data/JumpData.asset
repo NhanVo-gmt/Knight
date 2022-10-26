@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: JumpData
   m_EditorClassIdentifier: 
   velocity: 7
+  jumpVFX: {fileID: 11400000, guid: deb470fcf0cb0aa4dadd78fe77b1abaf, type: 2}

@@ -6,49 +6,51 @@ using UnityEngine.Pool;
 public class ObjectPooling : MonoBehaviour
 {
     [System.Serializable]
-    public struct PooledPrefab
+    public class PooledPrefab
     {
         public GameObject prefab;
         public int amountToPool;
-    }
+        public IObjectPool<GameObject> pool;
 
-    public List<PooledPrefab> pooledPrefabList = new List<PooledPrefab>();
-    public List<IObjectPool<GameObject>> poolList = new List<IObjectPool<GameObject>>();
-
-    int index = 0;
-    void Awake() 
-    {
-        
-        for (int i = 0; i < pooledPrefabList.Count; i++)
+        public void OnAwake() 
         {
-            index = i;
-            
-            poolList.Add(new ObjectPool<GameObject>(CreatePooledItem, OnTakeFromPool, OnReturnToPool, OnDestroyPoolObject, 
-                                                false, pooledPrefabList[i].amountToPool, pooledPrefabList[i].amountToPool));
+            pool = new ObjectPool<GameObject>(CreatePooledItem, OnTakeFromPool, OnReturnToPool, OnDestroyPoolObject, false, amountToPool, amountToPool);
+        }
+
+         GameObject CreatePooledItem()
+        {
+            GameObject createdGO = GameObject.Instantiate(prefab);
+            createdGO.AddComponent<PooledObject>().pool = pool;
+            return createdGO;
+        }
+
+        void OnTakeFromPool(GameObject go)
+        {
+            go.gameObject.SetActive(true);
+        }
+        
+        void OnReturnToPool(GameObject go)
+        {
+            go.gameObject.SetActive(false);
+        }
+
+        void OnDestroyPoolObject(GameObject go) 
+        {
+            GameObject.Destroy(go.gameObject);
         }
     }
 
-    GameObject CreatePooledItem()
+    public List<PooledPrefab> pooledPrefabList = new List<PooledPrefab>();
+
+    void Awake() 
     {
-        GameObject createdGO = GameObject.Instantiate(pooledPrefabList[0].prefab);
-        createdGO.AddComponent<PooledObject>().pool = poolList[0];
-        return createdGO;
+        foreach(PooledPrefab prefab in pooledPrefabList)
+        {
+            prefab.OnAwake();
+        }
     }
 
-    void OnTakeFromPool(GameObject go)
-    {
-        go.gameObject.SetActive(true);
-    }
-    
-    void OnReturnToPool(GameObject go)
-    {
-        go.gameObject.SetActive(false);
-    }
-
-    void OnDestroyPoolObject(GameObject go) 
-    {
-        GameObject.Destroy(go.gameObject);
-    }
+   
 
     public GameObject GetObjectFromPool(GameObject go)
     {
@@ -56,7 +58,7 @@ public class ObjectPooling : MonoBehaviour
         {
             if (pooledPrefabList[i].prefab == go)
             {
-                return poolList[i].Get();
+                return pooledPrefabList[i].pool.Get();
             }
         }
 
