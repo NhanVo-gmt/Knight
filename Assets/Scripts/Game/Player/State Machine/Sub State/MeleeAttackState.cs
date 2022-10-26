@@ -16,6 +16,7 @@ public class MeleeAttackState : AttackState
         base.AnimationTrigger();
 
         Attack();
+        SpawnVFX();
     }
 
     private void Attack()
@@ -23,6 +24,11 @@ public class MeleeAttackState : AttackState
         combat.MeleeAttack(data.meleeAttackData);
 
         player.inputManager.UseMeleeAttackInput();
+    }
+
+    void SpawnVFX()
+    {
+        vfx.SpawnVFX(data.meleeAttackData.damageVFX);
     }
 
     public override void AnimationFinishTrigger()

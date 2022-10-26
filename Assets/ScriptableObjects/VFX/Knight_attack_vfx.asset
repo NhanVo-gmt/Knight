@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c031a29a7d0591a4e958a28c29233c5c, type: 3}
-  m_Name: DashData
+  m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
+  m_Name: Knight_attack_vfx
   m_EditorClassIdentifier: 
-  initialVelocity: 12
-  cooldown: 0.7
+  vfx: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
+  needPlayerDirection: 1
+  vfxSpawnPos: {x: -0.75, y: 0}

@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     Core core;
     Health health;
     Combat combat;
+    VFXController vfx;
+
     Collider2D col;
 
     #region Set up
@@ -34,6 +36,7 @@ public class Enemy : MonoBehaviour
     {
         health = core.GetCoreComponent<Health>();
         combat = core.GetCoreComponent<Combat>();
+        vfx = core.GetCoreComponent<VFXController>();
 
         SetUpComponent();
     }

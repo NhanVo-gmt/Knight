@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 public class PooledObject : MonoBehaviour
 {
-    public IObjectPool<PooledObject> pool;
+    public IObjectPool<GameObject> pool;
     Animator anim;
 
     void Awake() 
@@ -13,14 +13,16 @@ public class PooledObject : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    void OnEnable() {
+        Invoke("Release", 1f);
+    }
+
     // Used in animation clip
-    void Release()
+    public void Release()
     {
         anim.Rebind();
         anim.Update(0f);
 
-        pool.Release(this);
+        pool.Release(gameObject);
     }
-
-
 }

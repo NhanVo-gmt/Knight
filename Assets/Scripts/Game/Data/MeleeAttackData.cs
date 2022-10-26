@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Data/MeleeAttackData", fileName = "PlayerAttackData")]
 public class MeleeAttackData : AttackData
 {
+    [Header("Position and range")]
     public Vector2 leftAttackPos;
     public Vector2 rightAttackPos;
     public Vector2 upAttackPos;
