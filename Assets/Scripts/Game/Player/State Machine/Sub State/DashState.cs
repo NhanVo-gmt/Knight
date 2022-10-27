@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -23,6 +24,13 @@ public class DashState : AbilityState
         lastActiveTime = Time.time;
 
         movement.SetVelocityX(movement.direction.x * data.dashData.initialVelocity);
+
+        SpawnVFX();
+    }
+
+    private void SpawnVFX()
+    {
+        vfx.SpawnVFX(data.dashData.vfx);
     }
 
     public override void Exit() 

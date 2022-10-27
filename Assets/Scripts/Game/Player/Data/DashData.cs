@@ -7,4 +7,6 @@ public class DashData : ScriptableObject
 {
     public float initialVelocity;
     public float cooldown;
+
+    public VFXData vfx;
 }
