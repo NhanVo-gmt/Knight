@@ -6,7 +6,8 @@ using System;
 public class DialogueController : MonoBehaviour
 {
     [SerializeField] float typingSpeed = 0.05f;
-    [SerializeField] public Dialogue currentDialogue;
+    [SerializeField] public Dialogue currentDialogue; //todo set private
+    [SerializeField] public GameObject playerUI; //todo set other method
     DialogueUI dialogueUI;
     DialogueNode currentNode;
 
@@ -15,10 +16,13 @@ public class DialogueController : MonoBehaviour
     void Start() 
     {
         dialogueUI = FindObjectOfType<DialogueUI>();
+        dialogueUI.gameObject.SetActive(false);
     }
 
     public void StartConversation()
     {
+        dialogueUI.gameObject.SetActive(true);
+        playerUI.SetActive(false);
         dialogueUI.StartConversation();
 
         currentNode = currentDialogue.GetRootNode();
@@ -38,14 +42,16 @@ public class DialogueController : MonoBehaviour
 
         dialogueUI.DisplayText(text);
         
+        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+
         if (HaveNextNode())
         {
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
             StartCoroutine(TextTypingCoroutine(currentNode.text));
         }
         else
         {
-            yield return new WaitForSeconds(2f);
+            dialogueUI.gameObject.SetActive(false);
+            playerUI.SetActive(true);
             dialogueUI.EndConversation();
             onFinishDialogue?.Invoke();
         }

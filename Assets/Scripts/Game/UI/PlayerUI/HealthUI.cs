@@ -10,7 +10,7 @@ public class HealthUI : MonoBehaviour
 
     List<HealthImage> healthImageList = new List<HealthImage>();
 
-    [SerializeField] Health health;
+    [SerializeField] Health health; //todo set private
     int currentHealth = 1;
 
     void Start() 
