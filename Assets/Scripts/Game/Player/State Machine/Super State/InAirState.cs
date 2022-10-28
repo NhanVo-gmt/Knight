@@ -44,7 +44,13 @@ public class InAirState : State
         else if (collisionSenses.isGround && movement.GetVelocity().y < 0.1f)
         {
             stateMachine.ChangeState(player.idleState);
+            SpawnLandVFX();
         }
+    }
+
+    void SpawnLandVFX()
+    {
+        vfx.SpawnVFX(data.jumpData.jumpVFX);
     }
 
     void PlayAnimation()
