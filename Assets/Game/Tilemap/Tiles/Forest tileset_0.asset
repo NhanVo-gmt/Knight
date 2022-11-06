@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: Forest Tileset 1_0
+  m_Name: Forest tileset_0
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: -2125026057, guid: 5048f1dc8037a394bb36f6c6338b3059, type: 3}
+  m_Sprite: {fileID: -1987468378, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
