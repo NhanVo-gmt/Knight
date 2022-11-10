@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu()]
+[CreateAssetMenu(fileName = " Behaviour")]
 public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 {
     public Node rootNode;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ConSequencerNode : CompositeNode
+public class DepSequencerNode : CompositeNode
 {
     int currentIndex = -1;
     protected override void OnStart()

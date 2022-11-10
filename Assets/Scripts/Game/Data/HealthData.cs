@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[CreateAssetMenu(fileName = "HealthData", menuName = "ScriptableObjects/Data/HealthData")]
+[CreateAssetMenu(fileName = " Health", menuName = "ScriptableObjects/Data/HealthData")]
 public class HealthData : ScriptableObject
 {
     public int health;

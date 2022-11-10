@@ -22,6 +22,4 @@ public class SeePlayerNode : ActionNode
         }
         return State.FAILURE;
     }
-    
-
 }

@@ -4,29 +4,77 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using System;
+using System.Linq;
 
 public class CreatePrefabFromAnimationClip : MonoBehaviour
 {
     static string PooledObjectPath = "Assets/Game/Prefabs/PooledObject/PooledObject.prefab";
-    static AnimationClip clipSelected;
+    static string EnemyObjectPath = "Assets/Game/Prefabs/Character/Enemy.prefab";
+    [NonSerialized] static List<AnimationClip> clipSelected = new List<AnimationClip>();
 
     [MenuItem("Knight/Create empty prefab from animation clip")]
-    static void CreatePrefab()
+    static void CreatePooledPrefab()
     {
-        clipSelected = Selection.activeObject as AnimationClip;
-        if (clipSelected == null) 
+        OnSelectionChange();
+        
+        if (clipSelected.Count == 0) 
         {
             Debug.Log("You haven't selected an animation clip");
             return;
         }
         
-        GameObject pooledObject = GetPooledObjectFromPath();
+        GameObject pooledObject = GetObjectFromPath(PooledObjectPath);
         if (pooledObject == null) return;
 
-        CreatePrefab(pooledObject, GetPathFromSelection());
+        string pathToCreate = GetPathFromSelection();
+        GameObject prefab = CreatePrefab(pooledObject, pathToCreate);
+
+        AddAnimatorComponentToPrefab(prefab, pathToCreate);
     }
 
-    static GameObject GetPooledObjectFromPath()
+    [MenuItem("Knight/Create empty enemy prefab from animation clip")]
+    static void CreateEnemyPrefab()
+    {
+        OnSelectionChange();
+        
+        if (clipSelected.Count == 0) 
+        {
+            Debug.Log("You haven't selected an animation clip");
+            return;
+        }
+        
+        GameObject enemyObject = GetObjectFromPath(EnemyObjectPath);
+        if (enemyObject == null) return;
+
+        string pathToCreate = GetPathFromSelection();
+        GameObject prefab = CreatePrefab(enemyObject, pathToCreate);
+
+        AddAnimatorComponentToPrefab(prefab, pathToCreate);
+    }
+
+    private static void OnSelectionChange() {
+        clipSelected.Clear();
+        foreach(AnimationClip clip in Selection.GetFiltered(typeof(AnimationClip), SelectionMode.Editable))
+        {
+            clipSelected.Add(clip);
+        }
+    }
+
+    static GameObject GetObjectFromPath(string path)
+    {
+        GameObject prefab = AssetDatabase.LoadAssetAtPath(path, typeof(GameObject)) as GameObject;
+        if (prefab == null)
+        {
+            Debug.Log("There is no prefab at " + path);
+        }
+        else
+        {
+            return Instantiate(prefab);
+        }
+        return null;
+    }
+
+    static GameObject GetAnimControllerFromEnemyPrefabPath()
     {
         GameObject prefab = AssetDatabase.LoadAssetAtPath(PooledObjectPath, typeof(GameObject)) as GameObject;
         if (prefab == null)
@@ -45,9 +93,9 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
         return Path.GetDirectoryName(AssetDatabase.GetAssetPath(Selection.activeInstanceID));
     }
 
-    static void CreatePrefab(GameObject pooledPrefab, string path)
+    static GameObject CreatePrefab(GameObject pooledPrefab, string path)
     {
-        string createdPath = path + "/" + clipSelected.name + ".prefab";
+        string createdPath = path + "/" + clipSelected[0].name + ".prefab";
 
         createdPath = AssetDatabase.GenerateUniqueAssetPath(createdPath);
 
@@ -58,19 +106,57 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
         {
             Debug.Log("Successfully created a prefab");
 
-            AddAnimatorComponentToPrefab(prefab, path);
+            return prefab;
         }
         else
         {
-            Debug.Log("Failed to create a prefab");
+            Debug.LogError("Failed to create a prefab");
+
+            return null;
         }
     }
 
     static void AddAnimatorComponentToPrefab(GameObject prefab, string path)
     {
-        string createdPath = path + "/" + clipSelected.name + ".controller";
+        Animator anim = prefab.GetComponent<Animator>();
+
+        if (anim == null)
+        {
+            anim = prefab.GetComponentInChildren<Animator>();
+        }
+
+        anim.runtimeAnimatorController = CreateAnimatorComponent(path);
+    }
+
+    static UnityEditor.Animations.AnimatorController CreateAnimatorComponent(string path)
+    {
+        string createdPath = path + "/" + GetAnimatorName(clipSelected[0].name) + ".controller";
         var controller = UnityEditor.Animations.AnimatorController.CreateAnimatorControllerAtPath(createdPath);
-        controller.AddMotion(clipSelected);
-        prefab.GetComponent<Animator>().runtimeAnimatorController = controller;
+        AddAnimationClipToAnimator(controller);
+
+        return controller;
+    }
+
+    static string GetAnimatorName(string clipName)
+    {
+        string name = "";
+        for(int i = 0; i < clipName.Length; i++)
+        {
+            if (clipName[i] == '_') 
+            {
+                return name;
+            }
+            name += clipName[i];
+        }
+        
+        return name;
+    }
+
+    static void AddAnimationClipToAnimator(UnityEditor.Animations.AnimatorController controller)
+    {
+        foreach(AnimationClip clip in clipSelected)
+        {
+            controller.AddMotion(clip);
+        }
     }
 }
