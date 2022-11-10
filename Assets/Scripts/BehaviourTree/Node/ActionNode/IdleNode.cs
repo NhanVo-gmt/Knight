@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class IdleNode : ActionNode
 {
+    public override void CopyNode(ActionNode copyNode)
+    {
+        
+    }
+    
     protected override void OnStart()
     {
 

@@ -16,4 +16,5 @@ public abstract class ActionNode : Node
     }
 
     protected virtual void PlayAnimation(){}
+    public abstract void CopyNode(ActionNode copyNode);
 }

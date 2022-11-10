@@ -2,7 +2,9 @@ using UnityEngine;
 
 public class DepSequencerNode : CompositeNode
 {
-    int currentIndex = -1;
+    [SerializeField] int currentIndex = -1;
+
+
     protected override void OnStart()
     {
         currentIndex = 1;

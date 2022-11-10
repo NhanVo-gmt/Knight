@@ -10,6 +10,16 @@ public class PatrolNode : ActionNode
     
     int moveId = Animator.StringToHash("Move");
 
+    public override void CopyNode(ActionNode copyNode)
+    {
+        PatrolNode node = copyNode as PatrolNode;
+        if (node != null)
+        {
+            pointWays = node.pointWays;
+            velocity = node.velocity;
+        }
+    }
+
 
     protected override void OnStart()
     {

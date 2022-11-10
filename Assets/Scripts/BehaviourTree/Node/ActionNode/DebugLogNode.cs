@@ -5,6 +5,15 @@ using UnityEngine;
 public class DebugLogNode : ActionNode
 {
     public string message;
+
+    public override void CopyNode(ActionNode copyNode)
+    {
+        DebugLogNode node = copyNode as DebugLogNode;
+        if (node != null)
+        {
+            message = node.message;
+        }
+    }
     
     protected override void OnStart()
     {

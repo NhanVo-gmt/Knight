@@ -7,9 +7,10 @@ public class BehaviourTreeRunner : MonoBehaviour
     public BehaviourTree tree;
     public BehaviourTreeComponent treeComponent {get; private set;}
     
-    void Awake()
-    {
+
+    private void Awake() {
         InitializeTreeComponent();
+
         CloneTree();
     }
 
@@ -18,7 +19,7 @@ public class BehaviourTreeRunner : MonoBehaviour
         InitializeNodeComponent();
     }
 
-    void InitializeTreeComponent() 
+    public void InitializeTreeComponent() 
     {
         treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject);
     }
@@ -38,6 +39,7 @@ public class BehaviourTreeRunner : MonoBehaviour
             n.player = player;
         });
     }
+
 
 
     void Update()

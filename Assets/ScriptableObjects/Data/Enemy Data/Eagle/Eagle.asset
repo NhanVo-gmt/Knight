@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: Eagle
   m_EditorClassIdentifier: 
   healthData: {fileID: 11400000, guid: 7465de01540d1074b95b82b0cafa06a5, type: 2}
+  isFlying: 1
   meleeAttackData: {fileID: 0}
   rangeAttackData: {fileID: 0}

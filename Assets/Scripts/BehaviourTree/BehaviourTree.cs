@@ -88,6 +88,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         {
             Node newNode = CreateNode(oldPastedNodeList[i].GetType());
             newNode.position = oldPastedNodeList[i].position + offset;
+            CopyActionNode(newNode as ActionNode, oldPastedNodeList[i] as ActionNode);
             newPastedNodeList.Add(newNode);
         }
 
@@ -107,6 +108,13 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         }
 
         return newPastedNodeList;
+    }
+
+    void CopyActionNode(ActionNode newNode, ActionNode copyNode)
+    {
+        if (newNode == null || copyNode == null) return;
+        
+        newNode.CopyNode(copyNode);
     }
 
     public void DeleteNode(Node node)

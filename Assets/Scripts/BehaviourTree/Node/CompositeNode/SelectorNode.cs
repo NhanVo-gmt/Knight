@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SelectorNode : CompositeNode
 {
-    int currentIndex = -1;
+    [SerializeField] int currentIndex = -1;
     
     protected override void OnStart()
     {

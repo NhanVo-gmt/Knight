@@ -9,6 +9,8 @@ public class BehaviourTreeComponent
     public Rigidbody2D rb {get; private set;}
     public Collider2D col {get; private set;}
     public Core core {get; private set;}
+    
+    public EnemyData data {get; private set;}
 
     public GameObject player {get; private set;}
 

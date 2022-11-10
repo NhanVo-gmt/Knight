@@ -25,4 +25,5 @@ public class RootNode : Node
         rootNode.child = child.Clone();
         return rootNode;
     }
+
 }

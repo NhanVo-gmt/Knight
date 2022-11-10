@@ -4,6 +4,15 @@ public class SeePlayerNode : ActionNode
 {
     [SerializeField] float seeDistance;
 
+    public override void CopyNode(ActionNode copyNode)
+    {
+        SeePlayerNode node = copyNode as SeePlayerNode;
+        if (node != null)
+        {
+            seeDistance = node.seeDistance;
+        }
+    }
+
     protected override void OnStart()
     {
 

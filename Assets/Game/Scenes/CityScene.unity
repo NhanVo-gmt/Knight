@@ -9387,6 +9387,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eagle
       objectReference: {fileID: 0}
+    - target: {fileID: 386617534574471175, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 386617534574471175, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 851621578839089405, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1977985092416992643, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2315241520442914983, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2611879044699638107, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6488310136170028764, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -9430,6 +9454,14 @@ PrefabInstance:
     - target: {fileID: 6488310136170028764, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6960487032739168877, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7111299771381119479, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}

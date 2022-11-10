@@ -4,10 +4,19 @@ using UnityEngine;
 
 public class WaitNode : ActionNode
 {
-    public float duration = 1;
+    [SerializeField] float duration = 1;
     float startTime;
 
     int idleId = Animator.StringToHash("Idle");
+
+    public override void CopyNode(ActionNode copyNode)
+    {
+        WaitNode node = copyNode as WaitNode;
+        if (node != null)
+        {
+            duration = node.duration;
+        }
+    }
     
     protected override void OnStart()
     {

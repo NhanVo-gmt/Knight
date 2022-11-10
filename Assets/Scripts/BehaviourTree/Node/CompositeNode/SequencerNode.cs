@@ -6,6 +6,7 @@ public class SequencerNode : CompositeNode
 {
     int currentIndex;
 
+
     protected override void OnStart()
     {
         currentIndex = 0;

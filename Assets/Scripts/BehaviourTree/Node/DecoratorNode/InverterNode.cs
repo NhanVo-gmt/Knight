@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InverterNode : DecoratorNode
 {
+
     protected override void OnStart()
     {
 

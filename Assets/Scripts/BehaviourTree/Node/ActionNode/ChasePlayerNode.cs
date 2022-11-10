@@ -3,6 +3,16 @@ using UnityEngine;
 public class ChasePlayerNode : ActionNode
 {
     [SerializeField] float velocity;
+
+    
+    public override void CopyNode(ActionNode copyNode)
+    {
+        ChasePlayerNode node = copyNode as ChasePlayerNode;
+        if (node != null)
+        {
+            velocity = node.velocity;
+        }
+    }
     
     protected override void OnStart()
     {
@@ -23,13 +33,21 @@ public class ChasePlayerNode : ActionNode
 
     void ChasePlayer()
     {
-        if (player.transform.position.x > treeComponent.transform.position.x)
+        if (!treeComponent.data.isFlying)
         {
-            movement.SetVelocityX(velocity);
+            if (player.transform.position.x > treeComponent.transform.position.x)
+            {
+                movement.SetVelocityX(velocity);
+            }
+            else
+            {
+                movement.SetVelocityX(-velocity);
+            }
         }
         else
         {
-            movement.SetVelocityX(-velocity);
+            Vector2 direction = (player.transform.position - treeComponent.transform.position).normalized;
+            movement.SetVelocity(direction * velocity);
         }
     }
 

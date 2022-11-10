@@ -7,6 +7,9 @@ public class EnemyData : ScriptableObject
 {
     public HealthData healthData;
 
+    public bool isFlying;
+
     public MeleeAttackData meleeAttackData;
     public RangeAttackData rangeAttackData;
+
 }

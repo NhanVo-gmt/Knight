@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: RepeatNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: 783394ca70e48c348b1dce9528c3fc51
   player: {fileID: 0}
   position: {x: 255.19997, y: -95.30004}
@@ -31,13 +31,14 @@ MonoBehaviour:
   m_Name: SelectorNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: d3cb53ca93025244b87f75be9194a84b
   player: {fileID: 0}
-  position: {x: 255.19997, y: 30.399971}
+  position: {x: 289.6, y: 30.399992}
   children:
   - {fileID: 2452479540924689487}
-  - {fileID: -6688192585837815559}
+  - {fileID: -3125611133437655390}
+  currentIndex: 0
 --- !u!114 &-6688192585837815559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54,8 +55,8 @@ MonoBehaviour:
   started: 0
   guid: 56b51cf81da8e4647b57eb609e655927
   player: {fileID: 0}
-  position: {x: 363.97, y: 236.79994}
-  velocity: 0
+  position: {x: 621.3374, y: 236.79999}
+  velocity: 4
 --- !u!114 &-6218914349101890691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +70,7 @@ MonoBehaviour:
   m_Name: RootNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: c126d0466e1146d45a223afc2e15fea4
   player: {fileID: 0}
   position: {x: 58.18993, y: -233.8815}
@@ -87,11 +88,32 @@ MonoBehaviour:
   m_Name: SeePlayerNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: e4b1192e4d707234c9404ac6f50c37da
   player: {fileID: 0}
   position: {x: -118.400024, y: 425.82144}
-  seeDistance: 0
+  seeDistance: 7
+--- !u!114 &-3125611133437655390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
+  m_Name: DepSequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: d1610746852b86a42a92999e395ed3f5
+  player: {fileID: 0}
+  position: {x: 440, y: 107.91998}
+  children:
+  - {fileID: -117225712488800827}
+  - {fileID: -6688192585837815559}
+  currentIndex: -1
 --- !u!114 &-1537149065156260487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +135,24 @@ MonoBehaviour:
   - {x: 0, y: 8}
   - {x: 8, y: 8}
   velocity: 3
+--- !u!114 &-117225712488800827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9d303daa1e73347910ea8d408600ba, type: 3}
+  m_Name: SeePlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 01ba5d26fa5557447b93a56e39f984d7
+  player: {fileID: 0}
+  position: {x: 419.99997, y: 236.79994}
+  seeDistance: 7
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +177,8 @@ MonoBehaviour:
   - {fileID: -9151638642705423950}
   - {fileID: -7810451963931631073}
   - {fileID: 3381676561126460707}
+  - {fileID: -3125611133437655390}
+  - {fileID: -117225712488800827}
   offset: {x: 300, y: 0}
 --- !u!114 &2452479540924689487
 MonoBehaviour:
@@ -151,13 +193,15 @@ MonoBehaviour:
   m_Name: DepSequencerNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: 7a48c48cea95cfc4e8ee32a8e733b6bd
   player: {fileID: 0}
   position: {x: 37.29, y: 116.41404}
   children:
   - {fileID: 5874492694867635175}
   - {fileID: -1537149065156260487}
+  - {fileID: 3381676561126460707}
+  currentIndex: 1
 --- !u!114 &3381676561126460707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +218,7 @@ MonoBehaviour:
   started: 0
   guid: 7ab7f8a5c880bf842b1c45327f29dedd
   player: {fileID: 0}
-  position: {x: 0, y: 0}
+  position: {x: 345.2572, y: 413.59988}
   duration: 1
 --- !u!114 &5874492694867635175
 MonoBehaviour:
@@ -189,7 +233,7 @@ MonoBehaviour:
   m_Name: InverterNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 0
+  started: 1
   guid: 78a7d9d49d1db6d43892af87799156e5
   player: {fileID: 0}
   position: {x: -92.00007, y: 256.0001}
