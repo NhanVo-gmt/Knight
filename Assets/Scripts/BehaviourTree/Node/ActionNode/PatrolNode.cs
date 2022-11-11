@@ -40,13 +40,21 @@ public class PatrolNode : ActionNode
 
     void MoveToNextPoint()
     {
-        if (treeComponent.transform.position.x < pointWays[currentIndex].x)
+        if (!treeComponent.data.isFlying)
         {
-            movement.SetVelocityX(velocity);
+            if (treeComponent.transform.position.x < pointWays[currentIndex].x)
+            {
+                movement.SetVelocityX(velocity);
+            }
+            else
+            {
+                movement.SetVelocityX(-velocity);
+            }
         }
         else
         {
-            movement.SetVelocityX(-velocity);
+            Vector2 direction = (pointWays[currentIndex] - (Vector2)treeComponent.transform.position).normalized;
+            movement.SetVelocity(direction * velocity);
         }
     }
 
