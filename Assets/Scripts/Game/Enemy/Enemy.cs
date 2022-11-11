@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] EnemyData data;
+    public EnemyData data; // todo set private (for unity editor to see)
 
     AttackData touchAttackData;
 
@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     Health health;
     Combat combat;
     VFXController vfx;
+    public BehaviourTreeComponent treeComponent {get; private set;}
 
     Collider2D col;
 
@@ -25,11 +26,32 @@ public class Enemy : MonoBehaviour
         touchAttackData = FindObjectOfType<GameSettings>().TouchAttackSettings;
         
         data = Instantiate(data);
+
+        SetUpBehaviourTree();
+    }
+
+    void SetUpBehaviourTree()
+    {
+        InitializeTreeComponent();
+
+        CloneTree();
+    }
+
+    void InitializeTreeComponent() 
+    {
+        treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject, data);
+    }
+
+    void CloneTree() 
+    {
+        data.tree = data.tree.Clone();
     }
 
     void Start() 
     {
         GetCoreComponent();
+
+        InitializeTreeNodeComponent();
     }
 
     private void GetCoreComponent()
@@ -47,11 +69,27 @@ public class Enemy : MonoBehaviour
         health.SetHealth(data.healthData);
     }
 
+    void InitializeTreeNodeComponent()
+    {
+        Player player = FindObjectOfType<Player>();
+        
+        data.tree.Traverse(data.tree.rootNode, (n) =>
+        {
+            n.treeComponent = treeComponent;
+            n.player = player;
+        });
+    }
+
     #endregion
 
-    private void OnCollisionEnter2D(Collision2D other) {
-        
+    #region Unity Call back
+
+    void Update() 
+    {
+        data.tree.Update();
     }
+
+    #endregion
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other == col) return;

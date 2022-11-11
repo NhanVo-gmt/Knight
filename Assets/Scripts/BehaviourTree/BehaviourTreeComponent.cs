@@ -14,7 +14,7 @@ public class BehaviourTreeComponent
 
     public GameObject player {get; private set;}
 
-    public static BehaviourTreeComponent CreateTreeComponentFromGameObject(GameObject gameObject)
+    public static BehaviourTreeComponent CreateTreeComponentFromGameObject(GameObject gameObject, EnemyData data)
     {
         BehaviourTreeComponent component = new BehaviourTreeComponent();
         component.gameObject = gameObject;
@@ -22,6 +22,7 @@ public class BehaviourTreeComponent
         component.rb = gameObject.GetComponent<Rigidbody2D>();
         component.col = gameObject.GetComponent<Collider2D>();
         component.core = gameObject.GetComponentInChildren<Core>();
+        component.data = data;
 
         return component;
     }

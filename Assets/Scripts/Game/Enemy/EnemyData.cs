@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "ScriptableObjects/Data/Enemy/EnemyData", fileName = "Enemy Data")]
 public class EnemyData : ScriptableObject
 {
+    public BehaviourTree tree;
+    
     public HealthData healthData;
 
     public bool isFlying;
