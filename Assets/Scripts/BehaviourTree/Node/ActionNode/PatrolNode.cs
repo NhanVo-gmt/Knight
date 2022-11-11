@@ -81,4 +81,9 @@ public class PatrolNode : ActionNode
         }
         return State.RUNNING;
     }
+
+    public override void DrawGizmos() 
+    {
+        BehaviourTreeDrawingGizmos.DrawPatrolLine(pointWays);
+    } 
 }

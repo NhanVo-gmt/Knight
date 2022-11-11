@@ -142,7 +142,7 @@ public class Player : MonoBehaviour
     #region On Draw Gizmos
     
     
-    private void OnDrawGizmos() 
+    private void OnDrawGizmosSelected() 
     {
         Gizmos.color = Color.red;
 

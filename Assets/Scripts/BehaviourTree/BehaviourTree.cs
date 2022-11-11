@@ -55,6 +55,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         return treeState;
     }
 
+#if UNITY_EDITOR
     public Node CreateNode(System.Type type) 
     {
         Undo.RecordObject(this, "Behaviour Tree {Createnode}");
@@ -230,4 +231,6 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     {
         
     }
+
+#endif
 }

@@ -125,4 +125,11 @@ public class BehaviourTreeEditor : EditorWindow
     private void OnInspectorUpdate() {
         treeGraphView?.UpdateNodeState();
     }
+
+    private void Update() {
+        if (!Application.isPlaying)
+        {
+            inspectorView.DrawGizmos();
+        }
+    }
 }

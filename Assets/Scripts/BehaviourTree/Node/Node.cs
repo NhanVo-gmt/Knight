@@ -58,4 +58,13 @@ public abstract class Node : ScriptableObject
     protected abstract void OnStart();
     protected abstract void OnStop();
     protected abstract State OnUpdate(); 
+
+#region Draw Gizmos
+
+    public virtual void DrawGizmos() 
+    {
+
+    } 
+
+#endregion
 }

@@ -31,4 +31,9 @@ public class SeePlayerNode : ActionNode
         }
         return State.FAILURE;
     }
+
+    public override void DrawGizmos()
+    {
+        BehaviourTreeDrawingGizmos.DrawWireSphere(seeDistance);
+    }
 }

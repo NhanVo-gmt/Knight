@@ -152,7 +152,7 @@ MonoBehaviour:
   guid: 01ba5d26fa5557447b93a56e39f984d7
   player: {fileID: 0}
   position: {x: 419.99997, y: 236.79994}
-  seeDistance: 7
+  seeDistance: 6
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +196,7 @@ MonoBehaviour:
   started: 1
   guid: 7a48c48cea95cfc4e8ee32a8e733b6bd
   player: {fileID: 0}
-  position: {x: 37.29, y: 116.41404}
+  position: {x: 37.600006, y: 116.799995}
   children:
   - {fileID: 5874492694867635175}
   - {fileID: -1537149065156260487}
@@ -218,7 +218,7 @@ MonoBehaviour:
   started: 0
   guid: 7ab7f8a5c880bf842b1c45327f29dedd
   player: {fileID: 0}
-  position: {x: 345.2572, y: 413.59988}
+  position: {x: 345.19998, y: 456.80005}
   duration: 1
 --- !u!114 &5874492694867635175
 MonoBehaviour:

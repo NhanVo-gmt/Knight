@@ -9,6 +9,7 @@ public class InspectorView : VisualElement
 {
     public new class UxmlFactory : UxmlFactory<InspectorView, VisualElement.UxmlTraits>{}
     Editor editor;
+    [NonSerialized] Node selectedNode;
 
     public InspectorView()
     {
@@ -19,6 +20,8 @@ public class InspectorView : VisualElement
     {
         Clear();
         
+        selectedNode = nodeView.node;
+
         UnityEngine.Object.DestroyImmediate(editor);
         editor = Editor.CreateEditor(nodeView.node);
         IMGUIContainer iMGUIContainer = new IMGUIContainer(() => {
@@ -28,5 +31,15 @@ public class InspectorView : VisualElement
             }
         });
         Add(iMGUIContainer);
+
+        
+    }
+
+    public void DrawGizmos() 
+    {
+        if (selectedNode != null)
+        {
+            selectedNode.DrawGizmos();
+        }
     }
 }
