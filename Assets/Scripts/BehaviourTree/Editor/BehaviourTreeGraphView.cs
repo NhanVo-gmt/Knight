@@ -211,37 +211,37 @@ public class BehaviourTreeGraphView : GraphView
         endPort.node != startPort.node).ToList();
     }
 
-    // public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
-    // {
-    //     base.BuildContextualMenu(evt);
-    //     evt.menu.AppendAction($"Create New Node Scripts.../Action Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[0]));
-    //     evt.menu.AppendAction($"Create New Node Scripts.../Composite Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[1]));
-    //     evt.menu.AppendAction($"Create New Node Scripts.../Decorator Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[2]));
+    public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+    {
+        base.BuildContextualMenu(evt);
+        evt.menu.AppendAction($"Create New Node Scripts.../Action Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[0]));
+        evt.menu.AppendAction($"Create New Node Scripts.../Composite Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[1]));
+        evt.menu.AppendAction($"Create New Node Scripts.../Decorator Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[2]));
 
-    //     {
-    //         var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
-    //         foreach (var type in types)
-    //         {
-    //             evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
-    //         }
-    //     }
+        // {
+        //     var types = TypeCache.GetTypesDerivedFrom<ActionNode>();
+        //     foreach (var type in types)
+        //     {
+        //         evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
+        //     }
+        // }
 
-    //     {
-    //         var types = TypeCache.GetTypesDerivedFrom<CompositeNode>();
-    //         foreach (var type in types)
-    //         {
-    //             evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
-    //         }
-    //     }
+        // {
+        //     var types = TypeCache.GetTypesDerivedFrom<CompositeNode>();
+        //     foreach (var type in types)
+        //     {
+        //         evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
+        //     }
+        // }
 
-    //     {
-    //         var types = TypeCache.GetTypesDerivedFrom<DecoratorNode>();
-    //         foreach (var type in types)
-    //         {
-    //             evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
-    //         }
-    //     }
-    // }
+        // {
+        //     var types = TypeCache.GetTypesDerivedFrom<DecoratorNode>();
+        //     foreach (var type in types)
+        //     {
+        //         evt.menu.AppendAction($"{type.BaseType.Name}/{type.Name}", (a) => CreateNode(type));
+        //     }
+        // }
+    }
 
     void CreateNodeScript(ScriptTemplate scriptTemplate)
     {

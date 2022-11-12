@@ -23,6 +23,7 @@ public abstract class Node : ScriptableObject
 
     [Header("Editor component")]
     public Vector2 position;
+    [TextArea(5, 5)] public string description;
 
     public State Update() 
     {

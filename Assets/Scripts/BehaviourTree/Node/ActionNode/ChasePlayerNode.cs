@@ -10,6 +10,7 @@ public class ChasePlayerNode : ActionNode
         ChasePlayerNode node = copyNode as ChasePlayerNode;
         if (node != null)
         {
+            description = node.description;
             velocity = node.velocity;
         }
     }

@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class #SCRIPTNAME# : ActionNode
 {
+    public override void CopyNode(ActionNode copyNode)
+    {
+        #SCRIPTNAME# node = copyNode as #SCRIPTNAME#;
+        if (node)
+        {
+            
+        }
+    }
+    
     protected override void OnStart()
     {
 

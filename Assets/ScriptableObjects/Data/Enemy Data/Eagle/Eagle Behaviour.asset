@@ -17,6 +17,7 @@ MonoBehaviour:
   guid: 783394ca70e48c348b1dce9528c3fc51
   player: {fileID: 0}
   position: {x: 255.19997, y: -95.30004}
+  description: 
   child: {fileID: -7810451963931631073}
 --- !u!114 &-7810451963931631073
 MonoBehaviour:
@@ -35,6 +36,7 @@ MonoBehaviour:
   guid: d3cb53ca93025244b87f75be9194a84b
   player: {fileID: 0}
   position: {x: 289.6, y: 30.399992}
+  description: 
   children:
   - {fileID: 2452479540924689487}
   - {fileID: -3125611133437655390}
@@ -56,6 +58,7 @@ MonoBehaviour:
   guid: 56b51cf81da8e4647b57eb609e655927
   player: {fileID: 0}
   position: {x: 621.3374, y: 236.79999}
+  description: 
   velocity: 4
 --- !u!114 &-6218914349101890691
 MonoBehaviour:
@@ -74,6 +77,7 @@ MonoBehaviour:
   guid: c126d0466e1146d45a223afc2e15fea4
   player: {fileID: 0}
   position: {x: 58.18993, y: -233.8815}
+  description: 
   child: {fileID: -9151638642705423950}
 --- !u!114 &-6203502855542019463
 MonoBehaviour:
@@ -92,7 +96,9 @@ MonoBehaviour:
   guid: e4b1192e4d707234c9404ac6f50c37da
   player: {fileID: 0}
   position: {x: -118.400024, y: 425.82144}
-  seeDistance: 7
+  description: In See Distance
+  seeRange: 7
+  rangeType: 0
 --- !u!114 &-3125611133437655390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,6 +116,7 @@ MonoBehaviour:
   guid: d1610746852b86a42a92999e395ed3f5
   player: {fileID: 0}
   position: {x: 440, y: 107.91998}
+  description: 
   children:
   - {fileID: -117225712488800827}
   - {fileID: -6688192585837815559}
@@ -131,6 +138,7 @@ MonoBehaviour:
   guid: b6ac02ecd2931f24bbffe059256b2ab1
   player: {fileID: 0}
   position: {x: 150.4, y: 413.45502}
+  description: 
   pointWays:
   - {x: 0, y: 8}
   - {x: 8, y: 8}
@@ -152,7 +160,9 @@ MonoBehaviour:
   guid: 01ba5d26fa5557447b93a56e39f984d7
   player: {fileID: 0}
   position: {x: 419.99997, y: 236.79994}
-  seeDistance: 6
+  description: In See Distance
+  seeRange: 7
+  rangeType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,6 +207,7 @@ MonoBehaviour:
   guid: 7a48c48cea95cfc4e8ee32a8e733b6bd
   player: {fileID: 0}
   position: {x: 37.600006, y: 116.799995}
+  description: 
   children:
   - {fileID: 5874492694867635175}
   - {fileID: -1537149065156260487}
@@ -219,6 +230,7 @@ MonoBehaviour:
   guid: 7ab7f8a5c880bf842b1c45327f29dedd
   player: {fileID: 0}
   position: {x: 345.19998, y: 456.80005}
+  description: 
   duration: 1
 --- !u!114 &5874492694867635175
 MonoBehaviour:
@@ -237,4 +249,5 @@ MonoBehaviour:
   guid: 78a7d9d49d1db6d43892af87799156e5
   player: {fileID: 0}
   position: {x: -92.00007, y: 256.0001}
+  description: 
   child: {fileID: -6203502855542019463}

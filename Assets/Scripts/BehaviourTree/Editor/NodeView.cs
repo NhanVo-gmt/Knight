@@ -13,6 +13,8 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     public Port input;
     public Port output;
 
+    DescriptionView descriptionView;
+
     public NodeView(Node node) : base("Assets/Game/UI/UI Builder/NodeView.uxml")
     {
         this.node = node;
@@ -22,9 +24,17 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         style.left = node.position.x;
         style.top = node.position.y;
 
+        SetUpDescriptionView(node);
+
         SetUpClasses();
         CreateInputPorts();
         CreateOutputPorts();
+    }
+
+    void SetUpDescriptionView(Node node)
+    {
+        descriptionView = this.Q<DescriptionView>();
+        descriptionView.text = node.description;
     }
 
     private void SetUpClasses()
@@ -163,5 +173,10 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
                 }
             }
         }
+    }
+
+    public void UpdateDescription()
+    {
+        descriptionView.UpdateText(node.description);
     }
 }

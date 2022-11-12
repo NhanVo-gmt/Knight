@@ -14,6 +14,7 @@ public class WaitNode : ActionNode
         WaitNode node = copyNode as WaitNode;
         if (node != null)
         {
+            description = node.description;
             duration = node.duration;
         }
     }

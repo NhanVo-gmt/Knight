@@ -15,6 +15,7 @@ public class PatrolNode : ActionNode
         PatrolNode node = copyNode as PatrolNode;
         if (node != null)
         {
+            description = node.description;
             pointWays = node.pointWays;
             velocity = node.velocity;
         }

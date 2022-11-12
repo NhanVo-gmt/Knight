@@ -9,6 +9,7 @@ public class BehaviourTreeEditor : EditorWindow
 {
     BehaviourTreeGraphView treeGraphView;
     InspectorView inspectorView;
+    [NonSerialized] NodeView selectedNodeView;
     
     [MenuItem("Knight/BehaviourTreeEditor")]
     public static void OpenWindow()
@@ -120,6 +121,7 @@ public class BehaviourTreeEditor : EditorWindow
     void OnNodeSelectionChange(NodeView nodeView)
     {
         inspectorView.UpdateSelection(nodeView);
+        selectedNodeView = nodeView;
     }
 
     private void OnInspectorUpdate() {
@@ -130,6 +132,11 @@ public class BehaviourTreeEditor : EditorWindow
         if (!Application.isPlaying)
         {
             inspectorView.DrawGizmos();
+
+            if (selectedNodeView != null)
+            {
+                selectedNodeView.UpdateDescription();
+            }
         }
     }
 }
