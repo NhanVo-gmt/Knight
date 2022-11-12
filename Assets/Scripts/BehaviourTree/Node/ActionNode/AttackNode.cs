@@ -1,14 +1,21 @@
 using UnityEngine;
 
-public class #SCRIPTNAME# : ActionNode
+public class AttackNode : ActionNode
 {
+    int attackId = Animator.StringToHash("Attack");
+    
     public override void CopyNode(ActionNode copyNode)
     {
-        #SCRIPTNAME# node = copyNode as #SCRIPTNAME#;
+        AttackNode node = copyNode as AttackNode;
         if (node)
         {
             description = node.description;
         }
+    }
+
+    protected override void PlayAnimation()
+    {
+        anim.Play(attackId);
     }
     
     protected override void OnStart()
@@ -25,6 +32,6 @@ public class #SCRIPTNAME# : ActionNode
     {
         return State.SUCCESS;
     }
-    #NOTRIM#
+    
 
 }

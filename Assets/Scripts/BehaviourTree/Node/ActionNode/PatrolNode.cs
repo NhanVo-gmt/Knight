@@ -7,7 +7,6 @@ public class PatrolNode : ActionNode
 
     int currentIndex = -1;
     
-    
     int moveId = Animator.StringToHash("Move");
 
     public override void CopyNode(ActionNode copyNode)

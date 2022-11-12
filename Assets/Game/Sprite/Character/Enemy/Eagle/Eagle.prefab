@@ -10,9 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6488310136170028764}
   - component: {fileID: 5988470668553201580}
-  - component: {fileID: 4657261669327438310}
   - component: {fileID: 3156493811277436023}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Eagle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,19 +47,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: eabb45f1bdb0b1c4eacb5bf2f0df194d, type: 2}
---- !u!114 &4657261669327438310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 386617534574471175}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b08d5d09b3cd1ce4986a6780eb81c575, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: ad6a6fe0d98c3e446af356fd3de03d4b, type: 2}
 --- !u!50 &3156493811277436023
 Rigidbody2D:
   serializedVersion: 4
@@ -92,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 190524021494908441}
   - component: {fileID: 702101483347611990}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -142,7 +128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2533361832005850062}
   - component: {fileID: 8573603792781105160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -187,7 +173,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6827859659320678892}
   - component: {fileID: 7607182313266462871}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: VFX Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -232,7 +218,7 @@ GameObject:
   - component: {fileID: 1705482578931508166}
   - component: {fileID: 5306407359637421087}
   - component: {fileID: 5181967173716056792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Combat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5803266725917405910}
   - component: {fileID: 3705017905867260109}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Movement
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +334,7 @@ GameObject:
   - component: {fileID: 980633131032976294}
   - component: {fileID: 4252319096892053627}
   - component: {fileID: 851317850226338276}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Anim Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
