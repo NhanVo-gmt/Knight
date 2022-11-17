@@ -13,7 +13,7 @@ public class RecoveryController : CoreComponent
     
     private bool isInvulnerable = false;
     float hitTime;
-    bool canRecover;
+    bool canRecover = true;
 
     public void SetHitData(HitData hitData)
     {
