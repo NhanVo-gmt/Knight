@@ -13,4 +13,5 @@ public class MeleeAttackData : AttackData
     public Vector2 downAttackPos;
 
     public float radius;
+    public float moveVelocity;
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   started: 1
   guid: 783394ca70e48c348b1dce9528c3fc51
   player: {fileID: 0}
-  position: {x: 255.19997, y: -95.30004}
+  position: {x: 132.8001, y: -117.978714}
   description: 
   child: {fileID: -7810451963931631073}
 --- !u!114 &-7810451963931631073
@@ -35,7 +35,7 @@ MonoBehaviour:
   started: 1
   guid: d3cb53ca93025244b87f75be9194a84b
   player: {fileID: 0}
-  position: {x: 289.6, y: 30.399992}
+  position: {x: 255.20004, y: -6.3999863}
   description: 
   children:
   - {fileID: 2452479540924689487}

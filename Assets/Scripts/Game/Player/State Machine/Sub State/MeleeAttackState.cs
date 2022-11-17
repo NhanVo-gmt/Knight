@@ -10,6 +10,13 @@ public class MeleeAttackState : AttackState
 
     }
 
+    public override void Exit()
+    {
+        base.Exit();
+
+        movement.SetVelocityZero();
+    }
+
 
     public override void AnimationTrigger()
     {
@@ -22,6 +29,8 @@ public class MeleeAttackState : AttackState
     private void Attack()
     {
         combat.MeleeAttack(data.meleeAttackData);
+
+        movement.SetVelocityX(movement.direction.x * data.meleeAttackData.moveVelocity);
 
         player.inputManager.UseMeleeAttackInput();
     }
