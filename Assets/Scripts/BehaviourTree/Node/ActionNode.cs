@@ -13,8 +13,33 @@ public abstract class ActionNode : Node
     protected override void OnStart()
     {
         PlayAnimation();
+        AddAnimationEvent();
+    }
+
+    protected override void OnStop()
+    {
+        RemoveAnimationEvent();
     }
 
     protected virtual void PlayAnimation(){}
     public abstract void CopyNode(ActionNode copyNode);
+
+#region Animation Event
+
+    protected void AddAnimationEvent()
+    {
+        anim.onAnimationTrigger += AnimationTrigger;
+        anim.onAnimationFinishTrigger += AnimationFinishTrigger;
+    }
+
+    protected void RemoveAnimationEvent()
+    {
+        anim.onAnimationTrigger -= AnimationTrigger;
+        anim.onAnimationFinishTrigger -= AnimationFinishTrigger;
+    }
+
+    protected virtual void AnimationTrigger(){}
+    protected virtual void AnimationFinishTrigger(){}
+
+#endregion
 }

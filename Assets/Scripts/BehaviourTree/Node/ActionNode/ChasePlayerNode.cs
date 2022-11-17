@@ -3,6 +3,7 @@ using UnityEngine;
 public class ChasePlayerNode : ActionNode
 {
     [SerializeField] float velocity;
+    [SerializeField] float stoppingDistance;
 
     
     public override void CopyNode(ActionNode copyNode)
@@ -12,6 +13,7 @@ public class ChasePlayerNode : ActionNode
         {
             description = node.description;
             velocity = node.velocity;
+            stoppingDistance = node.stoppingDistance;
         }
     }
     
@@ -27,6 +29,11 @@ public class ChasePlayerNode : ActionNode
 
     protected override State OnUpdate()
     {
+        if (IsAtStoppingDistance())
+        {
+            return State.SUCCESS;
+        }
+
         ChasePlayer();
         return State.RUNNING;
     }
@@ -52,11 +59,26 @@ public class ChasePlayerNode : ActionNode
         }
     }
 
+    bool IsAtStoppingDistance()
+    {
+        if (Mathf.Abs(Vector2.SqrMagnitude(treeComponent.transform.position - player.transform.position)) < stoppingDistance * stoppingDistance)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
 
     public override void Abort()
     {
         base.Abort();
 
         movement.SetVelocityZero();
+    }
+
+    public override void DrawGizmos()
+    {
+        BehaviourTreeDrawingGizmos.DrawWireSphere(stoppingDistance);
     }
 }

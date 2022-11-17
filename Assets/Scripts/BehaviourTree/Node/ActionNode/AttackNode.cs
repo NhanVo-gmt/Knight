@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class AttackNode : ActionNode
 {
+    Node.State currentNodeState;
+    
     int attackId = Animator.StringToHash("Attack");
     
     public override void CopyNode(ActionNode copyNode)
@@ -20,7 +22,7 @@ public class AttackNode : ActionNode
     
     protected override void OnStart()
     {
-
+        currentNodeState = State.RUNNING;
     }
 
     protected override void OnStop()
@@ -30,8 +32,25 @@ public class AttackNode : ActionNode
 
     protected override State OnUpdate()
     {
-        return State.SUCCESS;
+        return currentNodeState;
     }
     
+    void Attack() 
+    {
+        
+    }
 
+#region Animation Event
+
+    protected override void AnimationTrigger()
+    {
+        Attack();
+    }
+
+    protected override void AnimationFinishTrigger()
+    {
+        currentNodeState = State.SUCCESS;
+    }
+
+#endregion
 }

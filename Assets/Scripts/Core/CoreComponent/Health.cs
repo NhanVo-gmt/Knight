@@ -5,29 +5,22 @@ using System;
 
 public class Health : CoreComponent
 {
-    [SerializeField] HealthData healthData; //todo set private
-    HitData hitData;
+    [SerializeField] int health; //todo set private
 
-    public Action onRecover;
     public Action onTakeDamage;
     public Action onDie;
     public Action<int> onUpdateHealth;
 
+    RecoveryController recoveryController;
+
     private bool isDie = false;
-    private bool isInvulnerable;
-    float hitTime;
 
     #region Set up
     
     public void SetHealth(HealthData data)
     {
-        this.healthData = Instantiate(data);
-        onUpdateHealth?.Invoke(healthData.health);
-    }
-
-    public void SetHitData(HitData hitData)
-    {
-        this.hitData = hitData;
+        health = data.health;
+        onUpdateHealth?.Invoke(health);
     }
 
     #endregion
@@ -35,32 +28,19 @@ public class Health : CoreComponent
     protected override void Awake() 
     {
         base.Awake();
-    }
 
-    void Update() 
-    {
-        Recover();
-    }
-
-    void Recover()
-    {
-        if (!IsInInvulnerabiltyTime() || isDie) return;
-
-        if (hitTime + hitData.invulnerableTime < Time.time)
-        {
-            isInvulnerable = false;
-            onRecover?.Invoke();
-        }
+        recoveryController = GetComponent<RecoveryController>();
     }
     
     public void TakeDamage(AttackData attackData)
     {
-        if (healthData.health <= 0 || isInvulnerable) return;
+        if (health <= 0 || IsInvulnerable()) return;
 
-        healthData.health -= attackData.damage;
-        onUpdateHealth?.Invoke(healthData.health);
+        health -= attackData.damage;
 
-        if (healthData.health > 0)
+        onUpdateHealth?.Invoke(health);
+
+        if (health > 0)
         {
             TakeDamage();
         }
@@ -70,10 +50,13 @@ public class Health : CoreComponent
         }
     }
 
+    bool IsInvulnerable() 
+    {
+        return recoveryController != null && recoveryController.IsInInvulnerabiltyTime();
+    }
+
     void TakeDamage()
     {
-        hitTime = Time.time;
-        isInvulnerable = true;
         onTakeDamage?.Invoke();
     }
 
@@ -81,15 +64,5 @@ public class Health : CoreComponent
     {
         isDie = true;
         onDie?.Invoke();
-    }
-
-    public bool IsInInvulnerabiltyTime()
-    {
-        return isInvulnerable;
-    }
-
-    public int GetHealth()
-    {
-        return healthData.health;
     }
 }

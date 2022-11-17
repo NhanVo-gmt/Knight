@@ -38,8 +38,8 @@ MonoBehaviour:
   position: {x: 255.20004, y: -6.3999863}
   description: 
   children:
-  - {fileID: 2452479540924689487}
-  - {fileID: -3125611133437655390}
+  - {fileID: 1141545000312419500}
+  - {fileID: -6240116989424804712}
   currentIndex: 0
 --- !u!114 &-6688192585837815559
 MonoBehaviour:
@@ -57,9 +57,30 @@ MonoBehaviour:
   started: 0
   guid: 56b51cf81da8e4647b57eb609e655927
   player: {fileID: 0}
-  position: {x: 621.3374, y: 236.79999}
+  position: {x: 391.94788, y: 236.79996}
   description: 
   velocity: 4
+  stoppingDistance: 2.5
+--- !u!114 &-6240116989424804712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 53cc01296984891469dd0d0d308bdba2
+  player: {fileID: 0}
+  position: {x: 392.00006, y: 107.19988}
+  description: 
+  children:
+  - {fileID: -6688192585837815559}
 --- !u!114 &-6218914349101890691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,30 +118,8 @@ MonoBehaviour:
   player: {fileID: 0}
   position: {x: -118.400024, y: 425.82144}
   description: In See Distance
-  seeRange: 7
+  seeRange: 8
   rangeType: 0
---- !u!114 &-3125611133437655390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
-  m_Name: DepSequencerNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: d1610746852b86a42a92999e395ed3f5
-  player: {fileID: 0}
-  position: {x: 440, y: 107.91998}
-  description: 
-  children:
-  - {fileID: -117225712488800827}
-  - {fileID: -6688192585837815559}
-  currentIndex: -1
 --- !u!114 &-1537149065156260487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,26 +142,6 @@ MonoBehaviour:
   - {x: 0, y: 8}
   - {x: 8, y: 8}
   velocity: 3
---- !u!114 &-117225712488800827
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b9d303daa1e73347910ea8d408600ba, type: 3}
-  m_Name: SeePlayerNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 01ba5d26fa5557447b93a56e39f984d7
-  player: {fileID: 0}
-  position: {x: 419.99997, y: 236.79994}
-  description: In See Distance
-  seeRange: 7
-  rangeType: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +158,6 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: -6218914349101890691}
-  - {fileID: 2452479540924689487}
   - {fileID: -6203502855542019463}
   - {fileID: -6688192585837815559}
   - {fileID: -1537149065156260487}
@@ -187,10 +165,10 @@ MonoBehaviour:
   - {fileID: -9151638642705423950}
   - {fileID: -7810451963931631073}
   - {fileID: 3381676561126460707}
-  - {fileID: -3125611133437655390}
-  - {fileID: -117225712488800827}
+  - {fileID: 1141545000312419500}
+  - {fileID: -6240116989424804712}
   offset: {x: 300, y: 0}
---- !u!114 &2452479540924689487
+--- !u!114 &1141545000312419500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,20 +177,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
-  m_Name: DepSequencerNode
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
   m_EditorClassIdentifier: 
   state: 0
-  started: 1
-  guid: 7a48c48cea95cfc4e8ee32a8e733b6bd
+  started: 0
+  guid: 9713e25a2e6a0e94685a2d447bfabe93
   player: {fileID: 0}
-  position: {x: 37.600006, y: 116.799995}
+  position: {x: 58.400005, y: 106.80701}
   description: 
   children:
   - {fileID: 5874492694867635175}
   - {fileID: -1537149065156260487}
   - {fileID: 3381676561126460707}
-  currentIndex: 1
 --- !u!114 &3381676561126460707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -229,7 +206,7 @@ MonoBehaviour:
   started: 0
   guid: 7ab7f8a5c880bf842b1c45327f29dedd
   player: {fileID: 0}
-  position: {x: 345.19998, y: 456.80005}
+  position: {x: 330.80005, y: 413.6}
   description: 
   duration: 1
 --- !u!114 &5874492694867635175

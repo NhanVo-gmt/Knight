@@ -10,6 +10,7 @@ public class Combat : CoreComponent, IDamageable
     IDamageable.DamagerType damagerType;
     Movement movement;
     Health health;
+    RecoveryController recoveryController;
 
 
     Vector2 attackPosition;
@@ -33,18 +34,6 @@ public class Combat : CoreComponent, IDamageable
     {
         movement = core.GetCoreComponent<Movement>();
         health = core.GetCoreComponent<Health>();
-
-        health.onRecover += EnableCollider;
-        health.onTakeDamage += DisableCollider;
-        health.onDie += DisableCollider;   
-    }
-
-
-    void OnDisable() 
-    {
-        health.onRecover -= EnableCollider;
-        health.onTakeDamage -= DisableCollider;
-        health.onDie -= DisableCollider;
     }
     
     #endregion
@@ -96,7 +85,7 @@ public class Combat : CoreComponent, IDamageable
 
     public IDamageable.DamagerType GetDamagerType()
     {
-        return IDamageable.DamagerType.Player;
+        return damagerType;
     }
 
     public void TakeDamage(AttackData attackData, IDamageable.DamagerType damagerType)
@@ -109,12 +98,12 @@ public class Combat : CoreComponent, IDamageable
 
     #region Collider
 
-    private void EnableCollider()
+    public void EnableCollider()
     {
         col.enabled = true;
     }
 
-    private void DisableCollider()
+    public void DisableCollider()
     {
         col.enabled = false;
     }
