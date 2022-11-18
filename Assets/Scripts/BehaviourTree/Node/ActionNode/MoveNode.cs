@@ -8,6 +8,12 @@ public class MoveNode : ActionNode
         backward
     }
 
+    enum Target
+    {
+        none,
+        Player
+    }
+
     enum StopType
     {
         none,
@@ -16,9 +22,12 @@ public class MoveNode : ActionNode
     
     [SerializeField] float velocity;
     [SerializeField] float moveTime;
+    [SerializeField] Target target;
     [SerializeField] MoveType moveType;
+    [SerializeField] StopType stopType;
 
     float startTime;
+    Vector2 moveDirection;
     
     public override void CopyNode(ActionNode copyNode)
     {
@@ -36,7 +45,27 @@ public class MoveNode : ActionNode
     {
         startTime = 0;
 
-        Move();
+        moveDirection = GetLastDirectionFromType();
+    }
+
+    Vector2 GetLastDirectionFromType()
+    {
+        Vector2 direction = Vector2.zero;
+        if (target == Target.Player)
+        {
+            direction = player.transform.position - treeComponent.transform.position;
+        }
+        else
+        {
+            direction = movement.direction;
+        }
+
+        if (moveType == MoveType.backward)
+        {
+            direction = -direction;
+        }
+
+        return direction.normalized;
     }
 
     void Move() 
@@ -44,6 +73,10 @@ public class MoveNode : ActionNode
         if (!treeComponent.data.isFlying)
         {
             movement.SetVelocityX(velocity * movement.direction.x);
+        }
+        else
+        {
+            movement.SetVelocity(velocity * moveDirection);
         }
     }
 
@@ -54,6 +87,8 @@ public class MoveNode : ActionNode
 
     protected override State OnUpdate()
     {
+        Move();
+        
         startTime += Time.deltaTime;
         if (startTime >= moveTime)
         {

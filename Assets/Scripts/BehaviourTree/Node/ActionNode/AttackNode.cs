@@ -22,12 +22,14 @@ public class AttackNode : ActionNode
     
     protected override void OnStart()
     {
+        base.OnStart();
+
         currentNodeState = State.RUNNING;
     }
 
     protected override void OnStop()
     {
-
+        base.OnStop();
     }
 
     protected override State OnUpdate()

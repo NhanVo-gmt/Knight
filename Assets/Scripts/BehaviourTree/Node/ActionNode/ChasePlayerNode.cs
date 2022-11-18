@@ -5,6 +5,7 @@ public class ChasePlayerNode : ActionNode
     [SerializeField] float velocity;
     [SerializeField] float stoppingDistance;
 
+    int moveId = Animator.StringToHash("Move");
     
     public override void CopyNode(ActionNode copyNode)
     {
@@ -16,15 +17,20 @@ public class ChasePlayerNode : ActionNode
             stoppingDistance = node.stoppingDistance;
         }
     }
+
+    protected override void PlayAnimation()
+    {
+        anim.Play(moveId);
+    }
     
     protected override void OnStart()
     {
-
+        base.OnStart();
     }
 
     protected override void OnStop()
     {
-
+        movement.SetVelocityZero();
     }
 
     protected override State OnUpdate()
