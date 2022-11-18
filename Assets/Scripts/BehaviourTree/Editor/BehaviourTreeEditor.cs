@@ -101,18 +101,21 @@ public class BehaviourTreeEditor : EditorWindow
             }
         }
 
-        if (Application.isPlaying)
+        if (treeGraphView != null)
         {
-            if (tree != null)
+            if (Application.isPlaying)
             {
-                treeGraphView.PopulateView(tree, this);
+                if (tree != null)
+                {
+                    treeGraphView.PopulateView(tree, this);
+                }
             }
-        }
-        else
-        {
-            if (tree != null && AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID()))
+            else
             {
-                treeGraphView.PopulateView(tree, this);
+                if (tree != null && AssetDatabase.CanOpenAssetInEditor(tree.GetInstanceID()))
+                {
+                    treeGraphView.PopulateView(tree, this);
+                }
             }
         }
         

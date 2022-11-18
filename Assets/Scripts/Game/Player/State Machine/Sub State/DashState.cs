@@ -26,6 +26,8 @@ public class DashState : AbilityState
         movement.SetVelocityX(movement.direction.x * data.dashData.initialVelocity);
 
         SpawnVFX();
+
+        combat.DisableCollider();
     }
 
     private void SpawnVFX()
@@ -37,6 +39,8 @@ public class DashState : AbilityState
     {
         movement.SetVelocityZero();
         movement.SetGravityNormal();
+
+        combat.EnableCollider();
         
         base.Exit();
     }
