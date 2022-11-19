@@ -311,7 +311,7 @@ MonoBehaviour:
   position: {x: 627.99994, y: 348.80002}
   description: 
   velocity: {x: 6, y: 6}
-  moveTime: 10
+  moveTime: 2
   moveType: 1
   moveDirectionType: 0
   stopType: 0
