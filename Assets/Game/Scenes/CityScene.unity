@@ -7798,6 +7798,7 @@ GameObject:
   - component: {fileID: 236734514}
   - component: {fileID: 236734513}
   - component: {fileID: 236734516}
+  - component: {fileID: 236734517}
   m_Layer: 0
   m_Name: Anim Controller
   m_TagString: Untagged
@@ -7904,6 +7905,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0228f965f86fa7044afe6a133e377a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &236734517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 236734512}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb7be27e39ecb24db7090da8f6305a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 1
+  blinkTime: 0.2
 --- !u!1 &269466989
 GameObject:
   m_ObjectHideFlags: 0
@@ -37849,6 +37864,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1859434358 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7111299771381119479, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+  m_PrefabInstance: {fileID: 797295344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1859434363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859434358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba68c8a74072904db8d7b7113049ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cooldown: 0.3
 --- !u!1 &1903646489
 GameObject:
   m_ObjectHideFlags: 0

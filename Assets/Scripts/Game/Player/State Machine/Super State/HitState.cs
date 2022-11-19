@@ -16,8 +16,6 @@ public class HitState : State
         base.Enter();
         
         movement.SetVelocityZero();
-
-        anim.StartBlinking(data.hitData.invulnerableTime, data.hitData.blinkCooldown);
     }
 
     public override void Exit()

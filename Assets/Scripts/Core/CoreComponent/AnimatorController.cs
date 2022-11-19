@@ -9,17 +9,41 @@ public class AnimatorController : CoreComponent
     public Action onAnimationTrigger;
     public Action onAnimationFinishTrigger;
 
-    Coroutine blinkingCoroutine;
+    Health health;
 
     Animator anim;
-    SpriteRenderer sprite;
+    BlinkingEffect blinkingEffect;
+    FlashingEffect flashingEffect;
 
     protected override void Awake() 
     {
         base.Awake();
         
         anim = GetComponent<Animator>();
-        sprite = GetComponent<SpriteRenderer>();
+        blinkingEffect = GetComponent<BlinkingEffect>();
+        flashingEffect = GetComponent<FlashingEffect>();
+    }
+
+    void Start() 
+    {
+        health = core.GetCoreComponent<Health>();
+        AddEvent();
+    }
+
+    void AddEvent()
+    {
+        health.onTakeDamage += StartBlinking;
+        health.onTakeDamage += StartFlashing;
+    }
+
+    private void OnDisable() {
+        RemoveEvent();
+    }
+
+    void RemoveEvent()
+    {
+        health.onTakeDamage -= StartBlinking;
+        health.onTakeDamage -= StartFlashing;
     }
     
 #region Animation
@@ -41,36 +65,20 @@ public class AnimatorController : CoreComponent
 
 #endregion
 
-#region Sprite
+#region Effect
 
-    public void StartBlinking(float cooldown, float blinkTime)
+    public void StartBlinking()
     {
-        StopBlinking();
-        blinkingCoroutine = StartCoroutine(Blinking(cooldown, blinkTime));
+        if (blinkingEffect == null) return;
+
+        blinkingEffect.StartBlinking();
     }
 
-    IEnumerator Blinking(float cooldown, float blinkTime)
+    public void StartFlashing()
     {
-        float startTime = Time.time;
-
-        while (startTime + cooldown > Time.time)
-        {
-            sprite.enabled = !sprite.enabled;
-            yield return new WaitForSeconds(blinkTime);
-        }
-
-        yield return null;
-
-        sprite.enabled = true;
-    }
-
-    void StopBlinking()
-    {
-        if (blinkingCoroutine != null)
-        {
-            StopCoroutine(blinkingCoroutine);
-            sprite.enabled = true;
-        }
+        if (flashingEffect == null) return;
+        
+        flashingEffect.StartFlashing();
     }
 
 #endregion
