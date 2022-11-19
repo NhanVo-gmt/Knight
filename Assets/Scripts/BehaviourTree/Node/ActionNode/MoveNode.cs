@@ -29,6 +29,7 @@ public class MoveNode : ActionNode
     [SerializeField] MoveType moveType;
     [SerializeField] MoveDirection moveDirectionType;
     [SerializeField] StopType stopType;
+    [SerializeField] LayerMask stopLayerMask;
     [SerializeField] bool changeFaceDirection = true;
 
     float startTime;
@@ -123,7 +124,7 @@ public class MoveNode : ActionNode
         Move();
         
         startTime += Time.deltaTime;
-        if (startTime >= moveTime || collisionChecker.isGround)
+        if (startTime >= moveTime || HitLayerMask())
         {
             return State.SUCCESS;
         }
@@ -131,5 +132,16 @@ public class MoveNode : ActionNode
         return State.RUNNING;
     }
     
+    bool HitLayerMask()
+    {
+        if (stopLayerMask == LayerMask.GetMask("Ground"))
+        {
+            if (collisionChecker.isGround)
+            {
+                return true;
+            }
+        }
 
+        return false;
+    }
 }

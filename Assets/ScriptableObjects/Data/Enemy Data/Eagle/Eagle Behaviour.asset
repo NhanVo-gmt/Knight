@@ -124,6 +124,7 @@ MonoBehaviour:
   - {fileID: -6688192585837815559}
   - {fileID: -6749613914564626028}
   - {fileID: -6810755991130197884}
+  - {fileID: 1079204878620802271}
   - {fileID: -901495140921938067}
   - {fileID: -4047469944879986513}
 --- !u!114 &-6218914349101890691
@@ -181,7 +182,7 @@ MonoBehaviour:
   started: 0
   guid: ed0d0cadc2b147242ac5548a4499acbf
   player: {fileID: 0}
-  position: {x: 1115.2283, y: 225.59999}
+  position: {x: 1374.9775, y: 236.79997}
   description: 'Get away from player
 
     Fly up'
@@ -190,6 +191,9 @@ MonoBehaviour:
   moveType: 2
   moveDirectionType: 1
   stopType: 0
+  stopLayerMask:
+    serializedVersion: 2
+    m_Bits: 0
   changeFaceDirection: 0
 --- !u!114 &-1537149065156260487
 MonoBehaviour:
@@ -229,7 +233,7 @@ MonoBehaviour:
   started: 0
   guid: a038264300d2e5845b27b07a0db23a2b
   player: {fileID: 0}
-  position: {x: 916.0001, y: 225.45003}
+  position: {x: 1164.1582, y: 236.79997}
   description: 
   duration: 0.5
 --- !u!114 &-248438505756792530
@@ -306,11 +310,14 @@ MonoBehaviour:
   player: {fileID: 0}
   position: {x: 627.99994, y: 348.80002}
   description: 
-  velocity: {x: 5, y: 5}
-  moveTime: 1
+  velocity: {x: 6, y: 6}
+  moveTime: 10
   moveType: 1
   moveDirectionType: 0
   stopType: 0
+  stopLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
   changeFaceDirection: 0
 --- !u!114 &1079204878620802271
 MonoBehaviour:
@@ -328,7 +335,7 @@ MonoBehaviour:
   started: 0
   guid: 50482cc09a9795e419d5870aa6299e8c
   player: {fileID: 0}
-  position: {x: 0, y: 0}
+  position: {x: 966.4, y: 236.80002}
   description: 
 --- !u!114 &3381676561126460707
 MonoBehaviour:

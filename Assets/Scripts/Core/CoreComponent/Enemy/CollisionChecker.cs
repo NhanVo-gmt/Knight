@@ -16,7 +16,7 @@ public class CollisionChecker : CoreComponent
 
     public bool isGround
     {
-        get => Physics2D.OverlapArea(groundCheck.position, groundCheckBox, groundMask);
+        get => Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0f, groundMask);
     }
 
     private void OnDrawGizmos() {
