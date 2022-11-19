@@ -4,14 +4,18 @@ public class MoveNode : ActionNode
 {
     enum MoveType
     {
-        forward,
-        backward
+        none,
+        forwardToPlayer,
+        backwardFromPlayer
     }
 
-    enum Target
+    enum MoveDirection
     {
         none,
-        Player
+        upward,
+        downward,
+        leftward,
+        rightward
     }
 
     enum StopType
@@ -20,14 +24,17 @@ public class MoveNode : ActionNode
         frictional
     }
     
-    [SerializeField] float velocity;
+    [SerializeField] Vector2 velocity;
     [SerializeField] float moveTime;
-    [SerializeField] Target target;
     [SerializeField] MoveType moveType;
+    [SerializeField] MoveDirection moveDirectionType;
     [SerializeField] StopType stopType;
+    [SerializeField] bool changeFaceDirection = true;
 
     float startTime;
     Vector2 moveDirection;
+
+    int moveId = Animator.StringToHash("Move");
     
     public override void CopyNode(ActionNode copyNode)
     {
@@ -38,7 +45,14 @@ public class MoveNode : ActionNode
             velocity = node.velocity;
             moveTime = node.moveTime;
             moveType = node.moveType;
+            stopType = node.stopType;
+            changeFaceDirection = node.changeFaceDirection;
         }
+    }
+
+    protected override void PlayAnimation()
+    {
+        anim.Play(moveId);
     }
     
     protected override void OnStart()
@@ -51,32 +65,51 @@ public class MoveNode : ActionNode
     Vector2 GetLastDirectionFromType()
     {
         Vector2 direction = Vector2.zero;
-        if (target == Target.Player)
+        
+        switch(moveType)
         {
-            direction = player.transform.position - treeComponent.transform.position;
-        }
-        else
-        {
-            direction = movement.direction;
+            case MoveType.forwardToPlayer:
+                direction = player.transform.position - treeComponent.transform.position;
+                break;
+            case MoveType.backwardFromPlayer:
+                direction = -(player.transform.position - treeComponent.transform.position);
+                break;
+            default:
+                break;
         }
 
-        if (moveType == MoveType.backward)
+        direction = direction.normalized;
+
+        switch(moveDirectionType)
         {
-            direction = -direction;
+            case MoveDirection.upward:
+                direction.y = 1;
+                break;
+            case MoveDirection.downward:
+                direction.y = -1;
+                break;
+            case MoveDirection.leftward:
+                direction.x = -1;
+                break;
+            case MoveDirection.rightward:
+                direction.x = 1;
+                break;
+            default:
+                break;
         }
 
-        return direction.normalized;
+        return direction;
     }
 
     void Move() 
     {
         if (!treeComponent.data.isFlying)
         {
-            movement.SetVelocityX(velocity * movement.direction.x);
+            movement.SetVelocityX(velocity.x * movement.faceDirection.x, changeFaceDirection);
         }
         else
         {
-            movement.SetVelocity(velocity * moveDirection);
+            movement.SetVelocity(velocity * moveDirection, changeFaceDirection);
         }
     }
 
@@ -90,7 +123,7 @@ public class MoveNode : ActionNode
         Move();
         
         startTime += Time.deltaTime;
-        if (startTime >= moveTime)
+        if (startTime >= moveTime || collisionChecker.isGround)
         {
             return State.SUCCESS;
         }

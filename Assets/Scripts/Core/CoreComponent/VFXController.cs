@@ -30,7 +30,7 @@ public class VFXController : CoreComponent
 
     void SetVFXPosition(GameObject vfx, VFXData data)
     { 
-        if (data.needPlayerDirection && movement.direction == Vector2.right)
+        if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
         {
             vfx.transform.position = new Vector2(-data.vfxSpawnPos.x, data.vfxSpawnPos.y);
         }
@@ -44,7 +44,7 @@ public class VFXController : CoreComponent
 
     void SetVFXRotation(GameObject vfx, VFXData data)
     {
-        if (data.needPlayerDirection && movement.direction == Vector2.right)
+        if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
         {
             vfx.transform.rotation = Quaternion.Euler(0, 180, 0);
         }

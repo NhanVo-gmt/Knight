@@ -41,25 +41,6 @@ MonoBehaviour:
   - {fileID: -248438505756792530}
   - {fileID: -6240116989424804712}
   currentIndex: 0
---- !u!114 &-7456172888143922243
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 879830d87be40f64dabc011e8c09fd7f, type: 3}
-  m_Name: WaitNode
-  m_EditorClassIdentifier: 
-  state: 0
-  started: 0
-  guid: 2810bba085ec9bd4e84892bbff4c0dab
-  player: {fileID: 0}
-  position: {x: 913.6484, y: 212.79999}
-  description: 
-  duration: 1
 --- !u!114 &-6810755991130197884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +101,7 @@ MonoBehaviour:
   position: {x: 317.2, y: 236.79999}
   description: 
   velocity: 3
-  stoppingDistance: 3
+  stoppingDistance: 4
 --- !u!114 &-6240116989424804712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,13 +118,14 @@ MonoBehaviour:
   started: 0
   guid: 53cc01296984891469dd0d0d308bdba2
   player: {fileID: 0}
-  position: {x: 628.00006, y: 50.56701}
+  position: {x: 665.6001, y: 37.85}
   description: 
   children:
   - {fileID: -6688192585837815559}
   - {fileID: -6749613914564626028}
   - {fileID: -6810755991130197884}
-  - {fileID: -7456172888143922243}
+  - {fileID: -901495140921938067}
+  - {fileID: -4047469944879986513}
 --- !u!114 &-6218914349101890691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +165,32 @@ MonoBehaviour:
   description: In See Distance
   seeRange: 8
   rangeType: 0
+--- !u!114 &-4047469944879986513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 407eb149c10ffae41b4a3b94904eb7d9, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: ed0d0cadc2b147242ac5548a4499acbf
+  player: {fileID: 0}
+  position: {x: 1115.2283, y: 225.59999}
+  description: 'Get away from player
+
+    Fly up'
+  velocity: {x: 2, y: 4}
+  moveTime: 1
+  moveType: 2
+  moveDirectionType: 1
+  stopType: 0
+  changeFaceDirection: 0
 --- !u!114 &-1537149065156260487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,6 +213,25 @@ MonoBehaviour:
   - {x: 0, y: 8}
   - {x: 8, y: 8}
   velocity: 3
+--- !u!114 &-901495140921938067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879830d87be40f64dabc011e8c09fd7f, type: 3}
+  m_Name: WaitNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: a038264300d2e5845b27b07a0db23a2b
+  player: {fileID: 0}
+  position: {x: 916.0001, y: 225.45003}
+  description: 
+  duration: 0.5
 --- !u!114 &-248438505756792530
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +284,9 @@ MonoBehaviour:
   - {fileID: -6810755991130197884}
   - {fileID: 767363544223392574}
   - {fileID: -248438505756792530}
-  - {fileID: -7456172888143922243}
+  - {fileID: -4047469944879986513}
+  - {fileID: -901495140921938067}
+  - {fileID: 1079204878620802271}
   offset: {x: 300, y: 0}
 --- !u!114 &767363544223392574
 MonoBehaviour:
@@ -275,13 +304,32 @@ MonoBehaviour:
   started: 0
   guid: d31e6a836430c014e9045b4969e18f19
   player: {fileID: 0}
-  position: {x: 628.0001, y: 332}
+  position: {x: 627.99994, y: 348.80002}
   description: 
-  velocity: 5
+  velocity: {x: 5, y: 5}
   moveTime: 1
-  target: 1
-  moveType: 0
+  moveType: 1
+  moveDirectionType: 0
   stopType: 0
+  changeFaceDirection: 0
+--- !u!114 &1079204878620802271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d9d9bdeeb776944932a937f8011095, type: 3}
+  m_Name: FacePlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 50482cc09a9795e419d5870aa6299e8c
+  player: {fileID: 0}
+  position: {x: 0, y: 0}
+  description: 
 --- !u!114 &3381676561126460707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -336,5 +384,5 @@ MonoBehaviour:
   started: 0
   guid: 9e91995c5fe507a498a2fd98f2a1f99e
   player: {fileID: 0}
-  position: {x: 803.71014, y: 331.7875}
+  position: {x: 815.99994, y: 348.8}
   description: 

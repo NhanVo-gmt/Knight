@@ -68,11 +68,11 @@ public class Combat : CoreComponent, IDamageable
 
     void SetAttackPosition(MeleeAttackData attackData)
     {
-        if (movement.direction == Vector2.left)
+        if (movement.faceDirection == Vector2.left)
         {
             attackPosition = (Vector2)transform.position + attackData.leftAttackPos;
         }
-        else if (movement.direction == Vector2.right)
+        else if (movement.faceDirection == Vector2.right)
         {
             attackPosition = (Vector2)transform.position + attackData.rightAttackPos;
         }

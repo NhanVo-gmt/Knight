@@ -30,7 +30,7 @@ public class MeleeAttackState : AttackState
     {
         combat.MeleeAttack(data.meleeAttackData);
 
-        movement.SetVelocityX(movement.direction.x * data.meleeAttackData.moveVelocity);
+        movement.SetVelocityX(movement.faceDirection.x * data.meleeAttackData.moveVelocity);
 
         player.inputManager.UseMeleeAttackInput();
     }

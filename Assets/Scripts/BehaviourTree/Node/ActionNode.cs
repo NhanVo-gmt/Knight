@@ -10,6 +10,9 @@ public abstract class ActionNode : Node
     protected AnimatorController anim { get => _anim ??= treeComponent.core.GetCoreComponent<AnimatorController>(); }
     private AnimatorController _anim;
 
+    protected CollisionChecker collisionChecker { get => _collisionChecker ??= treeComponent.core.GetCoreComponent<CollisionChecker>(); }
+    private CollisionChecker _collisionChecker;
+
     protected override void OnStart()
     {
         PlayAnimation();

@@ -9432,9 +9432,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Eagle
       objectReference: {fileID: 0}
-    - target: {fileID: 386617534574471175, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
+    - target: {fileID: 2611879044699638107, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6488310136170028764, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
       propertyPath: m_RootOrder
@@ -9442,11 +9442,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6488310136170028764, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.47
+      value: 5.48
       objectReference: {fileID: 0}
     - target: {fileID: 6488310136170028764, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.33
+      value: 4.45
       objectReference: {fileID: 0}
     - target: {fileID: 6488310136170028764, guid: 117b3d0af0ce02644842ad1b8cad1d94, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9548,7 +9548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &821228306
 Transform:
   m_ObjectHideFlags: 0

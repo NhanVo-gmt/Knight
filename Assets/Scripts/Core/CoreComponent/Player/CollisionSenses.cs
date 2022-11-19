@@ -33,7 +33,7 @@ public class CollisionSenses : CoreComponent
 
     public bool isClimableWallCheck
     {
-        get => Physics2D.Raycast(climableWallCheck.position, movement.direction, climableWallCheckDistance, climableMask);
+        get => Physics2D.Raycast(climableWallCheck.position, movement.faceDirection, climableWallCheckDistance, climableMask);
     }
 
     private void OnDrawGizmos() {

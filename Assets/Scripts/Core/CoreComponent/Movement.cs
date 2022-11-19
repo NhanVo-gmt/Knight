@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : CoreComponent
 {
     public Rigidbody2D rb {get; private set;} 
-    public Vector2 direction {get; private set;}
+    public Vector2 faceDirection {get; private set;}
 
     float gravityScale;
     
@@ -25,16 +25,22 @@ public class Movement : CoreComponent
 
     #region Velocity
 
-    public void SetVelocity(Vector2 velocity) 
+    public void SetVelocity(Vector2 velocity, bool needToChangeFaceDirection = true) 
     {
-        ChangeDirection(velocity.x);
+        if (needToChangeFaceDirection)
+        {
+            ChangeDirection(velocity.x);
+        }
 
         rb.velocity = velocity;
     }
 
-    public void SetVelocityX(float xVelocity)
+    public void SetVelocityX(float xVelocity, bool needToChangeFaceDirection = true)
     {
-        ChangeDirection(xVelocity);
+        if (needToChangeFaceDirection)
+        {
+            ChangeDirection(xVelocity);
+        }
         
         rb.velocity = new Vector2(xVelocity, rb.velocity.y);
     }
@@ -72,23 +78,23 @@ public class Movement : CoreComponent
 
     private void InitializeDirection()
     {
-        direction = Vector2.left;
+        faceDirection = Vector2.left;
     }
 
     public void ChangeDirection(float xInput)
     {
         if (xInput < 0)
         {
-            if (direction == Vector2.right) Flip();
+            if (faceDirection == Vector2.right) Flip();
             
-            direction = Vector2.left;
+            faceDirection = Vector2.left;
             
         }
         else if (xInput > 0)
         {
-            if (direction == Vector2.left) Flip();
+            if (faceDirection == Vector2.left) Flip();
             
-            direction = Vector2.right;
+            faceDirection = Vector2.right;
         }
     }
 

@@ -13,7 +13,6 @@ public class AnimatorController : CoreComponent
 
     Animator anim;
     SpriteRenderer sprite;
-    Player player;
 
     protected override void Awake() 
     {
@@ -21,8 +20,9 @@ public class AnimatorController : CoreComponent
         
         anim = GetComponent<Animator>();
         sprite = GetComponent<SpriteRenderer>();
-        player = GetComponentInParent<Player>();
     }
+    
+#region Animation
     
     public void Play(int id) 
     {
@@ -38,6 +38,10 @@ public class AnimatorController : CoreComponent
     {
         onAnimationFinishTrigger?.Invoke();
     }
+
+#endregion
+
+#region Sprite
 
     public void StartBlinking(float cooldown, float blinkTime)
     {
@@ -68,4 +72,6 @@ public class AnimatorController : CoreComponent
             sprite.enabled = true;
         }
     }
+
+#endregion
 }

@@ -23,7 +23,7 @@ public class DashState : AbilityState
 
         lastActiveTime = Time.time;
 
-        movement.SetVelocityX(movement.direction.x * data.dashData.initialVelocity);
+        movement.SetVelocityX(movement.faceDirection.x * data.dashData.initialVelocity);
 
         SpawnVFX();
 
@@ -49,7 +49,7 @@ public class DashState : AbilityState
     {
         base.LogicsUpdate();
 
-        if (player.inputManager.movementInput.x * movement.direction.x == -1)
+        if (player.inputManager.movementInput.x * movement.faceDirection.x == -1)
         {
             if (collisionSenses.isGround)
             {
