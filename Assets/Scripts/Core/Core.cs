@@ -5,7 +5,7 @@ using System.Linq;
 
 public class Core : MonoBehaviour
 {
-    [SerializeField] List<CoreComponent> coreComponentList = new List<CoreComponent>();
+    List<CoreComponent> coreComponentList = new List<CoreComponent>();
 
     public void AddCoreComponent(CoreComponent coreComponent)
     {
