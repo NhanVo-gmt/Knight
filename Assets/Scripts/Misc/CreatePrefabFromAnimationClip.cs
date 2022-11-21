@@ -95,7 +95,7 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
 
     static GameObject CreatePrefab(GameObject pooledPrefab, string path)
     {
-        string createdPath = path + "/" + clipSelected[0].name + ".prefab";
+        string createdPath = path + "/" + CreatePrefabName() + ".prefab";
 
         createdPath = AssetDatabase.GenerateUniqueAssetPath(createdPath);
 
@@ -114,6 +114,19 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
 
             return null;
         }
+    }
+
+    static string CreatePrefabName()
+    {
+        for (int i = 0; i < clipSelected[0].name.Length; i++)
+        {
+            if (clipSelected[0].name[i] == '_')
+            {
+                return clipSelected[0].name.Substring(0, i);
+            }
+        }
+
+        return clipSelected[0].name;
     }
 
     static void AddAnimatorComponentToPrefab(GameObject prefab, string path)
@@ -137,6 +150,8 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
         return controller;
     }
 
+    
+
     static string GetAnimatorName(string clipName)
     {
         string name = "";
@@ -156,7 +171,21 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
     {
         foreach(AnimationClip clip in clipSelected)
         {
-            controller.AddMotion(clip);
+            UnityEditor.Animations.AnimatorState animatorState = controller.AddMotion(clip);
+            animatorState.name = CreateAnimationClipName(clip);
         }
+    }
+
+    static string CreateAnimationClipName(AnimationClip clip)
+    {
+        for (int i = 0; i < clip.name.Length; i++)
+        {
+            if (clip.name[i] == '_')
+            {
+                return clip.name.Substring(i + 1);
+            }
+        }
+
+        return clip.name;
     }
 }
