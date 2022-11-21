@@ -29,8 +29,6 @@ public class PatrolNode : ActionNode
         {
             currentIndex = 0;
         }
-
-        MoveToNextPoint();
     }
 
     protected override void PlayAnimation()
@@ -75,6 +73,8 @@ public class PatrolNode : ActionNode
 
     protected override State OnUpdate()
     {
+        MoveToNextPoint();
+        
         if (Mathf.Abs(Vector2.SqrMagnitude((Vector2)treeComponent.transform.position - pointWays[currentIndex])) < 0.5f)
         {
             return State.SUCCESS;

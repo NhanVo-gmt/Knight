@@ -86,7 +86,7 @@ public class Player : MonoBehaviour
 
     void SetUpCombatComponent(Combat combat)
     {
-        combat.SetUpDamagerType(IDamageable.DamagerType.Player);
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Player, IDamageable.KnockbackType.none); //todo change to weak
     }
 
     void SetUpRecoveryComponent(RecoveryController recoveryController)

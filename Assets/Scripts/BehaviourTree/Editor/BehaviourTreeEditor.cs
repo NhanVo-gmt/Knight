@@ -96,7 +96,7 @@ public class BehaviourTreeEditor : EditorWindow
                 Enemy enemy = Selection.activeGameObject.GetComponent<Enemy>();
                 if (enemy)
                 {
-                    tree = enemy.data.tree;
+                    tree = enemy.tree;
                 }
             }
         }

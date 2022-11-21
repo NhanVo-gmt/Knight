@@ -7,20 +7,25 @@ using System;
 public class Combat : CoreComponent, IDamageable
 {
     Collider2D col;
-    IDamageable.DamagerType damagerType;
+    IDamageable.DamagerTarget damagerTarget;
+    IDamageable.KnockbackType knockbackType;
+
     Movement movement;
     Health health;
     RecoveryController recoveryController;
+    GameSettings settings;
 
 
     Vector2 attackPosition;
+    Vector2 hitDirection;
 
 
     #region Set up
     
-    public void SetUpDamagerType(IDamageable.DamagerType damagerType)
+    public void SetUpCombatComponent(IDamageable.DamagerTarget damagerTarget, IDamageable.KnockbackType knockbackType)
     {
-        this.damagerType = damagerType;
+        this.damagerTarget = damagerTarget;
+        this.knockbackType = knockbackType;
     }
 
     protected override void Awake()
@@ -32,10 +37,27 @@ public class Combat : CoreComponent, IDamageable
 
     void Start() 
     {
+        settings = FindObjectOfType<GameSettings>();
+        
         movement = core.GetCoreComponent<Movement>();
         health = core.GetCoreComponent<Health>();
+        AddEvent();
     }
-    
+
+    void AddEvent()
+    {
+        health.onTakeDamage += Knockback;
+    }
+
+    private void OnDisable() {
+        RemoveEvent();
+    }
+
+    private void RemoveEvent()
+    {
+        health.onTakeDamage -= Knockback;
+    }
+
     #endregion
 
     #region Damage Method
@@ -80,18 +102,45 @@ public class Combat : CoreComponent, IDamageable
 
     void DealDamage(IDamageable damageableEntity, AttackData attackData)
     {
-        damageableEntity.TakeDamage(attackData, GetDamagerType());
+        damageableEntity.TakeDamage(attackData, GetDamagerType(), movement.faceDirection);
     }
 
-    public IDamageable.DamagerType GetDamagerType()
+    public IDamageable.DamagerTarget GetDamagerType()
     {
-        return damagerType;
+        return damagerTarget;
     }
 
-    public void TakeDamage(AttackData attackData, IDamageable.DamagerType damagerType)
+    public void TakeDamage(AttackData attackData, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
     {
-        if (this.damagerType == damagerType) return ;
+        if (this.damagerTarget == damagerType) return ;
         health.TakeDamage(attackData);
+        hitDirection = attackDirection;
+    }
+
+    #endregion
+
+    #region Knockback
+
+    public IDamageable.KnockbackType GetKnockbackType()
+    {
+        return knockbackType;
+    }
+
+    void Knockback()
+    {
+        float knockbackAmount = 0;
+        switch(knockbackType)
+        {
+            case IDamageable.KnockbackType.weak:
+                knockbackAmount = settings.WeakKnockbackAmount;
+                break;
+            case IDamageable.KnockbackType.strong:
+                knockbackAmount = settings.StrongKnockbackAmount;
+                break;
+            
+        }
+        
+        movement.AddForce(hitDirection, knockbackAmount);
     }
 
     #endregion
@@ -107,6 +156,8 @@ public class Combat : CoreComponent, IDamageable
     {
         col.enabled = false;
     }
+
+    
 
     #endregion
 }

@@ -7,7 +7,10 @@ public class Movement : CoreComponent
     public Rigidbody2D rb {get; private set;} 
     public Vector2 faceDirection {get; private set;}
 
+    bool canSetVelocity = true;
     float gravityScale;
+
+    Coroutine addForceCoroutine;
     
     protected override void Awake() 
     {
@@ -32,6 +35,8 @@ public class Movement : CoreComponent
             ChangeDirection(velocity.x);
         }
 
+        if (!canSetVelocity) return;
+
         rb.velocity = velocity;
     }
 
@@ -41,17 +46,23 @@ public class Movement : CoreComponent
         {
             ChangeDirection(xVelocity);
         }
+
+        if (!canSetVelocity) return;
         
         rb.velocity = new Vector2(xVelocity, rb.velocity.y);
     }
 
     public void SetVelocityY(float yVelocity) 
     {
+        if (!canSetVelocity) return;
+        
         rb.velocity = new Vector2(rb.velocity.x, yVelocity);
     }
 
     public void SetVelocityZero() 
     {
+        if (!canSetVelocity) return;
+        
         rb.velocity = Vector2.zero;
     }
 
@@ -59,6 +70,37 @@ public class Movement : CoreComponent
     {
         return rb.velocity;
     }
+
+    public void AddForce(Vector2 direction, float amount)
+    {
+        StopAddForce();
+
+        addForceCoroutine = StartCoroutine(AddForceCoroutine(direction, amount));
+    }
+
+    IEnumerator AddForceCoroutine(Vector2 direction, float amount)
+    {
+        canSetVelocity = false;
+        rb.AddForce(direction * amount);
+        
+        yield return new WaitForSeconds(0.5f);
+
+        canSetVelocity = true;
+    }
+
+    void StopAddForce()
+    {
+        if (addForceCoroutine != null)
+        {
+            StopCoroutine(addForceCoroutine);
+        }
+
+        canSetVelocity = true;
+    }
+
+    #endregion
+
+    #region Gravity
 
     public void SetGravityZero()
     {

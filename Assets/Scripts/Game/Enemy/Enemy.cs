@@ -6,12 +6,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public EnemyData data; // todo set private (for unity editor to see)
+    public BehaviourTree tree;
 
     AttackData touchAttackData;
 
     Core core;
-    Health health;
     Combat combat;
+    Movement movement;
+    Health health;
     VFXController vfx;
     public BehaviourTreeComponent treeComponent {get; private set;}
 
@@ -44,7 +46,7 @@ public class Enemy : MonoBehaviour
 
     void CloneTree() 
     {
-        data.tree = data.tree.Clone();
+        tree = tree.Clone();
     }
 
     void Start() 
@@ -56,8 +58,9 @@ public class Enemy : MonoBehaviour
 
     private void GetCoreComponent()
     {
-        health = core.GetCoreComponent<Health>();
         combat = core.GetCoreComponent<Combat>();
+        movement = core.GetCoreComponent<Movement>();
+        health = core.GetCoreComponent<Health>();
         vfx = core.GetCoreComponent<VFXController>();
 
         SetUpComponent();
@@ -65,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     void SetUpComponent()
     {
-        combat.SetUpDamagerType(IDamageable.DamagerType.Enemy);
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.weak);
         health.SetHealth(data.healthData);
     }
 
@@ -73,7 +76,7 @@ public class Enemy : MonoBehaviour
     {
         Player player = FindObjectOfType<Player>();
         
-        data.tree.Traverse(data.tree.rootNode, (n) =>
+        tree.Traverse(tree.rootNode, (n) =>
         {
             n.treeComponent = treeComponent;
             n.player = player;
@@ -86,7 +89,7 @@ public class Enemy : MonoBehaviour
 
     void Update() 
     {
-        data.tree.Update();
+        tree.Update();
     }
 
     #endregion
@@ -96,7 +99,7 @@ public class Enemy : MonoBehaviour
 
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(touchAttackData, IDamageable.DamagerType.Enemy);
+            target.TakeDamage(touchAttackData, IDamageable.DamagerTarget.Enemy, movement.faceDirection);
         }
     }
 }

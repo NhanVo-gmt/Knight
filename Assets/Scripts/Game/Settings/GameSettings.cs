@@ -13,5 +13,9 @@ public class GameSettings : SingletonObject<GameSettings>
     [Header("Trap")]
     public AttackData TouchAttackSettings;
     public AttackData TrapSettings;
+
+    [Header("KnockBack")]
+    public float WeakKnockbackAmount = 200;
+    public float StrongKnockbackAmount = 200;
     
 }

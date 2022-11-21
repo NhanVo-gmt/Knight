@@ -16,7 +16,7 @@ public class Trap : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(attackData, IDamageable.DamagerType.Trap);
+            target.TakeDamage(attackData, IDamageable.DamagerTarget.Trap, Vector2.up);
         }
     }
 }
