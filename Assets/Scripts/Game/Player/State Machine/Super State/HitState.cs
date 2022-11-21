@@ -21,6 +21,8 @@ public class HitState : State
     public override void Exit()
     {
         base.Exit();
+
+        movement.SetVelocityZero();
     }
 
     public override void AnimationFinishTrigger()

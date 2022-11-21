@@ -16,3 +16,4 @@ MonoBehaviour:
   isFlying: 1
   meleeAttackData: {fileID: 0}
   rangeAttackData: {fileID: 0}
+  knockbackType: 0

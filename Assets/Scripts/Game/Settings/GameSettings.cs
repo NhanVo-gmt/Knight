@@ -15,7 +15,8 @@ public class GameSettings : SingletonObject<GameSettings>
     public AttackData TrapSettings;
 
     [Header("KnockBack")]
+    public float PlayerKnockbackAmount = 100;
     public float WeakKnockbackAmount = 200;
-    public float StrongKnockbackAmount = 200;
+    public float StrongKnockbackAmount = 10000;
     
 }

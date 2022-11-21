@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
 
     void SetUpComponent()
     {
-        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.weak);
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.knockbackType);
         health.SetHealth(data.healthData);
     }
 
@@ -99,7 +99,7 @@ public class Enemy : MonoBehaviour
 
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(touchAttackData, IDamageable.DamagerTarget.Enemy, movement.faceDirection);
+            target.TakeDamage(touchAttackData, IDamageable.DamagerTarget.Enemy, Vector2.zero);
         }
     }
 }

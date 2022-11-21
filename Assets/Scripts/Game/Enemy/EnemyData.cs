@@ -12,4 +12,6 @@ public class EnemyData : ScriptableObject
     public MeleeAttackData meleeAttackData;
     public RangeAttackData rangeAttackData;
 
+    public IDamageable.KnockbackType knockbackType;
+
 }

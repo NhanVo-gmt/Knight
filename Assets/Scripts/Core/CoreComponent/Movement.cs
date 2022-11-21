@@ -61,8 +61,6 @@ public class Movement : CoreComponent
 
     public void SetVelocityZero() 
     {
-        if (!canSetVelocity) return;
-        
         rb.velocity = Vector2.zero;
     }
 
@@ -81,9 +79,12 @@ public class Movement : CoreComponent
     IEnumerator AddForceCoroutine(Vector2 direction, float amount)
     {
         canSetVelocity = false;
+
         rb.AddForce(direction * amount);
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
+
+        SetVelocityZero();
 
         canSetVelocity = true;
     }

@@ -18,7 +18,7 @@ MonoBehaviour:
   player: {fileID: 0}
   position: {x: 132.8001, y: -117.978714}
   description: 
-  child: {fileID: 0}
+  child: {fileID: 59328773113899449}
 --- !u!114 &-6218914349101890691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,6 +73,6 @@ MonoBehaviour:
   started: 0
   guid: 9c648ff795b52d6498f57f36903b08a1
   player: {fileID: 0}
-  position: {x: 0, y: 0}
+  position: {x: 131.99994, y: 117.8725}
   description: 
   duration: 1

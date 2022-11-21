@@ -13,7 +13,8 @@ public interface IDamageable
     {
         none,
         weak,
-        strong
+        strong,
+        player
     }
     
     public DamagerTarget GetDamagerType();

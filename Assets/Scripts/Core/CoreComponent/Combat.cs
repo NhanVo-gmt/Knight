@@ -12,7 +12,6 @@ public class Combat : CoreComponent, IDamageable
 
     Movement movement;
     Health health;
-    RecoveryController recoveryController;
     GameSettings settings;
 
 
@@ -113,8 +112,17 @@ public class Combat : CoreComponent, IDamageable
     public void TakeDamage(AttackData attackData, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
     {
         if (this.damagerTarget == damagerType) return ;
+        
+        if (attackDirection == Vector2.zero)
+        {
+            hitDirection = -movement.faceDirection;
+        }
+        else
+        {
+            hitDirection = attackDirection;
+        }
+
         health.TakeDamage(attackData);
-        hitDirection = attackDirection;
     }
 
     #endregion
@@ -136,6 +144,9 @@ public class Combat : CoreComponent, IDamageable
                 break;
             case IDamageable.KnockbackType.strong:
                 knockbackAmount = settings.StrongKnockbackAmount;
+                break;
+            case IDamageable.KnockbackType.player:
+                knockbackAmount = settings.PlayerKnockbackAmount;
                 break;
             
         }

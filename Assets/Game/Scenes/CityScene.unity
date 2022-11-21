@@ -8615,6 +8615,7 @@ GameObject:
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -8735,6 +8736,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2e2b8e234e1c540b1deab15b1bd5f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
 --- !u!1 &577944629
 GameObject:
   m_ObjectHideFlags: 0
@@ -37098,8 +37132,9 @@ MonoBehaviour:
   maxHealth: 10
   TouchAttackSettings: {fileID: 11400000, guid: a66f794d5fd16824db40adff233fcc6a, type: 2}
   TrapSettings: {fileID: 11400000, guid: 7d8d92e2df6f6ee41a4603c653964363, type: 2}
+  PlayerKnockbackAmount: 100
   WeakKnockbackAmount: 200
-  StrongKnockbackAmount: 200
+  StrongKnockbackAmount: 1000
 --- !u!4 &1577145070
 Transform:
   m_ObjectHideFlags: 0
@@ -38301,22 +38336,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 429282354022038490, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
-      propertyPath: m_Size.x
-      value: 3.8125
-      objectReference: {fileID: 0}
-    - target: {fileID: 429282354022038490, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
-      propertyPath: m_Size.y
-      value: 2.8125
-      objectReference: {fileID: 0}
-    - target: {fileID: 429282354022038490, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 4154325970504511021, guid: f8f46c8ac168d7e45ab1972787b6347f, type: 3}
-    - target: {fileID: 429282354022038490, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6685616588113425769, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
       propertyPath: m_Name
       value: piranha-plant
@@ -38331,7 +38350,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9216234008937833347, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 9216234008937833347, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
       propertyPath: m_LocalPosition.z
