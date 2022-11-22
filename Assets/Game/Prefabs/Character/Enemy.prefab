@@ -375,6 +375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 0}
+  tree: {fileID: 0}
 --- !u!50 &1918995762318887674
 Rigidbody2D:
   serializedVersion: 4
@@ -452,7 +453,7 @@ GameObject:
   - component: {fileID: 326168635600747826}
   - component: {fileID: 8094302589532752806}
   m_Layer: 10
-  m_Name: VFX Controller
+  m_Name: Spawn Object Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

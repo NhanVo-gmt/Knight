@@ -5,5 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(PooledObject))]
 public class Projectile : MonoBehaviour
 {
+    ProjectileData data;
+
     
 }

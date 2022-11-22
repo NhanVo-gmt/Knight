@@ -16,9 +16,9 @@ MonoBehaviour:
   started: 1
   guid: 783394ca70e48c348b1dce9528c3fc51
   player: {fileID: 0}
-  position: {x: 132.8001, y: -117.978714}
+  position: {x: -42.399998, y: -241.21828}
   description: 
-  child: {fileID: 59328773113899449}
+  child: {fileID: -108727432974508025}
 --- !u!114 &-6219188850280030419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,9 +35,11 @@ MonoBehaviour:
   started: 0
   guid: 9cfd4c36d68baaf438731451bb2000be
   player: {fileID: 0}
-  position: {x: -17.600037, y: -25.59996}
+  position: {x: -137.59995, y: 28.800085}
   description: 
-  children: []
+  children:
+  - {fileID: 1484258691706530352}
+  - {fileID: 59328773113899449}
   currentIndex: -1
 --- !u!114 &-6218914349101890691
 MonoBehaviour:
@@ -55,7 +57,7 @@ MonoBehaviour:
   started: 1
   guid: c126d0466e1146d45a223afc2e15fea4
   player: {fileID: 0}
-  position: {x: 58.18993, y: -233.8815}
+  position: {x: -42.09335, y: -347.2854}
   description: 
   child: {fileID: -9151638642705423950}
 --- !u!114 &-108727432974508025
@@ -74,9 +76,11 @@ MonoBehaviour:
   started: 0
   guid: 17214c01748c7f547a0096ac9ee8498a
   player: {fileID: 0}
-  position: {x: 286.39993, y: -56.909912}
+  position: {x: -43.199997, y: -103.937805}
   description: 
-  children: []
+  children:
+  - {fileID: -6219188850280030419}
+  - {fileID: 358161060154720114}
   currentIndex: -1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -118,7 +122,7 @@ MonoBehaviour:
   started: 0
   guid: 9c648ff795b52d6498f57f36903b08a1
   player: {fileID: 0}
-  position: {x: 131.99994, y: 117.8725}
+  position: {x: -62.800003, y: 169.6}
   description: 
   duration: 1
 --- !u!114 &358161060154720114
@@ -137,7 +141,7 @@ MonoBehaviour:
   started: 0
   guid: c336fe121428279459ec74bb9887bc22
   player: {fileID: 0}
-  position: {x: 361.4362, y: 63.46031}
+  position: {x: 181.07822, y: 38.400005}
   description: 'Shoot player
 
 '
@@ -157,9 +161,9 @@ MonoBehaviour:
   started: 0
   guid: f2470a5a0960101419218ae0247d3e2d
   player: {fileID: 0}
-  position: {x: 206.39996, y: 271.59998}
+  position: {x: -274.47876, y: 169.4505}
   description: 
-  child: {fileID: 0}
+  child: {fileID: 3971475375874453113}
 --- !u!114 &3971475375874453113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,7 +180,7 @@ MonoBehaviour:
   started: 0
   guid: 74975baab16059545bc4854f2071010c
   player: {fileID: 0}
-  position: {x: 0, y: 0}
+  position: {x: -273.67874, y: 351.05048}
   description: 
   seeRange: 0
   rangeType: 0
