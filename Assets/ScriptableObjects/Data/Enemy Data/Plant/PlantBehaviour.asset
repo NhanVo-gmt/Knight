@@ -76,10 +76,12 @@ MonoBehaviour:
   started: 0
   guid: fa98d2da7f4aaa041a6aa1ab8a68a387
   player: {fileID: 0}
-  position: {x: 0, y: 0}
+  position: {x: 263.20013, y: -15.199991}
   description: 
-  children: []
-  successType: 0
+  children:
+  - {fileID: 1603021544807144122}
+  - {fileID: 358161060154720114}
+  successType: 1
 --- !u!114 &-108727432974508025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,11 +98,11 @@ MonoBehaviour:
   started: 0
   guid: 17214c01748c7f547a0096ac9ee8498a
   player: {fileID: 0}
-  position: {x: -43.199997, y: -103.937805}
+  position: {x: -42.399986, y: -125.07757}
   description: 
   children:
   - {fileID: -6219188850280030419}
-  - {fileID: 358161060154720114}
+  - {fileID: -1697731905643359985}
   currentIndex: -1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -163,7 +165,7 @@ MonoBehaviour:
   started: 0
   guid: c336fe121428279459ec74bb9887bc22
   player: {fileID: 0}
-  position: {x: 181.07822, y: 38.400005}
+  position: {x: 375.78503, y: 123.20003}
   description: 'Shoot player
 
 '
@@ -204,7 +206,7 @@ MonoBehaviour:
   player: {fileID: 0}
   position: {x: 180.8, y: 137.19998}
   description: 
-  projectile: {fileID: 0}
+  projectile: {fileID: -3043057562146253592, guid: 2de39e8af9450b2449add9148b0f0110, type: 3}
 --- !u!114 &3971475375874453113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,5 +225,5 @@ MonoBehaviour:
   player: {fileID: 0}
   position: {x: -273.67874, y: 351.05048}
   description: 
-  seeRange: 0
+  seeRange: 6
   rangeType: 0

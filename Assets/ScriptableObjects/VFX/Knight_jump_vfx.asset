@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 7822202127624302198, guid: b2ffeacc688f60443b3a786e29891f88, type: 3}
   needPlayerDirection: 0
-  pooledObjectSpawnPos: {x: 0, y: 0.45}
+  spawnPos: {x: 0, y: 0.5}
   lifeTime: 1

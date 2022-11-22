@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   coolDown: 0.4
-  damageVFX: {fileID: 11400000, guid: f574416c9edfad54597fdccc519b0817, type: 2}
+  vfx: {fileID: 11400000, guid: f574416c9edfad54597fdccc519b0817, type: 2}
   leftAttackPos: {x: -0.9, y: -0.2}
   rightAttackPos: {x: 0.9, y: -0.2}
   upAttackPos: {x: 0, y: 0}

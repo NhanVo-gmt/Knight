@@ -14,6 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   coolDown: 0
-  damageVFX: {fileID: 0}
-  projectileData: {fileID: 0}
-  spawnPosition: {x: 0, y: 0}
+  vfx: {fileID: 0}
+  projectileData: {fileID: 11400000, guid: 529e0eba18e2e104ab7552a1dc3026e4, type: 2}

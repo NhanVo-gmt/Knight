@@ -39,7 +39,8 @@ public class SpawnProjectileNode : ActionNode
 
     private void SpawnProjectile()
     {
-        spawnObjectController.SpawnPooledPrefab(treeComponent.data.rangeAttackData.projectileData);
+        Projectile projectile = spawnObjectController.SpawnPooledPrefab(treeComponent.data.rangeAttackData.projectileData).GetComponent<Projectile>();
+        projectile.Initialize(treeComponent.data.rangeAttackData.projectileData, Vector2.left);
     }
 
     protected override void OnStop()
