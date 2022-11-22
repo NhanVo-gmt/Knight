@@ -16,12 +16,12 @@ MonoBehaviour:
   started: 0
   guid: 4f101cd84a63ed44b9a35b3b2409bdfb
   player: {fileID: 0}
-  position: {x: -116, y: 379.19998}
+  position: {x: -116.000084, y: 379.19998}
   description: 
   pointWays:
   - {x: 10, y: 0}
   - {x: 20, y: 0}
-  velocity: 0
+  velocity: 2.5
 --- !u!114 &-3773325900650725113
 MonoBehaviour:
   m_ObjectHideFlags: 0

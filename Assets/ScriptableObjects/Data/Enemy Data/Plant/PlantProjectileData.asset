@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 5780635100809065259, guid: 2de39e8af9450b2449add9148b0f0110, type: 3}
   needPlayerDirection: 0
-  spawnPos: {x: -1, y: -0.2}
+  spawnPos: {x: -1, y: -0.3}
   lifeTime: 5
   damage: 0
-  velocity: 2
+  velocity: 5

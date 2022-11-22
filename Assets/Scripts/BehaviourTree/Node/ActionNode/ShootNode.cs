@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class SpawnProjectileNode : ActionNode
+public class ShootNode : ActionNode
 {
     public enum MoveDirection
     {
@@ -21,26 +21,40 @@ public class SpawnProjectileNode : ActionNode
     private SpawnObjectController _spawnObjectController;
     
     [SerializeField] Projectile projectile;
+    [SerializeField] MoveDirection direction;
+    [SerializeField] MoveEffect effect;
+
+    
+    Node.State currentNodeState;
+    int shootId = Animator.StringToHash("Shoot");
 
     
     public override void CopyNode(ActionNode copyNode)
     {
-        SpawnProjectileNode node = copyNode as SpawnProjectileNode;
+        ShootNode node = copyNode as ShootNode;
         if (node)
         {
             description = node.description;
+            projectile = node.projectile;
         }
+    }
+
+    protected override void PlayAnimation()
+    {
+        anim.Play(shootId);
     }
     
     protected override void OnStart()
     {
-        SpawnProjectile();
+        base.OnStart();
+        
+        currentNodeState = State.RUNNING;
     }
 
-    private void SpawnProjectile()
+    private void Shoot()
     {
         Projectile projectile = spawnObjectController.SpawnPooledPrefab(treeComponent.data.rangeAttackData.projectileData).GetComponent<Projectile>();
-        projectile.Initialize(treeComponent.data.rangeAttackData.projectileData, Vector2.left);
+        projectile.Initialize(treeComponent.data.rangeAttackData.projectileData, Vector2.left); //todo
     }
 
     protected override void OnStop()
@@ -50,8 +64,20 @@ public class SpawnProjectileNode : ActionNode
 
     protected override State OnUpdate()
     {
-        return State.SUCCESS;
+        return currentNodeState;
     }
     
+#region Animation Event
 
+    protected override void AnimationTrigger()
+    {
+        Shoot();
+    }
+
+    protected override void AnimationFinishTrigger()
+    {
+        currentNodeState = State.SUCCESS;
+    }
+
+#endregion
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f8e06d37090cc42bceae65553e145c, type: 3}
   m_Name: Eagle
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: ad6a6fe0d98c3e446af356fd3de03d4b, type: 2}
   healthData: {fileID: 11400000, guid: 7465de01540d1074b95b82b0cafa06a5, type: 2}
   isFlying: 1
   meleeAttackData: {fileID: 0}
   rangeAttackData: {fileID: 0}
+  knockbackType: 1

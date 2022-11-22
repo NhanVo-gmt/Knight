@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f8e06d37090cc42bceae65553e145c, type: 3}
   m_Name: Slug
   m_EditorClassIdentifier: 
-  tree: {fileID: 11400000, guid: e49c259cfcb1cad4fb20a74eafc46807, type: 2}
   healthData: {fileID: 11400000, guid: c73ef0962bf017b46829c4a7e8d65e72, type: 2}
   isFlying: 0
   meleeAttackData: {fileID: 0}
   rangeAttackData: {fileID: 0}
+  knockbackType: 1

@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class AttackNode : ActionNode
-{
+{    
     Node.State currentNodeState;
     
     int attackId = Animator.StringToHash("Attack");
