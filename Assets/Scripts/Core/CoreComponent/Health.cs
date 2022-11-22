@@ -32,11 +32,11 @@ public class Health : CoreComponent
         recoveryController = GetComponent<RecoveryController>();
     }
     
-    public void TakeDamage(AttackData attackData)
+    public void TakeDamage(int damage)
     {
         if (health <= 0 || IsInvulnerable()) return;
 
-        health -= attackData.damage;
+        health -= damage;
 
         onUpdateHealth?.Invoke(health);
 

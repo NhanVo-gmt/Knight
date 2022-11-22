@@ -65,7 +65,7 @@ public class Combat : CoreComponent, IDamageable
     {
         List<IDamageable> enemiesFound = FindDamageableEntityInRange(attackData).ToList();
         
-        enemiesFound.ForEach(enemy => DealDamage(enemy, attackData));
+        enemiesFound.ForEach(enemy => DealDamage(enemy, attackData.damage));
     }
 
     
@@ -99,9 +99,9 @@ public class Combat : CoreComponent, IDamageable
         }
     }
 
-    void DealDamage(IDamageable damageableEntity, AttackData attackData)
+    void DealDamage(IDamageable damageableEntity, int damage)
     {
-        damageableEntity.TakeDamage(attackData, GetDamagerType(), movement.faceDirection);
+        damageableEntity.TakeDamage(damage, GetDamagerType(), movement.faceDirection);
     }
 
     public IDamageable.DamagerTarget GetDamagerType()
@@ -109,7 +109,7 @@ public class Combat : CoreComponent, IDamageable
         return damagerTarget;
     }
 
-    public void TakeDamage(AttackData attackData, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
+    public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
     {
         if (this.damagerTarget == damagerType) return ;
         
@@ -122,7 +122,7 @@ public class Combat : CoreComponent, IDamageable
             hitDirection = attackDirection;
         }
 
-        health.TakeDamage(attackData);
+        health.TakeDamage(damage);
     }
 
     #endregion

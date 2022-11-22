@@ -33,7 +33,7 @@ public class Projectile : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(data.attackData, IDamageable.DamagerTarget.Enemy, direction);
+            target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, direction); //hardcode
         }
     }
 }

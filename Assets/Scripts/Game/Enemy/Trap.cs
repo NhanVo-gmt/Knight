@@ -6,17 +6,11 @@ public class Trap : MonoBehaviour
 {
     [SerializeField] bool NeedToResetPlayerPosition;
 
-    [SerializeField] AttackData attackData;
-
-    void Awake() 
-    {
-        attackData = FindObjectOfType<GameSettings>().TrapSettings;
-    }
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(attackData, IDamageable.DamagerTarget.Trap, Vector2.up);
+            target.TakeDamage(1, IDamageable.DamagerTarget.Trap, Vector2.up); //hardcode
         }
     }
 }

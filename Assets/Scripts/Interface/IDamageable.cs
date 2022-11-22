@@ -19,5 +19,5 @@ public interface IDamageable
     
     public DamagerTarget GetDamagerType();
     public KnockbackType GetKnockbackType();
-    public void TakeDamage(AttackData attackData, DamagerTarget damagerType, Vector2 attackDirection);
+    public void TakeDamage(int damage, DamagerTarget damagerType, Vector2 attackDirection);
 }

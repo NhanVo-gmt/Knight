@@ -10,10 +10,6 @@ public class GameSettings : SingletonObject<GameSettings>
     [Header("Player")]
     public int maxHealth;
 
-    [Header("Trap")]
-    public AttackData TouchAttackSettings;
-    public AttackData TrapSettings;
-
     [Header("KnockBack")]
     public float PlayerKnockbackAmount = 100;
     public float WeakKnockbackAmount = 200;

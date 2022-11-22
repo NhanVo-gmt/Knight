@@ -8,8 +8,6 @@ public class Enemy : MonoBehaviour
     public EnemyData data; // todo set private (for unity editor to see)
     public BehaviourTree tree;
 
-    AttackData touchAttackData;
-
     Core core;
     Combat combat;
     Movement movement;
@@ -25,7 +23,6 @@ public class Enemy : MonoBehaviour
     {
         col = GetComponent<Collider2D>();
         core = GetComponentInChildren<Core>();
-        touchAttackData = FindObjectOfType<GameSettings>().TouchAttackSettings;
         
         data = Instantiate(data);
 
@@ -99,7 +96,7 @@ public class Enemy : MonoBehaviour
 
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(touchAttackData, IDamageable.DamagerTarget.Enemy, Vector2.zero);
+            target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero); //hardcode
         }
     }
 }
