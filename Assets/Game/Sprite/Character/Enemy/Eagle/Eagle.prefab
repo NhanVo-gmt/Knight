@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: eabb45f1bdb0b1c4eacb5bf2f0df194d, type: 2}
+  tree: {fileID: 11400000, guid: ad6a6fe0d98c3e446af356fd3de03d4b, type: 2}
 --- !u!50 &3156493811277436023
 Rigidbody2D:
   serializedVersion: 4
@@ -168,7 +169,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b4800b62192b2d41abb3fc600792467, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coreComponentList: []
 --- !u!1 &1977985092416992643
 GameObject:
   m_ObjectHideFlags: 0

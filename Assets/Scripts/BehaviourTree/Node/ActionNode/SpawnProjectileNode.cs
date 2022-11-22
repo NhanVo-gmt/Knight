@@ -16,6 +16,9 @@ public class SpawnProjectileNode : ActionNode
         None,
         Homing
     }
+
+    protected SpawnObjectController spawnObjectController { get => _spawnObjectController ??= treeComponent.core.GetCoreComponent<SpawnObjectController>(); }
+    private SpawnObjectController _spawnObjectController;
     
     [SerializeField] Projectile projectile;
 
@@ -36,7 +39,7 @@ public class SpawnProjectileNode : ActionNode
 
     private void SpawnProjectile()
     {
-        
+        spawnObjectController.SpawnPooledPrefab(treeComponent.data.rangeAttackData.projectileData);
     }
 
     protected override void OnStop()

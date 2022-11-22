@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
   m_Name: Knight_attack_vfx
   m_EditorClassIdentifier: 
-  vfx: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
+  pooledObject: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
   needPlayerDirection: 1
-  vfxSpawnPos: {x: -1.2, y: 0.1}
+  pooledObjectSpawnPos: {x: -1, y: 0.2}
+  lifeTime: 5

@@ -6,5 +6,6 @@ using UnityEngine;
 public class ProjectileData : PooledObjectData
 {
     [Header("Projectile")]
+    public int damage;
     public float velocity;
 }

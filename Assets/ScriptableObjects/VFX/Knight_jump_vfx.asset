@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
   m_Name: Knight_jump_vfx
   m_EditorClassIdentifier: 
-  vfx: {fileID: 7822202127624302198, guid: b2ffeacc688f60443b3a786e29891f88, type: 3}
+  pooledObject: {fileID: 7822202127624302198, guid: b2ffeacc688f60443b3a786e29891f88, type: 3}
   needPlayerDirection: 0
-  vfxSpawnPos: {x: 0, y: 0.5}
+  pooledObjectSpawnPos: {x: 0, y: 0.45}
+  lifeTime: 1

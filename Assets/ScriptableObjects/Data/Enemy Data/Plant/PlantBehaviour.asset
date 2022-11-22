@@ -60,6 +60,26 @@ MonoBehaviour:
   position: {x: -42.09335, y: -347.2854}
   description: 
   child: {fileID: -9151638642705423950}
+--- !u!114 &-1697731905643359985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: fa98d2da7f4aaa041a6aa1ab8a68a387
+  player: {fileID: 0}
+  position: {x: 0, y: 0}
+  description: 
+  children: []
+  successType: 0
 --- !u!114 &-108727432974508025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,6 +125,8 @@ MonoBehaviour:
   - {fileID: -6219188850280030419}
   - {fileID: 1484258691706530352}
   - {fileID: 3971475375874453113}
+  - {fileID: 1603021544807144122}
+  - {fileID: -1697731905643359985}
   offset: {x: 300, y: 0}
 --- !u!114 &59328773113899449
 MonoBehaviour:
@@ -164,6 +186,25 @@ MonoBehaviour:
   position: {x: -274.47876, y: 169.4505}
   description: 
   child: {fileID: 3971475375874453113}
+--- !u!114 &1603021544807144122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 592ba741a8caa3e43ae742a8930a5de4, type: 3}
+  m_Name: SpawnProjectileNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f1905735e6bac8a4abd9117e26cd9edc
+  player: {fileID: 0}
+  position: {x: 180.8, y: 137.19998}
+  description: 
+  projectile: {fileID: 0}
 --- !u!114 &3971475375874453113
 MonoBehaviour:
   m_ObjectHideFlags: 0

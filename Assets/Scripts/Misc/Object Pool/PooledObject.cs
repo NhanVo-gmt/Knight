@@ -13,9 +13,11 @@ public class PooledObject : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    void OnEnable() {
-        Invoke("Release", 1f);
+    public void Initialize(float lifeTime)
+    {
+        Invoke("Release", lifeTime);
     }
+
 
     // Used in animation clip
     public void Release()

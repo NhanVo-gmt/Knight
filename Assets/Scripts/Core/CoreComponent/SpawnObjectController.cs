@@ -24,21 +24,27 @@ public class SpawnObjectController : CoreComponent
     public GameObject SpawnPooledPrefab(PooledObjectData data)
     {
         GameObject spawnedPrefab = poolingManager.GetObjectFromPool(data.pooledObject);
+        SetUpSpawnPrefab(spawnedPrefab, data);
         SetPrefabPosition(spawnedPrefab, data);
         SetPrefabRotation(spawnedPrefab, data);
 
         return spawnedPrefab;
     }
 
+    void SetUpSpawnPrefab(GameObject spawnedPrefab, PooledObjectData data)
+    {
+        spawnedPrefab.GetComponent<PooledObject>().Initialize(data.lifeTime);
+    }
+
     void SetPrefabPosition(GameObject spawnedObject, PooledObjectData data)
     { 
         if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
         {
-            spawnedObject.transform.position = new Vector2(-data.pooledObjectSpawnPos.x, data.pooledObjectSpawnPos.y);
+            spawnedObject.transform.position = new Vector2(-data.spawnPos.x, data.spawnPos.y);
         }
         else
         {
-            spawnedObject.transform.position = data.pooledObjectSpawnPos;
+            spawnedObject.transform.position = data.spawnPos;
         }
 
         spawnedObject.transform.position += transform.position;

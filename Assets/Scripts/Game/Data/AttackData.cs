@@ -9,6 +9,6 @@ public class AttackData : ScriptableObject
     public int damage;
     public float coolDown;
 
-
-    public PooledObjectData damageVFX;
+    [Header("VFX")]
+    public PooledObjectData vfx;
 }

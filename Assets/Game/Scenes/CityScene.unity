@@ -9270,7 +9270,7 @@ GameObject:
   - component: {fileID: 681586686}
   - component: {fileID: 681586687}
   m_Layer: 0
-  m_Name: VFX Controller
+  m_Name: Spawn Object Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38339,6 +38339,10 @@ PrefabInstance:
     - target: {fileID: 6685616588113425769, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
       propertyPath: m_Name
       value: piranha-plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 9059689842805725162, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
+      propertyPath: m_Name
+      value: Spawn Object Controller
       objectReference: {fileID: 0}
     - target: {fileID: 9216234008937833347, guid: d5cb89dc9e8d4e7408216792d3f5c7a2, type: 3}
       propertyPath: m_RootOrder

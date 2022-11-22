@@ -503,7 +503,7 @@ GameObject:
   - component: {fileID: 2580687406298044695}
   - component: {fileID: 5688982952680051945}
   m_Layer: 10
-  m_Name: VFX Controller
+  m_Name: Spawn Object Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
