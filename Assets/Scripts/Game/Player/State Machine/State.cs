@@ -8,7 +8,7 @@ public abstract class State
     protected AnimatorController anim;
     protected CollisionSenses collisionSenses;
     protected Health health;
-    protected VFXController vfx;
+    protected SpawnObjectController vfx;
 
 
     protected Player player;
@@ -33,7 +33,7 @@ public abstract class State
         anim = core.GetCoreComponent<AnimatorController>();
         collisionSenses = core.GetCoreComponent<CollisionSenses>();
         health = core.GetCoreComponent<Health>();
-        vfx = core.GetCoreComponent<VFXController>();
+        vfx = core.GetCoreComponent<SpawnObjectController>();
     }
 
     public virtual void Enter() 

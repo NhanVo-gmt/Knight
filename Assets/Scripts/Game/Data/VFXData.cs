@@ -3,10 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "VFXData", menuName = "ScriptableObjects/Data/VFXData")]
-public class VFXData : ScriptableObject
+public class VFXData : PooledObjectData
 {
-    [Header("VFX")]
-    public GameObject vfx;
-    public bool needPlayerDirection;
-    public Vector2 vfxSpawnPos;
+    
 }

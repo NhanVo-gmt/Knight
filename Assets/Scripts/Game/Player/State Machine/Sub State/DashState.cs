@@ -32,7 +32,7 @@ public class DashState : AbilityState
 
     private void SpawnVFX()
     {
-        vfx.SpawnVFX(data.dashData.vfx);
+        vfx.SpawnPooledPrefab(data.dashData.vfx);
     }
 
     public override void Exit() 

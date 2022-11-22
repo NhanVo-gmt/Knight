@@ -19,6 +19,26 @@ MonoBehaviour:
   position: {x: 132.8001, y: -117.978714}
   description: 
   child: {fileID: 59328773113899449}
+--- !u!114 &-6219188850280030419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
+  m_Name: DepSequencerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 9cfd4c36d68baaf438731451bb2000be
+  player: {fileID: 0}
+  position: {x: -17.600037, y: -25.59996}
+  description: 
+  children: []
+  currentIndex: -1
 --- !u!114 &-6218914349101890691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38,6 +58,26 @@ MonoBehaviour:
   position: {x: 58.18993, y: -233.8815}
   description: 
   child: {fileID: -9151638642705423950}
+--- !u!114 &-108727432974508025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f351e5af1fc61a34eb6390f66c912c75, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 17214c01748c7f547a0096ac9ee8498a
+  player: {fileID: 0}
+  position: {x: 286.39993, y: -56.909912}
+  description: 
+  children: []
+  currentIndex: -1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56,6 +96,11 @@ MonoBehaviour:
   - {fileID: -6218914349101890691}
   - {fileID: -9151638642705423950}
   - {fileID: 59328773113899449}
+  - {fileID: 358161060154720114}
+  - {fileID: -108727432974508025}
+  - {fileID: -6219188850280030419}
+  - {fileID: 1484258691706530352}
+  - {fileID: 3971475375874453113}
   offset: {x: 300, y: 0}
 --- !u!114 &59328773113899449
 MonoBehaviour:
@@ -76,3 +121,62 @@ MonoBehaviour:
   position: {x: 131.99994, y: 117.8725}
   description: 
   duration: 1
+--- !u!114 &358161060154720114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ec3545c9467ee42a535ca4b23af71e, type: 3}
+  m_Name: AttackNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: c336fe121428279459ec74bb9887bc22
+  player: {fileID: 0}
+  position: {x: 361.4362, y: 63.46031}
+  description: 'Shoot player
+
+'
+--- !u!114 &1484258691706530352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddb1c6a8ab31b7f4eabd96fedea1a1ad, type: 3}
+  m_Name: InverterNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: f2470a5a0960101419218ae0247d3e2d
+  player: {fileID: 0}
+  position: {x: 206.39996, y: 271.59998}
+  description: 
+  child: {fileID: 0}
+--- !u!114 &3971475375874453113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b9d303daa1e73347910ea8d408600ba, type: 3}
+  m_Name: SeePlayerNode
+  m_EditorClassIdentifier: 
+  state: 0
+  started: 0
+  guid: 74975baab16059545bc4854f2071010c
+  player: {fileID: 0}
+  position: {x: 0, y: 0}
+  description: 
+  seeRange: 0
+  rangeType: 0

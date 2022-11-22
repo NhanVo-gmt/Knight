@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     Combat combat;
     Movement movement;
     Health health;
-    VFXController vfx;
+    SpawnObjectController vfx;
     public BehaviourTreeComponent treeComponent {get; private set;}
 
     Collider2D col;
@@ -61,7 +61,7 @@ public class Enemy : MonoBehaviour
         combat = core.GetCoreComponent<Combat>();
         movement = core.GetCoreComponent<Movement>();
         health = core.GetCoreComponent<Health>();
-        vfx = core.GetCoreComponent<VFXController>();
+        vfx = core.GetCoreComponent<SpawnObjectController>();
 
         SetUpComponent();
     }

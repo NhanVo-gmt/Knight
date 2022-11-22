@@ -4,24 +4,24 @@ public class MoveNode : ActionNode
 {
     enum MoveType
     {
-        none,
-        forwardToPlayer,
-        backwardFromPlayer
+        None,
+        ForwardToPlayer,
+        BackwardFromPlayer
     }
 
     enum MoveDirection
     {
-        none,
-        upward,
-        downward,
-        leftward,
-        rightward
+        None,
+        Upward,
+        Downward,
+        Leftward,
+        Rightward
     }
 
     enum StopType
     {
-        none,
-        frictional
+        None,
+        Frictional
     }
     
     [SerializeField] Vector2 velocity;
@@ -69,10 +69,10 @@ public class MoveNode : ActionNode
         
         switch(moveType)
         {
-            case MoveType.forwardToPlayer:
+            case MoveType.ForwardToPlayer:
                 direction = player.transform.position - treeComponent.transform.position;
                 break;
-            case MoveType.backwardFromPlayer:
+            case MoveType.BackwardFromPlayer:
                 direction = -(player.transform.position - treeComponent.transform.position);
                 break;
             default:
@@ -83,16 +83,16 @@ public class MoveNode : ActionNode
 
         switch(moveDirectionType)
         {
-            case MoveDirection.upward:
+            case MoveDirection.Upward:
                 direction.y = 1;
                 break;
-            case MoveDirection.downward:
+            case MoveDirection.Downward:
                 direction.y = -1;
                 break;
-            case MoveDirection.leftward:
+            case MoveDirection.Leftward:
                 direction.x = -1;
                 break;
-            case MoveDirection.rightward:
+            case MoveDirection.Rightward:
                 direction.x = 1;
                 break;
             default:
