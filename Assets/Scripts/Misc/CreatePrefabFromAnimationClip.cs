@@ -9,7 +9,7 @@ using System.Linq;
 public class CreatePrefabFromAnimationClip : MonoBehaviour
 {
     static string PooledObjectPath = "Assets/Game/Prefabs/PooledObject/PooledObject.prefab";
-    static string EnemyObjectPath = "Assets/Game/Prefabs/Character/Enemy.prefab";
+    static string EnemyObjectPath = "Assets/Game/Prefabs/P_Character/Enemy.prefab";
     [NonSerialized] static List<AnimationClip> clipSelected = new List<AnimationClip>();
 
     [MenuItem("Knight/Create empty prefab from animation clip")]
