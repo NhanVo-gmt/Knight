@@ -49,6 +49,7 @@ SpriteAtlas:
     - {fileID: 2800000, guid: 0abe274065229a44ea80b552d0bfda3c, type: 3}
     - {fileID: 2800000, guid: f196254d50ad68e4db7aa342bd641275, type: 3}
     - {fileID: 2800000, guid: 5048f1dc8037a394bb36f6c6338b3059, type: 3}
+    - {fileID: 2800000, guid: 29b91dfbfcf738f459b78b755ab7ad1d, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
@@ -74,6 +75,7 @@ SpriteAtlas:
   - {fileID: -1020752327, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
   - {fileID: 1189066471, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
   - {fileID: 1407160253, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
+  - {fileID: 5297468463858010939, guid: 29b91dfbfcf738f459b78b755ab7ad1d, type: 3}
   - {fileID: -2125026057, guid: 5048f1dc8037a394bb36f6c6338b3059, type: 3}
   - {fileID: -541690287, guid: 5048f1dc8037a394bb36f6c6338b3059, type: 3}
   - {fileID: -1447986232, guid: 5048f1dc8037a394bb36f6c6338b3059, type: 3}
@@ -113,6 +115,7 @@ SpriteAtlas:
   - Forest tileset_12
   - Forest tileset_13
   - Forest tileset_14
+  - FarmBackground0
   - Forest Tileset 1_0
   - Forest Tileset 1_1
   - Forest Tileset 1_2
