@@ -3,7 +3,7 @@ guid: 704866e4193e1d94b98c7d9674b09577
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -90,6 +93,66 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -1332,67 +1395,66 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Knight37: 0
-      Knight23: -135693205820277330
-      Knight18: -73860243243254604
-      Knight36: 0
-      Knight52: 0
-      Knight30: -4074314689178435731
-      Knight53: 0
-      Knight57: 0
-      Knight31: 4055353187618551195
-      Knight29: -8383942843140278849
-      Knight08: -2999206064614869990
-      Knight03: -4727735923474339596
-      Knight32: 5769027130237669321
-      Knight06: 2579291167374418122
-      Knight40: 0
-      Knight17: -246153163477485322
-      Knight25: 7851930169101179892
-      Knight41: 0
       Knight00: 1331526107294834511
-      Knight56: 0
-      Knight24: -1236199260781807999
-      Knight45: 0
-      Knight47: 0
-      Knight12: -2143791395732998375
-      Knight50: 0
-      Knight16: -7735023214012169472
-      Knight21: -2464661754218842672
-      Knight43: 0
-      Knight20: 3262852740327403179
       Knight01: 3312837155928433119
-      Knight49: 0
-      Knight33: 0
-      Knight14: 2152104840001792672
-      Knight48: 0
-      Knight34: 0
-      Knight19: 5989275907650583908
-      Knight15: 2884858992697706108
-      Knight09: -6177401596339961833
-      Knight42: 0
-      Knight54: 0
-      Knight46: 0
-      Knight35: 0
-      Knight22: 2098430883461984481
-      Knight07: -2444581169846472746
-      Knight28: 3589532873204354291
-      Knight11: 3334923676091919586
       Knight02: 8775054865274871109
-      Knight26: 4136756237047083380
-      Knight05: 2621205896272528237
-      Knight10: 6453990576479927338
+      Knight03: -4727735923474339596
       Knight04: 9075641874895112170
-      Knight38: 0
-      Knight27: 1009043638083012278
+      Knight05: 2621205896272528237
+      Knight06: 2579291167374418122
+      Knight07: -2444581169846472746
+      Knight08: -2999206064614869990
+      Knight09: -6177401596339961833
+      Knight10: 6453990576479927338
+      Knight11: 3334923676091919586
+      Knight12: -2143791395732998375
       Knight13: -4438058464174924074
+      Knight14: 2152104840001792672
+      Knight15: 2884858992697706108
+      Knight16: -7735023214012169472
+      Knight17: -246153163477485322
+      Knight18: -73860243243254604
+      Knight19: 5989275907650583908
+      Knight20: 3262852740327403179
+      Knight21: -2464661754218842672
+      Knight22: 2098430883461984481
+      Knight23: -135693205820277330
+      Knight24: -1236199260781807999
+      Knight25: 7851930169101179892
+      Knight26: 4136756237047083380
+      Knight27: 1009043638083012278
+      Knight28: 3589532873204354291
+      Knight29: -8383942843140278849
+      Knight30: -4074314689178435731
+      Knight31: 4055353187618551195
+      Knight32: 5769027130237669321
+      Knight33: 0
+      Knight34: 0
+      Knight35: 0
+      Knight36: 0
+      Knight37: 0
+      Knight38: 0
       Knight39: 0
-      Knight55: 0
-      Knight51: 0
+      Knight40: 0
+      Knight41: 0
+      Knight42: 0
+      Knight43: 0
       Knight44: 0
-  spritePackingTag: 
+      Knight45: 0
+      Knight46: 0
+      Knight47: 0
+      Knight48: 0
+      Knight49: 0
+      Knight50: 0
+      Knight51: 0
+      Knight52: 0
+      Knight53: 0
+      Knight54: 0
+      Knight55: 0
+      Knight56: 0
+      Knight57: 0
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
