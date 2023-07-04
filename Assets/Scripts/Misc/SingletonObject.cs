@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
 {
-    protected static T instance;
+    public static T Intance;
 
     protected virtual void Awake() 
     {
-        if (instance == null)
+        if (Intance == null)
         {
-            instance = this as T;
-            DontDestroyOnLoad(instance);
+            Intance = this as T;
+            DontDestroyOnLoad(Intance);
         }
         else
         {
