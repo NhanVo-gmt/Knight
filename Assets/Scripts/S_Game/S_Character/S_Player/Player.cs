@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : SingletonObject<Player>
 {
     #region State
 
@@ -42,8 +42,10 @@ public class Player : MonoBehaviour
 
     #region Set up
     
-    void Awake() 
+    protected override void Awake() 
     {
+        base.Awake();
+
         inputManager = GetComponent<InputManager>();
         core = GetComponentInChildren<Core>();
     }

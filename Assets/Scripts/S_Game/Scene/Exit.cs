@@ -6,6 +6,7 @@ using UnityEngine;
 public class Exit : MonoBehaviour
 {
     public SceneLoader.Scene scene;
+    public Vector2 spawnPos;
 
     void Awake() {
         GetComponent<BoxCollider2D>().isTrigger = true;
@@ -15,6 +16,7 @@ public class Exit : MonoBehaviour
         if (other.GetComponent<Player>())
         {
             SceneLoader.Intance.ChangeScene(scene);
+            Player.Intance.transform.position = spawnPos;
         }
     }
 }

@@ -21,6 +21,7 @@ public class ObjectPooling : MonoBehaviour
         {
             GameObject createdGO = GameObject.Instantiate(prefab);
             createdGO.AddComponent<PooledObject>().pool = pool;
+            DontDestroyOnLoad(createdGO);
             return createdGO;
         }
 

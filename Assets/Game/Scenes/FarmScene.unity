@@ -12580,6 +12580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scene: 1
+  spawnPos: {x: -10.53, y: 0}
 --- !u!61 &2140828696
 BoxCollider2D:
   m_ObjectHideFlags: 0
