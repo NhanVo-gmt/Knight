@@ -47,6 +47,7 @@ public abstract class Node : ScriptableObject
 
 #region Draw Gizmos
 
+    
     public virtual void DrawGizmos() 
     {
 

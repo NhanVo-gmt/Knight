@@ -21,12 +21,19 @@ public class MoveNode : ActionNode
     {
         base.OnStart();
 
-        direction = (direction - treeComponent.GetPosition()).normalized;
+        direction = (movePos - treeComponent.GetPosition()).normalized;
     }
 
     protected override NodeComponent.State OnUpdate()
     {
+        if (Vector2.Distance(movePos, treeComponent.GetPosition()) < 0.1f) return NodeComponent.State.SUCCESS;
+
         treeComponent.rb.MovePosition(treeComponent.GetPosition() + direction * speed * Time.deltaTime);
-        return NodeComponent.State.SUCCESS;
+        return NodeComponent.State.RUNNING;
+    }
+
+    public override void DrawGizmos()
+    {
+        GizmosDrawer.DrawSphere(movePos, 0.5f);
     }
 }
