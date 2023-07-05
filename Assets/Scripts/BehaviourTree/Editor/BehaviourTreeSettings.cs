@@ -4,47 +4,28 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-class BehaviourTreeSettings : ScriptableObject
+public class BehaviourTreeSettings : ScriptableObject
 {
-    public VisualElement BehaviourTreeXml;
     public StyleSheet BehaviourTreeStyleSheet;
-    public VisualElement NodeViewXml;
     public TextAsset ActionNodeScriptTemplate;
     public TextAsset CompositeNodeScriptTemplate;
     public TextAsset DecoratorNodeScriptTemplate;
-    public string newNodeBasePath = "Assets/Scripts/BehaviourTree/Node";
-    
-    public static BehaviourTreeSettings GetOrCreateSettings()
+    public string newNodeBasePath = "Assets/Plugin/BehaviourTree/Node";
+
+    readonly string templateFolder = "Assets/Plugin/BehaviourTree/ScriptTemplate/";
+    readonly string actionNodeName = "01-BehaviourTree__New Node-NewActionNode.cs.txt";
+    readonly string compositeNodeName = "02-BehaviourTree__New Node-NewCompositeAction.cs.txt";
+    readonly string decoratorNodeName = "03-BehaviourTree__New Node-NewDecoratorNode.cs.txt";
+
+    void Awake() 
     {
-        string[] guids = AssetDatabase.FindAssets("t:BehaviourTreeSettings");
-        if (guids.Length > 1)
-        {
-            Debug.LogWarning("Already have 1 setting");
-            Debug.Log(AssetDatabase.GUIDToAssetPath(guids[0]));
-        }
+        ActionNodeScriptTemplate = AssetDatabase.LoadAssetAtPath<TextAsset>(templateFolder + actionNodeName);
+        CompositeNodeScriptTemplate = AssetDatabase.LoadAssetAtPath<TextAsset>(templateFolder + compositeNodeName);
+        DecoratorNodeScriptTemplate = AssetDatabase.LoadAssetAtPath<TextAsset>(templateFolder + decoratorNodeName);
+    }
 
-        switch (guids.Length)
-        {
-            case 1:
-            {
-                string path = AssetDatabase.GUIDToAssetPath(guids[0]);
-                return AssetDatabase.LoadAssetAtPath<BehaviourTreeSettings>(path);
-            }
-            case 0:
-            {
-                return CreateSettings();
-            }
-        }
-
-        return null;
-    }   
-
-    static BehaviourTreeSettings CreateSettings()
+    public string GetStyleSheetPath()
     {
-        BehaviourTreeSettings settings = CreateInstance<BehaviourTreeSettings>();
-        AssetDatabase.CreateAsset(settings, "Assets/ScriptableObjects/BehaviourTree/BehaviourTreeSettings.asset");
-        AssetDatabase.SaveAssets();
-
-        return settings;
+        return AssetDatabase.GetAssetPath(BehaviourTreeStyleSheet);
     }
 }

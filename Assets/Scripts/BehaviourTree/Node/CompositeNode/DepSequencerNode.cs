@@ -20,38 +20,38 @@ public class DepSequencerNode : CompositeNode
         base.Abort();
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
-        State conditionState = children[0].Update();
-        if (conditionState == State.FAILURE)
+        NodeComponent.State conditionState = children[0].Update();
+        if (conditionState == NodeComponent.State.FAILURE)
         {
             Abort();
-            return State.FAILURE;
+            return NodeComponent.State.FAILURE;
         }
-        else if (conditionState == State.SUCCESS)
+        else if (conditionState == NodeComponent.State.SUCCESS)
         {
             return RunChildState();
         }
 
 
-        return State.SUCCESS;
+        return NodeComponent.State.SUCCESS;
     }
     
-    State RunChildState()
+    NodeComponent.State RunChildState()
     {
-        State childState = children[currentIndex].Update();
+        NodeComponent.State childState = children[currentIndex].Update();
 
         switch(childState)
         {
-            case State.RUNNING:
-                return State.RUNNING;
-            case State.FAILURE:
-                return State.FAILURE;
-            case State.SUCCESS:
+            case NodeComponent.State.RUNNING:
+                return NodeComponent.State.RUNNING;
+            case NodeComponent.State.FAILURE:
+                return NodeComponent.State.FAILURE;
+            case NodeComponent.State.SUCCESS:
                 currentIndex++;
                 break;
         }
 
-        return currentIndex == children.Count ? State.SUCCESS : State.RUNNING;
+        return currentIndex == children.Count ? NodeComponent.State.SUCCESS : NodeComponent.State.RUNNING;
     }
 }

@@ -13,16 +13,16 @@ public class InverterNode : DecoratorNode
 
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
-        State state = child.Update();
-        if (state == State.SUCCESS)
+        NodeComponent.State state = child.Update();
+        if (state == NodeComponent.State.SUCCESS)
         {
-            return State.FAILURE;
+            return NodeComponent.State.FAILURE;
         }
-        else if (state == State.FAILURE)
+        else if (state == NodeComponent.State.FAILURE)
         {
-            return State.SUCCESS;
+            return NodeComponent.State.SUCCESS;
         }
         
         return state;

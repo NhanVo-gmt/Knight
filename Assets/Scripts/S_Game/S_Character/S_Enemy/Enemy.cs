@@ -5,98 +5,94 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public EnemyData data; // todo set private (for unity editor to see)
-    public BehaviourTree tree;
-
     Core core;
     Combat combat;
     Movement movement;
     Health health;
     SpawnObjectController vfx;
-    public BehaviourTreeComponent treeComponent {get; private set;}
 
     Collider2D col;
 
     #region Set up
     
-    void Awake() 
-    {
-        col = GetComponent<Collider2D>();
-        core = GetComponentInChildren<Core>();
+    // void Awake() 
+    // {
+    //     col = GetComponent<Collider2D>();
+    //     core = GetComponentInChildren<Core>();
         
-        data = Instantiate(data);
+    //     data = Instantiate(data);
 
-        SetUpBehaviourTree();
-    }
+    //     SetUpBehaviourTree();
+    // }
 
-    void SetUpBehaviourTree()
-    {
-        InitializeTreeComponent();
+    // void SetUpBehaviourTree()
+    // {
+    //     InitializeTreeComponent();
 
-        CloneTree();
-    }
+    //     CloneTree();
+    // }
 
-    void InitializeTreeComponent() 
-    {
-        treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject, data);
-    }
+    // void InitializeTreeComponent() 
+    // {
+    //     treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject, data);
+    // }
 
-    void CloneTree() 
-    {
-        tree = tree.Clone();
-    }
+    // void CloneTree() 
+    // {
+    //     tree = tree.Clone();
+    // }
 
-    void Start() 
-    {
-        GetCoreComponent();
+    // void Start() 
+    // {
+    //     GetCoreComponent();
 
-        InitializeTreeNodeComponent();
-    }
+    //     InitializeTreeNodeComponent();
+    // }
 
-    private void GetCoreComponent()
-    {
-        combat = core.GetCoreComponent<Combat>();
-        movement = core.GetCoreComponent<Movement>();
-        health = core.GetCoreComponent<Health>();
-        vfx = core.GetCoreComponent<SpawnObjectController>();
+    // private void GetCoreComponent()
+    // {
+    //     combat = core.GetCoreComponent<Combat>();
+    //     movement = core.GetCoreComponent<Movement>();
+    //     health = core.GetCoreComponent<Health>();
+    //     vfx = core.GetCoreComponent<SpawnObjectController>();
 
-        SetUpComponent();
-    }
+    //     SetUpComponent();
+    // }
 
-    void SetUpComponent()
-    {
-        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.knockbackType);
-        health.SetHealth(data.healthData);
-    }
+    // void SetUpComponent()
+    // {
+    //     combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.knockbackType);
+    //     health.SetHealth(data.healthData);
+    // }
 
-    void InitializeTreeNodeComponent()
-    {
-        Player player = FindObjectOfType<Player>();
+    // void InitializeTreeNodeComponent()
+    // {
+    //     Player player = FindObjectOfType<Player>();
         
-        tree.Traverse(tree.rootNode, (n) =>
-        {
-            n.treeComponent = treeComponent;
-            n.player = player;
-        });
-    }
+    //     tree.Traverse(tree.rootNode, (n) =>
+    //     {
+    //         n.treeComponent = treeComponent;
+    //         n.player = player;
+    //     });
+    // }
+
+    // #endregion
+
+    // #region Unity Call back
+
+    // void Update() 
+    // {
+    //     tree.Update();
+    // }
 
     #endregion
 
-    #region Unity Call back
+    // private void OnTriggerEnter2D(Collider2D other) {
+    //     if (other == col) return;
 
-    void Update() 
-    {
-        tree.Update();
-    }
-
-    #endregion
-
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other == col) return;
-
-        if (other.TryGetComponent<IDamageable>(out IDamageable target))
-        {
-            target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero); //hardcode
-        }
-    }
+    //     if (other.TryGetComponent<IDamageable>(out IDamageable target))
+    //     {
+    //         target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero); //hardcode
+    //     }
+    // }
 }

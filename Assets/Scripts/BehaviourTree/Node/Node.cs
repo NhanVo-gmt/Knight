@@ -5,43 +5,28 @@ using UnityEngine;
 
 public abstract class Node : ScriptableObject
 {
-    public enum State 
-    {
-        RUNNING,
-        SUCCESS,
-        FAILURE
-    }
-
-    [Header("State component")]
-    public State state = State.RUNNING;
-    public bool started = false;
-    public string guid;
+    public NodeComponent NodeComponent = new NodeComponent();
 
     [Header("Core Component")]
     public BehaviourTreeComponent treeComponent;
-    public Player player;
 
-    [Header("Editor component")]
-    public Vector2 position;
-    [TextArea(5, 5)] public string description;
-
-    public State Update() 
+    public NodeComponent.State Update() 
     {
-        if (!started)
+        if (!NodeComponent.started)
         {
             OnStart();
-            started = true;
+            NodeComponent.started = true;
         }
 
-        state = OnUpdate();
+        NodeComponent.state = OnUpdate();
 
-        if (state == State.SUCCESS || state == State.FAILURE)
+        if (NodeComponent.state == NodeComponent.State.SUCCESS || NodeComponent.state == NodeComponent.State.FAILURE)
         {
             OnStop();
-            started = false;
+            NodeComponent.started = false;
         }
 
-        return state;
+        return NodeComponent.state;
     }
 
     public virtual Node Clone() 
@@ -52,13 +37,13 @@ public abstract class Node : ScriptableObject
     public virtual void Abort()
     {
         OnStop();
-        started = false;
-        state = State.FAILURE;
+        NodeComponent.started = false;
+        NodeComponent.state = NodeComponent.State.FAILURE;
     }
 
     protected abstract void OnStart();
     protected abstract void OnStop();
-    protected abstract State OnUpdate(); 
+    protected abstract NodeComponent.State OnUpdate(); 
 
 #region Draw Gizmos
 

@@ -11,7 +11,7 @@ public class ParallelNode : CompositeNode
     }
     
     [SerializeField] SuccessType successType;
-    State[] childStateArray;
+    NodeComponent.State[] childStateArray;
     
     protected override void OnStart()
     {
@@ -22,12 +22,12 @@ public class ParallelNode : CompositeNode
     {
         if (childStateArray == null)
         {
-            childStateArray = new State[children.Count];
+            childStateArray = new NodeComponent.State[children.Count];
         }
 
         for (int i = 0; i < childStateArray.Length; i++)
         {
-            childStateArray[i] = State.RUNNING;
+            childStateArray[i] = NodeComponent.State.RUNNING;
         }
 
     }
@@ -37,41 +37,41 @@ public class ParallelNode : CompositeNode
 
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
         for (int i = 0; i < children.Count; i++)
         {
-            if (childStateArray[i] == State.SUCCESS) 
+            if (childStateArray[i] == NodeComponent.State.SUCCESS) 
             {
                 if (successType == SuccessType.OneNode)
                 {
                     Abort();
-                    return State.SUCCESS;
+                    return NodeComponent.State.SUCCESS;
                 }
                 continue;
             }
 
             childStateArray[i] = children[i].Update();
-            if (childStateArray[i] == State.FAILURE)
+            if (childStateArray[i] == NodeComponent.State.FAILURE)
             {
                 Abort();
-                return State.FAILURE;
+                return NodeComponent.State.FAILURE;
             }
         }
 
         if (AllChildSuccess())
         {
-            return State.SUCCESS;
+            return NodeComponent.State.SUCCESS;
         }
 
-        return State.RUNNING;
+        return NodeComponent.State.RUNNING;
     }
     
     bool AllChildSuccess()
     {
         for (int i = 0; i < children.Count; i++)
         {
-            if (childStateArray[i] != State.SUCCESS) return false;
+            if (childStateArray[i] != NodeComponent.State.SUCCESS) return false;
         }
 
         return true;

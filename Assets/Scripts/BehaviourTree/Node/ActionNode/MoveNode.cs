@@ -1,147 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveNode : ActionNode
 {
-    enum MoveType
-    {
-        None,
-        ForwardToPlayer,
-        BackwardFromPlayer
-    }
+    public float speed;
+    public Vector2 movePos;
 
-    enum MoveDirection
-    {
-        None,
-        Upward,
-        Downward,
-        Leftward,
-        Rightward
-    }
+    private Vector2 direction;
 
-    enum StopType
-    {
-        None,
-        Frictional
-    }
-    
-    [SerializeField] Vector2 velocity;
-    [SerializeField] float moveTime;
-    [SerializeField] MoveType moveType;
-    [SerializeField] MoveDirection moveDirectionType;
-    [SerializeField] StopType stopType;
-    [SerializeField] LayerMask stopLayerMask;
-    [SerializeField] bool changeFaceDirection = true;
-
-    float startTime;
-    Vector2 moveDirection;
-
-    int moveId = Animator.StringToHash("Move");
-    
     public override void CopyNode(ActionNode copyNode)
     {
-        MoveNode node = copyNode as MoveNode;
-        if (node)
-        {
-            description = node.description;
-            velocity = node.velocity;
-            moveTime = node.moveTime;
-            moveType = node.moveType;
-            stopType = node.stopType;
-            changeFaceDirection = node.changeFaceDirection;
-        }
+        MoveNode copyMoveNode = copyNode as MoveNode;
+        
+        speed = copyMoveNode.speed;
+        movePos = copyMoveNode.movePos;
     }
 
-    protected override void PlayAnimation()
-    {
-        anim.Play(moveId);
-    }
-    
     protected override void OnStart()
     {
-        startTime = 0;
+        base.OnStart();
 
-        moveDirection = GetLastDirectionFromType();
+        direction = (direction - treeComponent.GetPosition()).normalized;
     }
 
-    Vector2 GetLastDirectionFromType()
+    protected override NodeComponent.State OnUpdate()
     {
-        Vector2 direction = Vector2.zero;
-        
-        switch(moveType)
-        {
-            case MoveType.ForwardToPlayer:
-                direction = player.transform.position - treeComponent.transform.position;
-                break;
-            case MoveType.BackwardFromPlayer:
-                direction = -(player.transform.position - treeComponent.transform.position);
-                break;
-            default:
-                break;
-        }
-
-        direction = direction.normalized;
-
-        switch(moveDirectionType)
-        {
-            case MoveDirection.Upward:
-                direction.y = 1;
-                break;
-            case MoveDirection.Downward:
-                direction.y = -1;
-                break;
-            case MoveDirection.Leftward:
-                direction.x = -1;
-                break;
-            case MoveDirection.Rightward:
-                direction.x = 1;
-                break;
-            default:
-                break;
-        }
-
-        return direction;
-    }
-
-    void Move() 
-    {
-        if (!treeComponent.data.isFlying)
-        {
-            movement.SetVelocityX(velocity.x * movement.faceDirection.x, changeFaceDirection);
-        }
-        else
-        {
-            movement.SetVelocity(velocity * moveDirection, changeFaceDirection);
-        }
-    }
-
-    protected override void OnStop()
-    {
-        movement.SetVelocityZero();
-    }
-
-    protected override State OnUpdate()
-    {
-        Move();
-        
-        startTime += Time.deltaTime;
-        if (startTime >= moveTime || HitLayerMask())
-        {
-            return State.SUCCESS;
-        }
-        
-        return State.RUNNING;
-    }
-    
-    bool HitLayerMask()
-    {
-        if (stopLayerMask == LayerMask.GetMask("Ground"))
-        {
-            if (collisionChecker.isGround)
-            {
-                return true;
-            }
-        }
-
-        return false;
+        treeComponent.rb.MovePosition(treeComponent.GetPosition() + direction * speed * Time.deltaTime);
+        return NodeComponent.State.SUCCESS;
     }
 }

@@ -9,7 +9,7 @@ using UnityEngine;
 public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 {
     public Node rootNode;
-    public Node.State treeState = Node.State.RUNNING;
+    public NodeComponent.State treeState = NodeComponent.State.RUNNING;
     public List<Node> nodes = new List<Node>();
     
     [SerializeField] Vector2 offset = new Vector2(300, 0);
@@ -45,9 +45,9 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         });
     }
 
-    public Node.State Update() 
+    public NodeComponent.State Update() 
     {
-        if (rootNode.state == Node.State.RUNNING)
+        if (rootNode.NodeComponent.state == NodeComponent.State.RUNNING)
         {
             treeState = rootNode.Update();
         }
@@ -62,7 +62,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 
         Node newNode = CreateInstance(type) as Node;
         newNode.name = type.Name;
-        newNode.guid = GUID.Generate().ToString();
+        newNode.NodeComponent.guid = GUID.Generate().ToString();
 
         nodes.Add(newNode);
 
@@ -88,7 +88,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         for (int i = 0; i < oldPastedNodeList.Count; i++)
         {
             Node newNode = CreateNode(oldPastedNodeList[i].GetType());
-            newNode.position = oldPastedNodeList[i].position + offset;
+            newNode.NodeComponent.position = oldPastedNodeList[i].NodeComponent.position + offset;
             CopyActionNode(newNode as ActionNode, oldPastedNodeList[i] as ActionNode);
             newPastedNodeList.Add(newNode);
         }

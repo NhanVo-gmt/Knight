@@ -38,19 +38,19 @@ public class BehaviourTreeEditor : EditorWindow
 
 
         // Import UXML
-        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>("Assets/Editor/BehaviourTreeEditor.uxml");
+        var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(BehaviourTreeUIBuilderPath.EditorUxmlPath); 
         visualTree.CloneTree(root);
 
         // A stylesheet can be added to a VisualElement.
         // The style will be applied to the VisualElement and all of its children.
-        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>("Assets/Editor/BehaviourTreeEditor.uss");
+        var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(BehaviourTreeUIBuilderPath.EditorStyleSheetPath);
 
         root.styleSheets.Add(styleSheet);
 
         treeGraphView = root.Q<BehaviourTreeGraphView>();
         inspectorView = root.Q<InspectorView>();
         treeGraphView.onNodeViewSelectionChanged = OnNodeSelectionChange;
-
+        
         OnSelectionChange();
     }
 
@@ -92,12 +92,6 @@ public class BehaviourTreeEditor : EditorWindow
                 {
                     tree = behaviourTreeRunner.tree;
                 }
-
-                Enemy enemy = Selection.activeGameObject.GetComponent<Enemy>();
-                if (enemy)
-                {
-                    tree = enemy.tree;
-                }
             }
         }
 
@@ -134,7 +128,10 @@ public class BehaviourTreeEditor : EditorWindow
     private void Update() {
         if (!Application.isPlaying)
         {
-            inspectorView.DrawGizmos();
+            if (inspectorView != null)
+            {
+                inspectorView.DrawGizmos();
+            }
 
             if (selectedNodeView != null)
             {

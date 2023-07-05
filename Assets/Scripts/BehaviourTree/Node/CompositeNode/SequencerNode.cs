@@ -17,21 +17,21 @@ public class SequencerNode : CompositeNode
         base.OnStop();
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
-        State childState = children[currentIndex].Update();
+        NodeComponent.State childState = children[currentIndex].Update();
 
         switch(childState)
         {
-            case State.RUNNING:
-                return State.RUNNING;
-            case State.FAILURE:
-                return State.FAILURE;
-            case State.SUCCESS:
+            case NodeComponent.State.RUNNING:
+                return NodeComponent.State.RUNNING;
+            case NodeComponent.State.FAILURE:
+                return NodeComponent.State.FAILURE;
+            case NodeComponent.State.SUCCESS:
                 currentIndex++;
                 break;
         }
 
-        return currentIndex == children.Count ? State.SUCCESS : State.RUNNING;
+        return currentIndex == children.Count ? NodeComponent.State.SUCCESS : NodeComponent.State.RUNNING;
     }
 }

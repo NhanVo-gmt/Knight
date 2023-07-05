@@ -14,7 +14,7 @@ public class RootNode : Node
     {
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
         return child.Update();
     }

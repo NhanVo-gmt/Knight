@@ -14,17 +14,17 @@ public class SelectorNode : CompositeNode
 
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
-        State state = children[currentIndex].Update();
+        NodeComponent.State state = children[currentIndex].Update();
         
-        if (state == State.RUNNING)
+        if (state == NodeComponent.State.RUNNING)
         {
-            return State.RUNNING;
+            return NodeComponent.State.RUNNING;
         }
-        else if (state == State.SUCCESS)
+        else if (state == NodeComponent.State.SUCCESS)
         {
-            return State.SUCCESS;
+            return NodeComponent.State.SUCCESS;
         }
         else
         {
@@ -32,14 +32,14 @@ public class SelectorNode : CompositeNode
         }
     }
 
-    private State ProceedNextChild()
+    private NodeComponent.State ProceedNextChild()
     {
         currentIndex++;
         if (currentIndex >= children.Count)
         {
-            return State.FAILURE;
+            return NodeComponent.State.FAILURE;
         }
 
-        return State.RUNNING;
+        return NodeComponent.State.RUNNING;
     }
 }

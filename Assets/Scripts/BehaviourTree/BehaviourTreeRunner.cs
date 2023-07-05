@@ -12,16 +12,17 @@ public class BehaviourTreeRunner : MonoBehaviour
         InitializeTreeComponent();
 
         CloneTree();
+        
     }
 
     void Start() 
     {
-        InitializeNodeComponent();
+        InitializeNodeComponent();  
     }
 
     public void InitializeTreeComponent() 
     {
-        treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject, null);
+        treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject);
     }
 
     void CloneTree() 
@@ -31,15 +32,11 @@ public class BehaviourTreeRunner : MonoBehaviour
 
     void InitializeNodeComponent()
     {
-        Player player = FindObjectOfType<Player>();
-        
         tree.Traverse(tree.rootNode, (n) =>
         {
             n.treeComponent = treeComponent;
-            n.player = player;
         });
     }
-
 
 
     void Update()

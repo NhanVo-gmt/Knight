@@ -15,14 +15,14 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     DescriptionView descriptionView;
 
-    public NodeView(Node node) : base("Assets/Game/UI/UI Builder/NodeView.uxml")
+    public NodeView(Node node) : base(BehaviourTreeUIBuilderPath.NodeViewUxmlPath) 
     {
         this.node = node;
         this.title = node.name;
-        this.viewDataKey = node.guid;
+        this.viewDataKey = node.NodeComponent.guid;
 
-        style.left = node.position.x;
-        style.top = node.position.y;
+        style.left = node.NodeComponent.position.x;
+        style.top = node.NodeComponent.position.y;
 
         SetUpDescriptionView(node);
 
@@ -34,7 +34,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     void SetUpDescriptionView(Node node)
     {
         descriptionView = this.Q<DescriptionView>();
-        descriptionView.text = node.description;
+        descriptionView.text = node.NodeComponent.description;
     }
 
     private void SetUpClasses()
@@ -117,8 +117,8 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         base.SetPosition(newPos);
 
         Undo.RecordObject(node, "Undo Set Position");
-        node.position.x = newPos.xMin;
-        node.position.y = newPos.yMin;
+        node.NodeComponent.position.x = newPos.xMin;
+        node.NodeComponent.position.y = newPos.yMin;
         EditorUtility.SetDirty(node);
     }
 
@@ -140,7 +140,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     int SortByHorizontalPosition(Node a, Node b)
     {
-        return a.position.x < b.position.x ? -1 : 1;
+        return a.NodeComponent.position.x < b.NodeComponent.position.x ? -1 : 1;
     }
     
     public void UpdateState()
@@ -151,22 +151,22 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
         
         if (Application.isPlaying)
         {
-            switch(node.state)
+            switch(node.NodeComponent.state)
             {
-                case Node.State.RUNNING:
+                case NodeComponent.State.RUNNING:
                 {
-                    if (node.started)
+                    if (node.NodeComponent.started)
                     {
                         AddToClassList("running");
                     }
                     break;
                 }
-                case Node.State.FAILURE:
+                case NodeComponent.State.FAILURE:
                 {
                     AddToClassList("failure");
                     break;
                 }
-                case Node.State.SUCCESS:
+                case NodeComponent.State.SUCCESS:
                 {
                     AddToClassList("success");
                     break;
@@ -177,6 +177,6 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
 
     public void UpdateDescription()
     {
-        descriptionView.UpdateText(node.description);
+        descriptionView.UpdateText(node.NodeComponent.description);
     }
 }

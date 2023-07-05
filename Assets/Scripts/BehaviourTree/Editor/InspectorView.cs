@@ -8,8 +8,11 @@ using UnityEngine.UIElements;
 public class InspectorView : VisualElement
 {
     public new class UxmlFactory : UxmlFactory<InspectorView, VisualElement.UxmlTraits>{}
-    Editor editor;
+    
     [NonSerialized] Node selectedNode;
+    
+    Editor editor;
+    Vector2 scrollPos;
 
     public InspectorView()
     {
@@ -27,12 +30,13 @@ public class InspectorView : VisualElement
         IMGUIContainer iMGUIContainer = new IMGUIContainer(() => {
             if (editor.target)
             {
+                scrollPos = EditorGUILayout.BeginScrollView(scrollPos);
                 editor.OnInspectorGUI();
+                EditorGUILayout.EndScrollView();
             }
         });
-        Add(iMGUIContainer);
 
-        
+        Add(iMGUIContainer);
     }
 
     public void DrawGizmos() 
