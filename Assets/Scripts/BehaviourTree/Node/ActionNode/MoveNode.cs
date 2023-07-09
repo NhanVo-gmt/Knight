@@ -21,14 +21,14 @@ public class MoveNode : ActionNode
     {
         base.OnStart();
 
-        direction = (movePos - treeComponent.GetPosition()).normalized;
+        movement.MovePosition(movePos, speed);
     }
 
     protected override NodeComponent.State OnUpdate()
     {
-        if (Vector2.Distance(movePos, treeComponent.GetPosition()) < 0.1f) return NodeComponent.State.SUCCESS;
+        if (Vector2.Distance(movePos, treeComponent.transform.position) < 0.1f) return NodeComponent.State.SUCCESS;
 
-        treeComponent.rb.MovePosition(treeComponent.GetPosition() + direction * speed * Time.deltaTime);
+        
         return NodeComponent.State.RUNNING;
     }
 

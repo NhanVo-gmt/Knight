@@ -147,4 +147,14 @@ public class Movement : CoreComponent
     }
 
     #endregion
+
+    #region Desination
+
+    public void MovePosition(Vector2 destination, float speed)
+    {
+        Vector2 direction = (destination - (Vector2)transform.position).normalized;
+        rb.velocity = direction * speed;
+    }
+
+    #endregion
 }
