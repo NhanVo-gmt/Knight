@@ -26,7 +26,7 @@ public class AnimationNodeEditor : Editor
         GameObject selectedGameObject = Selection.activeGameObject;
         if (selectedGameObject != null)
         {
-            Animator selectedAnim = selectedGameObject.GetComponent<Animator>();
+            Animator selectedAnim = selectedGameObject.GetComponentInChildren<Animator>();
             if (selectedAnim != null)
             {
                 string[] clipNames = selectedAnim.runtimeAnimatorController.animationClips.Select(item => item.name).ToArray();

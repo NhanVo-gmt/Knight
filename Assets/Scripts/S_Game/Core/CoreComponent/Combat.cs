@@ -10,9 +10,14 @@ public class Combat : CoreComponent, IDamageable
     IDamageable.DamagerTarget damagerTarget;
     IDamageable.KnockbackType knockbackType;
 
-    Movement movement;
-    Health health;
+    Movement movement {get => _movement ??= core.GetCoreComponent<Movement>(); }
+    Movement _movement;
+
+    Health health {get => _heath ??= core.GetCoreComponent<Health>(); }
+    Health _heath;
+
     GameSettings settings;
+    MeleeCombat meleeCombat;
 
 
     Vector2 attackPosition;
@@ -25,6 +30,8 @@ public class Combat : CoreComponent, IDamageable
     {
         this.damagerTarget = damagerTarget;
         this.knockbackType = knockbackType;
+        
+        meleeCombat = new MeleeCombat(col, damagerTarget);
     }
 
     protected override void Awake()
@@ -37,9 +44,7 @@ public class Combat : CoreComponent, IDamageable
     void Start() 
     {
         settings = FindObjectOfType<GameSettings>();
-        
-        movement = core.GetCoreComponent<Movement>();
-        health = core.GetCoreComponent<Health>();
+
         AddEvent();
     }
 
@@ -63,31 +68,10 @@ public class Combat : CoreComponent, IDamageable
 
     public void MeleeAttack(MeleeAttackData attackData)
     {
-        List<IDamageable> enemiesFound = FindDamageableEntityInRange(attackData).ToList();
-        
-        enemiesFound.ForEach(enemy => DealDamage(enemy, attackData.damage));
+        meleeCombat.MeleeAttack(attackData, SetAttackPosition(attackData), movement.faceDirection);
     }
 
-    
-    IEnumerable<IDamageable> FindDamageableEntityInRange(MeleeAttackData attackData)
-    {
-        SetAttackPosition(attackData);
-        
-        Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(attackPosition, attackData.radius);
-        foreach(Collider2D col in collider2DArray)
-        {
-            if (col == this.col) continue;
-
-            
-            IDamageable idamageable = col.GetComponent<IDamageable>();
-            if (idamageable != null)
-            {
-                yield return idamageable;
-            }
-        }
-    }
-
-    void SetAttackPosition(MeleeAttackData attackData)
+    Vector2 SetAttackPosition(MeleeAttackData attackData)
     {
         if (movement.faceDirection == Vector2.left)
         {
@@ -97,11 +81,8 @@ public class Combat : CoreComponent, IDamageable
         {
             attackPosition = (Vector2)transform.position + attackData.rightAttackPos;
         }
-    }
 
-    void DealDamage(IDamageable damageableEntity, int damage)
-    {
-        damageableEntity.TakeDamage(damage, GetDamagerType(), movement.faceDirection);
+        return attackPosition;
     }
 
     public IDamageable.DamagerTarget GetDamagerType()
@@ -167,8 +148,6 @@ public class Combat : CoreComponent, IDamageable
     {
         col.enabled = false;
     }
-
-    
 
     #endregion
 }

@@ -5,18 +5,15 @@ using UnityEngine;
 public class SpawnObjectController : CoreComponent
 {
     ObjectPooling poolingManager;
-    Movement movement;
+
+    Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
+    Movement _movement;
     
     protected override void Awake()
     {
         base.Awake();
 
         poolingManager = FindObjectOfType<ObjectPooling>();
-    }
-
-    void Start() 
-    {
-        movement = core.GetCoreComponent<Movement>();
     }
 
 #region 

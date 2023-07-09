@@ -6,93 +6,19 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Core core;
-    Combat combat;
-    Movement movement;
-    Health health;
-    SpawnObjectController vfx;
 
     Collider2D col;
+    Health health;
+    Combat combat;
 
-    #region Set up
-    
-    // void Awake() 
-    // {
-    //     col = GetComponent<Collider2D>();
-    //     core = GetComponentInChildren<Core>();
-        
-    //     data = Instantiate(data);
+    void Awake() {
+        core = GetComponentInChildren<Core>();
+    }
 
-    //     SetUpBehaviourTree();
-    // }
+    void Start() 
+    {
+        combat = core.GetCoreComponent<Combat>();
 
-    // void SetUpBehaviourTree()
-    // {
-    //     InitializeTreeComponent();
-
-    //     CloneTree();
-    // }
-
-    // void InitializeTreeComponent() 
-    // {
-    //     treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject, data);
-    // }
-
-    // void CloneTree() 
-    // {
-    //     tree = tree.Clone();
-    // }
-
-    // void Start() 
-    // {
-    //     GetCoreComponent();
-
-    //     InitializeTreeNodeComponent();
-    // }
-
-    // private void GetCoreComponent()
-    // {
-    //     combat = core.GetCoreComponent<Combat>();
-    //     movement = core.GetCoreComponent<Movement>();
-    //     health = core.GetCoreComponent<Health>();
-    //     vfx = core.GetCoreComponent<SpawnObjectController>();
-
-    //     SetUpComponent();
-    // }
-
-    // void SetUpComponent()
-    // {
-    //     combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.knockbackType);
-    //     health.SetHealth(data.healthData);
-    // }
-
-    // void InitializeTreeNodeComponent()
-    // {
-    //     Player player = FindObjectOfType<Player>();
-        
-    //     tree.Traverse(tree.rootNode, (n) =>
-    //     {
-    //         n.treeComponent = treeComponent;
-    //         n.player = player;
-    //     });
-    // }
-
-    // #endregion
-
-    // #region Unity Call back
-
-    // void Update() 
-    // {
-    //     tree.Update();
-    // }
-
-    #endregion
-
-    // private void OnTriggerEnter2D(Collider2D other) {
-    //     if (other == col) return;
-
-    //     if (other.TryGetComponent<IDamageable>(out IDamageable target))
-    //     {
-    //         target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero); //hardcode
-    //     }
-    // }
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.none);
+    }
 }

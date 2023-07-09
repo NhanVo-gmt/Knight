@@ -99,6 +99,7 @@ MonoBehaviour:
   - {fileID: 993027339206116095}
   - {fileID: -1780146597622572514}
   - {fileID: -6742680835363187829}
+  - {fileID: 3097413825085117369}
   offset: {x: 300, y: 0}
 --- !u!114 &993027339206116095
 MonoBehaviour:
@@ -120,3 +121,22 @@ MonoBehaviour:
     description: 
   speed: 10
   movePos: {x: 1, y: -0.8}
+--- !u!114 &3097413825085117369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: d3ff1bbe872cd2d448d749221936d27e
+    position: {x: 0, y: 0}
+    description: 
+  clipName: 
