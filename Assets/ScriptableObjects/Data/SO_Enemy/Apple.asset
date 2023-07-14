@@ -16,9 +16,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d1c312b753f4dfb4c8924c197be96a7c
-    position: {x: 172.90251, y: 463.00006}
+    position: {x: 142.14507, y: 463}
     description: 
-  speed: 10
+  speed: 2
   movePos: {x: -5, y: -0.8}
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
@@ -74,10 +74,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: de1a6c596affcb142836ea80ec58a161
-    position: {x: 366.00003, y: 327.71008}
+    position: {x: 342, y: 326}
     description: 
   children:
   - {fileID: -7334015473047253504}
+  - {fileID: 3097413825085117369}
   - {fileID: 993027339206116095}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -117,9 +118,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: b96868dad7a3acc4d871c69b8be80e85
-    position: {x: 516, y: 463.00003}
+    position: {x: 516, y: 495}
     description: 
-  speed: 10
+  speed: 2
   movePos: {x: 1, y: -0.8}
 --- !u!114 &3097413825085117369
 MonoBehaviour:
@@ -137,6 +138,6 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d3ff1bbe872cd2d448d749221936d27e
-    position: {x: 0, y: 0}
+    position: {x: 341.99997, y: 463}
     description: 
-  clipName: 
+  clipName: Idle

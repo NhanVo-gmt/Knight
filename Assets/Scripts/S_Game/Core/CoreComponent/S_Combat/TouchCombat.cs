@@ -2,21 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchCombat : MonoBehaviour
+public class TouchCombat
 {
     Collider2D col;
+    IDamageable.DamagerTarget damagerTarget;
 
-    void Awake()
-    {
-        col = GetComponent<Collider2D>();
+    public TouchCombat(Collider2D col, IDamageable.DamagerTarget damagerTarget) {
+        this.col = col;
+        this.damagerTarget = damagerTarget;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    public void TouchAttack(Collider2D other) {
         if (other == col) return;
 
         if (other.TryGetComponent<IDamageable>(out IDamageable target))
         {
-            target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero); //hardcode
+            target.TakeDamage(1, damagerTarget, Vector2.zero); // todo
         }
     }
 }

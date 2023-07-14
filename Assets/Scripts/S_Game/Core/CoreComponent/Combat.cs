@@ -18,6 +18,7 @@ public class Combat : CoreComponent, IDamageable
 
     GameSettings settings;
     MeleeCombat meleeCombat;
+    TouchCombat touchCombat;
 
 
     Vector2 attackPosition;
@@ -32,6 +33,9 @@ public class Combat : CoreComponent, IDamageable
         this.knockbackType = knockbackType;
         
         meleeCombat = new MeleeCombat(col, damagerTarget);
+
+        if (damagerTarget == IDamageable.DamagerTarget.Player) return ;
+        touchCombat = new TouchCombat(col, damagerTarget);
     }
 
     protected override void Awake()
@@ -147,6 +151,10 @@ public class Combat : CoreComponent, IDamageable
     public void DisableCollider()
     {
         col.enabled = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        touchCombat?.TouchAttack(other);
     }
 
     #endregion
