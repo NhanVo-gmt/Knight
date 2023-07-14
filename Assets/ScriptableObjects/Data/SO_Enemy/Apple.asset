@@ -16,10 +16,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d1c312b753f4dfb4c8924c197be96a7c
-    position: {x: 142.14507, y: 463}
+    position: {x: 142, y: 478.8}
     description: 
-  speed: 2
-  movePos: {x: -5, y: -0.8}
+  speed: 10
+  canFly: 0
+  movePos: {x: 1.72, y: -2.52}
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +142,9 @@ MonoBehaviour:
     guid: b96868dad7a3acc4d871c69b8be80e85
     position: {x: 516, y: 495}
     description: 
-  speed: 2
-  movePos: {x: 1, y: -0.8}
+  speed: 10
+  canFly: 0
+  movePos: {x: 11.1, y: -2.4}
 --- !u!114 &3097413825085117369
 MonoBehaviour:
   m_ObjectHideFlags: 0

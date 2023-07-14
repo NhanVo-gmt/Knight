@@ -155,6 +155,7 @@ public class Movement : CoreComponent
         if (!canSetVelocity) return;
 
         Vector2 direction = (destination - (Vector2)transform.position).normalized;
+
         rb.MovePosition((Vector2)transform.position + direction * speed * Time.deltaTime);
     }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class MoveNode : ActionNode
 {
     public float speed;
+    public bool canFly;
     public Vector2 movePos;
 
     private Vector2 direction;
@@ -20,6 +21,8 @@ public class MoveNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
+
+        if (!canFly) movePos.y = treeComponent.transform.position.y;
     }
 
     protected override NodeComponent.State OnUpdate()
