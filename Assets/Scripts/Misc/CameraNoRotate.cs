@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class CameraNoRotate : MonoBehaviour
 {
-
     Transform cam;
 
     void Awake() 
     {
         cam = GetComponent<Transform>();
+        DontDestroyOnLoad(gameObject);
     }
     
     void LateUpdate() 

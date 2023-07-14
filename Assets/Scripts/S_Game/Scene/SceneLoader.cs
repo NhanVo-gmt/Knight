@@ -11,21 +11,33 @@ public class SceneLoader : SingletonObject<SceneLoader>
         ForestScene,
     }
 
+    public EventHandler OnSceneLoadingStarted;
     public EventHandler<float> OnSceneLoadingProgressChanged;
     public EventHandler OnSceneLoadingCompleted;
 
     AsyncOperation loadingOperation;
+    Vector2 spawnPos;
 
     protected override void Awake()
     {
         base.Awake();
     }
 
-    public void ChangeScene(Scene scene)
+    public void ChangeScene(Scene scene, Vector2 position)
     {
-        loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
-        OnSceneLoadingProgressChanged?.Invoke(this, loadingOperation.progress);
+        StartCoroutine(ChangeSceneCoroutine(scene));
+        spawnPos = position;
     }
+
+    IEnumerator ChangeSceneCoroutine(Scene scene)
+    {
+        OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
+
+        yield return new WaitForSeconds(1f);
+
+        loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
+    }
+
 
     void Update() {
         if (loadingOperation == null) return;
@@ -38,6 +50,8 @@ public class SceneLoader : SingletonObject<SceneLoader>
         {
             OnSceneLoadingCompleted?.Invoke(this, EventArgs.Empty);
             loadingOperation = null;
+
+            Player.Intance.transform.position = spawnPos;
         }
     }
 

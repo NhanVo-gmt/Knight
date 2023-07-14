@@ -22,7 +22,8 @@ using UnityEditor.Experimental.AssetImporters;
 
 
 namespace AsepriteImporter {
-    [ScriptedImporter(1, new[] {"ase", "aseprite"})]
+
+    [ScriptedImporter(1, null, new [] {"ase", "aseprite"})]
     public class AseFileImporter : ScriptedImporter, ISpriteEditorDataProvider {
         [SerializeField] public AseFileImportSettings settings = new AseFileImportSettings();
         [SerializeField] public AseFileTextureImportSettings textureImporterSettings = new AseFileTextureImportSettings();

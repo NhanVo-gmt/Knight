@@ -58,7 +58,7 @@ MonoBehaviour:
     guid: 3cf5349c7be76aa4b95e0e48912174ff
     position: {x: -8, y: 463}
     description: 
-  idleTime: 0
+  idleTime: 1000
 --- !u!114 &-2886896763517979471
 MonoBehaviour:
   m_ObjectHideFlags: 0

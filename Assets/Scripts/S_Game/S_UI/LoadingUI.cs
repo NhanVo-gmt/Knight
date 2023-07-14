@@ -11,14 +11,23 @@ public class LoadingUI : MonoBehaviour
 
     CanvasGroup canvasGroup;
 
+    Coroutine LoadCoroutine;
+    bool isLoading;
+
     void Awake() {
         canvasGroup = loadingScreen.GetComponent<CanvasGroup>();
     }
 
     void Start() 
     {
+        SceneLoader.Intance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
         SceneLoader.Intance.OnSceneLoadingProgressChanged += SceneLoader_OnSceneLoadingProgressChanged;
         SceneLoader.Intance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
+    }
+
+    private void SceneLoader_OnSceneLoadingStarted(object sender, EventArgs e)
+    {
+        LoadCoroutine = StartCoroutine(FadeIn());
     }
 
     private void SceneLoader_OnSceneLoadingProgressChanged(object sender, float progress)
@@ -29,23 +38,32 @@ public class LoadingUI : MonoBehaviour
 
     private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)
     {
-        
+        if (canvasGroup.alpha != 0)
+        {
+            StartCoroutine(FadeOut());
+        }
     }
+
 
     IEnumerator FadeIn()
     {
-        loadingScreen.SetActive(true);
         yield return Fade(1, 1);
     }
 
     IEnumerator FadeOut()
     {
+        if (LoadCoroutine != null)
+        {
+            yield return LoadCoroutine;
+        }
+        
         yield return Fade(0, 1);
-        loadingScreen.SetActive(false);
     }
 
     IEnumerator Fade(float targetAlpha, float duration)
     {
+        isLoading = true;
+
         float startAlpha = canvasGroup.alpha;
         float time = 0;
         while (time < duration)
@@ -56,5 +74,6 @@ public class LoadingUI : MonoBehaviour
         }
 
         canvasGroup.alpha = targetAlpha;
+        isLoading = false;
     }
 }
