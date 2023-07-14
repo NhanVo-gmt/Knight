@@ -20,14 +20,12 @@ public class MoveNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
-
-        movement.MovePosition(movePos, speed);
     }
 
     protected override NodeComponent.State OnUpdate()
     {
         if (Vector2.Distance(movePos, treeComponent.transform.position) < 0.1f) return NodeComponent.State.SUCCESS;
-
+        movement.MovePosition(movePos, speed);
         
         return NodeComponent.State.RUNNING;
     }

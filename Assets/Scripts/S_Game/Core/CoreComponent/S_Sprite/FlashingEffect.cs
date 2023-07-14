@@ -6,14 +6,17 @@ using UnityEngine;
 public class FlashingEffect : MonoBehaviour
 {
     [SerializeField] float cooldown;
+    [SerializeField] Material flashMaterial; //todo setglobal
     
     Coroutine flashingCoroutine;
 
     SpriteRenderer sprite;
+    Material defaultMaterial;
 
     void Awake() 
     {
         sprite = GetComponent<SpriteRenderer>();
+        defaultMaterial = sprite.material;
     }
     
     public void StartFlashing()
@@ -24,9 +27,9 @@ public class FlashingEffect : MonoBehaviour
 
     IEnumerator Flashing()
     {
-        sprite.material.SetInt("_Hit", 1);
+        sprite.material = flashMaterial;
         yield return new WaitForSeconds(cooldown);
-        sprite.material.SetInt("_Hit", 0);
+        sprite.material = defaultMaterial;
     }
 
     void StopFlashing()
@@ -34,7 +37,7 @@ public class FlashingEffect : MonoBehaviour
         if (flashingCoroutine != null)
         {
             StopCoroutine(flashingCoroutine);
-            sprite.material.SetInt("_Hit", 0);
+            sprite.material = defaultMaterial;
         }
     }
 }

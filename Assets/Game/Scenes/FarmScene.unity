@@ -11199,9 +11199,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  PlayerKnockbackAmount: 100
-  WeakKnockbackAmount: 200
-  StrongKnockbackAmount: 1000
+  PlayerKnockbackAmount: 10
+  WeakKnockbackAmount: 20
+  StrongKnockbackAmount: 100
 --- !u!4 &1577145070
 Transform:
   m_ObjectHideFlags: 0
@@ -11543,7 +11543,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 15
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}

@@ -19,6 +19,6 @@ public class Enemy : MonoBehaviour
     {
         combat = core.GetCoreComponent<Combat>();
 
-        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.none);
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.weak);
     }
 }

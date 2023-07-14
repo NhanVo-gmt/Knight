@@ -80,11 +80,11 @@ public class Movement : CoreComponent
     {
         canSetVelocity = false;
 
-        rb.AddForce(direction * amount);
-        
-        yield return new WaitForSeconds(0.3f);
-
         SetVelocityZero();
+        rb.AddForce(direction * amount, ForceMode2D.Impulse);
+        
+        yield return new WaitForSeconds(0.5f);
+        
 
         canSetVelocity = true;
     }
@@ -152,8 +152,10 @@ public class Movement : CoreComponent
 
     public void MovePosition(Vector2 destination, float speed)
     {
+        if (!canSetVelocity) return;
+
         Vector2 direction = (destination - (Vector2)transform.position).normalized;
-        rb.velocity = direction * speed;
+        rb.MovePosition((Vector2)transform.position + direction * speed * Time.deltaTime);
     }
 
     #endregion

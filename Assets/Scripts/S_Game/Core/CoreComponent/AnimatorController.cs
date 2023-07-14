@@ -12,6 +12,8 @@ public class AnimatorController : CoreComponent
     Health health;
 
     Animator anim;
+    bool canBlink;
+    bool canFlash;
     BlinkingEffect blinkingEffect;
     FlashingEffect flashingEffect;
 
@@ -20,6 +22,7 @@ public class AnimatorController : CoreComponent
         base.Awake();
         
         anim = GetComponent<Animator>();
+
         blinkingEffect = GetComponent<BlinkingEffect>();
         flashingEffect = GetComponent<FlashingEffect>();
     }
