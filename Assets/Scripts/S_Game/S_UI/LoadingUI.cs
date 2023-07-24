@@ -20,9 +20,17 @@ public class LoadingUI : MonoBehaviour
 
     void Start() 
     {
-        SceneLoader.Intance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
-        SceneLoader.Intance.OnSceneLoadingProgressChanged += SceneLoader_OnSceneLoadingProgressChanged;
-        SceneLoader.Intance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
+        SceneLoader.Instance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
+        SceneLoader.Instance.OnSceneLoadingProgressChanged += SceneLoader_OnSceneLoadingProgressChanged;
+        SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
+    }
+
+    private void SceneLoader_OnSceneLoadingCompleted(object sender, Vector2 e)
+    {
+        if (canvasGroup.alpha != 0)
+        {
+            StartCoroutine(FadeOut());
+        }
     }
 
     private void SceneLoader_OnSceneLoadingStarted(object sender, EventArgs e)
@@ -33,15 +41,6 @@ public class LoadingUI : MonoBehaviour
     private void SceneLoader_OnSceneLoadingProgressChanged(object sender, float progress)
     {
         slider.value = Mathf.Clamp01(progress/ 0.9f);
-    }
-
-
-    private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)
-    {
-        if (canvasGroup.alpha != 0)
-        {
-            StartCoroutine(FadeOut());
-        }
     }
 
 

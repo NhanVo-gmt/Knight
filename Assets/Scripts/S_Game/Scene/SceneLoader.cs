@@ -13,7 +13,7 @@ public class SceneLoader : SingletonObject<SceneLoader>
 
     public EventHandler OnSceneLoadingStarted;
     public EventHandler<float> OnSceneLoadingProgressChanged;
-    public EventHandler OnSceneLoadingCompleted;
+    public EventHandler<Vector2> OnSceneLoadingCompleted;
 
     AsyncOperation loadingOperation;
     Vector2 spawnPos;
@@ -48,10 +48,10 @@ public class SceneLoader : SingletonObject<SceneLoader>
         }
         else 
         {
-            OnSceneLoadingCompleted?.Invoke(this, EventArgs.Empty);
+            OnSceneLoadingCompleted?.Invoke(this, spawnPos);
             loadingOperation = null;
 
-            Player.Intance.transform.position = spawnPos;
+            Player.Instance.transform.position = spawnPos;
         }
     }
 
