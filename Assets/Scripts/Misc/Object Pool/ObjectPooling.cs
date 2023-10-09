@@ -17,7 +17,7 @@ public class ObjectPooling : MonoBehaviour
             pool = new ObjectPool<GameObject>(CreatePooledItem, OnTakeFromPool, OnReturnToPool, OnDestroyPoolObject, false, amountToPool, amountToPool);
         }
 
-         GameObject CreatePooledItem()
+        GameObject CreatePooledItem()
         {
             GameObject createdGO = GameObject.Instantiate(prefab);
             createdGO.AddComponent<PooledObject>().pool = pool;
@@ -27,12 +27,12 @@ public class ObjectPooling : MonoBehaviour
 
         void OnTakeFromPool(GameObject go)
         {
-            go.gameObject.SetActive(true);
+            go.SetActive(true);
         }
         
         void OnReturnToPool(GameObject go)
         {
-            go.gameObject.SetActive(false);
+            go.SetActive(false);
         }
 
         void OnDestroyPoolObject(GameObject go) 

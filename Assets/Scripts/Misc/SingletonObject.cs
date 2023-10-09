@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
 {
-    public static T Instance
-    ;
+    public static T Instance;
 
     protected virtual void Awake() 
     {
