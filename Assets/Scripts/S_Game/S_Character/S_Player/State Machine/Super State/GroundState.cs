@@ -29,6 +29,7 @@ public class GroundState : State
 
         if (!stateMachine.canChangeState) return;
 
+        
         if (player.inputManager.jumpInput && collisionSenses.isGround)
         {
             stateMachine.ChangeState(player.jumpState);
@@ -40,6 +41,10 @@ public class GroundState : State
         else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
         {
             stateMachine.ChangeState(player.meleeAttackState);
+        }
+        else if (!collisionSenses.isGround && movement.GetVelocity().y < 0.1f)
+        {
+            stateMachine.ChangeState(player.inAirState);
         }
     }
 

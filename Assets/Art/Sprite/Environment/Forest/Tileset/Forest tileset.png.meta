@@ -3,7 +3,7 @@ guid: 24a601d4be981fe4089089725bf34fad
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,17 +64,85 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -83,23 +152,19 @@ TextureImporter:
       name: Forest tileset_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 33
+        x: 0
+        y: 32
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f3b9d842bcbaaeb4287c7bc547724ec4
-      internalID: -1987468378
+      spriteID: da2b1a22d6e353d4faf399ecd5de4e2a
+      internalID: 108286946
       vertices: []
       indices: 
       edges: []
@@ -108,23 +173,19 @@ TextureImporter:
       name: Forest tileset_1
       rect:
         serializedVersion: 2
-        x: 17
-        y: 33
+        x: 16
+        y: 32
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbbfb295c545c534f988f98d0e6eb003
-      internalID: 1116215715
+      spriteID: 7aa300ce150d9734f9506cf59ed9e9ea
+      internalID: 1889745264
       vertices: []
       indices: 
       edges: []
@@ -133,23 +194,19 @@ TextureImporter:
       name: Forest tileset_2
       rect:
         serializedVersion: 2
-        x: 33
-        y: 33
+        x: 32
+        y: 32
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 158539fca5337424b8616ae9b1c1c8e4
-      internalID: 1302872267
+      spriteID: f90f04c9d985a9d41afa39f5f817f8a4
+      internalID: 116823588
       vertices: []
       indices: 
       edges: []
@@ -158,23 +215,19 @@ TextureImporter:
       name: Forest tileset_3
       rect:
         serializedVersion: 2
-        x: 49
-        y: 33
+        x: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88159572d4b53404c9e5f513f38eee55
-      internalID: -1718488346
+      spriteID: 793e18ca8c871644d8e77872b9788b30
+      internalID: -1708096871
       vertices: []
       indices: 
       edges: []
@@ -183,23 +236,19 @@ TextureImporter:
       name: Forest tileset_4
       rect:
         serializedVersion: 2
-        x: 65
-        y: 33
+        x: 16
+        y: 16
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdbca640d926c4647aaeba1d573084ba
-      internalID: -1052952212
+      spriteID: 4c88fe5987b2708488dc519050497cbb
+      internalID: 2008119681
       vertices: []
       indices: 
       edges: []
@@ -208,23 +257,19 @@ TextureImporter:
       name: Forest tileset_5
       rect:
         serializedVersion: 2
-        x: 1
-        y: 17
+        x: 32
+        y: 16
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d0f8983d0c3709847bb88e6b369c7798
-      internalID: 2116408601
+      spriteID: bd9f5bf3d75400a4686833a0379d7f43
+      internalID: -1915282753
       vertices: []
       indices: 
       edges: []
@@ -233,23 +278,19 @@ TextureImporter:
       name: Forest tileset_6
       rect:
         serializedVersion: 2
-        x: 17
-        y: 17
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c86f69c2dc436a64c972b15dbc5043c3
-      internalID: -718421562
+      spriteID: 0e009c2a23dc97b4e997520f1d816f26
+      internalID: -39373835
       vertices: []
       indices: 
       edges: []
@@ -258,23 +299,19 @@ TextureImporter:
       name: Forest tileset_7
       rect:
         serializedVersion: 2
-        x: 33
-        y: 17
+        x: 16
+        y: 0
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d86bb7a21bdc1d34faf31c99e571daa4
-      internalID: 2005338229
+      spriteID: 80454487ba194f94cba27bbd2e2c8280
+      internalID: -1995230595
       vertices: []
       indices: 
       edges: []
@@ -283,23 +320,19 @@ TextureImporter:
       name: Forest tileset_8
       rect:
         serializedVersion: 2
-        x: 49
-        y: 17
+        x: 32
+        y: 0
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c3f099ea0643466438923dd106c62f26
-      internalID: -1996502765
+      spriteID: cfac622f8ada7764fb800a6ae9638bb0
+      internalID: 1725537201
       vertices: []
       indices: 
       edges: []
@@ -308,23 +341,19 @@ TextureImporter:
       name: Forest tileset_9
       rect:
         serializedVersion: 2
-        x: 65
-        y: 17
+        x: 48
+        y: 0
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 082ceb09306963c4b8b0e921cb12a873
-      internalID: -1431075584
+      spriteID: 78c05af1fc2e03348b8672ae45e28a29
+      internalID: 1790128984
       vertices: []
       indices: 
       edges: []
@@ -333,23 +362,19 @@ TextureImporter:
       name: Forest tileset_10
       rect:
         serializedVersion: 2
-        x: 1
-        y: 1
+        x: 64
+        y: 0
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c699fba6500ffc24793eb6ff172fadb5
-      internalID: -1403079685
+      spriteID: d7947040ab975564aa9fd1c91367f287
+      internalID: 1334399224
       vertices: []
       indices: 
       edges: []
@@ -358,98 +383,19 @@ TextureImporter:
       name: Forest tileset_11
       rect:
         serializedVersion: 2
-        x: 17
-        y: 1
+        x: 80
+        y: 0
         width: 16
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
+      physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d79a5561981a3f41b9a092637e60ffd
-      internalID: -553558637
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Forest tileset_12
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 1
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
-      tessellationDetail: 0
-      bones: []
-      spriteID: f915acd9f888fd645abfa494c8a7920b
-      internalID: -1020752327
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Forest tileset_13
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 1
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8, y: 4}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 4}
-      tessellationDetail: 0
-      bones: []
-      spriteID: 141524ae69962b840b9be27b48d3ea67
-      internalID: 1189066471
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Forest tileset_14
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 1
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape:
-      - - {x: -8, y: 8}
-        - {x: -8, y: -8}
-        - {x: 8, y: -8}
-        - {x: 8, y: 8}
-      tessellationDetail: 0
-      bones: []
-      spriteID: cddf3500b4e57ea42905a6af82d5865b
-      internalID: 1407160253
+      spriteID: ff0aff8afcc0ed3409d4cfe2bcc56be8
+      internalID: 1132248743
       vertices: []
       indices: 
       edges: []
@@ -465,24 +411,20 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Forest tileset_3: -1718488346
-      Forest tileset_0: -1987468378
-      Forest tileset_12: -1020752327
-      Forest tileset_11: -553558637
-      Forest tileset_4: -1052952212
-      Forest tileset_7: 2005338229
-      Forest tileset_14: 1407160253
-      Forest tileset_2: 1302872267
-      Forest tileset_1: 1116215715
-      Forest tileset_9: -1431075584
-      Forest tileset_13: 1189066471
-      Forest tileset_6: -718421562
-      Forest tileset_10: -1403079685
-      Forest tileset_8: -1996502765
-      Forest tileset_5: 2116408601
-  spritePackingTag: 
+      Forest tileset_0: 108286946
+      Forest tileset_1: 1889745264
+      Forest tileset_10: 1334399224
+      Forest tileset_11: 1132248743
+      Forest tileset_2: 116823588
+      Forest tileset_3: -1708096871
+      Forest tileset_4: 2008119681
+      Forest tileset_5: -1915282753
+      Forest tileset_6: -39373835
+      Forest tileset_7: -1995230595
+      Forest tileset_8: 1725537201
+      Forest tileset_9: 1790128984
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

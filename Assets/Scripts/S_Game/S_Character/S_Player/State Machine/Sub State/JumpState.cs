@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpState : AbilityState
+public class JumpState : GroundState
 {
     public JumpState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
@@ -37,15 +37,6 @@ public class JumpState : AbilityState
     public override void LogicsUpdate()
     {
         base.LogicsUpdate();
-
-        if (collisionSenses.isGround && movement.GetVelocity().y < 0.1f)
-        {
-            stateMachine.ChangeState(player.idleState);
-        }
-        else
-        {
-            stateMachine.ChangeState(player.inAirState);
-        }
     }
 
     public override void PhysicsUpdate()
