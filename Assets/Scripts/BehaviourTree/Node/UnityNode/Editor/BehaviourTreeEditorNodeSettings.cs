@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Knight.Editor
 {
-    public static class GameEditorSettings
+    public static class BehaviourTreeEditorNodeSettings
     {
         public static string[] AnimationClipName = {"Idle", "Move", "Die"};
     }

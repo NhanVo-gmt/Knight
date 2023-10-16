@@ -11,7 +11,7 @@ public class Health : CoreComponent
     public Action onDie;
     public Action<int> onUpdateHealth;
 
-    RecoveryController recoveryController;
+    
 
     private bool isDie = false;
 
@@ -28,8 +28,6 @@ public class Health : CoreComponent
     protected override void Awake() 
     {
         base.Awake();
-
-        recoveryController = GetComponent<RecoveryController>();
     }
     
     public void TakeDamage(int damage)
@@ -50,9 +48,9 @@ public class Health : CoreComponent
         }
     }
 
-    bool IsInvulnerable() 
+    protected virtual bool IsInvulnerable()
     {
-        return recoveryController != null && recoveryController.IsInInvulnerabiltyTime();
+        return false;
     }
 
     void TakeDamage()
