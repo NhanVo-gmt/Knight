@@ -26,6 +26,7 @@ public class MoveNode : ActionNode
         startPos = treeComponent.transform.position;
         if (!canFly)
         {
+            movePos.y = 0;
             direction = movePos - startPos;
             direction.y = 0;
             direction = direction.normalized;

@@ -42,7 +42,7 @@ MonoBehaviour:
     description: 
   speed: 1.5
   canFly: 0
-  movePos: {x: -4.16, y: 0}
+  movePos: {x: -4.16, y: 3.33}
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,11 +190,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: b96868dad7a3acc4d871c69b8be80e85
-    position: {x: 250.40002, y: 539.2}
+    position: {x: 250.40002, y: 544.80005}
     description: 
   speed: 1.5
   canFly: 0
-  movePos: {x: 5.69, y: 0.44}
+  movePos: {x: 5.69, y: 0}
 --- !u!114 &3097413825085117369
 MonoBehaviour:
   m_ObjectHideFlags: 0
