@@ -34,7 +34,7 @@ public class BehaviourTreeRunner : MonoBehaviour
     {
         tree.Traverse(tree.rootNode, (n) =>
         {
-            n.treeComponent = treeComponent;
+            n.OnInitialize(treeComponent);
         });
     }
 

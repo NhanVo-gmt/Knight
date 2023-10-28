@@ -41,6 +41,11 @@ public abstract class Node : ScriptableObject
         NodeComponent.state = NodeComponent.State.FAILURE;
     }
 
+    public virtual void OnInitialize(BehaviourTreeComponent component)
+    {
+        treeComponent = component;
+    }
+    
     protected abstract void OnStart();
     protected abstract void OnStop();
     protected abstract NodeComponent.State OnUpdate(); 
@@ -48,7 +53,7 @@ public abstract class Node : ScriptableObject
 #region Draw Gizmos
 
     
-    public virtual void DrawGizmos() 
+    public virtual void DrawGizmos(GameObject selectedGameObject) 
     {
 
     } 

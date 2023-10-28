@@ -130,7 +130,7 @@ public class BehaviourTreeEditor : EditorWindow
         {
             if (inspectorView != null)
             {
-                inspectorView.DrawGizmos();
+                inspectorView.DrawGizmos(Selection.activeGameObject);
             }
 
             if (selectedNodeView != null)

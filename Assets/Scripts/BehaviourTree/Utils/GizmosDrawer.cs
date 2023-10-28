@@ -19,6 +19,7 @@ public class GizmosDrawer : MonoBehaviour
     static float _radius;
 
     public static void DrawSphere(Vector2 position, float radius) {
+        
         _position = position;
         _radius = radius;
         gizmoType = GizmoType.Sphere;

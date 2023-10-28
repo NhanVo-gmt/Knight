@@ -8,6 +8,7 @@ public class MoveNode : ActionNode
     public bool canFly;
     public Vector2 movePos;
 
+    private Vector2 startPos;
     private Vector2 direction;
 
     public override void CopyNode(ActionNode copyNode)
@@ -18,23 +19,30 @@ public class MoveNode : ActionNode
         movePos = copyMoveNode.movePos;
     }
 
-    protected override void OnStart()
+    public override void OnInitialize(BehaviourTreeComponent component)
     {
-        base.OnStart();
+        base.OnInitialize(component);
 
-        if (!canFly) movePos.y = treeComponent.transform.position.y;
+        startPos = treeComponent.transform.position;
+        if (!canFly)
+        {
+            direction = movePos - startPos;
+            direction.y = 0;
+            direction = direction.normalized;
+        }
     }
+
 
     protected override NodeComponent.State OnUpdate()
     {
-        if (Vector2.Distance(movePos, treeComponent.transform.position) < 0.1f) return NodeComponent.State.SUCCESS;
-        movement.MovePosition(movePos, speed);
+        if (Vector2.Distance(movePos + startPos, treeComponent.transform.position) < 0.1f) return NodeComponent.State.SUCCESS;
+        treeComponent.transform.Translate( direction * speed * Time.deltaTime);
         
         return NodeComponent.State.RUNNING;
     }
 
-    public override void DrawGizmos()
+    public override void DrawGizmos(GameObject selectedGameObject)
     {
-        GizmosDrawer.DrawSphere(movePos, 0.5f);
+        GizmosDrawer.DrawSphere(movePos + (Vector2)selectedGameObject.transform.position, 0.5f);
     }
 }

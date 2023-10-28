@@ -39,11 +39,11 @@ public class InspectorView : VisualElement
         Add(iMGUIContainer);
     }
 
-    public void DrawGizmos() 
+    public void DrawGizmos(GameObject selectedGameObject) 
     {
-        if (selectedNode != null)
+        if (selectedNode != null && selectedGameObject != null)
         {
-            selectedNode.DrawGizmos();
+            selectedNode.DrawGizmos(selectedGameObject);
         }
     }
 }

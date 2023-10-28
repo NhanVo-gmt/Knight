@@ -37,14 +37,6 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         return behaviourTree;
     }
 
-    public void Bind(BehaviourTreeComponent component)
-    {
-        Traverse(rootNode, (n) =>
-        {
-            n.treeComponent = component;
-        });
-    }
-
     public NodeComponent.State Update() 
     {
         if (rootNode.NodeComponent.state == NodeComponent.State.RUNNING)
