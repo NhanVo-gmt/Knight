@@ -27,10 +27,10 @@ public class MoveNode : ActionNode
         if (!canFly)
         {
             movePos.y = 0;
-            direction = movePos - startPos;
-            direction.y = 0;
-            direction = direction.normalized;
+            direction = movePos.normalized;
         }
+        
+        Debug.Log(direction);
     }
 
 
