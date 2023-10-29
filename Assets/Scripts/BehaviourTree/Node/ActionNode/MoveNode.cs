@@ -30,7 +30,6 @@ public class MoveNode : ActionNode
             direction = movePos.normalized;
         }
         
-        Debug.Log(direction);
     }
 
 

@@ -70,9 +70,9 @@ public class Combat : CoreComponent, IDamageable
 
     #region Damage Method
 
-    public void MeleeAttack(MeleeAttackData attackData)
+    public bool MeleeAttack(MeleeAttackData attackData)
     {
-        meleeCombat.MeleeAttack(attackData, SetAttackPosition(attackData), movement.faceDirection);
+        return meleeCombat.MeleeAttack(attackData, SetAttackPosition(attackData), movement.faceDirection);
     }
 
     Vector2 SetAttackPosition(MeleeAttackData attackData)

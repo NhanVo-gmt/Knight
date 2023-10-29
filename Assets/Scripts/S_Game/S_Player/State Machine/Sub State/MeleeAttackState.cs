@@ -28,7 +28,10 @@ public class MeleeAttackState : AttackState
 
     private void Attack()
     {
-        combat.MeleeAttack(data.meleeAttackData);
+        if (combat.MeleeAttack(data.meleeAttackData))
+        {
+            SpawnHitVFX();
+        }
 
         movement.SetVelocityX(movement.faceDirection.x * data.meleeAttackData.moveVelocity);
 
@@ -38,6 +41,11 @@ public class MeleeAttackState : AttackState
     void SpawnVFX()
     {
         vfx.SpawnPooledPrefab(data.meleeAttackData.attackVfx, movement);
+    }
+
+    void SpawnHitVFX()
+    {
+        vfx.SpawnPooledPrefab(data.meleeAttackData.hitVfx, movement);
     }
 
     public override void AnimationFinishTrigger()

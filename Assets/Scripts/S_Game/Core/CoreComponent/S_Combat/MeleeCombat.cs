@@ -15,11 +15,17 @@ public class MeleeCombat
         this.damagerTarget = damagerTarget;
     }
 
-    public void MeleeAttack(MeleeAttackData attackData, Vector2 attackPos, Vector2 attackDirection)
+    public bool MeleeAttack(MeleeAttackData attackData, Vector2 attackPos, Vector2 attackDirection)
     {
         List<IDamageable> enemiesFound = FindDamageableEntityInRange(attackData, attackPos).ToList();
-        
-        enemiesFound.ForEach(enemy => DealDamage(enemy, attackData.damage, attackDirection));
+
+        if (enemiesFound.Count > 0)
+        {
+            enemiesFound.ForEach(enemy => DealDamage(enemy, attackData.damage, attackDirection));
+            return true;
+        }
+
+        return false;
     }
 
     

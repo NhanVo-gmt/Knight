@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Hit_vfx
   m_EditorClassIdentifier: 
   pooledObject: {fileID: 538311349763042583, guid: e4928ca2f8d96684fa724a4d02b44f5e, type: 3}
-  needPlayerDirection: 0
-  spawnPos: {x: 0, y: 0}
+  needPlayerDirection: 1
+  spawnPos: {x: -1.5, y: -1.5}
   lifeTime: 1

@@ -12,6 +12,5 @@ public class AttackData : ScriptableObject
 
     [FormerlySerializedAs("vfx")] [Header("VFX")]
     public PooledObjectData attackVfx;
-
     public PooledObjectData hitVfx;
 }
