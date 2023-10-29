@@ -52,7 +52,7 @@ public class InAirState : State
 
     void SpawnLandVFX()
     {
-        vfx.SpawnPooledPrefab(data.jumpData.jumpVFX);
+        vfx.SpawnPooledPrefab(data.jumpData.jumpVFX, movement);
     }
 
     void PlayAnimation()

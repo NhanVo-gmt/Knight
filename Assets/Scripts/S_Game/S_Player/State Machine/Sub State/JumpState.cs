@@ -25,7 +25,7 @@ public class JumpState : GroundState
 
     private void SpawnVFX()
     {
-        vfx.SpawnPooledPrefab(data.jumpData.jumpVFX);
+        vfx.SpawnPooledPrefab(data.jumpData.jumpVFX, movement);
     }
 
     public override void Exit()

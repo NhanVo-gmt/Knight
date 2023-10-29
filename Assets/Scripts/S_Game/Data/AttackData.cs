@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "ScriptableObjects/Data/AttackData", fileName = "Attack Data")]
 public class AttackData : ScriptableObject
@@ -9,6 +10,8 @@ public class AttackData : ScriptableObject
     public int damage;
     public float coolDown;
 
-    [Header("VFX")]
-    public PooledObjectData vfx;
+    [FormerlySerializedAs("vfx")] [Header("VFX")]
+    public PooledObjectData attackVfx;
+
+    public PooledObjectData hitVfx;
 }

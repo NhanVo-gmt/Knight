@@ -7,6 +7,7 @@ public class MeleeCombat
 {
     Collider2D col;
     IDamageable.DamagerTarget damagerTarget;
+    private VFXController vfx;
 
     public MeleeCombat(Collider2D col, IDamageable.DamagerTarget damagerTarget)
     {

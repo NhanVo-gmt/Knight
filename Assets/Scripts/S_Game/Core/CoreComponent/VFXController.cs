@@ -2,28 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpawnObjectController : CoreComponent
+public class VFXController : SingletonObject<VFXController>
 {
     ObjectPooling poolingManager;
-
-    Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
-    Movement _movement;
     
     protected override void Awake()
     {
         base.Awake();
 
-        poolingManager = FindObjectOfType<ObjectPooling>();
+        poolingManager = GetComponent<ObjectPooling>();
     }
 
 #region 
 
-    public GameObject SpawnPooledPrefab(PooledObjectData data)
+    public GameObject SpawnPooledPrefab(PooledObjectData data, Movement movement)
     {
         GameObject spawnedPrefab = poolingManager.GetObjectFromPool(data.pooledObject);
         SetUpSpawnPrefab(spawnedPrefab, data);
-        SetPrefabPosition(spawnedPrefab, data);
-        SetPrefabRotation(spawnedPrefab, data);
+        SetPrefabPosition(spawnedPrefab, data, movement);
+        SetPrefabRotation(spawnedPrefab, data, movement);
 
         return spawnedPrefab;
     }
@@ -33,7 +30,7 @@ public class SpawnObjectController : CoreComponent
         spawnedPrefab.GetComponent<PooledObject>().Initialize(data.lifeTime);
     }
 
-    void SetPrefabPosition(GameObject spawnedObject, PooledObjectData data)
+    void SetPrefabPosition(GameObject spawnedObject, PooledObjectData data, Movement movement)
     { 
         if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
         {
@@ -44,10 +41,10 @@ public class SpawnObjectController : CoreComponent
             spawnedObject.transform.position = data.spawnPos;
         }
 
-        spawnedObject.transform.position += transform.position;
+        spawnedObject.transform.position += movement.transform.position;
     }
 
-    void SetPrefabRotation(GameObject spawnedObject, PooledObjectData data)
+    void SetPrefabRotation(GameObject spawnedObject, PooledObjectData data, Movement movement)
     {
         if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
         {
