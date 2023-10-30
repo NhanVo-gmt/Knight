@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [SerializeField] private EnemyData data;
+    
     Core core;
-
     Collider2D col;
     Health health;
     Combat combat;
@@ -26,6 +27,10 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        for (int i = 0; i < data.numberOfSoulDropped; i++)
+        {
+            VFXController.Instance.SpawnPooledPrefab(GameSettings.Instance.soul, core.GetCoreComponent<Movement>());
+        }
+        gameObject.SetActive(false);
     }
 }

@@ -4221,6 +4221,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 712667205290023487, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
+      propertyPath: data
+      value: 
+      objectReference: {fileID: 11400000, guid: d90e12a37dbf8f04789c413f02d14b63, type: 2}
     - target: {fileID: 1319131068646631418, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
       propertyPath: m_Name
       value: Apple
@@ -12820,6 +12824,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6911535378620299280, guid: 6d96181751643084098838d5590d9ef0, type: 3}
+      propertyPath: soul
+      value: 
+      objectReference: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
+    - target: {fileID: 6911535378620299280, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: WeakKnockbackAmount
       value: 10
       objectReference: {fileID: 0}
@@ -12837,7 +12845,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8234785762340972059, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: pooledPrefabList.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8234785762340972059, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: pooledPrefabList.Array.data[4].prefab
@@ -12848,12 +12856,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8726307433354808246, guid: 5d7d5c53ab79cd74d81db820b7203b52, type: 3}
     - target: {fileID: 8234785762340972059, guid: 6d96181751643084098838d5590d9ef0, type: 3}
+      propertyPath: pooledPrefabList.Array.data[6].prefab
+      value: 
+      objectReference: {fileID: 3803421527087819763, guid: 64793e2fdb9cdea4e90c58b746ece6df, type: 3}
+    - target: {fileID: 8234785762340972059, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: pooledPrefabList.Array.data[4].amountToPool
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8234785762340972059, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: pooledPrefabList.Array.data[5].amountToPool
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234785762340972059, guid: 6d96181751643084098838d5590d9ef0, type: 3}
+      propertyPath: pooledPrefabList.Array.data[6].amountToPool
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
