@@ -48,11 +48,11 @@ public class VFXController : SingletonObject<VFXController>
     {
         if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
         {
-            spawnedObject.transform.rotation = Quaternion.Euler(0, 180, 0);
+            spawnedObject.transform.rotation = Quaternion.Euler(data.spawnRot.x, data.spawnRot.y + 180, data.spawnRot.z);
         }
         else
         {
-            spawnedObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+            spawnedObject.transform.rotation = Quaternion.Euler(data.spawnRot.x, data.spawnRot.y, data.spawnRot.z);
         }
     }
 

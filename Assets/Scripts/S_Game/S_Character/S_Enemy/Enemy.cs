@@ -18,7 +18,14 @@ public class Enemy : MonoBehaviour
     void Start() 
     {
         combat = core.GetCoreComponent<Combat>();
+        health = core.GetCoreComponent<Health>();
+        health.onDie += Die;
 
         combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.weak);
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
     }
 }

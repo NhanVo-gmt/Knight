@@ -8,5 +8,6 @@ public class PooledObjectData : ScriptableObject
     public GameObject pooledObject;
     public bool needPlayerDirection;
     public Vector2 spawnPos;
+    public Vector3 spawnRot;
     public float lifeTime;
 }

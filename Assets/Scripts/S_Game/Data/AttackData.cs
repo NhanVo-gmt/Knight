@@ -10,7 +10,7 @@ public class AttackData : ScriptableObject
     public int damage;
     public float coolDown;
 
-    [FormerlySerializedAs("vfx")] [Header("VFX")]
-    public PooledObjectData attackVfx;
-    public PooledObjectData hitVfx;
+    [FormerlySerializedAs("attackVfx")] [FormerlySerializedAs("vfx")] [Header("VFX")]
+    public PooledObjectData attackVFX;
+    [FormerlySerializedAs("hitVfx")] public PooledObjectData[] hitVFXs;
 }

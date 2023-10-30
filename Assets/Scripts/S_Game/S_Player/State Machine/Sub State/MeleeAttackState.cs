@@ -40,12 +40,15 @@ public class MeleeAttackState : AttackState
 
     void SpawnVFX()
     {
-        vfx.SpawnPooledPrefab(data.meleeAttackData.attackVfx, movement);
+        vfx.SpawnPooledPrefab(data.meleeAttackData.attackVFX, movement);
     }
 
     void SpawnHitVFX()
     {
-        vfx.SpawnPooledPrefab(data.meleeAttackData.hitVfx, movement);
+        foreach (PooledObjectData hitVFX in data.meleeAttackData.hitVFXs)
+        {
+            vfx.SpawnPooledPrefab(hitVFX, movement);
+        }
     }
 
     public override void AnimationFinishTrigger()
