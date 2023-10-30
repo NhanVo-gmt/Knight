@@ -8,8 +8,6 @@ public class Parallax : MonoBehaviour
 {
     [SerializeField] float parralaxEffect;
     private Vector2 startPos;
-
-    static float cameraHeight = 0;
     
     private Camera cam;
     private Vector2 camStartPos;

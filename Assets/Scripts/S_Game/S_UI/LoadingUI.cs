@@ -12,7 +12,6 @@ public class LoadingUI : MonoBehaviour
     CanvasGroup canvasGroup;
 
     Coroutine LoadCoroutine;
-    bool isLoading;
 
     void Awake() {
         canvasGroup = loadingScreen.GetComponent<CanvasGroup>();
@@ -61,8 +60,6 @@ public class LoadingUI : MonoBehaviour
 
     IEnumerator Fade(float targetAlpha, float duration)
     {
-        isLoading = true;
-
         float startAlpha = canvasGroup.alpha;
         float time = 0;
         while (time < duration)
@@ -72,7 +69,6 @@ public class LoadingUI : MonoBehaviour
             yield return null;
         }
 
-        canvasGroup.alpha = targetAlpha;
-        isLoading = false;
+        canvasGroup.alpha = targetAlpha;    
     }
 }

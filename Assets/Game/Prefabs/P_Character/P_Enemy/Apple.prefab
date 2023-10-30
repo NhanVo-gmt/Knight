@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7127463845566500319}
   - component: {fileID: 6327539699783401106}
   - component: {fileID: 712667205290023487}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Apple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a2af73c70ee6d40b0709fcf9e03551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 11400000, guid: d90e12a37dbf8f04789c413f02d14b63, type: 2}
 --- !u!1 &3226396348766103401
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,7 +101,7 @@ GameObject:
   - component: {fileID: 4565046042446285994}
   - component: {fileID: 3860984917113107986}
   - component: {fileID: 496220837313005994}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Anim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +232,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5781147787425450733}
   - component: {fileID: 3142339956596286095}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Core
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -280,7 +281,7 @@ GameObject:
   - component: {fileID: 7488470008819042776}
   - component: {fileID: 5203971639007785875}
   - component: {fileID: 7306979895283057751}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Component
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,4 +384,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 385d0cfede973334ca3d1dc2691a7d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 30
