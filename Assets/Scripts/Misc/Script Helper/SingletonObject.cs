@@ -15,7 +15,7 @@ public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
         }
         else
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
     }
 }

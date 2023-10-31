@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f6b5dc9fe4162554f9e2f6977296b93d
+guid: c29892193f70b7240bd65c2694b066f9
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638343528495900482
+  platformSettingsDirtyTick: 638343747686424170
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Climber
+  - name: Inventory
     originalName: 
-    pivot: {x: 0.42307693, y: 0}
+    pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 13
-      height: 50
-    spriteID: 7fbf941bde54f584a8cc7b9499b351ca
+      width: 384
+      height: 187
+    spriteID: fe2cbd382e68ded40aca1da2023b4323
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,20 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1555006740
-    name: Climber
+    guid: -1212752862
+    name: Inventory
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Climber
+    - name: Inventory
       frameIndex: 0
       cellRect:
-        x: 8
+        x: 0
         y: 0
-        width: 13
-        height: 50
-      spriteId: 7fbf941bde54f584a8cc7b9499b351ca
+        width: 384
+        height: 187
+      spriteId: fe2cbd382e68ded40aca1da2023b4323
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -209,4 +209,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 27, y: 60}
+  canvasSize: {x: 384, y: 187}
