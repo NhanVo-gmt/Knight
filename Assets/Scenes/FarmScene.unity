@@ -5279,9 +5279,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDatabaseList:
   - Name: Soul
-    Id: 
+    Id: 2fd380a9-5312-4de6-872d-73fdcf4d60f9
     Description: The Main currency for the game
     itemData: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
+--- !u!114 &1686451801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1686451790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9c73178dac0ba4ab1f5f8ea0a0735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1715000609
 GameObject:
   m_ObjectHideFlags: 0
@@ -12888,7 +12900,7 @@ PrefabInstance:
     - target: {fileID: 6911535378620299280, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: soul
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
     - target: {fileID: 6911535378620299280, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: WeakKnockbackAmount
       value: 10
@@ -12943,6 +12955,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7517333576352853727, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1686451796}
+    - targetCorrespondingSourceObject: {fileID: 7517333576352853727, guid: 6d96181751643084098838d5590d9ef0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1686451801}
   m_SourcePrefab: {fileID: 100100000, guid: 6d96181751643084098838d5590d9ef0, type: 3}
 --- !u!1001 &8276264280253194681
 PrefabInstance:
