@@ -40,6 +40,16 @@ namespace Knight.Manager
                 gameManagerInput.UseMenuInput();
                 TogglePlayerMenuUI();
             }
+            if (gameManagerInput.prevTabInput)
+            {
+                gameManagerInput.UsePrevTabInput();
+                GameCanvas.Instance.OpenPrevTabPlayerMenu();
+            }
+            if (gameManagerInput.nextTabInput)
+            {
+                gameManagerInput.UseNextTabInput();
+                GameCanvas.Instance.OpenNextTabPlayerMenu();
+            }
         }
 
         public void TogglePlayerMenuUI()

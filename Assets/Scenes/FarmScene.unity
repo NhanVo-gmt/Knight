@@ -2289,9 +2289,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb69f92b78f45d642a076770d4645bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tabList: []
-  prevBtn: {fileID: 0}
-  nextBtn: {fileID: 0}
+  tabList:
+  - tab: 0
+    tabGO: {fileID: 928727002}
+  - tab: 1
+    tabGO: {fileID: 1671750242}
+  - tab: 2
+    tabGO: {fileID: 780554328}
+  prevTabText: {fileID: 398930420}
+  currentTabText: {fileID: 2030860609}
+  nextTabText: {fileID: 1404333590}
 --- !u!224 &182803230 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8815657789076655917, guid: 3095db7c88298c44486d2fb034376e8c, type: 3}
@@ -2725,7 +2732,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Character
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 480623a109915d14fbe07936b4076028, type: 2}
   m_sharedMaterial: {fileID: -2016999128096262646, guid: 480623a109915d14fbe07936b4076028, type: 2}
@@ -5610,7 +5617,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Skills
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 480623a109915d14fbe07936b4076028, type: 2}
   m_sharedMaterial: {fileID: -2016999128096262646, guid: 480623a109915d14fbe07936b4076028, type: 2}
@@ -6086,7 +6093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1671750243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13324,7 +13331,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Inventory
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 480623a109915d14fbe07936b4076028, type: 2}
   m_sharedMaterial: {fileID: -2016999128096262646, guid: 480623a109915d14fbe07936b4076028, type: 2}

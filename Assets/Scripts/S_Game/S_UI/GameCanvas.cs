@@ -38,6 +38,16 @@ namespace Knight.UI
             }
         }
 
+        public void OpenNextTabPlayerMenu()
+        {
+            playerMenuUI.OpenNextTab();
+        }
+        
+        public void OpenPrevTabPlayerMenu()
+        {
+            playerMenuUI.OpenPreviousTab();
+        }
+
         public bool IsOpen()
         {
             return currentState != CanvasState.None;

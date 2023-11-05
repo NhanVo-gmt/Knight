@@ -35,6 +35,24 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PrevTab"",
+                    ""type"": ""Button"",
+                    ""id"": ""e22141fb-ae96-4f46-b7b4-c387a11c1507"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""NextTab"",
+                    ""type"": ""Button"",
+                    ""id"": ""a375f763-6d51-4d3d-8ce6-b5dadc488461"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -48,6 +66,28 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Menu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e82a8fb5-a176-4cf1-abba-f3d05e80f361"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PrevTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e8afe7e0-0d8c-4bba-9d7e-5ce1010cf0ff"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""NextTab"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -57,6 +97,8 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
         // Global
         m_Global = asset.FindActionMap("Global", throwIfNotFound: true);
         m_Global_Menu = m_Global.FindAction("Menu", throwIfNotFound: true);
+        m_Global_PrevTab = m_Global.FindAction("PrevTab", throwIfNotFound: true);
+        m_Global_NextTab = m_Global.FindAction("NextTab", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -119,11 +161,15 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Global;
     private List<IGlobalActions> m_GlobalActionsCallbackInterfaces = new List<IGlobalActions>();
     private readonly InputAction m_Global_Menu;
+    private readonly InputAction m_Global_PrevTab;
+    private readonly InputAction m_Global_NextTab;
     public struct GlobalActions
     {
         private @GameManagerControls m_Wrapper;
         public GlobalActions(@GameManagerControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Menu => m_Wrapper.m_Global_Menu;
+        public InputAction @PrevTab => m_Wrapper.m_Global_PrevTab;
+        public InputAction @NextTab => m_Wrapper.m_Global_NextTab;
         public InputActionMap Get() { return m_Wrapper.m_Global; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -136,6 +182,12 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
             @Menu.started += instance.OnMenu;
             @Menu.performed += instance.OnMenu;
             @Menu.canceled += instance.OnMenu;
+            @PrevTab.started += instance.OnPrevTab;
+            @PrevTab.performed += instance.OnPrevTab;
+            @PrevTab.canceled += instance.OnPrevTab;
+            @NextTab.started += instance.OnNextTab;
+            @NextTab.performed += instance.OnNextTab;
+            @NextTab.canceled += instance.OnNextTab;
         }
 
         private void UnregisterCallbacks(IGlobalActions instance)
@@ -143,6 +195,12 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
             @Menu.started -= instance.OnMenu;
             @Menu.performed -= instance.OnMenu;
             @Menu.canceled -= instance.OnMenu;
+            @PrevTab.started -= instance.OnPrevTab;
+            @PrevTab.performed -= instance.OnPrevTab;
+            @PrevTab.canceled -= instance.OnPrevTab;
+            @NextTab.started -= instance.OnNextTab;
+            @NextTab.performed -= instance.OnNextTab;
+            @NextTab.canceled -= instance.OnNextTab;
         }
 
         public void RemoveCallbacks(IGlobalActions instance)
@@ -163,5 +221,7 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
     public interface IGlobalActions
     {
         void OnMenu(InputAction.CallbackContext context);
+        void OnPrevTab(InputAction.CallbackContext context);
+        void OnNextTab(InputAction.CallbackContext context);
     }
 }

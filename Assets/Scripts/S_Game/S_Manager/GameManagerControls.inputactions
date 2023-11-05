@@ -1,5 +1,5 @@
 {
-    "name": "GameInput",
+    "name": "GameManagerControls",
     "maps": [
         {
             "name": "Global",
@@ -9,6 +9,24 @@
                     "name": "Menu",
                     "type": "Button",
                     "id": "dda979d5-a1dc-41da-ab52-d3603adf2cf3",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PrevTab",
+                    "type": "Button",
+                    "id": "e22141fb-ae96-4f46-b7b4-c387a11c1507",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "NextTab",
+                    "type": "Button",
+                    "id": "a375f763-6d51-4d3d-8ce6-b5dadc488461",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -24,6 +42,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e82a8fb5-a176-4cf1-abba-f3d05e80f361",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrevTab",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e8afe7e0-0d8c-4bba-9d7e-5ce1010cf0ff",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "NextTab",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
