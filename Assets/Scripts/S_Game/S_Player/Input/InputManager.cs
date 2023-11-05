@@ -8,11 +8,12 @@ public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControls;
 
-    public bool dashInput; //{get; private set;}
-    public bool jumpInput; //{get; private set;}
-    public bool meleeAttackInput; //{get; private set;}
-    public bool interactionInput; //{get; private set;}
-    public Vector2 movementInput; //{get; private set;}
+    public bool dashInput {get; private set;}
+    public bool jumpInput {get; private set;}
+    public bool meleeAttackInput {get; private set;}
+    public bool interactionInput {get; private set;}
+    public bool inventoryInput {get; private set;}
+    public Vector2 movementInput {get; private set;}
 
     void Awake() 
     {
@@ -62,7 +63,6 @@ public class InputManager : MonoBehaviour
         playerControls.Ground.Interaction.started += OnInterationInput;
         playerControls.Ground.Interaction.canceled += OnInterationInput;
     }
-
 
     #endregion
 
@@ -137,6 +137,8 @@ public class InputManager : MonoBehaviour
     {
         interactionInput = false;
     }
+    
+    
 
     void OnMovementInput()
     {

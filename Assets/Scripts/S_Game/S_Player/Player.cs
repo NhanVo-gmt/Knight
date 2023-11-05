@@ -1,12 +1,12 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Manager;
 using UnityEngine;
 
 public class Player : SingletonObject<Player>
 {
     #region State
-
     public DashState dashState {get; private set;}
     public IdleState idleState {get; private set;}
     public InAirState inAirState {get; private set;}
@@ -35,10 +35,14 @@ public class Player : SingletonObject<Player>
 
     #endregion
 
+    [Header("Data")]
     [SerializeField] PlayerData data;
     StateMachine stateMachine;
     Core core;
+    
     public InputManager inputManager {get; private set;}
+
+    private bool isGamePaused = false;
 
     #region Set up
     
@@ -53,10 +57,22 @@ public class Player : SingletonObject<Player>
     void Start() 
     {
         CreateState();
-        
         stateMachine.Initialize(idleState);
-
         GetCoreComponent();
+
+        GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
+    }
+
+    private void GameManager_OnChangedGameState(GameManager.GameState gameState)
+    {
+        if (gameState == GameManager.GameState.Paused)
+        {
+            isGamePaused = true;
+        }
+        else
+        {
+            isGamePaused = false;
+        }
     }
 
     void CreateState()
@@ -98,8 +114,9 @@ public class Player : SingletonObject<Player>
 
     #endregion
 
-    void Update() 
+    void Update()
     {
+        if (isGamePaused) return;
         stateMachine.Update();
     }
 
