@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 2059352493592806631}
   - component: {fileID: 7739678690872583793}
   - component: {fileID: 262616027117106481}
-  - component: {fileID: 6118950139571661748}
+  - component: {fileID: -284950723158179856}
   m_Layer: 7
-  m_Name: Soul
+  m_Name: Pickup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +205,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.40850866, y: 0.43178582}
   m_EdgeRadius: 0
---- !u!114 &6118950139571661748
+--- !u!114 &-284950723158179856
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,6 +214,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3803421527087819763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b04dddaea426ccd49952d486d775760f, type: 3}
+  m_Script: {fileID: 11500000, guid: c7a759c32b9f16843aad768360c4d2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemData: {fileID: 0}
+  number: 1

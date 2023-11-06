@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Inventory;
 using Knight.Manager;
 using UnityEngine;
 
@@ -128,6 +129,12 @@ public class Player : SingletonObject<Player>
     private void OnTriggerEnter2D(Collider2D other)
     {
         SetConversation(other);
+        
+        if (other.TryGetComponent<PickupBase>(out PickupBase pickup))
+        {
+            InventorySystem.Instance.AddItem(pickup.GetItem(), 1);
+            pickup.Release();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {

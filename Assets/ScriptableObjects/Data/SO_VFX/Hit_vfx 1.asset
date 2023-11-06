@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
   m_Name: Hit_vfx 1
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 8726307433354808246, guid: 5d7d5c53ab79cd74d81db820b7203b52, type: 3}
-  needPlayerDirection: 1
+  poolType: 0
+  sprite: {fileID: 8709230189044064902, guid: aacbd313ffcd1d14e89cd1d9177ced00, type: 3}
+  anim: {fileID: 9100000, guid: e2a6fc340e1cb254f85b78c946db5084, type: 2}
+  particleSystem: {fileID: 0}
   spawnPos: {x: -2, y: -0.2}
   spawnRot: {x: 0, y: -90, z: 0}
+  needPlayerDirection: 1
   lifeTime: 1

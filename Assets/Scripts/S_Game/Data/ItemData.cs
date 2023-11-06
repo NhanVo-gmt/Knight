@@ -9,8 +9,8 @@ public class ItemData : PooledObjectData
     public string id;
 
     public string itemName;
+    public Sprite sprite;
     [TextArea(5, 10)] public string itemDescription;
-    public Sprite itemSprite;
 
     public void AssignId(string id)
     {

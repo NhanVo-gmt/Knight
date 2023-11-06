@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f62c51d5e6bb29409adf19448f49c54, type: 3}
   m_Name: Soul
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 3803421527087819763, guid: 64793e2fdb9cdea4e90c58b746ece6df, type: 3}
-  needPlayerDirection: 0
   spawnPos: {x: 0, y: 0}
   spawnRot: {x: 0, y: 0, z: 0}
+  needPlayerDirection: 0
   lifeTime: 20
   id: 2fd380a9-5312-4de6-872d-73fdcf4d60f9
   itemName: Soul
+  sprite: {fileID: 8871522976523488456, guid: f9f5457e3719d6a4eacb5f3df8179dbf, type: 3}
   itemDescription: Power up player
-  itemSprite: {fileID: 8871522976523488456, guid: f9f5457e3719d6a4eacb5f3df8179dbf, type: 3}

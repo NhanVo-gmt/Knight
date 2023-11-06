@@ -16,6 +16,7 @@ public class ItemSlotUI : MonoBehaviour
     {
         image = GetComponentInChildren<Image>();
         numberText = GetComponentInChildren<TextMeshProUGUI>();
+        image.enabled = false;
     }
 
     public void UpdateItemSlot(ItemData itemData, int number)
@@ -27,7 +28,8 @@ public class ItemSlotUI : MonoBehaviour
         }
         
         currentItemData = itemData;
-        image.sprite = currentItemData.itemSprite;
+        image.enabled = true;
+        image.sprite = currentItemData.sprite;
         if (number == 1)
         {
             numberText.text = String.Empty;
@@ -41,6 +43,7 @@ public class ItemSlotUI : MonoBehaviour
     private void RemoveItemSlot()
     {
         currentItemData = null;
+        image.enabled = false;
         image.sprite = null;
         numberText.text = String.Empty;
     }

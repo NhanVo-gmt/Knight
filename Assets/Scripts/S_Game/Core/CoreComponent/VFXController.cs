@@ -17,10 +17,45 @@ public class VFXController : SingletonObject<VFXController>
 
     public GameObject SpawnPooledPrefab(PooledObjectData data, Movement movement)
     {
-        GameObject spawnedPrefab = poolingManager.GetObjectFromPool(data.pooledObject);
+        GameObject spawnedPrefab = null;
+        if (data is VFXData)
+        {
+            spawnedPrefab = SpawnVFXPrefab(data as VFXData);
+        } 
+        else if (data is ItemData)
+        {
+            spawnedPrefab = SpawnItemPrefab(data as ItemData);
+        }
+        else
+        {
+            spawnedPrefab = SpawnParticlePrefab(data as ParticleData);
+        }
+        
         SetUpSpawnPrefab(spawnedPrefab, data);
         SetPrefabPosition(spawnedPrefab, data, movement);
         SetPrefabRotation(spawnedPrefab, data, movement);
+        return spawnedPrefab;
+    }
+
+    public GameObject SpawnVFXPrefab(VFXData data)
+    {
+        GameObject spawnedPrefab = poolingManager.GetVFXFromPool();
+        SetVFXPrefab(spawnedPrefab, data);
+
+        return spawnedPrefab;
+    }
+    
+    public GameObject SpawnItemPrefab(ItemData data)
+    {
+        GameObject spawnedPrefab = poolingManager.GetItemFromPool();
+        SetItemPrefab(spawnedPrefab, data);
+
+        return spawnedPrefab;
+    }
+
+    public GameObject SpawnParticlePrefab(ParticleData data)
+    {
+        GameObject spawnedPrefab = poolingManager.GetParticleFromPool(data.particleSystem);
 
         return spawnedPrefab;
     }
@@ -54,6 +89,17 @@ public class VFXController : SingletonObject<VFXController>
         {
             spawnedObject.transform.rotation = Quaternion.Euler(data.spawnRot.x, data.spawnRot.y, data.spawnRot.z);
         }
+    }
+    
+    void SetVFXPrefab(GameObject createdGO, VFXData data)
+    {
+        createdGO.GetComponent<SpriteRenderer>().sprite = data.sprite;
+        createdGO.GetComponent<Animator>().runtimeAnimatorController = data.anim;
+    }
+
+    void SetItemPrefab(GameObject createdGO, ItemData data)
+    {
+        createdGO.GetComponent<PickupBase>().Init(data);
     }
 
 #endregion

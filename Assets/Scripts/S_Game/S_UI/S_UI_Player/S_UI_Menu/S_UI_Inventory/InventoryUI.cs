@@ -16,8 +16,7 @@ namespace Knight.UI
 
         private readonly int numberSlotPerRow = 4;
         private readonly int numberOfRow = 3;
-
-
+        
 
         private void Awake()
         {
@@ -28,6 +27,7 @@ namespace Knight.UI
         {
             InventorySystem.Instance.OnChangedItem += UpdateSlot;
         }
+        
         private void CreateSlot()
         {
             for (int i = 0; i < numberOfRow; i++)

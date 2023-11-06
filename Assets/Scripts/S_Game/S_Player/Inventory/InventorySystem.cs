@@ -5,15 +5,22 @@ using UnityEngine;
 
 namespace Knight.Inventory
 {
+    [Serializable]
     class InventoryItem
     {
         public ItemData itemData;
         public int number;
+
+        public InventoryItem(ItemData itemData, int number)
+        {
+            this.itemData = itemData;
+            this.number = number;
+        }
     }
     
     public class InventorySystem : SingletonObject<InventorySystem>
     {
-        private List<InventoryItem> itemList = new List<InventoryItem>();
+        [SerializeField] private List<InventoryItem> itemList = new List<InventoryItem>(); // todo remove serial
 
         public Action<ItemData, int> OnChangedItem;
 
@@ -22,18 +29,32 @@ namespace Knight.Inventory
             base.Awake();
         }
 
-        public void AddItem(ItemData itemData, int number)
+        int GetItemIndex(ItemData itemData)
         {
-            foreach (InventoryItem item in itemList)
+            for (int i = 0; i < itemList.Count; i++)
             {
-                if (item.itemData.id == itemData.id)
+                if (itemList[i].itemData.id == itemData.id)
                 {
-                    item.number += number;
-                    break;
+                    return i;
                 }
             }
+
+            return -1;
+        }
+
+        public void AddItem(ItemData itemData, int number)
+        {
+            int itemIndex = GetItemIndex(itemData);
+            if (itemIndex == -1)
+            {
+                itemList.Add(new InventoryItem(itemData, number));
+            }
+            else
+            {
+                itemList[itemIndex].number += number;
+            }
             
-            OnChangedItem.Invoke(itemData, number);
+            OnChangedItem?.Invoke(itemData, number);
         }
 
         public void UseItem(ItemData itemData, int number)
