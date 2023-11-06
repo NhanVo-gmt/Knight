@@ -18,3 +18,6 @@ MonoBehaviour:
   spawnRot: {x: 0, y: 0, z: 0}
   lifeTime: 20
   id: 2fd380a9-5312-4de6-872d-73fdcf4d60f9
+  itemName: Soul
+  itemDescription: Power up player
+  itemSprite: {fileID: 8871522976523488456, guid: f9f5457e3719d6a4eacb5f3df8179dbf, type: 3}
