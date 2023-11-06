@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   healthData: {fileID: 0}
-  numberOfSoulDropped: 5
+  numberOfSoulDropped: 2
