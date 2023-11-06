@@ -9,7 +9,7 @@ public class ItemData : PooledObjectData
     public string id;
 
     public string itemName;
-    public string itemDescription;
+    [TextArea(5, 10)] public string itemDescription;
     public Sprite itemSprite;
 
     public void AssignId(string id)
