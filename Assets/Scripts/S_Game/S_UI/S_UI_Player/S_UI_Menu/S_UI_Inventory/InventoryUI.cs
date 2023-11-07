@@ -50,6 +50,7 @@ namespace Knight.UI
         private void OnClickItemSlotUI(ItemSlotUI itemSlotUI)
         {
             currentItemSlot = itemSlotUI;
+            itemDetailsUI.SetItemDetails(currentItemSlot.currentItemData);
         }
 
         private void UpdateSlot(ItemData itemData, int number)
