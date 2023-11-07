@@ -11,8 +11,21 @@ public class ItemDetailsUI : MonoBehaviour
     [SerializeField] private TextMeshProUGUI nameText;
     [SerializeField] private TextMeshProUGUI descriptionText;
 
+    private void Awake()
+    {
+        EmptyItemDetails();
+    }
+
+    public void EmptyItemDetails()
+    {
+        image.enabled = false;
+        nameText.text = String.Empty;
+        descriptionText.text = String.Empty;
+    }
+
     public void SetItemDetails(ItemData itemData)
     {
+        image.enabled = true;
         image.sprite = itemData.sprite;
         nameText.text = itemData.itemName;
         descriptionText.text = itemData.itemDescription;

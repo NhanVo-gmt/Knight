@@ -34,14 +34,7 @@ public class ItemSlotUI : MonoBehaviour, IPointerClickHandler
         currentItemData = itemData;
         image.enabled = true;
         image.sprite = currentItemData.sprite;
-        if (number == 1)
-        {
-            numberText.text = String.Empty;
-        }
-        else
-        {
-            numberText.text = number.ToString();
-        }
+        numberText.text = number.ToString();
     }
 
     private void RemoveItemSlot()

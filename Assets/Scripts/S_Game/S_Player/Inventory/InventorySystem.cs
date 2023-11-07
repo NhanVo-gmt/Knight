@@ -48,13 +48,14 @@ namespace Knight.Inventory
             if (itemIndex == -1)
             {
                 itemList.Add(new InventoryItem(itemData, number));
+                itemIndex = itemList.Count - 1;
             }
             else
             {
                 itemList[itemIndex].number += number;
             }
             
-            OnChangedItem?.Invoke(itemData, number);
+            OnChangedItem?.Invoke(itemData, itemList[itemIndex].number);
         }
 
         public void UseItem(ItemData itemData, int number)
