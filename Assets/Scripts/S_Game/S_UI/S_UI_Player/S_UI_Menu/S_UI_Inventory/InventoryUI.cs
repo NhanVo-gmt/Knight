@@ -58,7 +58,6 @@ namespace Knight.UI
             ItemSlotUI itemSlotUI = FindItemSlot(itemData);
             if (itemSlotUI != null)
             {
-                Debug.Log(number);
                 itemSlotUI.UpdateItemSlot(itemData, number);
             }
             else SetNewSlot(itemData, number);
