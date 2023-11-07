@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,20 +6,26 @@ using UnityEngine;
 [RequireComponent(typeof(AnimatorController))]
 public class FlashingEffect : MonoBehaviour
 {
-    [SerializeField] float cooldown;
-    [SerializeField] Material flashMaterial; //todo setglobal
-    
     Coroutine flashingCoroutine;
 
-    SpriteRenderer sprite;
-    Material defaultMaterial;
+    private SpriteRenderer sprite;
+    private Material defaultMaterial;
+    
+    private Material flashMaterial;
+    private float cooldown;
 
-    void Awake() 
+    private void Awake()
     {
         sprite = GetComponent<SpriteRenderer>();
         defaultMaterial = sprite.material;
     }
     
+    private void Start()
+    {
+        flashMaterial = GameSettings.Instance.flashMat;
+        cooldown = GameSettings.Instance.flashCoolDown;
+    }
+
     public void StartFlashing()
     {
         StopFlashing();

@@ -17,4 +17,8 @@ public class GameSettings : SingletonObject<GameSettings>
 
     [Header("Drop")] 
     public PooledObjectData soul;
+
+    [Header("Flash")] 
+    public Material flashMat;
+    public float flashCoolDown;
 }

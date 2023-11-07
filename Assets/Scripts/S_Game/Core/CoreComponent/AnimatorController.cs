@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class AnimatorController : CoreComponent
 {
-
+    [SerializeField] bool canBlink;
+    [SerializeField] bool canFlash;
+    
     public Action onAnimationTrigger;
     public Action onAnimationFinishTrigger;
 
     Health health;
 
     Animator anim;
-    bool canBlink;
-    bool canFlash;
     BlinkingEffect blinkingEffect;
     FlashingEffect flashingEffect;
 
@@ -23,30 +23,18 @@ public class AnimatorController : CoreComponent
         
         anim = GetComponent<Animator>();
 
-        blinkingEffect = GetComponent<BlinkingEffect>();
-        flashingEffect = GetComponent<FlashingEffect>();
+        if (canBlink) blinkingEffect = gameObject.AddComponent<BlinkingEffect>();
+        if (canFlash) flashingEffect = gameObject.AddComponent<FlashingEffect>();
     }
 
     void Start() 
     {
         health = core.GetCoreComponent<Health>();
-        AddEvent();
-    }
-
-    void AddEvent()
-    {
-        health.onTakeDamage += StartBlinking;
-        health.onTakeDamage += StartFlashing;
+        health.onTakeDamage += StartHitVFX;
     }
 
     private void OnDisable() {
-        RemoveEvent();
-    }
-
-    void RemoveEvent()
-    {
-        health.onTakeDamage -= StartBlinking;
-        health.onTakeDamage -= StartFlashing;
+        health.onTakeDamage -= StartHitVFX;
     }
     
 #region Animation
@@ -69,6 +57,13 @@ public class AnimatorController : CoreComponent
 #endregion
 
 #region Effect
+
+    public void StartHitVFX()
+    {
+        
+        StartBlinking();
+        StartFlashing();
+    }
 
     public void StartBlinking()
     {
