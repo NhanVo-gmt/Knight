@@ -8,15 +8,20 @@ namespace Knight.UI
 {
     public class InventoryUI : MonoBehaviour
     {
+        [Header("Item Slot")]
         [SerializeField] private Transform content;
         [SerializeField] private Transform itemRowPrefab;
         [SerializeField] private ItemSlotUI itemSlotUIPrefab;
+
+        [Header("Item Details")] [SerializeField]
+        private ItemDetailsUI itemDetailsUI;
         
-        [SerializeField] private List<ItemSlotUI> itemSlot; //todo remove serialize
+        private List<ItemSlotUI> itemSlot = new List<ItemSlotUI>(); 
 
         private readonly int numberSlotPerRow = 4;
         private readonly int numberOfRow = 3;
-        
+
+        [SerializeField] private ItemSlotUI currentItemSlot;
 
         private void Awake()
         {
@@ -35,9 +40,16 @@ namespace Knight.UI
                 Transform itemRowTransform = Instantiate(itemRowPrefab, content);
                 for (int j = 0; j < numberSlotPerRow; j++)
                 {
-                    itemSlot.Add(Instantiate(itemSlotUIPrefab, itemRowTransform));
+                    ItemSlotUI itemSlotUI = Instantiate(itemSlotUIPrefab, itemRowTransform);
+                    itemSlotUI.OnClick += OnClickItemSlotUI;
+                    itemSlot.Add(itemSlotUI);
                 }
             }
+        }
+
+        private void OnClickItemSlotUI(ItemSlotUI itemSlotUI)
+        {
+            currentItemSlot = itemSlotUI;
         }
 
         private void UpdateSlot(ItemData itemData, int number)

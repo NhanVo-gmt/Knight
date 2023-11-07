@@ -38,14 +38,11 @@ namespace Knight.UI
             canvasGroup.alpha = 0;
         }
 
-        private void OnEnable()
-        {
-            
-        }
-
         public void Toggle()
         {
+            CloseAllTabs();
             canvasGroup.alpha = 1 - canvasGroup.alpha;
+            currentTabIndex = 0;
             OpenTab(0);
         }
 
@@ -63,14 +60,22 @@ namespace Knight.UI
         {
             if (index < 0 || index >= tabList.Count) return;
             
-            RemoveCurrentTab();
+            CloseCurrentTab();
             currentTabIndex = index;
             UpdateTab();
         }
 
-        void RemoveCurrentTab()
+        void CloseCurrentTab()
         {
             tabList[currentTabIndex].tabGO.SetActive(false);
+        }
+
+        void CloseAllTabs()
+        {
+            for (int i = 0; i < tabList.Count; i++)
+            {
+                tabList[i].tabGO.SetActive(false);
+            }
         }
 
         void UpdateTab()

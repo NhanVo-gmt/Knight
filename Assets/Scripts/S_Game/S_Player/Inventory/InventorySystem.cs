@@ -51,7 +51,6 @@ namespace Knight.Inventory
             }
             else
             {
-                Debug.Log(number);
                 itemList[itemIndex].number += number;
             }
             
