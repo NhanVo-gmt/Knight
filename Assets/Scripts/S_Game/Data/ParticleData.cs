@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ParticleData", menuName = "ScriptableObjects/Data/PooledObjectData/ParticleData")]
 public class ParticleData : PooledObjectData
 {
-    [Header("ParticleData")] public GameObject particleSystem;
+    [Header("Particle Data")] public GameObject particleSystem;
 }

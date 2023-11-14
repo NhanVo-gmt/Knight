@@ -68,6 +68,8 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _FlashAmount: 0.3
+    - _WindIntensity: 1
+    - _WindSpeed: 0.2
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}

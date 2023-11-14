@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dark50Material
+  m_Name: Dark0Material
   m_Shader: {fileID: -6465566751694194690, guid: 11a62a83646884a4d813d8adf8421b30, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -67,7 +67,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _EnableExternalAlpha: 0
-    - _FlashAmount: 0.5
+    - _FlashAmount: 0
     - _WindIntensity: 1
     - _WindSpeed: 0.2
     m_Colors:

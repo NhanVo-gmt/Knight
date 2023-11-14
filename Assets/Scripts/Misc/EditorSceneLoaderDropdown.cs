@@ -2,10 +2,10 @@ using UnityEditor;
 public partial class EditorSceneLoader 
     {
 #if UNITY_EDITOR
+        [MenuItem("Scenes/CaveScene")]
+        public static void LoadCaveScene() { OpenScene("Assets/Scenes/CaveScene.unity"); }
         [MenuItem("Scenes/FarmScene")]
         public static void LoadFarmScene() { OpenScene("Assets/Scenes/FarmScene.unity"); }
-        [MenuItem("Scenes/ForestScene 1")]
-        public static void LoadForestScene1() { OpenScene("Assets/Scenes/ForestScene 1.unity"); }
         [MenuItem("Scenes/ForestScene")]
         public static void LoadForestScene() { OpenScene("Assets/Scenes/ForestScene.unity"); }
         [MenuItem("Scenes/MenuScene")]
