@@ -44,8 +44,10 @@ public class MoveNode : ActionNode
             if (!canFly)
             {
                 movePos.y = 0;
-                direction = (movePos - startPos).normalized;
             }
+            
+            destination = startPos + movePos;
+            direction = (movePos - startPos).normalized;
         }
         
     }
@@ -86,7 +88,5 @@ public class MoveNode : ActionNode
             GizmosDrawer.DrawSphere(movePos + (Vector2)selectedGameObject.transform.position, 0.5f);
         else 
             GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position, radius);
-        
-        GizmosDrawer.DrawSphere(destination, 0.5f);
     }
 }

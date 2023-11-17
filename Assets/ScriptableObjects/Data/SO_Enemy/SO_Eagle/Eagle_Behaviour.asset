@@ -16,7 +16,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d1c312b753f4dfb4c8924c197be96a7c
-    position: {x: 88.400024, y: 404.6}
+    position: {x: 257.71207, y: 367.20004}
     description: 
   speed: 2
   canFly: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
     guid: b381e16b19d0f9740bcd0a41cc28e059
     position: {x: 365.59998, y: 176.6}
     description: 
-  child: {fileID: 0}
+  child: {fileID: -7334015473047253504}
 --- !u!114 &-2886896763517979471
 MonoBehaviour:
   m_ObjectHideFlags: 0
