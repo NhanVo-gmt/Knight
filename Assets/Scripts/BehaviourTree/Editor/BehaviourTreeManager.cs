@@ -5,7 +5,7 @@ using UnityEngine;
 
 public static class BehaviourTreeManager
 {
-    static string settingsPath = "Assets/Plugin/BehaviourTree/BehaviourTreeSettings.asset";
+    static string settingsPath = "Assets/Scripts/BehaviourTree/BehaviourTreeSettings.asset";
     
     public static BehaviourTreeSettings GetOrCreateSettings()
     {

@@ -5,10 +5,7 @@ public class #SCRIPTNAME# : ActionNode
     public override void CopyNode(ActionNode copyNode)
     {
         #SCRIPTNAME# node = copyNode as #SCRIPTNAME#;
-        if (node)
-        {
-            description = node.description;
-        }
+        
     }
     
     protected override void OnStart()
@@ -21,9 +18,9 @@ public class #SCRIPTNAME# : ActionNode
         base.OnStop();
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
-        return State.SUCCESS;
+        return NodeComponent.State.SUCCESS;
     }
     #NOTRIM#
 

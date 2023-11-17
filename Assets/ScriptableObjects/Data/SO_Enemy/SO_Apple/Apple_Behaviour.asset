@@ -42,7 +42,9 @@ MonoBehaviour:
     description: 
   speed: 1.5
   canFly: 0
-  movePos: {x: -5.35, y: 0.51}
+  moveType: 0
+  movePos: {x: -5.13, y: 0}
+  radius: 0
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +196,9 @@ MonoBehaviour:
     description: 
   speed: 1.5
   canFly: 0
+  moveType: 0
   movePos: {x: 5.69, y: 0}
+  radius: 0
 --- !u!114 &3097413825085117369
 MonoBehaviour:
   m_ObjectHideFlags: 0

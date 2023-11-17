@@ -6,6 +6,7 @@ public class MoveNode : ActionNode
     {
         Point,
         RandomInCircle,
+        ToPlayer
     }
     
     public float speed;
@@ -26,11 +27,14 @@ public class MoveNode : ActionNode
     public override void CopyNode(ActionNode copyNode)
     {
         MoveNode copyMoveNode = copyNode as MoveNode;
-        
-        speed = copyMoveNode.speed;
-        moveType = copyMoveNode.moveType;
-        movePos = copyMoveNode.movePos;
-        radius = copyMoveNode.radius;
+
+        if (copyMoveNode)
+        {
+            speed = copyMoveNode.speed;
+            moveType = copyMoveNode.moveType;
+            movePos = copyMoveNode.movePos;
+            radius = copyMoveNode.radius;
+        }
     }
 
     public override void OnInitialize(BehaviourTreeComponent component)
@@ -61,13 +65,16 @@ public class MoveNode : ActionNode
             destination = startPos + Random.insideUnitCircle * radius;
             direction = (destination - (Vector2)treeComponent.transform.position).normalized;
         }
-        
+        else if (moveType == MoveType.ToPlayer)
+        {
+            destination = treeComponent.player.transform.position;
+        }
     }
 
 
     protected override NodeComponent.State OnUpdate()
     {
-        if (Vector2.Distance(destination, treeComponent.transform.position) < 0.1f)
+        if (CheckMove())
         {
             return NodeComponent.State.SUCCESS;
         }
@@ -77,8 +84,19 @@ public class MoveNode : ActionNode
         return NodeComponent.State.RUNNING;
     }
 
+    bool CheckMove()
+    {
+        return Vector2.Distance(destination, treeComponent.transform.position) < 0.1f;
+    }
+
     void Move()
     {
+        if (moveType == MoveType.ToPlayer)
+        {
+            destination = treeComponent.player.transform.position;
+            direction = (destination - (Vector2)treeComponent.transform.position).normalized;
+        }
+        
         movement.SetVelocity(direction * speed);
     }
 

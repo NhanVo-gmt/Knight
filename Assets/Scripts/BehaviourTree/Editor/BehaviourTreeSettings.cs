@@ -10,9 +10,9 @@ public class BehaviourTreeSettings : ScriptableObject
     public TextAsset ActionNodeScriptTemplate;
     public TextAsset CompositeNodeScriptTemplate;
     public TextAsset DecoratorNodeScriptTemplate;
-    public string newNodeBasePath = "Assets/Plugin/BehaviourTree/Node";
+    public string newNodeBasePath = "Assets/Scripts/BehaviourTree/Node";
 
-    readonly string templateFolder = "Assets/Plugin/BehaviourTree/ScriptTemplate/";
+    readonly string templateFolder = "Assets/Scripts/BehaviourTree/ScriptTemplate/";
     readonly string actionNodeName = "01-BehaviourTree__New Node-NewActionNode.cs.txt";
     readonly string compositeNodeName = "02-BehaviourTree__New Node-NewCompositeAction.cs.txt";
     readonly string decoratorNodeName = "03-BehaviourTree__New Node-NewDecoratorNode.cs.txt";
