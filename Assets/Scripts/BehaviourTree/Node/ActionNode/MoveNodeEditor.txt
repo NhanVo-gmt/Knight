@@ -1,0 +1,8 @@
+using UnityEditor;
+using UnityEngine;
+public class MoveNodeEditor : Editor
+{
+    private SerializedProperty speedProperty;
+    private SerializedProperty canFlyProperty;
+    private SerializedProperty movePosProperty;
+}

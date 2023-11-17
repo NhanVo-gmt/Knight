@@ -14,7 +14,7 @@ public partial class EditorSceneLoader
     private const string PATH_TO_OUTPUT_SCRIPT_FILE = "/Scripts/Misc/EditorSceneLoaderDropdown.cs";
     private const string ASSETS_SCENE_PATH = "Assets/Scenes/";
 
-    [MenuItem("Knight/Generate Scene Load Menu Code")]
+    [MenuItem("Knight/Scene/Generate Scene Load Menu Code")]
     public static void GenerateSceneLoadMenuCode()
     {
         StringBuilder result = new StringBuilder();
@@ -70,7 +70,6 @@ public partial class EditorSceneLoader
 ");
         result.Append(@"#if UNITY_EDITOR
 ");
-
     }
     
 

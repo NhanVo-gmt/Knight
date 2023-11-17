@@ -22,7 +22,13 @@ public class Enemy : MonoBehaviour
         health = core.GetCoreComponent<Health>();
         health.onDie += Die;
 
+        SetupComponent();
+    }
+
+    void SetupComponent()
+    {
         combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, IDamageable.KnockbackType.weak);
+        health.SetHealth(data.healthData);
     }
 
     private void Die()

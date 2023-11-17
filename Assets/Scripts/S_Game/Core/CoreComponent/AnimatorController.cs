@@ -22,9 +22,25 @@ public class AnimatorController : CoreComponent
         base.Awake();
         
         anim = GetComponent<Animator>();
+        AddEffect();
+    }
 
-        if (canBlink) blinkingEffect = gameObject.AddComponent<BlinkingEffect>();
-        if (canFlash) flashingEffect = gameObject.AddComponent<FlashingEffect>();
+    void AddEffect()
+    {
+        if (canBlink)
+        {
+            if (!TryGetComponent<BlinkingEffect>(out blinkingEffect))
+            {
+                blinkingEffect = gameObject.AddComponent<BlinkingEffect>();
+            }
+        }
+        if (canFlash)
+        {
+            if (!TryGetComponent<FlashingEffect>(out flashingEffect))
+            {
+                flashingEffect = gameObject.AddComponent<FlashingEffect>();
+            }
+        }
     }
 
     void Start() 
