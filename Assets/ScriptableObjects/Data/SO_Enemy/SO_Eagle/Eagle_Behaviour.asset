@@ -16,9 +16,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 388d35f7a58c4cf4c89b75e898db62ff
-    position: {x: 1507.9998, y: 625.5999}
+    position: {x: 1550.1729, y: 621.6}
     description: 
-  speed: 3
+  speed: 4
   canFly: 0
   movePosition: 3
   movePos: {x: -5.35, y: 0.51}
@@ -41,7 +41,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f5f9049b3347eb943a9362fb22e23e82
-    position: {x: 541.6, y: 762.9031}
+    position: {x: 458.80005, y: 762.4}
     description: 
   radius: 4
 --- !u!114 &-8116406502293355484
@@ -82,7 +82,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d50528a4da02edf4e9a5e5404b8e7cf1
-    position: {x: 1304, y: 625.5999}
+    position: {x: 1356.4702, y: 622.1019}
     description: 
   clipName: Attack
 --- !u!114 &-7336122424593993491
@@ -101,9 +101,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e7d9bc31c02fe394e8a20d19ce53f69e
-    position: {x: 984.80005, y: 501.59998}
+    position: {x: 1092.4702, y: 522.1019}
     description: 
-  idleTime: 2
+  idleTime: 0.5
 --- !u!114 &-7334015473047253504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 00775b3d72548b14a9c92cf01396568d
-    position: {x: 1710.3999, y: 625.5999}
+    position: {x: 1752.5729, y: 621.6}
     description: 
   clipName: Move
 --- !u!114 &-2886896763517979471
@@ -211,6 +211,25 @@ MonoBehaviour:
     position: {x: 216, y: -37.87838}
     description: 
   child: {fileID: -6742680835363187829}
+--- !u!114 &-2825412178239863526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516a0c95a04928e428f7c3d3a87e85a1, type: 3}
+  m_Name: FaceDirectionNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 2f4b0b23ae1c055489f3538173f2f404
+    position: {x: 921.70013, y: 521.6001}
+    description: 
+  direction: 2
 --- !u!114 &-2736429483591686176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,9 +246,10 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: c688b59c3324bb84baba244d1e2b13c3
-    position: {x: 1135.553, y: 375.19998}
+    position: {x: 1187.6702, y: 371.702}
     description: 
   children:
+  - {fileID: -2825412178239863526}
   - {fileID: -7336122424593993491}
   - {fileID: 8607567782058937115}
   - {fileID: -2151187231254945343}
@@ -268,7 +288,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: ed75ff7cebfa37247ba16f330818fc9a
-    position: {x: 541.53174, y: 625.6}
+    position: {x: 458.80005, y: 625.6}
     description: 
   child: {fileID: -8713698956365404743}
 --- !u!114 &-2151187231254945343
@@ -287,7 +307,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 24bd3db13293f4542b5e3b7040a7c5df
-    position: {x: 1608.7998, y: 501.59995}
+    position: {x: 1650.9728, y: 497.59998}
     description: 
   children:
   - {fileID: -8890913778907388851}
@@ -309,7 +329,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 8bebce96058163346ac30fccc0686814
-    position: {x: 429.5318, y: 501.60004}
+    position: {x: 346.80005, y: 501.59998}
     description: 
   children:
   - {fileID: 8178774860302089623}
@@ -376,6 +396,8 @@ MonoBehaviour:
   - {fileID: 6074224868958279958}
   - {fileID: -8890913778907388851}
   - {fileID: -7336122424593993491}
+  - {fileID: -2825412178239863526}
+  - {fileID: 829504772273587985}
   offset: {x: 300, y: 0}
 --- !u!114 &663643109545904021
 MonoBehaviour:
@@ -396,6 +418,25 @@ MonoBehaviour:
     position: {x: -301.95624, y: 500.40002}
     description: 
   child: {fileID: -2504542325747595777}
+--- !u!114 &829504772273587985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 516a0c95a04928e428f7c3d3a87e85a1, type: 3}
+  m_Name: FaceDirectionNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 7236980665c2b134eae727c076cf9116
+    position: {x: 533.2001, y: 501.59998}
+    description: 
+  direction: 2
 --- !u!114 &4945770970514238162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,15 +494,15 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3cd8ea655483d20448bb3ea11a2554d2
-    position: {x: 1135.1998, y: 625.5999}
+    position: {x: 1187.6702, y: 622.1019}
     description: 
-  speed: 6
+  speed: 7
   canFly: 0
   movePosition: 2
   movePos: {x: -5.35, y: 0.51}
   radius: 5
   moveType: 0
-  moveTime: 2
+  moveTime: 1
 --- !u!114 &7048945554803334375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -482,6 +523,7 @@ MonoBehaviour:
     description: 
   children:
   - {fileID: -1988251088372629299}
+  - {fileID: 829504772273587985}
   - {fileID: -5147214639967294041}
   currentIndex: -1
 --- !u!114 &8178774860302089623
@@ -500,7 +542,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 8fb5bb40bc449834b82fb24a82977b54
-    position: {x: 354.33194, y: 625.6}
+    position: {x: 271.60013, y: 625.6}
     description: 
   radius: 7
 --- !u!114 &8607567782058937115
@@ -519,7 +561,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 34a58cae02264dd4ba067e0259c2cbd6
-    position: {x: 1210.3998, y: 501.59995}
+    position: {x: 1262.8701, y: 498.10193}
     description: 
   children:
   - {fileID: 6074224868958279958}
