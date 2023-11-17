@@ -60,6 +60,11 @@ public class AnimatorController : CoreComponent
         anim.Play(id);
     }
 
+    public void Play(string clipName)
+    {
+        anim.Play(clipName);
+    }
+
     public void AnimationTrigger()
     {
         onAnimationTrigger?.Invoke();

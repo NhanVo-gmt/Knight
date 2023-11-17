@@ -15,6 +15,7 @@ public class AnimationNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
+        anim.Play(clipName);
     }
 
     protected override NodeComponent.State OnUpdate()
