@@ -1,14 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveNode : ActionNode
 {
+    public enum MoveType
+    {
+        Point,
+        RandomInCircle,
+    }
+    
     public float speed;
     public bool canFly;
+
+    public MoveType moveType = MoveType.Point;
+    
+    // Point
     public Vector2 movePos;
 
+    // Random In circle
+    public float radius;
+
     private Vector2 startPos;
+    private Vector2 destination = Vector2.zero;
     private Vector2 direction;
 
     public override void CopyNode(ActionNode copyNode)
@@ -16,7 +28,9 @@ public class MoveNode : ActionNode
         MoveNode copyMoveNode = copyNode as MoveNode;
         
         speed = copyMoveNode.speed;
+        moveType = copyMoveNode.moveType;
         movePos = copyMoveNode.movePos;
+        radius = copyMoveNode.radius;
     }
 
     public override void OnInitialize(BehaviourTreeComponent component)
@@ -24,17 +38,38 @@ public class MoveNode : ActionNode
         base.OnInitialize(component);
 
         startPos = treeComponent.transform.position;
-        if (!canFly)
+        
+        if (moveType == MoveType.Point)
         {
-            movePos.y = 0;
-            direction = movePos.normalized;
+            if (!canFly)
+            {
+                movePos.y = 0;
+                direction = (movePos - startPos).normalized;
+            }
         }
+        
+    }
+
+    protected override void OnStart()
+    {
+        base.OnStart();
+        
+        if (moveType == MoveType.RandomInCircle)
+        {
+            destination = startPos + Random.insideUnitCircle * radius;
+            direction = (destination - (Vector2)treeComponent.transform.position).normalized;
+        }
+        
     }
 
 
     protected override NodeComponent.State OnUpdate()
     {
-        if (Vector2.Distance(movePos + startPos, treeComponent.transform.position) < 0.1f) return NodeComponent.State.SUCCESS;
+        if (Vector2.Distance(destination, treeComponent.transform.position) < 0.1f)
+        {
+            return NodeComponent.State.SUCCESS;
+        }
+        
         Move();
         
         return NodeComponent.State.RUNNING;
@@ -42,12 +77,16 @@ public class MoveNode : ActionNode
 
     void Move()
     {
-        // treeComponent.transform.Translate( direction * speed * Time.deltaTime);
-        movement.SetVelocityX(direction.x * speed);
+        movement.SetVelocity(direction * speed);
     }
 
     public override void DrawGizmos(GameObject selectedGameObject)
     {
-        GizmosDrawer.DrawSphere(movePos + (Vector2)selectedGameObject.transform.position, 0.5f);
+        if (moveType == MoveType.Point)
+            GizmosDrawer.DrawSphere(movePos + (Vector2)selectedGameObject.transform.position, 0.5f);
+        else 
+            GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position, radius);
+        
+        GizmosDrawer.DrawSphere(destination, 0.5f);
     }
 }

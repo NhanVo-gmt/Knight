@@ -6,7 +6,6 @@ using UnityEngine;
 public class AnimationNode : ActionNode
 {
     public string clipName;
-    public bool flipSprite;
 
     public override void CopyNode(ActionNode copyNode)
     {

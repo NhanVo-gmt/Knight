@@ -27,6 +27,7 @@ public abstract class ActionNode : Node
     {
     }
 
+
     public abstract void CopyNode(ActionNode copyNode);
 
 

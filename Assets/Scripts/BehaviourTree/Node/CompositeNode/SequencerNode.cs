@@ -28,7 +28,8 @@ public class SequencerNode : CompositeNode
             case NodeComponent.State.FAILURE:
                 return NodeComponent.State.FAILURE;
             case NodeComponent.State.SUCCESS:
-                currentIndex++;
+                if (currentIndex < children.Count)
+                    currentIndex++;
                 break;
         }
 

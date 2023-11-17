@@ -15,7 +15,12 @@ public class RepeatNode : DecoratorNode
 
     protected override NodeComponent.State OnUpdate()
     {
-        child.Update();
+        NodeComponent.State childState = child.Update();
+        if (childState == NodeComponent.State.SUCCESS)
+        {
+            // child.();    
+        }
+        
         return NodeComponent.State.RUNNING;
     }
 }

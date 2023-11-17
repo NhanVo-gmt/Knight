@@ -2752,7 +2752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1319131068646631418, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3349499791824090274, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2793,26 +2793,6 @@ PrefabInstance:
     - target: {fileID: 3349499791824090274, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7127463845566500319, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
-      propertyPath: m_GravityScale
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7876084319112611611, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
-      propertyPath: m_Size.y
-      value: 0.8380348
-      objectReference: {fileID: 0}
-    - target: {fileID: 7876084319112611611, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.080982596
-      objectReference: {fileID: 0}
-    - target: {fileID: 8007504620625357120, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
-      propertyPath: m_Size.y
-      value: 0.8568744
-      objectReference: {fileID: 0}
-    - target: {fileID: 8007504620625357120, guid: b3e5f839df70f6f4dbbe5ee66909b9c8, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.0715628
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14321,7 +14301,7 @@ Transform:
   m_GameObject: {fileID: 3149858275390424153}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.52, y: 0.16, z: 0}
+  m_LocalPosition: {x: -0.52, y: 9.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14492,7 +14472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &3466385033319971228
 MonoBehaviour:
   m_ObjectHideFlags: 0
