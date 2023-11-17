@@ -29,16 +29,21 @@ public class MoveNode : ActionNode
             movePos.y = 0;
             direction = movePos.normalized;
         }
-        
     }
 
 
     protected override NodeComponent.State OnUpdate()
     {
         if (Vector2.Distance(movePos + startPos, treeComponent.transform.position) < 0.1f) return NodeComponent.State.SUCCESS;
-        treeComponent.transform.Translate( direction * speed * Time.deltaTime);
+        Move();
         
         return NodeComponent.State.RUNNING;
+    }
+
+    void Move()
+    {
+        // treeComponent.transform.Translate( direction * speed * Time.deltaTime);
+        movement.SetVelocityX(direction.x * speed);
     }
 
     public override void DrawGizmos(GameObject selectedGameObject)

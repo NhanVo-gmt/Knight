@@ -6,6 +6,7 @@ using UnityEngine;
 public class AnimationNode : ActionNode
 {
     public string clipName;
+    public bool flipSprite;
 
     public override void CopyNode(ActionNode copyNode)
     {
@@ -15,7 +16,6 @@ public class AnimationNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
-        
     }
 
     protected override NodeComponent.State OnUpdate()

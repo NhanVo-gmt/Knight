@@ -147,17 +147,4 @@ public class Movement : CoreComponent
     }
 
     #endregion
-
-    #region Desination
-
-    public void MovePosition(Vector2 destination, float speed)
-    {
-        if (!canSetVelocity) return;
-
-        Vector2 direction = (destination - (Vector2)transform.position).normalized;
-
-        rb.MovePosition((Vector2)transform.position + direction * speed * Time.deltaTime);
-    }
-
-    #endregion
 }
