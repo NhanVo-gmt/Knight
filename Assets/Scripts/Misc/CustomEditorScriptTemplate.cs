@@ -7,9 +7,9 @@ using UnityEngine;
 
 public partial class CustomEditorScriptTemplate
 {
-    private static string PATH_TO_OUTPUT_SCRIPT_FILE = "/Scripts/BehaviourTree/Node/ActionNode/";
+    private static string PATH_TO_OUTPUT_SCRIPT_FILE = "/Scripts/BehaviourTree/Node/ActionNode/Editor/";
     private static string FILE_NAME = "";
-    private static string FILE_EXTENSION = "Editor.txt";
+    private static string FILE_EXTENSION = "Editor.cs";
     
     private static List<string> PUBLIC_VARIABLES = new List<string>();
     private static List<string> VARIABLE_TYPES = new List<string>(){"bool", "int", "string", "float", "Vector2", "Vector3"};
@@ -84,22 +84,80 @@ public partial class CustomEditorScriptTemplate
     {
         result.Append(@"using UnityEditor;
 using UnityEngine;
+");
+        result.Append(@"[CustomEditor(typeof(" + FILE_NAME + "))]");
+        result.Append(@"
 public class ");
         result.Append(FILE_NAME);
         result.Append(@"Editor : Editor
-{");
+{
+");
     }
 
     private static void AddClassBody(StringBuilder result)
     {
+        AddClassVariables(result);
+        AddClassMethods(result);
+    }
+
+    private static void AddClassVariables(StringBuilder result)
+    {
+        result.Append(@"    private SerializedProperty nodeProperty;");
+        result.Append(@"
+");
+        
         foreach (string variable in PUBLIC_VARIABLES)
         {
+            result.Append(@"    private SerializedProperty " + variable + "Property;");
             result.Append(@"
-    private SerializedProperty ");
-            string variablePropertyName = variable + "Property;";
-            Debug.Log(variablePropertyName);
-            result.Append(variablePropertyName);
+");
         }
+        result.Append(@"
+");
+    }
+
+    private static void AddClassMethods(StringBuilder result)
+    {
+        // On enable
+        result.Append(@"    private void OnEnable()
+    {
+");
+        result.Append(@"        nodeProperty = serializedObject.FindProperty(""NodeComponent"");");
+        result.Append(@"
+");
+        foreach (string variable in PUBLIC_VARIABLES)
+        {
+            result.Append("        " + variable + "Property");
+            result.Append(" = ");
+            result.Append("serializedObject.FindProperty(\"" + variable + "\");");
+            result.Append(@"
+");
+        }
+        result.Append(@"    }
+
+");
+        
+        // OnInspector GUI
+        result.Append(@"    public override void OnInspectorGUI()
+    {
+");
+        result.Append(@"        serializedObject.Update();
+");
+        
+        result.Append(@"        EditorGUILayout.PropertyField(nodeProperty);");
+        result.Append(@"
+");
+        foreach (string variable in PUBLIC_VARIABLES)
+        {
+            result.Append(@"        EditorGUILayout.PropertyField(" + variable + "Property);");
+            result.Append(@"
+");
+        }
+        result.Append(@"        serializedObject.ApplyModifiedProperties();
+");
+        result.Append(@"    }
+
+");
     }
 
     private static void AddClassFooter(StringBuilder result)

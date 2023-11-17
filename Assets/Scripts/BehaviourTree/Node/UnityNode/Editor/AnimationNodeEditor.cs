@@ -62,7 +62,7 @@ public class AnimationNodeEditor : Editor
             }
         }
 
-        Debug.LogError("Please fix the name of the animation clip accoring to game editor settings");
+        Debug.LogError("Please fix the name of the animation clip according to game editor settings");
         return String.Empty;
     }
 }

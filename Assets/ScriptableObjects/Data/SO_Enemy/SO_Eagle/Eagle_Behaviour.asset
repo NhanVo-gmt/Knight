@@ -273,7 +273,7 @@ MonoBehaviour:
     guid: b3c5ca09e90277648b6233e5c93d9573
     position: {x: 12.199959, y: 539.2001}
     description: 
-  clipName: 
+  clipName: Move
 --- !u!114 &8616354086427601901
 MonoBehaviour:
   m_ObjectHideFlags: 0
