@@ -143,6 +143,10 @@ public class ");
 ");
         result.Append(@"        serializedObject.Update();
 ");
+        result.Append(@"        using (new EditorGUI.DisabledScope(true))
+");
+        result.Append(
+            $"            EditorGUILayout.ObjectField(\"Script:\", MonoScript.FromScriptableObject(({FILE_NAME})target), typeof({FILE_NAME}), false);");
         
         result.Append(@"        EditorGUILayout.PropertyField(nodeProperty);");
         result.Append(@"

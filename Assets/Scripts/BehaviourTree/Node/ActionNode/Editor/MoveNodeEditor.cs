@@ -19,7 +19,8 @@ public class MoveNodeEditor : Editor
     public override void OnInspectorGUI()
     {
         serializedObject.Update();
-        EditorGUILayout.PropertyField(nodeProperty);
+        using (new EditorGUI.DisabledScope(true))
+            EditorGUILayout.ObjectField("Script:", MonoScript.FromScriptableObject((MoveNode)target), typeof(MoveNode), false);        EditorGUILayout.PropertyField(nodeProperty);
         EditorGUILayout.PropertyField(speedProperty);
         EditorGUILayout.PropertyField(canFlyProperty);
         EditorGUILayout.PropertyField(movePosProperty);
