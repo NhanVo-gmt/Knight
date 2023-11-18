@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8894175433096097018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 6ed384baa078ec54fa0f79f7ee2f2e4a
+    position: {x: 1863.3324, y: 509.60004}
+    description: 
+  idleTime: 0.5
 --- !u!114 &-8890913778907388851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,15 +35,16 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 388d35f7a58c4cf4c89b75e898db62ff
-    position: {x: 1550.1729, y: 621.6}
+    position: {x: 1972.5576, y: 633.6}
     description: 
   speed: 4
   canFly: 0
-  movePosition: 3
+  movePosition: 4
   movePos: {x: -5.35, y: 0.51}
   radius: 5
   moveType: 0
   moveTime: 2
+  moveVector: {x: 0, y: 1}
 --- !u!114 &-8713698956365404743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -41,7 +61,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f5f9049b3347eb943a9362fb22e23e82
-    position: {x: 458.80005, y: 762.4}
+    position: {x: 458.8, y: 762.39984}
     description: 
   radius: 4
 --- !u!114 &-8116406502293355484
@@ -61,7 +81,7 @@ MonoBehaviour:
     started: 0
     guid: c94212a369fa093488564c410d7b834b
     position: {x: -211.49785, y: 375.66592}
-    description: 
+    description: Patrolling
   children:
   - {fileID: 663643109545904021}
   - {fileID: 4945770970514238162}
@@ -82,7 +102,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d50528a4da02edf4e9a5e5404b8e7cf1
-    position: {x: 1356.4702, y: 622.1019}
+    position: {x: 1697.6001, y: 634}
     description: 
   clipName: Attack
 --- !u!114 &-7336122424593993491
@@ -101,7 +121,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e7d9bc31c02fe394e8a20d19ce53f69e
-    position: {x: 1092.4702, y: 522.1019}
+    position: {x: 1433.6003, y: 534}
     description: 
   idleTime: 0.5
 --- !u!114 &-7334015473047253504
@@ -124,11 +144,33 @@ MonoBehaviour:
     description: 
   speed: 2
   canFly: 0
-  movePosition: 0
+  movePosition: 1
   movePos: {x: -5.35, y: 0.51}
   radius: 5
   moveType: 1
   moveTime: 0
+  moveVector: {x: 0, y: 0}
+--- !u!114 &-6745893013543870922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: a55aba69d424cba4d97a92e49ca0c564
+    position: {x: 1019.2, y: 489.2}
+    description: 
+  children:
+  - {fileID: 3716831932127429592}
+  successType: 1
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,8 +213,9 @@ MonoBehaviour:
   movePosition: 2
   movePos: {x: -5.35, y: 0.51}
   radius: 5
-  moveType: 1
+  moveType: 2
   moveTime: 0
+  moveVector: {x: 0, y: 0}
 --- !u!114 &-3220301533029737903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +232,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 00775b3d72548b14a9c92cf01396568d
-    position: {x: 1752.5729, y: 621.6}
+    position: {x: 2176.5576, y: 633.6}
     description: 
   clipName: Move
 --- !u!114 &-2886896763517979471
@@ -227,32 +270,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 2f4b0b23ae1c055489f3538173f2f404
-    position: {x: 921.70013, y: 521.6001}
+    position: {x: 1262.4001, y: 534}
     description: 
   direction: 2
---- !u!114 &-2736429483591686176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
-  m_Name: SequencerNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: c688b59c3324bb84baba244d1e2b13c3
-    position: {x: 1187.6702, y: 371.702}
-    description: 
-  children:
-  - {fileID: -2825412178239863526}
-  - {fileID: -7336122424593993491}
-  - {fileID: 8607567782058937115}
-  - {fileID: -2151187231254945343}
 --- !u!114 &-2504542325747595777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,7 +327,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 24bd3db13293f4542b5e3b7040a7c5df
-    position: {x: 1650.9728, y: 497.59998}
+    position: {x: 2074.9578, y: 509.59998}
     description: 
   children:
   - {fileID: -8890913778907388851}
@@ -356,7 +376,7 @@ MonoBehaviour:
   children:
   - {fileID: -8116406502293355484}
   - {fileID: 7048945554803334375}
-  - {fileID: -2736429483591686176}
+  - {fileID: 2329106932448188102}
   currentIndex: -1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -389,7 +409,6 @@ MonoBehaviour:
   - {fileID: -8713698956365404743}
   - {fileID: -2435692587220699581}
   - {fileID: 8607567782058937115}
-  - {fileID: -2736429483591686176}
   - {fileID: -7401739897537411077}
   - {fileID: -2151187231254945343}
   - {fileID: -3220301533029737903}
@@ -398,6 +417,10 @@ MonoBehaviour:
   - {fileID: -7336122424593993491}
   - {fileID: -2825412178239863526}
   - {fileID: 829504772273587985}
+  - {fileID: 3716831932127429592}
+  - {fileID: -6745893013543870922}
+  - {fileID: 2329106932448188102}
+  - {fileID: -8894175433096097018}
   offset: {x: 300, y: 0}
 --- !u!114 &663643109545904021
 MonoBehaviour:
@@ -437,6 +460,50 @@ MonoBehaviour:
     position: {x: 533.2001, y: 501.59998}
     description: 
   direction: 2
+--- !u!114 &2329106932448188102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 5b3cf6ba9fd5953499116b2286e5cf5c
+    position: {x: 1234.0653, y: 375.2}
+    description: Attack Sequence
+  children:
+  - {fileID: -6745893013543870922}
+  - {fileID: -2825412178239863526}
+  - {fileID: -7336122424593993491}
+  - {fileID: 8607567782058937115}
+  - {fileID: -8894175433096097018}
+  - {fileID: -2151187231254945343}
+--- !u!114 &3716831932127429592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff88d7429b3c04b88d08008781ba17, type: 3}
+  m_Name: CheckPlayerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: b63cbe09d95bfd3439c2cdf4fd6f382a
+    position: {x: 1034.4375, y: 633.6}
+    description: 
+  radius: 6
 --- !u!114 &4945770970514238162
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,15 +561,16 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3cd8ea655483d20448bb3ea11a2554d2
-    position: {x: 1187.6702, y: 622.1019}
+    position: {x: 1527.051, y: 633.59985}
     description: 
-  speed: 7
+  speed: 10
   canFly: 0
   movePosition: 2
   movePos: {x: -5.35, y: 0.51}
   radius: 5
-  moveType: 0
-  moveTime: 1
+  moveType: 1
+  moveTime: 0.5
+  moveVector: {x: 0, y: 0}
 --- !u!114 &7048945554803334375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,8 +587,8 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d9a7c857babc66f438f278cfb1d2ec6e
-    position: {x: 479.1318, y: 375.2}
-    description: 
+    position: {x: 479.2, y: 375.2}
+    description: Following Player
   children:
   - {fileID: -1988251088372629299}
   - {fileID: 829504772273587985}
@@ -561,7 +629,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 34a58cae02264dd4ba067e0259c2cbd6
-    position: {x: 1262.8701, y: 498.10193}
+    position: {x: 1647.25, y: 509.60007}
     description: 
   children:
   - {fileID: 6074224868958279958}

@@ -102,8 +102,7 @@ public class ");
 
     private static void AddClassVariables(StringBuilder result)
     {
-        result.Append(@"    private SerializedProperty nodeProperty;");
-        result.Append(@"
+        result.Append(@"    private SerializedProperty nodeProperty;
 ");
         
         foreach (string variable in PUBLIC_VARIABLES)
@@ -146,7 +145,7 @@ public class ");
         result.Append(@"        using (new EditorGUI.DisabledScope(true))
 ");
         result.Append(
-            $"            EditorGUILayout.ObjectField(\"Script:\", MonoScript.FromScriptableObject(({FILE_NAME})target), typeof({FILE_NAME}), false);");
+            $"            EditorGUILayout.ObjectField(\"Script:\", MonoScript.FromScriptableObject(({FILE_NAME})target), typeof({FILE_NAME}), false);\n");
         
         result.Append(@"        EditorGUILayout.PropertyField(nodeProperty);");
         result.Append(@"

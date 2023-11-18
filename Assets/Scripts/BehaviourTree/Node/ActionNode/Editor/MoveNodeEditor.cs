@@ -14,6 +14,7 @@ public class MoveNodeEditor : Editor
     private SerializedProperty movePosProperty;
     private SerializedProperty radiusProperty;
     private SerializedProperty moveTimeProperty;
+    private SerializedProperty moveVectorProperty;
 
     private MoveNode moveNode;
 
@@ -32,6 +33,7 @@ public class MoveNodeEditor : Editor
         movePosProperty = serializedObject.FindProperty("movePos");
         radiusProperty = serializedObject.FindProperty("radius");
         moveTimeProperty = serializedObject.FindProperty("moveTime");
+        moveVectorProperty = serializedObject.FindProperty("moveVector");
     }
 
     public override void OnInspectorGUI()
@@ -50,6 +52,11 @@ public class MoveNodeEditor : Editor
         else if (moveNode.movePosition == MoveNode.MovePosition.RandomInCircle)
         {
             EditorGUILayout.PropertyField(radiusProperty);
+        }
+        else if (moveNode.movePosition == MoveNode.MovePosition.Vector)
+        {
+            EditorGUILayout.PropertyField(moveVectorProperty);
+            EditorGUILayout.PropertyField(moveTimeProperty);
         }
         else
         {
