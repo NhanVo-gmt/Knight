@@ -29,7 +29,6 @@ public class GroundState : State
 
         if (!stateMachine.canChangeState) return;
 
-        
         if (player.inputManager.jumpInput && collisionSenses.isGround)
         {
             stateMachine.ChangeState(player.jumpState);

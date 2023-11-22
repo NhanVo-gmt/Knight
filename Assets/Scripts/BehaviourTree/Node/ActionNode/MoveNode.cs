@@ -71,7 +71,7 @@ public class MoveNode : ActionNode
             }
             
             destination = startPos + movePos;
-            direction = (movePos - startPos).normalized;
+            direction = (destination - startPos).normalized;
         }
         
     }

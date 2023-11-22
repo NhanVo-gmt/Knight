@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CollisionSenses : CoreComponent
 {
     [SerializeField] Transform groundCheck;
-    [SerializeField] float groundCheckDistance;
+    [SerializeField] Vector2 groundCheckBox;
     [SerializeField] LayerMask groundMask;
 
     [SerializeField] Transform climableWallCheck;
@@ -28,7 +29,7 @@ public class CollisionSenses : CoreComponent
 
     public bool isGround
     {
-        get => Physics2D.OverlapCircle(groundCheck.position, groundCheckDistance, groundMask);
+        get => Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, groundMask);
     }
 
     public bool isClimableWallCheck
@@ -38,7 +39,7 @@ public class CollisionSenses : CoreComponent
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(groundCheck.position, groundCheckDistance);
+        Gizmos.DrawWireCube(groundCheck.position, groundCheckBox);
 
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(climableWallCheck.position, Vector2.left * climableWallCheckDistance);

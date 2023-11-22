@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 160299666675796204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: 0}
+  m_LocalPosition: {x: 0, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 8821816194513874516}
-  groundCheckDistance: 0.2
+  groundCheckBox: {x: 0.8, y: 0.1}
   groundMask:
     serializedVersion: 2
     m_Bits: 8
@@ -479,11 +479,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 223877e6cf642da478439fcb46af32ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashInput: 0
-  jumpInput: 0
-  meleeAttackInput: 0
-  interactionInput: 0
-  movementInput: {x: 0, y: 0}
 --- !u!1 &7541623199107732071
 GameObject:
   m_ObjectHideFlags: 0
@@ -591,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4458c75a8fcf69743acd354366b9bff2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 10
 --- !u!1 &8083077910661323732
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,6 +707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0228f965f86fa7044afe6a133e377a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canBlink: 0
+  canFlash: 0
 --- !u!114 &142709378153897572
 MonoBehaviour:
   m_ObjectHideFlags: 0
