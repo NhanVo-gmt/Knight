@@ -14056,6 +14056,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1250078084593736881, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
+      propertyPath: m_ScreenY
+      value: 0.6999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250078084593736881, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
+      propertyPath: m_DeadZoneHeight
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250078084593736881, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
+      propertyPath: m_LookaheadSmoothing
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1250078084593736881, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
+      propertyPath: m_TrackedObjectOffset.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2737702801661302914, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_Name
       value: Main Camera
@@ -14066,7 +14082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5583573024167213742, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.18
+      value: 3.179999
       objectReference: {fileID: 0}
     - target: {fileID: 5583573024167213742, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -14112,6 +14128,10 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1532706071}
+    - target: {fileID: 7385933733148797376, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
