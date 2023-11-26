@@ -13,13 +13,13 @@ public class SceneLoader : SingletonObject<SceneLoader>
         ForestScene1
     }
 
+    public EventHandler OnSceneBeforeLoading;
     public EventHandler OnSceneLoadingStarted;
     public EventHandler<float> OnSceneLoadingProgressChanged;
     public EventHandler OnSceneLoadingCompleted;
     public EventHandler OnSceneReadyToPlay;
 
     AsyncOperation loadingOperation;
-    Vector2 spawnPos;
 
     protected override void Awake()
     {
@@ -33,11 +33,14 @@ public class SceneLoader : SingletonObject<SceneLoader>
 
     IEnumerator ChangeSceneCoroutine(Scene scene, Vector2 newPos)
     {
-        OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
+        OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
 
         yield return new WaitForSeconds(1f);
+        
+        Player.Instance.ChangeScenePosition(newPos);
 
         loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
+        OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
     }
     
 

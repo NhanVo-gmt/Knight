@@ -33,6 +33,7 @@ public class Player : SingletonObject<Player>
     #region Core Component
 
     InteractionController interactionController;
+    private Movement movement;
 
     #endregion
 
@@ -100,6 +101,7 @@ public class Player : SingletonObject<Player>
     void GetCoreComponent()
     {
         interactionController = core.GetCoreComponent<InteractionController>();
+        movement = core.GetCoreComponent<Movement>();
         
         SetUpCombatComponent(core.GetCoreComponent<Combat>());
         SetUpHealthComponent(core.GetCoreComponent<Health>());
@@ -169,6 +171,8 @@ public class Player : SingletonObject<Player>
 
     public void ChangeScenePosition(Vector2 newPos)
     {
+        inputManager.ResetInput();
+        movement.SetVelocityZero();
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.position = newPos;
     }

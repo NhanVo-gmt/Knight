@@ -19,7 +19,7 @@ public class LoadingUI : MonoBehaviour
 
     void Start() 
     {
-        SceneLoader.Instance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
+        SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneLoadingStarted;
         SceneLoader.Instance.OnSceneLoadingProgressChanged += SceneLoader_OnSceneLoadingProgressChanged;
         SceneLoader.Instance.OnSceneReadyToPlay += SceneLoader_OnSceneLoadingCompleted;
     }
