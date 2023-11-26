@@ -21,16 +21,17 @@ public class LoadingUI : MonoBehaviour
     {
         SceneLoader.Instance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
         SceneLoader.Instance.OnSceneLoadingProgressChanged += SceneLoader_OnSceneLoadingProgressChanged;
-        SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
+        SceneLoader.Instance.OnSceneReadyToPlay += SceneLoader_OnSceneLoadingCompleted;
     }
 
-    private void SceneLoader_OnSceneLoadingCompleted(object sender, Vector2 e)
+    private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)
     {
         if (canvasGroup.alpha != 0)
         {
             StartCoroutine(FadeOut());
         }
     }
+
 
     private void SceneLoader_OnSceneLoadingStarted(object sender, EventArgs e)
     {

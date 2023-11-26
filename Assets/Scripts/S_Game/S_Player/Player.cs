@@ -40,6 +40,7 @@ public class Player : SingletonObject<Player>
     [SerializeField] PlayerData data;
     StateMachine stateMachine;
     Core core;
+    private Rigidbody2D rb;
     
     public InputManager inputManager {get; private set;}
 
@@ -53,6 +54,7 @@ public class Player : SingletonObject<Player>
 
         inputManager = GetComponent<InputManager>();
         core = GetComponentInChildren<Core>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     void Start() 
@@ -62,6 +64,7 @@ public class Player : SingletonObject<Player>
         GetCoreComponent();
 
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
+        SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
     }
 
     private void GameManager_OnChangedGameState(GameManager.GameState gameState)
@@ -74,6 +77,11 @@ public class Player : SingletonObject<Player>
         {
             isGamePaused = false;
         }
+    }
+    
+    private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)
+    {
+        rb.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
     }
 
     void CreateState()
@@ -159,6 +167,11 @@ public class Player : SingletonObject<Player>
         }
     }
 
+    public void ChangeScenePosition(Vector2 newPos)
+    {
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        transform.position = newPos;
+    }
 
     #region Get 
 

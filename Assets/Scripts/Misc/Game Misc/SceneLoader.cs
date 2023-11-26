@@ -3,17 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 public class SceneLoader : SingletonObject<SceneLoader>
 {
     public enum Scene {
         FarmScene,
         ForestScene,
+        ForestScene1
     }
 
     public EventHandler OnSceneLoadingStarted;
     public EventHandler<float> OnSceneLoadingProgressChanged;
-    public EventHandler<Vector2> OnSceneLoadingCompleted;
+    public EventHandler OnSceneLoadingCompleted;
+    public EventHandler OnSceneReadyToPlay;
 
     AsyncOperation loadingOperation;
     Vector2 spawnPos;
@@ -23,13 +26,12 @@ public class SceneLoader : SingletonObject<SceneLoader>
         base.Awake();
     }
 
-    public void ChangeScene(Scene scene, Vector2 position)
+    public void ChangeScene(Scene scene, Vector2 newPos)
     {
-        StartCoroutine(ChangeSceneCoroutine(scene));
-        spawnPos = position;
+        StartCoroutine(ChangeSceneCoroutine(scene, newPos));
     }
 
-    IEnumerator ChangeSceneCoroutine(Scene scene)
+    IEnumerator ChangeSceneCoroutine(Scene scene, Vector2 newPos)
     {
         OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
 
@@ -37,7 +39,7 @@ public class SceneLoader : SingletonObject<SceneLoader>
 
         loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
     }
-
+    
 
     void Update() {
         if (loadingOperation == null) return;
@@ -46,13 +48,19 @@ public class SceneLoader : SingletonObject<SceneLoader>
         {
             OnSceneLoadingProgressChanged?.Invoke(this, loadingOperation.progress);
         }
-        else 
+        else
         {
-            OnSceneLoadingCompleted?.Invoke(this, spawnPos);
             loadingOperation = null;
-
-            Player.Instance.transform.position = spawnPos;
+            StartCoroutine(OnSceneLoadingCompletedCoroutine());
         }
     }
 
+    IEnumerator OnSceneLoadingCompletedCoroutine()
+    {
+        OnSceneLoadingCompleted?.Invoke(this, EventArgs.Empty);
+
+        yield return new WaitForSeconds(1f);
+        
+        OnSceneReadyToPlay?.Invoke(this, EventArgs.Empty);
+    }
 }
