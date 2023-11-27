@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Serialization;
 
 public class Health : CoreComponent
 {
     [SerializeField] int health; //todo set private
 
-    public Action onTakeDamage;
-    public Action onDie;
-    public Action<int> onUpdateHealth;
+    public Action OnTakeDamage;
+    public Action OnDie;
+    public Action<int> OnUpdateHealth;
 
     
 
@@ -20,7 +21,7 @@ public class Health : CoreComponent
     public void SetHealth(HealthData data)
     {
         health = data.health;
-        onUpdateHealth?.Invoke(health);
+        OnUpdateHealth?.Invoke(health);
     }
 
     #endregion
@@ -36,7 +37,7 @@ public class Health : CoreComponent
 
         health -= damage;
 
-        onUpdateHealth?.Invoke(health);
+        OnUpdateHealth?.Invoke(health);
 
         if (health > 0)
         {
@@ -55,12 +56,12 @@ public class Health : CoreComponent
 
     void TakeDamage()
     {
-        onTakeDamage?.Invoke();
+        OnTakeDamage?.Invoke();
     }
 
     private void Die()
     {
         isDie = true;
-        onDie?.Invoke();
+        OnDie?.Invoke();
     }
 }

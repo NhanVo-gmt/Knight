@@ -46,11 +46,11 @@ public class AnimatorController : CoreComponent
     void Start() 
     {
         health = core.GetCoreComponent<Health>();
-        health.onTakeDamage += StartHitVFX;
+        health.OnTakeDamage += StartHitVFX;
     }
 
     private void OnDisable() {
-        health.onTakeDamage -= StartHitVFX;
+        health.OnTakeDamage -= StartHitVFX;
     }
     
 #region Animation

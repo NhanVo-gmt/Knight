@@ -54,7 +54,7 @@ public class Combat : CoreComponent, IDamageable
 
     void AddEvent()
     {
-        health.onTakeDamage += Knockback;
+        health.OnTakeDamage += Knockback;
     }
 
     private void OnDisable() {
@@ -63,7 +63,7 @@ public class Combat : CoreComponent, IDamageable
 
     private void RemoveEvent()
     {
-        health.onTakeDamage -= Knockback;
+        health.OnTakeDamage -= Knockback;
     }
 
     #endregion
@@ -133,7 +133,8 @@ public class Combat : CoreComponent, IDamageable
             case IDamageable.KnockbackType.player:
                 knockbackAmount = settings.PlayerKnockbackAmount;
                 break;
-            
+            case IDamageable.KnockbackType.none:
+                return;
         }
         
         movement.AddForce(hitDirection, knockbackAmount);

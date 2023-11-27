@@ -15,7 +15,29 @@ public class VFXController : SingletonObject<VFXController>
 
 #region 
 
-    public GameObject SpawnPooledPrefab(PooledObjectData data, Movement movement)
+public GameObject SpawnPooledPrefab(PooledObjectData data, Movement movement)
+{
+    GameObject spawnedPrefab = null;
+    if (data is VFXData)
+    {
+        spawnedPrefab = SpawnVFXPrefab(data as VFXData);
+    } 
+    else if (data is ItemData)
+    {
+        spawnedPrefab = SpawnItemPrefab(data as ItemData);
+    }
+    else
+    {
+        spawnedPrefab = SpawnParticlePrefab(data as ParticleData);
+    }
+        
+    SetUpSpawnPrefab(spawnedPrefab, data);
+    SetPrefabPosition(spawnedPrefab, data, movement.transform.position, movement.faceDirection);
+    SetPrefabRotation(spawnedPrefab, data, movement.transform.position);
+    return spawnedPrefab;
+}
+
+    public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 spawnPosition, Vector2 faceDirection)
     {
         GameObject spawnedPrefab = null;
         if (data is VFXData)
@@ -32,8 +54,8 @@ public class VFXController : SingletonObject<VFXController>
         }
         
         SetUpSpawnPrefab(spawnedPrefab, data);
-        SetPrefabPosition(spawnedPrefab, data, movement);
-        SetPrefabRotation(spawnedPrefab, data, movement);
+        SetPrefabPosition(spawnedPrefab, data, spawnPosition, faceDirection);
+        SetPrefabRotation(spawnedPrefab, data, spawnPosition);
         return spawnedPrefab;
     }
 
@@ -65,9 +87,9 @@ public class VFXController : SingletonObject<VFXController>
         spawnedPrefab.GetComponent<PooledObject>().Initialize(data.lifeTime);
     }
 
-    void SetPrefabPosition(GameObject spawnedObject, PooledObjectData data, Movement movement)
+    void SetPrefabPosition(GameObject spawnedObject, PooledObjectData data, Vector3 position, Vector2 faceDirection)
     { 
-        if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
+        if (data.needPlayerDirection && faceDirection == Vector2.right)
         {
             spawnedObject.transform.position = new Vector2(-data.spawnPos.x, data.spawnPos.y);
         }
@@ -76,12 +98,12 @@ public class VFXController : SingletonObject<VFXController>
             spawnedObject.transform.position = data.spawnPos;
         }
 
-        spawnedObject.transform.position += movement.transform.position;
+        spawnedObject.transform.position += position;
     }
 
-    void SetPrefabRotation(GameObject spawnedObject, PooledObjectData data, Movement movement)
+    void SetPrefabRotation(GameObject spawnedObject, PooledObjectData data, Vector2 faceDirection)
     {
-        if (data.needPlayerDirection && movement.faceDirection == Vector2.right)
+        if (data.needPlayerDirection && faceDirection == Vector2.right)
         {
             spawnedObject.transform.rotation = Quaternion.Euler(data.spawnRot.x, data.spawnRot.y + 180, data.spawnRot.z);
         }

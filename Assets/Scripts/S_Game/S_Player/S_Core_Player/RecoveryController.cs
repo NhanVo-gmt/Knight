@@ -34,14 +34,14 @@ public class RecoveryController : CoreComponent
 
     void AddHealthEvent()
     {
-        health.onTakeDamage += TakeDamage;
-        health.onDie += Die;
+        health.OnTakeDamage += TakeDamage;
+        health.OnDie += Die;
     }
 
     void RemoveHealthEvent()
     {
-        health.onTakeDamage -= TakeDamage;
-        health.onDie -= Die;
+        health.OnTakeDamage -= TakeDamage;
+        health.OnDie -= Die;
     }
 
     private void OnDisable() {

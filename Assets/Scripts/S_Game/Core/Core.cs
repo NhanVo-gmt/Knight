@@ -23,7 +23,7 @@ public class Core : MonoBehaviour
 
         if (component == null)
         {
-            Debug.LogError("There is no component");
+            Debug.LogError($"There is no component {typeof(T)}");
         }
 
         return component;

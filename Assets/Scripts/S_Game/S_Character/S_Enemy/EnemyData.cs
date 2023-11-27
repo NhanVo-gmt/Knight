@@ -8,5 +8,7 @@ public class EnemyData : ScriptableObject
     [Header("Character Component")]
     public HealthData healthData;
 
+    public IDamageable.KnockbackType KnockbackType = IDamageable.KnockbackType.weak;
+
     [Header("Drop")] public int numberOfSoulDropped;
 }

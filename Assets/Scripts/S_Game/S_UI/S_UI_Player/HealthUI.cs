@@ -23,7 +23,7 @@ public class HealthUI : MonoBehaviour
         health = FindObjectOfType<Player>().GetCoreComponent<Health>();
 
         SpawnHealthImage();
-        health.onUpdateHealth += UpdateHealthUI;
+        health.OnUpdateHealth += UpdateHealthUI;
     }
 
     private void SpawnHealthImage()
@@ -38,7 +38,7 @@ public class HealthUI : MonoBehaviour
 
     void OnDisable() 
     {
-        health.onUpdateHealth -= UpdateHealthUI;
+        health.OnUpdateHealth -= UpdateHealthUI;
     }
 
     private void UpdateHealthUI(int newHealth)

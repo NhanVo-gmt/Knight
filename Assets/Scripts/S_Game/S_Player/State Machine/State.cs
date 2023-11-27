@@ -48,7 +48,7 @@ public abstract class State
         anim.onAnimationFinishTrigger += AnimationFinishTrigger;
         anim.onAnimationTrigger += AnimationTrigger;
 
-        health.onTakeDamage += ChangeToHitState;
+        health.OnTakeDamage += ChangeToHitState;
     }
 
     void ChangeToHitState()
@@ -71,7 +71,7 @@ public abstract class State
         anim.onAnimationFinishTrigger -= AnimationFinishTrigger;
         anim.onAnimationTrigger -= AnimationTrigger;
 
-        health.onTakeDamage -= ChangeToHitState;
+        health.OnTakeDamage -= ChangeToHitState;
     }
 
     public virtual void PhysicsUpdate() {}

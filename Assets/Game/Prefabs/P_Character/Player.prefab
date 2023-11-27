@@ -707,7 +707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0228f965f86fa7044afe6a133e377a4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canBlink: 0
+  canBlink: 1
   canFlash: 0
 --- !u!114 &142709378153897572
 MonoBehaviour:
