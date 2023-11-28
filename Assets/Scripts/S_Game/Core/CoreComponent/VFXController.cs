@@ -33,7 +33,7 @@ public GameObject SpawnPooledPrefab(PooledObjectData data, Movement movement)
         
     SetUpSpawnPrefab(spawnedPrefab, data);
     SetPrefabPosition(spawnedPrefab, data, movement.transform.position, movement.faceDirection);
-    SetPrefabRotation(spawnedPrefab, data, movement.transform.position);
+    SetPrefabRotation(spawnedPrefab, data, movement.faceDirection);
     return spawnedPrefab;
 }
 
@@ -55,7 +55,7 @@ public GameObject SpawnPooledPrefab(PooledObjectData data, Movement movement)
         
         SetUpSpawnPrefab(spawnedPrefab, data);
         SetPrefabPosition(spawnedPrefab, data, spawnPosition, faceDirection);
-        SetPrefabRotation(spawnedPrefab, data, spawnPosition);
+        SetPrefabRotation(spawnedPrefab, data, faceDirection);
         return spawnedPrefab;
     }
 
