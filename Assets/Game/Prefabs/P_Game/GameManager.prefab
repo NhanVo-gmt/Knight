@@ -10,8 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2926776286104564711}
   - component: {fileID: 6911535378620299280}
+  - component: {fileID: 2468092943030224356}
   - component: {fileID: 8234785762340972059}
   - component: {fileID: 8203831248180815338}
+  - component: {fileID: 8450330783084526916}
+  - component: {fileID: 8198752495978295821}
+  - component: {fileID: 1578148391068114300}
+  - component: {fileID: 7205532314889147742}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -47,9 +52,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
-  PlayerKnockbackAmount: 10
-  WeakKnockbackAmount: 20
-  StrongKnockbackAmount: 100
+  PlayerKnockbackAmount: 15
+  WeakKnockbackAmount: 10
+  StrongKnockbackAmount: 30
+  soul: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
+  flashMat: {fileID: 2100000, guid: b92ee72cbc0aa6340ad49ccb19f8c7c3, type: 2}
+  flashCoolDown: 0.2
+--- !u!114 &2468092943030224356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4f4415d4fee344b8867acd55fa35fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8234785762340972059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,14 +83,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledPrefabList:
-  - prefab: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
-    amountToPool: 4
-  - prefab: {fileID: 7822202127624302198, guid: b2ffeacc688f60443b3a786e29891f88, type: 3}
-    amountToPool: 4
-  - prefab: {fileID: 6972856228208889475, guid: 0db8397266948244e9b6bad0ae6e1c93, type: 3}
-    amountToPool: 4
-  - prefab: {fileID: 5780635100809065259, guid: 2de39e8af9450b2449add9148b0f0110, type: 3}
-    amountToPool: 5
+  - prefab: {fileID: 5126913179060768109, guid: 2e4b0de63dee87e45970e3662e97187c, type: 3}
+    poolType: 0
+    amountToPool: 10
+  - prefab: {fileID: 3803421527087819763, guid: 64793e2fdb9cdea4e90c58b746ece6df, type: 3}
+    poolType: 1
+    amountToPool: 10
+  - prefab: {fileID: 8726307433354808246, guid: 5d7d5c53ab79cd74d81db820b7203b52, type: 3}
+    poolType: 2
+    amountToPool: 10
 --- !u!114 &8203831248180815338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,5 +102,59 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18f8249489dd83647b3edb0417281089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8450330783084526916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff3f9d092b81c1140887c92d229c28b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemDatabaseList:
+  - Name: Soul
+    Id: 2fd380a9-5312-4de6-872d-73fdcf4d60f9
+    Description: The Main currency for the game
+    itemData: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
+--- !u!114 &8198752495978295821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9c73178dac0ba4ab1f5f8ea0a0735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList: []
+--- !u!114 &1578148391068114300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5654652584ad60a44ace16feda34cef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7205532314889147742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed38995e5d0f434fb62d34bfd0bbb28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
