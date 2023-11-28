@@ -6,10 +6,10 @@ namespace Knight.Editor
 {
     public static class BehaviourTreeEditorNodeSettings
     {
-        public static string[] AnimationClipName = {"Idle", "Move", "Die", 
-            "ReadyToAttack", "Attack",
-            "ReadyToAttack2", "Attack2",
-            "ReadyToAttack3", "Attack3",
+        public static string[] AnimationClipNames = {"Idle", "Move", "Die", 
+            "ReadyToAttack", "Attack", "RecoverFromAttack",
+            "ReadyToAttack2", "Attack2", "RecoverFromAttack2",
+            "ReadyToAttack3", "Attack3", "RecoverFromAttack3",
             "Fly", "Hit"};
     }
 }

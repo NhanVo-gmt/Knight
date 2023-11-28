@@ -44,7 +44,7 @@ public class MoveNode : ActionNode
     private Vector2 direction;
     private float startMoveTime = 0f;
 
-    public override void CopyNode(ActionNode copyNode)
+    public override void CopyNode(Node copyNode)
     {
         MoveNode copyMoveNode = copyNode as MoveNode;
 

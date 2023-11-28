@@ -67,8 +67,8 @@ public class AnimationNodeEditor : Editor
 
     public string ChangeClipName(string name)
     {
-        foreach(String clipName in BehaviourTreeEditorNodeSettings.AnimationClipName) {
-            if (name.Contains(clipName))
+        foreach(String clipName in BehaviourTreeEditorNodeSettings.AnimationClipNames) {
+            if (name.Equals(clipName))
             {
                 return clipName;
             }

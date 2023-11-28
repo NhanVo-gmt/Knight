@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class ParallelNode : CompositeNode
 {
-    enum SuccessType
+    public enum SuccessType
     {
         OneNode,
         AllNode,
     }
     
-    [SerializeField] SuccessType successType;
+    public SuccessType successType;
     NodeComponent.State[] childStateArray;
+    
+    public override void CopyNode(Node copyNode)
+    {
+        ParallelNode node = copyNode as ParallelNode;
+        if (node)
+        {
+            successType = node.successType;
+        }
+    }
     
     protected override void OnStart()
     {

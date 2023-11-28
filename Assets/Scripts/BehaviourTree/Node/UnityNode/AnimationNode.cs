@@ -8,9 +8,14 @@ public class AnimationNode : ActionNode
     public string clipName;
     public int clipNameIndex = 0;
 
-    public override void CopyNode(ActionNode copyNode)
+    public override void CopyNode(Node copyNode)
     {
-        
+        AnimationNode node = copyNode as AnimationNode;
+        if (node)
+        {
+            clipName = node.clipName;
+            clipNameIndex = node.clipNameIndex;
+        }
     }
 
     protected override void OnStart()

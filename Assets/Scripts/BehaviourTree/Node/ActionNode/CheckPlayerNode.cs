@@ -4,7 +4,7 @@ public class CheckPlayerNode : ActionNode
 {
     public float radius;
     
-    public override void CopyNode(ActionNode copyNode)
+    public override void CopyNode(Node copyNode)
     {
         CheckPlayerNode node = copyNode as CheckPlayerNode;
 

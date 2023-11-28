@@ -8,10 +8,13 @@ public class IdleNode : ActionNode
 
     float time;
 
-    public override void CopyNode(ActionNode copyNode)
+    public override void CopyNode(Node copyNode)
     {
         IdleNode copyIdleNode = (IdleNode)copyNode;
-        idleTime = copyIdleNode.idleTime;
+        if (copyIdleNode)
+        {
+            idleTime = copyIdleNode.idleTime;
+        }
     }
 
     protected override void OnStart()

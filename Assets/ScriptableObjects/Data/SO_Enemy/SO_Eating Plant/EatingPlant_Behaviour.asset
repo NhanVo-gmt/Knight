@@ -22,7 +22,7 @@ MonoBehaviour:
   - {fileID: -4884081380590030071}
   - {fileID: 6213162991169494904}
   - {fileID: 6748995664217005684}
-  - {fileID: -2992014423547448937}
+  - {fileID: 4731610831502973945}
 --- !u!114 &-8537687223031340842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,6 +42,26 @@ MonoBehaviour:
     position: {x: 759.45, y: 744.04755}
     description: 
   idleTime: 0.5
+--- !u!114 &-5586178519044263959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: c38f193a0809a604d8ffbec891a87291
+    position: {x: 1337.3801, y: 814.39996}
+    description: 
+  clipName: RecoverFromAttack
+  clipNameIndex: 2
 --- !u!114 &-4884081380590030071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,7 +117,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 17ca99b341a03794e913a5c2b224a284
-    position: {x: 1291.2, y: 612}
+    position: {x: 1506.98, y: 814.39996}
     description: 'Attack interval
 
 '
@@ -149,6 +169,8 @@ MonoBehaviour:
   - {fileID: 6213162991169494904}
   - {fileID: 3629329811450096076}
   - {fileID: -2992014423547448937}
+  - {fileID: 4731610831502973945}
+  - {fileID: -5586178519044263959}
   offset: {x: 300, y: 0}
 --- !u!114 &1208045424042253146
 MonoBehaviour:
@@ -207,10 +229,32 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 73e906deb2b2dc540aa8040765743b8c
-    position: {x: 591.2, y: 744}
+    position: {x: 592, y: 743.99994}
     description: 
   clipName: ReadyToAttack
   clipNameIndex: 1
+--- !u!114 &4731610831502973945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: a2af69c468b05cc4ab391db5f4084ab3
+    position: {x: 1356.5801, y: 612}
+    description: Recover from attack
+  children:
+  - {fileID: -5586178519044263959}
+  - {fileID: -2992014423547448937}
+  successType: 1
 --- !u!114 &4815716524904015038
 MonoBehaviour:
   m_ObjectHideFlags: 0

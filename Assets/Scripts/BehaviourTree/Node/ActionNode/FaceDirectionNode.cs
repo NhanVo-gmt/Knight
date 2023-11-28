@@ -11,10 +11,14 @@ public class FaceDirectionNode : ActionNode
 
     public Direction direction = Direction.Left;
     
-    public override void CopyNode(ActionNode copyNode)
+    public override void CopyNode(Node copyNode)
     {
         FaceDirectionNode node = copyNode as FaceDirectionNode;
-        
+
+        if (node)
+        {
+            direction = node.direction;
+        }
     }
     
     protected override void OnStart()

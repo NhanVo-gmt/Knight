@@ -17,10 +17,17 @@ public class AttackNode : ActionNode
     //Circle
     public float circleRadius;
     
-    public override void CopyNode(ActionNode copyNode)
+    public override void CopyNode(Node copyNode)
     {
         AttackNode node = copyNode as AttackNode;
-        
+
+        if (node)
+        {
+            shape = node.shape;
+            damage = node.damage;
+            boxSize = node.boxSize;
+            circleRadius = node.circleRadius;
+        }
     }
     
     protected override void OnStart()

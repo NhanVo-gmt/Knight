@@ -49,6 +49,10 @@ public abstract class Node : ScriptableObject
     protected abstract void OnStart();
     protected abstract void OnStop();
     protected abstract NodeComponent.State OnUpdate(); 
+    public virtual void CopyNode(Node copyNode)
+    {
+        
+    }
 
 #region Draw Gizmos
 
