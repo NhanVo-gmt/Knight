@@ -20,6 +20,7 @@ public class Combat : CoreComponent, IDamageable
     MeleeCombat meleeCombat;
     TouchCombat touchCombat;
 
+    private bool canTouchCombat = false;
 
     Vector2 attackPosition;
     Vector2 hitDirection;
@@ -154,7 +155,20 @@ public class Combat : CoreComponent, IDamageable
         col.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    public void EnableTouchCombat()
+    {
+        canTouchCombat = true;
+    }
+
+    public void DisableTouchCombat()
+    {
+        canTouchCombat = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!canTouchCombat) return;
+        
         touchCombat?.TouchAttack(other);
     }
 

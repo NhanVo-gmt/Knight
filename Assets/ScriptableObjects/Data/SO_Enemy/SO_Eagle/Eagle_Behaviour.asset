@@ -105,6 +105,7 @@ MonoBehaviour:
     position: {x: 1697.6001, y: 634}
     description: 
   clipName: Attack
+  clipNameIndex: 2
 --- !u!114 &-7336122424593993491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,6 +236,7 @@ MonoBehaviour:
     position: {x: 2176.5576, y: 633.6}
     description: 
   clipName: Move
+  clipNameIndex: 1
 --- !u!114 &-2886896763517979471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,7 +330,7 @@ MonoBehaviour:
     started: 0
     guid: 24bd3db13293f4542b5e3b7040a7c5df
     position: {x: 2074.9578, y: 509.59998}
-    description: 
+    description: Back up phase
   children:
   - {fileID: -8890913778907388851}
   - {fileID: -3220301533029737903}
@@ -545,6 +547,7 @@ MonoBehaviour:
     position: {x: 109.19995, y: 625.6001}
     description: 
   clipName: Move
+  clipNameIndex: 1
 --- !u!114 &6074224868958279958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,7 +633,7 @@ MonoBehaviour:
     started: 0
     guid: 34a58cae02264dd4ba067e0259c2cbd6
     position: {x: 1647.25, y: 509.60007}
-    description: 
+    description: Attack Phase
   children:
   - {fileID: 6074224868958279958}
   - {fileID: -7401739897537411077}

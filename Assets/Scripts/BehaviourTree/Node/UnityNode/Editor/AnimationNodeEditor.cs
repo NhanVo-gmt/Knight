@@ -10,33 +10,45 @@ using UnityEngine;
 [CustomEditor(typeof(AnimationNode))]
 public class AnimationNodeEditor : Editor
 {
-    SerializedProperty clipName;
-    int index = 0;
+    private SerializedProperty nodeProperty;
+    private SerializedProperty clipNameProperty;
 
-    private void OnEnable() {
-        clipName = serializedObject.FindProperty("clipName");
+    private AnimationNode animationNode;
+    
+    private void Awake()
+    {
+        animationNode = (AnimationNode)target;
     }
+
+    private void OnEnable()
+    {
+        nodeProperty = serializedObject.FindProperty("NodeComponent");
+        clipNameProperty = serializedObject.FindProperty("clipName");
+    }
+
 
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
+        serializedObject.Update();
+        using (new EditorGUI.DisabledScope(true))
+            EditorGUILayout.ObjectField("Script:", MonoScript.FromScriptableObject((AnimationNode)target), typeof(AnimationNode), false);
+        EditorGUILayout.PropertyField(nodeProperty);
 
         EditorGUI.BeginChangeCheck();
 
-        AnimationNode animationNode = (AnimationNode)target;
         GameObject selectedGameObject = Selection.activeGameObject;
         if (selectedGameObject != null)
         {
             Animator selectedAnim = selectedGameObject.GetComponentInChildren<Animator>();
             if (selectedAnim != null)
             {
+                EditorGUILayout.Space(10f);
                 
                 string[] clipNames = selectedAnim.runtimeAnimatorController.animationClips.Select(item => ChangeClipName(item.name)).ToArray();
-                index = EditorGUILayout.Popup("Available Clip: ", index, clipNames);
-
-                if (EditorGUI.EndChangeCheck())
+                if (clipNames.Length > 0)
                 {
-                    clipName.stringValue = clipNames[index];
+                    animationNode.clipNameIndex = EditorGUILayout.Popup("Clip: ", animationNode.clipNameIndex, clipNames);
+                    animationNode.clipName = clipNames[animationNode.clipNameIndex];
                 }
             }
             else
@@ -62,7 +74,7 @@ public class AnimationNodeEditor : Editor
             }
         }
 
-        Debug.LogError("Please fix the name of the animation clip according to game editor settings");
+        EditorGUILayout.LabelField("Please fix the name of the animation clip according to game editor settings");
         return String.Empty;
     }
 }

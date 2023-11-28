@@ -10,6 +10,7 @@ public class GizmosDrawer : MonoBehaviour
         Sphere,
         WireShere,
         Cube,
+        WireCube
     }
 
     [SerializeField] Color color;
@@ -17,6 +18,7 @@ public class GizmosDrawer : MonoBehaviour
     static GizmoType gizmoType;
     static Vector2 _position;
     static float _radius;
+    private static Vector2 _size;
 
     public static void DrawSphere(Vector2 position, float radius) {
         
@@ -31,6 +33,20 @@ public class GizmosDrawer : MonoBehaviour
         _radius = radius;
         gizmoType = GizmoType.WireShere;
     }
+    
+    public static void DrawCube(Vector2 position, Vector2 size) {
+        
+        _position = position;
+        _size = size;
+        gizmoType = GizmoType.Cube;
+    }
+
+    public static void DrawWireCube(Vector2 position, Vector2 size)
+    {
+        _position = position;
+        _size = size;
+        gizmoType = GizmoType.WireCube;
+    }
 
     private void OnDrawGizmos() {
         Gizmos.color = color;
@@ -42,8 +58,11 @@ public class GizmosDrawer : MonoBehaviour
             case GizmoType.WireShere:
                 Gizmos.DrawWireSphere(_position, _radius);
                 break;
-            case GizmoType.Cube: // todo
-                Gizmos.DrawSphere(_position, _radius);
+            case GizmoType.Cube:
+                Gizmos.DrawCube(_position, _size);
+                break;
+            case GizmoType.WireCube:
+                Gizmos.DrawWireCube(_position, _size);
                 break;
         }
     }

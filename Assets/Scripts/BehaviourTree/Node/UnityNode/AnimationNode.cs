@@ -6,6 +6,7 @@ using UnityEngine;
 public class AnimationNode : ActionNode
 {
     public string clipName;
+    public int clipNameIndex = 0;
 
     public override void CopyNode(ActionNode copyNode)
     {

@@ -3,9 +3,6 @@ using UnityEngine;
 public class CheckPlayerNode : ActionNode
 {
     public float radius;
-
-    private float lastCheckTime = 0f;
-    
     
     public override void CopyNode(ActionNode copyNode)
     {
@@ -13,7 +10,7 @@ public class CheckPlayerNode : ActionNode
 
         if (node)
         {
-            
+            radius = node.radius;
         }
     }
     
