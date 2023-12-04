@@ -50,6 +50,13 @@ public class AnimationNodeEditor : Editor
                     animationNode.clipNameIndex = EditorGUILayout.Popup("Clip: ", animationNode.clipNameIndex, clipNames);
                     animationNode.clipName = clipNames[animationNode.clipNameIndex];
                 }
+                else
+                {
+                    EditorGUILayout.LabelField($"Rule clip names:");
+                    foreach(String predefinedClipName in BehaviourTreeEditorNodeSettings.AnimationClipNames) {
+                        EditorGUILayout.LabelField($"{predefinedClipName}");
+                    }
+                }
             }
             else
             {
@@ -65,16 +72,16 @@ public class AnimationNodeEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 
-    public string ChangeClipName(string name)
+    public string ChangeClipName(string clipName)
     {
-        foreach(String clipName in BehaviourTreeEditorNodeSettings.AnimationClipNames) {
-            if (name.Equals(clipName))
+        foreach(String predefinedClipName in BehaviourTreeEditorNodeSettings.AnimationClipNames) {
+            if (clipName.Equals(predefinedClipName))
             {
-                return clipName;
+                return predefinedClipName;
             }
         }
-
-        EditorGUILayout.LabelField("Please fix the name of the animation clip according to game editor settings");
+        
+        EditorGUILayout.LabelField($"Please fix clip name: {clipName}");
         return String.Empty;
     }
 }
