@@ -283,4 +283,11 @@ public class BehaviourTreeGraphView : GraphView
             }
         });
     }
+
+    public Vector2 GetLocalMousePosition(Vector2 mousePosition)
+    {
+        Vector2 worldMousePosition = mousePosition;
+        Vector2 localMousePosition = contentViewContainer.WorldToLocal(worldMousePosition);
+        return localMousePosition;
+    }
 }

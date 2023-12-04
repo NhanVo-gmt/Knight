@@ -123,8 +123,8 @@ public class NodeSearchWindow : ScriptableObject, ISearchWindowProvider
 
     public bool OnSelectEntry(SearchTreeEntry SearchTreeEntry, SearchWindowContext context)
     {
-        var worldMousePosition = graphView.ChangeCoordinatesTo(graphView.parent, context.screenMousePosition - window.position.position);
-        var localMousePosition = graphView.contentContainer.WorldToLocal(worldMousePosition);
+        var localMousePosition =
+            graphView.GetLocalMousePosition(context.screenMousePosition - window.position.position);
         
 
         if (SearchTreeEntry.userData is System.Type)

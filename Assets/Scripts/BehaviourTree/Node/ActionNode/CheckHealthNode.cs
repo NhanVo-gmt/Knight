@@ -1,22 +1,31 @@
 using UnityEngine;
 
-public class CheckEnemyHealth : ActionNode
+public class CheckHealthNode : ActionNode
 {
-    [Range(1, 100)] public int healthPercent = 90;
+    public enum Character
+    {
+        Enemy,
+        Player
+    }
+
+    public Character character = Character.Enemy;
+    [Range(1, 100)] public int healthPercent = 100;
 
     private Health health;
     
     public override void CopyNode(Node copyNode)
     {
-        CheckEnemyHealth node = copyNode as CheckEnemyHealth;
-        
+        CheckHealthNode node = copyNode as CheckHealthNode;
     }
 
     public override void OnInitialize(BehaviourTreeComponent component)
     {
         base.OnInitialize(component);
 
-        health = treeComponent.core.GetCoreComponent<Health>();
+        if (character == Character.Enemy)
+            health = treeComponent.core.GetCoreComponent<Health>();
+        else
+            health = treeComponent.player.GetComponentInChildren<Core>().GetCoreComponent<Health>();
     }
 
     protected override void OnStart()
