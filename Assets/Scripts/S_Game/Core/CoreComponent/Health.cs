@@ -7,6 +7,7 @@ using UnityEngine.Serialization;
 public class Health : CoreComponent
 {
     [SerializeField] int health; //todo set private
+    private int maxHealth;
 
     public Action OnTakeDamage;
     public Action OnDie;
@@ -20,7 +21,8 @@ public class Health : CoreComponent
     
     public void SetHealth(HealthData data)
     {
-        health = data.health;
+        maxHealth = data.health;
+        health = maxHealth;
         OnUpdateHealth?.Invoke(health);
     }
 
@@ -63,5 +65,10 @@ public class Health : CoreComponent
     {
         isDie = true;
         OnDie?.Invoke();
+    }
+
+    public int GetPercent()
+    {
+        return Mathf.RoundToInt(health * 1.0f / maxHealth) * 100;
     }
 }

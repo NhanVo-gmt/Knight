@@ -1,18 +1,24 @@
 using UnityEngine;
 
-public class #SCRIPTNAME# : ActionNode
+public class CheckEnemyHealth : ActionNode
 {
+    [Range(1, 100)] public int healthPercent = 90;
+
+    private Health health;
+    
     public override void CopyNode(Node copyNode)
     {
-        #SCRIPTNAME# node = copyNode as #SCRIPTNAME#;
+        CheckEnemyHealth node = copyNode as CheckEnemyHealth;
         
     }
-    
+
     public override void OnInitialize(BehaviourTreeComponent component)
     {
         base.OnInitialize(component);
+
+        health = treeComponent.core.GetCoreComponent<Health>();
     }
-    
+
     protected override void OnStart()
     {
         base.OnStart();
@@ -25,8 +31,10 @@ public class #SCRIPTNAME# : ActionNode
 
     protected override NodeComponent.State OnUpdate()
     {
-        return NodeComponent.State.SUCCESS;
+        if (health.GetPercent() >= healthPercent) return NodeComponent.State.SUCCESS;
+        
+        return NodeComponent.State.FAILURE;
     }
-    #NOTRIM#
+    
 
 }

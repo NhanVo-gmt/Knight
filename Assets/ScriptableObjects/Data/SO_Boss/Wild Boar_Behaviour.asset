@@ -1,0 +1,228 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7175564363878827858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 65df33885cf941c488d3b7e79cf6e6ba
+    position: {x: 165.19998, y: 930.4}
+    description: 
+  idleTime: 0
+--- !u!114 &-6263077451636297155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee9835a4cb7ebc458dd76457b13aff2, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 54cd050638156b845a409459a16e3fc0
+    position: {x: 516, y: 273.6}
+    description: 
+  child: {fileID: 552862451898889690}
+--- !u!114 &-4906192681371092105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff88d7429b3c04b88d08008781ba17, type: 3}
+  m_Name: CheckPlayerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: ef80629f8bc915d4fbd024102ceac4e4
+    position: {x: 215.99998, y: 298.02002}
+    description: 
+  radius: 20
+--- !u!114 &-3344869021245299778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 4f1e0208ca0a816418343cded64be22c
+    position: {x: 347.60007, y: 682.00006}
+    description: 
+  children:
+  - {fileID: 1642819148043673640}
+--- !u!114 &-2886896763517979471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70733bb26462ae4aa3c3dd3641cdf82, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: a797f669e5b942e4783a93252797d8a6
+    position: {x: 360, y: -3.9675064}
+    description: 
+  child: {fileID: 2596314190926385678}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c81d3d3d1e29dc40a60e4fc0e658eb8, type: 3}
+  m_Name: Wild Boar_Behaviour
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -2886896763517979471}
+  treeState: 0
+  nodes:
+  - {fileID: -2886896763517979471}
+  - {fileID: 2596314190926385678}
+  - {fileID: -4906192681371092105}
+  - {fileID: -6263077451636297155}
+  - {fileID: 552862451898889690}
+  - {fileID: 5571384172437475809}
+  - {fileID: 7046602239389916238}
+  - {fileID: -3344869021245299778}
+  - {fileID: -7175564363878827858}
+  - {fileID: 1642819148043673640}
+  offset: {x: 300, y: 0}
+--- !u!114 &552862451898889690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f351e5af1fc61a34eb6390f66c912c75, type: 3}
+  m_Name: SelectorNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 393769a129b839a4882e6a2e22d96576
+    position: {x: 516, y: 398.85004}
+    description: 
+  children:
+  - {fileID: 5571384172437475809}
+  currentIndex: -1
+--- !u!114 &1642819148043673640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: abf60d3fe782552488a1f55ed30c18f7
+    position: {x: 239.8, y: 797.6}
+    description: 
+  children:
+  - {fileID: -7175564363878827858}
+  successType: 1
+--- !u!114 &2596314190926385678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 7283460890ccec24298b59bf10707565
+    position: {x: 365.6, y: 138.88501}
+    description: 
+  children:
+  - {fileID: -4906192681371092105}
+  - {fileID: -6263077451636297155}
+--- !u!114 &5571384172437475809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
+  m_Name: DepSequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 28a04302e454de449a1bf20b776d8818
+    position: {x: 272.28, y: 508}
+    description: On 50 Health
+  children:
+  - {fileID: 7046602239389916238}
+  - {fileID: -3344869021245299778}
+  currentIndex: -1
+--- !u!114 &7046602239389916238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9ee3c5206284cb4d96bfd9184f23723, type: 3}
+  m_Name: CheckEnemyHealth
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: af743d788ec885747855f9c664b5851a
+    position: {x: 107.52002, y: 662.2}
+    description: 
+  healthPercent: 50
