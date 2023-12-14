@@ -795,7 +795,7 @@ MonoBehaviour:
     guid: ce2afb630634cc246a1e3a1332a0d88d
     position: {x: 1441, y: 839.99994}
     description: 
-  idleTime: 1
+  idleTime: 0.5
 --- !u!114 &4206686202508941832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -814,7 +814,7 @@ MonoBehaviour:
     guid: 7a9edd1713140d84d99949456fbc5bae
     position: {x: 3142, y: 891.99994}
     description: 
-  idleTime: 1
+  idleTime: 0.2
 --- !u!114 &4439489560174348047
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class Combat : CoreComponent, IDamageable
     MeleeCombat meleeCombat;
     TouchCombat touchCombat;
 
-    private bool canTouchCombat = false;
+    private bool canTouchCombat = true;
 
     Vector2 attackPosition;
     Vector2 hitDirection;

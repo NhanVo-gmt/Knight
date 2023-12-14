@@ -22,14 +22,13 @@ public class HitState : State
     {
         base.Exit();
 
-        movement.SetVelocityZero();
     }
 
     public override void AnimationFinishTrigger()
     {
         base.AnimationFinishTrigger();
 
-        if (!collisionSenses.isGround)
+        if (!collisionSenses.isGround && movement.GetVelocity().y > 0.1f)
         {
             stateMachine.ChangeState(player.inAirState);
         }

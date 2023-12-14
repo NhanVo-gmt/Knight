@@ -83,7 +83,7 @@ public class Movement : CoreComponent
         SetVelocityZero();
         rb.AddForce(direction * amount, ForceMode2D.Impulse);
         
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         
 
         canSetVelocity = true;

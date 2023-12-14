@@ -37,7 +37,6 @@ public class CheckPlayerNode : ActionNode
 
     bool CheckPlayer()
     {
-        Debug.Log((Vector2)treeComponent.transform.position - checkPos * movement.faceDirection);
         return Vector2.Distance(treeComponent.player.transform.position, (Vector2)treeComponent.transform.position - checkPos * movement.faceDirection) <= radius;
     }
     
