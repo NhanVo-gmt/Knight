@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CheckPlayerNode : ActionNode
 {
+    public Vector2 checkPos;
     public float radius;
     
     public override void CopyNode(Node copyNode)
@@ -10,6 +11,7 @@ public class CheckPlayerNode : ActionNode
 
         if (node)
         {
+            checkPos = node.checkPos;
             radius = node.radius;
         }
     }
@@ -35,11 +37,12 @@ public class CheckPlayerNode : ActionNode
 
     bool CheckPlayer()
     {
-        return Vector2.Distance(treeComponent.player.transform.position, treeComponent.transform.position) <= radius;
+        Debug.Log((Vector2)treeComponent.transform.position - checkPos * movement.faceDirection);
+        return Vector2.Distance(treeComponent.player.transform.position, (Vector2)treeComponent.transform.position - checkPos * movement.faceDirection) <= radius;
     }
     
     public override void DrawGizmos(GameObject selectedGameObject)
     {
-        GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position, radius);
+        GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position + checkPos, radius);
     }
 }

@@ -10,6 +10,7 @@ public class AttackNode : ActionNode
 
     public AttackShape shape = AttackShape.Box;
     public int damage = 1;
+    public Vector2 attackPos;
     
     // Box
     public Vector2 boxSize;
@@ -25,6 +26,7 @@ public class AttackNode : ActionNode
         {
             shape = node.shape;
             damage = node.damage;
+            attackPos = node.attackPos;
             boxSize = node.boxSize;
             circleRadius = node.circleRadius;
         }
@@ -41,11 +43,11 @@ public class AttackNode : ActionNode
         Collider2D[] cols = new Collider2D[10];
         if (shape == AttackShape.Box)
         {
-            cols = Physics2D.OverlapBoxAll(treeComponent.transform.position, boxSize, 0);
+            cols = Physics2D.OverlapBoxAll((Vector2)treeComponent.transform.position + attackPos, boxSize, 0);
         }
         else if (shape == AttackShape.Circle)
         {
-            cols = Physics2D.OverlapCircleAll(treeComponent.transform.position, circleRadius);
+            cols = Physics2D.OverlapCircleAll((Vector2)treeComponent.transform.position + attackPos, circleRadius);
         }
 
         foreach (Collider2D col in cols)
@@ -71,11 +73,11 @@ public class AttackNode : ActionNode
     {
         if (shape == AttackShape.Box)
         {
-            GizmosDrawer.DrawWireCube(selectedGameObject.transform.position, boxSize);
+            GizmosDrawer.DrawWireCube((Vector2)selectedGameObject.transform.position + attackPos, boxSize);
         }
         else if (shape == AttackShape.Circle)
         {
-            GizmosDrawer.DrawWireSphere(selectedGameObject.transform.position, circleRadius);
+            GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position + attackPos, circleRadius);
         }
         
     }

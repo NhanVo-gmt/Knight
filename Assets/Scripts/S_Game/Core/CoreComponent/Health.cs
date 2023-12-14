@@ -69,6 +69,6 @@ public class Health : CoreComponent
 
     public int GetPercent()
     {
-        return Mathf.RoundToInt(health * 1.0f / maxHealth) * 100;
+        return Mathf.RoundToInt(health * 1.0f / maxHealth * 100) ;
     }
 }

@@ -16,6 +16,11 @@ public class CheckHealthNode : ActionNode
     public override void CopyNode(Node copyNode)
     {
         CheckHealthNode node = copyNode as CheckHealthNode;
+        if (node)
+        {
+            character = node.character;
+            healthPercent = node.healthPercent;
+        }
     }
 
     public override void OnInitialize(BehaviourTreeComponent component)

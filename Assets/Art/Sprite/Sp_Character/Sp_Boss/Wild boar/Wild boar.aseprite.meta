@@ -127,7 +127,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 54
-      y: 114
+      y: 113
       width: 42
       height: 26
     spriteID: a77b702e07780b149ad49ece6e727418
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 114}
+    uvTransform: {x: 54, y: 113}
   - name: Wild boar_Frame_1
     originalName: 
     pivot: {x: 0.6666667, y: -0.27999997}
@@ -146,8 +146,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 149
+      x: 74
+      y: 42
       width: 42
       height: 25
     spriteID: d363f0cc96e87c24d83d00eee7be0f0b
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 149}
+    uvTransform: {x: 74, y: 42}
   - name: Wild boar_Frame_2
     originalName: 
     pivot: {x: 0.6666667, y: -0.27999997}
@@ -166,8 +166,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 54
-      y: 149
+      x: 124
+      y: 42
       width: 42
       height: 25
     spriteID: fa212bcffe699e54484eb757c947c0a7
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 54, y: 149}
+    uvTransform: {x: 124, y: 42}
   - name: Wild boar_Frame_3
     originalName: 
     pivot: {x: 0.6666667, y: -0.26923075}
@@ -187,7 +187,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 104
-      y: 114
+      y: 113
       width: 42
       height: 26
     spriteID: 9cb20430ad3a23b4fb7f2039a06f70c4
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 104, y: 114}
+    uvTransform: {x: 104, y: 113}
   - name: Wild boar_Frame_4
     originalName: 
     pivot: {x: 0.5441176, y: -0.2}
@@ -206,7 +206,7 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 79
+      x: 4
       y: 4
       width: 68
       height: 30
@@ -218,18 +218,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 79, y: 4}
+    uvTransform: {x: 4, y: 4}
   - name: Wild boar_Frame_5
     originalName: 
-    pivot: {x: 0.5522388, y: -0.16129032}
+    pivot: {x: 0.5522388, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
+      x: 80
       y: 4
       width: 67
-      height: 31
+      height: 30
     spriteID: 66775261e3d96144aaf97b7bec922430
     spriteBone: []
     spriteOutline: []
@@ -238,18 +238,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 80, y: 4}
   - name: Wild boar_Frame_6
     originalName: 
-    pivot: {x: 0.7254902, y: -0.16129032}
+    pivot: {x: 0.7254902, y: -0.2}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 43
+      y: 75
       width: 51
-      height: 31
+      height: 30
     spriteID: 0b3f049ca2559354db6baf180014dc56
     spriteBone: []
     spriteOutline: []
@@ -258,7 +258,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 43}
+    uvTransform: {x: 4, y: 75}
   - name: Wild boar_Frame_7
     originalName: 
     pivot: {x: 0.7254902, y: -0.2}
@@ -266,8 +266,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 133
-      y: 43
+      x: 63
+      y: 75
       width: 51
       height: 30
     spriteID: 3c301e08a5c45fd4cb864d9240a67212
@@ -278,7 +278,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 133, y: 43}
+    uvTransform: {x: 63, y: 75}
   - name: Wild boar_Frame_8
     originalName: 
     pivot: {x: 0.5522388, y: -0.2}
@@ -307,7 +307,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 114
+      y: 113
       width: 42
       height: 27
     spriteID: 273078783f73d964595c299651e5ed02
@@ -318,7 +318,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 114}
+    uvTransform: {x: 4, y: 113}
   - name: Wild boar_Frame_10
     originalName: 
     pivot: {x: 0.6666667, y: -0.26923075}
@@ -327,7 +327,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 154
-      y: 114
+      y: 113
       width: 42
       height: 26
     spriteID: f55b127fb2efca34d81346ad433534c3
@@ -338,7 +338,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 154, y: 114}
+    uvTransform: {x: 154, y: 113}
   - name: Wild boar_Frame_11
     originalName: 
     pivot: {x: 0.6666667, y: -0.27999997}
@@ -346,8 +346,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 104
-      y: 149
+      x: 174
+      y: 42
       width: 42
       height: 25
     spriteID: 4f181af5459973042b8041dc1182bbb6
@@ -358,7 +358,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 104, y: 149}
+    uvTransform: {x: 174, y: 42}
   - name: Wild boar_Frame_12
     originalName: 
     pivot: {x: 0.4666667, y: -0.29166666}
@@ -367,7 +367,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 192
-      y: 43
+      y: 75
       width: 60
       height: 24
     spriteID: deed9ce5ba0901b43bb43d44c61d5591
@@ -378,7 +378,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 192, y: 43}
+    uvTransform: {x: 192, y: 75}
   - name: Wild boar_Frame_13
     originalName: 
     pivot: {x: 0.45161295, y: -0.29166666}
@@ -386,8 +386,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 82
+      x: 122
+      y: 75
       width: 62
       height: 24
     spriteID: 9f5aa62eef8f8e140bf284b56ef3e24e
@@ -398,7 +398,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 82}
+    uvTransform: {x: 122, y: 75}
   - name: Wild boar_Frame_14
     originalName: 
     pivot: {x: 0.45161295, y: -0.27999997}
@@ -406,8 +406,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 63
-      y: 43
+      x: 4
+      y: 42
       width: 62
       height: 25
     spriteID: 25964382390e6f14da66cf4017091298
@@ -418,7 +418,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 63, y: 43}
+    uvTransform: {x: 4, y: 42}
   - name: Wild boar_Frame_15
     originalName: 
     pivot: {x: 0.6666667, y: -0.26923075}
@@ -427,7 +427,7 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 204
-      y: 114
+      y: 113
       width: 42
       height: 26
     spriteID: c1e2966c4032cc54f9fc46a418ad2af5
@@ -438,7 +438,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 204, y: 114}
+    uvTransform: {x: 204, y: 113}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -492,17 +492,17 @@ ScriptedImporter:
       frameIndex: 5
       cellRect:
         x: 0
-        y: 5
+        y: 6
         width: 67
-        height: 31
+        height: 30
       spriteId: 66775261e3d96144aaf97b7bec922430
     - name: Wild boar_Frame_6
       frameIndex: 6
       cellRect:
         x: 0
-        y: 5
+        y: 6
         width: 51
-        height: 31
+        height: 30
       spriteId: 0b3f049ca2559354db6baf180014dc56
     - name: Wild boar_Frame_7
       frameIndex: 7
