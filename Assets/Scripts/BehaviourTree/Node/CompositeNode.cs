@@ -6,8 +6,11 @@ public abstract class CompositeNode : Node
 {
     public List<Node> children = new List<Node>();
 
-    
-    
+    public override void CopyNode(Node copyNode)
+    {
+        base.CopyNode(copyNode);
+    }
+
     protected override void OnStop()
     {
         

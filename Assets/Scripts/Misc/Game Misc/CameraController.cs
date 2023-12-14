@@ -8,8 +8,8 @@ namespace Knight.Camera
     public class CameraController : SingletonObject<CameraController>
     {
         public Vector2 startPos { get; private set; }
-        
-        Transform cam;
+
+        private Transform cam;
         private CameraConfiner confiner;
 
         protected override void Awake() 

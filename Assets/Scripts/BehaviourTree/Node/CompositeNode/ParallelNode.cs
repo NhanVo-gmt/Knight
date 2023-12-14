@@ -15,7 +15,7 @@ public class ParallelNode : CompositeNode
     
     public override void CopyNode(Node copyNode)
     {
-        ParallelNode node = copyNode as ParallelNode;
+        ParallelNode node = (ParallelNode)copyNode;
         if (node)
         {
             successType = node.successType;
