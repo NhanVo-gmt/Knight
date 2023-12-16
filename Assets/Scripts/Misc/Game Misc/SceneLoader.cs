@@ -10,7 +10,8 @@ public class SceneLoader : SingletonObject<SceneLoader>
     public enum Scene {
         FarmScene,
         ForestScene,
-        ForestScene1
+        ForestScene1,
+        ForestScene2,
     }
 
     public EventHandler OnSceneBeforeLoading;

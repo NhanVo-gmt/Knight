@@ -139,6 +139,86 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: ForestBackground1_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 127
+      width: 300
+      height: 115
+    spriteID: fbffcd12ae071ba46a0b7b47ff19ca0c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 127}
+  - name: ForestBackground1_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 250
+      width: 300
+      height: 115
+    spriteID: 764967aeb7fe437458cc0fa8891c4dbc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 250}
+  - name: ForestBackground1_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 373
+      width: 300
+      height: 115
+    spriteID: d01063f39a1a13e488db43c4529baf9c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 373}
+  - name: ForestBackground1_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 496
+      width: 300
+      height: 115
+    spriteID: 350d332b05989b64cad49add8cba2ce9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 496}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -148,7 +228,7 @@ ScriptedImporter:
     layerType: 0
     blendMode: 0
     cells:
-    - name: ForestBackground1
+    - name: ForestBackground1_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
@@ -156,6 +236,38 @@ ScriptedImporter:
         width: 300
         height: 115
       spriteId: d9f7cb58cee9cdb458b7921e946d7d9b
+    - name: ForestBackground1_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 0
+        width: 300
+        height: 115
+      spriteId: fbffcd12ae071ba46a0b7b47ff19ca0c
+    - name: ForestBackground1_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 0
+        width: 300
+        height: 115
+      spriteId: 764967aeb7fe437458cc0fa8891c4dbc
+    - name: ForestBackground1_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 0
+        width: 300
+        height: 115
+      spriteId: d01063f39a1a13e488db43c4529baf9c
+    - name: ForestBackground1_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 0
+        width: 300
+        height: 115
+      spriteId: 350d332b05989b64cad49add8cba2ce9
     linkedCells: []
     parentIndex: -1
   platformSettings:
