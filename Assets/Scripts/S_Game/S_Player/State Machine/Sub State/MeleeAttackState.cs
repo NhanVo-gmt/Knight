@@ -45,7 +45,7 @@ public class MeleeAttackState : AttackState
 
     void SpawnHitVFX()
     {
-        foreach (PooledObjectData hitVFX in data.meleeAttackData.hitVFXs)
+        foreach (PooledObjectData hitVFX in data.meleeAttackData.hitVFX)
         {
             vfx.SpawnPooledPrefab(hitVFX, movement);
         }

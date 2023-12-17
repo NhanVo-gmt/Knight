@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Manager;
 using UnityEngine;
 
 public class DashState : AbilityState
@@ -18,6 +19,7 @@ public class DashState : AbilityState
 
         movement.SetVelocityZero();
         movement.SetGravityZero();
+        SoundManager.Instance.PlayOneShot(data.dashData.clip);
 
         player.inputManager.UseDashInput();
 

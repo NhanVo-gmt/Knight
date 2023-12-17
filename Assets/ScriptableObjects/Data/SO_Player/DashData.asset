@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   initialVelocity: 12
   cooldown: 0.7
+  clip: {fileID: 8300000, guid: d0694be8ceebe6847bfc8afc77747bbb, type: 3}
   vfx: {fileID: 11400000, guid: b1c2025fb8902864c8f2fe9f49960482, type: 2}

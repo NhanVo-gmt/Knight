@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Manager;
 using UnityEngine;
 
 public class AttackState : AbilityState
@@ -17,6 +18,12 @@ public class AttackState : AbilityState
         base.Enter();
 
         movement.SetVelocityZero();
+        PlaySound();
+    }
+    
+    private void PlaySound()
+    {
+        SoundManager.Instance.PlayOneShot(data.jumpData.clip);
     }
 
     public override void Exit()

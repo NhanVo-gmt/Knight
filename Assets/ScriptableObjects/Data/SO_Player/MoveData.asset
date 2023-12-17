@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: MoveData
   m_EditorClassIdentifier: 
   velocity: 5
+  clip: {fileID: 8300000, guid: ea133985f2442984e8e200eaa3018a2d, type: 3}
