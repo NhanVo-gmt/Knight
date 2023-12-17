@@ -35,7 +35,12 @@ namespace Knight.Manager
         {
             foreach (RegionClip regionClip in regionClips)
             {
-                audioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
+                if (regionClip.region == newRegion)
+                {
+                    audioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
+                    audioSource.Play();
+                    return;
+                }
             }
         }
     }
