@@ -12,6 +12,7 @@ public partial class EditorSceneLoader
 {
     private const string PATH_TO_SCENE_FOLDER = "/Scenes/";
     private const string PATH_TO_OUTPUT_SCRIPT_FILE = "/Scripts/Misc/EditorSceneLoaderDropdown.cs";
+    private const string PATH_TO_OUTPUT_ENUM_SCRIPT_FILE = "/Scripts/Misc/Game Misc/SceneLoaderEnum.cs";
     private const string ASSETS_SCENE_PATH = "Assets/Scenes/";
 
     [MenuItem("Knight/Scene/Generate Scene Load Menu Code")]
@@ -19,14 +20,16 @@ public partial class EditorSceneLoader
     {
         StringBuilder result = new StringBuilder();
         string basePath = Application.dataPath + PATH_TO_SCENE_FOLDER;
-        AddClassHeader(result);
-        AddCodeForDirectory(new DirectoryInfo(basePath), result);
-        AddClassFooter(result);
+        AddClassHeader();
+        AddCodeForDirectory(new DirectoryInfo(basePath));
+        AddClassFooter();
 
         string scriptPath = Application.dataPath + PATH_TO_OUTPUT_SCRIPT_FILE;
         File.WriteAllText(scriptPath, result.ToString());
+        
+        GenerateCodeForEnumScriptFile();
 
-        void AddCodeForDirectory(DirectoryInfo directoryInfo, StringBuilder result)
+        void AddCodeForDirectory(DirectoryInfo directoryInfo)
         {
             FileInfo[] fileInfoList = directoryInfo.GetFiles();
             for (int i = 0; i < fileInfoList.Length; i++)
@@ -34,50 +37,50 @@ public partial class EditorSceneLoader
                 FileInfo fileInfo = fileInfoList[i];
                 if (fileInfo.Extension == ".unity")
                 {
-                    AddCodeForFile(fileInfo, result);
+                    AddCodeForFile(fileInfo);
                 }
             }
 
             DirectoryInfo[] subDirectories = directoryInfo.GetDirectories();
             for (int i = 0; i < subDirectories.Length; i++)
             {
-                AddCodeForDirectory(subDirectories[i], result);
+                AddCodeForDirectory(subDirectories[i]);
+            }
+            
+            void AddCodeForFile(FileInfo fileInfo)
+            {
+                Debug.Log($"File info fullname: {fileInfo.FullName} {fileInfo.Name}");
+                string subPath = fileInfo.FullName.Replace("\\", "/").Replace(basePath, "");
+            
+                Debug.Log($"Sub path: {subPath}");
+                string assetPath = ASSETS_SCENE_PATH + subPath;
+
+                string functionName = fileInfo.Name.Replace(".unity", "").Replace(" ", "").Replace("-", "");
+
+                result.Append("        [MenuItem(\"Scenes/").Append(subPath.Replace(".unity", "")).Append("\")]")
+                    .Append(Environment.NewLine);
+                result.Append("        public static void Load").Append(functionName).Append("() { OpenScene(\"")
+                    .Append(assetPath).Append("\"); }").Append(Environment.NewLine);
             }
         }
-
-        void AddCodeForFile(FileInfo fileInfo, StringBuilder result)
+        
+        void AddClassHeader()
         {
-            Debug.Log($"File info fullname: {fileInfo.FullName} {fileInfo.Name}");
-            string subPath = fileInfo.FullName.Replace("\\", "/").Replace(basePath, "");
-            
-            Debug.Log($"Sub path: {subPath}");
-            string assetPath = ASSETS_SCENE_PATH + subPath;
-
-            string functionName = fileInfo.Name.Replace(".unity", "").Replace(" ", "").Replace("-", "");
-
-            result.Append("        [MenuItem(\"Scenes/").Append(subPath.Replace(".unity", "")).Append("\")]")
-                .Append(Environment.NewLine);
-            result.Append("        public static void Load").Append(functionName).Append("() { OpenScene(\"")
-                .Append(assetPath).Append("\"); }").Append(Environment.NewLine);
-        }
-    }
-
-    private static void AddClassHeader(StringBuilder result)
-    {
-        result.Append(@"using UnityEditor;
+            result.Append(@"using UnityEditor;
 public partial class EditorSceneLoader 
     {
 ");
-        result.Append(@"#if UNITY_EDITOR
+            result.Append(@"#if UNITY_EDITOR
 ");
-    }
-    
-
-    private static void AddClassFooter(StringBuilder result)
-    {
-        result.Append(@"#endif
+        }
+        
+        
+        void AddClassFooter()
+        {
+            result.Append(@"#endif
     }
 ");
+        }
     }
 
     private static void OpenScene(string scenePath)
@@ -87,6 +90,66 @@ public partial class EditorSceneLoader
             EditorSceneManager.OpenScene(scenePath, OpenSceneMode.Single);
         }
     }
+    
+    private static void GenerateCodeForEnumScriptFile()
+    {
+        StringBuilder result = new StringBuilder();
+        string basePath = Application.dataPath + PATH_TO_SCENE_FOLDER;
+        AddClassHeader();
+        AddCodeForDirectory(new DirectoryInfo(basePath));
+        AddClassFooter();
+
+        string scriptPath = Application.dataPath + PATH_TO_OUTPUT_ENUM_SCRIPT_FILE;
+        File.WriteAllText(scriptPath, result.ToString());
+
+
+        void AddCodeForDirectory(DirectoryInfo directoryInfo)
+        {
+            FileInfo[] fileInfoList = directoryInfo.GetFiles();
+            for (int i = 0; i < fileInfoList.Length; i++)
+            {
+                FileInfo fileInfo = fileInfoList[i];
+                if (fileInfo.Extension == ".unity")
+                {
+                    AddCodeForFile(fileInfo);
+                }
+            }
+
+            DirectoryInfo[] subDirectories = directoryInfo.GetDirectories();
+            for (int i = 0; i < subDirectories.Length; i++)
+            {
+                AddCodeForDirectory(subDirectories[i]);
+            }
+
+            void AddCodeForFile(FileInfo fileInfo)
+            {
+                Debug.Log($"File Name: {fileInfo.Name}");
+
+                result.Append("        ").Append(fileInfo.Name.Replace(".unity", "")).Append(",")
+                    .Append(Environment.NewLine);
+            }
+        }
+                
+        void AddClassHeader()
+        {
+            result.Append(@"using System;
+public partial class SceneLoader : SingletonObject<SceneLoader>
+{
+");
+            result.Append(@"    public enum Scene {
+");
+        }
+
+        void AddClassFooter()
+        {
+                        
+            result.Append(@"    }
+");
+            result.Append(@"}
+");
+        }
+    }
+    
 }
 
 #endif

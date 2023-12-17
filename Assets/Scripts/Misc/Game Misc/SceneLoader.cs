@@ -5,15 +5,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public class SceneLoader : SingletonObject<SceneLoader>
+public partial class SceneLoader : SingletonObject<SceneLoader>
 {
-    public enum Scene {
-        FarmScene,
-        ForestScene,
-        ForestScene1,
-        ForestScene2,
-    }
-
     public EventHandler OnSceneBeforeLoading;
     public EventHandler OnSceneLoadingStarted;
     public EventHandler<float> OnSceneLoadingProgressChanged;
