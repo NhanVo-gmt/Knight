@@ -1,6 +1,7 @@
 #if UNITY_EDITOR
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -94,16 +95,20 @@ public partial class EditorSceneLoader
     private static void GenerateCodeForEnumScriptFile()
     {
         StringBuilder result = new StringBuilder();
+        HashSet<string> regions = new HashSet<string>();
+        regions.Add("None");
         string basePath = Application.dataPath + PATH_TO_SCENE_FOLDER;
+        
         AddClassHeader();
-        AddCodeForDirectory(new DirectoryInfo(basePath));
+        AddCodeForSceneEnum(new DirectoryInfo(basePath));
+        AddCodeForRegionEnum();
         AddClassFooter();
 
         string scriptPath = Application.dataPath + PATH_TO_OUTPUT_ENUM_SCRIPT_FILE;
         File.WriteAllText(scriptPath, result.ToString());
 
 
-        void AddCodeForDirectory(DirectoryInfo directoryInfo)
+        void AddCodeForSceneEnum(DirectoryInfo directoryInfo)
         {
             FileInfo[] fileInfoList = directoryInfo.GetFiles();
             for (int i = 0; i < fileInfoList.Length; i++)
@@ -118,14 +123,34 @@ public partial class EditorSceneLoader
             DirectoryInfo[] subDirectories = directoryInfo.GetDirectories();
             for (int i = 0; i < subDirectories.Length; i++)
             {
-                AddCodeForDirectory(subDirectories[i]);
+                AddCodeForSceneEnum(subDirectories[i]);
             }
 
             void AddCodeForFile(FileInfo fileInfo)
             {
-                Debug.Log($"File Name: {fileInfo.Name}");
+                string subPath = fileInfo.FullName.Replace(basePath, "");
+                string region = Path.GetFileName(Path.GetDirectoryName(subPath));
+                Debug.Log($"Region Name: {region}");
+                regions.Add(region);
+                
+                Debug.Log($"Scene Name: {fileInfo.Name}");
 
                 result.Append("        ").Append(fileInfo.Name.Replace(".unity", "")).Append(",")
+                    .Append(Environment.NewLine);
+            }
+        }
+
+        void AddCodeForRegionEnum()
+        {
+            result.Append(@"    }
+");
+            result.Append(@"    public enum Region {
+");
+            foreach (string region in regions)
+            {
+                if (region == "Scenes") continue;
+                
+                result.Append("        ").Append(region).Append(",")
                     .Append(Environment.NewLine);
             }
         }
@@ -142,7 +167,6 @@ public partial class SceneLoader : SingletonObject<SceneLoader>
 
         void AddClassFooter()
         {
-                        
             result.Append(@"    }
 ");
             result.Append(@"}

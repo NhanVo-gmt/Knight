@@ -9,5 +9,11 @@ public partial class SceneLoader : SingletonObject<SceneLoader>
         ForestScene,
         ForestScene1,
         ForestScene2,
+        ForestScene3,
+    }
+    public enum Region {
+        None,
+        Farm,
+        Forest,
     }
 }

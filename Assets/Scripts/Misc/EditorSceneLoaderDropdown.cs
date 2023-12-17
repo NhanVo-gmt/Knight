@@ -16,5 +16,7 @@ public partial class EditorSceneLoader
         public static void LoadForestScene1() { OpenScene("Assets/Scenes/Forest/ForestScene1.unity"); }
         [MenuItem("Scenes/Forest/ForestScene2")]
         public static void LoadForestScene2() { OpenScene("Assets/Scenes/Forest/ForestScene2.unity"); }
+        [MenuItem("Scenes/Forest/ForestScene3")]
+        public static void LoadForestScene3() { OpenScene("Assets/Scenes/Forest/ForestScene3.unity"); }
 #endif
     }
