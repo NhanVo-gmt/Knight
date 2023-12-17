@@ -187,5 +187,30 @@ namespace Knight.Camera
         }
 
         #endregion
+        
+        #region Swap Camera
+
+        public void SwapCamera(CinemachineVirtualCamera cameraFromLeft, CinemachineVirtualCamera cameraFromRight,
+            Vector2 triggerExitDirection)
+        {
+            // If the camera on the left and exit direction was on the right
+            if (currentCamera == cameraFromLeft && triggerExitDirection.x > 0f)
+            {
+                cameraFromRight.enabled = true;
+                cameraFromLeft.enabled = false;
+                currentCamera = cameraFromRight;
+                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+            }
+            
+            else if (currentCamera == cameraFromRight && triggerExitDirection.x < 0f)
+            {
+                cameraFromLeft.enabled = true;
+                cameraFromRight.enabled = false;
+                currentCamera = cameraFromLeft;
+                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+            }
+        }
+        
+        #endregion
     }
 }
