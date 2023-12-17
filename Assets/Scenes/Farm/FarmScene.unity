@@ -14313,7 +14313,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 75ba0e103f87521438087c5c579b81ff, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -14414,7 +14414,7 @@ MonoBehaviour:
   regionClips:
   - region: 1
     clips:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 75ba0e103f87521438087c5c579b81ff, type: 3}
   - region: 2
     clips:
     - {fileID: 8300000, guid: 056ab0f3d00865944a32e75a467ad2b3, type: 3}
