@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Camera;
 using UnityEngine;
 
 public class InAirState : State
@@ -8,10 +9,11 @@ public class InAirState : State
     private Movement _movement;
 
     private bool isPlayed;
+    private float fallSpeedYDampingChangeThreshold;
     
     public InAirState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
-
+        fallSpeedYDampingChangeThreshold = CameraController.Instance.fallSpeedYDampingChangeThreshold;
     }
 
     public override void Enter()
@@ -29,6 +31,7 @@ public class InAirState : State
     
     public override void LogicsUpdate()
     {
+        LerpCamera();
         ChangeState();
         PlayAnimation();
     }
@@ -47,6 +50,16 @@ public class InAirState : State
         {
             stateMachine.ChangeState(player.idleState);
             SpawnLandVFX();
+        }
+    }
+    
+    private void LerpCamera()
+    {
+        // If we are falling past a certain speed threshold
+        if (movement.GetVelocity().y < fallSpeedYDampingChangeThreshold &&
+            !CameraController.Instance.IsLerpingYDamping && !CameraController.Instance.LerpedFromPlayerFalling)
+        {
+            CameraController.Instance.LerpYDamping(true);
         }
     }
 
