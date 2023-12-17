@@ -2,12 +2,42 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Knight.Camera;
 using UnityEditor;
 using UnityEngine;
 
 public class CameraControlTrigger : MonoBehaviour
 {
     public CustomInspectorObjects customInspectorObjects;
+
+    private Collider2D col;
+
+    private void Awake()
+    {
+        col = GetComponent<Collider2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (customInspectorObjects.panCameraOnContact)
+            {
+                CameraController.Instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime, customInspectorObjects.panDirection, false);
+            }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (customInspectorObjects.panCameraOnContact)
+            {
+                CameraController.Instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime, customInspectorObjects.panDirection, true);
+            }
+        }
+    }
 }
 
 [System.Serializable]

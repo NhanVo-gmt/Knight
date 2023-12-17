@@ -23082,10 +23082,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   customInspectorObjects:
     swapCameras: 0
-    panCameraOnContact: 0
+    panCameraOnContact: 1
     cameraOnLeft: {fileID: 0}
     cameraOnRight: {fileID: 0}
-    panDirection: 0
+    panDirection: 1
     panDistance: 3
     panTime: 0.35
 --- !u!61 &802673556
@@ -23117,7 +23117,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 2.9331665, y: 0.67688084}
