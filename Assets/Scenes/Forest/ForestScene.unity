@@ -14514,7 +14514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2737702801661302914, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5459631380006579413, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: orthographic size
@@ -14526,7 +14526,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5583573024167213742, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 103.1
+      value: 102.1
       objectReference: {fileID: 0}
     - target: {fileID: 5583573024167213742, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.y
@@ -14829,7 +14829,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1577145069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15327,7 +15327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7502696316525358248, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7710511944062994220, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17430,7 +17430,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 887406109}
-  - {fileID: 1577145070}
   - {fileID: 7399490462468929775}
   - {fileID: 2013663327}
   - {fileID: 606056539}
@@ -17444,5 +17443,6 @@ SceneRoots:
   - {fileID: 461826905}
   - {fileID: 318917861}
   - {fileID: 2020483993}
+  - {fileID: 1577145070}
   - {fileID: 1473191605}
   - {fileID: 1714439285}
