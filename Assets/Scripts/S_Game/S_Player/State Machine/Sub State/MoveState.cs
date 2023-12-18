@@ -59,7 +59,14 @@ public class MoveState : GroundState
 
     void Move() 
     {
-        movement.Run(player.inputManager.movementInput.x, 1);
+        if (movement.isDashAttacking)
+        {
+            movement.Move(player.inputManager.movementInput.x, data.dashData.dashEndRunLerp);
+        }
+        else
+        {
+            movement.Move(player.inputManager.movementInput.x, 1);
+        }
     }
     
 }

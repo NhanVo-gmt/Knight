@@ -84,6 +84,7 @@ namespace Knight.Manager
             
             OnChangedGameState.Invoke(currentGameState);
         }
+        
     }
     
 }

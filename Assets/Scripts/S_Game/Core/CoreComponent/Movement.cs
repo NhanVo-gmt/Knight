@@ -11,8 +11,8 @@ public class Movement : CoreComponent
 
     bool canSetVelocity = true;
     float gravityScale;
-
-    Coroutine addForceCoroutine;
+    
+    public bool isDashAttacking { get; private set; }
     
     protected override void Awake() 
     {
@@ -81,16 +81,6 @@ public class Movement : CoreComponent
         rb.AddForce(direction * amount, ForceMode2D.Impulse);
     }
 
-    void StopAddForce()
-    {
-        if (addForceCoroutine != null)
-        {
-            StopCoroutine(addForceCoroutine);
-        }
-
-        canSetVelocity = true;
-    }
-
     #endregion
 
     #region Gravity
@@ -147,7 +137,7 @@ public class Movement : CoreComponent
 
     #region Movement Methods
 
-    public void Run(float xInput, float lerpAmount)
+    public void Move(float xInput, float lerpAmount)
     {
         ChangeDirection(xInput);
         
@@ -179,6 +169,38 @@ public class Movement : CoreComponent
         
         float movement = speedDiff * accelRate;
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
+    }
+
+    public void Dash()
+    {
+        StartCoroutine(StartDash());
+    }
+
+    IEnumerator StartDash()
+    {
+        float startTime = Time.time;
+        isDashAttacking = true;
+        SetGravityScale(0);
+
+        while (Time.time - startTime <= data.dashData.dashAttackTime)
+        {
+            rb.velocity = faceDirection.normalized * data.dashData.dashSpeed;
+            yield return null;
+        }
+
+        startTime = Time.time;
+
+        isDashAttacking = false;
+        
+        SetGravityScale(data.jumpData.gravityScale);
+        rb.velocity = data.dashData.dashEndSpeed * faceDirection.normalized;
+
+        while (Time.time - startTime <= data.dashData.dashEndTime)
+        {
+            yield return null;
+        }
+        
+        
     }
 
     #endregion

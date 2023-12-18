@@ -16,21 +16,18 @@ public class DashState : AbilityState
     public override void Enter()
     {
         base.Enter();
-
-        movement.SetVelocityZero();
+        
         movement.SetGravityZero();
         SoundManager.Instance.PlayOneShot(data.dashData.clip);
-
         player.inputManager.UseDashInput();
 
         lastActiveTime = Time.time;
 
-        movement.SetVelocityX(movement.faceDirection.x * data.dashData.initialVelocity);
-
+        movement.Dash();
         SpawnVFX();
-
         combat.DisableCollider();
     }
+
 
     private void SpawnVFX()
     {
@@ -39,9 +36,6 @@ public class DashState : AbilityState
 
     public override void Exit() 
     {
-        movement.SetVelocityZero();
-        movement.SetGravityNormal();
-
         combat.EnableCollider();
         
         base.Exit();
@@ -79,7 +73,7 @@ public class DashState : AbilityState
 
     public bool CanDash()
     {
-        return Time.time > lastActiveTime + data.dashData.cooldown;
+        return Time.time > lastActiveTime + data.dashData.dashRefillTime;
     }
     
 }
