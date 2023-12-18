@@ -15,6 +15,7 @@ public class GroundState : State
     public override void Enter()
     {
         base.Enter();
+        movement.SetGravityScale(data.jumpData.gravityScale);
     }
 
 
@@ -44,7 +45,7 @@ public class GroundState : State
         {
             stateMachine.ChangeState(player.meleeAttackState);
         }
-        else if (!collisionSenses.isGround && movement.GetVelocity().y < 0.1f)
+        else if (!collisionSenses.isGround && Mathf.Abs(movement.GetVelocity().y) > 0.1f)
         {
             stateMachine.ChangeState(player.inAirState);
         }

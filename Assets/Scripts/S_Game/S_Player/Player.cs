@@ -131,6 +131,7 @@ public class Player : SingletonObject<Player>
         if (isGamePaused) return;
         stateMachine.Update();
     }
+    
 
     void FixedUpdate() 
     {

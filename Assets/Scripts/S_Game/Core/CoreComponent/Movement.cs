@@ -78,22 +78,7 @@ public class Movement : CoreComponent
 
     public void AddForce(Vector2 direction, float amount)
     {
-        StopAddForce();
-
-        addForceCoroutine = StartCoroutine(AddForceCoroutine(direction, amount));
-    }
-
-    IEnumerator AddForceCoroutine(Vector2 direction, float amount)
-    {
-        canSetVelocity = false;
-
-        SetVelocityZero();
         rb.AddForce(direction * amount, ForceMode2D.Impulse);
-        
-        yield return new WaitForSeconds(0.1f);
-        
-
-        canSetVelocity = true;
     }
 
     void StopAddForce()
@@ -118,6 +103,11 @@ public class Movement : CoreComponent
     public void SetGravityNormal()
     {
         rb.gravityScale = gravityScale;
+    }
+
+    public void SetGravityScale(float scale)
+    {
+        rb.gravityScale = scale;
     }
 
 

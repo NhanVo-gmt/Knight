@@ -29,6 +29,11 @@ public class MoveData : ScriptableObject
         //Calculate are run acceleration & deceleration forces using formula: amount = ((1 / Time.fixedDeltaTime) * acceleration) / runMaxSpeed
         moveAccelAmount = (50 * moveAcceleration) / moveMaxSpeed;
         moveDeccelAmount = (50 * moveDeceleration) / moveMaxSpeed;
+        
+        #region Variable Ranges
+        moveAcceleration = Mathf.Clamp(moveAcceleration, 0.01f, moveMaxSpeed);
+        moveDeceleration = Mathf.Clamp(moveDeceleration, 0.01f, moveMaxSpeed);
+        #endregion
     }
     
 }

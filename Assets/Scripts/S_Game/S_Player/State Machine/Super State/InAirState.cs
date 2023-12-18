@@ -18,8 +18,6 @@ public class InAirState : State
 
     public override void Enter()
     {
-        base.Enter();
-        
         isPlayed = false;
     }
 
@@ -31,9 +29,19 @@ public class InAirState : State
     
     public override void LogicsUpdate()
     {
+        JumpCut();
         LerpCamera();
         ChangeState();
         PlayAnimation();
+    }
+
+    private void JumpCut()
+    {
+        if (player.inputManager.jumpCutInput)
+        {
+            player.inputManager.UseJumpCutInput();
+            movement.SetGravityScale(data.jumpData.jumpCutGravityMult);
+        }
     }
 
     void ChangeState()

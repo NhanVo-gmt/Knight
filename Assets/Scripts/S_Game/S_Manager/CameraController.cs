@@ -43,6 +43,7 @@ namespace Knight.Camera
                 {
                     currentCamera = virtualCameras[i];
                     framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                    confiner = currentCamera.GetComponent<CameraConfiner>();
                 }
             }
 

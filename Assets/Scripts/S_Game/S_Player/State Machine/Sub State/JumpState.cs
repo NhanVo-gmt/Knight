@@ -13,16 +13,23 @@ public class JumpState : GroundState
     public override void Enter()
     {
         base.Enter();
+        UseInput();
         Jump();
-    }
-
-    void Jump() 
-    {
-        player.inputManager.UseJumpInput();
-        movement.SetVelocityY(data.jumpData.velocity);
-
         SpawnVFX();
         PlaySound();
+    }
+
+    void UseInput()
+    {
+        player.inputManager.UseJumpInput();
+    }
+
+    void Jump()
+    {
+        float force = data.jumpData.jumpForce;
+        if (movement.GetVelocity().y < 0)
+            force -= movement.GetVelocity().y;
+        movement.AddForce(Vector2.up, force);
     }
 
     private void PlaySound()

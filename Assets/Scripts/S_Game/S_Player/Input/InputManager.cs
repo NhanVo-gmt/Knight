@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
 
     public bool dashInput {get; private set;}
     public bool jumpInput {get; private set;}
+    public bool jumpCutInput { get; private set; }
     public bool meleeAttackInput {get; private set;}
     public bool interactionInput {get; private set;}
     public bool inventoryInput {get; private set;}
@@ -98,15 +99,26 @@ public class InputManager : MonoBehaviour
         if (context.started) 
         {
             ResetInput();
+            jumpCutInput = false;
             jumpInput = true;
         }
+        
 
-        if (context.canceled) jumpInput = false;
+        if (context.canceled)
+        {
+            jumpCutInput = true;
+            jumpInput = false;
+        }
     }
 
     public void UseJumpInput()
     {
         jumpInput = false;
+    }
+
+    public void UseJumpCutInput()
+    {
+        jumpCutInput = false;
     }
 
     void OnMeleeAttackInput(InputAction.CallbackContext context) 

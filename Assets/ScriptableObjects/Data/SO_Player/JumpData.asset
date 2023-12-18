@@ -12,6 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59195fcfddb254f4fa28cff3fde804bc, type: 3}
   m_Name: JumpData
   m_EditorClassIdentifier: 
-  velocity: 11.5
+  fallGravityMult: 2
+  fallMaxSpeed: 18
+  fastFallGravityMult: 1
+  maxFastFallSpeed: 20
+  gravityStrength: -24
+  gravityScale: 2.4464831
+  jumpHeight: 3
+  jumpTimeToApex: 0.5
+  jumpForce: 12
+  jumpCutGravityMult: 3.5
+  jumpHangGravityMult: 1
+  jumpHangTimeThreshold: 0
+  jumpHangAccelerationMult: 1
+  jumpHangMaxSpeedMult: 1
   clip: {fileID: 8300000, guid: bb1a1ec0bccc11c46b03ffb6cea54a65, type: 3}
   jumpVFX: {fileID: 11400000, guid: deb470fcf0cb0aa4dadd78fe77b1abaf, type: 2}
