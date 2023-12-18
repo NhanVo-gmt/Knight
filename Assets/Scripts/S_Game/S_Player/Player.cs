@@ -102,6 +102,7 @@ public class Player : SingletonObject<Player>
     {
         interactionController = core.GetCoreComponent<InteractionController>();
         movement = core.GetCoreComponent<Movement>();
+        movement.InitializeData(data);
         
         SetUpCombatComponent(core.GetCoreComponent<Combat>());
         SetUpHealthComponent(core.GetCoreComponent<Health>());
