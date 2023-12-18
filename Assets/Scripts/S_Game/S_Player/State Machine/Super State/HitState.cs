@@ -14,8 +14,6 @@ public class HitState : State
     public override void Enter()
     {
         base.Enter();
-        
-        movement.SetVelocityZero();
     }
 
     public override void Exit()
