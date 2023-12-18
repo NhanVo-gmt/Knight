@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Manager;
 using UnityEngine;
 
 public class JumpState : GroundState
@@ -21,6 +22,12 @@ public class JumpState : GroundState
         movement.SetVelocityY(data.jumpData.velocity);
 
         SpawnVFX();
+        PlaySound();
+    }
+
+    private void PlaySound()
+    {
+        SoundManager.Instance.PlayOneShot(data.jumpData.clip);
     }
 
     private void SpawnVFX()

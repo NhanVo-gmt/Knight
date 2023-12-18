@@ -8,5 +8,9 @@ public class JumpData : ScriptableObject
     [Header("Velocity")]
     public float velocity;
 
+    [Header("Sound")]
+    public AudioClip clip;
+
+    [Header("VFX")]
     public PooledObjectData jumpVFX;
 }

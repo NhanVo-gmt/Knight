@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Camera;
 using UnityEngine;
 
 public class GroundState : State
@@ -26,6 +27,8 @@ public class GroundState : State
     public override void LogicsUpdate()
     {
         base.LogicsUpdate();
+        
+        LerpCamera();
 
         if (!stateMachine.canChangeState) return;
 
@@ -44,6 +47,19 @@ public class GroundState : State
         else if (!collisionSenses.isGround && movement.GetVelocity().y < 0.1f)
         {
             stateMachine.ChangeState(player.inAirState);
+        }
+    }
+
+    void LerpCamera()
+    {
+        // If we ane standing still or moving up
+        if (movement.GetVelocity().y >= 0f && !CameraController.Instance.IsLerpingYDamping &&
+            CameraController.Instance.LerpedFromPlayerFalling)
+        {
+            //reset so it can be called again
+            CameraController.Instance.LerpedFromPlayerFalling = false;
+            
+            CameraController.Instance.LerpYDamping(false);
         }
     }
 

@@ -3,7 +3,7 @@ guid: c9e7185c89a34de4391d5c8c21a14ba5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,11 +20,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMasterTextureLimit: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,6 +64,8 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -74,6 +77,72 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -846,45 +915,44 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Knightenergy04: 2509736404484103376
-      Knightenergy19: 3065046592261669189
-      Knightenergy07: -7763616509421826167
-      Knightenergy15: 4752785105895955506
-      Knightenergy30: 922641213211852419
-      Knightenergy18: 1134252027467255361
-      Knightenergy20: 416142480891712979
-      Knightenergy05: 2615864692610990932
-      Knightenergy14: -2762166028243040320
-      Knightenergy22: -8544850276713884525
-      Knightenergy12: -601018388158470402
-      Knightenergy16: 7560146865898404101
-      Knightenergy29: 5698297674286169300
-      Knightenergy23: 8138656107244333918
-      Knightenergy28: -4796295990927104101
-      Knightenergy35: -423669719170085056
-      Knightenergy33: -4643747318286021147
-      Knightenergy34: 8183978116235819439
-      Knightenergy08: 750469807950784079
-      Knightenergy31: 2994420366529642533
-      Knightenergy25: -2916040709564385979
-      Knightenergy32: -5882735549249019199
-      Knightenergy01: 7964329552322891994
-      Knightenergy09: 5530594764550815797
-      Knightenergy13: 756686819093236583
-      Knightenergy17: 4612368114684185973
       Knightenergy00: 8169705176897906326
-      Knightenergy21: -5533686265752970946
-      Knightenergy10: -1618712461220417631
-      Knightenergy03: -5513912361529270369
-      Knightenergy06: 1573285857961894943
-      Knightenergy24: 1092648761113860511
+      Knightenergy01: 7964329552322891994
       Knightenergy02: -5416902998903740504
+      Knightenergy03: -5513912361529270369
+      Knightenergy04: 2509736404484103376
+      Knightenergy05: 2615864692610990932
+      Knightenergy06: 1573285857961894943
+      Knightenergy07: -7763616509421826167
+      Knightenergy08: 750469807950784079
+      Knightenergy09: 5530594764550815797
+      Knightenergy10: -1618712461220417631
+      Knightenergy11: -617057986251558095
+      Knightenergy12: -601018388158470402
+      Knightenergy13: 756686819093236583
+      Knightenergy14: -2762166028243040320
+      Knightenergy15: 4752785105895955506
+      Knightenergy16: 7560146865898404101
+      Knightenergy17: 4612368114684185973
+      Knightenergy18: 1134252027467255361
+      Knightenergy19: 3065046592261669189
+      Knightenergy20: 416142480891712979
+      Knightenergy21: -5533686265752970946
+      Knightenergy22: -8544850276713884525
+      Knightenergy23: 8138656107244333918
+      Knightenergy24: 1092648761113860511
+      Knightenergy25: -2916040709564385979
       Knightenergy26: -2363272721035727793
       Knightenergy27: -8156436108470779574
-      Knightenergy11: -617057986251558095
-  spritePackingTag: 
+      Knightenergy28: -4796295990927104101
+      Knightenergy29: 5698297674286169300
+      Knightenergy30: 922641213211852419
+      Knightenergy31: 2994420366529642533
+      Knightenergy32: -5882735549249019199
+      Knightenergy33: -4643747318286021147
+      Knightenergy34: 8183978116235819439
+      Knightenergy35: -423669719170085056
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

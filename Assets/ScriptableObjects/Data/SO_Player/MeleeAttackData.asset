@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   coolDown: 0.1
-  attackVFX: {fileID: 11400000, guid: f574416c9edfad54597fdccc519b0817, type: 2}
-  hitVFXs:
-  - {fileID: 11400000, guid: 548e46529aee2bf42a5afb63ceda1a94, type: 2}
+  clip: {fileID: 8300000, guid: b86309dda923ef34eaa90340e9de5b07, type: 3}
+  hitVFX:
   - {fileID: 11400000, guid: 5535b59b70f451848853baddca1c8b73, type: 2}
+  attackVFX: {fileID: 11400000, guid: f574416c9edfad54597fdccc519b0817, type: 2}
   leftAttackPos: {x: -1.1, y: -0.2}
   rightAttackPos: {x: 1.1, y: -0.2}
   upAttackPos: {x: 0, y: 0}

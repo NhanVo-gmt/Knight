@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace Knight.Manager
 {
-    public class SoundManager : MonoBehaviour
+    public class SoundManager : SingletonObject<SoundManager>
     {
         [Serializable]
         public class RegionClip
@@ -20,8 +20,10 @@ namespace Knight.Manager
         private AudioSource audioSource;
         private SceneLoader sceneLoader;
 
-        private void Awake()
+        protected override void Awake()
         {
+            base.Awake();
+            
             audioSource = GetComponent<AudioSource>();
             sceneLoader = GetComponent<SceneLoader>();
         }
@@ -35,8 +37,18 @@ namespace Knight.Manager
         {
             foreach (RegionClip regionClip in regionClips)
             {
-                audioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
+                if (regionClip.region == newRegion)
+                {
+                    audioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
+                    audioSource.Play();
+                    return;
+                }
             }
+        }
+
+        public void PlayOneShot(AudioClip clip)
+        {
+            audioSource.PlayOneShot(clip);
         }
     }
 }
