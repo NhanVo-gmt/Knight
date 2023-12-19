@@ -12,6 +12,7 @@ public class Movement : CoreComponent
     bool canSetVelocity = true;
     float gravityScale;
     
+    public bool isDashing { get; private set; }
     public bool isDashAttacking { get; private set; }
     
     protected override void Awake() 
@@ -178,9 +179,12 @@ public class Movement : CoreComponent
 
     IEnumerator StartDash()
     {
+        isDashing = true;
+        
         float startTime = Time.time;
         isDashAttacking = true;
         SetGravityScale(0);
+        
 
         while (Time.time - startTime <= data.dashData.dashAttackTime)
         {
@@ -200,7 +204,7 @@ public class Movement : CoreComponent
             yield return null;
         }
         
-        
+        isDashing = false;
     }
 
     #endregion

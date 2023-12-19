@@ -46,11 +46,9 @@ public class AnimatorController : CoreComponent
     void Start() 
     {
         health = core.GetCoreComponent<Health>();
-        health.OnTakeDamage += StartHitVFX;
     }
 
     private void OnDisable() {
-        health.OnTakeDamage -= StartHitVFX;
     }
     
 #region Animation
@@ -81,7 +79,6 @@ public class AnimatorController : CoreComponent
 
     public void StartHitVFX()
     {
-        
         StartBlinking();
         StartFlashing();
     }

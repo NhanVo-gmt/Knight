@@ -12,5 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2b4d4dcb55c33b43a7c3b51c1de240f, type: 3}
   m_Name: HitData
   m_EditorClassIdentifier: 
-  blinkCooldown: 0.2
   invulnerableTime: 1
+  hitSleepTime: 0.5
+  vfx:
+  - {fileID: 11400000, guid: c5fe2863c3bb38045bb154de828c9a02, type: 2}
+  clip: {fileID: 0}

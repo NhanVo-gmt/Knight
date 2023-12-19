@@ -38,8 +38,6 @@ public abstract class State
 
     public virtual void Enter() 
     {
-        anim.Play(animId);
-
         AddEvent();
     }
 

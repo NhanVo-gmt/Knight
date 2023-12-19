@@ -18,6 +18,7 @@ public class InAirState : State
 
     public override void Enter()
     {
+        base.Enter();
         isPlayed = false;
     }
 

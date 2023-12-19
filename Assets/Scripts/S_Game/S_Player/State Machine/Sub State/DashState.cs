@@ -46,7 +46,7 @@ public class DashState : AbilityState
     public override void LogicsUpdate()
     {
         base.LogicsUpdate();
-
+        
         if (player.inputManager.movementInput.x * movement.faceDirection.x == -1)
         {
             if (collisionSenses.isGround)
@@ -65,6 +65,10 @@ public class DashState : AbilityState
         else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
         {
             stateMachine.ChangeState(player.meleeAttackState);
+        }
+        else if (!movement.isDashing)
+        {
+            stateMachine.ChangeState(player.idleState);
         }
     }
 

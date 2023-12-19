@@ -15,6 +15,7 @@ public class GroundState : State
     public override void Enter()
     {
         base.Enter();
+        anim.Play(animId);
         movement.SetGravityScale(data.jumpData.gravityScale);
     }
 

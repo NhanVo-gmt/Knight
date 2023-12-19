@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Manager;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class HitState : State
 {
@@ -14,6 +16,16 @@ public class HitState : State
     public override void Enter()
     {
         base.Enter();
+        
+        SpawnVFX();
+        anim.Play(animId);
+        GameManager.Instance.Sleep(data.hitData.hitSleepTime);
+    }
+
+    private void SpawnVFX()
+    {
+        anim.StartHitVFX();
+        vfx.SpawnPooledPrefab(data.hitData.vfx[0], movement);
     }
 
     public override void Exit()

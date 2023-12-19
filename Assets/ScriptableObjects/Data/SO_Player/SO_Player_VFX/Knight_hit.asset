@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
-  m_Name: Knight_dash_vfx
+  m_Name: Knight_hit
   m_EditorClassIdentifier: 
-  spawnPos: {x: 0.5, y: -0.3}
+  spawnPos: {x: 0.2, y: -1.8}
   spawnRot: {x: 0, y: 0, z: 0}
-  needPlayerDirection: 1
+  needPlayerDirection: 0
   lifeTime: 1
-  sprite: {fileID: -5757980661060911146, guid: 7ffb4bab8bc5ba94b9c567af13d22573, type: 3}
-  anim: {fileID: 9100000, guid: eeddab553b896c84993a91bc1c9803a2, type: 2}
+  sprite: {fileID: 7878102035803857591, guid: 0b8989aeb03c9ca4ea7c6d45081c65ec, type: 3}
+  anim: {fileID: 9100000, guid: b68d3472858d0824bb136fb034ec2185, type: 2}

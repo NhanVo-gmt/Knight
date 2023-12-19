@@ -18,6 +18,7 @@ public class AbilityState : State
     public override void Enter()
     {
         base.Enter();
+        anim.Play(animId);
 
         stateMachine.DisableChangeState();
     }
