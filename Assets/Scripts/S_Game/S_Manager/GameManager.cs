@@ -84,7 +84,22 @@ namespace Knight.Manager
             
             OnChangedGameState.Invoke(currentGameState);
         }
-        
+
+        #region General Methods
+
+        public void Sleep(float duration)
+        {
+            StartCoroutine(PerformSleep(duration));
+        }
+
+        IEnumerator PerformSleep(float duration)
+        {
+            Time.timeScale = 0f;
+            yield return new WaitForSecondsRealtime(duration);
+            Time.timeScale = 1f;
+        }
+
+        #endregion
     }
     
 }

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashAmount: 1
   dashSpeed: 15
+  dashSleepTime: 0.05
   dashAttackTime: 0.15
   dashEndTime: 0.15
   dashEndSpeed: {x: 15, y: 15}

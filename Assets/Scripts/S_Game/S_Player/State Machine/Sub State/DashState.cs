@@ -17,6 +17,8 @@ public class DashState : AbilityState
     {
         base.Enter();
         
+        GameManager.Instance.Sleep(data.dashData.dashSleepTime);
+        
         movement.SetGravityZero();
         SoundManager.Instance.PlayOneShot(data.dashData.clip);
         player.inputManager.UseDashInput();

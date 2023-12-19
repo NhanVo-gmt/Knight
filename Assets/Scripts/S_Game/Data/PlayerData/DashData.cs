@@ -9,6 +9,7 @@ public class DashData : ScriptableObject
     [Header("Dash")]
     public float dashAmount;
     public float dashSpeed;
+    public float dashSleepTime;
     [Space(5)] 
     public float dashAttackTime;
     [Space(5)] 

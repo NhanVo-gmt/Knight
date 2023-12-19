@@ -94,6 +94,6 @@ public class InAirState : State
 
     void Move() 
     {
-        movement.SetVelocityX(player.inputManager.movementInput.x * data.moveData.moveMaxSpeed);
+        movement.Move(player.inputManager.movementInput.x, 1);
     }
 }
