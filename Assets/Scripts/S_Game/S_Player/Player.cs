@@ -130,7 +130,6 @@ public class Player : SingletonObject<Player>
     {
         if (isGamePaused) return;
         stateMachine.Update();
-        Debug.Log(stateMachine.currentState);
     }
     
 
