@@ -115,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 911839839514983792}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.2333817, y: -0.49217796, z: -0.048365593}
+  m_LocalPosition: {x: -7.4900002, y: 0.47000003, z: -0.048365593}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -428,9 +428,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   virtualCameras:
-  - {fileID: 5988751465397927623}
-  - {fileID: 2684408978988512489}
-  - {fileID: 6942893976692117839}
+  - camType: 0
+    cam: {fileID: 5988751465397927623}
+  - camType: 1
+    cam: {fileID: 2684408978988512489}
+  - camType: 2
+    cam: {fileID: 6942893976692117839}
   fallPanAmount: 0.25
   fallYPanTime: 0.35
   fallSpeedYDampingChangeThreshold: -5
@@ -489,6 +492,7 @@ GameObject:
   - component: {fileID: 7385933733148797376}
   - component: {fileID: 5988751465397927623}
   - component: {fileID: 7154413133413205724}
+  - component: {fileID: 313613682031663372}
   m_Layer: 0
   m_Name: CenterPlayerCAM
   m_TagString: Untagged
@@ -566,6 +570,18 @@ MonoBehaviour:
   m_BoundingShape2D: {fileID: 0}
   m_Damping: 0.5
   m_MaxWindowSize: -1
+--- !u!114 &313613682031663372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4816900876428900321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cac0c29c3287a4188279cc1a9ad28c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5819624493186797493
 GameObject:
   m_ObjectHideFlags: 0

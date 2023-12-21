@@ -3,12 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Knight.Camera
 {
     public class CameraController : SingletonObject<CameraController>
     {
-        [SerializeField] private CinemachineVirtualCamera[] virtualCameras;
+        [Serializable]
+        public class CameraClass
+        {
+            public enum CameraType
+            {
+                CenterPlayer,
+                NoYFollow,
+                LockedPositionRoom,
+            }
+
+            public CameraType camType;
+            public CinemachineVirtualCamera cam;
+        }
+        [SerializeField] private CameraClass[] virtualCameras;
 
         [Header("Control for lerping for player fall/jump")] 
         [SerializeField] private float fallPanAmount = 0.25f;
@@ -21,7 +35,7 @@ namespace Knight.Camera
         private Coroutine lerpYPanCoroutine;
         private Coroutine panCameraCoroutine;
         
-        private CinemachineVirtualCamera currentCamera;
+        private CinemachineVirtualCamera currentCameraClass;
         private CinemachineFramingTransposer framingTransposer;
         private float normYPanAmount;
 
@@ -39,11 +53,11 @@ namespace Knight.Camera
 
             for (int i = 0; i < virtualCameras.Length; i++)
             {
-                if (virtualCameras[i].enabled)
+                if (virtualCameras[i].cam.enabled)
                 {
-                    currentCamera = virtualCameras[i];
-                    framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-                    confiner = currentCamera.GetComponent<CameraConfiner>();
+                    currentCameraClass = virtualCameras[i].cam;
+                    framingTransposer = currentCameraClass.GetCinemachineComponent<CinemachineFramingTransposer>();
+                    confiner = currentCameraClass.GetComponent<CameraConfiner>();
                 }
             }
 
@@ -191,27 +205,42 @@ namespace Knight.Camera
         
         #region Swap Camera
 
-        public void SwapCamera(CinemachineVirtualCamera cameraFromLeft, CinemachineVirtualCamera cameraFromRight,
+        public void SwapCamera(CameraClass.CameraType cameraFromLeft, CameraClass.CameraType cameraFromRight,
             Vector2 triggerExitDirection)
         {
+            CinemachineVirtualCamera camRight = FindCamera(cameraFromRight); 
+            CinemachineVirtualCamera camLeft = FindCamera(cameraFromLeft); 
             // If the camera on the left and exit direction was on the right
-            if (currentCamera == cameraFromLeft && triggerExitDirection.x > 0f)
+            if (currentCameraClass == camLeft && triggerExitDirection.x > 0f)
             {
-                cameraFromRight.enabled = true;
-                cameraFromLeft.enabled = false;
-                currentCamera = cameraFromRight;
-                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                camRight.enabled = false;
+                camLeft.enabled = false;
+                currentCameraClass = camRight;
+                framingTransposer = currentCameraClass.GetCinemachineComponent<CinemachineFramingTransposer>();
             }
             
-            else if (currentCamera == cameraFromRight && triggerExitDirection.x < 0f)
+            else if (currentCameraClass == camRight && triggerExitDirection.x < 0f)
             {
-                cameraFromLeft.enabled = true;
-                cameraFromRight.enabled = false;
-                currentCamera = cameraFromLeft;
-                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                camLeft.enabled = true;
+                camRight.enabled = false;
+                currentCameraClass = camLeft;
+                framingTransposer = currentCameraClass.GetCinemachineComponent<CinemachineFramingTransposer>();
             }
         }
         
         #endregion
+
+        public CinemachineVirtualCamera FindCamera(CameraClass.CameraType type)
+        {
+            foreach (CameraClass camClass in virtualCameras)
+            {
+                if (camClass.camType == type)
+                {
+                    return camClass.cam;
+                }
+            }
+
+            return null;
+        }
     }
 }

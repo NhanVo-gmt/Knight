@@ -33,8 +33,7 @@ public class CameraControlTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             
-            if (customInspectorObjects.swapCameras && customInspectorObjects.cameraOnLeft &&
-                customInspectorObjects.cameraOnRight)
+            if (customInspectorObjects.swapCameras)
             {
                 Vector2 exitDistance = (other.transform.position - col.bounds.center).normalized;
                 CameraController.Instance.SwapCamera(customInspectorObjects.cameraOnLeft, customInspectorObjects.cameraOnRight, exitDistance);
@@ -54,8 +53,8 @@ public class CustomInspectorObjects
     public bool swapCameras = false;
     public bool panCameraOnContact = false;
 
-    [HideInInspector] public CinemachineVirtualCamera cameraOnLeft;
-    [HideInInspector] public CinemachineVirtualCamera cameraOnRight;
+    [HideInInspector] public CameraController.CameraClass.CameraType cameraOnLeft;
+    [HideInInspector] public CameraController.CameraClass.CameraType cameraOnRight;
 
     [HideInInspector] public PanDirection panDirection;
     [HideInInspector] public float panDistance = 3f;
@@ -83,8 +82,8 @@ public class CameraControlTriggerEditor : Editor
 
         if (cameraControlTrigger.customInspectorObjects.swapCameras)
         {
-            cameraControlTrigger.customInspectorObjects.cameraOnLeft = EditorGUILayout.ObjectField("Camera on left", cameraControlTrigger.customInspectorObjects.cameraOnLeft, typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
-            cameraControlTrigger.customInspectorObjects.cameraOnRight = EditorGUILayout.ObjectField("Camera on right", cameraControlTrigger.customInspectorObjects.cameraOnRight, typeof(CinemachineVirtualCamera), true) as CinemachineVirtualCamera;
+            cameraControlTrigger.customInspectorObjects.cameraOnLeft = (CameraController.CameraClass.CameraType)EditorGUILayout.EnumPopup("Camera on left", cameraControlTrigger.customInspectorObjects.cameraOnLeft);
+            cameraControlTrigger.customInspectorObjects.cameraOnRight = (CameraController.CameraClass.CameraType)EditorGUILayout.EnumPopup("Camera on right", cameraControlTrigger.customInspectorObjects.cameraOnRight);
         }
 
         if (cameraControlTrigger.customInspectorObjects.panCameraOnContact)
