@@ -35,7 +35,7 @@ namespace Knight.Camera
         private Coroutine lerpYPanCoroutine;
         private Coroutine panCameraCoroutine;
         
-        private CinemachineVirtualCamera currentCameraClass;
+        private CinemachineVirtualCamera currentCamera;
         private CinemachineFramingTransposer framingTransposer;
         private float normYPanAmount;
 
@@ -55,9 +55,9 @@ namespace Knight.Camera
             {
                 if (virtualCameras[i].cam.enabled)
                 {
-                    currentCameraClass = virtualCameras[i].cam;
-                    framingTransposer = currentCameraClass.GetCinemachineComponent<CinemachineFramingTransposer>();
-                    confiner = currentCameraClass.GetComponent<CameraConfiner>();
+                    currentCamera = virtualCameras[i].cam;
+                    framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                    confiner = currentCamera.GetComponent<CameraConfiner>();
                 }
             }
 
@@ -206,26 +206,41 @@ namespace Knight.Camera
         #region Swap Camera
 
         public void SwapCamera(CameraClass.CameraType cameraFromLeft, CameraClass.CameraType cameraFromRight,
-            Vector2 triggerExitDirection)
+            Vector2 triggerExitDirection, GameObject followObject)
         {
             CinemachineVirtualCamera camRight = FindCamera(cameraFromRight); 
             CinemachineVirtualCamera camLeft = FindCamera(cameraFromLeft); 
             // If the camera on the left and exit direction was on the right
-            if (currentCameraClass == camLeft && triggerExitDirection.x > 0f)
+            if (currentCamera == camLeft && triggerExitDirection.x > 0f)
             {
-                camRight.enabled = false;
+                camRight.enabled = true;
                 camLeft.enabled = false;
-                currentCameraClass = camRight;
-                framingTransposer = currentCameraClass.GetCinemachineComponent<CinemachineFramingTransposer>();
+                currentCamera = camRight;
+                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                
+                if (cameraFromRight == CameraClass.CameraType.LockedPositionRoom)
+                {
+                    SetLockedRoom(followObject);
+                }
             }
             
-            else if (currentCameraClass == camRight && triggerExitDirection.x < 0f)
+            else if (currentCamera == camRight && triggerExitDirection.x < 0f)
             {
                 camLeft.enabled = true;
                 camRight.enabled = false;
-                currentCameraClass = camLeft;
-                framingTransposer = currentCameraClass.GetCinemachineComponent<CinemachineFramingTransposer>();
+                currentCamera = camLeft;
+                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                
+                if (cameraFromLeft == CameraClass.CameraType.LockedPositionRoom)
+                {
+                    SetLockedRoom(followObject);
+                }
             }
+        }
+
+        private void SetLockedRoom(GameObject room)
+        {
+            currentCamera.Follow = room.transform;
         }
         
         #endregion

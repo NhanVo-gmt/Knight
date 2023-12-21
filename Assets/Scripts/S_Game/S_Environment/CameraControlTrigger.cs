@@ -36,7 +36,7 @@ public class CameraControlTrigger : MonoBehaviour
             if (customInspectorObjects.swapCameras)
             {
                 Vector2 exitDistance = (other.transform.position - col.bounds.center).normalized;
-                CameraController.Instance.SwapCamera(customInspectorObjects.cameraOnLeft, customInspectorObjects.cameraOnRight, exitDistance);
+                CameraController.Instance.SwapCamera(customInspectorObjects.cameraOnLeft, customInspectorObjects.cameraOnRight, exitDistance, customInspectorObjects.roomToFollow);
             }
             
             if (customInspectorObjects.panCameraOnContact)
@@ -55,6 +55,7 @@ public class CustomInspectorObjects
 
     [HideInInspector] public CameraController.CameraClass.CameraType cameraOnLeft;
     [HideInInspector] public CameraController.CameraClass.CameraType cameraOnRight;
+    [HideInInspector] public GameObject roomToFollow;
 
     [HideInInspector] public PanDirection panDirection;
     [HideInInspector] public float panDistance = 3f;
@@ -84,6 +85,15 @@ public class CameraControlTriggerEditor : Editor
         {
             cameraControlTrigger.customInspectorObjects.cameraOnLeft = (CameraController.CameraClass.CameraType)EditorGUILayout.EnumPopup("Camera on left", cameraControlTrigger.customInspectorObjects.cameraOnLeft);
             cameraControlTrigger.customInspectorObjects.cameraOnRight = (CameraController.CameraClass.CameraType)EditorGUILayout.EnumPopup("Camera on right", cameraControlTrigger.customInspectorObjects.cameraOnRight);
+
+            if (cameraControlTrigger.customInspectorObjects.cameraOnLeft ==
+                CameraController.CameraClass.CameraType.LockedPositionRoom ||
+                cameraControlTrigger.customInspectorObjects.cameraOnRight ==
+                CameraController.CameraClass.CameraType.LockedPositionRoom)
+            {
+                cameraControlTrigger.customInspectorObjects.roomToFollow =
+                    EditorGUILayout.ObjectField("Locked Room:" ,cameraControlTrigger.customInspectorObjects.roomToFollow, typeof(GameObject), true) as GameObject;
+            }
         }
 
         if (cameraControlTrigger.customInspectorObjects.panCameraOnContact)

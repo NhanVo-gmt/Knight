@@ -3425,9 +3425,9 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1490518518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &505524228 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2980540123172541629, guid: 67bfc80f15cf89040a2bcd57633b8dee, type: 3}
+--- !u!1 &505524227 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1352255687863016127, guid: 67bfc80f15cf89040a2bcd57633b8dee, type: 3}
   m_PrefabInstance: {fileID: 7747459808630654504}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &513635226
@@ -14048,7 +14048,7 @@ PrefabInstance:
     - target: {fileID: 6942893976692117839, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_Follow
       value: 
-      objectReference: {fileID: 505524228}
+      objectReference: {fileID: 1311542263}
     - target: {fileID: 6942893976692117839, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -14350,6 +14350,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1017430122683378990, guid: 67bfc80f15cf89040a2bcd57633b8dee, type: 3}
+      propertyPath: customInspectorObjects.roomToFollow
+      value: 
+      objectReference: {fileID: 505524227}
+    - target: {fileID: 1017430122683378990, guid: 67bfc80f15cf89040a2bcd57633b8dee, type: 3}
       propertyPath: customInspectorObjects.cameraOnRight
       value: 2
       objectReference: {fileID: 0}
@@ -14361,6 +14365,10 @@ PrefabInstance:
       propertyPath: customInspectorObjects.cameraOnLeft
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2796480562253902640, guid: 67bfc80f15cf89040a2bcd57633b8dee, type: 3}
+      propertyPath: customInspectorObjects.roomToFollow
+      value: 
+      objectReference: {fileID: 505524227}
     - target: {fileID: 2980540123172541629, guid: 67bfc80f15cf89040a2bcd57633b8dee, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.61
