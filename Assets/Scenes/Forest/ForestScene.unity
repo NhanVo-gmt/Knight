@@ -14604,7 +14604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb77953c98195d48a41d5818fc1486a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ExternalInfluenceStrength: 0.35
+  ExternalInfluenceStrength: 0.15
   EaseInTime: 0.15
   EaseOutTime: 0.15
   VelocityThreshold: 5
@@ -14826,7 +14826,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2737702801661302914, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5459631380006579413, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: orthographic size
@@ -15200,7 +15200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1577145069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15698,7 +15698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7502696316525358248, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7710511944062994220, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_LocalPosition.x
