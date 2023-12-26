@@ -6,13 +6,13 @@ using UnityEngine;
 public class ItemData : PooledObjectData
 {
     [Header("Item")]
-    public string id;
+    public int id;
 
     public string itemName;
     public Sprite sprite;
     [TextArea(5, 10)] public string itemDescription;
 
-    public void AssignId(string id)
+    public void AssignId(int id)
     {
         this.id = id;
     }
