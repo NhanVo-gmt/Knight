@@ -11,9 +11,4 @@ public class ItemData : PooledObjectData
     public string itemName;
     public Sprite sprite;
     [TextArea(5, 10)] public string itemDescription;
-
-    public void AssignId(int id)
-    {
-        this.id = id;
-    }
 }
