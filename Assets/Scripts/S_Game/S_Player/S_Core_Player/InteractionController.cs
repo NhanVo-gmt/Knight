@@ -7,6 +7,7 @@ public class InteractionController : CoreComponent
     InputManager inputManager;
 
     DialogueController dialogueController;
+    public bool canRest { get; private set; }
 
     [SerializeField] bool isInteracting = false;
 
@@ -14,6 +15,7 @@ public class InteractionController : CoreComponent
     {
         base.Awake();
 
+        canRest = false;
         inputManager = GetComponentInParent<InputManager>();
         dialogueController = GetComponentInChildren<DialogueController>();
     }
@@ -32,14 +34,18 @@ public class InteractionController : CoreComponent
     {
         if (inputManager.interactionInput)
         {
-            inputManager.UseInteractionInput();
+            
 
             Interact();
         }
     }
 
-    void Interact() 
+    void Interact()
     {
+        if (canRest) return;
+        
+        inputManager.UseInteractionInput();
+        
         if (isInteracting) return;
 
         if (dialogueController.currentDialogue != null)
@@ -48,6 +54,8 @@ public class InteractionController : CoreComponent
             isInteracting = true;
         }
     }
+
+    #region Dialogue
 
     public void SetDialogue(Dialogue dialogue)
     {
@@ -61,8 +69,23 @@ public class InteractionController : CoreComponent
             dialogueController.currentDialogue = null;
         }
     }
+    
+    #endregion
 
+    #region Rest
 
+    public void EnableResting()
+    {
+        canRest = true;
+    }
+
+    public void DisableResting()
+    {
+        canRest = false;
+    }
+
+    #endregion
+    
     void FinishInteract()
     {
         isInteracting = false;

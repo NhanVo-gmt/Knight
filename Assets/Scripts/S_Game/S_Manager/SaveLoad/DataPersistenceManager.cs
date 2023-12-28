@@ -36,7 +36,7 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
     public void LoadGame()
     {
         // Load saved file
-        fileDataHandler.Load();
+        gameData = fileDataHandler.Load();
         
         // If no data can be loaded, initialize to a new game
         if (gameData == null)
@@ -54,6 +54,7 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     public void SaveGame()
     {
+        Debug.Log("Save Game");
         // Pass data to other scripts so they can update
         foreach (IDataPersistence dataPersistence in dataPersistenceObjects)
         {

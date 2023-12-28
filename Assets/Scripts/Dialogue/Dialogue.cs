@@ -23,8 +23,6 @@ public class Dialogue : ScriptableObject, ISerializationCallbackReceiver
 #endif
     }
 
-    
-
     DialogueNode CreateNode()
     {
         DialogueNode node = CreateInstance<DialogueNode>();

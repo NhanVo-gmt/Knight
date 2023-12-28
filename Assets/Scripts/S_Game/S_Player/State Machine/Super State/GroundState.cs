@@ -7,6 +7,11 @@ public class GroundState : State
 {
     protected Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
     private Movement _movement;
+    protected InteractionController interactionController
+    {
+        get => _interactionController ??= core.GetCoreComponent<InteractionController>(); 
+    }
+    private InteractionController _interactionController;
     
     public GroundState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
@@ -49,6 +54,11 @@ public class GroundState : State
         else if (!collisionSenses.isGround && Mathf.Abs(movement.GetVelocity().y) > 0.1f)
         {
             stateMachine.ChangeState(player.inAirState);
+        }
+        else if (player.inputManager.interactionInput && interactionController.canRest)
+        {
+            Debug.Log(1);
+            stateMachine.ChangeState(player.restState);
         }
     }
 

@@ -15,18 +15,20 @@ public class Player : SingletonObject<Player>
     public JumpState jumpState {get; private set;}
     public MoveState moveState {get; private set;}
     public MeleeAttackState meleeAttackState {get; private set;}
+    public RestState restState {get; private set;}
 
     #endregion
 
     #region Animation Clip Data
 
-    int dashId = Animator.StringToHash("Dash");
-    int idleId = Animator.StringToHash("Idle");
-    int inAirId = Animator.StringToHash("In Air");
-    int hitId = Animator.StringToHash("Hit");
-    int jumpId = Animator.StringToHash("Jump");
-    int meleeAttackId = Animator.StringToHash("Melee Attack");
-    int moveId = Animator.StringToHash("Move");
+    private int dashId = Animator.StringToHash("Dash");
+    private int idleId = Animator.StringToHash("Idle");
+    private int inAirId = Animator.StringToHash("In Air");
+    private int hitId = Animator.StringToHash("Hit");
+    private int jumpId = Animator.StringToHash("Jump");
+    private int moveId = Animator.StringToHash("Move");
+    private int meleeAttackId = Animator.StringToHash("Melee Attack");
+    private int restId = Animator.StringToHash("Rest");
 
     #endregion
 
@@ -96,6 +98,7 @@ public class Player : SingletonObject<Player>
         jumpState = new JumpState(this, core, stateMachine, data, jumpId);
         moveState = new MoveState(this, core, stateMachine, data, moveId);
         meleeAttackState = new MeleeAttackState(this, core, stateMachine, data, meleeAttackId);
+        restState = new RestState(this, core, stateMachine, data, restId);
     }
 
     void GetCoreComponent()
@@ -147,10 +150,19 @@ public class Player : SingletonObject<Player>
             InventorySystem.Instance.AddItem(pickup.GetItem(), 1);
             pickup.Release();
         }
+        else if (other.CompareTag("CheckPoint"))
+        {
+            interactionController.EnableResting();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
         UnsetConversation(other);
+        
+        if (other.CompareTag("CheckPoint"))
+        {
+            interactionController.DisableResting();
+        }
     }
 
     private void SetConversation(Collider2D other)
