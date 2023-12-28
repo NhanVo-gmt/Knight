@@ -16,12 +16,12 @@ MonoBehaviour:
   fallMaxSpeed: 18
   fastFallGravityMult: 1
   maxFastFallSpeed: 20
-  gravityStrength: -24
-  gravityScale: 2.4464831
-  jumpHeight: 3
+  gravityStrength: -26.4
+  gravityScale: 2.6911314
+  jumpHeight: 3.3
   jumpTimeToApex: 0.5
-  jumpForce: 12
-  jumpCutGravityMult: 3.5
+  jumpForce: 13.2
+  jumpCutGravityMult: 5
   jumpHangGravityMult: 1
   jumpHangTimeThreshold: 0
   jumpHangAccelerationMult: 1
