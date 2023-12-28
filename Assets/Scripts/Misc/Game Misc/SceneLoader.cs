@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
-public partial class SceneLoader : SingletonObject<SceneLoader>
+public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistence
 {
     public EventHandler OnSceneBeforeLoading;
     public EventHandler OnSceneLoadingStarted;
@@ -87,5 +87,15 @@ public partial class SceneLoader : SingletonObject<SceneLoader>
         yield return new WaitForSeconds(1f);
         
         OnSceneReadyToPlay?.Invoke(this, EventArgs.Empty);
+    }
+
+    public void LoadData(GameData data)
+    {
+        currentScene = data.scene;
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.scene = currentScene;
     }
 }

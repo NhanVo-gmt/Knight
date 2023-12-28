@@ -32,10 +32,8 @@ public class GrassExternalVelocityTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log(1);
         if (other.CompareTag("Player"))
         {
-            Debug.Log(Mathf.Abs(playerRb.velocity.x));
             if (!easeInCoroutineRunning &&
                 Mathf.Abs(playerRb.velocity.x) > Mathf.Abs(grassVelocityController.VelocityThreshold))
             {
