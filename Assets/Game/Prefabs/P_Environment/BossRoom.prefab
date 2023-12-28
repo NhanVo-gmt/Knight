@@ -127,7 +127,8 @@ MonoBehaviour:
     swapCameras: 1
     panCameraOnContact: 0
     cameraOnLeft: 0
-    cameraOnRight: 0
+    cameraOnRight: 2
+    roomToFollow: {fileID: 1352255687863016127}
     panDirection: 0
     panDistance: 3
     panTime: 0.35
@@ -224,8 +225,9 @@ MonoBehaviour:
   customInspectorObjects:
     swapCameras: 1
     panCameraOnContact: 0
-    cameraOnLeft: 0
+    cameraOnLeft: 2
     cameraOnRight: 0
+    roomToFollow: {fileID: 1352255687863016127}
     panDirection: 0
     panDistance: 3
     panTime: 0.35

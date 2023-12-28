@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b86d4360c9199344fa3f8592617dccc7
+guid: ce945f828ce5afc4f8f6dcfb4fc7cdfb
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -73,7 +73,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -85,7 +85,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638393670161104426
+  platformSettingsDirtyTick: 638393669599701621
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,7 +119,7 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: ForestBackground1
+  - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -128,9 +128,9 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 300
-      height: 115
-    spriteID: d9f7cb58cee9cdb458b7921e946d7d9b
+      width: 220
+      height: 150
+    spriteID: 243e118d80ed0d643b1e45329667be48
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,7 +139,7 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: ForestBackground1_Frame_1
+  - name: Cloud
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -147,10 +147,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 127
-      width: 300
-      height: 115
-    spriteID: fbffcd12ae071ba46a0b7b47ff19ca0c
+      y: 162
+      width: 220
+      height: 137
+    spriteID: 21801eb1dc3692843ad751816522e650
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,8 +158,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 127}
-  - name: ForestBackground1_Frame_2
+    uvTransform: {x: 4, y: 162}
+  - name: Lake
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -167,10 +167,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 250
-      width: 300
-      height: 115
-    spriteID: 764967aeb7fe437458cc0fa8891c4dbc
+      y: 489
+      width: 220
+      height: 16
+    spriteID: 3e590d32242ded044b36349c0c127b08
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +178,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 250}
-  - name: ForestBackground1_Frame_3
+    uvTransform: {x: 4, y: 489}
+  - name: UpperGrass
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.35897434}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 373
-      width: 300
-      height: 115
-    spriteID: d01063f39a1a13e488db43c4529baf9c
+      y: 403
+      width: 220
+      height: 78
+    spriteID: 62c0a0b889bcbbf40910f5880cc0d804
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,19 +198,59 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 373}
-  - name: ForestBackground1_Frame_4
+    uvTransform: {x: 4, y: 403}
+  - name: UpperFlower
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.49074075, y: -0.44927534}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 4
+      width: 216
+      height: 69
+    spriteID: ce47903731dbe47408813c0b7710bfe3
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 4}
+  - name: UpperRock
+    originalName: 
+    pivot: {x: 2.55, y: -2.1}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 460
+      y: 81
+      width: 40
+      height: 30
+    spriteID: 727478e022c299942b7c60b9533da0bf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 460, y: 81}
+  - name: Grass
+    originalName: 
+    pivot: {x: 0.5, y: -0.18181819}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 496
-      width: 300
-      height: 115
-    spriteID: 350d332b05989b64cad49add8cba2ce9
+      y: 307
+      width: 220
+      height: 88
+    spriteID: 189e24518616cbd42b31c2184ec7699e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,58 +258,183 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 496}
+    uvTransform: {x: 4, y: 307}
+  - name: Flower
+    originalName: 
+    pivot: {x: 0.5, y: -0.3137255}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 232
+      y: 81
+      width: 220
+      height: 51
+    spriteID: 91500eaa0caf5d54e9ece11410470084
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 232, y: 81}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 95855638
-    name: ForestBackground1
-    layerFlags: 0
+    guid: -1021688250
+    name: Background
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: ForestBackground1_Frame_0
+    - name: Background
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
-        width: 300
-        height: 115
-      spriteId: d9f7cb58cee9cdb458b7921e946d7d9b
-    - name: ForestBackground1_Frame_1
-      frameIndex: 1
-      cellRect:
-        x: 0
-        y: 0
-        width: 300
-        height: 115
-      spriteId: fbffcd12ae071ba46a0b7b47ff19ca0c
-    - name: ForestBackground1_Frame_2
-      frameIndex: 2
-      cellRect:
-        x: 0
-        y: 0
-        width: 300
-        height: 115
-      spriteId: 764967aeb7fe437458cc0fa8891c4dbc
-    - name: ForestBackground1_Frame_3
-      frameIndex: 3
-      cellRect:
-        x: 0
-        y: 0
-        width: 300
-        height: 115
-      spriteId: d01063f39a1a13e488db43c4529baf9c
-    - name: ForestBackground1_Frame_4
-      frameIndex: 4
-      cellRect:
-        x: 0
-        y: 0
-        width: 300
-        height: 115
-      spriteId: 350d332b05989b64cad49add8cba2ce9
+        width: 220
+        height: 150
+      spriteId: 243e118d80ed0d643b1e45329667be48
     linkedCells: []
     parentIndex: -1
+  - layerIndex: 1
+    guid: -399938108
+    name: Cloud
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Cloud
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 220
+        height: 137
+      spriteId: 21801eb1dc3692843ad751816522e650
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 885374137
+    name: Lake
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Lake
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 220
+        height: 16
+      spriteId: 3e590d32242ded044b36349c0c127b08
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 1756642411
+    name: Mid
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 343904152
+    name: UpperGrass
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: UpperGrass
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 28
+        width: 220
+        height: 78
+      spriteId: 62c0a0b889bcbbf40910f5880cc0d804
+    linkedCells: []
+    parentIndex: 3
+  - layerIndex: 5
+    guid: 1313743550
+    name: UpperFlower
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: UpperFlower
+      frameIndex: 0
+      cellRect:
+        x: 4
+        y: 31
+        width: 216
+        height: 69
+      spriteId: ce47903731dbe47408813c0b7710bfe3
+    linkedCells: []
+    parentIndex: 3
+  - layerIndex: 6
+    guid: 932938777
+    name: UpperRock
+    layerFlags: 1
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: UpperRock
+      frameIndex: 0
+      cellRect:
+        x: 8
+        y: 63
+        width: 40
+        height: 30
+      spriteId: 727478e022c299942b7c60b9533da0bf
+    linkedCells: []
+    parentIndex: 3
+  - layerIndex: 7
+    guid: -713259658
+    name: Front
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -454194212
+    name: Grass
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 16
+        width: 220
+        height: 88
+      spriteId: 189e24518616cbd42b31c2184ec7699e
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 9
+    guid: -546962328
+    name: Flower
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Flower
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 16
+        width: 220
+        height: 51
+      spriteId: 91500eaa0caf5d54e9ece11410470084
+    linkedCells: []
+    parentIndex: 7
   platformSettings:
   - name: DefaultTexturePlatform
     overridden: 0
@@ -321,4 +486,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 300, y: 115}
+  canvasSize: {x: 220, y: 150}
