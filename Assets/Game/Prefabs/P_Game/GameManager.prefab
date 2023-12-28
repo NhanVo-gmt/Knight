@@ -61,7 +61,6 @@ GameObject:
   - component: {fileID: 2468092943030224356}
   - component: {fileID: 8234785762340972059}
   - component: {fileID: 8203831248180815338}
-  - component: {fileID: 8450330783084526916}
   - component: {fileID: 8198752495978295821}
   - component: {fileID: 5157018599685425844}
   - component: {fileID: 8299032404261828879}
@@ -155,23 +154,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f8249489dd83647b3edb0417281089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8450330783084526916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7517333576352853727}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff3f9d092b81c1140887c92d229c28b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemDatabaseList:
-  - Name: Soul
-    Id: 2fd380a9-5312-4de6-872d-73fdcf4d60f9
-    Description: The Main currency for the game
-    itemData: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
 --- !u!114 &8198752495978295821
 MonoBehaviour:
   m_ObjectHideFlags: 0
