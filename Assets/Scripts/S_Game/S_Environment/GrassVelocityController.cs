@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GrassVelocityController : MonoBehaviour
 {
-    [Range(0, 1f)] public float ExternalInfluenceStrength = 0.25f;
+    [Range(0, 1f)] public float ExternalInfluenceStrength = 0.1f;
     public float EaseInTime = 0.15f;
     public float EaseOutTime = 0.15f;
     public float VelocityThreshold = 5f;

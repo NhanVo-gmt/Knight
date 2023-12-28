@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Collider2D))]
 public class GrassExternalVelocityTrigger : MonoBehaviour
 {
     private GrassVelocityController grassVelocityController;
@@ -31,6 +32,7 @@ public class GrassExternalVelocityTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log(1);
         if (other.CompareTag("Player"))
         {
             Debug.Log(Mathf.Abs(playerRb.velocity.x));
