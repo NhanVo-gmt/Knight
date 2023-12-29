@@ -16,9 +16,12 @@ public class RestState : GroundState
         base.Enter();
         player.inputManager.UseInteractionInput();
         stateMachine.DisableChangeState();
+        
         movement.SetGravityScale(0f);
         movement.MoveToPos(interactionController.restPos, restLerpTime);
         lastElapsedTime = restLerpTime;
+        
+        DataPersistenceManager.Instance.SaveGame();
     }
 
 

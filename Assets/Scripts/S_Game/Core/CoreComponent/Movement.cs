@@ -218,6 +218,8 @@ public class Movement : CoreComponent
 
     public void MoveToPos(Vector2 endPos, float lerpTime)
     {
+        SetVelocityZero();
+        SetGravityScale(0f);
         StartCoroutine(MoveToPosCoroutine(endPos, lerpTime));
     }
     
@@ -225,7 +227,6 @@ public class Movement : CoreComponent
     {
         Vector2 startPos = GetPosition();
         float startTime = 0f;
-        SetGravityScale(0f);
         
         while (startTime <= lerpTime)
         {

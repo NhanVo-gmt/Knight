@@ -5,7 +5,7 @@ using Knight.Inventory;
 using Knight.Manager;
 using UnityEngine;
 
-public class Player : SingletonObject<Player>
+public class Player : SingletonObject<Player>, IDataPersistence
 {
     #region State
     public DashState dashState {get; private set;}
@@ -63,7 +63,7 @@ public class Player : SingletonObject<Player>
     void Start() 
     {
         CreateState();
-        stateMachine.Initialize(idleState);
+        // stateMachine.Initialize(idleState);
         GetCoreComponent();
 
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
@@ -214,4 +214,23 @@ public class Player : SingletonObject<Player>
 
     #endregion
 
+    public void LoadData(GameData data)
+    {
+        transform.position = data.playerPos;
+        if (data.playerState == restState.ToString())
+        {
+            stateMachine.Initialize(idleState);
+            // stateMachine.Initialize(restState);
+        }
+        else
+        {
+            stateMachine.Initialize(idleState);
+        }
+    }
+
+    public void SaveData(ref GameData data)
+    {
+        data.playerPos = transform.position;
+        data.playerState = stateMachine.currentState.ToString();
+    }
 }

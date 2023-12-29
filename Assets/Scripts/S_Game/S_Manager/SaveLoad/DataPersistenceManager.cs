@@ -64,9 +64,4 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
         // Save to file
         fileDataHandler.Save(gameData);
     }
-
-    private void OnApplicationQuit()
-    {
-        SaveGame();
-    }
 }
