@@ -5,4 +5,10 @@ using UnityEngine;
 
 public class CheckPoint : MonoBehaviour
 {
+    [SerializeField] private Transform sitPos;
+
+    public Vector2 GetRestPos()
+    {
+        return sitPos.position;
+    }
 }

@@ -8,6 +8,7 @@ public class InteractionController : CoreComponent
 
     DialogueController dialogueController;
     public bool canRest { get; private set; }
+    public Vector2 restPos { get; private set; }
 
     [SerializeField] bool isInteracting = false;
 
@@ -74,9 +75,10 @@ public class InteractionController : CoreComponent
 
     #region Rest
 
-    public void EnableResting()
+    public void EnableResting(Vector2 restPos)
     {
         canRest = true;
+        this.restPos = restPos;
     }
 
     public void DisableResting()

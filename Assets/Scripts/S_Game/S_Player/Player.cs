@@ -150,9 +150,9 @@ public class Player : SingletonObject<Player>
             InventorySystem.Instance.AddItem(pickup.GetItem(), 1);
             pickup.Release();
         }
-        else if (other.CompareTag("CheckPoint"))
+        else if (other.TryGetComponent<CheckPoint>(out CheckPoint checkPoint))
         {
-            interactionController.EnableResting();
+            interactionController.EnableResting(checkPoint.GetRestPos());
         }
     }
 

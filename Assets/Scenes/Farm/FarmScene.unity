@@ -2725,6 +2725,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.0216846, y: 2.8942506}
   m_EdgeRadius: 0
+--- !u!1 &230621697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 230621698}
+  m_Layer: 0
+  m_Name: RestPos
+  m_TagString: CheckPoint
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &230621698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230621697}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.33, y: 1.74, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1575762874}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &248806489
 GameObject:
   m_ObjectHideFlags: 0
@@ -6739,6 +6770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1575762874}
   - component: {fileID: 1575762873}
+  - component: {fileID: 1575762875}
   m_Layer: 0
   m_Name: CheckPoint
   m_TagString: CheckPoint
@@ -6800,12 +6832,26 @@ Transform:
   m_GameObject: {fileID: 1575762872}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 42.23, y: -0.46, z: -0.61264366}
+  m_LocalPosition: {x: 40.99, y: -0.77, z: -0.61264366}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 230621698}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1575762875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575762872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7da2d7cadee46b241a2afe049921f175, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sitPos: {fileID: 230621698}
 --- !u!1 &1604305833
 GameObject:
   m_ObjectHideFlags: 0
@@ -14873,6 +14919,10 @@ PrefabInstance:
     - target: {fileID: 2926776286104564711, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3831481438612476268, guid: 6d96181751643084098838d5590d9ef0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7517333576352853727, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: m_Name

@@ -103,7 +103,15 @@ public class Movement : CoreComponent
 
 
     #endregion
-    
+
+    #region Position
+
+    public Vector2 GetPosition()
+    {
+        return rb.position;
+    }
+
+    #endregion
 
     #region Direction
 
@@ -205,6 +213,29 @@ public class Movement : CoreComponent
         }
         
         isDashing = false;
+    }
+
+
+    public void MoveToPos(Vector2 endPos, float lerpTime)
+    {
+        StartCoroutine(MoveToPosCoroutine(endPos, lerpTime));
+    }
+    
+    IEnumerator MoveToPosCoroutine(Vector2 endPos, float lerpTime)
+    {
+        Vector2 startPos = GetPosition();
+        float startTime = 0f;
+        SetGravityScale(0f);
+        
+        while (startTime <= lerpTime)
+        {
+            Vector2 newPos = Vector2.Lerp(startPos, endPos, startTime / lerpTime);
+            startTime += Time.deltaTime;
+            rb.position = newPos;
+            yield return null;
+        }
+
+        rb.position = endPos;
     }
 
     #endregion
