@@ -4487,6 +4487,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 1
+--- !u!1 &779735030 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2324975236048740542, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+  m_PrefabInstance: {fileID: 8276264280253194681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &780554328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6262,6 +6267,8 @@ MonoBehaviour:
     - {fileID: 1937266870}
   - region: 3
     particleSystems: []
+  runParticle: {fileID: 1683026886}
+  envParticle: {fileID: 779735030}
 --- !u!1 &1490518517
 GameObject:
   m_ObjectHideFlags: 0
@@ -7133,6 +7140,11 @@ RectTransform:
   m_AnchoredPosition: {x: -386.11, y: -60.41489}
   m_SizeDelta: {x: 772.21, y: 552.3705}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1683026886 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2889534722024938642, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+  m_PrefabInstance: {fileID: 8276264280253194681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1715000609
 GameObject:
   m_ObjectHideFlags: 0

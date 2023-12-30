@@ -7,11 +7,18 @@ public class GroundState : State
 {
     protected Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
     private Movement _movement;
+    
     protected InteractionController interactionController
     {
         get => _interactionController ??= core.GetCoreComponent<InteractionController>(); 
     }
     private InteractionController _interactionController;
+    
+    protected ParticleSystemController particleController
+    {
+        get => _particleController ??= core.GetCoreComponent<ParticleSystemController>(); 
+    }
+    private ParticleSystemController _particleController;
     
     public GroundState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
@@ -22,6 +29,7 @@ public class GroundState : State
         base.Enter();
         anim.Play(animId);
         movement.SetGravityScale(data.jumpData.gravityScale);
+        particleController.SetRunParticle(true);
     }
 
 

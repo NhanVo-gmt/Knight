@@ -7,6 +7,12 @@ public class InAirState : State
 {
     protected Movement movement {get => _movement ??= core.GetCoreComponent<Movement>();}
     private Movement _movement;
+    
+    protected ParticleSystemController particleController
+    {
+        get => _particleController ??= core.GetCoreComponent<ParticleSystemController>(); 
+    }
+    private ParticleSystemController _particleController;
 
     private bool isPlayed;
     private float fallSpeedYDampingChangeThreshold;
@@ -20,6 +26,7 @@ public class InAirState : State
     {
         base.Enter();
         isPlayed = false;
+        particleController.SetRunParticle(false);
     }
 
     public override void Exit()

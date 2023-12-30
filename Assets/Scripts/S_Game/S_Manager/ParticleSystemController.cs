@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ParticleSystemController : MonoBehaviour
+public class ParticleSystemController : CoreComponent
 {
     [Serializable]
     class ParticleRegion
@@ -13,6 +13,8 @@ public class ParticleSystemController : MonoBehaviour
     }
 
     [SerializeField] private List<ParticleRegion> particleList = new List<ParticleRegion>();
+    [SerializeField] private GameObject runParticle;
+    [SerializeField] private GameObject envParticle;
     
     private void OnEnable()
     {
@@ -33,18 +35,23 @@ public class ParticleSystemController : MonoBehaviour
         {
             if (particle.region == region)
             {
-                foreach (ParticleSystem particleSystem in particle.particleSystems)
+                foreach (ParticleSystem singleParticle in particle.particleSystems)
                 {
-                    particleSystem.gameObject.SetActive(true);
+                    singleParticle.gameObject.SetActive(true);
                 }
             }
             else
             {
-                foreach (ParticleSystem particleSystem in particle.particleSystems)
+                foreach (ParticleSystem singleParticle in particle.particleSystems)
                 {
-                    particleSystem.gameObject.SetActive(false);
+                    singleParticle.gameObject.SetActive(false);
                 }
             }
         }
+    }
+
+    public void SetRunParticle(bool isActive)
+    {
+        runParticle.SetActive(isActive);
     }
 }

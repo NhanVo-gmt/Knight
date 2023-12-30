@@ -13,6 +13,7 @@ public class JumpState : GroundState
     public override void Enter()
     {
         base.Enter();
+        particleController.SetRunParticle(false);
         UseInput();
         Jump();
         SpawnVFX();
