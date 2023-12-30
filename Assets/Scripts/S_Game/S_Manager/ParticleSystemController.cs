@@ -9,12 +9,12 @@ public class ParticleSystemController : CoreComponent
     class ParticleRegion
     {
         public SceneLoader.Region region;
+        public ParticleSystem runParticle;
         public ParticleSystem[] particleSystems;
     }
 
     [SerializeField] private List<ParticleRegion> particleList = new List<ParticleRegion>();
-    [SerializeField] private GameObject runParticle;
-    [SerializeField] private GameObject envParticle;
+    private ParticleSystem currentRunParticle;
     
     private void OnEnable()
     {
@@ -35,6 +35,12 @@ public class ParticleSystemController : CoreComponent
         {
             if (particle.region == region)
             {
+                if (particle.runParticle != null)
+                {
+                    currentRunParticle = particle.runParticle;
+                    currentRunParticle.gameObject.SetActive(true);
+                }
+                
                 foreach (ParticleSystem singleParticle in particle.particleSystems)
                 {
                     singleParticle.gameObject.SetActive(true);
@@ -42,6 +48,9 @@ public class ParticleSystemController : CoreComponent
             }
             else
             {
+                if (particle.runParticle != null)
+                    particle.runParticle.gameObject.SetActive(false);
+                
                 foreach (ParticleSystem singleParticle in particle.particleSystems)
                 {
                     singleParticle.gameObject.SetActive(false);
@@ -52,6 +61,11 @@ public class ParticleSystemController : CoreComponent
 
     public void SetRunParticle(bool isActive)
     {
-        runParticle.SetActive(isActive);
+        if (currentRunParticle == null) return;
+
+        if (!isActive)
+        {
+            currentRunParticle.Stop();
+        } else currentRunParticle.Play();
     }
 }
