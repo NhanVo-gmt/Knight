@@ -18,10 +18,11 @@ public class RestState : GroundState
         stateMachine.DisableChangeState();
         
         movement.SetGravityScale(0f);
-        movement.MoveToPos(interactionController.restPos, restLerpTime);
+        if (interactionController.canRest)
+            movement.MoveToPos(interactionController.restPos, restLerpTime);
         lastElapsedTime = restLerpTime;
         
-        DataPersistenceManager.Instance.SaveGame();
+        
     }
 
 
@@ -38,6 +39,7 @@ public class RestState : GroundState
             lastElapsedTime -= Time.deltaTime;
             if (lastElapsedTime <= 0f)
             {
+                DataPersistenceManager.Instance.SaveGame();
                 stateMachine.EnableChangeState();
             }
         }
@@ -48,6 +50,7 @@ public class RestState : GroundState
             stateMachine.ChangeState(player.idleState);
         }
     }
+    
 
     public override void PhysicsUpdate()
     {

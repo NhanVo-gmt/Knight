@@ -219,8 +219,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
         transform.position = data.playerPos;
         if (data.playerState == restState.ToString())
         {
-            stateMachine.Initialize(idleState);
-            // stateMachine.Initialize(restState);
+            // stateMachine.Initialize(idleState);
+            stateMachine.Initialize(restState);
         }
         else
         {
