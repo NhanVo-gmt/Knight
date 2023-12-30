@@ -58,11 +58,11 @@ public class Player : SingletonObject<Player>, IDataPersistence
         inputManager = GetComponent<InputManager>();
         core = GetComponentInChildren<Core>();
         rb = GetComponent<Rigidbody2D>();
+        CreateState();
     }
 
     void Start() 
     {
-        CreateState();
         // stateMachine.Initialize(idleState);
         GetCoreComponent();
 
@@ -214,12 +214,11 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
     #endregion
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData gameData)
     {
-        transform.position = data.playerPos;
-        if (data.playerState == restState.ToString())
+        transform.position = gameData.playerPos;
+        if (gameData.playerState == restState.ToString())
         {
-            // stateMachine.Initialize(idleState);
             stateMachine.Initialize(restState);
         }
         else
@@ -228,9 +227,9 @@ public class Player : SingletonObject<Player>, IDataPersistence
         }
     }
 
-    public void SaveData(ref GameData data)
+    public void SaveData(ref GameData gameData)
     {
-        data.playerPos = transform.position;
-        data.playerState = stateMachine.currentState.ToString();
+        gameData.playerPos = transform.position;
+        gameData.playerState = stateMachine.currentState.ToString();
     }
 }

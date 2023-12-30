@@ -29,6 +29,11 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         return currentScene;
     }
 
+    public Region GetCurrentRegion()
+    {
+        return currentRegion;
+    }
+
     public Region GetRegion(Scene scene)
     {
         string[] splitStr = scene.ToString().Split("Scene");
@@ -89,13 +94,16 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         OnSceneReadyToPlay?.Invoke(this, EventArgs.Empty);
     }
 
-    public void LoadData(GameData data)
+    public void LoadData(GameData gameData)
     {
-        currentScene = data.scene;
+        if (Enum.TryParse(gameData.sceneName, out Scene scene))
+            currentScene = scene;
+        else currentScene = Scene.FarmScene;
+        currentRegion = GetRegion(currentScene);
     }
 
     public void SaveData(ref GameData data)
     {
-        data.scene = currentScene;
+        data.sceneName = currentScene.ToString();
     }
 }

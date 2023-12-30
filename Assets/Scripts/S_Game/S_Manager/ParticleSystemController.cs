@@ -9,13 +9,11 @@ public class ParticleSystemController : MonoBehaviour
     class ParticleRegion
     {
         public SceneLoader.Region region;
-        public ParticleSystem particleSystem;
+        public ParticleSystem[] particleSystems;
     }
 
     [SerializeField] private List<ParticleRegion> particleList = new List<ParticleRegion>();
     
-    private Transform player;
-
     private void OnEnable()
     {
         StartCoroutine(OnEnableCoroutine());
@@ -25,7 +23,8 @@ public class ParticleSystemController : MonoBehaviour
     {
         yield return new WaitUntil(() => SceneLoader.Instance != null);
         SceneLoader.Instance.OnChangedRegion += ChangeParticleSystem;
-        player = GameObject.FindWithTag("Player").transform;
+        
+        ChangeParticleSystem(this, SceneLoader.Instance.GetCurrentRegion());
     }
 
     private void ChangeParticleSystem(object sender, SceneLoader.Region region)
@@ -34,24 +33,18 @@ public class ParticleSystemController : MonoBehaviour
         {
             if (particle.region == region)
             {
-                particle.particleSystem.gameObject.SetActive(true);
+                foreach (ParticleSystem particleSystem in particle.particleSystems)
+                {
+                    particleSystem.gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                foreach (ParticleSystem particleSystem in particle.particleSystems)
+                {
+                    particleSystem.gameObject.SetActive(false);
+                }
             }
         }
-    }
-
-    void TurnOffAllParticles()
-    {
-        foreach (ParticleRegion particle in particleList)
-        {
-            particle.particleSystem.gameObject.SetActive(false);
-        }
-    }
-
-
-    private void Update()
-    {
-        if (player == null) return;
-        
-        transform.position = player.position;
     }
 }

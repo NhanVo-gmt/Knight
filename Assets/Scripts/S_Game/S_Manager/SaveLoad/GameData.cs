@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class GameData
 {
-    public SceneLoader.Scene scene;
+    public string sceneName;
 
     public Vector2 playerPos;
     public string playerState;
@@ -14,7 +14,7 @@ public class GameData
     
     public GameData()
     {
-        scene = SceneLoader.Scene.FarmScene;
+        sceneName = SceneLoader.Scene.FarmScene.ToString(); 
         playerPos = Vector2.zero;
         playerState = "IdleState";
     }

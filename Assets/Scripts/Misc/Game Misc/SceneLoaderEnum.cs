@@ -15,5 +15,6 @@ public partial class SceneLoader : SingletonObject<SceneLoader>
         None,
         Farm,
         Forest,
+        Cave
     }
 }

@@ -57,7 +57,6 @@ public class GroundState : State
         }
         else if (player.inputManager.interactionInput && interactionController.canRest)
         {
-            Debug.Log(1);
             stateMachine.ChangeState(player.restState);
         }
     }
