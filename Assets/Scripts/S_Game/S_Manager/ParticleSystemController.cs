@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ParticleSystemController : CoreComponent
 {
@@ -10,11 +11,12 @@ public class ParticleSystemController : CoreComponent
     {
         public SceneLoader.Region region;
         public ParticleSystem runParticle;
+        public ParticleSystem landParticle;
         public ParticleSystem[] particleSystems;
     }
 
     [SerializeField] private List<ParticleRegion> particleList = new List<ParticleRegion>();
-    private ParticleSystem currentRunParticle;
+    private ParticleRegion currentParticleRegion;
     
     private void OnEnable()
     {
@@ -35,11 +37,7 @@ public class ParticleSystemController : CoreComponent
         {
             if (particle.region == region)
             {
-                if (particle.runParticle != null)
-                {
-                    currentRunParticle = particle.runParticle;
-                    currentRunParticle.gameObject.SetActive(true);
-                }
+                currentParticleRegion = particle;
                 
                 foreach (ParticleSystem singleParticle in particle.particleSystems)
                 {
@@ -61,11 +59,21 @@ public class ParticleSystemController : CoreComponent
 
     public void SetRunParticle(bool isActive)
     {
-        if (currentRunParticle == null) return;
+        if (currentParticleRegion == null) return;
 
         if (!isActive)
         {
-            currentRunParticle.Stop();
-        } else currentRunParticle.Play();
+            currentParticleRegion.runParticle.Stop();
+        } else currentParticleRegion.runParticle.Play();
+    }
+    
+    public void SetlandParticle(bool isActive)
+    {
+        if (currentParticleRegion == null) return;
+
+        if (!isActive)
+        {
+            currentParticleRegion.landParticle.Stop();
+        } else currentParticleRegion.landParticle.Play();
     }
 }

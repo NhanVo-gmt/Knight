@@ -101,7 +101,6 @@ public class Player : SingletonObject<Player>, IDataPersistence
         meleeAttackState = new MeleeAttackState(this, core, stateMachine, data, meleeAttackId);
         restState = new RestState(this, core, stateMachine, data, restId);
         
-        Debug.Log(initState);
         if (initState == restState.ToString())
         {
             stateMachine.Initialize(restState);

@@ -66,6 +66,7 @@ public class InAirState : State
         {
             stateMachine.ChangeState(player.idleState);
             SpawnLandVFX();
+            particleController.SetlandParticle(true);
         }
     }
     
