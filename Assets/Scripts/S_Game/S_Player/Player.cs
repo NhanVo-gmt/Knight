@@ -44,6 +44,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
     StateMachine stateMachine;
     Core core;
     private Rigidbody2D rb;
+
+    private string initState = "IdleState";
     
     public InputManager inputManager {get; private set;}
 
@@ -58,12 +60,11 @@ public class Player : SingletonObject<Player>, IDataPersistence
         inputManager = GetComponent<InputManager>();
         core = GetComponentInChildren<Core>();
         rb = GetComponent<Rigidbody2D>();
-        CreateState();
     }
 
     void Start() 
     {
-        // stateMachine.Initialize(idleState);
+        CreateState();
         GetCoreComponent();
 
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
@@ -99,6 +100,16 @@ public class Player : SingletonObject<Player>, IDataPersistence
         moveState = new MoveState(this, core, stateMachine, data, moveId);
         meleeAttackState = new MeleeAttackState(this, core, stateMachine, data, meleeAttackId);
         restState = new RestState(this, core, stateMachine, data, restId);
+        
+        Debug.Log(initState);
+        if (initState == restState.ToString())
+        {
+            stateMachine.Initialize(restState);
+        }
+        else
+        {
+            stateMachine.Initialize(idleState);
+        }
     }
 
     void GetCoreComponent()
@@ -217,14 +228,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     public void LoadData(GameData gameData)
     {
         transform.position = gameData.playerPos;
-        if (gameData.playerState == restState.ToString())
-        {
-            stateMachine.Initialize(restState);
-        }
-        else
-        {
-            stateMachine.Initialize(idleState);
-        }
+        initState = gameData.playerState;
     }
 
     public void SaveData(ref GameData gameData)

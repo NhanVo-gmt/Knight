@@ -27,7 +27,7 @@ namespace Knight.Camera
         [Header("Control for lerping for player fall/jump")] 
         [SerializeField] private float fallPanAmount = 0.25f;
         [SerializeField] private float fallYPanTime = 0.35f;
-        public float fallSpeedYDampingChangeThreshold = -15f;
+        public static float fallSpeedYDampingChangeThreshold = -15f;
 
         public bool IsLerpingYDamping { get; private set; }
         public bool LerpedFromPlayerFalling { get; set; }

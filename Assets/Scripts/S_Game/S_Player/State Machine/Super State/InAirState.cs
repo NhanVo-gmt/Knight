@@ -19,7 +19,7 @@ public class InAirState : State
     
     public InAirState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
-        fallSpeedYDampingChangeThreshold = CameraController.Instance.fallSpeedYDampingChangeThreshold;
+        fallSpeedYDampingChangeThreshold = CameraController.fallSpeedYDampingChangeThreshold;
     }
 
     public override void Enter()

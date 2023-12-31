@@ -11093,6 +11093,7 @@ MonoBehaviour:
     runParticle: {fileID: 737115985}
     particleSystems:
     - {fileID: 1937266870}
+    - {fileID: 8276264280253194682}
   - region: 3
     runParticle: {fileID: 0}
     particleSystems: []
@@ -19817,6 +19818,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2192027802590901227, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: m_Name
+      value: M_FireFly
+      objectReference: {fileID: 0}
+    - target: {fileID: 2192027802590901227, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2889534722024938642, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -19825,6 +19834,22 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 388028842}
+    - target: {fileID: 5377516265662915163, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377516265662915163, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377516265662915163, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377516265662915163, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6707236586333608305, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -19873,6 +19898,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8916173619465210622, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: m_Name
+      value: F_FireFly
+      objectReference: {fileID: 0}
+    - target: {fileID: 8916173619465210622, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1306752648477393014, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
     - {fileID: 2316045035663245238, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
@@ -19886,6 +19919,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1440514625}
   m_SourcePrefab: {fileID: 100100000, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+--- !u!198 &8276264280253194682 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5377516265662915163, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+  m_PrefabInstance: {fileID: 8276264280253194681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
