@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Camera;
 using UnityEngine;
 
 public class MeleeAttackState : AttackState
@@ -30,6 +31,7 @@ public class MeleeAttackState : AttackState
     {
         if (combat.MeleeAttack(data.meleeAttackData))
         {
+            CameraController.Instance.Shake(data.meleeAttackData.shakeDuration, data.meleeAttackData.shakeAmount, data.meleeAttackData.shakeFrequency);
             SpawnHitVFX();
         }
 

@@ -14,8 +14,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public EventHandler OnSceneReadyToPlay;
     public EventHandler<Region> OnChangedRegion;
 
-    private Scene currentScene;
-    private Region currentRegion;
+    private Scene currentScene = Scene.FarmScene;
+    private Region currentRegion = Region.Farm;
 
     AsyncOperation loadingOperation;
 
