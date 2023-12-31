@@ -14,4 +14,6 @@ public class HitData : ScriptableObject
     [Header("VFX")] public PooledObjectData[] vfx;
     
     [Header("Sound")] public AudioClip clip;
+
+    [Header("Cam Shake")] public CamShakeData camShakeData;
 }

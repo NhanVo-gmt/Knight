@@ -17,9 +17,5 @@ public class AttackData : ScriptableObject
     public PooledObjectData[] hitVFX;
     public PooledObjectData attackVFX;
 
-    [Header("Cam Shake")] 
-    public float shakeDuration;
-    public float shakeAmount;
-    public float shakeFrequency;
-    
+    [Header("Cam shake")] public CamShakeData camShakeData;
 }

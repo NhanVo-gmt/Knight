@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Camera;
 using Knight.Manager;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -19,6 +20,8 @@ public class HitState : State
         
         SpawnVFX();
         anim.Play(animId);
+        CameraController.Instance.Shake(data.hitData.camShakeData.shakeDuration, data.hitData.camShakeData.shakeAmount, 
+            data.hitData.camShakeData.shakeFrequency);
         GameManager.Instance.Sleep(data.hitData.hitSleepTime);
     }
 

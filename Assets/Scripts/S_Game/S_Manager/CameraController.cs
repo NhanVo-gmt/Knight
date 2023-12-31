@@ -266,6 +266,8 @@ namespace Knight.Camera
 
         #endregion
 
+        #region Shake Cam
+        
         public void Shake(float shakeDuration, float shakeAmount, float frequency)
         {
             this.shakeDuration = shakeDuration;
@@ -290,5 +292,9 @@ namespace Knight.Camera
                 }
             }
         }
+        
+
+        #endregion
+        
     }
 }

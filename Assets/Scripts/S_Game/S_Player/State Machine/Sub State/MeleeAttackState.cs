@@ -31,7 +31,7 @@ public class MeleeAttackState : AttackState
     {
         if (combat.MeleeAttack(data.meleeAttackData))
         {
-            CameraController.Instance.Shake(data.meleeAttackData.shakeDuration, data.meleeAttackData.shakeAmount, data.meleeAttackData.shakeFrequency);
+            CameraController.Instance.Shake(data.meleeAttackData.camShakeData.shakeDuration, data.meleeAttackData.camShakeData.shakeAmount, data.meleeAttackData.camShakeData.shakeFrequency);
             SpawnHitVFX();
         }
 
