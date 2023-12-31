@@ -13,6 +13,17 @@ public class ParticleSystemController : CoreComponent
         public ParticleSystem runParticle;
         public ParticleSystem landParticle;
         public ParticleSystem[] particleSystems;
+
+        public void SetActive(bool isActive)
+        {
+            if (runParticle) runParticle.gameObject.SetActive(isActive);
+            if (landParticle) landParticle.gameObject.SetActive(isActive);
+            
+            foreach (ParticleSystem singleParticle in particleSystems)
+            {
+                singleParticle.gameObject.SetActive(isActive);
+            }
+        }
     }
 
     [SerializeField] private List<ParticleRegion> particleList = new List<ParticleRegion>();
@@ -38,28 +49,19 @@ public class ParticleSystemController : CoreComponent
             if (particle.region == region)
             {
                 currentParticleRegion = particle;
-                
-                foreach (ParticleSystem singleParticle in particle.particleSystems)
-                {
-                    singleParticle.gameObject.SetActive(true);
-                }
+
+                currentParticleRegion.SetActive(true);
             }
             else
             {
-                if (particle.runParticle != null)
-                    particle.runParticle.gameObject.SetActive(false);
-                
-                foreach (ParticleSystem singleParticle in particle.particleSystems)
-                {
-                    singleParticle.gameObject.SetActive(false);
-                }
+                particle.SetActive(false);
             }
         }
     }
 
     public void SetRunParticle(bool isActive)
     {
-        if (currentParticleRegion == null) return;
+        if (currentParticleRegion == null || currentParticleRegion.runParticle == null) return;
 
         if (!isActive)
         {
@@ -69,7 +71,7 @@ public class ParticleSystemController : CoreComponent
     
     public void SetlandParticle(bool isActive)
     {
-        if (currentParticleRegion == null) return;
+        if (currentParticleRegion == null || currentParticleRegion.landParticle == null) return;
 
         if (!isActive)
         {
