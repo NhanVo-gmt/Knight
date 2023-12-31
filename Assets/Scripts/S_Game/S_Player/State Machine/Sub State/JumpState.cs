@@ -41,6 +41,7 @@ public class JumpState : GroundState
     private void SpawnVFX()
     {
         vfx.SpawnPooledPrefab(data.jumpData.jumpVFX, movement);
+        particleController.SetlandParticle(true);
     }
 
     public override void Exit()
