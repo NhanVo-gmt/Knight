@@ -11,6 +11,7 @@ public class GameSettings : SingletonObject<GameSettings>
 
     [Header("Player")]
     public int maxHealth;
+    public Material playerMat;
 
     [Header("KnockBack")]
     public float PlayerKnockbackAmount = 100;
@@ -23,4 +24,6 @@ public class GameSettings : SingletonObject<GameSettings>
     [Header("Flash")] 
     public Material flashMat;
     public float flashCoolDown;
+
+    public Material flashGlowMat;
 }

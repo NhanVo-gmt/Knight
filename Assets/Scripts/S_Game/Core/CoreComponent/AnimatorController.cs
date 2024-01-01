@@ -12,6 +12,7 @@ public class AnimatorController : CoreComponent
     public Action onAnimationFinishTrigger;
 
     Health health;
+    private SpriteRenderer sprite;
 
     Animator anim;
     BlinkingEffect blinkingEffect;
@@ -22,6 +23,7 @@ public class AnimatorController : CoreComponent
         base.Awake();
         
         anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
         AddEffect();
     }
 
@@ -91,7 +93,7 @@ public class AnimatorController : CoreComponent
 
 #endregion
 
-#region Effect
+    #region Effect
 
     public void StartHitVFX()
     {
@@ -113,5 +115,33 @@ public class AnimatorController : CoreComponent
         flashingEffect.StartFlashing();
     }
 
-#endregion
+    
+    private int _flashAmount = Shader.PropertyToID("_FlashAmount");
+    private float maxFlashAmount = 1f;
+    private float minFlashAmount = 0f;
+    private float restLerpTime = 0.2f;
+    
+    public void StartRestVFX()
+    {
+        StartCoroutine(RestVFXCoroutine());
+    }
+
+    IEnumerator RestVFXCoroutine()
+    {
+        sprite.material = GameSettings.Instance.flashGlowMat;
+        float startTime = 0f;
+        while (startTime <= restLerpTime)
+        {
+            float flashLerpAmount = Mathf.Lerp(maxFlashAmount, minFlashAmount, startTime / restLerpTime);
+            sprite.material.SetFloat(_flashAmount, flashLerpAmount);
+            
+            startTime += Time.deltaTime;
+            yield return null;
+        }
+        sprite.material.SetFloat(_flashAmount, minFlashAmount);
+        sprite.material = GameSettings.Instance.playerMat;
+        
+    }
+
+    #endregion
 }

@@ -54,12 +54,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 10
+  playerMat: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   PlayerKnockbackAmount: 10
   WeakKnockbackAmount: 10
   StrongKnockbackAmount: 30
   soul: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
   flashMat: {fileID: 2100000, guid: b92ee72cbc0aa6340ad49ccb19f8c7c3, type: 2}
   flashCoolDown: 0.2
+  flashGlowMat: {fileID: 2100000, guid: 3805b295fc0d4e044a42c035399d2676, type: 2}
 --- !u!114 &8234785762340972059
 MonoBehaviour:
   m_ObjectHideFlags: 0

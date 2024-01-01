@@ -2,7 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Cinemachine.PostFX;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
 
 namespace Knight.Camera
@@ -73,6 +76,9 @@ namespace Knight.Camera
             cam = GetComponent<Transform>();
             confiner = GetComponentInChildren<CameraConfiner>();
             startPos = transform.position;
+            
+            // Getting bloom component
+            volume.profile.TryGet(out bloom);
         }
 
         void Start() {
@@ -293,6 +299,38 @@ namespace Knight.Camera
             }
         }
         
+
+        #endregion
+
+        #region Post Processing
+        [Header("Post Processing")]
+        [SerializeField] private Volume volume;
+
+        private Bloom bloom;
+
+        private float startBloomThreshold = 1f;
+        private float normalBloomThreshold = 1.5f;
+        private float bloomLerpTime = 0.5f;
+        
+        public void Bloom()
+        {
+            StartCoroutine(BloomCoroutine());
+        }
+
+        IEnumerator BloomCoroutine()
+        {
+            float startTime = 0;
+            while (startTime <= bloomLerpTime)
+            {
+                float lerpVal = Mathf.Lerp(startBloomThreshold, normalBloomThreshold, startTime / bloomLerpTime);
+                bloom.threshold.value = lerpVal;
+                startTime += Time.deltaTime;
+                
+                yield return null;
+            }
+
+            bloom.threshold.value = normalBloomThreshold;
+        }
 
         #endregion
         

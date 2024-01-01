@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Camera;
 using UnityEngine;
 
 public class RestState : GroundState
@@ -16,12 +17,21 @@ public class RestState : GroundState
         base.Enter();
         player.inputManager.UseInteractionInput();
         stateMachine.DisableChangeState();
-        
+
         if (interactionController.canRest)
+        {
+            SpawnVFX();
             movement.MoveToPos(interactionController.restPos, restLerpTime);
+        }
+        
         lastElapsedTime = restLerpTime;
     }
 
+    void SpawnVFX()
+    {
+        anim.StartRestVFX();
+        CameraController.Instance.Bloom();
+    }
 
     public override void Exit()
     {
@@ -36,7 +46,7 @@ public class RestState : GroundState
             lastElapsedTime -= Time.deltaTime;
             if (lastElapsedTime <= 0f)
             {
-                // SaveGame();
+                SaveGame();
                 stateMachine.EnableChangeState();
             }
         }
