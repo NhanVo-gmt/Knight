@@ -28,6 +28,8 @@ public class ParticleSystemController : CoreComponent
 
     [SerializeField] private List<ParticleRegion> particleList = new List<ParticleRegion>();
     private ParticleRegion currentParticleRegion;
+
+    [SerializeField] private ParticleSystem restParticle;
     
     private void OnEnable()
     {
@@ -77,5 +79,10 @@ public class ParticleSystemController : CoreComponent
         {
             currentParticleRegion.landParticle.Stop();
         } else currentParticleRegion.landParticle.Play();
+    }
+
+    public void SetRestParticle()
+    {
+        restParticle.Play();
     }
 }

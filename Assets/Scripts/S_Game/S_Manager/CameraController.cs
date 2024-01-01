@@ -310,7 +310,7 @@ namespace Knight.Camera
 
         private float startBloomThreshold = 1f;
         private float normalBloomThreshold = 1.5f;
-        private float bloomLerpTime = 0.5f;
+        private float bloomLerpTime = .8f;
         
         public void Bloom()
         {

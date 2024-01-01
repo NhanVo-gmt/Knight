@@ -119,7 +119,7 @@ public class AnimatorController : CoreComponent
     private int _flashAmount = Shader.PropertyToID("_FlashAmount");
     private float maxFlashAmount = 1f;
     private float minFlashAmount = 0f;
-    private float restLerpTime = 0.2f;
+    private float restLerpTime = .5f;
     
     public void StartRestVFX()
     {

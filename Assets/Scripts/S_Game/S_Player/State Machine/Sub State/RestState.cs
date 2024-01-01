@@ -20,17 +20,10 @@ public class RestState : GroundState
 
         if (interactionController.canRest)
         {
-            SpawnVFX();
             movement.MoveToPos(interactionController.restPos, restLerpTime);
         }
         
         lastElapsedTime = restLerpTime;
-    }
-
-    void SpawnVFX()
-    {
-        anim.StartRestVFX();
-        CameraController.Instance.Bloom();
     }
 
     public override void Exit()
@@ -46,7 +39,8 @@ public class RestState : GroundState
             lastElapsedTime -= Time.deltaTime;
             if (lastElapsedTime <= 0f)
             {
-                SaveGame();
+                // SaveGame();
+                SpawnVFX();
                 stateMachine.EnableChangeState();
             }
         }
@@ -57,10 +51,17 @@ public class RestState : GroundState
             stateMachine.ChangeState(player.idleState);
         }
     }
+    
+    void SpawnVFX()
+    {
+        anim.StartRestVFX();
+        particleController.SetRestParticle();
+        CameraController.Instance.Bloom();
+    }
 
     void SaveGame()
     {
-        if (DataPersistenceManager.Instance)
+        if (DataPersistenceManager.Instance != null)
         {
             DataPersistenceManager.Instance.SaveGame();
         }

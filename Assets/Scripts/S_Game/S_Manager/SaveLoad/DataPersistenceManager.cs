@@ -54,7 +54,6 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     public void SaveGame()
     {
-        Debug.Log("Save Game");
         // Pass data to other scripts so they can update
         foreach (IDataPersistence dataPersistence in dataPersistenceObjects)
         {
