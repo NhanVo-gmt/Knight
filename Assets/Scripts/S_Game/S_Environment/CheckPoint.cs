@@ -9,6 +9,7 @@ public class CheckPoint : MonoBehaviour
 
     public Vector2 GetRestPos()
     {
+        Debug.LogError(sitPos.position);
         return sitPos.position;
     }
 }

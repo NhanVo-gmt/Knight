@@ -10,6 +10,7 @@ public class GameData
 
     public Vector2 playerPos;
     public string playerState;
+    public int playerMoney;
     
     
     public GameData()

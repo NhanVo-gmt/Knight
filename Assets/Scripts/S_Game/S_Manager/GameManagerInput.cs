@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.UI;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -57,6 +58,8 @@ namespace Knight.Manager
         
         private void OnPrevTabInput(InputAction.CallbackContext context)
         {
+            if (!GameCanvas.Instance || !GameCanvas.Instance.IsOpen()) return;
+            
             if (context.started)
             {
                 ResetInput();
@@ -66,6 +69,8 @@ namespace Knight.Manager
         
         private void OnNextTabInput(InputAction.CallbackContext context)
         {
+            if (!GameCanvas.Instance || !GameCanvas.Instance.IsOpen()) return;
+            
             if (context.started)
             {
                 ResetInput();

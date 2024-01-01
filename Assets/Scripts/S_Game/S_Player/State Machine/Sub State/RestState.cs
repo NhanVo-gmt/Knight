@@ -17,12 +17,9 @@ public class RestState : GroundState
         player.inputManager.UseInteractionInput();
         stateMachine.DisableChangeState();
         
-        movement.SetGravityScale(0f);
         if (interactionController.canRest)
             movement.MoveToPos(interactionController.restPos, restLerpTime);
         lastElapsedTime = restLerpTime;
-        
-        
     }
 
 
@@ -39,7 +36,7 @@ public class RestState : GroundState
             lastElapsedTime -= Time.deltaTime;
             if (lastElapsedTime <= 0f)
             {
-                DataPersistenceManager.Instance.SaveGame();
+                // SaveGame();
                 stateMachine.EnableChangeState();
             }
         }
@@ -49,6 +46,15 @@ public class RestState : GroundState
             player.inputManager.UseInteractionInput();
             stateMachine.ChangeState(player.idleState);
         }
+    }
+
+    void SaveGame()
+    {
+        if (DataPersistenceManager.Instance)
+        {
+            DataPersistenceManager.Instance.SaveGame();
+        }
+        else Debug.LogError("There is no data persistence object");
     }
     
 

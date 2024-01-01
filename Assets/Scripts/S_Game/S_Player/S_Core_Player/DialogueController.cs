@@ -15,8 +15,9 @@ public class DialogueController : MonoBehaviour
 
     void Start() 
     {
-        dialogueUI = FindObjectOfType<DialogueUI>();
-        dialogueUI.gameObject.SetActive(false);
+        // todo
+        // dialogueUI = FindObjectOfType<DialogueUI>();
+        // dialogueUI.gameObject.SetActive(false);
     }
 
     public void StartConversation()

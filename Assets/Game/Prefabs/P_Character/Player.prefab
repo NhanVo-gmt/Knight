@@ -191,7 +191,7 @@ MonoBehaviour:
   particleList:
   - region: 1
     runParticle: {fileID: 3771080709626996358}
-    landParticle: {fileID: 8437749394027433250}
+    landParticle: {fileID: 0}
     particleSystems: []
   - region: 2
     runParticle: {fileID: 2362088490985241416}
@@ -509,16 +509,16 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6247510661453260202}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 0.05
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 0
-  looping: 1
+  looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -5421,7 +5421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2937888634727711200
 Transform:
   m_ObjectHideFlags: 0
@@ -5454,7 +5454,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -10341,7 +10341,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &9169808668997365741
 Transform:
   m_ObjectHideFlags: 0
@@ -10374,7 +10374,7 @@ ParticleSystem:
   emitterVelocityMode: 0
   looping: 1
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -11247,8 +11247,8 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 0.2
-      minScalar: 1
+      scalar: 0.8
+      minScalar: 1.5
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -15474,7 +15474,7 @@ SpriteRenderer:
   m_SortingLayerID: 1459171875
   m_SortingLayer: 2
   m_SortingOrder: 100
-  m_Sprite: {fileID: -3921156516717066315, guid: 704866e4193e1d94b98c7d9674b09577, type: 3}
+  m_Sprite: {fileID: 3048927779665666420, guid: 704866e4193e1d94b98c7d9674b09577, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -15588,7 +15588,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839232349000776250, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingLayer
@@ -15601,6 +15601,10 @@ PrefabInstance:
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingLayerID
       value: -105839519
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -15691,11 +15695,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839232349000776250, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: InitialModule.startSize.scalar
@@ -15814,7 +15822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4839232349000776250, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingLayer
@@ -15827,6 +15835,10 @@ PrefabInstance:
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingLayerID
       value: 281225647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: InitialModule.startSize.scalar
