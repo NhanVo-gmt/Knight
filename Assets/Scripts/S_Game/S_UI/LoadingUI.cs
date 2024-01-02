@@ -21,10 +21,10 @@ public class LoadingUI : MonoBehaviour
     {
         SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneLoadingStarted;
         SceneLoader.Instance.OnSceneLoadingProgressChanged += SceneLoader_OnSceneLoadingProgressChanged;
-        SceneLoader.Instance.OnSceneReadyToPlay += SceneLoader_OnSceneLoadingCompleted;
+        SceneLoader.Instance.OnSceneReadyToPlay += SceneLoader_OnSceneReadyToPlay;
     }
 
-    private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)
+    private void SceneLoader_OnSceneReadyToPlay(object sender, EventArgs e)
     {
         if (canvasGroup.alpha != 0)
         {

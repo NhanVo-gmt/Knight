@@ -68,7 +68,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
         GetCoreComponent();
 
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
-        SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
+        SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneBeforeLoading;
+        SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
     }
 
     private void GameManager_OnChangedGameState(GameManager.GameState gameState)
@@ -83,9 +84,16 @@ public class Player : SingletonObject<Player>, IDataPersistence
         }
     }
     
-    private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)
+    private void SceneLoader_OnSceneBeforeLoading(object sender, EventArgs e)
     {
+        inputManager.SetActive(false);
+    }
+    
+    private void SceneLoader_OnScenePlay(object sender, EventArgs e)
+    {
+        inputManager.SetActive(true);
         rb.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+        movement.SetGravityScale(data.jumpData.gravityScale);
     }
 
     void CreateState()
@@ -164,6 +172,10 @@ public class Player : SingletonObject<Player>, IDataPersistence
         {
             interactionController.EnableResting(checkPoint.GetRestPos());
         }
+        else if (other.GetComponent<Exit>())
+        {
+            
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other) {
@@ -197,7 +209,6 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         inputManager.ResetInput();
         movement.SetVelocityZero();
-        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         transform.position = newPos;
     }
 

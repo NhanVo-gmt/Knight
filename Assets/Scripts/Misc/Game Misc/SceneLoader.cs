@@ -12,6 +12,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public EventHandler<float> OnSceneLoadingProgressChanged;
     public EventHandler OnSceneLoadingCompleted;
     public EventHandler OnSceneReadyToPlay;
+    public EventHandler OnScenePlay;
     public EventHandler<Region> OnChangedRegion;
 
     private Scene currentScene = Scene.FarmScene;
@@ -92,6 +93,10 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         yield return new WaitForSeconds(1f);
         
         OnSceneReadyToPlay?.Invoke(this, EventArgs.Empty);
+
+        yield return new WaitForSeconds(0.5f);
+        
+        OnScenePlay?.Invoke(this, EventArgs.Empty);
     }
 
     public void LoadData(GameData gameData)

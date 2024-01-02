@@ -29,6 +29,14 @@ public class InputManager : MonoBehaviour
         playerControls.Disable();
     }
 
+    public void SetActive(bool isActive)
+    {
+        if (isActive)
+            playerControls.Enable();
+        else playerControls.Disable();
+    }
+
+
     void Start() 
     {
         DashInputRegister();
