@@ -28,7 +28,7 @@ public partial class EditorSceneLoader
         string scriptPath = Application.dataPath + PATH_TO_OUTPUT_SCRIPT_FILE;
         File.WriteAllText(scriptPath, result.ToString());
         
-        GenerateCodeForEnumScriptFile();
+        // GenerateCodeForEnumScriptFile(); //todo remove due to error, update manually
 
         void AddCodeForDirectory(DirectoryInfo directoryInfo)
         {

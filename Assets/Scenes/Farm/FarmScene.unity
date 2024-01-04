@@ -14456,7 +14456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 4
+  scene: 5
   spawnPos: {x: 95, y: 0}
 --- !u!61 &2140828696
 BoxCollider2D:
@@ -14895,6 +14895,14 @@ PrefabInstance:
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 388028842}
+    - target: {fileID: 6477008602767863102, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: particleList.Array.data[1].region
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477008602767863102, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: particleList.Array.data[2].region
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7502696316525358248, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_Name
       value: Player

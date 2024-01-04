@@ -1,0 +1,689 @@
+fileFormatVersion: 2
+guid: 505e0ef3f29d72343a2b9c9489c24f62
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 16
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638400012057446161
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Sky
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 4
+      width: 500
+      height: 170
+    spriteID: d4084fcf5a3b1f441b05905a4050f150
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 4}
+  - name: Last
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 182
+      width: 500
+      height: 170
+    spriteID: 7ef72d9de42ea0448b320c872b4ab8b6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 182}
+  - name: LastTree
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 705
+      width: 500
+      height: 83
+    spriteID: 0f4109df78349564896a7b4e1194de0c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 705}
+  - name: Background1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 874
+      width: 500
+      height: 51
+    spriteID: 58c9d2b1020e83f4abe658e5329c0479
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 874}
+  - name: BackBackTree
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 360
+      width: 500
+      height: 170
+    spriteID: 44bd86da66f1ff948bbd657265ec4072
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 360}
+  - name: Background
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 933
+      width: 350
+      height: 49
+    spriteID: 039a32ad235904644a3f58183bfe49f4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 933}
+  - name: BackTree
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 796
+      width: 500
+      height: 70
+    spriteID: bff971de08f6a2b478069962cd617aad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 796}
+  - name: MidGround
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 1102
+      width: 350
+      height: 30
+    spriteID: ee2abb5c0998a4a4d8ea555ca68a9bd5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 1102}
+  - name: MidTree
+    originalName: 
+    pivot: {x: 0.39024392, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 538
+      width: 410
+      height: 159
+    spriteID: 2c68000a8e2bc39429fe6b20b4204acf
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 538}
+  - name: Front Tree
+    originalName: 
+    pivot: {x: 0.5154639, y: 0.10674158}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 485
+      height: 178
+    spriteID: 582ea47979eb64143bd34c97f81975ec
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Front Ground
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 1033
+      width: 500
+      height: 30
+    spriteID: 0e11431c73afe8341b02c8b42e6eb250
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 1033}
+  - name: FrontBush
+    originalName: 
+    pivot: {x: 0.5, y: -0.30434784}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 1071
+      width: 500
+      height: 23
+    spriteID: 9eee74feeb5955d4c819f01c97923b91
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 1071}
+  - name: FrontFlower
+    originalName: 
+    pivot: {x: 0.5399568, y: -0.31428573}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 497
+      y: 990
+      width: 463
+      height: 35
+    spriteID: c31d561d2f35ba348a5ad8dbe1deb60d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 497, y: 990}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -312994415
+    name: Sky
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Sky
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 500
+        height: 170
+      spriteId: d4084fcf5a3b1f441b05905a4050f150
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -1753714589
+    name: Last
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: -1753714592
+    name: Last
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Last
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 500
+        height: 170
+      spriteId: 7ef72d9de42ea0448b320c872b4ab8b6
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 3
+    guid: -553183979
+    name: LastTree
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: LastTree
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 500
+        height: 83
+      spriteId: 0f4109df78349564896a7b4e1194de0c
+    linkedCells: []
+    parentIndex: 1
+  - layerIndex: 4
+    guid: -1010151166
+    name: Backback
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: 2007197254
+    name: Background1
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Background1
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 500
+        height: 51
+      spriteId: 58c9d2b1020e83f4abe658e5329c0479
+    linkedCells: []
+    parentIndex: 4
+  - layerIndex: 6
+    guid: -1922019472
+    name: BackBackTree
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BackBackTree
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 500
+        height: 170
+      spriteId: 44bd86da66f1ff948bbd657265ec4072
+    linkedCells: []
+    parentIndex: 4
+  - layerIndex: 7
+    guid: -718866204
+    name: Back
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -1021688242
+    name: Background
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Background
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 350
+        height: 49
+      spriteId: 039a32ad235904644a3f58183bfe49f4
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 9
+    guid: 438405376
+    name: BackTree
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BackTree
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 500
+        height: 70
+      spriteId: bff971de08f6a2b478069962cd617aad
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 10
+    guid: 1756642402
+    name: Mid
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 11
+    guid: 1549085478
+    name: MidGround
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MidGround
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 350
+        height: 30
+      spriteId: ee2abb5c0998a4a4d8ea555ca68a9bd5
+    linkedCells: []
+    parentIndex: 10
+  - layerIndex: 12
+    guid: -1895255888
+    name: MidTree
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MidTree
+      frameIndex: 0
+      cellRect:
+        x: 90
+        y: 0
+        width: 410
+        height: 159
+      spriteId: 2c68000a8e2bc39429fe6b20b4204acf
+    linkedCells: []
+    parentIndex: 10
+  - layerIndex: 13
+    guid: -713259652
+    name: Front
+    layerFlags: 3
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 14
+    guid: 992821549
+    name: Front Tree
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front Tree
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: -19
+        width: 485
+        height: 178
+      spriteId: 582ea47979eb64143bd34c97f81975ec
+    linkedCells: []
+    parentIndex: 13
+  - layerIndex: 15
+    guid: 322861295
+    name: Front Ground
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Front Ground
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 500
+        height: 30
+      spriteId: 0e11431c73afe8341b02c8b42e6eb250
+    linkedCells: []
+    parentIndex: 13
+  - layerIndex: 16
+    guid: -1676984871
+    name: FrontBush
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FrontBush
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 7
+        width: 500
+        height: 23
+      spriteId: 9eee74feeb5955d4c819f01c97923b91
+    linkedCells: []
+    parentIndex: 13
+  - layerIndex: 17
+    guid: -1733703997
+    name: FrontFlower
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FrontFlower
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 11
+        width: 463
+        height: 35
+      spriteId: c31d561d2f35ba348a5ad8dbe1deb60d
+    linkedCells: []
+    parentIndex: 13
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 500, y: 170}

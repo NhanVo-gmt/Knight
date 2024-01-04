@@ -10,6 +10,8 @@ public partial class EditorSceneLoader
         public static void LoadTestScene() { OpenScene("Assets/Scenes/TestScene.unity"); }
         [MenuItem("Scenes/Farm/FarmScene")]
         public static void LoadFarmScene() { OpenScene("Assets/Scenes/Farm/FarmScene.unity"); }
+        [MenuItem("Scenes/ForbiddenLand/ForbiddenLand")]
+        public static void LoadForbiddenLand() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand.unity"); }
         [MenuItem("Scenes/Forest/ForestScene")]
         public static void LoadForestScene() { OpenScene("Assets/Scenes/Forest/ForestScene.unity"); }
         [MenuItem("Scenes/Forest/ForestScene1")]

@@ -6555,7 +6555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 4
+  scene: 5
   spawnPos: {x: 147, y: 0}
 --- !u!61 &66152339
 BoxCollider2D:
@@ -22947,7 +22947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scene: 6
+  scene: 7
   spawnPos: {x: 240, y: 0}
 --- !u!61 &899359388
 BoxCollider2D:

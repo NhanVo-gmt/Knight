@@ -6,6 +6,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>
         MenuScene,
         TestScene,
         FarmScene,
+        ForbiddenLand,
         ForestScene,
         ForestScene1,
         ForestScene2,
@@ -14,7 +15,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>
     public enum Region {
         None,
         Farm,
+        ForbiddenLand,
         Forest,
-        Cave
     }
 }
