@@ -19,47 +19,22 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
     {
         base.Awake();
         fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
-        // dataPersistenceObjects = FindAllDataPersistenceObjects();
-        // LoadGame();
+        FindAllDataPersistenceObjects();
     }
 
 
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-        SceneManager.sceneUnloaded += OnSceneUnloaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-        SceneManager.sceneUnloaded -= OnSceneUnloaded;
-    }
-
-    private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
-    {
-        Debug.Log("Load new scene");
-        dataPersistenceObjects = FindAllDataPersistenceObjects();
-        LoadGame();
-    }
-
-    private void OnSceneUnloaded(Scene arg0)
-    {
-        Debug.Log("Save old scene");
-        SaveGame();
-    }
-
-
-    private List<IDataPersistence> FindAllDataPersistenceObjects()
+    private void FindAllDataPersistenceObjects()
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects =
             FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
-        return new List<IDataPersistence>(dataPersistenceObjects);
+        
+        this.dataPersistenceObjects = new List<IDataPersistence>(dataPersistenceObjects);
     }
 
     public void NewGame()
     {
         gameData = new GameData();
+        LoadGame();
     }
 
     public void LoadGame()
@@ -70,10 +45,10 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
         // If no data can be loaded, initialize to a new game
         if (gameData == null)
         {
-            Debug.Log("No data was found. Initializing data to defaults.");
+            Debug.Log("No data was found. Please choose new game.");
             return;
         }
-        
+
         // push the loaded data to all other scripts
         foreach (IDataPersistence dataPersistence in dataPersistenceObjects)
         {
@@ -83,6 +58,7 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     public void SaveGame()
     {
+        FindAllDataPersistenceObjects();
         // Pass data to other scripts so they can update
         foreach (IDataPersistence dataPersistence in dataPersistenceObjects)
         {
@@ -95,6 +71,9 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     public bool HasGameData()
     {
+        // Load saved file
+        gameData = fileDataHandler.Load();
+        
         return gameData != null;
     }
 }

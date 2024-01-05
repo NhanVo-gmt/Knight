@@ -194,14 +194,14 @@ MonoBehaviour:
     runParticle: {fileID: 3771080709626996358}
     landParticle: {fileID: 0}
     particleSystems: []
-  - region: 2
+  - region: 3
     runParticle: {fileID: 2362088490985241416}
     landParticle: {fileID: 8437749394027433250}
     particleSystems:
     - {fileID: 8835557209920494900}
     - {fileID: 3420483418576788302}
     - {fileID: 5377516265662915163}
-  - region: 3
+  - region: 0
     runParticle: {fileID: 0}
     landParticle: {fileID: 0}
     particleSystems: []
@@ -20065,7 +20065,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7710511944062994220
 Transform:
   m_ObjectHideFlags: 0
@@ -20364,7 +20364,7 @@ SpriteRenderer:
   m_SortingLayerID: 1459171875
   m_SortingLayer: 2
   m_SortingOrder: 100
-  m_Sprite: {fileID: 3048927779665666420, guid: 704866e4193e1d94b98c7d9674b09577, type: 3}
+  m_Sprite: {fileID: -8259238526974145173, guid: 704866e4193e1d94b98c7d9674b09577, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

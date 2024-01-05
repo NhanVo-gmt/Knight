@@ -9,14 +9,15 @@ namespace Knight.UI
         public void NewGame()
         {
             DataPersistenceManager.Instance.NewGame();
-            SceneLoader.Instance.ChangeScene(SceneLoader.Scene.FarmScene, Vector2.zero); //todo load player position
+            gameObject.SetActive(false);
         }
 
         public void LoadGame()
         {
             if (!DataPersistenceManager.Instance.HasGameData()) return;
+            
             DataPersistenceManager.Instance.LoadGame();
-            SceneLoader.Instance.ChangeScene(SceneLoader.Scene.FarmScene, Vector2.zero); //todo load player position
+            gameObject.SetActive(false); //todo lerp menu
         }
     }
     

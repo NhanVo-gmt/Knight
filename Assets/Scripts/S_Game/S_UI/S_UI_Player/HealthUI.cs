@@ -13,16 +13,16 @@ public class HealthUI : MonoBehaviour
     [SerializeField] Health health; //todo set private
     int currentHealth = 1;
 
-    void Start() 
+    void Start()
     {
         SetUpHealthUI();
     }
 
     void SetUpHealthUI()
     {
-        health = FindObjectOfType<Player>().GetCoreComponent<Health>();
-
         SpawnHealthImage();
+        
+        health = FindObjectOfType<Player>().GetCoreComponent<Health>();
         health.OnUpdateHealth += UpdateHealthUI;
     }
 

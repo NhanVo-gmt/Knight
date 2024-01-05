@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -15,6 +16,7 @@ namespace Knight.UI
         
         public CanvasState currentState { get; private set; }
         
+        [SerializeField] CanvasGroup inGameUI;
         private PlayerMenuUI playerMenuUI;
 
         protected override void Awake()
@@ -22,6 +24,24 @@ namespace Knight.UI
             base.Awake();
             currentState = CanvasState.None;
             playerMenuUI = GetComponentInChildren<PlayerMenuUI>();
+        }
+
+        private void Start()
+        {
+            SceneLoader.Instance.OnSceneBeforeLoading += DisableGameUI;
+            SceneLoader.Instance.OnSceneReadyToPlay += EnableGameUI;
+        }
+
+        private void DisableGameUI(object sender, EventArgs e)
+        {
+            inGameUI.alpha = 0f;
+            //todo dialogue
+        }
+        
+        private void EnableGameUI(object sender, EventArgs e)
+        {
+            inGameUI.alpha = 1f;
+            //todo dialogue
         }
 
         public void TogglePlayerMenuUI()

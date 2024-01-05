@@ -30,6 +30,8 @@ public class LoadingUI : MonoBehaviour
         {
             StartCoroutine(FadeOut());
         }
+
+        slider.value = 0f;
     }
 
 

@@ -9,9 +9,13 @@ public class GameSettings : SingletonObject<GameSettings>
         base.Awake();
     }
 
-    [Header("Player")]
+    [Header("Player")] 
+    public GameObject player;
     public int maxHealth;
     public Material playerMat;
+
+    [Header("Player Cam")]
+    public Camera playerCam;
 
     [Header("KnockBack")]
     public float PlayerKnockbackAmount = 100;
@@ -26,4 +30,13 @@ public class GameSettings : SingletonObject<GameSettings>
     public float flashCoolDown;
 
     public Material flashGlowMat;
+
+    public Action OnGameInitialized;
+
+    public void StartGame()
+    {
+        player.SetActive(true);
+        playerCam.gameObject.SetActive(true);
+        OnGameInitialized?.Invoke();
+    }
 }

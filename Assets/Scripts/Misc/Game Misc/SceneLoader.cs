@@ -7,6 +7,8 @@ using UnityEngine.Serialization;
 
 public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistence
 {
+    public EventHandler OnFirstStartGame;
+    
     public EventHandler OnSceneBeforeLoading;
     public EventHandler OnSceneLoadingStarted;
     public EventHandler<float> OnSceneLoadingProgressChanged;
@@ -17,6 +19,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
     private Scene currentScene = Scene.FarmScene;
     private Region currentRegion = Region.Farm;
+
+    private Vector2 playerStartPos;
 
     AsyncOperation loadingOperation;
 
@@ -46,6 +50,37 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         return Region.None;
     }
 
+    public void StartGame()
+    {
+        StartCoroutine(StartGameCoroutine(currentScene));
+    }
+
+    IEnumerator StartGameCoroutine(Scene scene)
+    {
+        OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
+
+        yield return new WaitForSeconds(1f);
+        
+        GameSettings.Instance.StartGame();
+        OnFirstStartGame?.Invoke(this, EventArgs.Empty);
+
+        yield return new WaitForSeconds(1f);
+        
+        Player.Instance.ChangeScenePosition(playerStartPos);
+
+        currentScene = scene;
+        
+        Region newRegion = GetRegion(currentScene);
+        if (currentRegion != newRegion)
+        {
+            currentRegion = newRegion;
+            OnChangedRegion?.Invoke(this, newRegion);
+        }
+
+        loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
+        OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
+    }
+
     public void ChangeScene(Scene scene, Vector2 newPos)
     {
         StartCoroutine(ChangeSceneCoroutine(scene, newPos));
@@ -57,7 +92,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
         yield return new WaitForSeconds(1f);
         
-        if (Player.Instance) Player.Instance.ChangeScenePosition(newPos);
+        Player.Instance.ChangeScenePosition(newPos);
         currentScene = scene;
         
         Region newRegion = GetRegion(currentScene);
@@ -98,13 +133,17 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         
         OnScenePlay?.Invoke(this, EventArgs.Empty);
     }
-
+    
     public void LoadData(GameData gameData)
     {
         if (Enum.TryParse(gameData.sceneName, out Scene scene))
             currentScene = scene;
         else currentScene = Scene.FarmScene;
         currentRegion = GetRegion(currentScene);
+
+        playerStartPos = gameData.playerPos;
+        
+        StartGame();
     }
 
     public void SaveData(ref GameData data)

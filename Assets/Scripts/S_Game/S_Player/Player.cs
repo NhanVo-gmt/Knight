@@ -234,15 +234,16 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
 
     #endregion
-
+    
     public void LoadData(GameData gameData)
     {
-        transform.position = gameData.playerPos;
         initState = gameData.playerState;
     }
 
     public void SaveData(ref GameData gameData)
     {
+        if (stateMachine.currentState != restState) return;
+        
         gameData.playerPos = transform.position;
         gameData.playerState = stateMachine.currentState.ToString();
     }
