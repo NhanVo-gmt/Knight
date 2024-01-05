@@ -182,6 +182,7 @@ public class Movement : CoreComponent
 
     public void Dash()
     {
+        isDashing = true;
         StartCoroutine(StartDash());
     }
 
@@ -212,6 +213,11 @@ public class Movement : CoreComponent
             yield return null;
         }
         
+        EndDash();
+    }
+
+    public void EndDash()
+    {
         isDashing = false;
     }
 

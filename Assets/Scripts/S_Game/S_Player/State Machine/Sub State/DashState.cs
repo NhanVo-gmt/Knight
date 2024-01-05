@@ -6,8 +6,8 @@ using UnityEngine;
 
 public class DashState : AbilityState
 {
-
     float lastActiveTime;
+    private float dashRemaining = 1;
     
     public DashState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
@@ -16,18 +16,17 @@ public class DashState : AbilityState
     public override void Enter()
     {
         base.Enter();
+        dashRemaining--;
         
         GameManager.Instance.Sleep(data.dashData.dashSleepTime);
         
         movement.SetGravityZero();
+        movement.Dash();
+        combat.DisableCollider();
+        
         SoundManager.Instance.PlayOneShot(data.dashData.clip);
         player.inputManager.UseDashInput();
-
-        lastActiveTime = Time.time;
-
-        movement.Dash();
         SpawnVFX();
-        combat.DisableCollider();
     }
 
 
@@ -39,6 +38,8 @@ public class DashState : AbilityState
     public override void Exit() 
     {
         combat.EnableCollider();
+        lastActiveTime = Time.time;
+        movement.EndDash();
         
         base.Exit();
     }
@@ -46,7 +47,6 @@ public class DashState : AbilityState
     public override void LogicsUpdate()
     {
         base.LogicsUpdate();
-        
         if (player.inputManager.movementInput.x * movement.faceDirection.x == -1)
         {
             if (collisionSenses.isGround)
@@ -68,7 +68,11 @@ public class DashState : AbilityState
         }
         else if (!movement.isDashing)
         {
-            stateMachine.ChangeState(player.idleState);
+            if (!collisionSenses.isGround)
+            {
+                stateMachine.ChangeState(player.inAirState);
+            }
+            else stateMachine.ChangeState(player.idleState);
         }
     }
 
@@ -79,8 +83,12 @@ public class DashState : AbilityState
 
     public bool CanDash()
     {
-        return Time.time > lastActiveTime + data.dashData.dashRefillTime;
+        return Time.time > lastActiveTime + data.dashData.dashRefillTime && dashRemaining > 0;
     }
-    
+
+    public void RecoverDash()
+    {
+        dashRemaining = 1; //todo ability
+    }
 }
 

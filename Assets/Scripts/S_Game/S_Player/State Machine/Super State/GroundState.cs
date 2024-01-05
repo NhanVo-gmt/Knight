@@ -30,6 +30,9 @@ public class GroundState : State
         anim.Play(animId);
         movement.SetGravityScale(data.jumpData.gravityScale);
         particleController.SetRunParticle(true);
+        
+        Debug.Log(stateMachine.currentState);
+        player.dashState.RecoverDash();
     }
 
 
