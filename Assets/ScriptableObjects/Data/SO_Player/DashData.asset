@@ -19,7 +19,7 @@ MonoBehaviour:
   dashEndTime: 0.15
   dashEndSpeed: {x: 15, y: 15}
   dashEndRunLerp: 0.5
-  dashRefillTime: 0.2
+  dashRefillTime: 0.5
   dashInputBufferTime: 0.1
   clip: {fileID: 8300000, guid: d0694be8ceebe6847bfc8afc77747bbb, type: 3}
   vfx: {fileID: 11400000, guid: b1c2025fb8902864c8f2fe9f49960482, type: 2}

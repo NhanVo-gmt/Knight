@@ -188,8 +188,6 @@ public class Movement : CoreComponent
 
     IEnumerator StartDash()
     {
-        isDashing = true;
-        
         float startTime = Time.time;
         isDashAttacking = true;
         SetGravityScale(0);
@@ -201,23 +199,27 @@ public class Movement : CoreComponent
             yield return null;
         }
 
-        startTime = Time.time;
-
         isDashAttacking = false;
-        
-        SetGravityScale(data.jumpData.gravityScale);
-        rb.velocity = data.dashData.dashEndSpeed * faceDirection.normalized;
-
-        while (Time.time - startTime <= data.dashData.dashEndTime)
-        {
-            yield return null;
-        }
         
         EndDash();
     }
 
     public void EndDash()
     {
+        StartCoroutine(EndDashCoroutine());
+    }
+
+    IEnumerator EndDashCoroutine()
+    {
+        SetGravityScale(data.jumpData.gravityScale);
+        rb.velocity = data.dashData.dashEndSpeed * faceDirection.normalized;
+
+        float startTime = Time.time;
+        while (Time.time - startTime <= data.dashData.dashEndTime)
+        {
+            yield return null;
+        }
+        
         isDashing = false;
     }
 
