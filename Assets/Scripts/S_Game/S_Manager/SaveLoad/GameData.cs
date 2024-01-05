@@ -11,12 +11,14 @@ public class GameData
     public Vector2 playerPos;
     public string playerState;
     public int playerMoney;
-    
+
+    public List<string> bossDefeated;
     
     public GameData()
     {
         sceneName = SceneLoader.Scene.FarmScene.ToString(); 
         playerPos = Vector2.zero;
         playerState = "IdleState";
+        bossDefeated = new List<string>();
     }
 }

@@ -57,7 +57,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
         yield return new WaitForSeconds(1f);
         
-        Player.Instance.ChangeScenePosition(newPos);
+        if (Player.Instance) Player.Instance.ChangeScenePosition(newPos);
         currentScene = scene;
         
         Region newRegion = GetRegion(currentScene);
