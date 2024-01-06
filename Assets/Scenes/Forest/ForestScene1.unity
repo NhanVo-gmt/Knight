@@ -6425,6 +6425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.5
+  startCamPos: {fileID: 0}
 --- !u!4 &27839617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7710511944062994220, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
@@ -6555,6 +6556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   scene: 5
   spawnPos: {x: 147, y: 0}
 --- !u!61 &66152339
@@ -22520,6 +22522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.9
+  startCamPos: {fileID: 0}
 --- !u!212 &766456069
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -22947,6 +22950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   scene: 7
   spawnPos: {x: 240, y: 0}
 --- !u!61 &899359388
@@ -23811,6 +23815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.7
+  startCamPos: {fileID: 0}
 --- !u!212 &1216697923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -25037,6 +25042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 1
+  startCamPos: {fileID: 0}
 --- !u!1001 &1662767909
 PrefabInstance:
   m_ObjectHideFlags: 0

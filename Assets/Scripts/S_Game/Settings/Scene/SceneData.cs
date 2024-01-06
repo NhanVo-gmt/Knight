@@ -14,4 +14,20 @@ public class SceneData : ScriptableObject
         public SceneLoaderEnum.Scene scene;
         public ExitData exit;
     }
+    
+    
+
+    public ExitData.ExitSettings GetExit(string scene, int id)
+    {
+        foreach (SceneData.SceneSetting setting in sceneSettings)
+        {
+            if (scene.Equals(setting.scene.ToString()))
+            {
+                return setting.exit.GetExit(id);
+            }
+        }
+
+        Debug.LogError($"Can't find the following scene {scene}");
+        return null;
+    }
 }

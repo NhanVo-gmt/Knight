@@ -40,5 +40,16 @@ public class GameSettings : SingletonObject<GameSettings>
         OnGameInitialized?.Invoke();
     }
 
-    
+    [Header("Scene")] 
+    public SceneData sceneData;
+
+    public ExitData.ExitSettings GetExit(string scene, int id)
+    {
+        return sceneData.GetExit(scene, id);
+    }
+    //
+    // public void AssignExit()
+    // {
+    //     Exit 
+    // }
 }

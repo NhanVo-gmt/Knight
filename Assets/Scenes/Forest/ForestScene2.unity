@@ -3964,6 +3964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   scene: 6
   spawnPos: {x: 223, y: 0}
 --- !u!61 &66152339
@@ -18590,6 +18591,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   scene: 8
   spawnPos: {x: 290, y: -3.3}
 --- !u!61 &975604324

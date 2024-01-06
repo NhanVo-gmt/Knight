@@ -5078,6 +5078,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.5
+  startCamPos: {fileID: 0}
 --- !u!1 &66152337
 GameObject:
   m_ObjectHideFlags: 0
@@ -5108,6 +5109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 0
   scene: 3
   spawnPos: {x: 73, y: 0}
 --- !u!61 &66152339
@@ -5602,6 +5604,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 1
   scene: 6
   spawnPos: {x: 157, y: 0}
 --- !u!61 &321142126
@@ -13095,6 +13098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.9
+  startCamPos: {fileID: 0}
 --- !u!212 &766456069
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14419,6 +14423,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.7
+  startCamPos: {fileID: 0}
 --- !u!212 &1216697923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15373,6 +15378,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 1
+  startCamPos: {fileID: 0}
 --- !u!1 &1685783716
 GameObject:
   m_ObjectHideFlags: 0

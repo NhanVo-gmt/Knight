@@ -298,6 +298,10 @@ PrefabInstance:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 1227042145508969705}
+    - target: {fileID: 6911535378620299280, guid: 6d96181751643084098838d5590d9ef0, type: 3}
+      propertyPath: sceneData
+      value: 
+      objectReference: {fileID: 11400000, guid: adba4b9a6a74d6d40826207827676b8a, type: 2}
     - target: {fileID: 7517333576352853727, guid: 6d96181751643084098838d5590d9ef0, type: 3}
       propertyPath: m_Name
       value: GameManager
