@@ -11,7 +11,7 @@ namespace Knight.Manager
         [Serializable]
         public class RegionClip
         {
-            public SceneLoader.Region region;
+            public SceneLoaderEnum.Region region;
             public List<AudioClip> clips;
         }
         
@@ -33,7 +33,7 @@ namespace Knight.Manager
             sceneLoader.OnChangedRegion += ChangeBackgroundMusic;
         }
 
-        private void ChangeBackgroundMusic(object sender, SceneLoader.Region newRegion)
+        private void ChangeBackgroundMusic(object sender, SceneLoaderEnum.Region newRegion)
         {
             foreach (RegionClip regionClip in regionClips)
             {

@@ -15,10 +15,10 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public EventHandler OnSceneLoadingCompleted;
     public EventHandler OnSceneReadyToPlay;
     public EventHandler OnScenePlay;
-    public EventHandler<Region> OnChangedRegion;
+    public EventHandler<SceneLoaderEnum.Region> OnChangedRegion;
 
-    private Scene currentScene = Scene.FarmScene;
-    private Region currentRegion = Region.Farm;
+    private SceneLoaderEnum.Scene currentScene = SceneLoaderEnum.Scene.FarmScene;
+    private SceneLoaderEnum.Region currentRegion = SceneLoaderEnum.Region.Farm;
 
     private Vector2 playerStartPos;
 
@@ -29,25 +29,25 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         base.Awake();
     }
 
-    public Scene GetCurrentScene()
+    public SceneLoaderEnum.Scene GetCurrentScene()
     {
         return currentScene;
     }
 
-    public Region GetCurrentRegion()
+    public SceneLoaderEnum.Region GetCurrentRegion()
     {
         return currentRegion;
     }
 
-    public Region GetRegion(Scene scene)
+    public SceneLoaderEnum.Region GetRegion(SceneLoaderEnum.Scene scene)
     {
-        string[] splitStr = scene.ToString().Split("Scene");
+        string[] splitStr = scene.ToString().Split("SceneLoaderEnum.Scene");
         if (splitStr.Length > 0)
-            if (Enum.TryParse(splitStr[0], out Region region))
+            if (Enum.TryParse(splitStr[0], out SceneLoaderEnum.Region region))
                 return region;
         
         Debug.LogError($"Can not get region from {scene}");
-        return Region.None;
+        return SceneLoaderEnum.Region.None;
     }
 
     public void StartGame()
@@ -55,7 +55,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         StartCoroutine(StartGameCoroutine(currentScene));
     }
 
-    IEnumerator StartGameCoroutine(Scene scene)
+    IEnumerator StartGameCoroutine(SceneLoaderEnum.Scene scene)
     {
         OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
 
@@ -70,7 +70,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
         currentScene = scene;
         
-        Region newRegion = GetRegion(currentScene);
+        SceneLoaderEnum.Region newRegion = GetRegion(currentScene);
         if (currentRegion != newRegion)
         {
             currentRegion = newRegion;
@@ -81,12 +81,12 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
     }
 
-    public void ChangeScene(Scene scene, Vector2 newPos)
+    public void ChangeScene(SceneLoaderEnum.Scene scene, Vector2 newPos)
     {
         StartCoroutine(ChangeSceneCoroutine(scene, newPos));
     }
 
-    IEnumerator ChangeSceneCoroutine(Scene scene, Vector2 newPos)
+    IEnumerator ChangeSceneCoroutine(SceneLoaderEnum.Scene scene, Vector2 newPos)
     {
         OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
 
@@ -95,7 +95,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         Player.Instance.ChangeScenePosition(newPos);
         currentScene = scene;
         
-        Region newRegion = GetRegion(currentScene);
+        SceneLoaderEnum.Region newRegion = GetRegion(currentScene);
         if (currentRegion != newRegion)
         {
             currentRegion = newRegion;
@@ -136,9 +136,9 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     
     public void LoadData(GameData gameData)
     {
-        if (Enum.TryParse(gameData.sceneName, out Scene scene))
+        if (Enum.TryParse(gameData.sceneName, out SceneLoaderEnum.Scene scene))
             currentScene = scene;
-        else currentScene = Scene.FarmScene;
+        else currentScene = SceneLoaderEnum.Scene.FarmScene;
         currentRegion = GetRegion(currentScene);
 
         playerStartPos = gameData.playerPos;

@@ -39,6 +39,8 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     public void LoadGame()
     {
+        Debug.Log("Load Game");
+        
         // Load saved file
         gameData = fileDataHandler.Load();
         
@@ -58,6 +60,7 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     public void SaveGame()
     {
+        Debug.Log("Save Game");
         FindAllDataPersistenceObjects();
         // Pass data to other scripts so they can update
         foreach (IDataPersistence dataPersistence in dataPersistenceObjects)

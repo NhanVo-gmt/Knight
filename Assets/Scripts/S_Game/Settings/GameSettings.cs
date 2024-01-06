@@ -39,4 +39,6 @@ public class GameSettings : SingletonObject<GameSettings>
         playerCam.gameObject.SetActive(true);
         OnGameInitialized?.Invoke();
     }
+
+    
 }

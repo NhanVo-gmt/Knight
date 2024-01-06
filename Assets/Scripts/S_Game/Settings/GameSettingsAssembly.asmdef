@@ -1,5 +1,5 @@
 {
-    "name": "SettingAssembly",
+    "name": "GameSettingsAssembly",
     "rootNamespace": "",
     "references": [
         "GUID:79365834d52eed542862b46928e50f11",

@@ -3933,6 +3933,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.5
+  startCamPos: {fileID: 0}
 --- !u!1 &66152337
 GameObject:
   m_ObjectHideFlags: 0
@@ -17992,6 +17993,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.9
+  startCamPos: {fileID: 0}
 --- !u!212 &766456069
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -18934,6 +18936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 0.7
+  startCamPos: {fileID: 0}
 --- !u!212 &1216697923
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -19430,19 +19433,19 @@ PrefabInstance:
       objectReference: {fileID: 1187541970}
     - target: {fileID: 1069986723629655414, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3003235
+      value: -4.0613403
       objectReference: {fileID: 0}
     - target: {fileID: 1069986723629655414, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.6880692
+      value: 1.8825692
       objectReference: {fileID: 0}
     - target: {fileID: 2676711363309237784, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 98.57033
+      value: 100.331345
       objectReference: {fileID: 0}
     - target: {fileID: 2676711363309237784, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.61193
+      value: 0.41743004
       objectReference: {fileID: 0}
     - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_Name
@@ -19450,7 +19453,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7126460193719620890, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20022,6 +20025,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parralaxEffect: 1
+  startCamPos: {fileID: 0}
 --- !u!1001 &1662767909
 PrefabInstance:
   m_ObjectHideFlags: 0

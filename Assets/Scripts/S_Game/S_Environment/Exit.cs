@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider2D))]
 public class Exit : MonoBehaviour
 {
-    public SceneLoader.Scene scene;
+    public SceneLoaderEnum.Scene scene;
     public Vector2 spawnPos;
 
     void Awake() {

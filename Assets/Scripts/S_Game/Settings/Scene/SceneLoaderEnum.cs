@@ -1,5 +1,5 @@
 using System;
-public partial class SceneLoader : SingletonObject<SceneLoader>
+public static class SceneLoaderEnum
 {
     public enum Scene {
         CaveScene,

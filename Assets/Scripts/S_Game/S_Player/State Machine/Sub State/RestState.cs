@@ -39,7 +39,7 @@ public class RestState : GroundState
             lastElapsedTime -= Time.deltaTime;
             if (lastElapsedTime <= 0f)
             {
-                // SaveGame();
+                SaveGame();
                 SpawnVFX();
                 stateMachine.EnableChangeState();
             }

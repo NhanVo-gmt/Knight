@@ -7,6 +7,7 @@ using UnityEngine;
 public class Parallax : MonoBehaviour
 {
     [SerializeField] float parralaxEffect;
+    [SerializeField] private Transform startCamPos;
     private Vector2 startPos;
     
     private Camera cam;
@@ -32,6 +33,6 @@ public class Parallax : MonoBehaviour
 
     Vector2 GetDistanceFromEffect(Vector2 camPos)
     {
-        return new Vector2((camPos.x - CameraController.Instance.startPos.x) * parralaxEffect, (camPos.y - CameraController.Instance.startPos.y) * parralaxEffect);
+        return new Vector2((camPos.x - startCamPos.position.x) * parralaxEffect, (camPos.y - startCamPos.position.y) * parralaxEffect);
     }
 }

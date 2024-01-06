@@ -151,7 +151,6 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         if (isGamePaused) return;
         stateMachine.Update();
-        Debug.Log(stateMachine.currentState);
     }
     
 
@@ -238,13 +237,12 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     public void LoadData(GameData gameData)
     {
+        // Player position will be load by scene loader 
         initState = gameData.playerState;
     }
 
     public void SaveData(ref GameData gameData)
     {
-        if (stateMachine.currentState != restState) return;
-        
         gameData.playerPos = transform.position;
         gameData.playerState = stateMachine.currentState.ToString();
     }

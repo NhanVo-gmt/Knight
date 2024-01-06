@@ -9,7 +9,7 @@ public class ParticleSystemController : CoreComponent
     [Serializable]
     class ParticleRegion
     {
-        public SceneLoader.Region region;
+        public SceneLoaderEnum.Region region;
         public ParticleSystem runParticle;
         public ParticleSystem landParticle;
         public ParticleSystem[] particleSystems;
@@ -44,7 +44,7 @@ public class ParticleSystemController : CoreComponent
         ChangeParticleSystem(this, SceneLoader.Instance.GetCurrentRegion());
     }
 
-    private void ChangeParticleSystem(object sender, SceneLoader.Region region)
+    private void ChangeParticleSystem(object sender, SceneLoaderEnum.Region region)
     {
         foreach (ParticleRegion particle in particleList)
         {
