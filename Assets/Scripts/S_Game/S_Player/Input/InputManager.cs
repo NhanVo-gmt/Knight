@@ -83,7 +83,6 @@ public class InputManager : MonoBehaviour
         meleeAttackInput = false;
         dashInput = false;
         interactionInput = false;
-        movementInput = Vector2.zero;
     }
 
     private void OnDashInput(InputAction.CallbackContext context)
