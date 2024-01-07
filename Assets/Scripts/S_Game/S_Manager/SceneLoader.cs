@@ -41,7 +41,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
     public SceneLoaderEnum.Region GetRegion(SceneLoaderEnum.Scene scene)
     {
-        string[] splitStr = scene.ToString().Split("SceneLoaderEnum.Scene");
+        string[] splitStr = scene.ToString().Split("Scene");
         if (splitStr.Length > 0)
             if (Enum.TryParse(splitStr[0], out SceneLoaderEnum.Region region))
                 return region;

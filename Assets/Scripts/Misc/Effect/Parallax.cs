@@ -11,6 +11,7 @@ public class Parallax : MonoBehaviour
     private Vector2 startPos;
 
     private readonly float camHeight = 3f;
+    private readonly float camWidth = 8f;
     
     private Camera cam;
 
@@ -35,6 +36,6 @@ public class Parallax : MonoBehaviour
 
     Vector2 GetDistanceFromEffect(Vector2 camPos)
     {
-        return new Vector2((camPos.x - startCamPos.x) * parralaxEffect, (camPos.y - startCamPos.y - camHeight) * parralaxEffect);
+        return new Vector2((camPos.x - startCamPos.x - camWidth) * parralaxEffect, (camPos.y - startCamPos.y - camHeight) * parralaxEffect);
     }
 }

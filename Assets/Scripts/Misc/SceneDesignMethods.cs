@@ -48,11 +48,14 @@ public static class SceneDesignMethods
         
         foreach (GameObject gameObject in GameObject.FindObjectsOfType<GameObject>(true))
         {
-            if (gameObject.TryGetComponent<Parallax>(out Parallax parallax))
+            Parallax[] parallaxArr = gameObject.GetComponentsInChildren<Parallax>();
+            if (parallaxArr.Length > 0)
             {
-                parallax.startCamPos = sceneData.GetImageStartPos(SceneManager.GetActiveScene().name);
-                
-                Debug.Log($"Assign for game object: {gameObject.name}");
+                foreach (Parallax parallax in parallaxArr)
+                {
+                    parallax.startCamPos = sceneData.GetImageStartPos(SceneManager.GetActiveScene().name);
+                    Debug.Log($"Assign for game object: {gameObject.name}");
+                }
             }
         }
     }
