@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,13 @@ namespace Knight.UI
 {
     public class MenuUI : MonoBehaviour
     {
+        private CanvasGroup canvasGroup;
+
+        private void Awake()
+        {
+            canvasGroup = GetComponent<CanvasGroup>();
+        }
+
         public void NewGame()
         {
             StartCoroutine(NewGameCoroutine());
@@ -15,11 +23,11 @@ namespace Knight.UI
         {
             SceneLoader.Instance.StartGame();
             GameSettings.Instance.StartGame();
+            canvasGroup.alpha = 0f;
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.2f);
             
             DataPersistenceManager.Instance.NewGame();
-            gameObject.SetActive(false);
         }
 
         public void LoadGame()
@@ -33,11 +41,11 @@ namespace Knight.UI
         {
             SceneLoader.Instance.StartGame();
             GameSettings.Instance.StartGame();
+            canvasGroup.alpha = 0f;
             
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(.2f);
             
             DataPersistenceManager.Instance.LoadGame();
-            gameObject.SetActive(false); //todo lerp menu
         }
     }
     
