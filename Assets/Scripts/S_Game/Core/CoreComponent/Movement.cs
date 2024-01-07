@@ -191,7 +191,6 @@ public class Movement : CoreComponent
         float startTime = Time.time;
         isDashAttacking = true;
         SetGravityScale(0);
-        
 
         while (Time.time - startTime <= data.dashData.dashAttackTime)
         {
@@ -200,13 +199,15 @@ public class Movement : CoreComponent
         }
 
         isDashAttacking = false;
-        
-        EndDash();
+
+        yield return EndDashCoroutine();
     }
 
-    public void EndDash()
+    public void CancelDash()
     {
-        StartCoroutine(EndDashCoroutine());
+        StopAllCoroutines();
+        isDashing = false;
+        isDashAttacking = false;
     }
 
     IEnumerator EndDashCoroutine()

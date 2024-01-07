@@ -37,6 +37,7 @@ public class DashState : AbilityState
 
     public override void Exit() 
     {
+        movement.CancelDash();
         combat.EnableCollider();
         lastActiveTime = Time.time;
         
@@ -48,7 +49,6 @@ public class DashState : AbilityState
         base.LogicsUpdate();
         if (player.inputManager.movementInput.x * movement.faceDirection.x == -1)
         {
-            movement.EndDash();
             if (collisionSenses.isGround)
             {
                 stateMachine.ChangeState(player.moveState);

@@ -27,9 +27,12 @@ public class JumpState : GroundState
 
     void Jump()
     {
+        movement.SetGravityScale(data.jumpData.gravityScale);
+        
         float force = data.jumpData.jumpForce;
         if (movement.GetVelocity().y < 0)
             force -= movement.GetVelocity().y;
+
         movement.AddForce(Vector2.up, force);
     }
 

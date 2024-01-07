@@ -151,6 +151,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         if (isGamePaused) return;
         stateMachine.Update();
+        Debug.Log(stateMachine.currentState);
     }
     
 
