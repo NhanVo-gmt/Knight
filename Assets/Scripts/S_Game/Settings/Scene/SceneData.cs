@@ -12,10 +12,23 @@ public class SceneData : ScriptableObject
     public class SceneSetting
     {
         public SceneLoaderEnum.Scene scene;
+        public Vector2 imageStartPos;
         public ExitData exit;
     }
-    
-    
+
+    public Vector2 GetImageStartPos(string scene)
+    {
+        foreach (SceneData.SceneSetting setting in sceneSettings)
+        {
+            if (scene.Equals(setting.scene.ToString()))
+            {
+                return setting.imageStartPos;
+            }
+        }
+
+        Debug.LogError($"Can't get image start pos: {scene}");
+        return Vector2.zero;
+    }
 
     public ExitData.ExitSettings GetExit(string scene, int id)
     {
@@ -27,7 +40,7 @@ public class SceneData : ScriptableObject
             }
         }
 
-        Debug.LogError($"Can't find the following scene {scene}");
+        Debug.LogError($"Can't find the following scene: {scene}");
         return null;
     }
 }

@@ -4,11 +4,11 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public static class AssignExit
+public static class SceneDesignMethods
 {
     private static readonly string SceneDataPath = "Assets/ScriptableObjects/Data/SO_Scene/SceneData.asset";
     
-    [MenuItem("Knight/Assigning Exit in scene")]
+    [MenuItem("Knight/Scene/Exit Assigning ")]
     static void AssigningExitInScene()
     {
         SceneData sceneData = LoadSceneData();
@@ -27,6 +27,7 @@ public static class AssignExit
         }
     }
 
+    
     static SceneData LoadSceneData()
     {
         SceneData data = (SceneData)AssetDatabase.LoadAssetAtPath(SceneDataPath, typeof(SceneData));
@@ -37,5 +38,22 @@ public static class AssignExit
 
         Debug.LogError($"There is no SceneData at path {SceneDataPath}. Please create one");
         return null;
+    }
+
+    [MenuItem("Knight/Scene/Parallax Assigning")]
+    static void AssigningStartPosForParallax()
+    {
+        SceneData sceneData = LoadSceneData();
+        if (sceneData == null) return;
+        
+        foreach (GameObject gameObject in GameObject.FindObjectsOfType<GameObject>(true))
+        {
+            if (gameObject.TryGetComponent<Parallax>(out Parallax parallax))
+            {
+                parallax.startCamPos = sceneData.GetImageStartPos(SceneManager.GetActiveScene().name);
+                
+                Debug.Log($"Assign for game object: {gameObject.name}");
+            }
+        }
     }
 }
