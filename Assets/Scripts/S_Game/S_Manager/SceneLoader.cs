@@ -141,7 +141,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
             currentScene = scene;
         else currentScene = SceneLoaderEnum.Scene.FarmScene;
         currentRegion = GetRegion(currentScene);
-        Debug.Log(currentScene);
+
         playerStartPos = gameData.playerPos;
         
         LoadFirstScene();

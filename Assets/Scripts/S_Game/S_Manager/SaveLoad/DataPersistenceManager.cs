@@ -15,11 +15,23 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
     private List<IDataPersistence> dataPersistenceObjects;
     private FileDataHandler fileDataHandler;
 
+    [SerializeField] private bool canSaveGame = false;
+
     protected override void Awake()
     {
         base.Awake();
         fileDataHandler = new FileDataHandler(Application.persistentDataPath, fileName);
         FindAllDataPersistenceObjects();
+    }
+
+    private void Start()
+    {
+        SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
+    }
+
+    private void SceneLoader_OnScenePlay(object sender, EventArgs e)
+    {
+        canSaveGame = true;
     }
 
 
@@ -56,7 +68,7 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
             Debug.Log("No data was found. Please choose new game.");
             return;
         }
-
+        
         // push the loaded data to all other scripts
         foreach (IDataPersistence dataPersistence in dataPersistenceObjects)
         {
@@ -66,6 +78,8 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     public void SaveGame()
     {
+        if (!canSaveGame) return;
+        
         Debug.Log("Save Game");
         
         // Pass data to other scripts so they can update

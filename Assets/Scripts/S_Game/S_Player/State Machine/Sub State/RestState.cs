@@ -22,6 +22,11 @@ public class RestState : GroundState
         {
             movement.MoveToPos(interactionController.restPos, restLerpTime);
         }
+        else
+        {
+            movement.SetVelocityZero();
+            movement.SetGravityZero();
+        }
         
         lastElapsedTime = restLerpTime;
     }

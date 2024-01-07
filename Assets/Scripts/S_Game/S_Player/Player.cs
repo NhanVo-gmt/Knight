@@ -93,6 +93,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         inputManager.SetActive(true);
         rb.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
+
+        if (stateMachine.currentState == restState) return;
         movement.SetGravityScale(data.jumpData.gravityScale);
     }
 
@@ -151,7 +153,6 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         if (isGamePaused) return;
         stateMachine.Update();
-        Debug.Log(stateMachine.currentState);
     }
     
 
@@ -254,6 +255,5 @@ public class Player : SingletonObject<Player>, IDataPersistence
     public void SaveData(ref GameData gameData)
     {
         gameData.playerPos = transform.position;
-        gameData.playerState = stateMachine.currentState.ToString();
     }
 }
