@@ -8,6 +8,16 @@ namespace Knight.UI
     {
         public void NewGame()
         {
+            StartCoroutine(NewGameCoroutine());
+        }
+
+        IEnumerator NewGameCoroutine()
+        {
+            SceneLoader.Instance.StartGame();
+            GameSettings.Instance.StartGame();
+            
+            yield return new WaitForSeconds(1f);
+            
             DataPersistenceManager.Instance.NewGame();
             gameObject.SetActive(false);
         }
@@ -15,6 +25,16 @@ namespace Knight.UI
         public void LoadGame()
         {
             if (!DataPersistenceManager.Instance.HasGameData()) return;
+
+            StartCoroutine(LoadGameCoroutine());
+        }
+        
+        IEnumerator LoadGameCoroutine()
+        {
+            SceneLoader.Instance.StartGame();
+            GameSettings.Instance.StartGame();
+            
+            yield return new WaitForSeconds(1f);
             
             DataPersistenceManager.Instance.LoadGame();
             gameObject.SetActive(false); //todo lerp menu

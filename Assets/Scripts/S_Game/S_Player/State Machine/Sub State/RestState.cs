@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RestState : GroundState
 {
-    private float restLerpTime = .2f;
+    private readonly float restLerpTime = .2f;
     private float lastElapsedTime = 0f;
     
     public RestState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)

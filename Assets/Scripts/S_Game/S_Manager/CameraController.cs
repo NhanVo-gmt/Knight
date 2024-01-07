@@ -59,7 +59,7 @@ namespace Knight.Camera
 
             for (int i = 0; i < virtualCameras.Length; i++)
             {
-                if (virtualCameras[i].cam.enabled)
+                if (virtualCameras[i].camType == CameraClass.CameraType.CenterPlayer)
                 {
                     currentCamera = virtualCameras[i].cam;
                     framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
@@ -81,11 +81,24 @@ namespace Knight.Camera
             volume.profile.TryGet(out bloom);
         }
 
-        void Start() {
-            
+        void Start()
+        {
+
+            SceneLoader.Instance.OnFirstStartGame += SceneLoader_OnFirstStartGame;
             SceneLoader.Instance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
             SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
             SceneLoader.Instance.OnSceneReadyToPlay += SceneLoader_OnSceneReadyToPlay;
+        }
+        
+        private void SceneLoader_OnFirstStartGame(object sender, EventArgs e)
+        {
+            for (int i = 0; i < virtualCameras.Length; i++)
+            {
+                if (virtualCameras[i].camType == CameraClass.CameraType.CenterPlayer)
+                {
+                    virtualCameras[i].cam.enabled = true;
+                }
+            }
         }
 
         #region Confiner

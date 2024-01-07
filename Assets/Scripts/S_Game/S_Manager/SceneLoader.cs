@@ -52,16 +52,17 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
     public void StartGame()
     {
-        StartCoroutine(StartGameCoroutine(currentScene));
+        OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
     }
 
-    IEnumerator StartGameCoroutine(SceneLoaderEnum.Scene scene)
+    public void LoadFirstScene()
     {
-        OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
+        StartCoroutine(LoadFirstSceneCoroutine(currentScene));
+    }
 
-        yield return new WaitForSeconds(1f);
+    IEnumerator LoadFirstSceneCoroutine(SceneLoaderEnum.Scene scene)
+    {
         
-        GameSettings.Instance.StartGame();
         OnFirstStartGame?.Invoke(this, EventArgs.Empty);
 
         yield return new WaitForSeconds(1f);
@@ -140,10 +141,10 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
             currentScene = scene;
         else currentScene = SceneLoaderEnum.Scene.FarmScene;
         currentRegion = GetRegion(currentScene);
-
+        Debug.Log(currentScene);
         playerStartPos = gameData.playerPos;
         
-        StartGame();
+        LoadFirstScene();
     }
 
     public void SaveData(ref GameData data)
