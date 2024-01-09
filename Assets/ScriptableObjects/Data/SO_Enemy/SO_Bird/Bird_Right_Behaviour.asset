@@ -342,6 +342,7 @@ MonoBehaviour:
   - {fileID: 8533415439079423720}
   - {fileID: 4759852853773665105}
   - {fileID: -8134592149489676210}
+  - {fileID: 4956442852732119020}
   offset: {x: 300, y: 0}
 --- !u!114 &1097251744859659599
 MonoBehaviour:
@@ -379,7 +380,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4050143bff42afc43858c2d27a9fb3ad
-    position: {x: 1304.8885, y: 570}
+    position: {x: 1258, y: 542}
     description: 
   children:
   - {fileID: -4784724178239944971}
@@ -406,6 +407,25 @@ MonoBehaviour:
   children:
   - {fileID: -8134592149489676210}
   - {fileID: -6742680835363187829}
+--- !u!114 &4956442852732119020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfbe1ee2bfd05a0428198982df7df66e, type: 3}
+  m_Name: GameObjectNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 8c2ffb20e473671408b6eb9e5f59b613
+    position: {x: 1541.24, y: 510}
+    description: 
+  isActive: 0
 --- !u!114 &5255512716884308351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -427,6 +447,7 @@ MonoBehaviour:
   children:
   - {fileID: -6978983311898258789}
   - {fileID: 4713541579339488842}
+  - {fileID: 4956442852732119020}
 --- !u!114 &6582034677143276226
 MonoBehaviour:
   m_ObjectHideFlags: 0
