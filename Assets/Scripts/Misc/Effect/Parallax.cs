@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Parallax : MonoBehaviour
 {
-    [SerializeField] float parralaxEffect;
+    public float parralaxEffect;
     public Vector2 startCamPos;
     private Vector2 startPos;
 

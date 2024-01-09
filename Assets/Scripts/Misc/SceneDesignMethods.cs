@@ -41,7 +41,7 @@ public static class SceneDesignMethods
     }
 
     [MenuItem("Knight/Scene/Parallax Assigning")]
-    static void AssigningStartPosForParallax()
+    static void AutoAssigningParallax()
     {
         SceneData sceneData = LoadSceneData();
         if (sceneData == null) return;
@@ -53,9 +53,38 @@ public static class SceneDesignMethods
             {
                 foreach (Parallax parallax in parallaxArr)
                 {
-                    parallax.startCamPos = sceneData.GetImageStartPos(SceneManager.GetActiveScene().name);
+                    
+                    AssigningValue(parallax);
+                    AssigningStartPos(parallax, sceneData);
+                    
                     Debug.Log($"Assign for game object: {gameObject.name}");
                 }
+            }
+        }
+    }
+
+    static void AssigningStartPos(Parallax parallax, SceneData sceneData)
+    {
+        parallax.startCamPos = sceneData.GetImageStartPos(SceneManager.GetActiveScene().name);
+    }
+
+    private static Dictionary<string, float> parallaxNameDictionary = new Dictionary<string, float>()
+    {
+        {"Front", .7f},
+        {"Mid", .75f},
+        {"Back", .8f},
+        {"Backback", .85f},
+        {"Last", 0.9f},
+        {"Sky", 1},
+    };
+
+    static void AssigningValue(Parallax parallax)
+    {
+        foreach (string key in parallaxNameDictionary.Keys)
+        {
+            if (parallax.gameObject.name.Equals(key))
+            {
+                parallax.parralaxEffect = parallaxNameDictionary[key];
             }
         }
     }

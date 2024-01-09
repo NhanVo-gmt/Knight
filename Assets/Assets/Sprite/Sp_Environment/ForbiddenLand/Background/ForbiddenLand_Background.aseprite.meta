@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638400012057446161
+  platformSettingsDirtyTick: 638404173713563668
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -130,7 +130,7 @@ ScriptedImporter:
       y: 4
       width: 500
       height: 170
-    spriteID: d4084fcf5a3b1f441b05905a4050f150
+    spriteID: 4cbadb919dd42bf42907ae7e4076bd5e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -150,7 +150,7 @@ ScriptedImporter:
       y: 182
       width: 500
       height: 170
-    spriteID: 7ef72d9de42ea0448b320c872b4ab8b6
+    spriteID: 614d0e669b3123d488ad4d5cb3b6b3ca
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -170,7 +170,7 @@ ScriptedImporter:
       y: 705
       width: 500
       height: 83
-    spriteID: 0f4109df78349564896a7b4e1194de0c
+    spriteID: 1f0e2e4826ea8744496ef9b6595040ab
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -187,10 +187,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 497
-      y: 874
+      y: 796
       width: 500
       height: 51
-    spriteID: 58c9d2b1020e83f4abe658e5329c0479
+    spriteID: 754f24ce589e5ea4eae95626163203ca
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 497, y: 874}
+    uvTransform: {x: 497, y: 796}
   - name: BackBackTree
     originalName: 
     pivot: {x: 0.5, y: 0}
@@ -210,7 +210,7 @@ ScriptedImporter:
       y: 360
       width: 500
       height: 170
-    spriteID: 44bd86da66f1ff948bbd657265ec4072
+    spriteID: 07912b5a617a8bb47bc305ad9415e40e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -219,6 +219,26 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 497, y: 360}
+  - name: BackTree
+    originalName: 
+    pivot: {x: 5.03125, y: -0.6666667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 915
+      y: 538
+      width: 32
+      height: 42
+    spriteID: 3afe7312232171e488288e4fcbfd1471
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 915, y: 538}
   - name: Background
     originalName: 
     pivot: {x: 0.5, y: 0}
@@ -227,30 +247,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 497
-      y: 933
-      width: 350
-      height: 49
-    spriteID: 039a32ad235904644a3f58183bfe49f4
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 497, y: 933}
-  - name: BackTree
-    originalName: 
-    pivot: {x: 0.5, y: 0}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 497
-      y: 796
+      y: 855
       width: 500
-      height: 70
-    spriteID: bff971de08f6a2b478069962cd617aad
+      height: 49
+    spriteID: 1225b07de2ba390468cbe9129875962a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -258,19 +258,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 497, y: 796}
+    uvTransform: {x: 497, y: 855}
   - name: MidGround
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.71428573, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 497
-      y: 1102
+      x: 4
+      y: 190
       width: 350
       height: 30
-    spriteID: ee2abb5c0998a4a4d8ea555ca68a9bd5
+    spriteID: 11f0ffdce2840a144a50bf57c7fee879
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -278,7 +278,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 497, y: 1102}
+    uvTransform: {x: 4, y: 190}
   - name: MidTree
     originalName: 
     pivot: {x: 0.39024392, y: 0}
@@ -290,7 +290,7 @@ ScriptedImporter:
       y: 538
       width: 410
       height: 159
-    spriteID: 2c68000a8e2bc39429fe6b20b4204acf
+    spriteID: 3f7ea86954a05f44bafbb28acafafe68
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -310,7 +310,7 @@ ScriptedImporter:
       y: 4
       width: 485
       height: 178
-    spriteID: 582ea47979eb64143bd34c97f81975ec
+    spriteID: 57356194ad009ba4280057a25050cfe2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -327,10 +327,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 497
-      y: 1033
+      y: 955
       width: 500
       height: 30
-    spriteID: 0e11431c73afe8341b02c8b42e6eb250
+    spriteID: c0a57f6ea24648948be60a68996b60e4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -338,7 +338,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 497, y: 1033}
+    uvTransform: {x: 497, y: 955}
   - name: FrontBush
     originalName: 
     pivot: {x: 0.5, y: -0.30434784}
@@ -347,10 +347,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 497
-      y: 1071
+      y: 993
       width: 500
       height: 23
-    spriteID: 9eee74feeb5955d4c819f01c97923b91
+    spriteID: 189d0ea78e6e22142917f90c12ff1306
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -358,7 +358,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 497, y: 1071}
+    uvTransform: {x: 497, y: 993}
   - name: FrontFlower
     originalName: 
     pivot: {x: 0.5399568, y: -0.31428573}
@@ -367,10 +367,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 497
-      y: 990
+      y: 912
       width: 463
       height: 35
-    spriteID: c31d561d2f35ba348a5ad8dbe1deb60d
+    spriteID: 0f275ae62aca28f42a774f7b89a0e131
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -378,9 +378,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 497, y: 990}
+    uvTransform: {x: 497, y: 912}
   spriteSheetImportData: []
   asepriteLayers:
+  - layerIndex: 7
+    guid: -718866204
+    name: Back
+    layerFlags: 35
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
   - layerIndex: 0
     guid: -312994415
     name: Sky
@@ -395,7 +404,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 170
-      spriteId: d4084fcf5a3b1f441b05905a4050f150
+      spriteId: 4cbadb919dd42bf42907ae7e4076bd5e
     linkedCells: []
     parentIndex: -1
   - layerIndex: 1
@@ -421,7 +430,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 170
-      spriteId: 7ef72d9de42ea0448b320c872b4ab8b6
+      spriteId: 614d0e669b3123d488ad4d5cb3b6b3ca
     linkedCells: []
     parentIndex: 1
   - layerIndex: 3
@@ -438,7 +447,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 83
-      spriteId: 0f4109df78349564896a7b4e1194de0c
+      spriteId: 1f0e2e4826ea8744496ef9b6595040ab
     linkedCells: []
     parentIndex: 1
   - layerIndex: 4
@@ -464,7 +473,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 51
-      spriteId: 58c9d2b1020e83f4abe658e5329c0479
+      spriteId: 754f24ce589e5ea4eae95626163203ca
     linkedCells: []
     parentIndex: 4
   - layerIndex: 6
@@ -481,20 +490,28 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 170
-      spriteId: 44bd86da66f1ff948bbd657265ec4072
+      spriteId: 07912b5a617a8bb47bc305ad9415e40e
     linkedCells: []
     parentIndex: 4
-  - layerIndex: 7
-    guid: -718866204
-    name: Back
-    layerFlags: 35
-    layerType: 1
-    blendMode: 0
-    cells: []
-    linkedCells: []
-    parentIndex: -1
   - layerIndex: 8
-    guid: -1021688242
+    guid: 438405377
+    name: BackTree
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BackTree
+      frameIndex: 0
+      cellRect:
+        x: 89
+        y: 28
+        width: 32
+        height: 42
+      spriteId: 3afe7312232171e488288e4fcbfd1471
+    linkedCells: []
+    parentIndex: 7
+  - layerIndex: 9
+    guid: -1021688241
     name: Background
     layerFlags: 3
     layerType: 0
@@ -505,26 +522,9 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 350
-        height: 49
-      spriteId: 039a32ad235904644a3f58183bfe49f4
-    linkedCells: []
-    parentIndex: 7
-  - layerIndex: 9
-    guid: 438405376
-    name: BackTree
-    layerFlags: 3
-    layerType: 0
-    blendMode: 0
-    cells:
-    - name: BackTree
-      frameIndex: 0
-      cellRect:
-        x: 0
-        y: 0
         width: 500
-        height: 70
-      spriteId: bff971de08f6a2b478069962cd617aad
+        height: 49
+      spriteId: 1225b07de2ba390468cbe9129875962a
     linkedCells: []
     parentIndex: 7
   - layerIndex: 10
@@ -550,7 +550,7 @@ ScriptedImporter:
         y: 0
         width: 350
         height: 30
-      spriteId: ee2abb5c0998a4a4d8ea555ca68a9bd5
+      spriteId: 11f0ffdce2840a144a50bf57c7fee879
     linkedCells: []
     parentIndex: 10
   - layerIndex: 12
@@ -567,13 +567,13 @@ ScriptedImporter:
         y: 0
         width: 410
         height: 159
-      spriteId: 2c68000a8e2bc39429fe6b20b4204acf
+      spriteId: 3f7ea86954a05f44bafbb28acafafe68
     linkedCells: []
     parentIndex: 10
   - layerIndex: 13
     guid: -713259652
     name: Front
-    layerFlags: 3
+    layerFlags: 35
     layerType: 1
     blendMode: 0
     cells: []
@@ -593,7 +593,7 @@ ScriptedImporter:
         y: -19
         width: 485
         height: 178
-      spriteId: 582ea47979eb64143bd34c97f81975ec
+      spriteId: 57356194ad009ba4280057a25050cfe2
     linkedCells: []
     parentIndex: 13
   - layerIndex: 15
@@ -610,7 +610,7 @@ ScriptedImporter:
         y: 0
         width: 500
         height: 30
-      spriteId: 0e11431c73afe8341b02c8b42e6eb250
+      spriteId: c0a57f6ea24648948be60a68996b60e4
     linkedCells: []
     parentIndex: 13
   - layerIndex: 16
@@ -627,7 +627,7 @@ ScriptedImporter:
         y: 7
         width: 500
         height: 23
-      spriteId: 9eee74feeb5955d4c819f01c97923b91
+      spriteId: 189d0ea78e6e22142917f90c12ff1306
     linkedCells: []
     parentIndex: 13
   - layerIndex: 17
@@ -644,7 +644,7 @@ ScriptedImporter:
         y: 11
         width: 463
         height: 35
-      spriteId: c31d561d2f35ba348a5ad8dbe1deb60d
+      spriteId: 0f275ae62aca28f42a774f7b89a0e131
     linkedCells: []
     parentIndex: 13
   platformSettings:
@@ -673,6 +673,18 @@ ScriptedImporter:
     allowsAlphaSplitting: 0
     androidETC2FallbackOverride: 0
   - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
     overridden: 0
     ignorePlatformSupport: 0
     maxTextureSize: 2048
