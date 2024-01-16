@@ -84,6 +84,7 @@ public class BehaviourTreeGraphView : GraphView
 
     private void PasteOperation(string operationName, string data)
     {
+        ClearSelection();
         List<Node> pastedNode = tree.PasteNode(nodeCopiedList);
         pastedNode.ForEach(node => CreateNodeView(node));
         pastedNode.ForEach(node => CreateEdge(node));
@@ -202,13 +203,12 @@ public class BehaviourTreeGraphView : GraphView
         }
     }
 
-    
-
     private void CreateNodeView(Node node)
     {
         NodeView nodeView = new NodeView(node);
         nodeView.onSelectedChanged = onNodeViewSelectionChanged;
         AddElement(nodeView);
+        nodeView.Select(this, true);
     }
 
     private void CreateEdge(Node parent)
