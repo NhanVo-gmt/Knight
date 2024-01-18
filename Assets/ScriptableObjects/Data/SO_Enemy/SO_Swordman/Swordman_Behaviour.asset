@@ -16,7 +16,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4a6c02d5f6c4fbb40a2d9fc2c598596b
-    position: {x: -473.6414, y: 620.1915}
+    position: {x: -480.08374, y: 621.2311}
     description: 
   clipName: Move
   clipNameIndex: 1
@@ -36,7 +36,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: b381e16b19d0f9740bcd0a41cc28e059
-    position: {x: 366, y: 110.14513}
+    position: {x: 651.6127, y: 77.81833}
     description: 
   child: {fileID: 6268569449364434779}
 --- !u!114 &-2886896763517979471
@@ -55,7 +55,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: a797f669e5b942e4783a93252797d8a6
-    position: {x: 365.9999, y: 0.48146057}
+    position: {x: 651.6127, y: -32.181694}
     description: 
   child: {fileID: -6742680835363187829}
 --- !u!114 &-2768330658777873787
@@ -74,10 +74,52 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: ddf451b9401ad204cbec5a26f03eaaba
-    position: {x: 97.999954, y: 624.02264}
+    position: {x: 91.9162, y: 625.2311}
     description: 
   clipName: Move
   clipNameIndex: 1
+--- !u!114 &-2569019614002215591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff88d7429b3c04b88d08008781ba17, type: 3}
+  m_Name: CheckPlayerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 9d146f192116cc444b561f09951ea0f5
+    position: {x: 672.0112, y: 494.99994}
+    description: 
+  checkPos: {x: -6, y: 1}
+  radius: 5
+--- !u!114 &-2152177441170500584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: f2e037dfc13c6b54f8ff33392a4f4f4c
+    position: {x: 990.99994, y: 495}
+    description: 
+  children:
+  - {fileID: 3492896918508290720}
+  - {fileID: 130677892045489296}
+  successType: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -108,7 +150,38 @@ MonoBehaviour:
   - {fileID: 5650664643418163064}
   - {fileID: -2768330658777873787}
   - {fileID: 2702309313316615648}
+  - {fileID: 7760206910047663043}
+  - {fileID: -2569019614002215591}
+  - {fileID: 130677892045489296}
+  - {fileID: 3492896918508290720}
+  - {fileID: -2152177441170500584}
   offset: {x: 300, y: 0}
+--- !u!114 &130677892045489296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d2c9d42fcb7024b974c393fc46f215, type: 3}
+  m_Name: MoveNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 24dda4bb3a7e622468e8c88b3891fdfd
+    position: {x: 1141.1326, y: 616.7125}
+    description: 
+  speed: 3
+  canFly: 0
+  movePosition: 2
+  movePos: {x: 6, y: 1}
+  radius: 0
+  moveType: 2
+  moveTime: 0
+  moveVector: {x: 0, y: 0}
 --- !u!114 &175736144619749345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,8 +198,8 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: bdd31b37f82d1294baee7e37914d5e9a
-    position: {x: -398.6414, y: 366.19153}
-    description: 
+    position: {x: -405.08368, y: 367.23108}
+    description: Patrol Sequence
   children:
   - {fileID: 382483470962243157}
   - {fileID: 4279327163997402406}
@@ -149,7 +222,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 62ad9841b5c2b51498ee38322a560589
-    position: {x: -900.6414, y: 498.1915}
+    position: {x: -907.0837, y: 499.23108}
     description: 
   child: {fileID: 7300237956029237319}
 --- !u!114 &782753904893326275
@@ -168,7 +241,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e3bc0089f19b46b4bb7926f9a1113655
-    position: {x: -230.64136, y: 498.1915}
+    position: {x: -237.08377, y: 499.23108}
     description: 
   children:
   - {fileID: 6731554434699031491}
@@ -190,12 +263,32 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: eba79029cf5de924783e0b5e3661d36e
-    position: {x: 140.99995, y: 502.0227}
+    position: {x: 134.91629, y: 503.23114}
     description: 
   children:
   - {fileID: -2768330658777873787}
   - {fileID: 5650664643418163064}
   successType: 1
+--- !u!114 &3492896918508290720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: f4575afd7b1f1314f8470cc0aaa6b604
+    position: {x: 948.13257, y: 616.7125}
+    description: 
+  clipName: Move
+  clipNameIndex: 1
 --- !u!114 &4279327163997402406
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,7 +305,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3fc4bf76e62b2da4eb0e9e1280bd28d4
-    position: {x: -623.64136, y: 498.1915}
+    position: {x: -630.08374, y: 499.23108}
     description: 
   children:
   - {fileID: 5445853688779170052}
@@ -234,7 +327,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 0944b86c86fd05a4689bd95e3fc53a44
-    position: {x: -657.6414, y: 620.1915}
+    position: {x: -664.08374, y: 621.2311}
     description: 
   speed: 3
   canFly: 0
@@ -260,7 +353,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: cdc60b8cfc520b646a028f976e5c747f
-    position: {x: 291.00003, y: 623.9999}
+    position: {x: 284.9162, y: 625.2311}
     description: 
   speed: 3
   canFly: 0
@@ -286,10 +379,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 8fa7ddfe4372eaf419a4c6dc7e34887c
-    position: {x: 366, y: 229.14513}
+    position: {x: 651.6127, y: 196.81831}
     description: 
   children:
   - {fileID: 175736144619749345}
+  - {fileID: 7760206910047663043}
   currentIndex: -1
 --- !u!114 &6419217143477543035
 MonoBehaviour:
@@ -307,7 +401,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: da18d098dc55cc449a874fbb935c2657
-    position: {x: -113.64136, y: 620.1915}
+    position: {x: -120.083755, y: 621.2311}
     description: 
   clipName: Idle
   clipNameIndex: 2
@@ -327,7 +421,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: c65e6ab44cac35f42a08e9369b3a2e3d
-    position: {x: -305.64136, y: 620.1915}
+    position: {x: -312.08374, y: 621.2311}
     description: 
   idleTime: 2
 --- !u!114 &7300237956029237319
@@ -346,7 +440,29 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 737512a262ff6da43855c53d60246bcf
-    position: {x: -900.9999, y: 620}
+    position: {x: -907.0837, y: 621.2311}
     description: 
   checkPos: {x: -6, y: 1}
   radius: 5
+--- !u!114 &7760206910047663043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
+  m_Name: DepSequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: c2c8905069c62a744aa7c0bb4d6ddeaa
+    position: {x: 841.13257, y: 347.7125}
+    description: Go To Player
+  children:
+  - {fileID: -2569019614002215591}
+  - {fileID: -2152177441170500584}
+  currentIndex: -1

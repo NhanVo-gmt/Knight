@@ -149,6 +149,8 @@ public class MoveNode : ActionNode
     {
         destination = treeComponent.player.transform.position;
         direction = (destination - (Vector2)treeComponent.transform.position).normalized;
+        if (!canFly) direction.y = 0;
+        
         if (movePosition == MovePosition.AwayFromPlayer) direction = -direction;
     }
 
