@@ -1,10 +1,9 @@
 using System;
 using UnityEditor;
 using UnityEngine;
-[CustomEditor(typeof(MoveNode))]
-public class MoveNodeEditor : Editor
+[CustomEditor(typeof(MoveNode), true)]
+public class MoveNodeEditor : ActionNodeEditor
 {
-    private SerializedProperty nodeProperty;
     private SerializedProperty speedProperty;
     private SerializedProperty canFlyProperty;
     
@@ -18,14 +17,16 @@ public class MoveNodeEditor : Editor
 
     private MoveNode moveNode;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         moveNode = (MoveNode)target;
     }
 
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        nodeProperty = serializedObject.FindProperty("NodeComponent");
+        base.OnEnable();
+        
         speedProperty = serializedObject.FindProperty("speed");
         canFlyProperty = serializedObject.FindProperty("canFly");
         movePositionProperty = serializedObject.FindProperty("movePosition");
@@ -38,9 +39,9 @@ public class MoveNodeEditor : Editor
 
     public override void OnInspectorGUI()
     {
+        base.OnInspectorGUI();
+        
         serializedObject.Update();
-        using (new EditorGUI.DisabledScope(true))
-            EditorGUILayout.ObjectField("Script:", MonoScript.FromScriptableObject((MoveNode)target), typeof(MoveNode), false);        EditorGUILayout.PropertyField(nodeProperty);
         EditorGUILayout.PropertyField(speedProperty);
         EditorGUILayout.PropertyField(canFlyProperty);
         

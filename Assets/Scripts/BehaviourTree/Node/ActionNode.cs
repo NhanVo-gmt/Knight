@@ -13,7 +13,6 @@ public abstract class ActionNode : Node
     protected CollisionChecker collisionChecker { get => _collisionChecker ??= treeComponent.core.GetCoreComponent<CollisionChecker>(); }
     private CollisionChecker _collisionChecker;
 
-
     public override void OnInitialize(BehaviourTreeComponent component)
     {
         base.OnInitialize(component);
