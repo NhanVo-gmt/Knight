@@ -47,6 +47,20 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         return treeState;
     }
 
+    #region Global Variable
+
+    public string[] VariableNames = new []
+    {
+        ""
+    };
+
+    public float[] VariableValues = new[]
+    {
+        0.0f
+    };
+
+    #endregion
+
 #if UNITY_EDITOR
     public Node CreateNode(System.Type type) 
     {

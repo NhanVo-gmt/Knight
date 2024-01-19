@@ -14,7 +14,7 @@ public partial class CustomEditorScriptTemplate
     private static List<string> PUBLIC_VARIABLES = new List<string>();
     private static List<string> VARIABLE_TYPES = new List<string>(){"bool", "int", "string", "float", "Vector2", "Vector3"};
     
-    [MenuItem("Knight/Custom Editor/Generate Node Template")]
+    [MenuItem("Knight/Custom Editor/Generate Node Editor Template")]
     public static void GenerateNodeCustomEditorScript()
     {
         if (Selection.activeObject != null)

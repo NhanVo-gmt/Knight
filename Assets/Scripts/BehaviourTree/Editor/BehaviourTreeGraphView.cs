@@ -135,6 +135,8 @@ public class BehaviourTreeGraphView : GraphView
         tree.nodes.ForEach(n => CreateEdge(n));
 
         InitializeSearchWindow(editorWindow);
+        
+        ClearSelection();
     }
 
     private void DeleteOpeningElements()

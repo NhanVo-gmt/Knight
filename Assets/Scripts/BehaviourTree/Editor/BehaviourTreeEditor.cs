@@ -4,12 +4,15 @@ using UnityEngine.UIElements;
 using UnityEditor.UIElements;
 using UnityEditor.Callbacks;
 using System;
+using System.Collections.Generic;
 
 public class BehaviourTreeEditor : EditorWindow
 {
     BehaviourTreeGraphView treeGraphView;
     InspectorView inspectorView;
     [NonSerialized] NodeView selectedNodeView;
+
+    private ToolbarMenu toolbarMenu;
     
     [MenuItem("Knight/BehaviourTreeEditor")]
     public static void OpenWindow()
@@ -49,10 +52,42 @@ public class BehaviourTreeEditor : EditorWindow
 
         treeGraphView = root.Q<BehaviourTreeGraphView>();
         inspectorView = root.Q<InspectorView>();
+        
+        toolbarMenu = root.Q<ToolbarMenu>();
+        AddActionToToolBar();
+        
         treeGraphView.onNodeViewSelectionChanged = OnNodeSelectionChange;
         
         OnSelectionChange();
     }
+
+    public void AddActionToToolBar()
+    {
+        if (toolbarMenu == null) return;
+
+        var behaviourTrees = LoadAssets<BehaviourTree>();
+        behaviourTrees.ForEach(tree =>
+        {
+            toolbarMenu.menu.AppendAction($"{tree.name}", (a) =>
+            {
+                Selection.activeObject = tree;
+            });
+        });
+    }
+
+    List<T> LoadAssets<T>() where T : UnityEngine.Object
+    {
+        string[] assetsIds = AssetDatabase.FindAssets($"t:{typeof(T).Name}");
+        List<T> assets = new List<T>();
+        foreach (var assetId in assetsIds)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(assetId);
+            T asset = AssetDatabase.LoadAssetAtPath<T>(path);
+            assets.Add(asset);
+        }
+
+        return assets;
+    } 
 
     private void OnEnable() {
         EditorApplication.playModeStateChanged -= OnPlayModeStateChange;
