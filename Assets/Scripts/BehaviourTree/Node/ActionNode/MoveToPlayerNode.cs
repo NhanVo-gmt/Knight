@@ -25,6 +25,9 @@ public class MoveToPlayerNode : ActionNode
         {
             canFly = node.canFly;
             speed = node.speed;
+            type = node.type;
+            minDis = node.minDis;
+            maxDis = node.maxDis;
         }
     }
     

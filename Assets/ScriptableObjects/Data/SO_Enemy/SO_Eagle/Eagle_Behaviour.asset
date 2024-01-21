@@ -121,6 +121,8 @@ MonoBehaviour:
   type: 0
   canFly: 1
   speed: 10
+  minDis: 0.5
+  maxDis: 10
 --- !u!114 &-6745893013543870922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,6 +433,8 @@ MonoBehaviour:
   type: 1
   canFly: 1
   speed: 4
+  minDis: 0.5
+  maxDis: 10
 --- !u!114 &2329106932448188102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,6 +585,8 @@ MonoBehaviour:
   type: 0
   canFly: 1
   speed: 3
+  minDis: 0.1
+  maxDis: 10
 --- !u!114 &8607567782058937115
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -32,6 +32,7 @@ public class MoveRandomNode : ActionNode
             height = node.height;
             width = node.width;
             radius = node.radius;
+            speed = node.speed;
         }
     }
     

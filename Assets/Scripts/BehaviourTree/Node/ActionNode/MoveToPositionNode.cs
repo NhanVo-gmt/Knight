@@ -25,6 +25,8 @@ public class MoveToPositionNode : ActionNode
         {
             type = node.type;
             movePos = node.movePos;
+            canFly = node.canFly;
+            speed = node.speed;
         }
     }
     
