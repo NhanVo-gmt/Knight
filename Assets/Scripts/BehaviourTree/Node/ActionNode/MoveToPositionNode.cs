@@ -49,7 +49,7 @@ public class MoveToPositionNode : ActionNode
             destination = movePos;
         }
 
-        direction = destination - startPos;
+        direction = destination - (Vector2)treeComponent.transform.position;
         if (!canFly) direction.y = 0;
         direction = direction.normalized;
     }

@@ -75,6 +75,7 @@ public class MoveToPlayerNode : ActionNode
         }
         else if (type == MoveToPlayerType.AwayPlayer)
         {
+            Debug.Log(Vector2.Distance(destination, treeComponent.transform.position));
             return Vector2.Distance(destination, treeComponent.transform.position) > maxDis;
         }
 
