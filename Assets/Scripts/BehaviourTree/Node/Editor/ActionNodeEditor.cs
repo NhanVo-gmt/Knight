@@ -1,7 +1,7 @@
 using System;
 using UnityEditor;
 using UnityEngine;
-[CustomEditor(typeof(ActionNode), true)]
+[CustomEditor(typeof(ActionNode), false)]
 public class ActionNodeEditor : Editor
 {
     private SerializedProperty nodeProperty;
@@ -31,5 +31,4 @@ public class ActionNodeEditor : Editor
         serializedObject.ApplyModifiedProperties();
     }
 
-    
 }

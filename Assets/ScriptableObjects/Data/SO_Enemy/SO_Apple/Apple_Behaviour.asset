@@ -22,32 +22,6 @@ MonoBehaviour:
   - {fileID: 8616354086427601901}
   - {fileID: 6148885114738819281}
   successType: 1
---- !u!114 &-7334015473047253504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d2c9d42fcb7024b974c393fc46f215, type: 3}
-  m_Name: MoveNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: d1c312b753f4dfb4c8924c197be96a7c
-    position: {x: -560.79987, y: 539.2}
-    description: 
-  speed: 1.5
-  canFly: 0
-  movePosition: 0
-  movePos: {x: -5.13, y: 0}
-  radius: 0
-  moveType: 0
-  moveTime: 0
-  moveVector: {x: 0, y: 0}
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,7 +122,7 @@ MonoBehaviour:
   children:
   - {fileID: 6094726313097409711}
   - {fileID: -4615606005182111340}
-  - {fileID: 993027339206116095}
+  - {fileID: 8173498811195559596}
   - {fileID: -7675888691370379863}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -166,8 +140,6 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: -2886896763517979471}
-  - {fileID: -7334015473047253504}
-  - {fileID: 993027339206116095}
   - {fileID: -1780146597622572514}
   - {fileID: -6742680835363187829}
   - {fileID: 3097413825085117369}
@@ -178,8 +150,10 @@ MonoBehaviour:
   - {fileID: 8616354086427601901}
   - {fileID: -7675888691370379863}
   - {fileID: 6148885114738819281}
+  - {fileID: 2530997463642008160}
+  - {fileID: 8173498811195559596}
   offset: {x: 300, y: 0}
---- !u!114 &993027339206116095
+--- !u!114 &2530997463642008160
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,23 +162,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d2c9d42fcb7024b974c393fc46f215, type: 3}
-  m_Name: MoveNode
+  m_Script: {fileID: 11500000, guid: 5ee0e450ff6a53d41b313d8e9473446b, type: 3}
+  m_Name: MoveToPositionNode
   m_EditorClassIdentifier: 
   NodeComponent:
     state: 0
     started: 0
-    guid: b96868dad7a3acc4d871c69b8be80e85
-    position: {x: 252.41101, y: 544.8}
+    guid: ac395eed4140a0f4ea7949e027a95ad5
+    position: {x: -643.2, y: 544.7999}
     description: 
-  speed: 1.5
+  type: 0
   canFly: 0
-  movePosition: 0
-  movePos: {x: 5.69, y: 0}
-  radius: 0
-  moveType: 0
-  moveTime: 0
-  moveVector: {x: 0, y: 0}
+  movePos: {x: -3, y: 0}
+  speed: 0.5
 --- !u!114 &3097413825085117369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,7 +195,7 @@ MonoBehaviour:
     description: 'Move
 
 '
-  clipName: Move
+  clipName: 
   clipNameIndex: 1
 --- !u!114 &6094726313097409711
 MonoBehaviour:
@@ -246,7 +216,7 @@ MonoBehaviour:
     position: {x: -485.33212, y: 423.20007}
     description: 
   children:
-  - {fileID: -7334015473047253504}
+  - {fileID: 2530997463642008160}
   - {fileID: 3097413825085117369}
   successType: 1
 --- !u!114 &6148885114738819281
@@ -267,7 +237,7 @@ MonoBehaviour:
     guid: 62992afda1bab9245b02651acdf1c2de
     position: {x: 726.4001, y: 527.2}
     description: Idle
-  clipName: Idle
+  clipName: 
   clipNameIndex: 0
 --- !u!114 &6717526720862436097
 MonoBehaviour:
@@ -289,8 +259,30 @@ MonoBehaviour:
     description: 'Idle
 
 '
-  clipName: Idle
+  clipName: 
   clipNameIndex: 0
+--- !u!114 &8173498811195559596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee0e450ff6a53d41b313d8e9473446b, type: 3}
+  m_Name: MoveToPositionNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 54a515cc2ecbc24469f45fa409ca607d
+    position: {x: 231.21751, y: 539.19995}
+    description: 
+  type: 0
+  canFly: 0
+  movePos: {x: 3, y: 0}
+  speed: 0.5
 --- !u!114 &8616354086427601901
 MonoBehaviour:
   m_ObjectHideFlags: 0

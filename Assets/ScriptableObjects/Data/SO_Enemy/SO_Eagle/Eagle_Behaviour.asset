@@ -19,32 +19,6 @@ MonoBehaviour:
     position: {x: 1863.3324, y: 509.60004}
     description: 
   idleTime: 0.5
---- !u!114 &-8890913778907388851
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d2c9d42fcb7024b974c393fc46f215, type: 3}
-  m_Name: MoveNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: 388d35f7a58c4cf4c89b75e898db62ff
-    position: {x: 1972.5576, y: 633.6}
-    description: 
-  speed: 4
-  canFly: 0
-  movePosition: 4
-  movePos: {x: -5.35, y: 0.51}
-  radius: 5
-  moveType: 0
-  moveTime: 2
-  moveVector: {x: 0, y: 1}
 --- !u!114 &-8713698956365404743
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +37,7 @@ MonoBehaviour:
     guid: f5f9049b3347eb943a9362fb22e23e82
     position: {x: 458.8, y: 762.39984}
     description: 
+  checkPos: {x: 0, y: 0}
   radius: 4
 --- !u!114 &-8116406502293355484
 MonoBehaviour:
@@ -125,7 +100,7 @@ MonoBehaviour:
     position: {x: 1433.6003, y: 534}
     description: 
   idleTime: 0.5
---- !u!114 &-7334015473047253504
+--- !u!114 &-6900608806836254698
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,23 +109,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d2c9d42fcb7024b974c393fc46f215, type: 3}
-  m_Name: MoveNode
+  m_Script: {fileID: 11500000, guid: d5f9cd3c4e27fce4cac565b3ddb6e104, type: 3}
+  m_Name: MoveToPlayerNode
   m_EditorClassIdentifier: 
   NodeComponent:
     state: 0
     started: 0
-    guid: d1c312b753f4dfb4c8924c197be96a7c
-    position: {x: -109.59998, y: 625.6}
+    guid: 9703f54a70507654fa8fe8ca655155eb
+    position: {x: 1544.2, y: 633.60004}
     description: 
-  speed: 2
-  canFly: 0
-  movePosition: 1
-  movePos: {x: -5.35, y: 0.51}
-  radius: 5
-  moveType: 1
-  moveTime: 0
-  moveVector: {x: 0, y: 0}
+  type: 0
+  canFly: 1
+  speed: 10
 --- !u!114 &-6745893013543870922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,7 +161,7 @@ MonoBehaviour:
     position: {x: 216, y: 102.29551}
     description: 
   child: {fileID: -985523648240509331}
---- !u!114 &-5147214639967294041
+--- !u!114 &-4392582188790476376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,23 +170,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d2c9d42fcb7024b974c393fc46f215, type: 3}
-  m_Name: MoveNode
+  m_Script: {fileID: 11500000, guid: 1b37d2089808bf849a14cf42744ee209, type: 3}
+  m_Name: MoveRandomNode
   m_EditorClassIdentifier: 
   NodeComponent:
     state: 0
     started: 0
-    guid: 95e699ca0bc3039458d795b2b5f35e42
-    position: {x: 707.13184, y: 501.60004}
+    guid: 25727391335af9142b21715f7cff0b0e
+    position: {x: -115.74989, y: 625.60004}
     description: 
-  speed: 3
-  canFly: 0
-  movePosition: 2
-  movePos: {x: -5.35, y: 0.51}
+  type: 1
+  height: 0
+  width: 0
   radius: 5
-  moveType: 2
-  moveTime: 0
-  moveVector: {x: 0, y: 0}
+  speed: 2
 --- !u!114 &-3220301533029737903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +260,7 @@ MonoBehaviour:
     guid: 5fed30fc98805f440b0cbb3bdda64f01
     position: {x: -301.6, y: 625.6}
     description: 
+  checkPos: {x: 0, y: 0}
   radius: 6
 --- !u!114 &-2435692587220699581
 MonoBehaviour:
@@ -332,7 +300,7 @@ MonoBehaviour:
     position: {x: 2074.9578, y: 509.59998}
     description: Back up phase
   children:
-  - {fileID: -8890913778907388851}
+  - {fileID: 1237068293492359917}
   - {fileID: -3220301533029737903}
   successType: 1
 --- !u!114 &-1988251088372629299
@@ -396,11 +364,9 @@ MonoBehaviour:
   treeState: 0
   nodes:
   - {fileID: -2886896763517979471}
-  - {fileID: -7334015473047253504}
   - {fileID: -6742680835363187829}
   - {fileID: -8116406502293355484}
   - {fileID: 7048945554803334375}
-  - {fileID: -5147214639967294041}
   - {fileID: 663643109545904021}
   - {fileID: -2504542325747595777}
   - {fileID: 8178774860302089623}
@@ -414,15 +380,16 @@ MonoBehaviour:
   - {fileID: -7401739897537411077}
   - {fileID: -2151187231254945343}
   - {fileID: -3220301533029737903}
-  - {fileID: 6074224868958279958}
-  - {fileID: -8890913778907388851}
   - {fileID: -7336122424593993491}
   - {fileID: -2825412178239863526}
-  - {fileID: 829504772273587985}
   - {fileID: 3716831932127429592}
   - {fileID: -6745893013543870922}
   - {fileID: 2329106932448188102}
   - {fileID: -8894175433096097018}
+  - {fileID: -4392582188790476376}
+  - {fileID: 8594864871689985009}
+  - {fileID: 1237068293492359917}
+  - {fileID: -6900608806836254698}
   offset: {x: 300, y: 0}
 --- !u!114 &663643109545904021
 MonoBehaviour:
@@ -443,7 +410,7 @@ MonoBehaviour:
     position: {x: -301.95624, y: 500.40002}
     description: 
   child: {fileID: -2504542325747595777}
---- !u!114 &829504772273587985
+--- !u!114 &1237068293492359917
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -452,16 +419,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 516a0c95a04928e428f7c3d3a87e85a1, type: 3}
-  m_Name: FaceDirectionNode
+  m_Script: {fileID: 11500000, guid: d5f9cd3c4e27fce4cac565b3ddb6e104, type: 3}
+  m_Name: MoveToPlayerNode
   m_EditorClassIdentifier: 
   NodeComponent:
     state: 0
     started: 0
-    guid: 7236980665c2b134eae727c076cf9116
-    position: {x: 533.2001, y: 501.59998}
+    guid: 5ea9aad1b061c6c44b5dbf0a1762babc
+    position: {x: 1983.8, y: 633.60004}
     description: 
-  direction: 2
+  type: 1
+  canFly: 1
+  speed: 4
 --- !u!114 &2329106932448188102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +474,7 @@ MonoBehaviour:
     guid: b63cbe09d95bfd3439c2cdf4fd6f382a
     position: {x: 1034.4375, y: 633.6}
     description: 
+  checkPos: {x: 0, y: 0}
   radius: 6
 --- !u!114 &4945770970514238162
 MonoBehaviour:
@@ -525,7 +495,7 @@ MonoBehaviour:
     position: {x: -25.400024, y: 500}
     description: 
   children:
-  - {fileID: -7334015473047253504}
+  - {fileID: -4392582188790476376}
   - {fileID: 5562013664094662361}
   successType: 1
 --- !u!114 &5562013664094662361
@@ -544,36 +514,10 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 51e3ce431d3fd084abc7501b20c1a661
-    position: {x: 109.19995, y: 625.6001}
+    position: {x: 85.45011, y: 625.60004}
     description: 
   clipName: Move
   clipNameIndex: 1
---- !u!114 &6074224868958279958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4d2c9d42fcb7024b974c393fc46f215, type: 3}
-  m_Name: MoveNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: 3cd8ea655483d20448bb3ea11a2554d2
-    position: {x: 1527.051, y: 633.59985}
-    description: 
-  speed: 10
-  canFly: 0
-  movePosition: 2
-  movePos: {x: -5.35, y: 0.51}
-  radius: 5
-  moveType: 1
-  moveTime: 0.5
-  moveVector: {x: 0, y: 0}
 --- !u!114 &7048945554803334375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -594,8 +538,7 @@ MonoBehaviour:
     description: Following Player
   children:
   - {fileID: -1988251088372629299}
-  - {fileID: 829504772273587985}
-  - {fileID: -5147214639967294041}
+  - {fileID: 8594864871689985009}
   currentIndex: -1
 --- !u!114 &8178774860302089623
 MonoBehaviour:
@@ -615,7 +558,29 @@ MonoBehaviour:
     guid: 8fb5bb40bc449834b82fb24a82977b54
     position: {x: 271.60013, y: 625.6}
     description: 
+  checkPos: {x: 0, y: 0}
   radius: 7
+--- !u!114 &8594864871689985009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5f9cd3c4e27fce4cac565b3ddb6e104, type: 3}
+  m_Name: MoveToPlayerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 41f7565f4a288c744b306d5d8615d539
+    position: {x: 638.6, y: 501.59998}
+    description: 
+  type: 0
+  canFly: 1
+  speed: 3
 --- !u!114 &8607567782058937115
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -635,6 +600,6 @@ MonoBehaviour:
     position: {x: 1647.25, y: 509.60007}
     description: Attack Phase
   children:
-  - {fileID: 6074224868958279958}
+  - {fileID: -6900608806836254698}
   - {fileID: -7401739897537411077}
   successType: 1

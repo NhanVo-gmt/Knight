@@ -89,7 +89,7 @@ using UnityEngine;
         result.Append(@"
 public class ");
         result.Append(FILE_NAME);
-        result.Append(@"Editor : Editor
+        result.Append(@"Editor : ActionNodeEditor
 {
 ");
     }
@@ -102,15 +102,13 @@ public class ");
 
     private static void AddClassVariables(StringBuilder result)
     {
-        result.Append(@"    private SerializedProperty nodeProperty;
-");
-        
         foreach (string variable in PUBLIC_VARIABLES)
         {
             result.Append(@"    private SerializedProperty " + variable + "Property;");
             result.Append(@"
 ");
         }
+        result.Append(@"    private " + FILE_NAME + " node;");
         result.Append(@"
 ");
     }
@@ -118,11 +116,9 @@ public class ");
     private static void AddClassMethods(StringBuilder result)
     {
         // On enable
-        result.Append(@"    private void OnEnable()
+        result.Append(@"    protected override void OnEnable()
     {
-");
-        result.Append(@"        nodeProperty = serializedObject.FindProperty(""NodeComponent"");");
-        result.Append(@"
+        base.OnEnable();
 ");
         foreach (string variable in PUBLIC_VARIABLES)
         {
@@ -136,19 +132,20 @@ public class ");
 
 ");
         
+        // Awake
+        result.Append(@"    protected override void Awake()
+    {
+        node = (" + FILE_NAME + @")target;
+    }
+");
+        
         // OnInspector GUI
         result.Append(@"    public override void OnInspectorGUI()
     {
 ");
+        result.Append(@"        base.OnInspectorGUI();
+");
         result.Append(@"        serializedObject.Update();
-");
-        result.Append(@"        using (new EditorGUI.DisabledScope(true))
-");
-        result.Append(
-            $"            EditorGUILayout.ObjectField(\"Script:\", MonoScript.FromScriptableObject(({FILE_NAME})target), typeof({FILE_NAME}), false);\n");
-        
-        result.Append(@"        EditorGUILayout.PropertyField(nodeProperty);");
-        result.Append(@"
 ");
         foreach (string variable in PUBLIC_VARIABLES)
         {

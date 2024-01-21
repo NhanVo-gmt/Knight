@@ -239,7 +239,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     public void LoadData(GameData gameData)
     {
-        // Player position will be load by scene loader
+        // Player movePos will be load by scene loader
         
         initState = gameData.playerState;
         if (initState == restState.ToString())

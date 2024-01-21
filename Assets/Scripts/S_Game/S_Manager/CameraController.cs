@@ -207,7 +207,7 @@ namespace Knight.Camera
                 endPos += startingPos;
             }
 
-            // Handle the direction settings when moving back to the starting position
+            // Handle the direction settings when moving back to the starting movePos
             else
             {
                 startingPos = framingTransposer.m_TrackedObjectOffset;
