@@ -51,6 +51,7 @@ public class MoveToPositionNode : ActionNode
 
         direction = destination - startPos;
         if (!canFly) direction.y = 0;
+        direction = direction.normalized;
     }
 
     protected override void OnStop()

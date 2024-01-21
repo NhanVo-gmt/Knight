@@ -174,7 +174,7 @@ MonoBehaviour:
   type: 0
   canFly: 0
   movePos: {x: -3, y: 0}
-  speed: 0.5
+  speed: 2
 --- !u!114 &3097413825085117369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ MonoBehaviour:
   type: 0
   canFly: 0
   movePos: {x: 3, y: 0}
-  speed: 0.5
+  speed: 2
 --- !u!114 &8616354086427601901
 MonoBehaviour:
   m_ObjectHideFlags: 0
