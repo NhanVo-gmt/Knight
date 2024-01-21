@@ -41,7 +41,6 @@ MonoBehaviour:
   children:
   - {fileID: 5797330247967763411}
   - {fileID: -6262050734411869432}
-  - {fileID: -2689560405998143607}
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -79,7 +78,7 @@ MonoBehaviour:
     guid: fb53f7c6b650ea64eb1f311031acd9d5
     position: {x: 728.3225, y: 617}
     description: 
-  child: {fileID: 8685494032763714954}
+  child: {fileID: 8444627862581239402}
 --- !u!114 &-6515210772386021718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +118,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d57851457efcfb8429c0af3ae0f7d49e
-    position: {x: 1798.3501, y: 741.1501}
+    position: {x: 1916.9647, y: 739.99994}
     description: 
   shape: 1
   damage: 1
@@ -207,25 +206,6 @@ MonoBehaviour:
     description: 
   clipName: Move
   clipNameIndex: 1
---- !u!114 &-2689560405998143607
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
-  m_Name: IdleNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: 785454abc5dc8544bb8efc94521d05a7
-    position: {x: 1975.4501, y: 740.8001}
-    description: 
-  idleTime: 0.1
 --- !u!114 &-2580076790757477017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +280,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c81d3d3d1e29dc40a60e4fc0e658eb8, type: 3}
-  m_Name: Swordman_Behaviour
+  m_Name: Archer_Behaviour
   m_EditorClassIdentifier: 
   rootNode: {fileID: -2886896763517979471}
   treeState: 0
@@ -324,6 +304,7 @@ MonoBehaviour:
   - {fileID: -2152177441170500584}
   - {fileID: -6669614294686334415}
   - {fileID: -5431084398192968498}
+  - {fileID: 8444627862581239402}
   - {fileID: 1025811985138504096}
   - {fileID: -6262050734411869432}
   - {fileID: 500747404585657023}
@@ -337,8 +318,6 @@ MonoBehaviour:
   - {fileID: -2580076790757477017}
   - {fileID: 529901099291332650}
   - {fileID: -3277262657561509140}
-  - {fileID: -2689560405998143607}
-  - {fileID: 8685494032763714954}
   offset: {x: 300, y: 0}
 --- !u!114 &175736144619749345
 MonoBehaviour:
@@ -423,7 +402,7 @@ MonoBehaviour:
     guid: 34494a1de3666f24ead1f1e8f5751c79
     position: {x: 2228.1213, y: 601.6001}
     description: 
-  idleTime: 1
+  idleTime: 2
 --- !u!114 &651754999350490825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,8 +463,8 @@ MonoBehaviour:
     guid: 4b372035429abb14db0d7524c3474606
     position: {x: 1434, y: 473.99997}
     description: 
-  checkPos: {x: -1.5, y: 1.3}
-  radius: 1.2
+  checkPos: {x: -2, y: 1}
+  radius: 1.5
 --- !u!114 &1793646627920395141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,7 +611,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e8b473ea3001416418522830be89000c
-    position: {x: 1616.3999, y: 740.80005}
+    position: {x: 1712.1649, y: 739.99994}
     description: 
   idleTime: 0.45
 --- !u!114 &6268569449364434779
@@ -654,9 +633,9 @@ MonoBehaviour:
     position: {x: 653.3225, y: 197}
     description: 
   children:
-  - {fileID: 175736144619749345}
   - {fileID: 7760206910047663043}
   - {fileID: 500747404585657023}
+  - {fileID: 175736144619749345}
   currentIndex: -1
 --- !u!114 &6419217143477543035
 MonoBehaviour:
@@ -739,7 +718,7 @@ MonoBehaviour:
   - {fileID: -5431084398192968498}
   - {fileID: -2152177441170500584}
   currentIndex: -1
---- !u!114 &8685494032763714954
+--- !u!114 &8444627862581239402
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -754,8 +733,8 @@ MonoBehaviour:
   NodeComponent:
     state: 0
     started: 0
-    guid: 3b656f20788446342810386835fb18e5
-    position: {x: 728.0001, y: 743.8501}
+    guid: 30e2b580879c6464abd536d95ecc7aa0
+    position: {x: 728.3225, y: 755}
     description: 
-  checkPos: {x: -1.5, y: 1.3}
-  radius: 1.2
+  checkPos: {x: -2, y: 1}
+  radius: 1.5
