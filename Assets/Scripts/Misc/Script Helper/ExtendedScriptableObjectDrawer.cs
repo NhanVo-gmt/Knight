@@ -90,6 +90,7 @@ public class ExtendedScriptableObjectDrawer : PropertyDrawer {
 		var buttonRect = new Rect(position.x + position.width - buttonWidth, position.y, buttonWidth, EditorGUIUtility.singleLineHeight);
 			
 		if(property.propertyType == SerializedPropertyType.ObjectReference && property.objectReferenceValue != null) {
+			if (property.objectReferenceValue is not ScriptableObject) return ;
 			var data = (ScriptableObject)property.objectReferenceValue;
 			
 			if(property.isExpanded) {
@@ -274,7 +275,10 @@ public class ExtendedScriptableObjectDrawer : PropertyDrawer {
 		return type;
 	}
 
-	static bool AreAnySubPropertiesVisible(SerializedProperty property) {
+	static bool AreAnySubPropertiesVisible(SerializedProperty property)
+	{
+		if (property.objectReferenceValue is not ScriptableObject) return false;
+		
 		var data = (ScriptableObject)property.objectReferenceValue;
 		SerializedObject serializedObject = new SerializedObject(data);
 		SerializedProperty prop = serializedObject.GetIterator();

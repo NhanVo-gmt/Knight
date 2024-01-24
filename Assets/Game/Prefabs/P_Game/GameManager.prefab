@@ -56,6 +56,7 @@ MonoBehaviour:
   player: {fileID: 7502696316525358248, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
   maxHealth: 10
   playerMat: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  playerCam: {fileID: 0}
   PlayerKnockbackAmount: 10
   WeakKnockbackAmount: 10
   StrongKnockbackAmount: 30
@@ -63,6 +64,7 @@ MonoBehaviour:
   flashMat: {fileID: 2100000, guid: b92ee72cbc0aa6340ad49ccb19f8c7c3, type: 2}
   flashCoolDown: 0.2
   flashGlowMat: {fileID: 2100000, guid: 3805b295fc0d4e044a42c035399d2676, type: 2}
+  sceneData: {fileID: 11400000, guid: adba4b9a6a74d6d40826207827676b8a, type: 2}
 --- !u!114 &8234785762340972059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,6 +83,9 @@ MonoBehaviour:
     amountToPool: 10
   - prefab: {fileID: 3803421527087819763, guid: 64793e2fdb9cdea4e90c58b746ece6df, type: 3}
     poolType: 1
+    amountToPool: 10
+  - prefab: {fileID: 3803421527087819763, guid: f3af04e56187c104bba4472be46eb3fa, type: 3}
+    poolType: 3
     amountToPool: 10
   - prefab: {fileID: 8726307433354808246, guid: 5d7d5c53ab79cd74d81db820b7203b52, type: 3}
     poolType: 2
@@ -166,6 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fileName: knight.save
+  canSaveGame: 0
 --- !u!114 &7507929791565630098
 MonoBehaviour:
   m_ObjectHideFlags: 0

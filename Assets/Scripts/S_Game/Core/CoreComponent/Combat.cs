@@ -167,9 +167,10 @@ public class Combat : CoreComponent, IDamageable
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!canTouchCombat) return;
-        
-        touchCombat?.TouchAttack(other);
+        if (canTouchCombat)
+        {
+            touchCombat?.TouchAttack(other);
+        }
     }
 
     #endregion

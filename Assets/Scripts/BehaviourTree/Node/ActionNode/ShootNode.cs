@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.Serialization;
+using UnityEngine.VFX;
 
 public class ShootNode : ActionNode
 {
-    [SerializeField] private GameObject projectile;
-    [SerializeField] private Vector2 spawnPos;
+    [SerializeField] private ProjectileData data;
+    
     
     public override void CopyNode(Node copyNode)
     {
@@ -11,7 +13,7 @@ public class ShootNode : ActionNode
 
         if (node)
         {
-            projectile = node.projectile;
+            data = node.data;
         }
     }
     
@@ -23,9 +25,8 @@ public class ShootNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
-
         
-        Instantiate(projectile, (Vector2)treeComponent.transform.position + spawnPos, Quaternion.identity);
+        ObjectPoolManager.Instance.SpawnPooledPrefab(data, movement.GetPosition(), movement.faceDirection).GetComponent<PooledObject>().Initialize(data);
     }
 
     protected override void OnStop()

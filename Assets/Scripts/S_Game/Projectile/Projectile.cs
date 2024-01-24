@@ -6,20 +6,21 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     ProjectileData data;
-    Vector2 direction;
 
     Rigidbody2D rb;
 
     void Awake() 
     {
         rb = GetComponent<Rigidbody2D>();
+        GetComponent<PooledObject>().OnInitData += Initialize;
+    }
+    
+
+    private void Initialize(PooledObjectData data)
+    {
+        this.data = (ProjectileData)data;
     }
 
-    public void Initialize(ProjectileData data, Vector2 direction)
-    {
-        this.data = data;
-        this.direction = direction;
-    }
 
     private void Update() {
         Move();
@@ -27,13 +28,27 @@ public class Projectile : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = direction * data.velocity;
+        if (!data) return;
+        
+        rb.velocity = -transform.right * data.velocity;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        if (other.TryGetComponent<IDamageable>(out IDamageable target))
+    public ProjectileData GetData()
+    {
+        return data;
+    }
+
+    public Vector2 GetDirection()
+    {
+        return -transform.right;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent<Combat>(out Combat combat))
         {
-            target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, direction); //hardcode
+            combat.TakeDamage(data.damage, IDamageable.DamagerTarget.Enemy, GetDirection());
+            GetComponent<PooledObject>().Release();
         }
     }
 }

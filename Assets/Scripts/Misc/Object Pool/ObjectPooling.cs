@@ -12,7 +12,8 @@ public class ObjectPooling : MonoBehaviour
         {
             VFX,
             Item,
-            ParticleSystem
+            ParticleSystem,
+            Projectile
         }
         
         public GameObject prefab;
@@ -28,7 +29,7 @@ public class ObjectPooling : MonoBehaviour
         GameObject CreatePooledItem()
         {
             GameObject createdGO = GameObject.Instantiate(prefab);
-            createdGO.AddComponent<PooledObject>().pool = pool;
+            createdGO.GetComponent<PooledObject>().pool = pool;
             DontDestroyOnLoad(createdGO);
             return createdGO;
         }
@@ -67,6 +68,11 @@ public class ObjectPooling : MonoBehaviour
     public GameObject GetItemFromPool()
     {
         return pooledPrefabList[1].pool.Get();
+    }
+
+    public GameObject GetProjectileFromPool()
+    {
+        return pooledPrefabList[2].pool.Get();
     }
 
     public GameObject GetParticleFromPool(GameObject prefab)

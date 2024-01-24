@@ -56,7 +56,8 @@ MonoBehaviour:
     guid: f50ceb90a3eeb2240b78b57159577153
     position: {x: 122, y: 400}
     description: 
-  projectile: {fileID: 7742733813742428191, guid: 7f9665bb20f91fc41bfd8c0ab2514cdc, type: 3}
+  projectile: {fileID: 11400000, guid: aa3c7240c53fcd44ba233a73e0292495, type: 2}
+  spawnPos: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

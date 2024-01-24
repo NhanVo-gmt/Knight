@@ -15,29 +15,7 @@ public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
 
 #region Spawn Object
 
-// public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 spawnPosition, Vector2 faceDirection)
-// {
-//     GameObject spawnedPrefab = null;
-//     if (data is VFXData)
-//     {
-//         spawnedPrefab = SpawnVFXPrefab(data as VFXData);
-//     } 
-//     else if (data is ItemData)
-//     {
-//         spawnedPrefab = SpawnItemPrefab(data as ItemData);
-//     }
-//     else
-//     {
-//         spawnedPrefab = SpawnParticlePrefab(data as ParticleData);
-//     }
-//         
-//     SetUpSpawnPrefab(spawnedPrefab, data);
-//     SetPrefabPosition(spawnedPrefab, data, transform.position, faceDirection);
-//     SetPrefabRotation(spawnedPrefab, data, faceDirection);
-//     return spawnedPrefab;
-// }
-
-    public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 spawnPosition, Vector2 faceDirection)
+    public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 characterPos, Vector2 faceDirection)
     {
         GameObject spawnedPrefab = null;
         if (data is VFXData)
@@ -48,43 +26,24 @@ public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
         {
             spawnedPrefab = SpawnItemPrefab(data as ItemData);
         }
+        else if (data is ProjectileData)
+        {
+            spawnedPrefab = SpawnProjectilePrefab(data as ProjectileData);
+        }
         else
         {
             spawnedPrefab = SpawnParticlePrefab(data as ParticleData);
         }
         
         SetUpSpawnPrefab(spawnedPrefab, data);
-        SetPrefabPosition(spawnedPrefab, data, spawnPosition, faceDirection);
+        SetPrefabPosition(spawnedPrefab, data, characterPos, faceDirection);
         SetPrefabRotation(spawnedPrefab, data, faceDirection);
         return spawnedPrefab;
     }
-
-    public GameObject SpawnVFXPrefab(VFXData data)
-    {
-        GameObject spawnedPrefab = poolingManager.GetVFXFromPool();
-        SetVFXPrefab(spawnedPrefab, data);
-
-        return spawnedPrefab;
-    }
     
-    public GameObject SpawnItemPrefab(ItemData data)
-    {
-        GameObject spawnedPrefab = poolingManager.GetItemFromPool();
-        SetItemPrefab(spawnedPrefab, data);
-
-        return spawnedPrefab;
-    }
-
-    public GameObject SpawnParticlePrefab(ParticleData data)
-    {
-        GameObject spawnedPrefab = poolingManager.GetParticleFromPool(data.particleSystem);
-
-        return spawnedPrefab;
-    }
-
     void SetUpSpawnPrefab(GameObject spawnedPrefab, PooledObjectData data)
     {
-        spawnedPrefab.GetComponent<PooledObject>().Initialize(data.lifeTime);
+        spawnedPrefab.GetComponent<PooledObject>().Initialize(data);
     }
 
     void SetPrefabPosition(GameObject spawnedObject, PooledObjectData data, Vector3 position, Vector2 faceDirection)
@@ -113,15 +72,39 @@ public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
         }
     }
     
-    void SetVFXPrefab(GameObject createdGO, VFXData data)
+    #endregion
+
+    #region Spawn Seperate Prefab
+
+    private GameObject SpawnVFXPrefab(VFXData data)
     {
-        createdGO.GetComponent<SpriteRenderer>().sprite = data.sprite;
-        createdGO.GetComponent<Animator>().runtimeAnimatorController = data.anim;
+        GameObject spawnedPrefab = poolingManager.GetVFXFromPool();
+        spawnedPrefab.GetComponent<SpriteRenderer>().sprite = data.sprite;
+        spawnedPrefab.GetComponent<Animator>().runtimeAnimatorController = data.anim;
+
+        return spawnedPrefab;
+    }
+    
+    private GameObject SpawnItemPrefab(ItemData data)
+    {
+        GameObject spawnedPrefab = poolingManager.GetItemFromPool();
+        spawnedPrefab.GetComponent<PickupBase>().Init(data);
+
+        return spawnedPrefab;
     }
 
-    void SetItemPrefab(GameObject createdGO, ItemData data)
+    private GameObject SpawnParticlePrefab(ParticleData data)
     {
-        createdGO.GetComponent<PickupBase>().Init(data);
+        GameObject spawnedPrefab = poolingManager.GetParticleFromPool(data.particleSystem);
+
+        return spawnedPrefab;
+    }
+
+    private GameObject SpawnProjectilePrefab(ProjectileData data)
+    {
+        GameObject spawnedPrefab = poolingManager.GetProjectileFromPool();
+        
+        return spawnedPrefab;
     }
 
 #endregion

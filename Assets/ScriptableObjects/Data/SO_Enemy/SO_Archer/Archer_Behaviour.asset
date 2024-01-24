@@ -1,5 +1,27 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9024822859292822162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: b91678d2861a60e42a114deff8a31fb1
+    position: {x: 1638.7375, y: 499.00003}
+    description: 
+  children:
+  - {fileID: -4165963296138307673}
+  - {fileID: -5980390445149478725}
+  successType: 1
 --- !u!114 &-7328829595185410791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16,7 +38,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4a6c02d5f6c4fbb40a2d9fc2c598596b
-    position: {x: -478.40018, y: 620.80005}
+    position: {x: -1113.8921, y: -96.00018}
     description: 
   clipName: Move
   clipNameIndex: 3
@@ -36,7 +58,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 367bdb780961af14786db34dc06bf748
-    position: {x: 1884.7865, y: 579.6}
+    position: {x: 2113.7617, y: -159.91113}
     description: 
   children:
   - {fileID: 5797330247967763411}
@@ -77,7 +99,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d57851457efcfb8429c0af3ae0f7d49e
-    position: {x: 2008.8005, y: 717.60004}
+    position: {x: 2237.7617, y: -21.911072}
     description: 
   shape: 1
   damage: 1
@@ -100,13 +122,52 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d2e9198654d7f9146a7c0208bb5e10ef
-    position: {x: 1181.6, y: 612.93}
+    position: {x: 1192.9998, y: 668}
     description: 
   type: 1
   canFly: 0
   speed: 2.5
   minDis: 0.5
   maxDis: 10
+--- !u!114 &-5980390445149478725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: b253c5d9ae5c3e041a5f9fc7d92bdf6d
+    position: {x: 1842.7334, y: 631}
+    description: Cool down
+  idleTime: 2
+--- !u!114 &-4165963296138307673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: f08e7c5e5b99a4c409f758e5b4304ef8
+    position: {x: 1591.1196, y: 635.99994}
+    description: 
+  clipName: Idle
+  clipNameIndex: 2
 --- !u!114 &-3277262657561509140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,10 +184,29 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 090abf061cac2db4ebdf8c45b94f1f31
-    position: {x: 2135.1865, y: 579.6}
+    position: {x: 2363.7617, y: -159.91113}
     description: 
   clipName: Idle
   clipNameIndex: 2
+--- !u!114 &-2894955991445425695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 8cb5a4bcb1de48942affe62e85be5651
+    position: {x: 1066.9998, y: 542.99994}
+    description: 
+  idleTime: 0.4
 --- !u!114 &-2886896763517979471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,7 +242,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: ddf451b9401ad204cbec5a26f03eaaba
-    position: {x: 273.06326, y: 620.8}
+    position: {x: -362.89203, y: -96.00018}
     description: 
   clipName: Move
   clipNameIndex: 3
@@ -182,7 +262,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 7d93029fcaaf6e54bb3aa8d76d7b6489
-    position: {x: 2158.3862, y: 451.60004}
+    position: {x: 2386.7617, y: -287.91113}
     description: 
   children:
   - {fileID: -3277262657561509140}
@@ -204,7 +284,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 9d146f192116cc444b561f09951ea0f5
-    position: {x: 454.698, y: 620.79987}
+    position: {x: 69.99974, y: 665.99994}
     description: 
   checkPos: {x: -6, y: 1}
   radius: 5
@@ -224,7 +304,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f2e037dfc13c6b54f8ff33392a4f4f4c
-    position: {x: 835.64813, y: 498.40005}
+    position: {x: 476.9997, y: 542.99994}
     description: 
   children:
   - {fileID: 3492896918508290720}
@@ -245,7 +325,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 71f1e28589d613247866d8930d496dbf
-    position: {x: 1391.3125, y: 612.8}
+    position: {x: 1401.9998, y: 668}
     description: 
   clipName: Move
   clipNameIndex: 3
@@ -265,12 +345,31 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: fe011c0887b0e62499ee6508f8aca2dd
-    position: {x: 1254.5236, y: 487.738}
-    description: 
+    position: {x: 1265.9998, y: 542.99994}
+    description: Run away
   children:
   - {fileID: -6073939612882700130}
   - {fileID: -1278846014192125422}
   successType: 1
+--- !u!114 &-118601840800970415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7735e26987ecaae4c9aab664f9caa0a1, type: 3}
+  m_Name: ShootNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 6ed0800b347712140b7a86f56f195c52
+    position: {x: 872.9998, y: 542.99994}
+    description: 
+  data: {fileID: 11400000, guid: aa3c7240c53fcd44ba233a73e0292495, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,6 +422,11 @@ MonoBehaviour:
   - {fileID: 466274325520089135}
   - {fileID: -1278846014192125422}
   - {fileID: 1942779419373547517}
+  - {fileID: -118601840800970415}
+  - {fileID: -2894955991445425695}
+  - {fileID: -5980390445149478725}
+  - {fileID: -9024822859292822162}
+  - {fileID: -4165963296138307673}
   offset: {x: 300, y: 0}
 --- !u!114 &175736144619749345
 MonoBehaviour:
@@ -340,7 +444,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: bdd31b37f82d1294baee7e37914d5e9a
-    position: {x: -403.67752, y: 367}
+    position: {x: -1039.892, y: -350.00018}
     description: Patrol Sequence
   children:
   - {fileID: 382483470962243157}
@@ -364,7 +468,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 425ac8fb80afa3744bef4ff77b7699a0
-    position: {x: 635.4979, y: 620.79987}
+    position: {x: 249.99976, y: 665.99994}
     description: 
   child: {fileID: 8224225980670636066}
 --- !u!114 &382483470962243157
@@ -383,7 +487,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 62ad9841b5c2b51498ee38322a560589
-    position: {x: -905.6774, y: 499}
+    position: {x: -1541.892, y: -218.00018}
     description: 
   child: {fileID: 7300237956029237319}
 --- !u!114 &466274325520089135
@@ -402,9 +506,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 40f1ef84a38b3074fba800658a5a96dd
-    position: {x: 1031.6001, y: 498.40002}
+    position: {x: 659.9998, y: 542.99994}
     description: 
-  idleTime: 1
+  idleTime: 0.6
 --- !u!114 &500747404585657023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,7 +525,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 689141925501c404fbf63fe73764272e
-    position: {x: 1659.1864, y: 326}
+    position: {x: 1887.7617, y: -413.91107}
     description: Attack
   children:
   - {fileID: 1025811985138504096}
@@ -443,7 +547,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 34494a1de3666f24ead1f1e8f5751c79
-    position: {x: 2345.5864, y: 579.6}
+    position: {x: 2574.7617, y: -159.91113}
     description: 
   idleTime: 1.5
 --- !u!114 &651754999350490825
@@ -462,7 +566,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: aef7d6df3fbaf6f4aa50284d858a95ae
-    position: {x: 1695.1865, y: 579.6}
+    position: {x: 1923.7618, y: -159.91113}
     description: 
   clipName: Attack2
   clipNameIndex: 1
@@ -482,7 +586,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e3bc0089f19b46b4bb7926f9a1113655
-    position: {x: -235.67749, y: 499}
+    position: {x: -871.8921, y: -218.00018}
     description: 
   children:
   - {fileID: 6731554434699031491}
@@ -504,7 +608,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4b372035429abb14db0d7524c3474606
-    position: {x: 1551.9865, y: 451.60004}
+    position: {x: 1780.7617, y: -287.91113}
     description: 
   checkPos: {x: -2, y: 1}
   radius: 1.5
@@ -524,7 +628,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 168c43f3f89b8ea438627f34d34f9435
-    position: {x: 57.19995, y: 620.7999}
+    position: {x: -578.89197, y: -96.00018}
     description: 
   type: 0
   canFly: 0
@@ -546,7 +650,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 58b3b659925723146b0855e064f24ae0
-    position: {x: 2176.75, y: 717.60004}
+    position: {x: 2405.7617, y: -21.911072}
     description: 
   idleTime: 0.2
 --- !u!114 &2132773954221250319
@@ -565,7 +669,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 095d3358a5d37a74a8d1cf4be971351b
-    position: {x: 542.4001, y: 498.4001}
+    position: {x: 156.99973, y: 542.99994}
     description: 
   children:
   - {fileID: -2569019614002215591}
@@ -587,7 +691,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: eba79029cf5de924783e0b5e3661d36e
-    position: {x: 136.32253, y: 503}
+    position: {x: -499.89197, y: -214.00018}
     description: 
   children:
   - {fileID: 1793646627920395141}
@@ -609,7 +713,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f4575afd7b1f1314f8470cc0aaa6b604
-    position: {x: 835.64813, y: 628.80005}
+    position: {x: 476.9997, y: 674}
     description: 
   clipName: Attack
   clipNameIndex: 0
@@ -629,7 +733,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: dfc533eb6f36a6549aa546e3bdf555ab
-    position: {x: 1782.3864, y: 451.60004}
+    position: {x: 2010.7617, y: -287.91113}
     description: 
   children:
   - {fileID: 651754999350490825}
@@ -651,7 +755,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3fc4bf76e62b2da4eb0e9e1280bd28d4
-    position: {x: -628.6774, y: 499}
+    position: {x: -1264.892, y: -218.00018}
     description: 
   children:
   - {fileID: 4722290183773200914}
@@ -673,7 +777,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3250ea9d33977c44e80e8823d3854eaa
-    position: {x: -683.2, y: 620.8}
+    position: {x: -1318.892, y: -96.00018}
     description: 
   type: 0
   canFly: 0
@@ -695,7 +799,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e8b473ea3001416418522830be89000c
-    position: {x: 1829.5864, y: 718}
+    position: {x: 2058.7617, y: -21.911072}
     description: 
   idleTime: 0.5
 --- !u!114 &6268569449364434779
@@ -737,7 +841,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: da18d098dc55cc449a874fbb935c2657
-    position: {x: -118.67748, y: 621}
+    position: {x: -754.8921, y: -96.00018}
     description: 
   clipName: Idle
   clipNameIndex: 2
@@ -757,7 +861,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: c65e6ab44cac35f42a08e9369b3a2e3d
-    position: {x: -310.67746, y: 621}
+    position: {x: -946.8921, y: -96.00018}
     description: 
   idleTime: 2
 --- !u!114 &6846916976523748316
@@ -776,13 +880,16 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 0b63d08367bbcbd42af00e9f48c263eb
-    position: {x: 897.19995, y: 362.46503}
-    description: Shoot arrow
+    position: {x: 608.9998, y: 406.99988}
+    description: Shoot arrow and run away
   children:
   - {fileID: 2132773954221250319}
   - {fileID: -2152177441170500584}
   - {fileID: 466274325520089135}
+  - {fileID: -118601840800970415}
+  - {fileID: -2894955991445425695}
   - {fileID: -1155921986679169159}
+  - {fileID: -9024822859292822162}
 --- !u!114 &7300237956029237319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -799,7 +906,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 737512a262ff6da43855c53d60246bcf
-    position: {x: -905.6774, y: 621}
+    position: {x: -1541.892, y: -96.00018}
     description: 
   checkPos: {x: -6, y: 1}
   radius: 5
@@ -819,7 +926,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 1d88031450f6379459d21a026c77f091
-    position: {x: 635.4979, y: 737.5998}
+    position: {x: 249.99976, y: 782.99994}
     description: 
   checkPos: {x: -2, y: 1}
   radius: 1.5
