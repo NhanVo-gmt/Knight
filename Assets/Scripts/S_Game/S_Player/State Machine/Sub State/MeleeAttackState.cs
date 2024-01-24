@@ -42,14 +42,14 @@ public class MeleeAttackState : AttackState
 
     void SpawnVFX()
     {
-        vfx.SpawnPooledPrefab(data.meleeAttackData.attackVFX, movement);
+        vfx.SpawnPooledPrefab(data.meleeAttackData.attackVFX, movement.transform.position, movement.faceDirection);
     }
 
     void SpawnHitVFX()
     {
         foreach (PooledObjectData hitVFX in data.meleeAttackData.hitVFX)
         {
-            vfx.SpawnPooledPrefab(hitVFX, movement);
+            vfx.SpawnPooledPrefab(hitVFX, movement.transform.position, movement.faceDirection);
         }
     }
 

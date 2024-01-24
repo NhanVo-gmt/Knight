@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class VFXController : SingletonObject<VFXController>
+public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
 {
     ObjectPooling poolingManager;
     
@@ -13,29 +13,29 @@ public class VFXController : SingletonObject<VFXController>
         poolingManager = GetComponent<ObjectPooling>();
     }
 
-#region 
+#region Spawn Object
 
-public GameObject SpawnPooledPrefab(PooledObjectData data, Movement movement)
-{
-    GameObject spawnedPrefab = null;
-    if (data is VFXData)
-    {
-        spawnedPrefab = SpawnVFXPrefab(data as VFXData);
-    } 
-    else if (data is ItemData)
-    {
-        spawnedPrefab = SpawnItemPrefab(data as ItemData);
-    }
-    else
-    {
-        spawnedPrefab = SpawnParticlePrefab(data as ParticleData);
-    }
-        
-    SetUpSpawnPrefab(spawnedPrefab, data);
-    SetPrefabPosition(spawnedPrefab, data, movement.transform.position, movement.faceDirection);
-    SetPrefabRotation(spawnedPrefab, data, movement.faceDirection);
-    return spawnedPrefab;
-}
+// public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 spawnPosition, Vector2 faceDirection)
+// {
+//     GameObject spawnedPrefab = null;
+//     if (data is VFXData)
+//     {
+//         spawnedPrefab = SpawnVFXPrefab(data as VFXData);
+//     } 
+//     else if (data is ItemData)
+//     {
+//         spawnedPrefab = SpawnItemPrefab(data as ItemData);
+//     }
+//     else
+//     {
+//         spawnedPrefab = SpawnParticlePrefab(data as ParticleData);
+//     }
+//         
+//     SetUpSpawnPrefab(spawnedPrefab, data);
+//     SetPrefabPosition(spawnedPrefab, data, transform.position, faceDirection);
+//     SetPrefabRotation(spawnedPrefab, data, faceDirection);
+//     return spawnedPrefab;
+// }
 
     public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 spawnPosition, Vector2 faceDirection)
     {

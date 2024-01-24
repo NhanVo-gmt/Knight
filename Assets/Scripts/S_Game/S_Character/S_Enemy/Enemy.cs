@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
     {
         for (int i = 0; i < data.numberOfSoulDropped; i++)
         {
-            VFXController.Instance.SpawnPooledPrefab(GameSettings.Instance.soul, transform.position, Vector2.left);
+            ObjectPoolManager.Instance.SpawnPooledPrefab(GameSettings.Instance.soul, transform.position, Vector2.left);
         }
         gameObject.SetActive(false);
     }

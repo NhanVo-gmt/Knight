@@ -28,7 +28,7 @@ public class HitState : State
     private void SpawnVFX()
     {
         anim.StartHitVFX();
-        vfx.SpawnPooledPrefab(data.hitData.vfx[0], movement);
+        vfx.SpawnPooledPrefab(data.hitData.vfx[0], movement.transform.position, movement.faceDirection);
     }
 
     public override void Exit()

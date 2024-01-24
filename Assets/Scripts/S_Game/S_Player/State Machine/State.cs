@@ -8,7 +8,7 @@ public abstract class State
     protected AnimatorController anim;
     protected CollisionSenses collisionSenses;
     protected Health health;
-    protected VFXController vfx;
+    protected ObjectPoolManager vfx;
 
 
     protected Player player;
@@ -33,7 +33,7 @@ public abstract class State
         anim = core.GetCoreComponent<AnimatorController>();
         collisionSenses = core.GetCoreComponent<CollisionSenses>();
         health = core.GetCoreComponent<Health>();
-        vfx = VFXController.Instance;
+        vfx = ObjectPoolManager.Instance;
     }
 
     public virtual void Enter() 

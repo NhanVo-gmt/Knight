@@ -2,7 +2,8 @@
     "name": "BehaviourTreeAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:44031ad05fe568945bd43bfc2eeca698"
+        "GUID:44031ad05fe568945bd43bfc2eeca698",
+        "GUID:1d985b7e3891a9d41814b005a2cd4cab"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

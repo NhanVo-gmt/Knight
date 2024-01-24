@@ -43,7 +43,7 @@ public class JumpState : GroundState
 
     private void SpawnVFX()
     {
-        vfx.SpawnPooledPrefab(data.jumpData.jumpVFX, movement);
+        vfx.SpawnPooledPrefab(data.jumpData.jumpVFX, movement.transform.position, movement.faceDirection);
         particleController.SetlandParticle(true);
     }
 
