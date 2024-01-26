@@ -5194,7 +5194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  scene: 3
+  scene: 100
   spawnPos: {x: 73, y: 0}
 --- !u!61 &66152339
 BoxCollider2D:
@@ -5832,7 +5832,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 1
-  scene: 6
+  scene: 201
   spawnPos: {x: 157, y: 0}
 --- !u!61 &321142126
 BoxCollider2D:

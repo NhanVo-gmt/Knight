@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
+  m_Name: Hit2_vfx
+  m_EditorClassIdentifier: 
+  spawnPos: {x: -5, y: -4}
+  spawnRot: {x: 0, y: 0, z: 0}
+  needPlayerDirection: 1
+  lifeTime: 1
+  sprite: {fileID: -4960541439281469550, guid: d966b88f77ee4154fbb64b8440364e40, type: 3}
+  anim: {fileID: 9100000, guid: 7efba6d3a2d1d4d4cb1af275914f1e5e, type: 2}

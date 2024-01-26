@@ -3,8 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SceneData", menuName = "ScriptableObjects/Data/Scene/SceneData")]
-public class SceneData : ScriptableObject
+[CreateAssetMenu(fileName = "MapData", menuName = "ScriptableObjects/Data/Scene/MapData")]
+public class MapData : ScriptableObject
 {
     public List<SceneSetting> sceneSettings;
     
@@ -18,7 +18,7 @@ public class SceneData : ScriptableObject
 
     public Vector2 GetImageStartPos(string scene)
     {
-        foreach (SceneData.SceneSetting setting in sceneSettings)
+        foreach (MapData.SceneSetting setting in sceneSettings)
         {
             if (scene.Equals(setting.scene.ToString()))
             {
@@ -32,7 +32,7 @@ public class SceneData : ScriptableObject
 
     public ExitData.ExitSettings GetExit(string scene, int id)
     {
-        foreach (SceneData.SceneSetting setting in sceneSettings)
+        foreach (MapData.SceneSetting setting in sceneSettings)
         {
             if (scene.Equals(setting.scene.ToString()))
             {

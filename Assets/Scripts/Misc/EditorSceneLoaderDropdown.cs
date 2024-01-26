@@ -12,6 +12,8 @@ public partial class EditorSceneLoader
         public static void LoadFarmScene() { OpenScene("Assets/Scenes/Farm/FarmScene.unity"); }
         [MenuItem("Scenes/ForbiddenLand/ForbiddenLand")]
         public static void LoadForbiddenLand() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand.unity"); }
+        [MenuItem("Scenes/ForbiddenLand/ForbiddenLand1")]
+        public static void LoadForbiddenLand1() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand1.unity"); }
         [MenuItem("Scenes/Forest/ForestScene")]
         public static void LoadForestScene() { OpenScene("Assets/Scenes/Forest/ForestScene.unity"); }
         [MenuItem("Scenes/Forest/ForestScene1")]

@@ -3290,8 +3290,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  scene: 7
-  spawnPos: {x: 223, y: 0}
+  scene: 202
+  spawnPos: {x: 280.5, y: -3.3}
 --- !u!61 &66152339
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16480,9 +16480,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4242552a69ba8334b891bf7d30a9299a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: 0
-  scene: 7
-  spawnPos: {x: 223, y: 0}
+  id: 1
+  scene: 300
+  spawnPos: {x: 335, y: -3.3}
 --- !u!61 &2018893524
 BoxCollider2D:
   m_ObjectHideFlags: 0

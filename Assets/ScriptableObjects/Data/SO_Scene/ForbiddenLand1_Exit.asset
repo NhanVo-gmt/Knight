@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f540cfb1018cf2d47a480312bf79c249, type: 3}
-  m_Name: ForbiddenLand_Exit
+  m_Name: ForbiddenLand1_Exit
   m_EditorClassIdentifier: 
   exitSettings:
   - id: 0
-    spawnPos: {x: 330, y: -3.3}
-    destination: 203
-  - id: 1
-    spawnPos: {x: 405, y: -3.3}
-    destination: 301
+    spawnPos: {x: 400, y: -3.3}
+    destination: 300

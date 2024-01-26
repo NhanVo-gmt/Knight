@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,29 +9,31 @@ public static class SceneDesignMethods
 {
     private static readonly string SceneDataPath = "Assets/ScriptableObjects/Data/SO_Scene/SceneData.asset";
     
-    [MenuItem("Knight/Scene/Exit Assigning ")]
+    [MenuItem("Knight/Scene/Exit Assigning")]
     static void AssigningExitInScene()
     {
-        SceneData sceneData = LoadSceneData();
-        if (sceneData == null) return;
+        MapData mapData = LoadSceneData();
+        if (mapData == null) return;
         
         foreach (GameObject gameObject in GameObject.FindObjectsOfType<GameObject>(true))
         {
             if (gameObject.TryGetComponent<Exit>(out Exit exit))
             {
-                ExitData.ExitSettings settings = sceneData.GetExit(SceneManager.GetActiveScene().name, exit.id);
+                ExitData.ExitSettings settings = mapData.GetExit(SceneManager.GetActiveScene().name, exit.id);
                 exit.scene = settings.destination;
                 exit.spawnPos = settings.spawnPos;
                 
                 Debug.Log($"Assign for game object: {gameObject.name}");
             }
         }
+
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
 
     
-    static SceneData LoadSceneData()
+    static MapData LoadSceneData()
     {
-        SceneData data = (SceneData)AssetDatabase.LoadAssetAtPath(SceneDataPath, typeof(SceneData));
+        MapData data = (MapData)AssetDatabase.LoadAssetAtPath(SceneDataPath, typeof(MapData));
         if (data != null)
         {
             return data;
@@ -43,8 +46,8 @@ public static class SceneDesignMethods
     [MenuItem("Knight/Scene/Parallax Assigning")]
     static void AutoAssigningParallax()
     {
-        SceneData sceneData = LoadSceneData();
-        if (sceneData == null) return;
+        MapData mapData = LoadSceneData();
+        if (mapData == null) return;
         
         foreach (GameObject gameObject in GameObject.FindObjectsOfType<GameObject>(true))
         {
@@ -55,7 +58,7 @@ public static class SceneDesignMethods
                 {
                     
                     AssigningValue(parallax);
-                    AssigningStartPos(parallax, sceneData);
+                    AssigningStartPos(parallax, mapData);
                     
                     Debug.Log($"Assign for game object: {gameObject.name}");
                 }
@@ -63,9 +66,9 @@ public static class SceneDesignMethods
         }
     }
 
-    static void AssigningStartPos(Parallax parallax, SceneData sceneData)
+    static void AssigningStartPos(Parallax parallax, MapData mapData)
     {
-        parallax.startCamPos = sceneData.GetImageStartPos(SceneManager.GetActiveScene().name);
+        parallax.startCamPos = mapData.GetImageStartPos(SceneManager.GetActiveScene().name);
     }
 
     private static Dictionary<string, float> parallaxNameDictionary = new Dictionary<string, float>()
@@ -82,7 +85,7 @@ public static class SceneDesignMethods
     {
         foreach (string key in parallaxNameDictionary.Keys)
         {
-            if (parallax.gameObject.name.Equals(key))
+            if (parallax.gameObject.name.ToUpper().Equals(key.ToUpper()))
             {
                 parallax.parralaxEffect = parallaxNameDictionary[key];
             }

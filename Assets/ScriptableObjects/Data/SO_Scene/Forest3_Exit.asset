@@ -15,7 +15,7 @@ MonoBehaviour:
   exitSettings:
   - id: 0
     spawnPos: {x: 280.5, y: -3.3}
-    destination: 7
+    destination: 202
   - id: 1
     spawnPos: {x: 335, y: -3.3}
-    destination: 4
+    destination: 300

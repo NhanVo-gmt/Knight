@@ -5070,7 +5070,9 @@ MonoBehaviour:
   hitParticles:
   - {fileID: 7699197905571394763}
   - {fileID: 5829387503824472768}
-  enemyHitParticle: {fileID: 79635652584670138}
+  enemyHitParticles:
+  - {fileID: 79635652584670138}
+  - {fileID: 0}
 --- !u!1 &2324975236048740542
 GameObject:
   m_ObjectHideFlags: 0
@@ -35331,7 +35333,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: InitialModule.maxNumParticles
-      value: 20
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8229257434432197279, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: InitialModule.startSize.scalar

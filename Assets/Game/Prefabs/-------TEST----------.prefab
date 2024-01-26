@@ -118,6 +118,14 @@ PrefabInstance:
       propertyPath: hitParticles.Array.data[1]
       value: 
       objectReference: {fileID: 6293598737791236837}
+    - target: {fileID: 6477008602767863102, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: enemyHitParticles.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6477008602767863102, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: enemyHitParticles.Array.data[0]
+      value: 
+      objectReference: {fileID: 480640021807739807}
     - target: {fileID: 6563395301072381139, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.1
@@ -429,6 +437,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3686406676852367381, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+    - {fileID: 3980165510688341442, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}

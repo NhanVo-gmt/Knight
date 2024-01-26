@@ -34,7 +34,7 @@ public class ParticleSystemController : CoreComponent
     [SerializeField] private ParticleSystem[] hitParticles;
 
     [Header("Enemy")] 
-    [SerializeField] private ParticleSystem enemyHitParticle;
+    [SerializeField] private ParticleSystem[] enemyHitParticles;
     
     private void OnEnable()
     {
@@ -109,7 +109,10 @@ public class ParticleSystemController : CoreComponent
 
     public void PlayEnemyHitParticle()
     {
-        enemyHitParticle.Play();
+        foreach (ParticleSystem particle in enemyHitParticles)
+        {
+            particle.Play();
+        }
     }
     
     #endregion

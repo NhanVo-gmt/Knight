@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   exitSettings:
   - id: 0
-    position: {x: 223, y: 0}
-    destination: 6
+    spawnPos: {x: 223, y: 0}
+    destination: 201
   - id: 1
-    position: {x: 290, y: -3.3}
-    destination: 8
+    spawnPos: {x: 290, y: -3.3}
+    destination: 203

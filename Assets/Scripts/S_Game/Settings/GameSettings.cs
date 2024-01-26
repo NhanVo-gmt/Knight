@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameSettings : SingletonObject<GameSettings>
 {
@@ -40,12 +41,12 @@ public class GameSettings : SingletonObject<GameSettings>
         OnGameInitialized?.Invoke();
     }
 
-    [Header("Scene")] 
-    public SceneData sceneData;
+    [FormerlySerializedAs("sceneData")] [Header("Scene")] 
+    public MapData mapData;
 
     public ExitData.ExitSettings GetExit(string scene, int id)
     {
-        return sceneData.GetExit(scene, id);
+        return mapData.GetExit(scene, id);
     }
     //
     // public void AssignExit()
