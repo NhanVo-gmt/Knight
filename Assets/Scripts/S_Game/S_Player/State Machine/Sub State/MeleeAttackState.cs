@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class MeleeAttackState : AttackState
 {
+    protected ParticleSystemController particleController
+    {
+        get => _particleController ??= core.GetCoreComponent<ParticleSystemController>(); 
+    }
+    private ParticleSystemController _particleController;
+    
     public MeleeAttackState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
 
@@ -51,6 +57,8 @@ public class MeleeAttackState : AttackState
         {
             vfx.SpawnPooledPrefab(hitVFX, movement.transform.position, movement.faceDirection);
         }
+        
+        particleController.PlayEnemyHitParticle();
     }
 
     public override void AnimationFinishTrigger()

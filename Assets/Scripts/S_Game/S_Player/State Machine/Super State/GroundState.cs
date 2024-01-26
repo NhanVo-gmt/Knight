@@ -29,7 +29,7 @@ public class GroundState : State
         base.Enter();
         anim.Play(animId);
         movement.SetGravityScale(data.jumpData.gravityScale);
-        particleController.SetRunParticle(true);
+        particleController.PlayRunParticle(true);
         
         player.dashState.RecoverDash();
     }

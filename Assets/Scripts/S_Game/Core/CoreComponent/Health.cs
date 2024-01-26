@@ -33,9 +33,9 @@ public class Health : CoreComponent
         base.Awake();
     }
     
-    public void TakeDamage(int damage)
+    public bool TakeDamage(int damage)
     {
-        if (health <= 0 || IsInvulnerable()) return;
+        if (health <= 0 || IsInvulnerable()) return false;
 
         health -= damage;
 
@@ -49,6 +49,8 @@ public class Health : CoreComponent
         {
             Die();
         }
+
+        return true;
     }
 
     protected virtual bool IsInvulnerable()

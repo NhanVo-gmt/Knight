@@ -13,7 +13,7 @@ public class JumpState : GroundState
     public override void Enter()
     {
         base.Enter();
-        particleController.SetRunParticle(false);
+        particleController.PlayRunParticle(false);
         UseInput();
         Jump();
         SpawnVFX();
@@ -44,7 +44,7 @@ public class JumpState : GroundState
     private void SpawnVFX()
     {
         vfx.SpawnPooledPrefab(data.jumpData.jumpVFX, movement.transform.position, movement.faceDirection);
-        particleController.SetlandParticle(true);
+        particleController.PlaylandParticle(true);
     }
 
     public override void Exit()

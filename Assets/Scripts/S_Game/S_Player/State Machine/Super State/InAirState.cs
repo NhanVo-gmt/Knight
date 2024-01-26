@@ -26,7 +26,7 @@ public class InAirState : State
     {
         base.Enter();
         isPlayed = false;
-        particleController.SetRunParticle(false);
+        particleController.PlayRunParticle(false);
     }
 
     public override void Exit()
@@ -66,7 +66,7 @@ public class InAirState : State
         {
             stateMachine.ChangeState(player.idleState);
             SpawnLandVFX();
-            particleController.SetlandParticle(true);
+            particleController.PlaylandParticle(true);
         }
     }
     

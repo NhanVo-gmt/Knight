@@ -60,7 +60,7 @@ public class RestState : GroundState
     void SpawnVFX()
     {
         anim.StartRestVFX();
-        particleController.SetRestParticle();
+        particleController.PlayRestParticle();
         CameraController.Instance.Bloom();
     }
 

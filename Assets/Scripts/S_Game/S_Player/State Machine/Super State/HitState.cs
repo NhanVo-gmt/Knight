@@ -10,6 +10,12 @@ public class HitState : State
     protected Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
     private Movement _movement;
     
+    protected ParticleSystemController particleController
+    {
+        get => _particleController ??= core.GetCoreComponent<ParticleSystemController>(); 
+    }
+    private ParticleSystemController _particleController;
+    
     public HitState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
     }
@@ -29,6 +35,7 @@ public class HitState : State
     {
         anim.StartHitVFX();
         vfx.SpawnPooledPrefab(data.hitData.vfx[0], movement.transform.position, movement.faceDirection);
+        particleController.PlayHitParticle();
     }
 
     public override void Exit()

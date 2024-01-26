@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
+using Random = UnityEngine.Random;
 
 public class ParticleSystemController : CoreComponent
 {
@@ -25,11 +26,15 @@ public class ParticleSystemController : CoreComponent
             }
         }
     }
-
+    [Header("Player")]
     [SerializeField] private List<ParticleRegion> particleList = new List<ParticleRegion>();
     private ParticleRegion currentParticleRegion;
 
     [SerializeField] private ParticleSystem restParticle;
+    [SerializeField] private ParticleSystem[] hitParticles;
+
+    [Header("Enemy")] 
+    [SerializeField] private ParticleSystem enemyHitParticle;
     
     private void OnEnable()
     {
@@ -61,7 +66,9 @@ public class ParticleSystemController : CoreComponent
         }
     }
 
-    public void SetRunParticle(bool isActive)
+    #region Play Particle
+
+    public void PlayRunParticle(bool isActive)
     {
         if (currentParticleRegion == null || currentParticleRegion.runParticle == null) return;
 
@@ -71,7 +78,7 @@ public class ParticleSystemController : CoreComponent
         } else currentParticleRegion.runParticle.Play();
     }
     
-    public void SetlandParticle(bool isActive)
+    public void PlaylandParticle(bool isActive)
     {
         if (currentParticleRegion == null || currentParticleRegion.landParticle == null) return;
 
@@ -81,8 +88,30 @@ public class ParticleSystemController : CoreComponent
         } else currentParticleRegion.landParticle.Play();
     }
 
-    public void SetRestParticle()
+    public void PlayRestParticle()
     {
         restParticle.Play();
     }
+
+    private readonly float hitParticleMaxRotation = 10f;
+    public void PlayHitParticle()
+    {
+        float rotateX = Random.Range(-hitParticleMaxRotation, hitParticleMaxRotation);
+        
+        foreach (ParticleSystem particle in hitParticles)
+        {
+            particle.transform.eulerAngles = new Vector3(rotateX, particle.transform.eulerAngles.y, 0);
+            particle.Play();
+
+            rotateX *= -1;
+        }
+    }
+
+    public void PlayEnemyHitParticle()
+    {
+        enemyHitParticle.Play();
+    }
+    
+    #endregion
+
 }

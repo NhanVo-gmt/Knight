@@ -97,7 +97,8 @@ public class Combat : CoreComponent, IDamageable
 
     public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
     {
-        if (this.damagerTarget == damagerType) return ;
+        if (this.damagerTarget == damagerType) return;
+        if(!health.TakeDamage(damage)) return;
         
         if (attackDirection == Vector2.zero)
         {
@@ -108,7 +109,6 @@ public class Combat : CoreComponent, IDamageable
             hitDirection = attackDirection;
         }
 
-        health.TakeDamage(damage);
     }
 
     #endregion

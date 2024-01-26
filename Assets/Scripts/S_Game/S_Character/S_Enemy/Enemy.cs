@@ -20,17 +20,17 @@ public class Enemy : MonoBehaviour
     {
         combat = core.GetCoreComponent<Combat>();
         health = core.GetCoreComponent<Health>();
-        health.OnDie += Die;
-
         SetupComponent();
+        
+        health.OnDie += Die;
     }
-
+    
     void SetupComponent()
     {
-        
         combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.KnockbackType);
         health.SetHealth(data.healthData); 
     }
+
 
     private void Die()
     {
