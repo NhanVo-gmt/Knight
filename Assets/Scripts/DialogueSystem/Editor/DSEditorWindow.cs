@@ -1,30 +1,42 @@
+using System;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DSEditorWindow : EditorWindow
+namespace DS.Window
 {
-    [SerializeField]
-    private VisualTreeAsset m_VisualTreeAsset = default;
-
-    [MenuItem("Window/UI Toolkit/DSEditorWindow")]
-    public static void ShowExample()
+    public class DSEditorWindow : EditorWindow
     {
-        DSEditorWindow wnd = GetWindow<DSEditorWindow>();
-        wnd.titleContent = new GUIContent("DSEditorWindow");
-    }
+        private string path = "Assets/Scripts/DialogueSystem/Editor/View/DSVariables.uss";
 
-    public void CreateGUI()
-    {
-        // Each editor window contains a root VisualElement object
-        VisualElement root = rootVisualElement;
+        [MenuItem("Knight/Dialogue Window")]
+        public static void ShowExample()
+        {
+            GetWindow<DSEditorWindow>("Dialogue Graph");
+        }
 
-        // VisualElements objects can contain other VisualElement following a tree hierarchy.
-        VisualElement label = new Label("Hello World! From C#");
-        root.Add(label);
+        private void OnEnable()
+        {
+            AddGraphView();
+            AddStyles();
+        }
 
-        // Instantiate UXML
-        VisualElement labelFromUXML = m_VisualTreeAsset.Instantiate();
-        root.Add(labelFromUXML);
+        private void AddGraphView()
+        {
+            DSGraphView graphView = new DSGraphView();
+            graphView.StretchToParentSize();
+            rootVisualElement.Add(graphView);
+        }
+
+        private void AddStyles()
+        {
+            StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
+            if (styleSheet == null)
+            {
+                Debug.LogError($"There is no stylesheet at path: {path}");    
+            }
+            
+            rootVisualElement.styleSheets.Add(styleSheet);
+        }
     }
 }

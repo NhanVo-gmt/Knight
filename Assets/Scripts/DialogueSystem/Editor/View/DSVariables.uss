@@ -1,0 +1,9 @@
+:root
+{
+    --ds-colors-grid-light-grey-1: rgb(40, 40, 40);
+    --ds-colors-grid-light-grey-2: rgba(193, 196, 192, 0.1);
+    --ds-colors-grid-light-grey-3: rgba(193, 196, 192, 0.1);
+    
+    --ds-metrics-grid-15: 15;
+    --ds-metrics-grid-25: 25;
+}
