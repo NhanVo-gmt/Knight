@@ -128,8 +128,8 @@ ScriptedImporter:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 300
-      height: 115
+      width: 600
+      height: 230
     spriteID: d9f7cb58cee9cdb458b7921e946d7d9b
     spriteBone: []
     spriteOutline: []
@@ -147,9 +147,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 127
-      width: 300
-      height: 115
+      y: 242
+      width: 600
+      height: 230
     spriteID: fbffcd12ae071ba46a0b7b47ff19ca0c
     spriteBone: []
     spriteOutline: []
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 127}
+    uvTransform: {x: 4, y: 242}
   - name: ForestBackground1_Frame_2
     originalName: 
     pivot: {x: 0.5, y: 0}
@@ -167,9 +167,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 250
-      width: 300
-      height: 115
+      y: 480
+      width: 600
+      height: 230
     spriteID: 764967aeb7fe437458cc0fa8891c4dbc
     spriteBone: []
     spriteOutline: []
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 250}
+    uvTransform: {x: 4, y: 480}
   - name: ForestBackground1_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0}
@@ -187,9 +187,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 373
-      width: 300
-      height: 115
+      y: 718
+      width: 600
+      height: 230
     spriteID: d01063f39a1a13e488db43c4529baf9c
     spriteBone: []
     spriteOutline: []
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 373}
+    uvTransform: {x: 4, y: 718}
   - name: ForestBackground1_Frame_4
     originalName: 
     pivot: {x: 0.5, y: 0}
@@ -207,9 +207,9 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 496
-      width: 300
-      height: 115
+      y: 956
+      width: 600
+      height: 230
     spriteID: 350d332b05989b64cad49add8cba2ce9
     spriteBone: []
     spriteOutline: []
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 496}
+    uvTransform: {x: 4, y: 956}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -233,40 +233,40 @@ ScriptedImporter:
       cellRect:
         x: 0
         y: 0
-        width: 300
-        height: 115
+        width: 600
+        height: 230
       spriteId: d9f7cb58cee9cdb458b7921e946d7d9b
     - name: ForestBackground1_Frame_1
       frameIndex: 1
       cellRect:
         x: 0
         y: 0
-        width: 300
-        height: 115
+        width: 600
+        height: 230
       spriteId: fbffcd12ae071ba46a0b7b47ff19ca0c
     - name: ForestBackground1_Frame_2
       frameIndex: 2
       cellRect:
         x: 0
         y: 0
-        width: 300
-        height: 115
+        width: 600
+        height: 230
       spriteId: 764967aeb7fe437458cc0fa8891c4dbc
     - name: ForestBackground1_Frame_3
       frameIndex: 3
       cellRect:
         x: 0
         y: 0
-        width: 300
-        height: 115
+        width: 600
+        height: 230
       spriteId: d01063f39a1a13e488db43c4529baf9c
     - name: ForestBackground1_Frame_4
       frameIndex: 4
       cellRect:
         x: 0
         y: 0
-        width: 300
-        height: 115
+        width: 600
+        height: 230
       spriteId: 350d332b05989b64cad49add8cba2ce9
     linkedCells: []
     parentIndex: -1
@@ -321,4 +321,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 300, y: 115}
+  canvasSize: {x: 600, y: 230}
