@@ -64,6 +64,7 @@ public static class SceneDesignMethods
                 }
             }
         }
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
 
     static void AssigningStartPos(Parallax parallax, MapData mapData)
