@@ -130,7 +130,7 @@ public class DialogueEditor : EditorWindow {
         scrollPosition = GUILayout.BeginScrollView(scrollPosition);
 
         GUILayoutUtility.GetRect(canvasSize, canvasSize);
-
+        
         foreach(DialogueNode node in selectedDialogue.GetListNode())
         {
             DrawNode(node);

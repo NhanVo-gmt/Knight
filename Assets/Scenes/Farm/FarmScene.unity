@@ -3460,6 +3460,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4936841456805419639, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: playerUI
+      value: 
+      objectReference: {fileID: 1698500320}
     - target: {fileID: 6796928787461905691, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: enemyHitParticles.Array.size
       value: 1
@@ -5386,6 +5390,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1739916567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1698500320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 805624004511103327, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+  m_PrefabInstance: {fileID: 834201651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1715000609
 GameObject:
   m_ObjectHideFlags: 0
