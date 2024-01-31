@@ -12,7 +12,8 @@ namespace DS.Window
 {
     public class DSGraphView : GraphView
     {
-        private string path = "Assets/Scripts/DialogueSystem/Editor/View/DSGraphViewStyles.uss";
+        private string graphViewPath = "Assets/Scripts/DialogueSystem/Editor/View/DSGraphViewStyles.uss";
+        private string nodePath = "Assets/Scripts/DialogueSystem/Editor/View/DSNodeStyles.uss";
         
         public DSGraphView()
         {
@@ -61,14 +62,12 @@ namespace DS.Window
         
         private void AddStyles()
         {
-            StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
-            if (styleSheet == null)
-            {
-                Debug.LogError($"There is no stylesheet at path: {path}");    
-            }
-
+            StyleSheet graphViewStyleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(graphViewPath);
+            StyleSheet nodeStyleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(nodePath);
             
-            styleSheets.Add(styleSheet);
+            
+            styleSheets.Add(graphViewStyleSheet);
+            styleSheets.Add(nodeStyleSheet);
         }
     }
 }

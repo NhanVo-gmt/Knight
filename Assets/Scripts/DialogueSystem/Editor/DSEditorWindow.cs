@@ -31,10 +31,7 @@ namespace DS.Window
         private void AddStyles()
         {
             StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
-            if (styleSheet == null)
-            {
-                Debug.LogError($"There is no stylesheet at path: {path}");    
-            }
+            
             
             rootVisualElement.styleSheets.Add(styleSheet);
         }
