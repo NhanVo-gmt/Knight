@@ -1,17 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using DS.Enumerations;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 namespace DS.Elements
 {
     using Utilities;
+    using Enumerations;
+    using Window;
+    
     public class DSSingleChoiceNode : DSNode
     {
-        public override void Initialize(Vector2 position)
+        public override void Initialize(DSGraphView dsGraphView, Vector2 position)
         {
-            base.Initialize(position);
+            base.Initialize(dsGraphView, position);
+            
             DialogueType = DSDialogueType.SingleChoice;
             Choices.Add("Next Dialogue");
         }

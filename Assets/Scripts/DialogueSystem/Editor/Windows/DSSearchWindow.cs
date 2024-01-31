@@ -15,6 +15,7 @@ namespace DS.Window
         public void Initialize(DSGraphView dsGraphView)
         {
             graphView = dsGraphView;
+            indentationIcon = new Texture2D(1, 1);
             indentationIcon.SetPixel(0, 0, Color.clear);
             indentationIcon.Apply();
         }
@@ -24,7 +25,7 @@ namespace DS.Window
             List<SearchTreeEntry> searchTreeEntries = new List<SearchTreeEntry>()
             {
                 new SearchTreeGroupEntry(new GUIContent("Create Element")),
-                new SearchTreeGroupEntry(new GUIContent("Dialogue Node")),
+                new SearchTreeGroupEntry(new GUIContent("Dialogue Node"), 1),
                 new SearchTreeEntry(new GUIContent("Single Choice", indentationIcon))
                 {
                     level = 2,

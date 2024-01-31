@@ -1,18 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
-using DS.Enumerations;
-using DS.Utilities;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace DS.Elements
 {
+    using Window;
+    using Utilities;
+    using Enumerations;
+    
     public class DSMultipleChoiceNode : DSNode
     {
-        public override void Initialize(Vector2 position)
+        public override void Initialize(DSGraphView dsGraphView, Vector2 position)
         {
-            base.Initialize(position);
+            base.Initialize(dsGraphView, position);
 
             DialogueType = DSDialogueType.MultipleChoice;
             Choices.Add("New Choice");
