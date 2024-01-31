@@ -47,6 +47,26 @@ namespace DS.Window
             
             this.AddManipulator(CreateNodeContextualMenu("Add Node (Single Choice)", DSDialogueType.SingleChoice));
             this.AddManipulator(CreateNodeContextualMenu("Add Node (Multiple Choice)", DSDialogueType.MultipleChoice));
+            
+            this.AddManipulator(CreateGroupContextualMenu());
+        }
+        
+        private IManipulator CreateGroupContextualMenu()
+        {
+            ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
+                menuEvent => menuEvent.menu.AppendAction("Add Group", actionEvent => AddElement(CreateGroup("Dialogue Group", actionEvent.eventInfo.localMousePosition)))
+            );
+            return contextualMenuManipulator;
+        }
+
+        private GraphElement CreateGroup(string title, Vector2 position)
+        {
+            Group group = new Group()
+            {
+                title = title
+            };
+            group.SetPosition(new Rect(position, Vector2.zero));
+            return group;
         }
 
         private IManipulator CreateNodeContextualMenu(string actionTitle, DSDialogueType dialogueType)
