@@ -6,6 +6,7 @@ using UnityEngine;
 
 namespace DS.Elements
 {
+    using Utilities;
     public class DSSingleChoiceNode : DSNode
     {
         public override void Initialize(Vector2 position)
@@ -21,9 +22,7 @@ namespace DS.Elements
 
             foreach (string choice in Choices)
             {
-                Port choicePort = InstantiatePort(Orientation.Horizontal, Direction.Output, Port.Capacity.Single,
-                    typeof(bool));
-                choicePort.portName = choice;
+                Port choicePort = this.CreatePort(choice, Orientation.Horizontal, Direction.Output, Port.Capacity.Single);
                 outputContainer.Add(choicePort);
             }
             RefreshExpandedState();

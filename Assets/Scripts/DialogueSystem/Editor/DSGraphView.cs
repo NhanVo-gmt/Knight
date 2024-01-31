@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using DS.Elements;
 using DS.Enumerations;
+using DS.Utilities;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -23,6 +24,8 @@ namespace DS.Window
             AddStyles();
         }
 
+        #region Overriding Methods
+        
         public override List<Port> GetCompatiblePorts(Port startPort, NodeAdapter nodeAdapter)
         {
             List<Port> compatiblePorts = new List<Port>();
@@ -37,7 +40,9 @@ namespace DS.Window
             
             return compatiblePorts;
         }
+        #endregion
 
+        #region Manipulators
         private void AddManipulators()
         {
             SetupZoom(ContentZoomer.DefaultMinScale, ContentZoomer.DefaultMaxScale);
@@ -59,6 +64,18 @@ namespace DS.Window
             return contextualMenuManipulator;
         }
 
+        private IManipulator CreateNodeContextualMenu(string actionTitle, DSDialogueType dialogueType)
+        {
+            ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
+                menuEvent => menuEvent.menu.AppendAction(actionTitle, actionEvent => AddElement(CreateNode(dialogueType, actionEvent.eventInfo.localMousePosition)))
+            );
+            return contextualMenuManipulator;
+        }
+        
+        #endregion
+
+        #region Element Creation
+        
         private GraphElement CreateGroup(string title, Vector2 position)
         {
             Group group = new Group()
@@ -67,14 +84,6 @@ namespace DS.Window
             };
             group.SetPosition(new Rect(position, Vector2.zero));
             return group;
-        }
-
-        private IManipulator CreateNodeContextualMenu(string actionTitle, DSDialogueType dialogueType)
-        {
-            ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
-                menuEvent => menuEvent.menu.AppendAction(actionTitle, actionEvent => AddElement(CreateNode(dialogueType, actionEvent.eventInfo.localMousePosition)))
-            );
-            return contextualMenuManipulator;
         }
         
         private DSNode CreateNode(DSDialogueType dialogueType, Vector2 position)
@@ -87,6 +96,10 @@ namespace DS.Window
             
             return node;
         }
+        
+        #endregion
+
+        #region Element Addition
 
         private void AddGridBackground()
         {
@@ -97,12 +110,9 @@ namespace DS.Window
         
         private void AddStyles()
         {
-            StyleSheet graphViewStyleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(graphViewPath);
-            StyleSheet nodeStyleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(nodePath);
-            
-            
-            styleSheets.Add(graphViewStyleSheet);
-            styleSheets.Add(nodeStyleSheet);
+            this.AddStyleSheets(graphViewPath, nodePath);
         }
+        
+        #endregion
     }
 }

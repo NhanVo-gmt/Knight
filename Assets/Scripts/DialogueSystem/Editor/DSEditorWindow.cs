@@ -1,4 +1,5 @@
 using System;
+using DS.Utilities;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -30,10 +31,7 @@ namespace DS.Window
 
         private void AddStyles()
         {
-            StyleSheet styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
-            
-            
-            rootVisualElement.styleSheets.Add(styleSheet);
+            rootVisualElement.AddStyleSheets(path);
         }
     }
 }
