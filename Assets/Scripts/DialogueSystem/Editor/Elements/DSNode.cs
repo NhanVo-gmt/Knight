@@ -16,7 +16,7 @@ namespace DS.Elements
         public List<string> Choices { get; set; }
         public string Text { get; set; }
         public DSDialogueType DialogueType { get; set; }
-        public Group Group { get; set; }
+        public DSGroup Group { get; set; }
 
         private DSGraphView graphView;
         private Color defaultBackgroundColor;
@@ -43,7 +43,7 @@ namespace DS.Elements
             {
                 if (Group != null)
                 {
-                    Group currentGroup = Group;
+                    DSGroup currentGroup = Group;
                     graphView.RemoveGroupedNode(this, Group);
                     DialogueName = callback.newValue;
                     graphView.AddGroupedNode(this, currentGroup);

@@ -67,7 +67,7 @@ namespace DS.Window
                 }
                 case Group _:
                 {
-                    Group group = graphView.CreateGroup("DialogueGroup", localMousePosition);
+                    DSGroup group = graphView.CreateGroup("DialogueGroup", localMousePosition);
                     graphView.Add(group);
                     return true;
                 }
