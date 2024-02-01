@@ -91,7 +91,7 @@ namespace DS.Window
         private IManipulator CreateGroupContextualMenu()
         {
             ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
-                menuEvent => menuEvent.menu.AppendAction("Add Group", actionEvent => AddElement(CreateGroup("Dialogue Group", GetLocalMousePosition(actionEvent.eventInfo.localMousePosition))))
+                menuEvent => menuEvent.menu.AppendAction("Add Group", actionEvent => CreateGroup("Dialogue Group", GetLocalMousePosition(actionEvent.eventInfo.localMousePosition)))
             );
             return contextualMenuManipulator;
         }
@@ -112,6 +112,16 @@ namespace DS.Window
         {
             DSGroup group = new DSGroup(title, position);
             AddGroup(group);
+            AddElement(group);
+
+            foreach (GraphElement element in selection)
+            {
+                if (element is DSNode node)
+                {
+                    group.AddElement(node);
+                }
+            }
+            
             return group;
         }
 
@@ -145,13 +155,23 @@ namespace DS.Window
                     }
                     else if (element is DSGroup dsGroup)
                     {
-                        RemoveGroup(dsGroup);
                         groupsToDelete.Add(dsGroup);
                     }
                 }
 
                 foreach (DSGroup group in groupsToDelete)
                 {
+                    List<DSNode> groupNodes = new List<DSNode>();
+                    foreach (GraphElement element in group.containedElements)
+                    {
+                        if (element is DSNode node)
+                        {
+                            groupNodes.Add(node);
+                        }
+                    }
+                    
+                    group.RemoveElements(groupNodes);
+                    RemoveGroup(group);
                     RemoveElement(group);
                 }
 
