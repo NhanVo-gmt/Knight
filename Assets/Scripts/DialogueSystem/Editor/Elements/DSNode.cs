@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
@@ -12,6 +13,7 @@ namespace DS.Elements
     
     public class DSNode : UnityEditor.Experimental.GraphView.Node
     {
+        public string ID { get; set; }
         public string DialogueName { get; set; }
         public List<string> Choices { get; set; }
         public string Text { get; set; }
@@ -23,6 +25,7 @@ namespace DS.Elements
 
         public virtual void Initialize(DSGraphView dsGraphView, Vector2 position)
         {
+            ID = Guid.NewGuid().ToString();
             DialogueName = "DialogueName";
             Choices = new List<string>();
             Text = "Dialogue Text.";
@@ -36,22 +39,36 @@ namespace DS.Elements
             extensionContainer.AddToClassList("ds-node__extension-container");
         }
 
+        #region Overriding Methods
+
+        public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
+        {
+            evt.menu.AppendAction("Disconnect Input Ports", actionEvent => DisconnectInputPort());
+            evt.menu.AppendAction("Disconnect Output Ports", actionEvent => DisconnectOutputPort());
+            base.BuildContextualMenu(evt);
+        }
+
+        #endregion
+
         public virtual void Draw()
         {
             // Title container
-            TextField dialogueNameTextField = DSElementUtility.CreateTextField(DialogueName, callback =>
+            TextField dialogueNameTextField = DSElementUtility.CreateTextField(DialogueName, null, callback =>
             {
+                TextField target = (TextField)callback.target;
+                target.value = callback.newValue.RemoveWhitespaces().RemoveSpecialCharacters();
+                
                 if (Group != null)
                 {
                     DSGroup currentGroup = Group;
                     graphView.RemoveGroupedNode(this, Group);
-                    DialogueName = callback.newValue;
+                    DialogueName = target.value;
                     graphView.AddGroupedNode(this, currentGroup);
                 }
                 else
                 {
                     graphView.RemoveUngroupedNode(this);
-                    DialogueName = callback.newValue;
+                    DialogueName = target.value;
                     graphView.AddUngroupedNode(this);
                 }
             });
@@ -87,6 +104,35 @@ namespace DS.Elements
             extensionContainer.Add(customDataContainer);
         }
 
+        #region Utility Methods
+
+        public void DisconnectAllPorts()
+        {
+            DisconnectPorts(inputContainer);
+            DisconnectPorts(outputContainer);
+        }
+
+        public void DisconnectInputPort()
+        {
+            DisconnectPorts(inputContainer);
+        }
+
+        public void DisconnectOutputPort()
+        {
+            DisconnectPorts(outputContainer);
+        }
+        
+        public void DisconnectPorts(VisualElement container)
+        {
+            foreach (Port port in container.Children())
+            {
+                if (port.connected)
+                {
+                    graphView.DeleteElements(port.connections);
+                }
+            }
+        }
+
         public void SetErrorStyle(Color color)
         {
             mainContainer.style.backgroundColor = color;
@@ -96,5 +142,6 @@ namespace DS.Elements
         {
             mainContainer.style.backgroundColor = defaultBackgroundColor;
         }
+        #endregion
     }
 }
