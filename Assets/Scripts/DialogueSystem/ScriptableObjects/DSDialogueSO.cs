@@ -5,15 +5,16 @@ using UnityEngine;
 
 namespace DS.ScriptableObjects
 {
+    using Data;
     public class DSDialogueSO : ScriptableObject
     {
         public string DialogueName;
         [TextArea] public string Text;
-        public List<string> Choices;
+        public List<DSDialogueChoiceData> Choices;
         public DSDialogueType DialogueType;
         public bool IsStartingDialogue;
 
-        public DSDialogueSO(string dialogueName, string text, List<string> choices, DSDialogueType dialogueType,
+        public void Initialize(string dialogueName, string text, List<DSDialogueChoiceData> choices, DSDialogueType dialogueType,
             bool isStartingDialogue)
         {
             DialogueName = dialogueName;

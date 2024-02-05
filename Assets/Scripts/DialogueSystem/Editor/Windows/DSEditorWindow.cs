@@ -12,6 +12,8 @@ namespace DS.Window
         private readonly string editorWindowStylePath = "Assets/Scripts/DialogueSystem/Editor/View/DSVariables.uss";
         private readonly string toolbarStylePath = "Assets/Scripts/DialogueSystem/Editor/View/DSToolbarStyles.uss";
 
+        private DSGraphView graphView;
+
         private readonly string defaultFileName = "DialoguesFileName";
         private TextField fileNameTextField;
         private Button saveBtn;
@@ -33,7 +35,7 @@ namespace DS.Window
 
         private void AddGraphView()
         {
-            DSGraphView graphView = new DSGraphView(this);
+            graphView = new DSGraphView(this);
             graphView.StretchToParentSize();
             rootVisualElement.Add(graphView);
         }
@@ -45,7 +47,7 @@ namespace DS.Window
             {
                 fileNameTextField.value = callback.newValue.RemoveWhitespaces();
             });
-            saveBtn = DSElementUtility.CreateButton("Save");
+            saveBtn = DSElementUtility.CreateButton("Save", () => Save());
             toolbar.Add(fileNameTextField);
             toolbar.Add(saveBtn);
             toolbar.AddStyleSheets(toolbarStylePath);
@@ -58,6 +60,26 @@ namespace DS.Window
             rootVisualElement.AddStyleSheets(editorWindowStylePath);
         }
         
+        #endregion
+
+        #region Toolbar Actions
+
+        private void Save()
+        {
+            if (string.IsNullOrEmpty(fileNameTextField.value))
+            {
+                EditorUtility.DisplayDialog(
+                    "Invalid file name.",
+                    "Please ensure the file name you've typed in is valid",
+                    "Ok!"
+                );
+                return;
+            }
+            
+            DSIOUtility.Initialize(graphView, fileNameTextField.value);
+            DSIOUtility.Save();
+        }
+
         #endregion
 
         #region Utility Methods

@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1194f7b0ad6149448a2796f9336ff98f, type: 3}
+  m_Name: DialoguesFileNameGraph
+  m_EditorClassIdentifier: 
+  FileName: DialoguesFileName
+  Groups:
+  - ID: 9319efef-16fc-4435-9106-1ede00361f00
+    Name: Dialogue Group
+    Position: {x: 536, y: 14}
+  Nodes:
+  - ID: 1e24c5e1-a9c1-465a-83c1-b09cd75f2431
+    Name: DialogueName
+    Text: Hello Traveler
+    GroupID: 
+    DialogueType: 0
+    Position: {x: 199, y: 164}
+  - ID: a6a02642-424c-4171-a9ad-33c9ef7957f3
+    Name: 123
+    Text: See me ?
+    GroupID: 9319efef-16fc-4435-9106-1ede00361f00
+    DialogueType: 0
+    Position: {x: 561, y: 73}
+  OldGroupNames:
+  - Dialogue Group
+  OldUngroupedNodeNames:
+  - DialogueName
+  OldGroupedNodeNames:
+    list:
+    - Key: Dialogue Group
+      Value:
+      - 123

@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 namespace DS.Window
 {
+    using Data.Save;
     using Data.Error;
     using Elements;
     using Enumerations;
@@ -24,23 +25,23 @@ namespace DS.Window
         private SerializableDictionary<string, DSGroupErrorData> groups;
         private SerializableDictionary<Group, SerializableDictionary<string, DSNodeErrorData>> groupedNodes;
 
-        private int repeatedNamesAmount;
+        private int nameErrorsAmount;
 
-        public int RepeatedNamesAmount
+        public int NameErrorsAmount
         {
             get
             {
-                return repeatedNamesAmount;
+                return nameErrorsAmount;
             }
             set
             {
-                repeatedNamesAmount = value;
-                if (repeatedNamesAmount == 0)
+                nameErrorsAmount = value;
+                if (nameErrorsAmount == 0)
                 {
                     editorWindow.EnableSaving();
                 }
 
-                if (repeatedNamesAmount == 1)
+                if (nameErrorsAmount == 1)
                 {
                     editorWindow.DisableSaving();
                 }
@@ -63,6 +64,7 @@ namespace DS.Window
             OnGroupElementAdded();
             OnGroupElementRemoved();
             OnGroupRenamed();
+            OnGraphViewChanged();
             
             AddStyles();
         }
@@ -262,9 +264,55 @@ namespace DS.Window
             {
                 DSGroup dsGroup = (DSGroup)group;
                 dsGroup.title = newTitle.RemoveWhitespaces().RemoveSpecialCharacters();
+                
+                if (string.IsNullOrEmpty(dsGroup.title))
+                {
+                    if (!string.IsNullOrEmpty(dsGroup.OldTitle))
+                    {
+                        ++NameErrorsAmount;
+                    }
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(dsGroup.OldTitle))
+                    {
+                        --NameErrorsAmount;
+                    }
+                }
+                
                 RemoveGroup(dsGroup);
                 dsGroup.OldTitle = dsGroup.title;
                 AddGroup(dsGroup);
+            };
+        }
+
+        private void OnGraphViewChanged()
+        {
+            graphViewChanged += (changes) =>
+            {
+                if (changes.edgesToCreate != null)
+                {
+                    foreach (Edge edge in changes.edgesToCreate)
+                    {
+                        DSNode nextNode = (DSNode)edge.input.node;
+                        DSChoiceSaveData choiceSaveData = (DSChoiceSaveData)edge.output.userData;
+                        choiceSaveData.NodeID = nextNode.ID;
+                    }
+                }
+
+                if (changes.elementsToRemove != null)
+                {
+                    foreach (GraphElement element in changes.elementsToRemove)
+                    {
+                        if (element is Edge edge)
+                        {
+                            DSChoiceSaveData choiceSaveData = (DSChoiceSaveData)edge.output.userData;
+                            choiceSaveData.NodeID = "";
+                        }
+                    }
+                }
+                
+                return changes;
             };
         }
 
@@ -290,7 +338,7 @@ namespace DS.Window
             node.SetErrorStyle(errorColor);
             if (ungroupedNodesList.Count == 2)
             {
-                ++RepeatedNamesAmount;
+                ++NameErrorsAmount;
                 ungroupedNodesList[0].SetErrorStyle(errorColor);
             }
         }
@@ -304,7 +352,7 @@ namespace DS.Window
 
             if (ungroupedNodeList.Count == 1)
             {
-                --RepeatedNamesAmount;
+                --NameErrorsAmount;
                 ungroupedNodeList[0].ResetStyle();
                 return;
             }
@@ -334,7 +382,7 @@ namespace DS.Window
             group.SetErrorStyle(errorColor);
             if (groupsList.Count == 2)
             {
-                ++RepeatedNamesAmount;
+                ++NameErrorsAmount;
                 groupsList[0].SetErrorStyle(errorColor);
             }
         }
@@ -348,7 +396,7 @@ namespace DS.Window
 
             if (groupsList.Count == 1)
             {
-                --RepeatedNamesAmount;
+                --NameErrorsAmount;
                 groupsList[0].ResetStyle();
                 return;
             }
@@ -384,7 +432,7 @@ namespace DS.Window
 
             if (groupedNodesList.Count == 2)
             {
-                ++RepeatedNamesAmount;
+                ++NameErrorsAmount;
                 groupedNodesList[0].SetErrorStyle(errorColor);
             }
         }
@@ -400,7 +448,7 @@ namespace DS.Window
 
             if (groupedNodesList.Count == 1)
             {
-                --RepeatedNamesAmount;
+                --NameErrorsAmount;
                 groupedNodesList[0].ResetStyle();
             }
 
