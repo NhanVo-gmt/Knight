@@ -15,7 +15,7 @@ namespace DS.Window
         private DSGraphView graphView;
 
         private readonly string defaultFileName = "DialoguesFileName";
-        private TextField fileNameTextField;
+        private static TextField fileNameTextField;
         private Button saveBtn;
             
         [MenuItem("Knight/Dialogue Window")]
@@ -47,9 +47,16 @@ namespace DS.Window
             {
                 fileNameTextField.value = callback.newValue.RemoveWhitespaces();
             });
+            
             saveBtn = DSElementUtility.CreateButton("Save", () => Save());
+            Button clearBtn = DSElementUtility.CreateButton("Clear", () => Clear());
+            Button resetBtn = DSElementUtility.CreateButton("Reset", () => ResetGraph());
+            
+            
             toolbar.Add(fileNameTextField);
             toolbar.Add(saveBtn);
+            toolbar.Add(clearBtn);
+            toolbar.Add(resetBtn);
             toolbar.AddStyleSheets(toolbarStylePath);
             
             rootVisualElement.Add(toolbar);
@@ -80,9 +87,26 @@ namespace DS.Window
             DSIOUtility.Save();
         }
 
+        private void Clear()
+        {
+            graphView.ClearGraph();
+        }
+
+        private void ResetGraph()
+        {
+            Clear();
+            UpdateFileName(defaultFileName);
+        }
+
         #endregion
 
         #region Utility Methods
+
+        public static void UpdateFileName(string newFileName)
+        {
+            fileNameTextField.value = newFileName;
+        }
+        
         public void EnableSaving()
         {
             saveBtn.SetEnabled(true);

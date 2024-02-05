@@ -495,6 +495,17 @@ namespace DS.Window
             return localMousePosition;
         }
 
+        public void ClearGraph()
+        {
+            graphElements.ForEach(graphElement => RemoveElement(graphElement));
+            
+            groups.Clear();
+            groupedNodes.Clear();
+            ungroupedNodes.Clear();
+
+            nameErrorsAmount = 0;
+        }
+
         #endregion
     }
 }
