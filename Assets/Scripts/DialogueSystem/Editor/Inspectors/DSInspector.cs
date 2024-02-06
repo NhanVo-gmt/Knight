@@ -96,11 +96,13 @@ namespace DS.Inspectors
             int oldSelectedDialogueGroupIndex = selectedDialogueIndexProperty.intValue;
 
             DSDialogueGroupSO oldDialogueGroup = (DSDialogueGroupSO)dialogueGroupProperty.objectReferenceValue;
-            UpdateIndexOnDialogueGroupUpdate(dialogueGroupNames, oldDialogueGroup, oldSelectedDialogueGroupIndex);
+            bool isOldDialogueGroupNull = oldDialogueGroup == null;
+            string oldDialogueGroupName = isOldDialogueGroupNull ? "" : oldDialogueGroup.GroupName;
+            UpdateIndexOnNamesListUpdate(dialogueGroupNames, selectedDialogueGroupIndexProperty, oldSelectedDialogueGroupIndex, oldDialogueGroupName, isOldDialogueGroupNull);
             
             selectedDialogueGroupIndexProperty.intValue = DSInspectorUtility.DrawPopup("Dialogue Groups", selectedDialogueGroupIndexProperty, dialogueGroupNames.ToArray());
 
-            string selectedDialogueGroupName = dialogueGroupNames[selectedDialogueIndexProperty.intValue];
+            string selectedDialogueGroupName = dialogueGroupNames[selectedDialogueGroupIndexProperty.intValue];
             DSDialogueGroupSO selectedDialogueGroup = DSIOUtility.LoadAsset<DSDialogueGroupSO>(
                 $"Assets/DialogueSystem/Dialogues/{dialogueContainer.FileName}/Groups/{selectedDialogueGroupName}",
                 selectedDialogueGroupName);
@@ -130,25 +132,26 @@ namespace DS.Inspectors
 
         #region Index Methods
 
-        private void UpdateIndexOnDialogueGroupUpdate(List<string> dialogueGroupNames, DSDialogueGroupSO oldDialogueGroup,
-            int oldSelectedDialogueGroupIndex)
+        private void UpdateIndexOnNamesListUpdate(List<string> optionNames, SerializedProperty indexProperty, int oldSelectedDialogueGroupIndex, string oldPropertyName, bool isOldPropertyNull)
         {
-            if (oldDialogueGroup == null)
+            if (isOldPropertyNull)
             {
-                selectedDialogueGroupIndexProperty.intValue = 0;
+                indexProperty.intValue = 0;
+                return;
+            }
+
+            bool oldIndexIsOutOfBoundsOfNameListCount = oldSelectedDialogueGroupIndex > optionNames.Count - 1;
+            bool oldNameIsDifferentThanSelectedName = oldIndexIsOutOfBoundsOfNameListCount ||
+                                                      oldPropertyName != optionNames[oldSelectedDialogueGroupIndex];
+            
+            if (oldNameIsDifferentThanSelectedName)
+            {
+                indexProperty.intValue =
+                    optionNames.IndexOf(oldPropertyName);
             }
             else
             {
-                if (oldSelectedDialogueGroupIndex > dialogueGroupNames.Count - 1 || oldDialogueGroup.GroupName !=
-                    dialogueGroupNames[oldSelectedDialogueGroupIndex])
-                {
-                    selectedDialogueGroupIndexProperty.intValue =
-                        dialogueGroupNames.IndexOf(oldDialogueGroup.GroupName);
-                }
-                else
-                {
-                    selectedDialogueIndexProperty.intValue = 0;
-                }
+                selectedDialogueIndexProperty.intValue = 0;
             }
         }
 

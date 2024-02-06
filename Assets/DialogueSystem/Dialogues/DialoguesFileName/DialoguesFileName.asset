@@ -15,8 +15,10 @@ MonoBehaviour:
   FileName: DialoguesFileName
   DialogueGroups:
     list:
-    - Key: {fileID: 11400000, guid: 5069b77c9379cf545af01ef739dd24a8, type: 2}
+    - Key: {fileID: 11400000, guid: 217f2de4d4456674b864a68256eb8306, type: 2}
       Value:
-      - {fileID: 11400000, guid: 8a0629fe1315dc548a1fe4177075b6cd, type: 2}
-  UngroupedDialogues:
-  - {fileID: 11400000, guid: 5b7682539460a1a4a817848a82dfadc2, type: 2}
+      - {fileID: 11400000, guid: b815dcaa4166f1f48bb133c478f3f23a, type: 2}
+    - Key: {fileID: 11400000, guid: f6f2f165bc80cb54faa0482645ee395b, type: 2}
+      Value:
+      - {fileID: 11400000, guid: 3884d1d0aaf163644ba60b9650b3171b, type: 2}
+  UngroupedDialogues: []
