@@ -17,7 +17,9 @@ namespace DS.Window
 
         private readonly string defaultFileName = "DialoguesFileName";
         private static TextField fileNameTextField;
+        
         private Button saveBtn;
+        private Button minimapBtn;
             
         [MenuItem("Knight/Dialogue Window")]
         public static void ShowExample()
@@ -53,13 +55,15 @@ namespace DS.Window
             Button loadBtn = DSElementUtility.CreateButton("Load", () => Load());
             Button clearBtn = DSElementUtility.CreateButton("Clear", () => Clear());
             Button resetBtn = DSElementUtility.CreateButton("Reset", () => ResetGraph());
-            
-            
+            minimapBtn = DSElementUtility.CreateButton("MiniMap", () => ToggleMiniMap());
+
+
             toolbar.Add(fileNameTextField);
             toolbar.Add(saveBtn);
             toolbar.Add(loadBtn);
             toolbar.Add(clearBtn);
             toolbar.Add(resetBtn);
+            toolbar.Add(minimapBtn);
             toolbar.AddStyleSheets(toolbarStylePath);
             
             rootVisualElement.Add(toolbar);
@@ -111,6 +115,12 @@ namespace DS.Window
         {
             Clear();
             UpdateFileName(defaultFileName);
+        }
+
+        private void ToggleMiniMap()
+        {
+            graphView.ToggleMiniMap();
+            minimapBtn.ToggleInClassList("ds-toolbar__button__selected");
         }
 
         #endregion

@@ -20,6 +20,7 @@ namespace DS.Window
 
         private DSEditorWindow editorWindow;
         private DSSearchWindow searchWindow;
+        private MiniMap miniMap;
 
         private SerializableDictionary<string, DSNodeErrorData> ungroupedNodes;
         private SerializableDictionary<string, DSGroupErrorData> groups;
@@ -58,6 +59,7 @@ namespace DS.Window
             
             AddManipulators();
             AddGridBackground();
+            AddMiniMap();
             AddSearchWindow();
             
             OnElementsDeleted();
@@ -67,6 +69,7 @@ namespace DS.Window
             OnGraphViewChanged();
             
             AddStyles();
+            AddMiniMapStyles();
         }
 
         private void AddSearchWindow()
@@ -472,10 +475,35 @@ namespace DS.Window
             gridBackground.StretchToParentSize();
             Insert(0, gridBackground);
         }
+
+        private void AddMiniMap()
+        {
+            miniMap = new MiniMap()
+            {
+                anchored = true
+            };
+            
+            miniMap.SetPosition(new Rect(15, 50, 200, 100));
+            Add(miniMap);
+            
+            miniMap.visible = false;
+        }
         
         private void AddStyles()
         {
             this.AddStyleSheets(graphViewPath, nodePath);
+        }
+
+        private void AddMiniMapStyles()
+        {
+            StyleColor backgroundColor = new StyleColor(new Color32(29, 29, 30, 255));
+            StyleColor borderColor = new StyleColor(new Color32(51, 51, 51, 255));
+
+            miniMap.style.backgroundColor = backgroundColor;
+            miniMap.style.borderTopColor = borderColor;
+            miniMap.style.borderRightColor = borderColor;
+            miniMap.style.borderBottomColor = borderColor;
+            miniMap.style.borderLeftColor = borderColor;
         }
         
         #endregion
@@ -504,6 +532,11 @@ namespace DS.Window
             ungroupedNodes.Clear();
 
             nameErrorsAmount = 0;
+        }
+
+        public void ToggleMiniMap()
+        {
+            miniMap.visible = !miniMap.visible;
         }
 
         #endregion
