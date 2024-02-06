@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DialogueName
   m_EditorClassIdentifier: 
   DialogueName: DialogueName
-  Text: Hello Traveler
+  Text: Dialogue Text.
   Choices:
   - Text: Next Dialogue
     NextDialogue: {fileID: 11400000, guid: 5c5fe316f7b62d647b0205aba31d84f4, type: 2}

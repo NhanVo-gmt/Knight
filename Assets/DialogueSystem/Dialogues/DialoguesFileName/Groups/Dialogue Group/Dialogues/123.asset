@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 123
   m_EditorClassIdentifier: 
   DialogueName: 123
-  Text: See me ?
+  Text: Dialogue Text.
   Choices:
   - Text: Next Dialogue
     NextDialogue: {fileID: 0}

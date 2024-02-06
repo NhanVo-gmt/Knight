@@ -14,22 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FileName: DialoguesFileName
   Groups:
-  - ID: 9319efef-16fc-4435-9106-1ede00361f00
+  - ID: 67749789-8327-4695-bc5b-e5dda2d4448a
     Name: Dialogue Group
-    Position: {x: 536, y: 14}
+    Position: {x: 598, y: 83}
   Nodes:
-  - ID: 1e24c5e1-a9c1-465a-83c1-b09cd75f2431
+  - ID: d72b1d39-b229-44da-ab0a-fada00ee14c7
     Name: DialogueName
-    Text: Hello Traveler
+    Text: Dialogue Text.
     GroupID: 
     DialogueType: 0
-    Position: {x: 199, y: 164}
-  - ID: a6a02642-424c-4171-a9ad-33c9ef7957f3
+    Position: {x: 297, y: 178}
+  - ID: c87f71ec-d041-4df7-ade4-bdc5efa1c421
     Name: 123
-    Text: See me ?
-    GroupID: 9319efef-16fc-4435-9106-1ede00361f00
+    Text: Dialogue Text.
+    GroupID: 67749789-8327-4695-bc5b-e5dda2d4448a
     DialogueType: 0
-    Position: {x: 561, y: 73}
+    Position: {x: 623, y: 142}
   OldGroupNames:
   - Dialogue Group
   OldUngroupedNodeNames:
