@@ -14,40 +14,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FileName: DialoguesFileName
   Groups:
-  - ID: 197a9433-220d-40f5-ab74-1d2f61891f61
-    Name: 3123
-    Position: {x: 628, y: 37.60002}
-  - ID: afd7a484-420a-4a9a-9b78-fb3b06599444
-    Name: Hello
-    Position: {x: 56.80001, y: 195.19997}
+  - ID: a3d9523e-da1c-46ce-b6b6-74e9c9fe7d86
+    Name: Dialogue Group
+    Position: {x: 172.00002, y: 126.00001}
   Nodes:
-  - ID: 0d2a469f-a473-4385-9537-f93142787c3e
-    Name: 123
-    Text: Dialogue Text.
-    Choices:
-    - Text: New Choice
-      NodeID: 
-    GroupID: 197a9433-220d-40f5-ab74-1d2f61891f61
-    DialogueType: 1
-    Position: {x: 653.6, y: 97.600006}
-  - ID: a72e37d5-65aa-4761-9fb5-8dc6ddee2b95
+  - ID: 07a85a68-1b2a-4852-973c-d322466973ae
     Name: DialogueName
     Text: Dialogue Text.
     Choices:
     - Text: Next Dialogue
-      NodeID: 0d2a469f-a473-4385-9537-f93142787c3e
-    GroupID: afd7a484-420a-4a9a-9b78-fb3b06599444
+      NodeID: 
+    GroupID: a3d9523e-da1c-46ce-b6b6-74e9c9fe7d86
     DialogueType: 0
-    Position: {x: 82.4, y: 255.2}
+    Position: {x: 197, y: 185}
+  - ID: 0d78fd74-45f3-48a5-be89-b5308cb0e717
+    Name: DialogueName
+    Text: Dialogue Text.
+    Choices:
+    - Text: Next Dialogue
+      NodeID: 
+    GroupID: 
+    DialogueType: 0
+    Position: {x: 721, y: 281}
   OldGroupNames:
-  - 3123
-  - Hello
-  OldUngroupedNodeNames: []
+  - Dialogue Group
+  OldUngroupedNodeNames:
+  - DialogueName
   OldGroupedNodeNames:
     list:
-    - Key: 3123
-      Value:
-      - 123
-    - Key: Hello
+    - Key: Dialogue Group
       Value:
       - DialogueName

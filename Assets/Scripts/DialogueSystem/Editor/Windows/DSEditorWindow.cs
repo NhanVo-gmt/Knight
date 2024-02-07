@@ -1,19 +1,22 @@
 using System;
 using System.IO;
-using DS.Utilities;
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace DS.Window
 {
+    using Utilities;
+    using Data.Save;
+    
     public class DSEditorWindow : EditorWindow
     {
         private readonly string editorWindowStylePath = "Assets/Scripts/DialogueSystem/Editor/View/DSVariables.uss";
         private readonly string toolbarStylePath = "Assets/Scripts/DialogueSystem/Editor/View/DSToolbarStyles.uss";
 
-        private DSGraphView graphView;
+        private static DSGraphView graphView;
 
         private readonly string defaultFileName = "DialoguesFileName";
         private static TextField fileNameTextField;
@@ -22,9 +25,23 @@ namespace DS.Window
         private Button minimapBtn;
             
         [MenuItem("Knight/Dialogue Window")]
-        public static void ShowExample()
+        public static void OpenWindow()
         {
             GetWindow<DSEditorWindow>("Dialogue Graph");
+        }
+        
+        [OnOpenAsset(0)]
+        public static bool OnOpenAsset(int instanceID, int line)
+        {
+            DSGraphSaveDataSO graphData = EditorUtility.InstanceIDToObject(instanceID) as DSGraphSaveDataSO;
+            if (graphData != null)
+            {
+                OpenWindow();
+                Load(graphData);
+                return true;
+            }
+
+            return false;
         }
 
         private void OnEnable()
@@ -106,7 +123,7 @@ namespace DS.Window
             }
         }
 
-        private void Clear()
+        private static void Clear()
         {
             graphView.ClearGraph();
         }
@@ -126,6 +143,14 @@ namespace DS.Window
         #endregion
 
         #region Utility Methods
+
+        public static void Load(DSGraphSaveDataSO graphData)
+        {
+            Clear();
+                
+            DSIOUtility.Initialize(graphView, graphData.name);
+            DSIOUtility.Load();
+        }
 
         public static void UpdateFileName(string newFileName)
         {

@@ -4871,13 +4871,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fb9768b2fd7564696946b12a5d5c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueContainer: {fileID: 11400000, guid: 029ce7aea8632d04a906badb0ce108c6, type: 2}
-  dialogueGroup: {fileID: 11400000, guid: f6f2f165bc80cb54faa0482645ee395b, type: 2}
-  dialogue: {fileID: 0}
+  dialogueContainer: {fileID: 0}
+  dialogueGroup: {fileID: 11400000, guid: 217f2de4d4456674b864a68256eb8306, type: 2}
+  dialogue: {fileID: 11400000, guid: a5babf51995b1a74b8c4eb3baea0b43b, type: 2}
   groupedDialogues: 1
   startingDialoguesOnly: 0
-  selectedDialogueGroupIndex: 1
-  selectedDialogueIndex: 0
+  selectedDialogueGroupIndex: 0
+  selectedDialogueIndex: 1
 --- !u!4 &1427876959
 Transform:
   m_ObjectHideFlags: 0

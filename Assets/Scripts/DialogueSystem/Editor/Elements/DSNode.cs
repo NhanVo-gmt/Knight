@@ -156,7 +156,7 @@ namespace DS.Elements
         public bool IsStartingNode()
         {
             Port inputPort = (Port)inputContainer.Children().First();
-            return inputPort.connected;
+            return !inputPort.connected;
         }
 
         public void SetErrorStyle(Color color)

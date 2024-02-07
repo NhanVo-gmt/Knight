@@ -56,7 +56,6 @@ namespace DS.Utilities
 
             GetElementsFromGraphView();
             
-            
             DSGraphSaveDataSO graphData = CreateAsset<DSGraphSaveDataSO>("Assets/DialogueSystem/Editor/Graphs", $"{graphFileName}Graph");
             graphData.Initialize(graphFileName);
 
@@ -178,8 +177,6 @@ namespace DS.Utilities
             graphData.Nodes.Add(nodeData);
         }
 
-        
-
         private static void SaveNodeToScriptableObject(DSNode node, DSDialogueContainerSO dialogueContainer)
         {
             DSDialogueSO dialogue;
@@ -250,15 +247,15 @@ namespace DS.Utilities
                 foreach (KeyValuePair<string, List<string>> oldGroupedNode in graphData.OldGroupedNodeNames)
                 {
                     List<string> nodesToRemove = new List<string>();
+
                     if (currentGroupedNodeNames.ContainsKey(oldGroupedNode.Key))
                     {
-                        nodesToRemove = oldGroupedNode.Value.Except(currentGroupedNodeNames[oldGroupedNode.Key])
-                            .ToList();
+                        nodesToRemove = oldGroupedNode.Value.Except(currentGroupedNodeNames[oldGroupedNode.Key]).ToList();
                     }
 
                     foreach (string nodeToRemove in nodesToRemove)
                     {
-                        RemoveAsset($"{containerFolderPath}/Groups/{oldGroupedNode.Key}/Dialoges", nodeToRemove);
+                        RemoveAsset($"{containerFolderPath}/Groups/{oldGroupedNode.Key}/Dialogues", nodeToRemove);
                     }
                 }
             }
@@ -290,6 +287,28 @@ namespace DS.Utilities
         {
             DSGraphSaveDataSO graphData =
                 LoadAsset<DSGraphSaveDataSO>("Assets/DialogueSystem/Editor/Graphs", graphFileName);
+            if (graphData == null)
+            {
+                EditorUtility.DisplayDialog(
+                    "Couldn't load the file!",
+                    "The file at the following path could not be found:\n\n" +
+                    $"Assets/DialogueSystem/Editor/Graphs/{graphFileName}\n\n" +
+                    "Make sure you choose or place the right path!",
+                    "OK"
+                );
+
+                return;
+            }
+            
+            DSEditorWindow.UpdateFileName(graphData.FileName);
+
+            LoadGroups(graphData.Groups);
+            LoadNodes(graphData.Nodes);
+            LoadNodesConnection();
+        }
+
+        public static void Load(DSGraphSaveDataSO graphData)
+        {
             if (graphData == null)
             {
                 EditorUtility.DisplayDialog(

@@ -54,6 +54,9 @@ namespace DS.Inspectors
             }
             
             DrawFilterArea();
+
+            bool currentStartingDialogueOnlyFilter = startingDialoguesOnlyProperty.boolValue;
+            
             List<string> dialogueNames;
             string dialogueFolderPath = $"Assets/DialogueSystem/Dialogues/{dialogueContainer.FileName}";
             string dialogueInfoMessage = "";
@@ -69,22 +72,25 @@ namespace DS.Inspectors
                 DrawDialogueGroupArea(dialogueContainer, dialogueGroupNames);
 
                 DSDialogueGroupSO dialogueGroup = (DSDialogueGroupSO)dialogueGroupProperty.objectReferenceValue;
-                dialogueNames = dialogueContainer.GetGroupedDialogueNames(dialogueGroup);
+                dialogueNames = dialogueContainer.GetGroupedDialogueNames(dialogueGroup, currentStartingDialogueOnlyFilter);
                 dialogueFolderPath += $"/Groups/{dialogueGroup.GroupName}/Dialogues";
-                dialogueInfoMessage = "There are no Dialoges in this Dialogue Group.";
+                dialogueInfoMessage = "There are no" + (currentStartingDialogueOnlyFilter ? " Starting " : " ") + "Dialogues in this Dialogue Group.";
             }
             else
             {
-                dialogueNames = dialogueContainer.GetUngroupedDialogueNames();
+                dialogueNames = dialogueContainer.GetUngroupedDialogueNames(currentStartingDialogueOnlyFilter);
+                
                 dialogueFolderPath += "/Global/Dialogues";
-                dialogueInfoMessage = "There are no Ungrouped Dialogues in this Dialogue Container";
+                dialogueInfoMessage = "There are no" + (currentStartingDialogueOnlyFilter ? " Starting " : " ") + "Ungrouped Dialogues in this Dialogue Container";
             }
 
             if (dialogueNames.Count == 0)
             {
+                
                 StopDrawing(dialogueInfoMessage);
                 return;
             }
+            
             
             DrawDialogueArea(dialogueNames, dialogueFolderPath);
 
@@ -139,10 +145,20 @@ namespace DS.Inspectors
         {
             DSInspectorUtility.DrawHeader("Dialogues");
 
+            int oldSelectedDialogueIndex = selectedDialogueIndexProperty.intValue;
+            DSDialogueSO oldDialogue = (DSDialogueSO)dialogueProperty.objectReferenceValue;
+            
+            bool isOldDialogueNull = oldDialogue == null;
+            string oldDialogueName = isOldDialogueNull ? "" : oldDialogue.DialogueName;
+            
+            UpdateIndexOnNamesListUpdate(dialogueNames, selectedDialogueIndexProperty, oldSelectedDialogueIndex, oldDialogueName, isOldDialogueNull);
+
             selectedDialogueIndexProperty.intValue = DSInspectorUtility.DrawPopup("Dialogues", selectedDialogueIndexProperty, dialogueNames.ToArray());
 
             string selectedDialogueName = dialogueNames[selectedDialogueIndexProperty.intValue];
-            DSDialogueSO selectedDialogues = 
+            DSDialogueSO selectedDialogue =
+                DSIOUtility.LoadAsset<DSDialogueSO>(dialogueFolderPath, selectedDialogueName);
+            dialogueProperty.objectReferenceValue = selectedDialogue;
             
             dialogueProperty.DrawPropertyField();
         }
@@ -157,29 +173,31 @@ namespace DS.Inspectors
 
         #region Index Methods
 
-        private void UpdateIndexOnNamesListUpdate(List<string> optionNames, SerializedProperty indexProperty, int oldSelectedDialogueGroupIndex, string oldPropertyName, bool isOldPropertyNull)
+        private void UpdateIndexOnNamesListUpdate(List<string> optionNames, SerializedProperty indexProperty, int oldSelectedPropertyIndex, string oldPropertyName, bool isOldPropertyNull)
         {
             if (isOldPropertyNull)
             {
                 indexProperty.intValue = 0;
+
                 return;
             }
 
-            bool oldIndexIsOutOfBoundsOfNameListCount = oldSelectedDialogueGroupIndex > optionNames.Count - 1;
-            bool oldNameIsDifferentThanSelectedName = oldIndexIsOutOfBoundsOfNameListCount ||
-                                                      oldPropertyName != optionNames[oldSelectedDialogueGroupIndex];
-            
+            bool oldIndexIsOutOfBoundsOfNamesListCount = oldSelectedPropertyIndex > optionNames.Count - 1;
+            bool oldNameIsDifferentThanSelectedName = oldIndexIsOutOfBoundsOfNamesListCount || oldPropertyName != optionNames[oldSelectedPropertyIndex];
+
             if (oldNameIsDifferentThanSelectedName)
             {
-                indexProperty.intValue =
-                    optionNames.IndexOf(oldPropertyName);
-            }
-            else
-            {
-                selectedDialogueIndexProperty.intValue = 0;
+                if (optionNames.Contains(oldPropertyName))
+                {
+                    indexProperty.intValue = optionNames.IndexOf(oldPropertyName);
+
+                    return;
+                }
+
+                indexProperty.intValue = 0;
             }
         }
-
+        
         #endregion
     }
 }
