@@ -73,12 +73,24 @@ namespace DS.Inspectors
                 dialogueFolderPath += $"/Groups/{dialogueGroup.GroupName}/Dialogues";
                 dialogueInfoMessage = "There are no Dialoges in this Dialogue Group.";
             }
+            else
+            {
+                dialogueNames = dialogueContainer.GetUngroupedDialogueNames();
+                dialogueFolderPath += "/Global/Dialogues";
+                dialogueInfoMessage = "There are no Ungrouped Dialogues in this Dialogue Container";
+            }
+
+            if (dialogueNames.Count == 0)
+            {
+                StopDrawing(dialogueInfoMessage);
+                return;
+            }
             
-            
-            DrawDialogueArea();
+            DrawDialogueArea(dialogueNames, dialogueFolderPath);
 
             serializedObject.ApplyModifiedProperties();
         }
+        
 
         #region Draw Methods
         private void DrawContainerArea()
@@ -123,11 +135,14 @@ namespace DS.Inspectors
             DSInspectorUtility.DrawSpace();
         }
 
-        private void DrawDialogueArea()
+        private void DrawDialogueArea(List<string> dialogueNames, string dialogueFolderPath)
         {
             DSInspectorUtility.DrawHeader("Dialogues");
 
-            selectedDialogueIndexProperty.intValue = DSInspectorUtility.DrawPopup("Dialogues", selectedDialogueIndexProperty, new string[] { });
+            selectedDialogueIndexProperty.intValue = DSInspectorUtility.DrawPopup("Dialogues", selectedDialogueIndexProperty, dialogueNames.ToArray());
+
+            string selectedDialogueName = dialogueNames[selectedDialogueIndexProperty.intValue];
+            DSDialogueSO selectedDialogues = 
             
             dialogueProperty.DrawPropertyField();
         }
