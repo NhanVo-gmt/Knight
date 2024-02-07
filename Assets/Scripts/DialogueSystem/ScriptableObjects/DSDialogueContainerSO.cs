@@ -29,5 +29,29 @@ namespace DS.ScriptableObjects
 
             return dialogueGroupNames;
         }
+
+        // Get name of dialogue in groups
+        public List<string> GetGroupedDialogueNames(DSDialogueGroupSO dialogueGroup)
+        {
+            List<DSDialogueSO> groupedDialogues = DialogueGroups[dialogueGroup];
+            List<string> groupedDialogueNames = new List<string>();
+            foreach (DSDialogueSO groupedDialogue in groupedDialogues)
+            {
+                groupedDialogueNames.Add(groupedDialogue.DialogueName);
+            }
+
+            return groupedDialogueNames;
+        }
+
+        public List<string> GetUngroupedDialogueNames()
+        {
+            List<string> ungroupedDialogueNames = new List<string>();
+            foreach (DSDialogueSO ungroupedDialogue in UngroupedDialogues)
+            {
+                ungroupedDialogueNames.Add(ungroupedDialogue.DialogueName);
+            }
+
+            return ungroupedDialogueNames;
+        }
     }
 }

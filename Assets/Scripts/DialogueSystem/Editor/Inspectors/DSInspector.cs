@@ -54,6 +54,9 @@ namespace DS.Inspectors
             }
             
             DrawFilterArea();
+            List<string> dialogueNames;
+            string dialogueFolderPath = $"Assets/DialogueSystem/Dialogues/{dialogueContainer.FileName}";
+            string dialogueInfoMessage = "";
 
             if (groupedDialoguesProperty.boolValue)
             {
@@ -64,7 +67,14 @@ namespace DS.Inspectors
                     return;
                 }
                 DrawDialogueGroupArea(dialogueContainer, dialogueGroupNames);
+
+                DSDialogueGroupSO dialogueGroup = (DSDialogueGroupSO)dialogueGroupProperty.objectReferenceValue;
+                dialogueNames = dialogueContainer.GetGroupedDialogueNames(dialogueGroup);
+                dialogueFolderPath += $"/Groups/{dialogueGroup.GroupName}/Dialogues";
+                dialogueInfoMessage = "There are no Dialoges in this Dialogue Group.";
             }
+            
+            
             DrawDialogueArea();
 
             serializedObject.ApplyModifiedProperties();
