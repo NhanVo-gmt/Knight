@@ -136,7 +136,7 @@ namespace DS.Inspectors
                 selectedDialogueGroupName);
             dialogueGroupProperty.objectReferenceValue = selectedDialogueGroup;
             
-            dialogueGroupProperty.DrawPropertyField();
+            DSInspectorUtility.DrawDisableField(() => dialogueGroupProperty.DrawPropertyField());
             
             DSInspectorUtility.DrawSpace();
         }
@@ -160,7 +160,7 @@ namespace DS.Inspectors
                 DSIOUtility.LoadAsset<DSDialogueSO>(dialogueFolderPath, selectedDialogueName);
             dialogueProperty.objectReferenceValue = selectedDialogue;
             
-            dialogueProperty.DrawPropertyField();
+            DSInspectorUtility.DrawDisableField(() => dialogueProperty.DrawPropertyField());
         }
         
         private void StopDrawing(string message)

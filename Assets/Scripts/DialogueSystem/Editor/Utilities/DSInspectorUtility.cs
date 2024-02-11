@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
@@ -8,6 +9,15 @@ namespace DS.Utilities
 {
     public static class DSInspectorUtility
     {
+        public static void DrawDisableField(Action action)
+        {
+            EditorGUI.BeginDisabledGroup(true);
+            
+            action.Invoke();
+            
+            EditorGUI.EndDisabledGroup();
+        }
+        
         public static void DrawHeader(string label)
         {
             EditorGUILayout.LabelField(label, EditorStyles.boldLabel);
