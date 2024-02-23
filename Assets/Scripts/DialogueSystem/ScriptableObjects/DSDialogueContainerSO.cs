@@ -62,5 +62,31 @@ namespace DS.ScriptableObjects
 
             return ungroupedDialogueNames;
         }
+        
+        // Get dialogue Methods
+        public DSDialogueSO GetStartingDialogue()
+        {
+            foreach (DSDialogueSO ungroupedDialogue in UngroupedDialogues)
+            {
+                if (ungroupedDialogue.IsStartingDialogue)
+                {
+                    return ungroupedDialogue;
+                }
+            }
+
+            foreach (DSDialogueGroupSO dialogueGroup in DialogueGroups.Keys)
+            {
+                foreach (DSDialogueSO groupedDialogue in DialogueGroups[dialogueGroup])
+                {
+                    if (groupedDialogue.IsStartingDialogue)
+                    {
+                        return groupedDialogue;
+                    }
+                }
+            }
+            
+            Debug.LogError("There is no starting dialogue");
+            return null;
+        }
     }
 }

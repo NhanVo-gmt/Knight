@@ -16,26 +16,26 @@ MonoBehaviour:
   Groups:
   - ID: a3d9523e-da1c-46ce-b6b6-74e9c9fe7d86
     Name: Dialogue Group
-    Position: {x: 172.00002, y: 126.00001}
+    Position: {x: 171.2, y: 125.59999}
   Nodes:
   - ID: 07a85a68-1b2a-4852-973c-d322466973ae
     Name: DialogueName
-    Text: Dialogue Text.
+    Text: Hi
     Choices:
     - Text: Next Dialogue
-      NodeID: 
+      NodeID: 0d78fd74-45f3-48a5-be89-b5308cb0e717
     GroupID: a3d9523e-da1c-46ce-b6b6-74e9c9fe7d86
     DialogueType: 0
-    Position: {x: 197, y: 185}
+    Position: {x: 196.8, y: 185.59999}
   - ID: 0d78fd74-45f3-48a5-be89-b5308cb0e717
     Name: DialogueName
-    Text: Dialogue Text.
+    Text: Hello
     Choices:
     - Text: Next Dialogue
       NodeID: 
     GroupID: 
     DialogueType: 0
-    Position: {x: 721, y: 281}
+    Position: {x: 616.8, y: 210.4}
   OldGroupNames:
   - Dialogue Group
   OldUngroupedNodeNames:

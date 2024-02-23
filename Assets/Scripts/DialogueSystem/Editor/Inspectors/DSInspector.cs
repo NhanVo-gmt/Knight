@@ -42,6 +42,8 @@ namespace DS.Inspectors
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
+            using (new EditorGUI.DisabledScope(true))
+                EditorGUILayout.ObjectField("Script:", MonoScript.FromMonoBehaviour((DSDialogue)target), typeof(DSDialogue), false);        
             
             DrawContainerArea();
 

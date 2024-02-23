@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DialogueName
   m_EditorClassIdentifier: 
   DialogueName: DialogueName
-  Text: Dialogue Text.
+  Text: Hello
   Choices:
   - Text: Next Dialogue
     NextDialogue: {fileID: 0}
   DialogueType: 0
-  IsStartingDialogue: 1
+  IsStartingDialogue: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using DS.Enumerations;
 using UnityEngine;
 
@@ -23,6 +24,16 @@ namespace DS.ScriptableObjects
             DialogueType = dialogueType;
             IsStartingDialogue = isStartingDialogue;
         }
+
+        public DSDialogueSO GetNextDialogueByIndex(int choice)
+        {
+            return Choices[choice].NextDialogue;
+        }
+        
+        public DSDialogueSO GetNextDialogueByString(string choice)
+        {
+            return Choices.Where(x => x.Text == choice).FirstOrDefault()?.NextDialogue;
+        } 
     }
     
 }
