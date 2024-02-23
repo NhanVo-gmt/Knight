@@ -5027,6 +5027,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5196778325103890695}
   - {fileID: 5253985472337409282}
   - {fileID: 3968338927292231487}
   - {fileID: 5527234751198165139}
@@ -5052,6 +5053,7 @@ MonoBehaviour:
     runParticle: {fileID: 3771080709626996358}
     landParticle: {fileID: 0}
     particleSystems: []
+    hasLight: 0
   - region: 3
     runParticle: {fileID: 2362088490985241416}
     landParticle: {fileID: 8437749394027433250}
@@ -5059,6 +5061,7 @@ MonoBehaviour:
     - {fileID: 8835557209920494900}
     - {fileID: 3420483418576788302}
     - {fileID: 5377516265662915163}
+    hasLight: 0
   - region: 2
     runParticle: {fileID: 0}
     landParticle: {fileID: 0}
@@ -5066,13 +5069,14 @@ MonoBehaviour:
     - {fileID: 7208351369221671540}
     - {fileID: 2871588956244994352}
     - {fileID: 8727622408410190386}
+    hasLight: 1
   restParticle: {fileID: 2034245068146147356}
   hitParticles:
   - {fileID: 7699197905571394763}
   - {fileID: 5829387503824472768}
   enemyHitParticles:
   - {fileID: 79635652584670138}
-  - {fileID: 0}
+  light2D: {fileID: 6410184186227548281}
 --- !u!1 &2324975236048740542
 GameObject:
   m_ObjectHideFlags: 0
@@ -15175,12 +15179,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6410184186227548281}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7710511944062994220}
+  m_Father: {fileID: 6822905286131926986}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2927682794531746360
 MonoBehaviour:
@@ -25064,7 +25068,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 930300239246757014}
-  - {fileID: 5196778325103890695}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &2420242968278854234
