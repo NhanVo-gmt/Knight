@@ -6,7 +6,7 @@ using UnityEngine;
 public class InGameUI : MonoBehaviour
 {
     [SerializeField] private HealthUI healthUI;
-    // [SerializeField] private Man healthUI; todo manaUI
+    [SerializeField] private EnergyUI energyUI;
 
     private void Start()
     {
@@ -16,5 +16,6 @@ public class InGameUI : MonoBehaviour
     private void InitUI()
     {
         healthUI.gameObject.SetActive(true);
+        energyUI.gameObject.SetActive(true);
     }
 }

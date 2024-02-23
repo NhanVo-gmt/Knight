@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7126460193719620890
 Transform:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7710511944062994220, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 7710511944062994220, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -556,7 +556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1287361144272553064, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9152289177338738096, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
       propertyPath: m_Name
@@ -665,11 +665,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5583573024167213742, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 3.591278
       objectReference: {fileID: 0}
     - target: {fileID: 5583573024167213742, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3999991
+      value: 3.40626
       objectReference: {fileID: 0}
     - target: {fileID: 5583573024167213742, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.z
@@ -713,11 +713,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7385933733148797376, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -3.6912842
       objectReference: {fileID: 0}
     - target: {fileID: 7385933733148797376, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.006260872
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9143018364211033043, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
