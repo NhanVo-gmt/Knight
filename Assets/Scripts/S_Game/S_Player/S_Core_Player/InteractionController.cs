@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DS.ScriptableObjects;
 using UnityEngine;
 
 public class InteractionController : CoreComponent
@@ -35,11 +36,11 @@ public class InteractionController : CoreComponent
     {
         if (inputManager.interactionInput)
         {
-            
-
             Interact();
         }
     }
+
+    #region Interact
 
     void Interact()
     {
@@ -55,15 +56,21 @@ public class InteractionController : CoreComponent
             isInteracting = true;
         }
     }
+    
+    void FinishInteract()
+    {
+        isInteracting = false;
+    }
+    
 
     #region Dialogue
 
-    public void SetDialogue(Dialogue dialogue)
+    public void SetDialogue(DSDialogueContainerSO dialogue)
     {
         dialogueController.currentDialogue = dialogue;
     }
 
-    public void UnsetDialogue(Dialogue dialogue)
+    public void UnsetDialogue(DSDialogueContainerSO dialogue)
     {
         if (dialogueController.currentDialogue == dialogue)
         {
@@ -88,8 +95,9 @@ public class InteractionController : CoreComponent
 
     #endregion
     
-    void FinishInteract()
-    {
-        isInteracting = false;
-    }
+    #endregion
+
+
+    
+    
 }

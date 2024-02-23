@@ -161,6 +161,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
         stateMachine.FixedUpdate();
     }
 
+    #region On Enter Trigger
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         SetConversation(other);
@@ -206,6 +208,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
             interactionController.UnsetDialogue(npcDialogue.GetDialogue());
         }
     }
+    
+    #endregion
 
     public void ChangeScenePosition(Vector2 newPos)
     {

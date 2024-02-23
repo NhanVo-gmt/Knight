@@ -4995,8 +4995,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typingSpeed: 0.05
+  inGameUI: {fileID: 0}
+  dialogueUI: {fileID: 0}
   currentDialogue: {fileID: 0}
-  playerUI: {fileID: 0}
 --- !u!1 &2307007201049033772
 GameObject:
   m_ObjectHideFlags: 0
@@ -15170,7 +15171,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5196778325103890695
 Transform:
   m_ObjectHideFlags: 0

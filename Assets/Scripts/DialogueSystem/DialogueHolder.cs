@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using DS.ScriptableObjects;
 using UnityEngine;
 
 public class DialogueHolder : MonoBehaviour
 {
-    [SerializeField] Dialogue dialogue;
+    [SerializeField] DSDialogueContainerSO dialogue;
     
-    public Dialogue GetDialogue()
+    public DSDialogueContainerSO GetDialogue()
     {
         return dialogue;
     }
