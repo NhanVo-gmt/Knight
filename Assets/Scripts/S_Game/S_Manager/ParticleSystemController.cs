@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
@@ -14,6 +15,7 @@ public class ParticleSystemController : CoreComponent
         public ParticleSystem runParticle;
         public ParticleSystem landParticle;
         public ParticleSystem[] particleSystems;
+        public bool hasLight;
 
         public void SetActive(bool isActive)
         {
@@ -35,6 +37,8 @@ public class ParticleSystemController : CoreComponent
 
     [Header("Enemy")] 
     [SerializeField] private ParticleSystem[] enemyHitParticles;
+
+    [Header("Light")] [SerializeField] private GameObject light2D;
     
     private void OnEnable()
     {
@@ -58,6 +62,7 @@ public class ParticleSystemController : CoreComponent
                 currentParticleRegion = particle;
 
                 currentParticleRegion.SetActive(true);
+                light2D.SetActive(currentParticleRegion.hasLight);
             }
             else
             {

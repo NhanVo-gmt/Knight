@@ -28,17 +28,17 @@ namespace Knight.UI
 
         private void Start()
         {
-            SceneLoader.Instance.OnSceneBeforeLoading += DisableGameUI;
-            SceneLoader.Instance.OnSceneReadyToPlay += EnableGameUI;
+            SceneLoader.Instance.OnSceneBeforeLoading += HideGameUI;
+            SceneLoader.Instance.OnSceneReadyToPlay += ShowGameUI;
         }
 
-        private void DisableGameUI(object sender, EventArgs e)
+        private void HideGameUI(object sender, EventArgs e)
         {
             inGameUI.alpha = 0f;
             //todo dialogue
         }
         
-        private void EnableGameUI(object sender, EventArgs e)
+        private void ShowGameUI(object sender, EventArgs e)
         {
             inGameUI.alpha = 1f;
             //todo dialogue

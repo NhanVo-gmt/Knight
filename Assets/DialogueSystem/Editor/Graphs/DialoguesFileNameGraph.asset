@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1194f7b0ad6149448a2796f9336ff98f, type: 3}
+  m_Name: DialoguesFileNameGraph
+  m_EditorClassIdentifier: 
+  FileName: DialoguesFileName
+  Groups:
+  - ID: a3d9523e-da1c-46ce-b6b6-74e9c9fe7d86
+    Name: Dialogue Group
+    Position: {x: 171.2, y: 125.59999}
+  Nodes:
+  - ID: 07a85a68-1b2a-4852-973c-d322466973ae
+    Name: DialogueName
+    Text: Hi
+    Choices:
+    - Text: Next Dialogue
+      NodeID: 0d78fd74-45f3-48a5-be89-b5308cb0e717
+    GroupID: a3d9523e-da1c-46ce-b6b6-74e9c9fe7d86
+    DialogueType: 0
+    Position: {x: 196.8, y: 185.59999}
+  - ID: 0d78fd74-45f3-48a5-be89-b5308cb0e717
+    Name: DialogueName
+    Text: Hello
+    Choices:
+    - Text: Next Dialogue
+      NodeID: 
+    GroupID: 
+    DialogueType: 0
+    Position: {x: 616.8, y: 210.4}
+  OldGroupNames:
+  - Dialogue Group
+  OldUngroupedNodeNames:
+  - DialogueName
+  OldGroupedNodeNames:
+    list:
+    - Key: Dialogue Group
+      Value:
+      - DialogueName

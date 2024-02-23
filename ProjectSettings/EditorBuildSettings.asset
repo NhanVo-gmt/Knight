@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Forest/ForestScene3.unity
     guid: c20338263c259fe4696b4f1c0082edf6
+  - enabled: 1
+    path: Assets/Scenes/ForbiddenLand/ForbiddenLand.unity
+    guid: 83e8fe64526324243a3d9c9d16f6bb42
+  - enabled: 1
+    path: Assets/Scenes/ForbiddenLand/ForbiddenLand1.unity
+    guid: d78f35cf722356b4383689e3e7a19b94
   m_configObjects: {}

@@ -2,33 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DS.ScriptableObjects;
+using UnityEngine.Serialization;
 
 public class DialogueController : MonoBehaviour
 {
     [SerializeField] float typingSpeed = 0.05f;
-    [SerializeField] public Dialogue currentDialogue; //todo set private
-    [SerializeField] public GameObject playerUI; //todo set other method
-    DialogueUI dialogueUI;
-    DialogueNode currentNode;
+    [SerializeField] public GameObject inGameUI; 
+    [SerializeField] DialogueUI dialogueUI;
+    
+    [HideInInspector] public DSDialogueContainerSO currentDialogue; 
+    DSDialogueSO currentNode;
 
     public Action onFinishDialogue;
 
-    void Start() 
+    void Awake() 
     {
-        // todo
-        // dialogueUI = FindObjectOfType<DialogueUI>();
-        // dialogueUI.gameObject.SetActive(false);
+        dialogueUI.gameObject.SetActive(false);
     }
 
     public void StartConversation()
     {
-        dialogueUI.gameObject.SetActive(true);
-        playerUI.SetActive(false);
-        dialogueUI.StartConversation();
+        ToggleDialogueUI(true);
+        currentNode = currentDialogue.GetStartingDialogue();
 
-        currentNode = currentDialogue.GetRootNode();
-
-        StartCoroutine(TextTypingCoroutine(currentNode.text));
+        StartCoroutine(TextTypingCoroutine(currentNode.Text));
     }
 
     IEnumerator TextTypingCoroutine(string text)
@@ -47,20 +45,33 @@ public class DialogueController : MonoBehaviour
 
         if (HaveNextNode())
         {
-            StartCoroutine(TextTypingCoroutine(currentNode.text));
+            StartCoroutine(TextTypingCoroutine(currentNode.Text));
         }
         else
         {
-            dialogueUI.gameObject.SetActive(false);
-            playerUI.SetActive(true);
+            ToggleDialogueUI(false);
+        }
+    }
+    
+    public void ToggleDialogueUI(bool isActive)
+    {
+        dialogueUI.gameObject.SetActive(isActive);
+        inGameUI.SetActive(!isActive);
+        if (isActive)
+        {
+            dialogueUI.StartConversation();
+        }
+        else
+        {
             dialogueUI.EndConversation();
             onFinishDialogue?.Invoke();
         }
     }
 
+
     bool HaveNextNode()
     {
-        currentNode = currentDialogue.GetNodeFromString(currentNode.GetNextNode());
+        currentNode = currentNode.GetNextDialogueByIndex(0);
 
         if (currentNode == null)
         {

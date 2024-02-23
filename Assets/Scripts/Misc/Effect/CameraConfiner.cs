@@ -16,9 +16,14 @@ namespace Knight.Camera
             confiner = GetComponent<CinemachineConfiner2D>();
         }
 
+        private void Start()
+        {
+            SetConfiner();
+        }
+
         public void SetConfiner()
         {
-            confiner.m_BoundingShape2D = GameObject.FindWithTag("CameraConfiner").GetComponent<Collider2D>();
+            confiner.m_BoundingShape2D = GameObject.FindWithTag("CameraConfiner")?.GetComponent<Collider2D>();
         }
 
         public void RemoveConfiner()
