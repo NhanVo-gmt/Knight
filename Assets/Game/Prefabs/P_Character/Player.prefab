@@ -4913,7 +4913,7 @@ Transform:
   m_GameObject: {fileID: 160299666675796204}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.6, z: 0}
+  m_LocalPosition: {x: 0, y: -0.655, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5254,6 +5254,37 @@ Transform:
   - {fileID: 4207873147471838624}
   m_Father: {fileID: 3968338927292231487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4460548653282449992
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7921669905612664966}
+  m_Layer: 0
+  m_Name: No Ground Check
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7921669905612664966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4460548653282449992}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.59, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7920228004811614896}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4587114462967499039
 GameObject:
   m_ObjectHideFlags: 0
@@ -5285,6 +5316,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8821816194513874516}
+  - {fileID: 7921669905612664966}
   - {fileID: 3421125896379335405}
   m_Father: {fileID: 930300239246757014}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5301,10 +5333,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheck: {fileID: 8821816194513874516}
-  groundCheckBox: {x: 0.8, y: 0.1}
+  groundCheckBox: {x: 0.5, y: 0.05}
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  noGroundCheck: {fileID: 7921669905612664966}
   climableWallCheck: {fileID: 3421125896379335405}
   climableWallCheckUp: {fileID: 0}
   climableWallCheckDistance: 0.5
