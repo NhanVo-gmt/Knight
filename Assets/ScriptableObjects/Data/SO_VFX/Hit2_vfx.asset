@@ -17,4 +17,4 @@ MonoBehaviour:
   needPlayerDirection: 1
   lifeTime: 1
   sprite: {fileID: -3564415608349087993, guid: d966b88f77ee4154fbb64b8440364e40, type: 3}
-  anim: {fileID: 9100000, guid: aaba72c731e799744851d14a6c2a9af7, type: 2}
+  anim: {fileID: 9100000, guid: 57972c9479fbc4045b731e14640e595f, type: 2}

@@ -8,6 +8,13 @@ public class Switch : MonoBehaviour, IDamageable
     public Action OnTrigger;
     public bool hasTrigger;
 
+    private Animator anim;
+
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     private void Trigger()
     {
         hasTrigger = true;
@@ -26,11 +33,11 @@ public class Switch : MonoBehaviour, IDamageable
 
     public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
     {
-        if (!hasTrigger)
-        {
-            Trigger();
-            // play anim
-            
-        }
+        if (hasTrigger) return;
+
+        if (damagerType != IDamageable.DamagerTarget.Player) return;
+     
+        Trigger();
+        anim.Play("Activate");
     }
 }
