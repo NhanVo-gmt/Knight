@@ -284,7 +284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &558521494247365675
 RectTransform:
   m_ObjectHideFlags: 0
@@ -317,6 +317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acef5d500eb22464f84c368c96f286c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageCanvasGroup: {fileID: 7000516272880602075}
   text: {fileID: 5464822370877840570}
 --- !u!1 &1004805614423824882
 GameObject:
@@ -364,6 +365,7 @@ GameObject:
   - component: {fileID: 6773347719491801692}
   - component: {fileID: 6942889018622372089}
   - component: {fileID: 2751878253551453209}
+  - component: {fileID: 7000516272880602075}
   m_Layer: 5
   m_Name: image
   m_TagString: Untagged
@@ -429,6 +431,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!225 &7000516272880602075
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147007535585526036}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1660783090062744585
 GameObject:
   m_ObjectHideFlags: 0

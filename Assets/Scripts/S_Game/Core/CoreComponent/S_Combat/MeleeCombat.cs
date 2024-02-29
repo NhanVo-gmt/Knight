@@ -34,7 +34,6 @@ public class MeleeCombat
         foreach(Collider2D col in collider2DArray)
         {
             if (col == this.col) continue;
-
             
             IDamageable idamageable = col.GetComponent<IDamageable>();
             if (idamageable != null)
