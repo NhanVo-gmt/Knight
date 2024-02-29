@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dark80Material
+  m_Name: Dark60StaticMaterial
   m_Shader: {fileID: -6465566751694194690, guid: 11a62a83646884a4d813d8adf8421b30, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -68,11 +68,11 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _ExternalInfluence: 0
-    - _FlashAmount: 0.8
+    - _FlashAmount: 0.6
     - _MaskFromBottom: 1
-    - _WindIntensity: 1
-    - _WindSpeed: 0.2
-    - _YMaskInfluence: 1
+    - _WindIntensity: 0
+    - _WindSpeed: 0
+    - _YMaskInfluence: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}

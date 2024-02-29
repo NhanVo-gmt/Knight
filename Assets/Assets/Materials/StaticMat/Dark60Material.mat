@@ -70,9 +70,9 @@ Material:
     - _ExternalInfluence: 0
     - _FlashAmount: 0.6
     - _MaskFromBottom: 1
-    - _WindIntensity: 1
-    - _WindSpeed: 0.2
-    - _YMaskInfluence: 1
+    - _WindIntensity: 0
+    - _WindSpeed: 0
+    - _YMaskInfluence: 0
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _FlashColor: {r: 0, g: 0, b: 0, a: 1}

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dark30Material
+  m_Name: DarkWind60Material
   m_Shader: {fileID: -6465566751694194690, guid: 11a62a83646884a4d813d8adf8421b30, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -68,7 +68,7 @@ Material:
     m_Floats:
     - _EnableExternalAlpha: 0
     - _ExternalInfluence: 0
-    - _FlashAmount: 0.3
+    - _FlashAmount: 0.6
     - _MaskFromBottom: 1
     - _WindIntensity: 1
     - _WindSpeed: 0.2
