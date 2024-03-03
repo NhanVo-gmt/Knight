@@ -1,6 +1,8 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
 [CustomEditor(typeof(ActionNode), false)]
 public class ActionNodeEditor : Editor
 {
@@ -32,3 +34,4 @@ public class ActionNodeEditor : Editor
     }
 
 }
+#endif

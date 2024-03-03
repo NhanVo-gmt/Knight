@@ -1,5 +1,7 @@
 using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
 [CustomEditor(typeof(IdleNode))]
 public class IdleNodeEditor : Editor
 {
@@ -24,3 +26,5 @@ public class IdleNodeEditor : Editor
 
 
 }
+
+#endif

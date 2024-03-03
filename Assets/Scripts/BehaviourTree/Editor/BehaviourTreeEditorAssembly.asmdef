@@ -1,11 +1,12 @@
 {
-    "name": "ObjectPoolAssembly",
+    "name": "BehaviourTreeEditorAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:79365834d52eed542862b46928e50f11",
-        "GUID:fe4327a1e78f02c46b30a899c5a9bcab"
+        "GUID:4f4c40d7e4feff340bd2122be9ed1f68"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

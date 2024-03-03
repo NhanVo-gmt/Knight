@@ -46,6 +46,31 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 
         return treeState;
     }
+    
+    public List<Node> GetAllChild(Node parent) 
+    {
+        List<Node> childList = new List<Node>();
+
+        DecoratorNode decoratorNode = parent as DecoratorNode;
+        if (decoratorNode != null && decoratorNode.child != null)
+        {
+            childList.Add(decoratorNode.child);
+        }
+
+        RootNode rootNode = parent as RootNode;
+        if (rootNode != null && rootNode.child != null)
+        {
+            childList.Add(rootNode.child);
+        }
+
+        CompositeNode compositeNode = parent as CompositeNode;
+        if (compositeNode != null && compositeNode.children != null)
+        {
+            return compositeNode.children;
+        }
+
+        return childList;
+    }
 
 #if UNITY_EDITOR
     public Node CreateNode(System.Type type) 
@@ -172,37 +197,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             EditorUtility.SetDirty(compositeNode);
         }
     }
-
-    public List<Node> GetAllChild(Node parent) 
-    {
-        List<Node> childList = new List<Node>();
-
-        DecoratorNode decoratorNode = parent as DecoratorNode;
-        if (decoratorNode != null && decoratorNode.child != null)
-        {
-            childList.Add(decoratorNode.child);
-        }
-
-        RootNode rootNode = parent as RootNode;
-        if (rootNode != null && rootNode.child != null)
-        {
-            childList.Add(rootNode.child);
-        }
-
-        CompositeNode compositeNode = parent as CompositeNode;
-        if (compositeNode != null && compositeNode.children != null)
-        {
-            return compositeNode.children;
-        }
-
-        return childList;
-    }
-
-    public void OnBeforeSerialize()
-    {
-        OnValidate();
-    }
-
+    
     private void OnValidate()
     {
         string path = AssetDatabase.GetAssetPath(this);
@@ -218,11 +213,19 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             }
         }
     }
+#endif
+    
+    public void OnBeforeSerialize()
+    {
+        #if UNITY_EDITOR
+        OnValidate();
+        #endif
+    }
 
     public void OnAfterDeserialize()
     {
         
     }
 
-#endif
+
 }

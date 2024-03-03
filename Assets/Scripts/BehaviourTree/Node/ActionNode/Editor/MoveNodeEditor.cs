@@ -1,6 +1,8 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
 [CustomEditor(typeof(MoveNode), true)]
 public class MoveNodeEditor : ActionNodeEditor
 {
@@ -70,6 +72,7 @@ public class MoveNodeEditor : ActionNodeEditor
         
         serializedObject.ApplyModifiedProperties();
     }
-
-
+    
 }
+
+#endif

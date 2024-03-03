@@ -1,5 +1,7 @@
 using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
 [CustomEditor(typeof(MoveRandomNode))]
 public class MoveRandomNodeEditor : ActionNodeEditor
 {
@@ -47,6 +49,6 @@ public class MoveRandomNodeEditor : ActionNodeEditor
         EditorGUILayout.PropertyField(speedProperty);
         serializedObject.ApplyModifiedProperties();
     }
-
-
 }
+
+#endif

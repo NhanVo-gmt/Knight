@@ -1,6 +1,9 @@
 using System;
 using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
+
 [CustomEditor(typeof(AttackNode))]
 public class AttackNodeEditor : Editor
 {
@@ -45,6 +48,7 @@ public class AttackNodeEditor : Editor
         }
         serializedObject.ApplyModifiedProperties();
     }
-
-
+    
 }
+
+#endif

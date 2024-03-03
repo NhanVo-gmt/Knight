@@ -6,7 +6,7 @@ using Knight.Editor;
 using UnityEditor;
 using UnityEngine;
 
-
+#if UNITY_EDITOR
 [CustomEditor(typeof(AnimationNode))]
 public class AnimationNodeEditor : Editor
 {
@@ -85,3 +85,4 @@ public class AnimationNodeEditor : Editor
         return String.Empty;
     }
 }
+#endif

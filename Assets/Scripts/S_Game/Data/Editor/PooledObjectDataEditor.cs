@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(PooledObjectData), true)]
 public class PooledObjectDataEditor : Editor
 {
@@ -38,3 +39,4 @@ public class PooledObjectDataEditor : Editor
         GUI.DrawTexture(GUILayoutUtility.GetLastRect(), texture);
     }
 }
+#endif
