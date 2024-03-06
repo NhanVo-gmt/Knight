@@ -127,24 +127,30 @@ public class Player : SingletonObject<Player>, IDataPersistence
         movement = core.GetCoreComponent<Movement>();
         movement.InitializeData(data);
         
-        SetUpCombatComponent(core.GetCoreComponent<Combat>());
-        SetUpHealthComponent(core.GetCoreComponent<Health>());
-        SetUpRecoveryComponent(core.GetCoreComponent<RecoveryController>());
+        SetupCombatComponent(core.GetCoreComponent<Combat>());
+        SetupHealthComponent(core.GetCoreComponent<Health>());
+        SetupRecoveryComponent(core.GetCoreComponent<RecoveryController>());
+        SetupCollisionSenseComponent(core.GetCoreComponent<CollisionSenses>());
     }
 
-    void SetUpHealthComponent(Health health)
+    void SetupHealthComponent(Health health)
     {
         health.SetHealth(data.healthData);
     }
 
-    void SetUpCombatComponent(Combat combat)
+    void SetupCombatComponent(Combat combat)
     {
         combat.SetUpCombatComponent(IDamageable.DamagerTarget.Player, IDamageable.KnockbackType.player); 
     }
 
-    void SetUpRecoveryComponent(RecoveryController recoveryController)
+    void SetupRecoveryComponent(RecoveryController recoveryController)
     {
         recoveryController.SetHitData(data.hitData);
+    }
+    
+    void SetupCollisionSenseComponent(CollisionSenses collisionSenses)
+    {
+        collisionSenses.InitializeCollisionSense(.2f);
     }
 
     #endregion

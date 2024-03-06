@@ -58,6 +58,10 @@ public class InAirState : State
         {
             stateMachine.ChangeState(player.dashState);
         }
+        else if (player.inputManager.jumpInput && collisionSenses.canJump)
+        {
+            stateMachine.ChangeState(player.jumpState);
+        }
         else if (player.inputManager.meleeAttackInput && player.meleeAttackState.CanAttack())
         {
             stateMachine.ChangeState(player.meleeAttackState);

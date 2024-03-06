@@ -19,9 +19,17 @@ public class CollisionSenses : CoreComponent
 
     private Movement movement;
 
+    private float coyoteTime;
+    private float coyoteCounter;
+
     protected override void Awake()
     {
         base.Awake();
+    }
+
+    public void InitializeCollisionSense(float coyoteTime)
+    {
+        this.coyoteTime = coyoteTime;
     }
 
     void Start() 
@@ -39,6 +47,24 @@ public class CollisionSenses : CoreComponent
     public bool isClimableWallCheck
     {
         get => Physics2D.Raycast(climableWallCheck.position, movement.faceDirection, climableWallCheckDistance, climableMask);
+    }
+
+    public bool canJump
+    {
+        get => isGround || coyoteCounter >= 0f;
+    }
+
+    void Update()
+    {
+        if (isGround)
+        {
+            coyoteCounter = coyoteTime;
+        }
+        else if (coyoteCounter >= 0f)
+        {
+            Debug.Log(coyoteCounter);
+            coyoteCounter -= Time.deltaTime;
+        }
     }
 
     private void OnDrawGizmos() {
