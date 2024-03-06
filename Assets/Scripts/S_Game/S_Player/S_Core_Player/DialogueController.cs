@@ -18,7 +18,7 @@ public class DialogueController : MonoBehaviour
 
     void Awake() 
     {
-        dialogueUI.gameObject.SetActive(false);
+        dialogueUI.ToggleConversation(false);
     }
 
     public void StartConversation()

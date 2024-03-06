@@ -966,9 +966,17 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8227822608924451448, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9152289177338738096, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
       propertyPath: m_Name
       value: GameCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 9178913346752277304, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -980,6 +988,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 352505212617155708, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
   m_PrefabInstance: {fileID: 1485720323}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1485720325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2739970970005402284, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
+  m_PrefabInstance: {fileID: 1485720323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1485720324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acef5d500eb22464f84c368c96f286c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1729097378
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,9 +1137,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4842021195792820818, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: inGameUI
+      value: 
+      objectReference: {fileID: 1984371272}
+    - target: {fileID: 4842021195792820818, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: playerUI
       value: 
       objectReference: {fileID: 1485720324}
+    - target: {fileID: 4842021195792820818, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
+      propertyPath: dialogueUI
+      value: 
+      objectReference: {fileID: 1485720325}
     - target: {fileID: 7502696316525358248, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1447,6 +1474,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983330215}
   m_CullTransparentMesh: 1
+--- !u!1 &1984371272 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5156269228930574701, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
+  m_PrefabInstance: {fileID: 1485720323}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2036594368
 GameObject:
   m_ObjectHideFlags: 0

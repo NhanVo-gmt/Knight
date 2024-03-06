@@ -172,7 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7a759c32b9f16843aad768360c4d2dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 0}
+  itemData: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
 --- !u!114 &-1134131623168502507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -185,4 +185,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ace395a00b29db748905692765fb52c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 0}

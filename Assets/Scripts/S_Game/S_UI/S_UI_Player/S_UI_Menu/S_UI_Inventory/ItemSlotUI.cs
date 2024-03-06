@@ -17,7 +17,7 @@ public class ItemSlotUI : MonoBehaviour, IPointerClickHandler
 
     private void Awake()
     {
-        image = GetComponentInChildren<Image>();
+        image = GetComponent<Image>();
         numberText = GetComponentInChildren<TextMeshProUGUI>();
         image.enabled = false;
         currentItemData = null;
