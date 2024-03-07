@@ -33,8 +33,71 @@ Transform:
   - {fileID: 7831832849339889417}
   - {fileID: 1264248802217786655}
   - {fileID: 778108935884492560}
+  - {fileID: 4633287052083987962}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &157980468638899862
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7126460193719620890}
+    m_Modifications:
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 4.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5034246126188079776, guid: f2203dadf689f904e9363c4402614587, type: 3}
+      propertyPath: m_Name
+      value: Gizmos Drawing Tree
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2203dadf689f904e9363c4402614587, type: 3}
+--- !u!4 &4633287052083987962 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4791263070578662252, guid: f2203dadf689f904e9363c4402614587, type: 3}
+  m_PrefabInstance: {fileID: 157980468638899862}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &554364664296484901
 PrefabInstance:
   m_ObjectHideFlags: 0

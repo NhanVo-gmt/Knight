@@ -7961,7 +7961,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1315309818262939781, guid: 2c505b82a7572c84d8f2e9499054f1e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.18
+      value: 18.5
       objectReference: {fileID: 0}
     - target: {fileID: 1315309818262939781, guid: 2c505b82a7572c84d8f2e9499054f1e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22852,6 +22852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acef5d500eb22464f84c368c96f286c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageCanvasGroup: {fileID: 0}
   text: {fileID: 577944631}
 --- !u!1 &821228305
 GameObject:

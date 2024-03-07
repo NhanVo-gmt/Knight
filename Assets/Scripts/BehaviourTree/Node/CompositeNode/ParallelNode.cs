@@ -61,7 +61,7 @@ public class ParallelNode : CompositeNode
                 continue;
             }
             else if (childStateArray[i] == NodeComponent.State.FAILURE)
-            {;
+            {
                 Abort();
                 return NodeComponent.State.FAILURE;
             }

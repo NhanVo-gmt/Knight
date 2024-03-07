@@ -84,6 +84,8 @@ public partial class CustomEditorScriptTemplate
     {
         result.Append(@"using UnityEditor;
 using UnityEngine;
+
+#if UNITY_EDITOR
 ");
         result.Append(@"[CustomEditor(typeof(" + FILE_NAME + "))]");
         result.Append(@"
@@ -163,6 +165,7 @@ public class ");
     private static void AddClassFooter(StringBuilder result)
     {
         result.Append(@"
+#endif
 }");
     }
 }
