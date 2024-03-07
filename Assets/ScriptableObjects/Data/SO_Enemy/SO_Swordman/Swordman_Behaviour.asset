@@ -266,8 +266,10 @@ MonoBehaviour:
     guid: 9d146f192116cc444b561f09951ea0f5
     position: {x: 502.99994, y: 621}
     description: 
-  checkPos: {x: -6, y: 1}
+  checkType: 0
+  checkRelativePos: {x: 0, y: 1}
   radius: 5
+  size: {x: 0, y: 0}
 --- !u!114 &-2152177441170500584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -484,8 +486,10 @@ MonoBehaviour:
     guid: 4b372035429abb14db0d7524c3474606
     position: {x: 1434, y: 473.99997}
     description: 
-  checkPos: {x: -1.5, y: 1.3}
-  radius: 1.2
+  checkType: 0
+  checkRelativePos: {x: 0, y: 1.06}
+  radius: 2
+  size: {x: 0, y: 0}
 --- !u!114 &1793646627920395141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -715,8 +719,10 @@ MonoBehaviour:
     guid: 737512a262ff6da43855c53d60246bcf
     position: {x: -905.6774, y: 621}
     description: 
-  checkPos: {x: -6, y: 1}
+  checkType: 0
+  checkRelativePos: {x: 0, y: 0}
   radius: 5
+  size: {x: 0, y: 0}
 --- !u!114 &7760206910047663043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -755,7 +761,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3b656f20788446342810386835fb18e5
-    position: {x: 728.0001, y: 743.8501}
+    position: {x: 727.9999, y: 741.18866}
     description: 
-  checkPos: {x: -1.5, y: 1.3}
-  radius: 1.2
+  checkType: 0
+  checkRelativePos: {x: 0, y: 1.06}
+  radius: 2
+  size: {x: 0, y: 0}

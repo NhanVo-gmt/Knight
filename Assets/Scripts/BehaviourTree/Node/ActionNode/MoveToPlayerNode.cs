@@ -41,12 +41,25 @@ public class MoveToPlayerNode : ActionNode
         base.OnStart();
         startPos = treeComponent.transform.position;
         destination = treeComponent.player.transform.position;
-        
-        direction = (destination - startPos).normalized;
-        if (type == MoveToPlayerType.AwayPlayer)
-            direction = -direction;
 
-        if (!canFly) direction.y = 0;
+        if (canFly)
+        {
+            direction = (destination - startPos).normalized;
+            if (type == MoveToPlayerType.AwayPlayer)
+                direction = -direction;
+        }
+        else
+        {
+            direction.y = 0;
+            if (type == MoveToPlayerType.ToPlayer)
+            {
+                direction.x = destination.x > startPos.x ? 1 : -1;
+            }
+            else
+            {
+                direction.x = destination.x > startPos.x ? -1 : 1;
+            }
+        }
     }
 
     protected override void OnStop()

@@ -62,7 +62,6 @@ public class CollisionSenses : CoreComponent
         }
         else if (coyoteCounter >= 0f)
         {
-            Debug.Log(coyoteCounter);
             coyoteCounter -= Time.deltaTime;
         }
     }

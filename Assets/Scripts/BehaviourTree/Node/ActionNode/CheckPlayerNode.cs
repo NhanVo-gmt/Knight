@@ -1,9 +1,23 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class CheckPlayerNode : ActionNode
 {
-    public Vector2 checkPos;
+    public enum CheckType
+    {
+        Circle,
+        Box
+    }
+
+    public CheckType checkType = CheckType.Circle;
+    
+    public Vector2 checkRelativePos;
     public float radius;
+
+    public Vector2 size;
+
+    private Vector2 playerPos;
+    private Vector2 checkPos;
     
     public override void CopyNode(Node copyNode)
     {
@@ -11,14 +25,19 @@ public class CheckPlayerNode : ActionNode
 
         if (node)
         {
-            checkPos = node.checkPos;
+            checkType = node.checkType;
+            checkRelativePos = node.checkRelativePos;
             radius = node.radius;
+            size = node.size;
         }
     }
     
     protected override void OnStart()
     {
         base.OnStart();
+
+        playerPos = treeComponent.player.transform.position;
+        checkPos = (Vector2)treeComponent.transform.position - checkRelativePos * movement.GetDirectionMagnitude();
     }
 
     protected override void OnStop()
@@ -37,11 +56,25 @@ public class CheckPlayerNode : ActionNode
 
     bool CheckPlayer()
     {
-        return Vector2.Distance(treeComponent.player.transform.position, (Vector2)treeComponent.transform.position - checkPos * movement.faceDirection) <= radius;
+        if (checkType == CheckType.Circle)
+        {
+            return Vector2.Distance(playerPos, checkPos) <= radius;
+        }
+        else
+        {
+            return (Mathf.Abs(playerPos.x - checkPos.x) < size.x / 2 && Mathf.Abs(playerPos.y - checkPos.y) < size.y / 2);
+        }
     }
     
     public override void DrawGizmos(GameObject selectedGameObject)
     {
-        GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position + checkPos, radius);
+        if (checkType == CheckType.Circle)
+        {
+            GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position + checkRelativePos, radius);
+        }
+        else
+        {
+            GizmosDrawer.DrawWireCube((Vector2)selectedGameObject.transform.position + checkRelativePos, size);
+        }
     }
 }

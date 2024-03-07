@@ -142,6 +142,11 @@ public class Movement : CoreComponent
         rb.transform.Rotate(0, 180, 0);
     }
 
+    public float GetDirectionMagnitude()
+    {
+        return faceDirection == Vector2.left ? -1 : 1;
+    }
+
     #endregion
 
     #region Movement Methods
