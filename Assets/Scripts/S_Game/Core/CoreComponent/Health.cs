@@ -2,16 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.Serialization;
 
 public class Health : CoreComponent
 {
     [SerializeField] int health; //todo set private
+    private int maxHealth;
 
-    public Action onTakeDamage;
-    public Action onDie;
-    public Action<int> onUpdateHealth;
+    public Action OnTakeDamage;
+    public Action OnDie;
+    public Action<int> OnUpdateHealth;
 
-    RecoveryController recoveryController;
+    
 
     private bool isDie = false;
 
@@ -19,8 +21,9 @@ public class Health : CoreComponent
     
     public void SetHealth(HealthData data)
     {
-        health = data.health;
-        onUpdateHealth?.Invoke(health);
+        maxHealth = data.health;
+        health = maxHealth;
+        OnUpdateHealth?.Invoke(health);
     }
 
     #endregion
@@ -28,17 +31,15 @@ public class Health : CoreComponent
     protected override void Awake() 
     {
         base.Awake();
-
-        recoveryController = GetComponent<RecoveryController>();
     }
     
-    public void TakeDamage(int damage)
+    public bool TakeDamage(int damage)
     {
-        if (health <= 0 || IsInvulnerable()) return;
+        if (health <= 0 || IsInvulnerable()) return false;
 
         health -= damage;
 
-        onUpdateHealth?.Invoke(health);
+        OnUpdateHealth?.Invoke(health);
 
         if (health > 0)
         {
@@ -48,21 +49,28 @@ public class Health : CoreComponent
         {
             Die();
         }
+
+        return true;
     }
 
-    bool IsInvulnerable() 
+    protected virtual bool IsInvulnerable()
     {
-        return recoveryController != null && recoveryController.IsInInvulnerabiltyTime();
+        return false;
     }
 
     void TakeDamage()
     {
-        onTakeDamage?.Invoke();
+        OnTakeDamage?.Invoke();
     }
 
     private void Die()
     {
         isDie = true;
-        onDie?.Invoke();
+        OnDie?.Invoke();
+    }
+
+    public int GetPercent()
+    {
+        return Mathf.RoundToInt(health * 1.0f / maxHealth * 100) ;
     }
 }

@@ -12,6 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c031a29a7d0591a4e958a28c29233c5c, type: 3}
   m_Name: DashData
   m_EditorClassIdentifier: 
-  initialVelocity: 12
-  cooldown: 0.7
+  dashAmount: 1
+  dashSpeed: 15
+  dashSleepTime: 0.05
+  dashAttackTime: 0.15
+  dashEndTime: 0.15
+  dashEndSpeed: {x: 15, y: 15}
+  dashEndRunLerp: 0.5
+  dashRefillTime: 0.3
+  dashInputBufferTime: 0.1
+  clip: {fileID: 8300000, guid: d0694be8ceebe6847bfc8afc77747bbb, type: 3}
   vfx: {fileID: 11400000, guid: b1c2025fb8902864c8f2fe9f49960482, type: 2}

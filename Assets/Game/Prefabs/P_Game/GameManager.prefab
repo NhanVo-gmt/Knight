@@ -12,6 +12,13 @@ GameObject:
   - component: {fileID: 6911535378620299280}
   - component: {fileID: 8234785762340972059}
   - component: {fileID: 8203831248180815338}
+  - component: {fileID: 8198752495978295821}
+  - component: {fileID: 5157018599685425844}
+  - component: {fileID: 8299032404261828879}
+  - component: {fileID: 8609112586448916244}
+  - component: {fileID: 3831481438612476268}
+  - component: {fileID: 7507929791565630098}
+  - component: {fileID: 6313335949797581921}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,10 +53,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4ba21023de207445a9bea9e5fcb9de8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 7502696316525358248, guid: 4122d86b82cec484898a4764b72a4c5e, type: 3}
   maxHealth: 10
+  playerMat: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  playerCam: {fileID: 0}
   PlayerKnockbackAmount: 10
-  WeakKnockbackAmount: 20
-  StrongKnockbackAmount: 100
+  WeakKnockbackAmount: 10
+  StrongKnockbackAmount: 30
+  soul: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
+  flashMat: {fileID: 2100000, guid: b92ee72cbc0aa6340ad49ccb19f8c7c3, type: 2}
+  flashCoolDown: 0.2
+  flashGlowMat: {fileID: 2100000, guid: 3805b295fc0d4e044a42c035399d2676, type: 2}
+  sceneData: {fileID: 11400000, guid: adba4b9a6a74d6d40826207827676b8a, type: 2}
 --- !u!114 &8234785762340972059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,14 +78,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pooledPrefabList:
-  - prefab: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
-    amountToPool: 4
-  - prefab: {fileID: 7822202127624302198, guid: b2ffeacc688f60443b3a786e29891f88, type: 3}
-    amountToPool: 4
-  - prefab: {fileID: 6972856228208889475, guid: 0db8397266948244e9b6bad0ae6e1c93, type: 3}
-    amountToPool: 4
-  - prefab: {fileID: 5780635100809065259, guid: 2de39e8af9450b2449add9148b0f0110, type: 3}
-    amountToPool: 5
+  - prefab: {fileID: 5126913179060768109, guid: 2e4b0de63dee87e45970e3662e97187c, type: 3}
+    poolType: 0
+    amountToPool: 10
+  - prefab: {fileID: 3803421527087819763, guid: 64793e2fdb9cdea4e90c58b746ece6df, type: 3}
+    poolType: 1
+    amountToPool: 10
+  - prefab: {fileID: 3803421527087819763, guid: f3af04e56187c104bba4472be46eb3fa, type: 3}
+    poolType: 3
+    amountToPool: 10
+  - prefab: {fileID: 8726307433354808246, guid: 5d7d5c53ab79cd74d81db820b7203b52, type: 3}
+    poolType: 2
+    amountToPool: 10
 --- !u!114 &8203831248180815338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,3 +102,181 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f8249489dd83647b3edb0417281089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8198752495978295821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc9c73178dac0ba4ab1f5f8ea0a0735f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemList: []
+--- !u!114 &5157018599685425844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5654652584ad60a44ace16feda34cef2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8299032404261828879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ed38995e5d0f434fb62d34bfd0bbb28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8609112586448916244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 831481cc954487f4796be54363bcde17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regionClips:
+  - region: 1
+    clips:
+    - {fileID: 8300000, guid: 75ba0e103f87521438087c5c579b81ff, type: 3}
+  - region: 2
+    clips:
+    - {fileID: 8300000, guid: 056ab0f3d00865944a32e75a467ad2b3, type: 3}
+--- !u!114 &3831481438612476268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fa604fb3ff1f4b42b17b072d7818ceb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fileName: knight.save
+  canSaveGame: 0
+--- !u!114 &7507929791565630098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd4f4415d4fee344b8867acd55fa35fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!82 &6313335949797581921
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7517333576352853727}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 75ba0e103f87521438087c5c579b81ff, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4

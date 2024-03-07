@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
+  m_Name: Knight_hit
+  m_EditorClassIdentifier: 
+  spawnPos: {x: 0.2, y: -1.8}
+  spawnRot: {x: 0, y: 0, z: 0}
+  needPlayerDirection: 0
+  lifeTime: 1
+  sprite: {fileID: 7878102035803857591, guid: 0b8989aeb03c9ca4ea7c6d45081c65ec, type: 3}
+  anim: {fileID: 9100000, guid: b68d3472858d0824bb136fb034ec2185, type: 2}

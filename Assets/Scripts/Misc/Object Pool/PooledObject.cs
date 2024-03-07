@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,22 +9,29 @@ public class PooledObject : MonoBehaviour
     public IObjectPool<GameObject> pool;
     Animator anim;
 
+    public Action<PooledObjectData> OnInitData;
+
     void Awake() 
     {
         anim = GetComponent<Animator>();
     }
 
-    public void Initialize(float lifeTime)
+    public void Initialize(PooledObjectData data)
     {
-        Invoke("Release", lifeTime);
+        Invoke("Release", data.lifeTime);
+        
+        OnInitData?.Invoke(data);
     }
 
 
     // Used in animation clip
     public void Release()
     {
-        anim.Rebind();
-        anim.Update(0f);
+        if (anim != null)
+        {
+            anim.Rebind();
+            anim.Update(0f);
+        }
 
         pool.Release(gameObject);
     }

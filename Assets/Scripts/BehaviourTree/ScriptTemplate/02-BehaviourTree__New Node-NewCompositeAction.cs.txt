@@ -14,9 +14,9 @@ public class #SCRIPTNAME# : CompositeNode
 
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
-        return State.SUCCESS;
+        return NodeComponent.State.SUCCESS;
     }
     #NOTRIM#
 

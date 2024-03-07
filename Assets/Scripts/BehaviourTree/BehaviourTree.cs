@@ -37,14 +37,6 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         return behaviourTree;
     }
 
-    public void Bind(BehaviourTreeComponent component)
-    {
-        Traverse(rootNode, (n) =>
-        {
-            n.treeComponent = component;
-        });
-    }
-
     public NodeComponent.State Update() 
     {
         if (rootNode.NodeComponent.state == NodeComponent.State.RUNNING)
@@ -53,6 +45,31 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         }
 
         return treeState;
+    }
+    
+    public List<Node> GetAllChild(Node parent) 
+    {
+        List<Node> childList = new List<Node>();
+
+        DecoratorNode decoratorNode = parent as DecoratorNode;
+        if (decoratorNode != null && decoratorNode.child != null)
+        {
+            childList.Add(decoratorNode.child);
+        }
+
+        RootNode rootNode = parent as RootNode;
+        if (rootNode != null && rootNode.child != null)
+        {
+            childList.Add(rootNode.child);
+        }
+
+        CompositeNode compositeNode = parent as CompositeNode;
+        if (compositeNode != null && compositeNode.children != null)
+        {
+            return compositeNode.children;
+        }
+
+        return childList;
     }
 
 #if UNITY_EDITOR
@@ -89,7 +106,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         {
             Node newNode = CreateNode(oldPastedNodeList[i].GetType());
             newNode.NodeComponent.position = oldPastedNodeList[i].NodeComponent.position + offset;
-            CopyActionNode(newNode as ActionNode, oldPastedNodeList[i] as ActionNode);
+            CopyNode(newNode, oldPastedNodeList[i]);
             newPastedNodeList.Add(newNode);
         }
 
@@ -111,7 +128,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         return newPastedNodeList;
     }
 
-    void CopyActionNode(ActionNode newNode, ActionNode copyNode)
+    void CopyNode(Node newNode, Node copyNode)
     {
         if (newNode == null || copyNode == null) return;
         
@@ -180,37 +197,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             EditorUtility.SetDirty(compositeNode);
         }
     }
-
-    public List<Node> GetAllChild(Node parent) 
-    {
-        List<Node> childList = new List<Node>();
-
-        DecoratorNode decoratorNode = parent as DecoratorNode;
-        if (decoratorNode != null && decoratorNode.child != null)
-        {
-            childList.Add(decoratorNode.child);
-        }
-
-        RootNode rootNode = parent as RootNode;
-        if (rootNode != null && rootNode.child != null)
-        {
-            childList.Add(rootNode.child);
-        }
-
-        CompositeNode compositeNode = parent as CompositeNode;
-        if (compositeNode != null && compositeNode.children != null)
-        {
-            return compositeNode.children;
-        }
-
-        return childList;
-    }
-
-    public void OnBeforeSerialize()
-    {
-        OnValidate();
-    }
-
+    
     private void OnValidate()
     {
         string path = AssetDatabase.GetAssetPath(this);
@@ -226,11 +213,19 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             }
         }
     }
+#endif
+    
+    public void OnBeforeSerialize()
+    {
+        #if UNITY_EDITOR
+        OnValidate();
+        #endif
+    }
 
     public void OnAfterDeserialize()
     {
         
     }
 
-#endif
+
 }

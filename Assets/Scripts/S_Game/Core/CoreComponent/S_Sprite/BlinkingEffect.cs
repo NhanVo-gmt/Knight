@@ -25,6 +25,7 @@ public class BlinkingEffect : MonoBehaviour
 
     IEnumerator Blinking()
     {
+        yield return new WaitForSeconds(0.1f);
         float startTime = Time.time;
 
         while (startTime + cooldown > Time.time)

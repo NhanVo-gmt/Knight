@@ -20,6 +20,7 @@ public class Combat : CoreComponent, IDamageable
     MeleeCombat meleeCombat;
     TouchCombat touchCombat;
 
+    private bool canTouchCombat = true;
 
     Vector2 attackPosition;
     Vector2 hitDirection;
@@ -54,7 +55,7 @@ public class Combat : CoreComponent, IDamageable
 
     void AddEvent()
     {
-        health.onTakeDamage += Knockback;
+        health.OnTakeDamage += Knockback;
     }
 
     private void OnDisable() {
@@ -63,16 +64,16 @@ public class Combat : CoreComponent, IDamageable
 
     private void RemoveEvent()
     {
-        health.onTakeDamage -= Knockback;
+        health.OnTakeDamage -= Knockback;
     }
 
     #endregion
 
     #region Damage Method
 
-    public void MeleeAttack(MeleeAttackData attackData)
+    public bool MeleeAttack(MeleeAttackData attackData)
     {
-        meleeCombat.MeleeAttack(attackData, SetAttackPosition(attackData), movement.faceDirection);
+        return meleeCombat.MeleeAttack(attackData, SetAttackPosition(attackData), movement.faceDirection);
     }
 
     Vector2 SetAttackPosition(MeleeAttackData attackData)
@@ -96,7 +97,8 @@ public class Combat : CoreComponent, IDamageable
 
     public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
     {
-        if (this.damagerTarget == damagerType) return ;
+        if (this.damagerTarget == damagerType) return;
+        if(!health.TakeDamage(damage)) return;
         
         if (attackDirection == Vector2.zero)
         {
@@ -107,7 +109,6 @@ public class Combat : CoreComponent, IDamageable
             hitDirection = attackDirection;
         }
 
-        health.TakeDamage(damage);
     }
 
     #endregion
@@ -133,7 +134,8 @@ public class Combat : CoreComponent, IDamageable
             case IDamageable.KnockbackType.player:
                 knockbackAmount = settings.PlayerKnockbackAmount;
                 break;
-            
+            case IDamageable.KnockbackType.none:
+                return;
         }
         
         movement.AddForce(hitDirection, knockbackAmount);
@@ -153,8 +155,22 @@ public class Combat : CoreComponent, IDamageable
         col.enabled = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D other) {
-        touchCombat?.TouchAttack(other);
+    public void EnableTouchCombat()
+    {
+        canTouchCombat = true;
+    }
+
+    public void DisableTouchCombat()
+    {
+        canTouchCombat = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (canTouchCombat)
+        {
+            touchCombat?.TouchAttack(other);
+        }
     }
 
     #endregion

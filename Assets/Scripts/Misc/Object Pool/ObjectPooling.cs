@@ -8,7 +8,16 @@ public class ObjectPooling : MonoBehaviour
     [System.Serializable]
     public class PooledPrefab
     {
+        public enum PoolType
+        {
+            VFX,
+            Item,
+            ParticleSystem,
+            Projectile
+        }
+        
         public GameObject prefab;
+        public PoolType poolType;
         public int amountToPool;
         public IObjectPool<GameObject> pool;
 
@@ -20,7 +29,7 @@ public class ObjectPooling : MonoBehaviour
         GameObject CreatePooledItem()
         {
             GameObject createdGO = GameObject.Instantiate(prefab);
-            createdGO.AddComponent<PooledObject>().pool = pool;
+            createdGO.GetComponent<PooledObject>().pool = pool;
             DontDestroyOnLoad(createdGO);
             return createdGO;
         }
@@ -51,18 +60,31 @@ public class ObjectPooling : MonoBehaviour
         }
     }
 
-   
-
-    public GameObject GetObjectFromPool(GameObject go)
+    public GameObject GetVFXFromPool()
     {
-        for (int i = 0; i < pooledPrefabList.Count; i++)
+        return pooledPrefabList[0].pool.Get();
+    }
+    
+    public GameObject GetItemFromPool()
+    {
+        return pooledPrefabList[1].pool.Get();
+    }
+
+    public GameObject GetProjectileFromPool()
+    {
+        return pooledPrefabList[2].pool.Get();
+    }
+
+    public GameObject GetParticleFromPool(GameObject prefab)
+    {
+        for (int i = 2; i < pooledPrefabList.Count; i++)
         {
-            if (pooledPrefabList[i].prefab == go)
+            if (pooledPrefabList[i].prefab == prefab)
             {
                 return pooledPrefabList[i].pool.Get();
             }
         }
-
+        
         Debug.LogError("There is no game object on this pool");
         return null;
     }

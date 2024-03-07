@@ -1,0 +1,340 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9194076263786542463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: c2c8f74371a340148a31e4a238114cab
+    position: {x: 440.8, y: 464.80002}
+    description: Attack sequence
+  children:
+  - {fileID: -4884081380590030071}
+  - {fileID: 6213162991169494904}
+  - {fileID: 6748995664217005684}
+  - {fileID: 4731610831502973945}
+--- !u!114 &-8537687223031340842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: ff6092000aa3a204584d2ebb0c0780ba
+    position: {x: 759.45, y: 744.04755}
+    description: 
+  idleTime: 0.5
+--- !u!114 &-5586178519044263959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: c38f193a0809a604d8ffbec891a87291
+    position: {x: 1337.3801, y: 814.39996}
+    description: 
+  clipName: RecoverFromAttack
+  clipNameIndex: 2
+--- !u!114 &-4884081380590030071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff88d7429b3c04b88d08008781ba17, type: 3}
+  m_Name: CheckPlayerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 29da288e38706e748b282641d3bd5d80
+    position: {x: 423.2, y: 612}
+    description: 
+  radius: 1
+--- !u!114 &-4315897188620694553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 75c5d7124e2dac843826e75710c11d6d
+    position: {x: 952.80005, y: 744}
+    description: 
+  clipName: Attack
+  clipNameIndex: 0
+--- !u!114 &-2992014423547448937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 17ca99b341a03794e913a5c2b224a284
+    position: {x: 1506.98, y: 814.39996}
+    description: 'Attack interval
+
+'
+  idleTime: 1
+--- !u!114 &-2886896763517979471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a70733bb26462ae4aa3c3dd3641cdf82, type: 3}
+  m_Name: RootNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: a797f669e5b942e4783a93252797d8a6
+    position: {x: 366.4001, y: -0.0000071716313}
+    description: 
+  child: {fileID: 4815716524904015038}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c81d3d3d1e29dc40a60e4fc0e658eb8, type: 3}
+  m_Name: EatingPlant_Behaviour
+  m_EditorClassIdentifier: 
+  rootNode: {fileID: -2886896763517979471}
+  treeState: 0
+  nodes:
+  - {fileID: -2886896763517979471}
+  - {fileID: -9194076263786542463}
+  - {fileID: -4884081380590030071}
+  - {fileID: 4823951581629644977}
+  - {fileID: -4315897188620694553}
+  - {fileID: -8537687223031340842}
+  - {fileID: 6748995664217005684}
+  - {fileID: 4815716524904015038}
+  - {fileID: 1208045424042253146}
+  - {fileID: 1483261538938811133}
+  - {fileID: 6213162991169494904}
+  - {fileID: 3629329811450096076}
+  - {fileID: -2992014423547448937}
+  - {fileID: 4731610831502973945}
+  - {fileID: -5586178519044263959}
+  offset: {x: 300, y: 0}
+--- !u!114 &1208045424042253146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f4a21ff486b184e8bbf013bf096b03, type: 3}
+  m_Name: AttackNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 346abdb31777efc4c969fda13871607b
+    position: {x: 1140.8792, y: 744}
+    description: 
+  shape: 0
+  damage: 1
+  boxSize: {x: 2, y: 0.7}
+  circleRadius: 0
+--- !u!114 &1483261538938811133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eee9835a4cb7ebc458dd76457b13aff2, type: 3}
+  m_Name: RepeatNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: d1702792977d91445a2fefd75ea71a7e
+    position: {x: 441.59998, y: 356.80002}
+    description: 
+  child: {fileID: -9194076263786542463}
+--- !u!114 &3629329811450096076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 73e906deb2b2dc540aa8040765743b8c
+    position: {x: 592, y: 743.99994}
+    description: 
+  clipName: ReadyToAttack
+  clipNameIndex: 1
+--- !u!114 &4731610831502973945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: a2af69c468b05cc4ab391db5f4084ab3
+    position: {x: 1356.5801, y: 612}
+    description: Recover from attack
+  children:
+  - {fileID: -5586178519044263959}
+  - {fileID: -2992014423547448937}
+  successType: 1
+--- !u!114 &4815716524904015038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 2d5e62e08a7017144ab79f7e1a012c2f
+    position: {x: 348.8, y: 143.86621}
+    description: 
+  children:
+  - {fileID: 4823951581629644977}
+  - {fileID: 1483261538938811133}
+--- !u!114 &4823951581629644977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25674a34a5cef8d49a6bdcbf8d9b98bf, type: 3}
+  m_Name: DisableTouchCombatNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 870032c2659f5434db281458c78ef30b
+    position: {x: 172, y: 356.80002}
+    description: 
+--- !u!114 &6213162991169494904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 5ddaadab8389aee4b95608455e711cc7
+    position: {x: 651.6, y: 612}
+    description: 
+  children:
+  - {fileID: 3629329811450096076}
+  - {fileID: -8537687223031340842}
+  successType: 1
+--- !u!114 &6748995664217005684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: de4388455cf05204a92a83e08a5550ac
+    position: {x: 1028.3025, y: 612}
+    description: 
+  children:
+  - {fileID: -4315897188620694553}
+  - {fileID: 1208045424042253146}
+  successType: 1

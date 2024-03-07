@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
   m_Name: Knight_jump_vfx
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 7822202127624302198, guid: b2ffeacc688f60443b3a786e29891f88, type: 3}
-  needPlayerDirection: 0
+  sprite: {fileID: -3059327113365094213, guid: 80b3b74ed2c709948bc9f92817703710, type: 3}
   spawnPos: {x: 0, y: 0.5}
+  spawnRot: {x: 0, y: 0, z: 0}
+  needPlayerDirection: 0
   lifeTime: 1
+  anim: {fileID: 9100000, guid: 0bcab2bdfd711e245ba46bc5bcd737ad, type: 2}

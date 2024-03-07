@@ -22,7 +22,7 @@ public class BehaviourTreeRunner : MonoBehaviour
 
     public void InitializeTreeComponent() 
     {
-        treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject);
+        treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject, GameObject.FindWithTag("Player"));
     }
 
     void CloneTree() 
@@ -34,7 +34,7 @@ public class BehaviourTreeRunner : MonoBehaviour
     {
         tree.Traverse(tree.rootNode, (n) =>
         {
-            n.treeComponent = treeComponent;
+            n.OnInitialize(treeComponent);
         });
     }
 

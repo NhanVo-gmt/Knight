@@ -125,7 +125,7 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     public override void OnSelected()
     {
         base.OnSelected();
-
+        
         onSelectedChanged?.Invoke(this);
     }
 

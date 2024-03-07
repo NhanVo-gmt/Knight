@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
   m_Name: Knight_dash_vfx
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 6972856228208889475, guid: 0db8397266948244e9b6bad0ae6e1c93, type: 3}
+  spawnPos: {x: 0.5, y: -0.3}
+  spawnRot: {x: 0, y: 0, z: 0}
   needPlayerDirection: 1
-  pooledObjectSpawnPos: {x: 0, y: 0}
   lifeTime: 1
+  sprite: {fileID: -5757980661060911146, guid: 7ffb4bab8bc5ba94b9c567af13d22573, type: 3}
+  anim: {fileID: 9100000, guid: eeddab553b896c84993a91bc1c9803a2, type: 2}

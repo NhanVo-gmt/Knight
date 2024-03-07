@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 822effcc03233974e827375e4b7da520, type: 3}
   m_Name: Knight_attack_vfx
   m_EditorClassIdentifier: 
-  pooledObject: {fileID: 3916671898240456042, guid: 8a765074f6b66274083f6ba56f27a124, type: 3}
+  spawnPos: {x: -1.4, y: 0.2}
+  spawnRot: {x: 0, y: 0, z: 0}
   needPlayerDirection: 1
-  spawnPos: {x: -1.2, y: 0.2}
   lifeTime: 1
+  sprite: {fileID: 1779309011626087270, guid: c68498e784ba07d4d8c9ab6ba6d250aa, type: 3}
+  anim: {fileID: 9100000, guid: b50f87d38b5b8a84c88feefccc1a1fef, type: 2}

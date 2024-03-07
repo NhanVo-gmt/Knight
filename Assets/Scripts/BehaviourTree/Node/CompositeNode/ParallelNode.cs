@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class ParallelNode : CompositeNode
 {
-    enum SuccessType
+    public enum SuccessType
     {
         OneNode,
         AllNode,
     }
     
-    [SerializeField] SuccessType successType;
+    public SuccessType successType;
     NodeComponent.State[] childStateArray;
+    
+    public override void CopyNode(Node copyNode)
+    {
+        ParallelNode node = (ParallelNode)copyNode;
+        if (node)
+        {
+            successType = node.successType;
+        }
+    }
     
     protected override void OnStart()
     {
@@ -29,7 +38,6 @@ public class ParallelNode : CompositeNode
         {
             childStateArray[i] = NodeComponent.State.RUNNING;
         }
-
     }
 
     protected override void OnStop()
@@ -41,6 +49,8 @@ public class ParallelNode : CompositeNode
     {
         for (int i = 0; i < children.Count; i++)
         {
+            childStateArray[i] = children[i].Update();
+            
             if (childStateArray[i] == NodeComponent.State.SUCCESS) 
             {
                 if (successType == SuccessType.OneNode)
@@ -50,9 +60,7 @@ public class ParallelNode : CompositeNode
                 }
                 continue;
             }
-
-            childStateArray[i] = children[i].Update();
-            if (childStateArray[i] == NodeComponent.State.FAILURE)
+            else if (childStateArray[i] == NodeComponent.State.FAILURE)
             {
                 Abort();
                 return NodeComponent.State.FAILURE;
@@ -63,6 +71,7 @@ public class ParallelNode : CompositeNode
         {
             return NodeComponent.State.SUCCESS;
         }
+        
 
         return NodeComponent.State.RUNNING;
     }

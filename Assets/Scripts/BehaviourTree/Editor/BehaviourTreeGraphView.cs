@@ -84,6 +84,7 @@ public class BehaviourTreeGraphView : GraphView
 
     private void PasteOperation(string operationName, string data)
     {
+        ClearSelection();
         List<Node> pastedNode = tree.PasteNode(nodeCopiedList);
         pastedNode.ForEach(node => CreateNodeView(node));
         pastedNode.ForEach(node => CreateEdge(node));
@@ -134,6 +135,8 @@ public class BehaviourTreeGraphView : GraphView
         tree.nodes.ForEach(n => CreateEdge(n));
 
         InitializeSearchWindow(editorWindow);
+        
+        ClearSelection();
     }
 
     private void DeleteOpeningElements()
@@ -202,13 +205,12 @@ public class BehaviourTreeGraphView : GraphView
         }
     }
 
-    
-
     private void CreateNodeView(Node node)
     {
         NodeView nodeView = new NodeView(node);
         nodeView.onSelectedChanged = onNodeViewSelectionChanged;
         AddElement(nodeView);
+        nodeView.Select(this, true);
     }
 
     private void CreateEdge(Node parent)
@@ -282,5 +284,12 @@ public class BehaviourTreeGraphView : GraphView
                 nodeView.UpdateState();
             }
         });
+    }
+
+    public Vector2 GetLocalMousePosition(Vector2 mousePosition)
+    {
+        Vector2 worldMousePosition = mousePosition;
+        Vector2 localMousePosition = contentViewContainer.WorldToLocal(worldMousePosition);
+        return localMousePosition;
     }
 }

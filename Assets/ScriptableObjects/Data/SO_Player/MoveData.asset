@@ -12,4 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e350d583aef17b44bbb749eed0f455a4, type: 3}
   m_Name: MoveData
   m_EditorClassIdentifier: 
-  velocity: 5
+  moveMaxSpeed: 7
+  moveAcceleration: 7
+  moveAccelAmount: 50
+  moveDeceleration: 7
+  moveDeccelAmount: 50
+  accelInAir: 1
+  deccelInAir: 1
+  doConserveMomentum: 0
+  clip: {fileID: 8300000, guid: ea133985f2442984e8e200eaa3018a2d, type: 3}

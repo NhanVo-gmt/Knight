@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class #SCRIPTNAME# : ActionNode
 {
-    public override void CopyNode(ActionNode copyNode)
+    public override void CopyNode(Node copyNode)
     {
         #SCRIPTNAME# node = copyNode as #SCRIPTNAME#;
-        if (node)
-        {
-            description = node.description;
-        }
+        
+    }
+    
+    public override void OnInitialize(BehaviourTreeComponent component)
+    {
+        base.OnInitialize(component);
     }
     
     protected override void OnStart()
@@ -21,9 +23,9 @@ public class #SCRIPTNAME# : ActionNode
         base.OnStop();
     }
 
-    protected override State OnUpdate()
+    protected override NodeComponent.State OnUpdate()
     {
-        return State.SUCCESS;
+        return NodeComponent.State.SUCCESS;
     }
     #NOTRIM#
 

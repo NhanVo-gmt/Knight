@@ -1,0 +1,18 @@
+{
+    "name": "BehaviourTreeEditorAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:4f4c40d7e4feff340bd2122be9ed1f68"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
