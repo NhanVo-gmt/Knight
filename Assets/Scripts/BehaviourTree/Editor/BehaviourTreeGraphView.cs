@@ -214,6 +214,12 @@ public class BehaviourTreeGraphView : GraphView
         nodeView.Select(this, true);
     }
 
+    private void CreateGroupView(BehaviourTreeGroup group)
+    {
+        BehaviourTreeGroupView groupView = new BehaviourTreeGroupView(group);
+        AddElement(groupView);
+    }
+
     private void CreateEdge(Node parent)
     {
         NodeView parentNodeView = FindNodeView(parent);
@@ -241,6 +247,7 @@ public class BehaviourTreeGraphView : GraphView
     public override void BuildContextualMenu(ContextualMenuPopulateEvent evt)
     {
         base.BuildContextualMenu(evt);
+        evt.menu.AppendAction($"Create Group", (a) => CreateGroup());
         evt.menu.AppendAction($"Create New Node Scripts.../Action Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[0]));
         evt.menu.AppendAction($"Create New Node Scripts.../Composite Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[1]));
         evt.menu.AppendAction($"Create New Node Scripts.../Decorator Node Scripts", (a) => CreateNodeScript(scriptTemplateAsset[2]));
@@ -272,6 +279,13 @@ public class BehaviourTreeGraphView : GraphView
         node.NodeComponent.Tree = tree;
         
         CreateNodeView(node);
+    }
+
+    public void CreateGroup()
+    {
+        BehaviourTreeGroup group = tree.CreateGroup();
+
+        CreateGroupView(group);
     }
 
 #endregion
