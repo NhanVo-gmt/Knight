@@ -131,6 +131,7 @@ public class BehaviourTreeGraphView : GraphView
 
         CreateRootNode();
 
+        tree.UpdateNodes();
         tree.nodes.ForEach(n => CreateNodeView(n));
         tree.nodes.ForEach(n => CreateEdge(n));
 
@@ -268,6 +269,7 @@ public class BehaviourTreeGraphView : GraphView
         Node node = tree.CreateNode(type);
         node.name = type.Name;
         node.NodeComponent.position = position;
+        node.NodeComponent.Tree = tree;
         
         CreateNodeView(node);
     }

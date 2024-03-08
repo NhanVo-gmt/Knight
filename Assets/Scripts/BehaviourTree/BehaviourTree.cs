@@ -11,6 +11,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     public Node rootNode;
     public NodeComponent.State treeState = NodeComponent.State.RUNNING;
     public List<Node> nodes = new List<Node>();
+    public List<Node> clonedNodes = new List<Node>();
     
     [SerializeField] Vector2 offset = new Vector2(300, 0);
 
@@ -29,10 +30,10 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         BehaviourTree behaviourTree = Instantiate(this);
         behaviourTree.rootNode = rootNode.Clone();
         
-        behaviourTree.nodes = new List<Node>();
+        behaviourTree.clonedNodes = new List<Node>();
         Traverse(behaviourTree.rootNode, (n) =>
         {
-            behaviourTree.nodes.Add(n);
+            behaviourTree.clonedNodes.Add(n);
         });
         return behaviourTree;
     }
@@ -91,6 +92,8 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         Undo.RegisterCreatedObjectUndo(newNode, "Behaviour Tree {CreateNode}");
 
         AssetDatabase.SaveAssets();
+        
+        UpdateNodes();
 
         return newNode;
     }
@@ -122,8 +125,9 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
                     AddChild(newPastedNodeList[i], newPastedNodeList[j]);
                 }
             }
-
         }
+        
+        UpdateNodes();
 
         return newPastedNodeList;
     }
@@ -169,6 +173,8 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             compositeNode.children.Add(child);
             EditorUtility.SetDirty(compositeNode);
         }
+        
+        UpdateNodes();
     }
 
     public void RemoveChild(Node parent, Node child) 
@@ -196,6 +202,18 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             compositeNode.children.Remove(child);
             EditorUtility.SetDirty(compositeNode);
         }
+
+        UpdateNodes();
+    }
+
+    public void UpdateNodes()
+    {
+        foreach (Node node in nodes)
+        {
+            node.NodeComponent.Tree = this;
+        }
+        
+        AssetDatabase.SaveAssets();
     }
     
     private void OnValidate()

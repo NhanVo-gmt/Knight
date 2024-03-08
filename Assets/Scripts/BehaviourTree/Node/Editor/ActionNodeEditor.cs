@@ -1,5 +1,6 @@
 using System;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -9,7 +10,7 @@ public class ActionNodeEditor : Editor
     private SerializedProperty nodeProperty;
     private SerializedProperty inheritedNodeProperty;
     
-    public ActionNode node;
+    private ActionNode node;
     
     protected virtual void OnEnable()
     {
@@ -28,6 +29,17 @@ public class ActionNodeEditor : Editor
         using (new EditorGUI.DisabledScope(true))
             EditorGUILayout.ObjectField("Script:", MonoScript.FromScriptableObject((ActionNode)target), typeof(ActionNode), false);
         EditorGUILayout.PropertyField(nodeProperty);
+        
+        GUILayout.Space(15f);
+
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Link Node:");
+        if (GUILayout.Button("HI", EditorStyles.popup))
+        {
+            // SearchWindow.Open(new SearchWindowContext(GUIUtility.GUIToScreenPoint(Event.current.mousePosition)),
+            //     new NodeListSearchProvider());
+        }
+        EditorGUILayout.EndHorizontal();
         
         GUILayout.Space(25f);
         serializedObject.ApplyModifiedProperties();

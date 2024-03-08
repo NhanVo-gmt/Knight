@@ -16,8 +16,10 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 48cb35334e589ca4c8d61addf70bc274
+    Tree: {fileID: 11400000}
     position: {x: -150, y: 400}
     description: 
+  linkNode: {fileID: 0}
   idleTime: 2
 --- !u!114 &-2583858028470228784
 MonoBehaviour:
@@ -35,6 +37,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: a4db51bce82504c45ad3460536912c0e
+    Tree: {fileID: 11400000}
     position: {x: 0, y: 0}
     description: 
   child: {fileID: 1684206329625180964}
@@ -54,10 +57,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f50ceb90a3eeb2240b78b57159577153
+    Tree: {fileID: 11400000}
     position: {x: 122, y: 400}
     description: 
-  projectile: {fileID: 11400000, guid: aa3c7240c53fcd44ba233a73e0292495, type: 2}
-  spawnPos: {x: 0, y: 0}
+  linkNode: {fileID: 0}
+  data: {fileID: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,6 +82,7 @@ MonoBehaviour:
   - {fileID: 4243087236390738935}
   - {fileID: -5590602303411048671}
   - {fileID: -988171661080294969}
+  clonedNodes: []
   offset: {x: 300, y: 0}
 --- !u!114 &1684206329625180964
 MonoBehaviour:
@@ -95,6 +100,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 51860288813cbd949b390e450ea5e6ee
+    Tree: {fileID: 11400000}
     position: {x: 0, y: 128}
     description: 
   child: {fileID: 4243087236390738935}
@@ -114,6 +120,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 0a6c3532a720eeb42b296db17108b07b
+    Tree: {fileID: 11400000}
     position: {x: 0, y: 247}
     description: 
   children:

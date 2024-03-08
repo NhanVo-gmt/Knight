@@ -50,10 +50,6 @@ public class CheckGoundNode : ActionNode
     bool CheckGround()
     {
         Collider2D[] cols = Physics2D.OverlapBoxAll(startPos, size, 0, layerMask);
-        foreach (Collider2D col in cols)
-        {
-            Debug.Log(col.name);
-        }
         if (cols.Length > 0)
         {
             return true;
