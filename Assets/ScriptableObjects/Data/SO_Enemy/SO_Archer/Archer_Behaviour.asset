@@ -138,11 +138,11 @@ MonoBehaviour:
     position: {x: 20.607468, y: 665.6}
     Name: 
     description: 
-  linkNode: {fileID: 0}
+  linkNode: {fileID: 6482409791030590599}
   checkType: 1
-  checkRelativePos: {x: -7.5, y: 2}
+  checkRelativePos: {x: 0, y: 0}
   radius: 3.55
-  size: {x: 12, y: 5}
+  size: {x: 0, y: 0}
 --- !u!114 &-6073939612882700130
 MonoBehaviour:
   m_ObjectHideFlags: 0

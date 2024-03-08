@@ -59,7 +59,7 @@ public class ActionNodeEditor : Editor
         if (searchGroup)
         {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Link Node:", GUILayout.ExpandWidth(false), GUILayout.Width(100));
+            EditorGUILayout.LabelField("Link Node:", GUILayout.ExpandWidth(false), GUILayout.Width(150));
 
             string nodeLinkName = node.linkNode == null ? "None" : node.linkNode.NodeComponent.Name;
             if (GUILayout.Button($"{nodeLinkName}", EditorStyles.popup, GUILayout.MinWidth(100)))
@@ -75,7 +75,10 @@ public class ActionNodeEditor : Editor
         
         GUILayout.Space(10f);
     }
-    
-    
+
+    protected bool HasLinkNode()
+    {
+        return node.linkNode != null;
+    }
 }
 #endif
