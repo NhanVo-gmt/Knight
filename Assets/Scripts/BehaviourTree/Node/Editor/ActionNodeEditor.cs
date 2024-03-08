@@ -31,15 +31,6 @@ public class ActionNodeEditor : Editor
         EditorGUILayout.PropertyField(nodeProperty);
         
         GUILayout.Space(15f);
-
-        EditorGUILayout.BeginHorizontal();
-        EditorGUILayout.LabelField("Link Node:");
-        if (GUILayout.Button("HI", EditorStyles.popup))
-        {
-            // SearchWindow.Open(new SearchWindowContext(GUIUtility.GUIToScreenPoint(Event.current.mousePosition)),
-            //     new NodeListSearchProvider());
-        }
-        EditorGUILayout.EndHorizontal();
         
         GUILayout.Space(25f);
         serializedObject.ApplyModifiedProperties();

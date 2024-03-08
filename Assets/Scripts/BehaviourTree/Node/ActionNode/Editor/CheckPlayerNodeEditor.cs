@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 #if UNITY_EDITOR
@@ -9,6 +10,8 @@ public class CheckPlayerNodeEditor : ActionNodeEditor
     private SerializedProperty radiusProperty;
     private SerializedProperty sizeProperty;
     private CheckPlayerNode node;
+
+    private NodeListSearchProvider nodeListSearchProvider;
     
     protected override void OnEnable()
     {
@@ -20,7 +23,11 @@ public class CheckPlayerNodeEditor : ActionNodeEditor
 
     protected override void Awake()
     {
+        base.Awake();
         node = (CheckPlayerNode)target;
+        
+        nodeListSearchProvider = ScriptableObject.CreateInstance<NodeListSearchProvider>();
+        nodeListSearchProvider.Initialize(node.NodeComponent.Tree);
     }
     public override void OnInspectorGUI()
     {
@@ -29,6 +36,15 @@ public class CheckPlayerNodeEditor : ActionNodeEditor
         EditorGUILayout.PropertyField(checkRelativePosProperty);
         EditorGUILayout.PropertyField(radiusProperty);
         EditorGUILayout.PropertyField(sizeProperty);
+        
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Link Node:");
+        
+        if (GUILayout.Button("HI", EditorStyles.popup))
+        {
+            SearchWindow.Open(new SearchWindowContext(GUIUtility.GUIToScreenPoint(Event.current.mousePosition)), nodeListSearchProvider);
+        }
+        EditorGUILayout.EndHorizontal();
         
         serializedObject.ApplyModifiedProperties();
     }

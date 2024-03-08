@@ -3,24 +3,34 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class NodeSearchData 
-{
-    public int level;
-    public Node node;
-}
-
 public class NodeListSearchProvider : ScriptableObject, ISearchWindowProvider
 {
-    private string[] nodes;
-    public NodeListSearchProvider(string[] nodes)
+    private BehaviourTree tree;
+    
+    public NodeListSearchProvider(BehaviourTree tree)
     {
-        this.nodes = nodes;
+        this.tree = tree;
+    }
+    
+    public void Initialize(BehaviourTree tree)
+    {
+        this.tree = tree;
     }
     
     public List<SearchTreeEntry> CreateSearchTree(SearchWindowContext context)
     {
         List<SearchTreeEntry> searchList = new List<SearchTreeEntry>();
-        searchList.Add(new SearchTreeGroupEntry(new GUIContent("List"), 0));
+        searchList.Add(new SearchTreeGroupEntry(new GUIContent("List Node"), 0));  
+        foreach (Node node in tree.nodes)
+        {
+            searchList.Add(new SearchTreeEntry(new GUIContent(node.NodeComponent.Name))
+            {
+                userData = node,
+                level = 1
+            });  
+            Debug.Log(node.NodeComponent.Name);
+        }
+        
         return searchList;
     }
 

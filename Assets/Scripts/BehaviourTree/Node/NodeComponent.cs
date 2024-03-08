@@ -19,6 +19,7 @@ public class NodeComponent
     public BehaviourTree Tree;
 
     public Vector2 position;
+    public string Name;
     [TextArea(5, 5)] public string description;
 
     public NodeComponent(){}
