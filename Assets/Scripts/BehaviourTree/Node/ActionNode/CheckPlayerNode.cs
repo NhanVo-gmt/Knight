@@ -38,8 +38,6 @@ public class CheckPlayerNode : ActionNode
 
         playerPos = treeComponent.player.transform.position;
         checkPos = movement.GetWorldPosFromRelativePos(checkRelativePos);
-        
-        Debug.Log(checkPos);
     }
 
     protected override void OnStop()
@@ -64,8 +62,6 @@ public class CheckPlayerNode : ActionNode
         }
         else
         {
-            Debug.Log(Mathf.Abs(playerPos.x - checkPos.x) < size.x / 2);
-            Debug.Log(Mathf.Abs(playerPos.y - checkPos.y) < size.y / 2);
             return (Mathf.Abs(playerPos.x - checkPos.x) < size.x / 2 && Mathf.Abs(playerPos.y - checkPos.y) < size.y / 2);
         }
     }
