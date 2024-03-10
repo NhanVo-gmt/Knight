@@ -251,9 +251,9 @@ MonoBehaviour:
     Tree: {fileID: 11400000}
     position: {x: 1975.4501, y: 740.8001}
     Name: 
-    description: 
+    description: After attack
   linkNode: {fileID: 0}
-  idleTime: 0.1
+  idleTime: 0.2
 --- !u!114 &-2580076790757477017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -770,11 +770,11 @@ MonoBehaviour:
     started: 0
     guid: e8b473ea3001416418522830be89000c
     Tree: {fileID: 11400000}
-    position: {x: 1616.3999, y: 740.80005}
+    position: {x: 1616.4, y: 740.8}
     Name: 
-    description: 
+    description: Before attack
   linkNode: {fileID: 0}
-  idleTime: 0.45
+  idleTime: 0.65
 --- !u!114 &6268569449364434779
 MonoBehaviour:
   m_ObjectHideFlags: 0
