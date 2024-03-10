@@ -10,10 +10,14 @@ public partial class EditorSceneLoader
         public static void LoadTestScene() { OpenScene("Assets/Scenes/TestScene.unity"); }
         [MenuItem("Scenes/Farm/FarmScene")]
         public static void LoadFarmScene() { OpenScene("Assets/Scenes/Farm/FarmScene.unity"); }
+        [MenuItem("Scenes/Festival/FestivalScene")]
+        public static void LoadFestivalScene() { OpenScene("Assets/Scenes/Festival/FestivalScene.unity"); }
         [MenuItem("Scenes/ForbiddenLand/ForbiddenLand")]
         public static void LoadForbiddenLand() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand.unity"); }
         [MenuItem("Scenes/ForbiddenLand/ForbiddenLand1")]
         public static void LoadForbiddenLand1() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand1.unity"); }
+        [MenuItem("Scenes/ForbiddenLand/ForbiddenLand2")]
+        public static void LoadForbiddenLand2() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand2.unity"); }
         [MenuItem("Scenes/Forest/ForestScene")]
         public static void LoadForestScene() { OpenScene("Assets/Scenes/Forest/ForestScene.unity"); }
         [MenuItem("Scenes/Forest/ForestScene1")]

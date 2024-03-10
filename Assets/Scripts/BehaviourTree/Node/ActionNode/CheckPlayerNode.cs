@@ -37,7 +37,7 @@ public class CheckPlayerNode : ActionNode
         base.OnStart();
 
         playerPos = treeComponent.player.transform.position;
-        checkPos = (Vector2)treeComponent.transform.position - checkRelativePos * movement.GetDirectionMagnitude();
+        checkPos = movement.GetWorldPosFromRelativePos(checkRelativePos);
     }
 
     protected override void OnStop()

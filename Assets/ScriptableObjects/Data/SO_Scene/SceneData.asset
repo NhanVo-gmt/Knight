@@ -34,3 +34,6 @@ MonoBehaviour:
   - scene: 301
     imageStartPos: {x: 425, y: -5}
     exit: {fileID: 11400000, guid: 58b5bbc794b3b1b49a75e3ae43207c1a, type: 2}
+  - scene: 302
+    imageStartPos: {x: 537.7, y: 1.6}
+    exit: {fileID: 11400000, guid: 28b1bee263533c949bc556767f1bc46d, type: 2}

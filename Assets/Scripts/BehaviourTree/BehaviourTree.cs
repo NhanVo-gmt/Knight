@@ -10,7 +10,12 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 {
     public Node rootNode;
     public NodeComponent.State treeState = NodeComponent.State.RUNNING;
+    
+    [Header("Node")]
     public List<Node> nodes = new List<Node>();
+
+    [Header("Group")] 
+    public List<BehaviourTreeGroup> groups = new List<BehaviourTreeGroup>();
     
     [SerializeField] Vector2 offset = new Vector2(300, 0);
 
@@ -73,6 +78,9 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     }
 
 #if UNITY_EDITOR
+
+    #region Node
+    
     public Node CreateNode(System.Type type) 
     {
         Undo.RecordObject(this, "Behaviour Tree {Createnode}");
@@ -91,6 +99,8 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         Undo.RegisterCreatedObjectUndo(newNode, "Behaviour Tree {CreateNode}");
 
         AssetDatabase.SaveAssets();
+        
+        UpdateNodes();
 
         return newNode;
     }
@@ -122,8 +132,9 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
                     AddChild(newPastedNodeList[i], newPastedNodeList[j]);
                 }
             }
-
         }
+        
+        UpdateNodes();
 
         return newPastedNodeList;
     }
@@ -169,6 +180,8 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             compositeNode.children.Add(child);
             EditorUtility.SetDirty(compositeNode);
         }
+        
+        UpdateNodes();
     }
 
     public void RemoveChild(Node parent, Node child) 
@@ -196,7 +209,47 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
             compositeNode.children.Remove(child);
             EditorUtility.SetDirty(compositeNode);
         }
+
+        UpdateNodes();
     }
+
+    public void UpdateNodes()
+    {
+        foreach (Node node in nodes)
+        {
+            node.NodeComponent.Tree = null;
+            // node.NodeComponent.Tree = this;
+        }
+        
+        AssetDatabase.SaveAssets();
+    }
+    
+    #endregion
+
+    #region Group
+    
+    public BehaviourTreeGroup CreateGroup()
+    {
+        Undo.RecordObject(this, "Behaviour Tree {Creategroup}");
+
+        BehaviourTreeGroup group = CreateInstance<BehaviourTreeGroup>();
+        group.ID = GUID.Generate().ToString();
+
+        groups.Add(group);
+
+        if (!Application.isPlaying)
+        {
+            AssetDatabase.AddObjectToAsset(group, this);
+        }
+
+        Undo.RegisterCreatedObjectUndo(group, "Behaviour Tree {Creategroup}");
+
+        AssetDatabase.SaveAssets();
+
+        return group;
+    }
+    
+    #endregion
     
     private void OnValidate()
     {

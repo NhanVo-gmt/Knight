@@ -29,7 +29,7 @@ public abstract class Node : ScriptableObject
         return NodeComponent.state;
     }
 
-    public virtual Node Clone() 
+    public virtual Node Clone()
     {
         return Instantiate(this);
     }

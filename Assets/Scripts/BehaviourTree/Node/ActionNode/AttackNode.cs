@@ -43,11 +43,11 @@ public class AttackNode : ActionNode
         Collider2D[] cols = new Collider2D[10];
         if (shape == AttackShape.Box)
         {
-            cols = Physics2D.OverlapBoxAll((Vector2)treeComponent.transform.position - attackPos * movement.GetDirectionMagnitude(), boxSize, 0);
+            cols = Physics2D.OverlapBoxAll(movement.GetWorldPosFromRelativePos(attackPos), boxSize, 0);
         }
         else if (shape == AttackShape.Circle)
         {
-            cols = Physics2D.OverlapCircleAll((Vector2)treeComponent.transform.position - attackPos * movement.GetDirectionMagnitude(), circleRadius);
+            cols = Physics2D.OverlapCircleAll(movement.GetWorldPosFromRelativePos(attackPos), circleRadius);
         }
 
         foreach (Collider2D col in cols)

@@ -8,6 +8,7 @@ public static class SceneLoaderEnum
         FarmScene = 100,
         ForbiddenLand = 300,
         ForbiddenLand1 = 301,
+        ForbiddenLand2 = 302,
         ForestScene = 200,
         ForestScene1 = 201,
         ForestScene2 = 202,
