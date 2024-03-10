@@ -147,6 +147,11 @@ public class Movement : CoreComponent
         return faceDirection == Vector2.left ? -1 : 1;
     }
 
+    public Vector2 GetWorldPosFromRelativePos(Vector2 relativePos)
+    {
+        return new Vector2(transform.position.x - relativePos.x * GetDirectionMagnitude(), transform.position.y + relativePos.y);
+    }
+
     #endregion
 
     #region Movement Methods

@@ -13,7 +13,6 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     
     [Header("Node")]
     public List<Node> nodes = new List<Node>();
-    public List<Node> clonedNodes = new List<Node>();
 
     [Header("Group")] 
     public List<BehaviourTreeGroup> groups = new List<BehaviourTreeGroup>();
@@ -35,10 +34,10 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         BehaviourTree behaviourTree = Instantiate(this);
         behaviourTree.rootNode = rootNode.Clone();
         
-        behaviourTree.clonedNodes = new List<Node>();
+        behaviourTree.nodes = new List<Node>();
         Traverse(behaviourTree.rootNode, (n) =>
         {
-            behaviourTree.clonedNodes.Add(n);
+            behaviourTree.nodes.Add(n);
         });
         return behaviourTree;
     }
@@ -218,7 +217,8 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     {
         foreach (Node node in nodes)
         {
-            node.NodeComponent.Tree = this;
+            node.NodeComponent.Tree = null;
+            // node.NodeComponent.Tree = this;
         }
         
         AssetDatabase.SaveAssets();
