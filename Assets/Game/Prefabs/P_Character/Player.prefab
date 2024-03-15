@@ -5337,6 +5337,9 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 8
+  jumpThroughMask:
+    serializedVersion: 2
+    m_Bits: 256
   noGroundCheck: {fileID: 7921669905612664966}
   climableWallCheck: {fileID: 3421125896379335405}
   climableWallCheckUp: {fileID: 0}

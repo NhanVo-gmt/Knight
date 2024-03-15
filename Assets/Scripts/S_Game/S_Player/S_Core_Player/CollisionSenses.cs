@@ -9,6 +9,7 @@ public class CollisionSenses : CoreComponent
     [SerializeField] Transform groundCheck;
     [SerializeField] Vector2 groundCheckBox;
     [SerializeField] LayerMask groundMask;
+    [SerializeField] LayerMask jumpThroughMask;
     [SerializeField] private Transform noGroundCheck;
     
     [Header("Wall Check")]
@@ -40,8 +41,15 @@ public class CollisionSenses : CoreComponent
 
     public bool isGround
     {
-        get => Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, groundMask) &&
+        get => (Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, groundMask) || 
+                Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, jumpThroughMask)) &&
                !Physics2D.OverlapBox(noGroundCheck.position, groundCheckBox, 0, groundMask);
+    }
+    
+    public bool isJumpThroughPlatform
+    {
+        get => Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, jumpThroughMask) &&
+               !Physics2D.OverlapBox(noGroundCheck.position, groundCheckBox, 0, jumpThroughMask);
     }
 
     public bool isClimableWallCheck
