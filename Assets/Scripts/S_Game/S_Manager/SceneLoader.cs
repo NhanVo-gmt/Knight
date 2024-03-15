@@ -27,6 +27,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     protected override void Awake()
     {
         base.Awake();
+        currentScene = GetSceneFromUnityScene(SceneManager.GetActiveScene().name);
+        currentRegion = GetRegion(currentScene);
     }
 
     public SceneLoaderEnum.Scene GetCurrentScene()
@@ -37,6 +39,17 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public SceneLoaderEnum.Region GetCurrentRegion()
     {
         return currentRegion;
+    }
+
+    public SceneLoaderEnum.Scene GetSceneFromUnityScene(string sceneName)
+    {
+        string[] splitStr = sceneName.ToString().Split("Scene");
+        if (splitStr.Length > 0)
+            if (Enum.TryParse(splitStr[0], out SceneLoaderEnum.Scene scene))
+                return scene;
+        
+        Debug.LogError($"Can not get scene from {sceneName}");
+        return SceneLoaderEnum.Scene.MenuScene;
     }
 
     public SceneLoaderEnum.Region GetRegion(SceneLoaderEnum.Scene scene)
@@ -102,6 +115,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
             currentRegion = newRegion;
             OnChangedRegion?.Invoke(this, newRegion);
         }
+        Debug.LogError(123);
 
         loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
         OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
