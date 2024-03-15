@@ -31,7 +31,7 @@ public class MoveState : GroundState
         
         PlaySound();
 
-        if (player.inputManager.movementInput.magnitude == 0)
+        if (player.inputManager.movementInput.x == 0)
         {
             movement.SetVelocityZero();
             

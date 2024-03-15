@@ -25,7 +25,7 @@ public class IdleState : GroundState
     {
         base.LogicsUpdate();
 
-        if (player.inputManager.movementInput.magnitude != 0)
+        if (player.inputManager.movementInput.x != 0)
         {
             stateMachine.ChangeState(player.moveState);
         }

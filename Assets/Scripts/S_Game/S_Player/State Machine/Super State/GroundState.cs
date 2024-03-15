@@ -51,7 +51,15 @@ public class GroundState : State
 
         if (player.inputManager.jumpInput && collisionSenses.canJump)
         {
-            stateMachine.ChangeState(player.jumpState);
+            if (player.inputManager.movementInput.y < 0 && collisionSenses.isJumpThroughPlatform)
+            {
+                collisionSenses.GetJumpThroughPlatform()?.JumpThrough();
+                player.inputManager.UseJumpInput();
+            }
+            else if (collisionSenses.canJump)
+            {
+                stateMachine.ChangeState(player.jumpState);
+            }
         }
         else if (player.inputManager.dashInput && player.dashState.CanDash())
         {

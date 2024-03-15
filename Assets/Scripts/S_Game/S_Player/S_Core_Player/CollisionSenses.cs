@@ -62,6 +62,17 @@ public class CollisionSenses : CoreComponent
         get => isGround || coyoteCounter >= 0f;
     }
 
+    public JumpThroughPlatform GetJumpThroughPlatform()
+    {
+        Collider2D col = Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, jumpThroughMask);
+        if (col.TryGetComponent<JumpThroughPlatform>(out JumpThroughPlatform jumpThroughPlatform))
+        {
+            return jumpThroughPlatform;
+        }
+
+        return null;
+    }
+
     void Update()
     {
         if (isGround)
