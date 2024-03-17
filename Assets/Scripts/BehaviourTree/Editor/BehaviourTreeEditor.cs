@@ -165,7 +165,7 @@ public class BehaviourTreeEditor : EditorWindow
         {
             if (inspectorView != null)
             {
-                inspectorView.DrawGizmos(Selection.activeGameObject);
+                inspectorView.DrawGizmos();
             }
 
             if (selectedNodeView != null)
@@ -174,4 +174,5 @@ public class BehaviourTreeEditor : EditorWindow
             }
         }
     }
+    
 }

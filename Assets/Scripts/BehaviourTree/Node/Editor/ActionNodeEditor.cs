@@ -36,9 +36,13 @@ public class ActionNodeEditor : Editor
         EditorGUILayout.PropertyField(nodeProperty);
         
         GUILayout.Space(15f);
+        if (GUI.changed)
+        {
+            UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
+        }
         
-        GUILayout.Space(25f);
         serializedObject.ApplyModifiedProperties();
+
     }
 
     protected void CreateSearchWindow()
