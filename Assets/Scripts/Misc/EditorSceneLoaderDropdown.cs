@@ -12,12 +12,12 @@ public partial class EditorSceneLoader
         public static void LoadFarmScene() { OpenScene("Assets/Scenes/Farm/FarmScene.unity"); }
         [MenuItem("Scenes/Festival/FestivalScene")]
         public static void LoadFestivalScene() { OpenScene("Assets/Scenes/Festival/FestivalScene.unity"); }
-        [MenuItem("Scenes/ForbiddenLand/ForbiddenLand")]
-        public static void LoadForbiddenLand() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand.unity"); }
-        [MenuItem("Scenes/ForbiddenLand/ForbiddenLand1")]
-        public static void LoadForbiddenLand1() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand1.unity"); }
-        [MenuItem("Scenes/ForbiddenLand/ForbiddenLand2")]
-        public static void LoadForbiddenLand2() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLand2.unity"); }
+        [MenuItem("Scenes/ForbiddenLand/ForbiddenLandScene")]
+        public static void LoadForbiddenLandScene() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLandScene.unity"); }
+        [MenuItem("Scenes/ForbiddenLand/ForbiddenLandScene1")]
+        public static void LoadForbiddenLandScene1() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLandScene1.unity"); }
+        [MenuItem("Scenes/ForbiddenLand/ForbiddenLandScene2")]
+        public static void LoadForbiddenLandScene2() { OpenScene("Assets/Scenes/ForbiddenLand/ForbiddenLandScene2.unity"); }
         [MenuItem("Scenes/Forest/ForestScene")]
         public static void LoadForestScene() { OpenScene("Assets/Scenes/Forest/ForestScene.unity"); }
         [MenuItem("Scenes/Forest/ForestScene1")]

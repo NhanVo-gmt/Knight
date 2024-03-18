@@ -15,6 +15,17 @@ public class CheckGroundNode : ActionNode
         public bool shouldBe;
         private Vector2 startPos;
 
+        public CheckGroundNodeSingle Clone()
+        {
+            CheckGroundNodeSingle newNodeSingle = new CheckGroundNodeSingle();
+            newNodeSingle.layerMask = layerMask;
+            newNodeSingle.size = size;
+            newNodeSingle.relativeStartPos = relativeStartPos;
+            newNodeSingle.gizmosColor = gizmosColor;
+            newNodeSingle.shouldBe = shouldBe;
+            return newNodeSingle;
+        }
+
         public void OnStart(Vector2 position)
         {
             startPos = relativeStartPos + position;
@@ -42,7 +53,10 @@ public class CheckGroundNode : ActionNode
 
         if (node)
         {
-            checkGroundList = node.checkGroundList;
+            foreach (CheckGroundNodeSingle nodeSingle in node.checkGroundList)
+            {
+                checkGroundList.Add(nodeSingle.Clone());
+            }
         }
     }
     

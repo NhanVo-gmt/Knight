@@ -103,7 +103,6 @@ public class GizmosDrawer : MonoBehaviour
             CustomGizmos gizmos = gizmosArray[i];
             
             Gizmos.color = gizmos.color;
-            Debug.Log(gizmos._position);
             
             switch (gizmos.gizmoType)
             {

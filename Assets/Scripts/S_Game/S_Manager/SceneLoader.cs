@@ -43,10 +43,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
     public SceneLoaderEnum.Scene GetSceneFromUnityScene(string sceneName)
     {
-        string[] splitStr = sceneName.ToString().Split("Scene");
-        if (splitStr.Length > 0)
-            if (Enum.TryParse(splitStr[0], out SceneLoaderEnum.Scene scene))
-                return scene;
+        if (Enum.TryParse(sceneName, out SceneLoaderEnum.Scene scene))
+            return scene;
         
         Debug.LogError($"Can not get scene from {sceneName}");
         return SceneLoaderEnum.Scene.MenuScene;
