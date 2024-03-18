@@ -12,6 +12,7 @@ public class CheckGroundNode : ActionNode
         public Vector2 size;
         public Vector2 relativeStartPos;
         public Color gizmosColor;
+        public bool shouldBe;
         private Vector2 startPos;
 
         public void OnStart(Vector2 position)
@@ -24,10 +25,12 @@ public class CheckGroundNode : ActionNode
             Collider2D[] cols = Physics2D.OverlapBoxAll(startPos, size, 0, layerMask);
             if (cols.Length > 0)
             {
+                if (!shouldBe) return false;
                 return true;
             }
 
-            return false;
+            if (shouldBe) return false;
+            return true;
         }
     }
 

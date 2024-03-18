@@ -115,6 +115,42 @@ MonoBehaviour:
   speed: 4
   minDis: 0.5
   maxDis: 10
+--- !u!114 &-6264938787769378730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8385646add66fa479e1002a73e2715d, type: 3}
+  m_Name: CheckGroundNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: f2abb6eeacef237439e2145651da6dbd
+    Tree: {fileID: 0}
+    position: {x: -32.799942, y: 893.6}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  checkGroundList:
+  - layerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    size: {x: 1, y: 0.97}
+    relativeStartPos: {x: -1.2, y: 0}
+    gizmosColor: {r: 1, g: 0, b: 0, a: 1}
+    shouldBe: 1
+  - layerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    size: {x: 1, y: 2.17}
+    relativeStartPos: {x: -1.3, y: 2}
+    gizmosColor: {r: 1, g: 0.7805252, b: 0, a: 1}
+    shouldBe: 0
 --- !u!114 &-6262050734411869432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +262,7 @@ MonoBehaviour:
     started: 0
     guid: ddf451b9401ad204cbec5a26f03eaaba
     Tree: {fileID: 0}
-    position: {x: 221.19995, y: 608.00006}
+    position: {x: 228.79999, y: 608}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -303,6 +339,27 @@ MonoBehaviour:
   checkRelativePos: {x: 0, y: 1}
   radius: 5.15
   size: {x: 0, y: 0}
+--- !u!114 &-2502043293506409101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b72be9dc68f2c549a1b9a8c0da941f0, type: 3}
+  m_Name: FinishNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 6c7e031d1378dbe409c4adeb796da710
+    Tree: {fileID: 0}
+    position: {x: -726.9876, y: 620.8}
+    Name: 
+    description: 
+  child: {fileID: -63799275957969701}
 --- !u!114 &-2152177441170500584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -372,6 +429,51 @@ MonoBehaviour:
   Title: 
   Description: 
   Position: {x: 0, y: 0}
+--- !u!114 &-161630774649195765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b72be9dc68f2c549a1b9a8c0da941f0, type: 3}
+  m_Name: FinishNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 74f6421f973c65e4091ce3b6bddf914d
+    Tree: {fileID: 0}
+    position: {x: 70.40007, y: 608}
+    Name: 
+    description: 
+  child: {fileID: 7642780046652607835}
+--- !u!114 &-63799275957969701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
+  m_Name: DepSequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 19976837fb3e2e546b38626bc1b389d2
+    Tree: {fileID: 0}
+    position: {x: -727.19995, y: 763.165}
+    Name: 
+    description: 
+  children:
+  - {fileID: 6952486005232523546}
+  - {fileID: 4722290183773200914}
+  currentIndex: -1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -421,6 +523,12 @@ MonoBehaviour:
   - {fileID: -3277262657561509140}
   - {fileID: -2689560405998143607}
   - {fileID: 8685494032763714954}
+  - {fileID: -2502043293506409101}
+  - {fileID: -63799275957969701}
+  - {fileID: 6952486005232523546}
+  - {fileID: -161630774649195765}
+  - {fileID: 7642780046652607835}
+  - {fileID: -6264938787769378730}
   groups:
   - {fileID: -415846026619501417}
   - {fileID: -1371449174156355120}
@@ -609,7 +717,7 @@ MonoBehaviour:
     started: 0
     guid: 168c43f3f89b8ea438627f34d34f9435
     Tree: {fileID: 0}
-    position: {x: 63.199844, y: 608.00006}
+    position: {x: 220.80002, y: 860.8}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -638,7 +746,7 @@ MonoBehaviour:
     Name: 
     description: 
   children:
-  - {fileID: 1793646627920395141}
+  - {fileID: -161630774649195765}
   - {fileID: -2768330658777873787}
   successType: 1
 --- !u!114 &3492896918508290720
@@ -709,7 +817,7 @@ MonoBehaviour:
     Name: 
     description: 
   children:
-  - {fileID: 4722290183773200914}
+  - {fileID: -2502043293506409101}
   - {fileID: -7328829595185410791}
   successType: 1
 --- !u!114 &4722290183773200914
@@ -729,7 +837,7 @@ MonoBehaviour:
     started: 0
     guid: 3250ea9d33977c44e80e8823d3854eaa
     Tree: {fileID: 0}
-    position: {x: -683.20026, y: 620.8}
+    position: {x: -606.6775, y: 906.4}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -844,6 +952,42 @@ MonoBehaviour:
     description: 
   linkNode: {fileID: 0}
   idleTime: 2
+--- !u!114 &6952486005232523546
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8385646add66fa479e1002a73e2715d, type: 3}
+  m_Name: CheckGroundNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 019f7cd9133c9184783cde06c2b271fe
+    Tree: {fileID: 0}
+    position: {x: -830.8, y: 906.8001}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  checkGroundList:
+  - layerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    size: {x: 1, y: 0.97}
+    relativeStartPos: {x: -1.2, y: 0}
+    gizmosColor: {r: 1, g: 0, b: 0, a: 1}
+    shouldBe: 1
+  - layerMask:
+      serializedVersion: 2
+      m_Bits: 8
+    size: {x: 1, y: 2.17}
+    relativeStartPos: {x: -1.3, y: 2}
+    gizmosColor: {r: 1, g: 0.7805252, b: 0, a: 1}
+    shouldBe: 0
 --- !u!114 &7300237956029237319
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -869,6 +1013,30 @@ MonoBehaviour:
   checkRelativePos: {x: -0.3, y: 1}
   radius: 5.06
   size: {x: 0, y: 0}
+--- !u!114 &7642780046652607835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea41c23d1af55c14ebc6839e6ae73ad1, type: 3}
+  m_Name: DepSequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 04b98987afec0b24b8f16709c29d63fa
+    Tree: {fileID: 0}
+    position: {x: 70.40007, y: 749.60004}
+    Name: 
+    description: 
+  children:
+  - {fileID: -6264938787769378730}
+  - {fileID: 1793646627920395141}
+  currentIndex: -1
 --- !u!114 &7760206910047663043
 MonoBehaviour:
   m_ObjectHideFlags: 0
