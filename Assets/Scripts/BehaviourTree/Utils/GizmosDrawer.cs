@@ -62,10 +62,6 @@ public class GizmosDrawer : MonoBehaviour
         gizmosArray[currentIndex]._radius = radius;
         gizmosArray[currentIndex].gizmoType = GizmoType.Sphere;
         currentIndex++;
-        
-        _position = position;
-        _radius = radius;
-        gizmoType = GizmoType.Sphere;
     }
 
     public static void DrawWireSphere(Vector2 position, float radius)
@@ -75,10 +71,6 @@ public class GizmosDrawer : MonoBehaviour
         gizmosArray[currentIndex]._radius = radius;
         gizmosArray[currentIndex].gizmoType = GizmoType.WireShere;
         currentIndex++;
-        
-        _position = position;
-        _radius = radius;
-        gizmoType = GizmoType.WireShere;
     }
     
     public static void DrawCube(Vector2 position, Vector2 size) {
@@ -88,10 +80,6 @@ public class GizmosDrawer : MonoBehaviour
         gizmosArray[currentIndex]._size = size;
         gizmosArray[currentIndex].gizmoType = GizmoType.Cube;
         currentIndex++;
-        
-        _position = position;
-        _size = size;
-        gizmoType = GizmoType.Cube;
     }
 
     public static void DrawWireCube(Vector2 position, Vector2 size)
@@ -102,11 +90,6 @@ public class GizmosDrawer : MonoBehaviour
         gizmosArray[currentIndex]._size = size;
         gizmosArray[currentIndex].gizmoType = GizmoType.WireCube;
         currentIndex++;
-        
-        _position = position;
-        _size = size;
-        gizmoType = GizmoType.WireCube;
-        
     }
 
     public static void SetDirty()

@@ -49,23 +49,9 @@ public class Combat : CoreComponent, IDamageable
     void Start() 
     {
         settings = FindObjectOfType<GameSettings>();
-
-        AddEvent();
     }
 
-    void AddEvent()
-    {
-        health.OnTakeDamage += Knockback;
-    }
 
-    private void OnDisable() {
-        RemoveEvent();
-    }
-
-    private void RemoveEvent()
-    {
-        health.OnTakeDamage -= Knockback;
-    }
 
     #endregion
 
@@ -108,7 +94,8 @@ public class Combat : CoreComponent, IDamageable
         {
             hitDirection = attackDirection;
         }
-
+        
+        Knockback(hitDirection);
     }
 
     #endregion
@@ -120,7 +107,7 @@ public class Combat : CoreComponent, IDamageable
         return knockbackType;
     }
 
-    void Knockback()
+    void Knockback(Vector2 hitDirection)
     {
         float knockbackAmount = 0;
         switch(knockbackType)
