@@ -68,6 +68,7 @@ public class CheckPlayerNode : ActionNode
     
     public override void DrawGizmos(GameObject selectedGameObject)
     {
+        GizmosDrawer.color = Color.red;
         if (checkType == CheckType.Circle)
         {
             GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position + checkRelativePos, radius);

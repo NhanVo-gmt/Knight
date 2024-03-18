@@ -861,13 +861,13 @@ MonoBehaviour:
     started: 0
     guid: 737512a262ff6da43855c53d60246bcf
     Tree: {fileID: 0}
-    position: {x: -980.3998, y: 620.8}
+    position: {x: -933.6, y: 620.8}
     Name: CheckBeforeAttack
     description: 
   linkNode: {fileID: 0}
   checkType: 0
-  checkRelativePos: {x: 0, y: 1}
-  radius: 5.09
+  checkRelativePos: {x: -0.3, y: 1}
+  radius: 5.06
   size: {x: 0, y: 0}
 --- !u!114 &7760206910047663043
 MonoBehaviour:

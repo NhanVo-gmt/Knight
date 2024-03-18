@@ -25,10 +25,6 @@ public class GizmosDrawer : MonoBehaviour
 
     public static Color color;
 
-    static GizmoType gizmoType;
-    static Vector2 _position;
-    static float _radius;
-    private static Vector2 _size;
 
     private static CustomGizmos[] gizmosArray = new CustomGizmos[10];
     private static int currentIndex;
@@ -58,7 +54,7 @@ public class GizmosDrawer : MonoBehaviour
     public static void DrawSphere(Vector2 position, float radius)
     {
         gizmosArray[currentIndex].color = color;
-        gizmosArray[currentIndex]._position = _position;
+        gizmosArray[currentIndex]._position = position;
         gizmosArray[currentIndex]._radius = radius;
         gizmosArray[currentIndex].gizmoType = GizmoType.Sphere;
         currentIndex++;
@@ -67,7 +63,7 @@ public class GizmosDrawer : MonoBehaviour
     public static void DrawWireSphere(Vector2 position, float radius)
     {
         gizmosArray[currentIndex].color = color;
-        gizmosArray[currentIndex]._position = _position;
+        gizmosArray[currentIndex]._position = position;
         gizmosArray[currentIndex]._radius = radius;
         gizmosArray[currentIndex].gizmoType = GizmoType.WireShere;
         currentIndex++;
@@ -76,7 +72,7 @@ public class GizmosDrawer : MonoBehaviour
     public static void DrawCube(Vector2 position, Vector2 size) {
         
         gizmosArray[currentIndex].color = color;
-        gizmosArray[currentIndex]._position = _position;
+        gizmosArray[currentIndex]._position = position;
         gizmosArray[currentIndex]._size = size;
         gizmosArray[currentIndex].gizmoType = GizmoType.Cube;
         currentIndex++;
@@ -86,7 +82,7 @@ public class GizmosDrawer : MonoBehaviour
     {
         
         gizmosArray[currentIndex].color = color;
-        gizmosArray[currentIndex]._position = _position;
+        gizmosArray[currentIndex]._position = position;
         gizmosArray[currentIndex]._size = size;
         gizmosArray[currentIndex].gizmoType = GizmoType.WireCube;
         currentIndex++;
@@ -100,12 +96,15 @@ public class GizmosDrawer : MonoBehaviour
     private void OnDrawGizmos()
     {
         if (length == 0) return;
+        
 
         for (int i = 0; i < length; i++)
         {
             CustomGizmos gizmos = gizmosArray[i];
             
             Gizmos.color = gizmos.color;
+            Debug.Log(gizmos._position);
+            
             switch (gizmos.gizmoType)
             {
                 case GizmoType.Sphere:
