@@ -276,7 +276,6 @@ public class BehaviourTreeGraphView : GraphView
         Node node = tree.CreateNode(type);
         node.name = type.Name;
         node.NodeComponent.position = position;
-        node.NodeComponent.Tree = tree;
         
         CreateNodeView(node);
     }

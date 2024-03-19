@@ -87,6 +87,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
 
         Node newNode = CreateInstance(type) as Node;
         newNode.name = type.Name;
+        newNode.NodeComponent.Tree = this;
         newNode.NodeComponent.guid = GUID.Generate().ToString();
 
         nodes.Add(newNode);
@@ -217,8 +218,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
     {
         foreach (Node node in nodes)
         {
-            node.NodeComponent.Tree = null;
-            // node.NodeComponent.Tree = this;
+            node.NodeComponent.Tree = this;
         }
         
         AssetDatabase.SaveAssets();
