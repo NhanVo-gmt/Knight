@@ -8,10 +8,14 @@ public class Projectile : MonoBehaviour
     ProjectileData data;
 
     Rigidbody2D rb;
+    private Animator anim;
+
+    [SerializeField] private bool isExplode;
 
     void Awake() 
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
         GetComponent<PooledObject>().OnInitData += Initialize;
     }
     
@@ -19,10 +23,14 @@ public class Projectile : MonoBehaviour
     private void Initialize(PooledObjectData data)
     {
         this.data = (ProjectileData)data;
+        isExplode = false;
     }
 
 
-    private void Update() {
+    private void Update()
+    {
+        if (isExplode) return;
+        
         Move();
     }
 
@@ -45,10 +53,23 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (isExplode) return;
+        
         if (other.TryGetComponent<Combat>(out Combat combat))
         {
+            isExplode = true;
+            rb.velocity = Vector2.zero;
             combat.TakeDamage(data.damage, IDamageable.DamagerTarget.Enemy, GetDirection());
-            GetComponent<PooledObject>().Release();
+            StartCoroutine(ReleaseCoroutine());
         }
+    }
+
+    IEnumerator ReleaseCoroutine()
+    {
+        anim.Play("explosion");
+
+        yield return new WaitForSeconds(.2f);
+        
+        GetComponent<PooledObject>().Release();
     }
 }
