@@ -16,11 +16,6 @@ public class DialogueController : MonoBehaviour
 
     public Action onFinishDialogue;
 
-    void Awake() 
-    {
-        dialogueUI.ToggleConversation(false);
-    }
-
     public void StartConversation()
     {
         ToggleDialogueUI(true);

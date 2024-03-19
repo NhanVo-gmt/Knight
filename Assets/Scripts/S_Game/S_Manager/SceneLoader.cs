@@ -57,7 +57,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
             if (Enum.TryParse(splitStr[0], out SceneLoaderEnum.Region region))
                 return region;
         
-        Debug.LogError($"Can not get region from {scene}");
+        Debug.LogWarning($"Can not get region from {scene}");
         return SceneLoaderEnum.Region.None;
     }
 

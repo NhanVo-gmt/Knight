@@ -36,6 +36,10 @@ public class CheckPlayerNode : ActionNode
     {
         base.OnStart();
 
+        if (linkNode)
+        {
+            CopyNode(linkNode);
+        }
         playerPos = treeComponent.player.transform.position;
         checkPos = movement.GetWorldPosFromRelativePos(checkRelativePos);
     }

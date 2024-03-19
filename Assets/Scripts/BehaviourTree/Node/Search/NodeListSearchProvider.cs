@@ -1,3 +1,5 @@
+#if UNITY_EDITOR
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -49,3 +51,4 @@ public class NodeListSearchProvider : ScriptableObject, ISearchWindowProvider
         return true;
     }
 }
+#endif

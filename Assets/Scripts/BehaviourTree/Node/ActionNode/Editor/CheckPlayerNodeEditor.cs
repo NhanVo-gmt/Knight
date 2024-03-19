@@ -1,8 +1,8 @@
+#if UNITY_EDITOR
+
 using UnityEditor;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-#if UNITY_EDITOR
 [CustomEditor(typeof(CheckPlayerNode), true)]
 public class CheckPlayerNodeEditor : ActionNodeEditor
 {
@@ -72,6 +72,5 @@ public class CheckPlayerNodeEditor : ActionNodeEditor
         
         EditorUtility.SetDirty(node);
     }
-
-#endif
 }
+#endif

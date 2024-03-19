@@ -1,8 +1,4 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class GizmosDrawer : MonoBehaviour
 {
@@ -90,7 +86,9 @@ public class GizmosDrawer : MonoBehaviour
 
     public static void SetDirty()
     {
+        #if UNITY_EDITOR
         UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
+        #endif
     }
 
     private void OnDrawGizmos()

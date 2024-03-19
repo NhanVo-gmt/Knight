@@ -868,7 +868,6 @@ MonoBehaviour:
     description: 
   children:
   - {fileID: -6091140407231602417}
-  - {fileID: 224839971024073054}
   successType: 1
 --- !u!114 &2241486395352485044
 MonoBehaviour:

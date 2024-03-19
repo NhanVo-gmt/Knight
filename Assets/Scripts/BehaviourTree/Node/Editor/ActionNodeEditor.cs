@@ -1,9 +1,10 @@
+#if UNITY_EDITOR
+
 using System;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-#if UNITY_EDITOR
 [CustomEditor(typeof(ActionNode), false)]
 public class ActionNodeEditor : Editor
 {
