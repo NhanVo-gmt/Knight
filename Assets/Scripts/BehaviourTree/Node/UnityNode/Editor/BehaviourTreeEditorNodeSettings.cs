@@ -9,7 +9,8 @@ namespace Knight.Editor
         public static string[] AnimationClipNames = {
             "Idle", "Idle1", 
             "Move", 
-            "Die", 
+            "Die",
+            "Tele", "Teleport", "Teleback",
             "ReadyToAttack", "Attack", "RecoverFromAttack",
             "ReadyToAttack2", "Attack2", "RecoverFromAttack2",
             "ReadyToAttack3", "Attack3", "RecoverFromAttack3",

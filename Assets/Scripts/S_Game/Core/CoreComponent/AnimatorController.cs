@@ -91,7 +91,12 @@ public class AnimatorController : CoreComponent
         onAnimationFinishTrigger?.Invoke();
     }
 
-#endregion
+    public void ToggleSprite(bool isActive)
+    {
+        sprite.enabled = isActive;
+    }
+
+    #endregion
 
     #region Effect
 
