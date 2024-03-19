@@ -8,4 +8,19 @@ public class ProjectileData : PooledObjectData
     [Header("Projectile")] public GameObject projectile;
     public int damage;
     public float velocity;
+
+    private Sprite sprite;
+    private RuntimeAnimatorController runtimeAnim;
+
+    public Sprite GetSprite()
+    {
+        if (!sprite) sprite = projectile.GetComponent<SpriteRenderer>().sprite;
+        return sprite;
+    }
+    
+    public RuntimeAnimatorController GetRuntimeAnim()
+    {
+        if (!runtimeAnim) runtimeAnim = projectile.GetComponent<Animator>().runtimeAnimatorController;
+        return runtimeAnim;
+    }
 }

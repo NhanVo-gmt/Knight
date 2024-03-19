@@ -103,6 +103,8 @@ public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
     private GameObject SpawnProjectilePrefab(ProjectileData data)
     {
         GameObject spawnedPrefab = poolingManager.GetProjectileFromPool();
+        spawnedPrefab.GetComponent<SpriteRenderer>().sprite = data.GetSprite();
+        spawnedPrefab.GetComponent<Animator>().runtimeAnimatorController = data.GetRuntimeAnim();
         
         return spawnedPrefab;
     }
