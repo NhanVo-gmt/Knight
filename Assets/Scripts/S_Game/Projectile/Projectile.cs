@@ -70,6 +70,6 @@ public class Projectile : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
         
-        // GetComponent<PooledObject>().Release();
+        GetComponent<PooledObject>().Release();
     }
 }
