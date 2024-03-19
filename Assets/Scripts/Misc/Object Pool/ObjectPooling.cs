@@ -46,7 +46,7 @@ public class ObjectPooling : MonoBehaviour
 
         void OnDestroyPoolObject(GameObject go) 
         {
-            GameObject.Destroy(go.gameObject);
+            Destroy(go.gameObject);
         }
     }
 

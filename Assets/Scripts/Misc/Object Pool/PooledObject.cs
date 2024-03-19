@@ -27,6 +27,7 @@ public class PooledObject : MonoBehaviour
     // Used in animation clip
     public void Release()
     {
+        CancelInvoke();
         if (anim != null)
         {
             anim.Rebind();

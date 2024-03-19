@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,8 @@ public class ProjectileData : PooledObjectData
     private Sprite sprite;
     private RuntimeAnimatorController runtimeAnim;
 
+    #region Get
+
     public Sprite GetSprite()
     {
         if (!sprite) sprite = projectile.GetComponent<SpriteRenderer>().sprite;
@@ -23,4 +26,16 @@ public class ProjectileData : PooledObjectData
         if (!runtimeAnim) runtimeAnim = projectile.GetComponent<Animator>().runtimeAnimatorController;
         return runtimeAnim;
     }
+
+    public virtual void GetDirection()
+    {
+        //todo
+    }
+
+    public virtual void GetPrefabAfterExplosion()
+    {
+        //todo
+    }
+
+    #endregion
 }
