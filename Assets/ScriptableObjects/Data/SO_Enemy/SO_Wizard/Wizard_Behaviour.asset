@@ -16,7 +16,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f30d50f5ea1e11947a2dbba5eb123f60
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 934.737, y: 644.80005}
     Name: 
     description: 
@@ -38,7 +38,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e5512fc031a01d142a458091c3d9a70d
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 516.7999, y: 644.8}
     Name: 
     description: 
@@ -63,7 +63,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d8b305cce6d5b6a40aa857452bf0891a
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 366.39993, y: 823.2}
     Name: 
     description: 
@@ -86,7 +86,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 48cb35334e589ca4c8d61addf70bc274
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -1160.9795, y: 644.8001}
     Name: 
     description: 
@@ -108,7 +108,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 09157efa897818c44ad60ce13e817f4d
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 761.6, y: 644.80005}
     Name: 
     description: 
@@ -130,7 +130,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: c36b52444d8c72b4abc11db5bce79ce8
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -246.05875, y: 638.428}
     Name: 
     description: 
@@ -154,7 +154,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 613846854e4f9d441badf4a6db9b3687
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -848.84216, y: -48.920105}
     Name: 
     description: 
@@ -177,7 +177,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: b664eb3421fa2f443b15d5b197ee2dea
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 544.86255, y: 823.2}
     Name: 
     description: 
@@ -199,7 +199,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d74b9a6c12973de459cc957c20c2a7a5
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -926.5794, y: 635.2001}
     Name: 
     description: 
@@ -222,7 +222,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 8160467f3191cdb4286de87d791cc182
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -713.6423, y: 60.67987}
     Name: 
     description: 
@@ -244,7 +244,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 57b8a426c35daa04e8a2a356d246b3b9
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 836.80005, y: 962.4001}
     Name: 
     description: 
@@ -266,7 +266,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: a4db51bce82504c45ad3460536912c0e
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 53.599953, y: -491.19995}
     Name: 
     description: 
@@ -287,7 +287,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: acddf6b8310c6a24286221360260f32f
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -638.44226, y: -63.32013}
     Name: 
     description: 
@@ -310,7 +310,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f41f79c5b41b87044bcb25d1ff3dd97b
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1369.6, y: 644.8}
     Name: 
     description: 
@@ -334,7 +334,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 320f2b8a04f27b3459135da9dd6563f1
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1143.9999, y: 644.80005}
     Name: 
     description: 
@@ -356,7 +356,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: c5bf27d7f664f424a84b058df4105783
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 716.80005, y: 823.2}
     Name: 
     description: 
@@ -379,7 +379,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: d156f291cee43ea41a04e912fa8c067c
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 31.541245, y: 638.428}
     Name: 
     description: 
@@ -401,7 +401,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f50ceb90a3eeb2240b78b57159577153
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -44.4588, y: 915.228}
     Name: 
     description: 
@@ -423,7 +423,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: a679644d78937ca479757ebcf71db520
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -460.84213, y: -216.12012}
     Name: 
     description: 
@@ -445,7 +445,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: de321a263ec7e024c81bd7472726a69c
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1219.2, y: 823.2}
     Name: 
     description: 
@@ -521,7 +521,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: c1aed7f3d6e696848ab9358b63e76ba9
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -536.84216, y: 60.67987}
     Name: 
     description: 
@@ -543,7 +543,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 8c8e792025428124b87e84a993d7afc6
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -738.4423, y: -216.12012}
     Name: 
     description: 
@@ -567,7 +567,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: fcad1b98ea88e4d4486c524211b418b4
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -1072.1794, y: 448}
     Name: 
     description: 
@@ -591,7 +591,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 51860288813cbd949b390e450ea5e6ee
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 53.599953, y: -363.19995}
     Name: 
     description: 
@@ -612,7 +612,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 7fb22b9668a42cf48941fa02fefa1c10
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1485.8065, y: 945.5999}
     Name: 
     description: 
@@ -634,7 +634,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 656a658ab7bcabd47970ef402c568ffd
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -221.25873, y: 915.228}
     Name: 
     description: 
@@ -656,12 +656,10 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 72f22c9fef7254a49abccc383ee6083f
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -96.45874, y: 448.02798}
     Name: 
-    description: 'Attack1 Sequencer
-
-'
+    description: Orb Attack Sequence
   children:
   - {fileID: -4560600322938292651}
   - {fileID: -999479675109953048}
@@ -681,7 +679,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 0a6c3532a720eeb42b296db17108b07b
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 31.999924, y: -241.59993}
     Name: 
     description: 
@@ -703,7 +701,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3745a3b3f3a546241a54546f6ebd262e
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1716.0001, y: 644.8}
     Name: 
     description: 
@@ -725,7 +723,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 8404dae18d5e27a43b18bd718ead2bb3
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 644, y: 962.4001}
     Name: 
     description: 
@@ -747,10 +745,10 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 04142997dd867304591203a0cc1cc47e
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -588.84216, y: -406.52014}
     Name: 
-    description: Attack2 Sequence
+    description: Spell Attack Sequence
   children:
   - {fileID: 511561625357745248}
   - {fileID: -957625519448444361}
@@ -770,7 +768,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: cb1a77cc1750c2044996892d0dd53304
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1151.2, y: 456}
     Name: 
     description: Teleport sequence
@@ -797,7 +795,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 97b5ab4cb7efaa64d81301876fb7b5b6
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -356.45877, y: 805.6279}
     Name: 
     description: 
@@ -820,7 +818,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 006fa45d25375b048b337ea3f05c8828
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: -146.05878, y: 791.228}
     Name: 
     description: 
@@ -843,7 +841,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4d58884b164ae984089ad901a4880153
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1294.3999, y: 945.6}
     Name: 
     description: 
@@ -866,7 +864,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 008137e442c9c0b43b0f5ab5c8dcbfc3
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1668.1481, y: 945.5999}
     Name: 
     description: 
@@ -888,7 +886,7 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 45e8e594bc01fed4e8bd152fc389e187
-    Tree: {fileID: 0}
+    Tree: {fileID: 11400000}
     position: {x: 1463.1998, y: 823.2}
     Name: 
     description: 

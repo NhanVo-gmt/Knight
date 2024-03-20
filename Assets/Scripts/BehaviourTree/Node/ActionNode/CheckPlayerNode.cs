@@ -31,15 +31,21 @@ public class CheckPlayerNode : ActionNode
             size = node.size;
         }
     }
-    
-    protected override void OnStart()
-    {
-        base.OnStart();
 
+    public override void OnInitialize(BehaviourTreeComponent component)
+    {
+        base.OnInitialize(component);
         if (linkNode)
         {
             CopyNode(linkNode);
         }
+    }
+
+    protected override void OnStart()
+    {
+        base.OnStart();
+
+        
         playerPos = treeComponent.player.transform.position;
         checkPos = movement.GetWorldPosFromRelativePos(checkRelativePos);
     }
