@@ -47,6 +47,11 @@ public class GizmosDrawer : MonoBehaviour
         length = currentIndex;
     }
 
+    public static void StopDrawing()
+    {
+        length = 0;
+    }
+
     public static void DrawSphere(Vector2 position, float radius)
     {
         gizmosArray[currentIndex].color = color;
@@ -76,7 +81,6 @@ public class GizmosDrawer : MonoBehaviour
 
     public static void DrawWireCube(Vector2 position, Vector2 size)
     {
-        
         gizmosArray[currentIndex].color = color;
         gizmosArray[currentIndex]._position = position;
         gizmosArray[currentIndex]._size = size;

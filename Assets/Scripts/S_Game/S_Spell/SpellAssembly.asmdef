@@ -1,13 +1,10 @@
 {
-    "name": "CoreAssembly",
+    "name": "SpellAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:75469ad4d38634e559750d17036d5f7c",
         "GUID:fe4327a1e78f02c46b30a899c5a9bcab",
         "GUID:1d985b7e3891a9d41814b005a2cd4cab",
-        "GUID:79365834d52eed542862b46928e50f11",
-        "GUID:fd4ce569e88ed8f438b8865accacb6ea",
-        "GUID:9234a8d13ac937342a29591d5ee5e39c"
+        "GUID:d9752436073e68b46bcf6146fb360af6"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

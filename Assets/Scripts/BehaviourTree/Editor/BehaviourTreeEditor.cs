@@ -117,6 +117,7 @@ public class BehaviourTreeEditor : EditorWindow
 
 
     private void OnSelectionChange() {
+        // GizmosDrawer.StopDrawing();
         BehaviourTree tree = Selection.activeObject as BehaviourTree;
         if (!tree)
         {

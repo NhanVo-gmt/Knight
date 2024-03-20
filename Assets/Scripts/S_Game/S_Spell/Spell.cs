@@ -16,8 +16,12 @@ public class Spell : PooledObject
     
     public override void Initialize(PooledObjectData data)
     {
+        base.Initialize(data);
+        
         spellData = (SpellData)data;
         spellData.spellParams.anim = anim;
+        spellData.spellParams.prefabTransform = transform;
+        
         spellData.Start();
     }
 

@@ -11,6 +11,7 @@ public class SpellParams
     
     // Init After
     public Animator anim;
+    public Transform prefabTransform;
     
     public SpellParams(){}
 
@@ -28,6 +29,5 @@ public abstract class SpellData : PooledObjectData
     }
     
     public abstract void Start();
-    public abstract Vector2 GetSpawnPos();
     public abstract void Activate();
 }

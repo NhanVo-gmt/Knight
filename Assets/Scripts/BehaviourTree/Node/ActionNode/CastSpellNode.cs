@@ -28,7 +28,7 @@ public class CastSpellNode : ActionNode
         base.OnStart();
 
         
-        ObjectPoolManager.Instance.SpawnPooledPrefab(spellData, spellData.GetSpawnPos());
+        ObjectPoolManager.Instance.SpawnPooledPrefab(spellData, treeComponent.player.transform.position);
     }
 
     protected override void OnStop()
@@ -40,6 +40,14 @@ public class CastSpellNode : ActionNode
     {
         return NodeComponent.State.SUCCESS;
     }
-    
 
+    public override void DrawGizmos(GameObject selectedGameObject)
+    {
+        LightningSpellData lightningSpellData = spellData as LightningSpellData;
+        if (lightningSpellData)
+        {
+            GizmosDrawer.color = Color.red;
+            GizmosDrawer.DrawWireCube(lightningSpellData.offset + spellData.spawnPos + (Vector2)selectedGameObject.transform.position, lightningSpellData.size);
+        }
+    }
 }

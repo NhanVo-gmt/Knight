@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afb4e02c3e0f91f48b48358b6233d7fd, type: 3}
   m_Name: Wizard_Lightning
   m_EditorClassIdentifier: 
-  spawnPos: {x: 0, y: 0}
+  spawnPos: {x: 0.2, y: -3}
   spawnRot: {x: 0, y: 0, z: 0}
   needPlayerDirection: 0
-  lifeTime: 0
-  spawnPos: {x: 0, y: 0}
-  runtimeAnim: {fileID: 7520767463047400872, guid: 6d9b1da0221298a4199375d3dfd9063b, type: 3}
-  size: {x: 0, y: 0}
+  lifeTime: 1
+  runtimeAnim: {fileID: 9100000, guid: f799f6ccc1776934e8f5053133266284, type: 2}
+  size: {x: 3.0625, y: 5.375}
+  offset: {x: -0.1562501, y: 4.9375}

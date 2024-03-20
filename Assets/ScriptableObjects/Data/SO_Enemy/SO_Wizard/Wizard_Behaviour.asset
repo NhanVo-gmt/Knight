@@ -70,6 +70,29 @@ MonoBehaviour:
   linkNode: {fileID: 0}
   clipName: Tele
   clipNameIndex: 3
+--- !u!114 &-6929778722928118766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 789259c642ef5b4498346a4f71d792fc
+    Tree: {fileID: 11400000}
+    position: {x: 357.7098, y: -13.383676}
+    Name: 
+    description: 
+  children:
+  - {fileID: 6933476678333478666}
+  - {fileID: 9203709204819457276}
 --- !u!114 &-5590602303411048671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -505,6 +528,10 @@ MonoBehaviour:
   - {fileID: -957625519448444361}
   - {fileID: 5643447503956071015}
   - {fileID: 9203709204819457276}
+  - {fileID: 8212679814446156801}
+  - {fileID: 2553912100350863238}
+  - {fileID: 6933476678333478666}
+  - {fileID: -6929778722928118766}
   groups: []
   offset: {x: 300, y: 0}
 --- !u!114 &86533878264734364
@@ -598,6 +625,30 @@ MonoBehaviour:
     Name: 
     description: 
   child: {fileID: 4243087236390738935}
+--- !u!114 &2553912100350863238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: fa1589259b8ba2e44911fdc4509928fd
+    Tree: {fileID: 11400000}
+    position: {x: 182.39998, y: -102.40002}
+    Name: 
+    description: 
+  children:
+  - {fileID: 8212679814446156801}
+  - {fileID: -6929778722928118766}
+  successType: 1
 --- !u!114 &2632164327093089009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -687,7 +738,7 @@ MonoBehaviour:
     description: 
   children:
   - {fileID: 5643447503956071015}
-  - {fileID: 9203709204819457276}
+  - {fileID: 2553912100350863238}
 --- !u!114 &4459592591489890225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,11 +823,11 @@ MonoBehaviour:
     started: 0
     guid: 5947cb1bd589b6a4fb604dfaa9e6f848
     Tree: {fileID: 11400000}
-    position: {x: 3.9654083, y: -57.520874}
+    position: {x: -94.85686, y: -58.800003}
     Name: 
     description: 
   linkNode: {fileID: 0}
-  idleTime: 5
+  idleTime: 3
 --- !u!114 &6148319568516233873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -827,6 +878,28 @@ MonoBehaviour:
   linkNode: {fileID: 0}
   clipName: Attack
   clipNameIndex: 1
+--- !u!114 &6933476678333478666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 27b5f3e7c83808840954e42e16d41762
+    Tree: {fileID: 11400000}
+    position: {x: 257.59998, y: 140}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  idleTime: 0.3
 --- !u!114 &7191167202014549450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -895,6 +968,29 @@ MonoBehaviour:
     description: 
   linkNode: {fileID: 0}
   turnCollider: 1
+--- !u!114 &8212679814446156801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: c0b771dc15ffdde4b9948f94d7e99b56
+    Tree: {fileID: 11400000}
+    position: {x: 32.000023, y: 25.046122}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  clipName: Attack2
+  clipNameIndex: 2
 --- !u!114 &8422997715383735315
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -936,7 +1032,7 @@ MonoBehaviour:
     started: 0
     guid: 6936d6216584e504ea25da7235ae23e6
     Tree: {fileID: 11400000}
-    position: {x: 204, y: -57.600006}
+    position: {x: 465.7229, y: 140}
     Name: 
     description: 
   linkNode: {fileID: 0}
