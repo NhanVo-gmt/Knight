@@ -7,11 +7,10 @@ using UnityEngine.Pool;
 public class PooledObject : MonoBehaviour
 {
     public IObjectPool<GameObject> pool;
-    Animator anim;
+    protected Animator anim;
 
-    public Action<PooledObjectData> OnInitData;
 
-    void Awake() 
+    protected virtual void Awake() 
     {
         anim = GetComponent<Animator>();
     }
@@ -19,8 +18,6 @@ public class PooledObject : MonoBehaviour
     public virtual void Initialize(PooledObjectData data)
     {
         Invoke("Release", data.lifeTime);
-        
-        OnInitData?.Invoke(data);
     }
 
 

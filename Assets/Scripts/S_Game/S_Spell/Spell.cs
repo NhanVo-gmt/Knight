@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class Spell : MonoBehaviour
+public class Spell : PooledObject
 {
     [SerializeField] private SpellData spellData;
 
@@ -15,11 +15,10 @@ public class Spell : MonoBehaviour
         anim = GetComponent<Animator>();
     }
     
-    private void Initialize(PooledObjectData data, SpellParams spellParams)
+    public override void Initialize(PooledObjectData data)
     {
         spellData = (SpellData)data.Clone();
 
-        spellData.Initialize(spellParams);
     }
 
     public void Activate()

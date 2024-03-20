@@ -5,17 +5,18 @@ using UnityEngine;
 
 public class Projectile : PooledObject
 {
-    ProjectileData data;
+    private ProjectileData projectileData;
 
-    Rigidbody2D rb;
-    private Animator anim;
+    private Rigidbody2D rb;
+    private SpriteRenderer sprite;
 
     [SerializeField] private bool isExplode;
 
-    void Awake() 
+    protected override void Awake() 
     {
+        base.Awake();
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        sprite = GetComponent<SpriteRenderer>();
     }
     
 
@@ -23,7 +24,10 @@ public class Projectile : PooledObject
     {
         base.Initialize(data);
         
-        this.data = (ProjectileData)data;
+        projectileData = (ProjectileData)data;
+        anim.runtimeAnimatorController = projectileData.GetRuntimeAnim();
+        sprite.sprite = projectileData.GetSprite();
+        
         isExplode = false;
     }
 
@@ -37,14 +41,14 @@ public class Projectile : PooledObject
 
     private void Move()
     {
-        if (!data) return;
+        if (!projectileData) return;
         
-        rb.velocity = -transform.right * data.velocity;
+        rb.velocity = -transform.right * projectileData.velocity;
     }
 
     public ProjectileData GetData()
     {
-        return data;
+        return projectileData;
     }
 
     public Vector2 GetDirection()
@@ -60,7 +64,7 @@ public class Projectile : PooledObject
         {
             isExplode = true;
             rb.velocity = Vector2.zero;
-            combat.TakeDamage(data.damage, IDamageable.DamagerTarget.Enemy, GetDirection());
+            combat.TakeDamage(projectileData.damage, IDamageable.DamagerTarget.Enemy, GetDirection());
             StartCoroutine(ReleaseCoroutine());
         }
     }
