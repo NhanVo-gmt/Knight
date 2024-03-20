@@ -13,7 +13,8 @@ public class ObjectPooling : MonoBehaviour
             VFX,
             Item,
             ParticleSystem,
-            Projectile
+            Projectile,
+            Spell
         }
         
         public GameObject prefab;
@@ -74,10 +75,15 @@ public class ObjectPooling : MonoBehaviour
     {
         return pooledPrefabList[2].pool.Get();
     }
+    
+    public GameObject GetSpellFromPool()
+    {
+        return pooledPrefabList[3].pool.Get();
+    }
 
     public GameObject GetParticleFromPool(GameObject prefab)
     {
-        for (int i = 2; i < pooledPrefabList.Count; i++)
+        for (int i = 3; i < pooledPrefabList.Count; i++)
         {
             if (pooledPrefabList[i].prefab == prefab)
             {

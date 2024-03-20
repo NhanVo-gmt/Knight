@@ -10,8 +10,8 @@ public class PooledObjectData : ScriptableObject
     public bool needPlayerDirection;
     public float lifeTime;
 
-    public PooledObjectData Clone()
+    public T Clone<T>() where T : PooledObjectData
     {
-        return Instantiate(this);
+        return (T)Instantiate(this);
     }
 }

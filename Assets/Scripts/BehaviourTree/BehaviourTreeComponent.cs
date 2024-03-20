@@ -6,6 +6,7 @@ public class BehaviourTreeComponent
 {
     public GameObject gameObject {get; private set;}
     public Transform transform {get; private set;}
+    public Animator anim { get; private set; }
 
     public Core core {get; private set;}
     public GameObject player {get; private set;}

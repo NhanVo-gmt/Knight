@@ -13,4 +13,9 @@ MonoBehaviour:
   m_Name: Wizard_Lightning
   m_EditorClassIdentifier: 
   spawnPos: {x: 0, y: 0}
-  spellAnim: {fileID: 0}
+  spawnRot: {x: 0, y: 0, z: 0}
+  needPlayerDirection: 0
+  lifeTime: 0
+  spawnPos: {x: 0, y: 0}
+  runtimeAnim: {fileID: 7520767463047400872, guid: 6d9b1da0221298a4199375d3dfd9063b, type: 3}
+  size: {x: 0, y: 0}

@@ -5,19 +5,29 @@ using UnityEngine;
 
 public class SpellParams
 {
+    // Init Before
     public Transform playerTransform;
     public Transform enemyTransform;
+    
+    // Init After
     public Animator anim;
     
     public SpellParams(){}
-    
+
 }
 
+[Serializable]
 public abstract class SpellData : PooledObjectData
 {
-    
+    public SpellParams spellParams;
+    public Action OnFinished;
 
-    protected Action OnFinished;
-    public abstract void Initialize(SpellParams spellParams);
+    public virtual void Initialize(SpellParams spellParams)
+    {
+        this.spellParams = spellParams;
+    }
+    
+    public abstract void Start();
+    public abstract Vector2 GetSpawnPos();
     public abstract void Activate();
 }

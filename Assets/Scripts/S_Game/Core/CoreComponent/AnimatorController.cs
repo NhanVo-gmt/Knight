@@ -70,6 +70,11 @@ public class AnimatorController : CoreComponent
 
 
     #region Animation
+
+    public Animator GetAnim()
+    {
+        return anim;
+    }
     
     public void Play(int id) 
     {

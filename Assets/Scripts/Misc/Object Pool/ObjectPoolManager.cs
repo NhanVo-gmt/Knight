@@ -15,6 +15,11 @@ public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
 
 #region Spawn Object
 
+    public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 characterPos)
+    {
+        return SpawnPooledPrefab(data, characterPos, Vector2.left);
+    }
+
     public GameObject SpawnPooledPrefab(PooledObjectData data, Vector2 characterPos, Vector2 faceDirection)
     {
         GameObject spawnedPrefab = null;
@@ -29,6 +34,10 @@ public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
         else if (data is ProjectileData)
         {
             spawnedPrefab = SpawnProjectilePrefab(data as ProjectileData);
+        }
+        else if (data is SpellData)
+        {
+            spawnedPrefab = SpawnSpellPrefab(data as SpellData);
         }
         else
         {
@@ -109,7 +118,7 @@ public class ObjectPoolManager : SingletonObject<ObjectPoolManager>
 
     private GameObject SpawnSpellPrefab(SpellData data)
     {
-        GameObject spawnedPrefab = poolingManager.GetProjectileFromPool();
+        GameObject spawnedPrefab = poolingManager.GetSpellFromPool();
         
         return spawnedPrefab;
     }

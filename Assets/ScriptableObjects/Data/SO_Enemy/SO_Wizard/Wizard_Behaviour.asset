@@ -503,6 +503,8 @@ MonoBehaviour:
   - {fileID: -3992562191523942245}
   - {fileID: 5290802524731938867}
   - {fileID: -957625519448444361}
+  - {fileID: 5643447503956071015}
+  - {fileID: 9203709204819457276}
   groups: []
   offset: {x: 300, y: 0}
 --- !u!114 &86533878264734364
@@ -684,7 +686,8 @@ MonoBehaviour:
     Name: 
     description: 
   children:
-  - {fileID: 4186119952146776076}
+  - {fileID: 5643447503956071015}
+  - {fileID: 9203709204819457276}
 --- !u!114 &4459592591489890225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -752,6 +755,28 @@ MonoBehaviour:
   children:
   - {fileID: 511561625357745248}
   - {fileID: -957625519448444361}
+--- !u!114 &5643447503956071015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 5947cb1bd589b6a4fb604dfaa9e6f848
+    Tree: {fileID: 11400000}
+    position: {x: 3.9654083, y: -57.520874}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  idleTime: 5
 --- !u!114 &6148319568516233873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -894,3 +919,25 @@ MonoBehaviour:
   - {fileID: 7757456972618818882}
   - {fileID: 2632164327093089009}
   - {fileID: 7954621220774082403}
+--- !u!114 &9203709204819457276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4768fd5e1928d374daa90115ca26bfce, type: 3}
+  m_Name: CastSpellNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 6936d6216584e504ea25da7235ae23e6
+    Tree: {fileID: 11400000}
+    position: {x: 204, y: -57.600006}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  spellData: {fileID: 11400000, guid: a32b010c9e6a63a42a282a58861037ea, type: 2}

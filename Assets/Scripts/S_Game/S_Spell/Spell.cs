@@ -7,18 +7,18 @@ using UnityEngine.Serialization;
 public class Spell : PooledObject
 {
     [SerializeField] private SpellData spellData;
+    
 
-    private Animator anim;
-
-    private void Awake()
+    protected override void Awake()
     {
-        anim = GetComponent<Animator>();
+        base.Awake();
     }
     
     public override void Initialize(PooledObjectData data)
     {
-        spellData = (SpellData)data.Clone();
-
+        spellData = (SpellData)data;
+        spellData.spellParams.anim = anim;
+        spellData.Start();
     }
 
     public void Activate()

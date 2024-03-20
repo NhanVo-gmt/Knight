@@ -20,14 +20,25 @@ public class LightningSpellData : SpellData
     
     public override void Initialize(SpellParams spellParams)
     {
+        base.Initialize(spellParams);
+            
         playerTransform = spellParams.playerTransform;
+    }
+
+    public override void Start()
+    {
         anim = spellParams.anim;
         anim.runtimeAnimatorController = runtimeAnim;
-        
+        anim.Play(lightningID);
+    }
+
+    public override Vector2 GetSpawnPos()
+    {
+        return (Vector2)playerTransform.position + spawnPos;
     }
 
     public override void Activate()
     {
-        anim.Play(lightningID);
+        Debug.Log("Activate");
     }
 }
