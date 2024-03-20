@@ -6985,7 +6985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2168447485896038731, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2676711363309237784, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7014,10 +7014,6 @@ PrefabInstance:
     - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_Name
       value: -------TEST----------
-      objectReference: {fileID: 0}
-    - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6864879152244248668, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_IsActive
@@ -23275,6 +23271,10 @@ PrefabInstance:
     - target: {fileID: 4958187610873031202, guid: a1ff69b7f7ef4ee45901b27f9409e68d, type: 3}
       propertyPath: m_Name
       value: Swordman
+      objectReference: {fileID: 0}
+    - target: {fileID: 4958187610873031202, guid: a1ff69b7f7ef4ee45901b27f9409e68d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
