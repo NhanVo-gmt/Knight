@@ -16,7 +16,7 @@ public class PooledObject : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void Initialize(PooledObjectData data)
+    public virtual void Initialize(PooledObjectData data)
     {
         Invoke("Release", data.lifeTime);
         

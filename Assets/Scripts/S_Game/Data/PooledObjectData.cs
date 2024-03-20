@@ -9,4 +9,9 @@ public class PooledObjectData : ScriptableObject
     public Vector3 spawnRot;
     public bool needPlayerDirection;
     public float lifeTime;
+
+    public PooledObjectData Clone()
+    {
+        return Instantiate(this);
+    }
 }

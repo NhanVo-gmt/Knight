@@ -1,18 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Spell : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private SpellData spellData;
+
+    private Animator anim;
+
+    private void Awake()
     {
-        
+        anim = GetComponent<Animator>();
+    }
+    
+    private void Initialize(PooledObjectData data, SpellParams spellParams)
+    {
+        spellData = (SpellData)data.Clone();
+
+        spellData.Initialize(spellParams);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Activate()
     {
-        
+        spellData.Activate();
     }
 }

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : PooledObject
 {
     ProjectileData data;
 
@@ -16,12 +16,13 @@ public class Projectile : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        GetComponent<PooledObject>().OnInitData += Initialize;
     }
     
 
-    private void Initialize(PooledObjectData data)
+    public override void Initialize(PooledObjectData data)
     {
+        base.Initialize(data);
+        
         this.data = (ProjectileData)data;
         isExplode = false;
     }
@@ -70,6 +71,6 @@ public class Projectile : MonoBehaviour
 
         yield return new WaitForSeconds(.2f);
         
-        GetComponent<PooledObject>().Release();
+        Release();
     }
 }

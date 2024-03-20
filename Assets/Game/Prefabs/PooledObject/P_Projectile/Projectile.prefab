@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2059352493592806631}
   - component: {fileID: 7739678690872583793}
   - component: {fileID: -6746377470007042747}
-  - component: {fileID: -5788445293503660666}
   - component: {fileID: 9138684713037582981}
   m_Layer: 10
   m_Name: Projectile
@@ -174,18 +173,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isExplode: 0
---- !u!114 &-5788445293503660666
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3803421527087819763}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace395a00b29db748905692765fb52c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &9138684713037582981
 Animator:
   serializedVersion: 5
