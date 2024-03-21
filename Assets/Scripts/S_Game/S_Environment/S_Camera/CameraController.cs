@@ -43,8 +43,8 @@ namespace Knight.Camera
         private float normYPanAmount;
         private Vector2 startingTrackedObjectOffset;
         
-        private CinemachineBasicMultiChannelPerlin camShake;
-        private float shakeDuration;
+
+        private CameraShake cameraShake;
 
         
         // Scene Cam
@@ -63,7 +63,7 @@ namespace Knight.Camera
                 {
                     currentCamera = virtualCameras[i].cam;
                     framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-                    camShake = currentCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+                    cameraShake.Initialize(currentCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>());
                     confiner = currentCamera.GetComponent<CameraConfiner>();
                 }
             }
@@ -289,27 +289,12 @@ namespace Knight.Camera
         
         public void Shake(float shakeDuration, float shakeAmount, float frequency)
         {
-            this.shakeDuration = shakeDuration;
-            camShake.m_AmplitudeGain = shakeAmount;
-            camShake.m_FrequencyGain = frequency;
+            cameraShake.Shake(shakeDuration, shakeAmount, frequency);
         }
 
-        private void StopShaking()
+        public void StopShaking()
         {
-            camShake.m_AmplitudeGain = 0;
-            camShake.m_FrequencyGain = 0;
-        }
-        
-        void Update() 
-        {
-            if (shakeDuration > 0)
-            {
-                shakeDuration -= Time.deltaTime;
-                if (shakeDuration <= 0)
-                {
-                    StopShaking();
-                }
-            }
+            cameraShake.StopShaking();
         }
         
 
