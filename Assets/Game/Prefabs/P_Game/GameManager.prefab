@@ -64,7 +64,7 @@ MonoBehaviour:
   flashMat: {fileID: 2100000, guid: b92ee72cbc0aa6340ad49ccb19f8c7c3, type: 2}
   flashCoolDown: 0.2
   flashGlowMat: {fileID: 2100000, guid: 3805b295fc0d4e044a42c035399d2676, type: 2}
-  sceneData: {fileID: 11400000, guid: adba4b9a6a74d6d40826207827676b8a, type: 2}
+  mapData: {fileID: 11400000, guid: adba4b9a6a74d6d40826207827676b8a, type: 2}
 --- !u!114 &8234785762340972059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +86,9 @@ MonoBehaviour:
     amountToPool: 10
   - prefab: {fileID: 3803421527087819763, guid: f3af04e56187c104bba4472be46eb3fa, type: 3}
     poolType: 3
+    amountToPool: 10
+  - prefab: {fileID: 4562549117221252566, guid: c5b58d8c244655d4eb915be16df013d6, type: 3}
+    poolType: 4
     amountToPool: 10
   - prefab: {fileID: 8726307433354808246, guid: 5d7d5c53ab79cd74d81db820b7203b52, type: 3}
     poolType: 2

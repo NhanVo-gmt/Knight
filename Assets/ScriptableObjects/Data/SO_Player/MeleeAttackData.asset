@@ -20,9 +20,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d4b8ad7acd0cd8408bf1823eeaf8cbe, type: 2}
   attackVFX: {fileID: 11400000, guid: f574416c9edfad54597fdccc519b0817, type: 2}
   camShakeData: {fileID: 11400000, guid: d62b7a84a8628554ab8e8f64675f506b, type: 2}
-  leftAttackPos: {x: -1.1, y: -0.2}
-  rightAttackPos: {x: 1.1, y: -0.2}
+  leftAttackPos: {x: -1.3, y: -0.2}
+  rightAttackPos: {x: 1.3, y: -0.2}
   upAttackPos: {x: 0, y: 0}
   downAttackPos: {x: 0, y: 0}
-  radius: 0.65
-  moveVelocity: 2
+  radius: 0.7
+  moveVelocity: 1
