@@ -90,6 +90,20 @@ public class GroundState : State
             
             CameraController.Instance.LerpYDamping(false);
         }
+        
+        //Lerp if looking up and down
+        if (player.inputManager.movementInput.y < 0)
+        {
+            CameraController.Instance.LookDown();
+        }
+        else if (player.inputManager.movementInput.y > 0)
+        {
+            CameraController.Instance.LookUp();
+        }
+        else
+        {
+            CameraController.Instance.LookNormal();
+        }
     }
 
     public override void PhysicsUpdate()

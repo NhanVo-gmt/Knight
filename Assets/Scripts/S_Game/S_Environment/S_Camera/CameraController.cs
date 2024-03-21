@@ -20,29 +20,25 @@ namespace Knight.Camera
                 CenterPlayer,
                 NoYFollow,
                 LockedPositionRoom,
+                LookupPlayer,
+                LookdownPlayer,
             }
 
             public CameraType camType;
             public CinemachineVirtualCamera cam;
         }
-        [SerializeField] private CameraClass[] virtualCameras;
-
-        [Header("Control for lerping for player fall/jump")] 
-        [SerializeField] private float fallPanAmount = 0.25f;
-        [SerializeField] private float fallYPanTime = 0.35f;
-        public static float fallSpeedYDampingChangeThreshold = -15f;
-
-        public bool IsLerpingYDamping { get; private set; }
-        public bool LerpedFromPlayerFalling { get; set; }
-
-        private Coroutine lerpYPanCoroutine;
-        private Coroutine panCameraCoroutine;
         
-        private CinemachineVirtualCamera currentCamera;
+        [SerializeField] private CameraClass[] virtualCameras;
+        [SerializeField] private CameraClass.CameraType currentCamType;
+
+        
+        [SerializeField] private CinemachineVirtualCamera currentCamera;
         private CinemachineFramingTransposer framingTransposer;
         private float normYPanAmount;
         private Vector2 startingTrackedObjectOffset;
         
+        private Coroutine lerpYPanCoroutine;
+        private Coroutine panCameraCoroutine;
 
         private CameraShake cameraShake;
 
@@ -63,6 +59,7 @@ namespace Knight.Camera
                 if (virtualCameras[i].camType == CameraClass.CameraType.CenterPlayer)
                 {
                     currentCamera = virtualCameras[i].cam;
+                    currentCamType = CameraClass.CameraType.CenterPlayer;
                     framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
                     cameraShake.Initialize(currentCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>());
                     confiner = currentCamera.GetComponent<CameraConfiner>();
@@ -84,7 +81,6 @@ namespace Knight.Camera
 
         void Start()
         {
-
             SceneLoader.Instance.OnFirstStartGame += SceneLoader_OnFirstStartGame;
             SceneLoader.Instance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
             SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
@@ -131,7 +127,51 @@ namespace Knight.Camera
 
         #endregion
 
+        #region Look up / down camera
+
+        [Header("Look up/down")]
+        [SerializeField] private float lerpLookDownDuration = .2f;
+
+
+        public void LookNormal()
+        {
+            SwapCamera(currentCamType, CameraClass.CameraType.CenterPlayer);
+        }
+        
+        public void LookUp()
+        {
+            SwapCamera(currentCamType, CameraClass.CameraType.LookupPlayer);
+        }
+
+        public void LookDown()
+        {
+            SwapCamera(currentCamType, CameraClass.CameraType.LookdownPlayer);
+        }
+        
+        IEnumerator LerpYTrackObjectCoroutine(Vector2 offset)
+        {
+            Vector2 currentTrackOffset = framingTransposer.m_TrackedObjectOffset;
+            float startTime = Time.time;
+            while (startTime + lerpLookDownDuration >= Time.time)
+            {
+                framingTransposer.m_TrackedObjectOffset = Vector2.Lerp(currentTrackOffset, offset, (Time.time - startTime) / lerpLookDownDuration);
+                yield return null;
+            }
+
+            framingTransposer.m_TrackedObjectOffset = offset;
+        }
+
+        #endregion
+
         #region Lerp the Y Damping
+        
+        [Header("Control for lerping for player fall/jump")] 
+        [SerializeField] private float fallPanAmount = 0.25f;
+        [SerializeField] private float fallYPanTime = 0.35f;
+        public static float fallSpeedYDampingChangeThreshold = -15f;
+        
+        public bool IsLerpingYDamping { get; private set; }
+        public bool LerpedFromPlayerFalling { get; set; }
 
         public void LerpYDamping(bool isPlayerFalling)
         {
@@ -229,18 +269,37 @@ namespace Knight.Camera
         
         #region Swap Camera
 
+        public void SwapCamera(CinemachineVirtualCamera fromCam, CinemachineVirtualCamera toCam)
+        {
+            fromCam.enabled = false;
+            toCam.enabled = true;
+            currentCamera = toCam;
+            framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        }
+        
+        public void SwapCamera(CameraClass.CameraType fromCamType, CameraClass.CameraType toCamType)
+        {
+            if (fromCamType == toCamType) return;
+            
+            CinemachineVirtualCamera currentCam = FindCamera(fromCamType); 
+            CinemachineVirtualCamera toCam = FindCamera(toCamType);
+
+            currentCamType = toCamType; 
+            SwapCamera(currentCam, toCam);
+        }
+
         public void SwapCamera(CameraClass.CameraType cameraFromLeft, CameraClass.CameraType cameraFromRight,
             Vector2 triggerExitDirection, GameObject followObject)
         {
+            //todo refactor
+            
             CinemachineVirtualCamera camRight = FindCamera(cameraFromRight); 
             CinemachineVirtualCamera camLeft = FindCamera(cameraFromLeft); 
             // If the camera on the left and exit direction was on the right
             if (currentCamera == camLeft && triggerExitDirection.x > 0f)
             {
-                camRight.enabled = true;
-                camLeft.enabled = false;
-                currentCamera = camRight;
-                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                currentCamType = cameraFromRight;
+                SwapCamera(camLeft, camRight);
                 
                 if (cameraFromRight == CameraClass.CameraType.LockedPositionRoom)
                 {
@@ -250,10 +309,8 @@ namespace Knight.Camera
             
             else if (currentCamera == camRight && triggerExitDirection.x < 0f)
             {
-                camLeft.enabled = true;
-                camRight.enabled = false;
-                currentCamera = camLeft;
-                framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                currentCamType = cameraFromLeft;
+                SwapCamera(camRight, camLeft);
                 
                 if (cameraFromLeft == CameraClass.CameraType.LockedPositionRoom)
                 {
