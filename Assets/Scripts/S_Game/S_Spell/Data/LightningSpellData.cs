@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Camera;
 using UnityEngine;
 
 
@@ -11,8 +12,9 @@ public class LightningSpellData : SpellData
     
     [Header("Attack Area")]
     public Vector2 size;
-
     public Vector2 offset;
+
+    [Header("Cam Shake")] public CamShakeData camShakeData;
     
     private Transform playerTransform;
     private Animator anim;
@@ -36,6 +38,7 @@ public class LightningSpellData : SpellData
 
     public override void Activate()
     {
+        CameraShake.Instance.Shake(camShakeData.shakeDuration, camShakeData.shakeAmount, camShakeData.shakeFrequency);
         Collider2D[] cols = Physics2D.OverlapBoxAll(offset + (Vector2)spellParams.prefabTransform.position, size, 0);
         
         foreach (Collider2D col in cols)

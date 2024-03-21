@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: SmallShake
   m_EditorClassIdentifier: 
   shakeDuration: 0.1
-  shakeAmount: 1
+  shakeAmount: 2
   shakeFrequency: 2

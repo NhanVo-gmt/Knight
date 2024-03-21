@@ -56,7 +56,8 @@ namespace Knight.Camera
         protected override void Awake() 
         {
             base.Awake();
-
+            cameraShake = GetComponent<CameraShake>();
+            
             for (int i = 0; i < virtualCameras.Length; i++)
             {
                 if (virtualCameras[i].camType == CameraClass.CameraType.CenterPlayer)

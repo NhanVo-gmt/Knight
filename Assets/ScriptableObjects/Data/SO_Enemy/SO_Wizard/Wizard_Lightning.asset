@@ -19,3 +19,4 @@ MonoBehaviour:
   runtimeAnim: {fileID: 9100000, guid: f799f6ccc1776934e8f5053133266284, type: 2}
   size: {x: 3.0625, y: 5.375}
   offset: {x: -0.1562501, y: 4.9375}
+  camShakeData: {fileID: 11400000, guid: d62b7a84a8628554ab8e8f64675f506b, type: 2}
