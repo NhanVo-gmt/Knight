@@ -61,15 +61,15 @@ public class NodeView : UnityEditor.Experimental.GraphView.Node
     {
         if (node is ActionNode)
         {
-            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Multi, typeof(bool));
         }
         else if (node is CompositeNode)
         {
-            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Multi, typeof(bool));
         }
         else if (node is DecoratorNode)
         {
-            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Single, typeof(bool));
+            input = InstantiatePort(Orientation.Vertical, Direction.Input, Port.Capacity.Multi, typeof(bool));
         }
         else if (node is RootNode)
         {

@@ -9,6 +9,10 @@ public class CastSpellNode : ActionNode
     public override void CopyNode(Node copyNode)
     {
         CastSpellNode node = copyNode as CastSpellNode;
+        if (node)
+        {
+            spellData = node.spellData;
+        }
     }
     
     public override void OnInitialize(BehaviourTreeComponent component)
