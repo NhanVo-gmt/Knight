@@ -213,6 +213,7 @@ MonoBehaviour:
   children:
   - {fileID: 4586575505943387792}
   - {fileID: -5589362499154205056}
+  - {fileID: 1052845868029689864}
   - {fileID: 136855677051027602}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -242,6 +243,7 @@ MonoBehaviour:
   - {fileID: -2551524742186679889}
   - {fileID: -3742796015307400607}
   - {fileID: 136855677051027602}
+  - {fileID: 1052845868029689864}
   groups: []
   offset: {x: 300, y: 0}
 --- !u!114 &136855677051027602
@@ -261,11 +263,33 @@ MonoBehaviour:
     started: 0
     guid: 53fa7da8c29ac3d47b4c360bae34729a
     Tree: {fileID: 11400000}
-    position: {x: 618.5125, y: 560.686}
+    position: {x: 817.97473, y: 504.8}
     Name: 
     description: 
   linkNode: {fileID: 0}
   toHealth: 0
+--- !u!114 &1052845868029689864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fcc2d453d5e8148993492e5cc2d710, type: 3}
+  m_Name: VFXNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: c02d49a99d41271469e0a9d04b7ed656
+    Tree: {fileID: 11400000}
+    position: {x: 552.81586, y: 504.79996}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  data: {fileID: 11400000, guid: 6ca8cbcc1cc17e347ace2992c9080871, type: 2}
 --- !u!114 &2250141804684769415
 MonoBehaviour:
   m_ObjectHideFlags: 0
