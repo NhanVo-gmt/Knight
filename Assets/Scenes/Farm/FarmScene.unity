@@ -2489,18 +2489,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1991259140982315903, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
-      propertyPath: virtualCameras.Array.data[3].cam
+    - target: {fileID: 797370292044761706, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1991259140982315903, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
-      propertyPath: virtualCameras.Array.data[4].cam
+      objectReference: {fileID: 1190236627}
+    - target: {fileID: 1314476562459574892, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_BoundingShape2D
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1190236627}
     - target: {fileID: 2168447485896038731, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3004117814188544015, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_BoundingShape2D
+      value: 
+      objectReference: {fileID: 1190236627}
     - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_Name
       value: -------TEST----------
@@ -4177,6 +4181,11 @@ Transform:
   - {fileID: 1343163930}
   m_Father: {fileID: 746498391}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!60 &1190236627 stripped
+PolygonCollider2D:
+  m_CorrespondingSourceObject: {fileID: 551398627696587337, guid: 066f728a4850e724880c26bdb4de6789, type: 3}
+  m_PrefabInstance: {fileID: 1043547007}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1220136676
 GameObject:
   m_ObjectHideFlags: 0
