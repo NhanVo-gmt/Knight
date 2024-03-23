@@ -35,10 +35,17 @@ SpriteAtlas:
     - {fileID: 2800000, guid: fb1e04a82d6366142a02182cae83aa76, type: 3}
     - {fileID: 2800000, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
     - {fileID: 2800000, guid: faf46f6c62d72db42a6a3208cf9aaab7, type: 3}
+    - {fileID: 2800000, guid: 0abe274065229a44ea80b552d0bfda3c, type: 3}
+    - {fileID: 2800000, guid: 5f95a372b02bfa649911963a65d85439, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
     packedSpriteRenderDataKeys:
+    - 0abe274065229a44ea80b552d0bfda3c: 805814347
+    - 0abe274065229a44ea80b552d0bfda3c: 574004147
+    - 0abe274065229a44ea80b552d0bfda3c: -355651311
+    - 0abe274065229a44ea80b552d0bfda3c: 1932201069
+    - 5f95a372b02bfa649911963a65d85439: -8603531551885217200
     - 24a601d4be981fe4089089725bf34fad: 1790128984
     - 24a601d4be981fe4089089725bf34fad: 1725537201
     - 24a601d4be981fe4089089725bf34fad: 1889745264
@@ -88,6 +95,11 @@ SpriteAtlas:
     - faf46f6c62d72db42a6a3208cf9aaab7: 1281984016
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 805814347, guid: 0abe274065229a44ea80b552d0bfda3c, type: 3}
+  - {fileID: 574004147, guid: 0abe274065229a44ea80b552d0bfda3c, type: 3}
+  - {fileID: -355651311, guid: 0abe274065229a44ea80b552d0bfda3c, type: 3}
+  - {fileID: 1932201069, guid: 0abe274065229a44ea80b552d0bfda3c, type: 3}
+  - {fileID: -8603531551885217200, guid: 5f95a372b02bfa649911963a65d85439, type: 3}
   - {fileID: 1790128984, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
   - {fileID: 1725537201, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
   - {fileID: 1889745264, guid: 24a601d4be981fe4089089725bf34fad, type: 3}
@@ -136,6 +148,11 @@ SpriteAtlas:
   - {fileID: 711019974, guid: faf46f6c62d72db42a6a3208cf9aaab7, type: 3}
   - {fileID: 1281984016, guid: faf46f6c62d72db42a6a3208cf9aaab7, type: 3}
   m_PackedSpriteNamesToIndex:
+  - Cloud_3
+  - Cloud_2
+  - Cloud_1
+  - Cloud_0
+  - SkyColor0
   - Forest tileset_9
   - Forest tileset_8
   - Forest tileset_1
