@@ -169,6 +169,28 @@ MonoBehaviour:
     Name: 
     description: 
   child: {fileID: -7385771831519080265}
+--- !u!114 &-2819168389673753099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42045f462b2051f4c88617eee1eff392, type: 3}
+  m_Name: ShakeCamNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: ba01ed5c7ab6bb94ea36bc55fe5de19f
+    Tree: {fileID: 11400000}
+    position: {x: 767.265, y: 636}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  camShakeData: {fileID: 11400000, guid: d62b7a84a8628554ab8e8f64675f506b, type: 2}
 --- !u!114 &-2551524742186679889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +235,7 @@ MonoBehaviour:
   children:
   - {fileID: 4586575505943387792}
   - {fileID: -5589362499154205056}
-  - {fileID: 1052845868029689864}
+  - {fileID: 1662445482018289654}
   - {fileID: 136855677051027602}
 --- !u!114 &11400000
 MonoBehaviour:
@@ -244,6 +266,8 @@ MonoBehaviour:
   - {fileID: -3742796015307400607}
   - {fileID: 136855677051027602}
   - {fileID: 1052845868029689864}
+  - {fileID: 1662445482018289654}
+  - {fileID: -2819168389673753099}
   groups: []
   offset: {x: 300, y: 0}
 --- !u!114 &136855677051027602
@@ -263,7 +287,7 @@ MonoBehaviour:
     started: 0
     guid: 53fa7da8c29ac3d47b4c360bae34729a
     Tree: {fileID: 11400000}
-    position: {x: 817.97473, y: 504.8}
+    position: {x: 1087.7391, y: 489.19998}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -285,11 +309,35 @@ MonoBehaviour:
     started: 0
     guid: c02d49a99d41271469e0a9d04b7ed656
     Tree: {fileID: 11400000}
-    position: {x: 552.81586, y: 504.79996}
+    position: {x: 557.6001, y: 636.3518}
     Name: 
     description: 
   linkNode: {fileID: 0}
   data: {fileID: 11400000, guid: 6ca8cbcc1cc17e347ace2992c9080871, type: 2}
+--- !u!114 &1662445482018289654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 5d6fc09923931d841a7c3bcdbbaa9ad6
+    Tree: {fileID: 11400000}
+    position: {x: 656.4225, y: 500.21582}
+    Name: 
+    description: 
+  children:
+  - {fileID: 1052845868029689864}
+  - {fileID: -2819168389673753099}
+  successType: 1
 --- !u!114 &2250141804684769415
 MonoBehaviour:
   m_ObjectHideFlags: 0
