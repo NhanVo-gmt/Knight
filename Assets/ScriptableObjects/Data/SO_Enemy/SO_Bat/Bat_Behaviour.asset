@@ -17,7 +17,7 @@ MonoBehaviour:
     started: 0
     guid: b7f93feb141a29b4c81cd90fc5fdb366
     Tree: {fileID: 11400000}
-    position: {x: 308.8304, y: 909.6001}
+    position: {x: 308.80005, y: 941.5203}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -25,34 +25,10 @@ MonoBehaviour:
   - layerMask:
       serializedVersion: 2
       m_Bits: 8
-    size: {x: 2, y: 1.2}
+    size: {x: 2, y: 1}
     relativeStartPos: {x: 0, y: 0}
     gizmosColor: {r: 1, g: 0, b: 0, a: 1}
     shouldBe: 0
---- !u!114 &-7851335810636858089
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
-  m_Name: ParallelNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: d526ec495215bcf42969acd50cd9c4c7
-    Tree: {fileID: 11400000}
-    position: {x: 785.801, y: 504}
-    Name: 
-    description: 
-  children:
-  - {fileID: 4018603491976421810}
-  - {fileID: 7837145748043170044}
-  successType: 1
 --- !u!114 &-7385771831519080265
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,7 +94,7 @@ MonoBehaviour:
     Tree: {fileID: 11400000}
     position: {x: 292.79993, y: 503.99997}
     Name: 
-    description: 
+    description: "Go down till touch \nground or player"
   children:
   - {fileID: 4886017834568160810}
   - {fileID: -2551524742186679889}
@@ -140,7 +116,7 @@ MonoBehaviour:
     started: 0
     guid: ad81e2b252e03d64faea3e003f416529
     Tree: {fileID: 11400000}
-    position: {x: 528.83044, y: 909.6001}
+    position: {x: 528.80005, y: 941.5203}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -165,7 +141,7 @@ MonoBehaviour:
     started: 0
     guid: 5d38bf08edcb3af40881a90b281e1b12
     Tree: {fileID: 11400000}
-    position: {x: 378.43036, y: 760.8}
+    position: {x: 378.40005, y: 792.72034}
     Name: 
     description: 
   children:
@@ -210,7 +186,7 @@ MonoBehaviour:
     started: 0
     guid: 0aa31a94849ea224db462604293cbbe3
     Tree: {fileID: 11400000}
-    position: {x: 378.40005, y: 636.0001}
+    position: {x: 378.40002, y: 657.60004}
     Name: 
     description: 
   child: {fileID: -3742796015307400607}
@@ -237,7 +213,7 @@ MonoBehaviour:
   children:
   - {fileID: 4586575505943387792}
   - {fileID: -5589362499154205056}
-  - {fileID: -7851335810636858089}
+  - {fileID: 136855677051027602}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,13 +239,33 @@ MonoBehaviour:
   - {fileID: 4886017834568160810}
   - {fileID: -5589362499154205056}
   - {fileID: -7987323581376499483}
-  - {fileID: 7837145748043170044}
-  - {fileID: -7851335810636858089}
-  - {fileID: 4018603491976421810}
   - {fileID: -2551524742186679889}
   - {fileID: -3742796015307400607}
+  - {fileID: 136855677051027602}
   groups: []
   offset: {x: 300, y: 0}
+--- !u!114 &136855677051027602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebf53905bab5bc344a29660c03c667db, type: 3}
+  m_Name: HealthNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 53fa7da8c29ac3d47b4c360bae34729a
+    Tree: {fileID: 11400000}
+    position: {x: 618.5125, y: 560.686}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  toHealth: 0
 --- !u!114 &2250141804684769415
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,29 +287,6 @@ MonoBehaviour:
     Name: 
     description: 
   child: {fileID: -1780146597622572514}
---- !u!114 &4018603491976421810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
-  m_Name: AnimationNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: d32d0bc2417f66b4883817f53339eef0
-    Tree: {fileID: 11400000}
-    position: {x: 739.401, y: 657.6001}
-    Name: 
-    description: 
-  linkNode: {fileID: 0}
-  clipName: Idle
-  clipNameIndex: 1
 --- !u!114 &4586575505943387792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -356,31 +329,9 @@ MonoBehaviour:
     started: 0
     guid: 9c9b3b305df7fd642abeb3e1374c1022
     Tree: {fileID: 11400000}
-    position: {x: 104.79999, y: 660}
+    position: {x: 186.39996, y: 657.60004}
     Name: 
     description: 
   linkNode: {fileID: 0}
   clipName: Attack2
   clipNameIndex: 2
---- !u!114 &7837145748043170044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
-  m_Name: IdleNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: 6432f534071688f4ca9aa6e260666ede
-    Tree: {fileID: 11400000}
-    position: {x: 936.2009, y: 657.6001}
-    Name: 
-    description: 
-  linkNode: {fileID: 0}
-  idleTime: 2

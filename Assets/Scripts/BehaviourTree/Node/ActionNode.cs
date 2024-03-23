@@ -18,6 +18,10 @@ public abstract class ActionNode : Node
     public override void OnInitialize(BehaviourTreeComponent component)
     {
         base.OnInitialize(component);
+        if (linkNode != null)
+        {
+            CopyNode(linkNode);
+        }
     }
 
     protected override void OnStart()

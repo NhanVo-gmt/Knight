@@ -35,10 +35,6 @@ public class CheckPlayerNode : ActionNode
     public override void OnInitialize(BehaviourTreeComponent component)
     {
         base.OnInitialize(component);
-        if (linkNode)
-        {
-            CopyNode(linkNode);
-        }
     }
 
     protected override void OnStart()
