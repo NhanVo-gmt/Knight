@@ -68,7 +68,6 @@ public class AnimationNodeEditor : Editor
             EditorGUILayout.LabelField("Select an GameObject with Animator to see available clips");
         }
 
-        
         serializedObject.ApplyModifiedProperties();
     }
 

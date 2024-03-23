@@ -43,7 +43,7 @@ public class InspectorView : VisualElement
 
     public void DrawGizmos(bool changedNode = false) 
     {
-        if (selectedNode != null && Selection.activeGameObject.GetComponent<BehaviourTreeRunner>() != null)
+        if (selectedNode != null && Selection.activeGameObject != null && Selection.activeGameObject.GetComponent<BehaviourTreeRunner>() != null)
         {
             GizmosDrawer.Begin();
             selectedNode.DrawGizmos(Selection.activeGameObject);
