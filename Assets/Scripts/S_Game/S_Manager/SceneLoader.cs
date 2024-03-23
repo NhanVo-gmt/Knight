@@ -113,7 +113,6 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
             currentRegion = newRegion;
             OnChangedRegion?.Invoke(this, newRegion);
         }
-        Debug.LogError(123);
 
         loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
         OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
