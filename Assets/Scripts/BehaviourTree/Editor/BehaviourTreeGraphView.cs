@@ -178,21 +178,28 @@ public class BehaviourTreeGraphView : GraphView
                 NodeView outputNodeView = edge.output.node as NodeView;
                 tree.AddChild(outputNodeView.node, inputNodeView.node);
             });
+            
+            UpdateNodeViewChildrenOrder();
         }
 
         if (graphViewChange.movedElements != null)
         {
-            nodes.ForEach((n) =>
-            {
-                NodeView nodeView = n as NodeView;
-                if (nodeView != null)
-                {
-                    nodeView.SortChildren();
-                }
-            });
+            UpdateNodeViewChildrenOrder();
         }
         
         return graphViewChange;
+    }
+
+    void UpdateNodeViewChildrenOrder()
+    {
+        nodes.ForEach((n) =>
+        {
+            NodeView nodeView = n as NodeView;
+            if (nodeView != null)
+            {
+                nodeView.SortChildren();
+            }
+        });
     }
 
 

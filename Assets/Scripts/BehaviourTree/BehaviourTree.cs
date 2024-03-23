@@ -198,7 +198,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         RootNode rootNode = parent as RootNode;
         if (rootNode != null)
         {
-            Undo.RecordObject(decoratorNode, "Behaviour Tree {Removechild}");
+            Undo.RecordObject(rootNode, "Behaviour Tree {Removechild}");
             rootNode.child = null;
             EditorUtility.SetDirty(rootNode);
         }
@@ -206,7 +206,7 @@ public class BehaviourTree : ScriptableObject, ISerializationCallbackReceiver
         CompositeNode compositeNode = parent as CompositeNode;
         if (compositeNode != null)
         {
-            Undo.RecordObject(decoratorNode, "Behaviour Tree {Removechild}");
+            Undo.RecordObject(compositeNode, "Behaviour Tree {Removechild}");
             compositeNode.children.Remove(child);
             EditorUtility.SetDirty(compositeNode);
         }

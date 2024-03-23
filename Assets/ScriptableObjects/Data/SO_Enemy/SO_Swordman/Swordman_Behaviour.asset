@@ -1054,7 +1054,7 @@ MonoBehaviour:
     started: 0
     guid: c2c8905069c62a744aa7c0bb4d6ddeaa
     Tree: {fileID: 11400000}
-    position: {x: 842.3225, y: 348}
+    position: {x: 842.4, y: 322.40002}
     Name: 
     description: Go To Player
   children:
