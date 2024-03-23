@@ -11,10 +11,10 @@ public class AnimatorController : CoreComponent
     public Action onAnimationTrigger;
     public Action onAnimationFinishTrigger;
 
-    Health health;
+    private Health health;
     private SpriteRenderer sprite;
-
-    Animator anim;
+    private Animator anim;
+    
     BlinkingEffect blinkingEffect;
     FlashingEffect flashingEffect;
 

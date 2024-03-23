@@ -17,7 +17,7 @@ MonoBehaviour:
     started: 0
     guid: b7f93feb141a29b4c81cd90fc5fdb366
     Tree: {fileID: 11400000}
-    position: {x: 308.80005, y: 941.5203}
+    position: {x: 309.59998, y: 811.2001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -29,29 +29,6 @@ MonoBehaviour:
     relativeStartPos: {x: 0, y: 0}
     gizmosColor: {r: 1, g: 0, b: 0, a: 1}
     shouldBe: 0
---- !u!114 &-7385771831519080265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
-  m_Name: SequencerNode
-  m_EditorClassIdentifier: 
-  NodeComponent:
-    state: 0
-    started: 0
-    guid: 83c39a3b301586b47b5bfc39ef9fa7a2
-    Tree: {fileID: 11400000}
-    position: {x: 20.799988, y: 82.79998}
-    Name: 
-    description: 
-  children:
-  - {fileID: -5645727368231459667}
-  - {fileID: 2250141804684769415}
 --- !u!114 &-5645727368231459667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +46,7 @@ MonoBehaviour:
     started: 0
     guid: 7ac11adb2736d504eaa523d90399d7df
     Tree: {fileID: 11400000}
-    position: {x: -148.12, y: 232.76004}
+    position: {x: -633.6, y: 373.59995}
     Name: 
     description: Wait for player
   linkNode: {fileID: 0}
@@ -92,7 +69,7 @@ MonoBehaviour:
     started: 0
     guid: b7f786ba84dd0384dac4cb25575cb7b4
     Tree: {fileID: 11400000}
-    position: {x: 292.79993, y: 503.99997}
+    position: {x: 293.59998, y: 373.59995}
     Name: 
     description: "Go down till touch \nground or player"
   children:
@@ -116,14 +93,14 @@ MonoBehaviour:
     started: 0
     guid: ad81e2b252e03d64faea3e003f416529
     Tree: {fileID: 11400000}
-    position: {x: 528.80005, y: 941.5203}
+    position: {x: 529.6, y: 811.2001}
     Name: 
     description: 
   linkNode: {fileID: 0}
   type: 0
   canFly: 1
   movePos: {x: 0, y: -7}
-  speed: 16
+  speed: 20
 --- !u!114 &-3742796015307400607
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,7 +118,7 @@ MonoBehaviour:
     started: 0
     guid: 5d38bf08edcb3af40881a90b281e1b12
     Tree: {fileID: 11400000}
-    position: {x: 378.40005, y: 792.72034}
+    position: {x: 379.20007, y: 662.4}
     Name: 
     description: 
   children:
@@ -168,7 +145,7 @@ MonoBehaviour:
     position: {x: 51, y: -66.46223}
     Name: 
     description: 
-  child: {fileID: -7385771831519080265}
+  child: {fileID: 2250141804684769415}
 --- !u!114 &-2819168389673753099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,11 +163,36 @@ MonoBehaviour:
     started: 0
     guid: ba01ed5c7ab6bb94ea36bc55fe5de19f
     Tree: {fileID: 11400000}
-    position: {x: 767.265, y: 636}
+    position: {x: 768.0001, y: 505.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
   camShakeData: {fileID: 11400000, guid: d62b7a84a8628554ab8e8f64675f506b, type: 2}
+--- !u!114 &-2769982235990019043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ff88d7429b3c04b88d08008781ba17, type: 3}
+  m_Name: CheckPlayerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 223c1f4e1eea9bc4b911404b7e6dec1f
+    Tree: {fileID: 11400000}
+    position: {x: 55.200073, y: 373.59995}
+    Name: 
+    description: Check before landing
+  linkNode: {fileID: 0}
+  checkType: 1
+  checkRelativePos: {x: 0, y: -5}
+  radius: 6
+  size: {x: 2, y: 10}
 --- !u!114 &-2551524742186679889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,7 +210,7 @@ MonoBehaviour:
     started: 0
     guid: 0aa31a94849ea224db462604293cbbe3
     Tree: {fileID: 11400000}
-    position: {x: 378.40002, y: 657.60004}
+    position: {x: 379.20007, y: 527.2001}
     Name: 
     description: 
   child: {fileID: -3742796015307400607}
@@ -229,14 +231,62 @@ MonoBehaviour:
     started: 0
     guid: de1a6c596affcb142836ea80ec58a161
     Tree: {fileID: 11400000}
-    position: {x: 142.4, y: 364.3064}
+    position: {x: 32.80005, y: 219.20004}
     Name: 
     description: 
   children:
+  - {fileID: -5645727368231459667}
   - {fileID: 4586575505943387792}
+  - {fileID: 5258483318436590830}
+  - {fileID: -2769982235990019043}
   - {fileID: -5589362499154205056}
   - {fileID: 1662445482018289654}
   - {fileID: 136855677051027602}
+--- !u!114 &-1314991034204845829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 756b19a33f0fd434ea74210277f42b25
+    Tree: {fileID: 11400000}
+    position: {x: -76, y: 509.6}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  idleTime: 1
+--- !u!114 &-686705336669999392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 7d6ec9a134dfbf2468de4944b014f83e
+    Tree: {fileID: 11400000}
+    position: {x: -291.19995, y: 507.20004}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  clipName: Fly
+  clipNameIndex: 3
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +305,6 @@ MonoBehaviour:
   - {fileID: -2886896763517979471}
   - {fileID: -1780146597622572514}
   - {fileID: 4586575505943387792}
-  - {fileID: -7385771831519080265}
   - {fileID: -5645727368231459667}
   - {fileID: 2250141804684769415}
   - {fileID: -5478460073126410577}
@@ -268,6 +317,10 @@ MonoBehaviour:
   - {fileID: 1052845868029689864}
   - {fileID: 1662445482018289654}
   - {fileID: -2819168389673753099}
+  - {fileID: 5258483318436590830}
+  - {fileID: -686705336669999392}
+  - {fileID: -1314991034204845829}
+  - {fileID: -2769982235990019043}
   groups: []
   offset: {x: 300, y: 0}
 --- !u!114 &136855677051027602
@@ -287,7 +340,7 @@ MonoBehaviour:
     started: 0
     guid: 53fa7da8c29ac3d47b4c360bae34729a
     Tree: {fileID: 11400000}
-    position: {x: 1087.7391, y: 489.19998}
+    position: {x: 1088.7999, y: 359.20004}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -309,7 +362,7 @@ MonoBehaviour:
     started: 0
     guid: c02d49a99d41271469e0a9d04b7ed656
     Tree: {fileID: 11400000}
-    position: {x: 557.6001, y: 636.3518}
+    position: {x: 558.4, y: 505.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -331,7 +384,7 @@ MonoBehaviour:
     started: 0
     guid: 5d6fc09923931d841a7c3bcdbbaa9ad6
     Tree: {fileID: 11400000}
-    position: {x: 656.4225, y: 500.21582}
+    position: {x: 657.6, y: 369.59995}
     Name: 
     description: 
   children:
@@ -355,7 +408,7 @@ MonoBehaviour:
     started: 0
     guid: 97598a75748451a40b9df2d980f45231
     Tree: {fileID: 11400000}
-    position: {x: 143.00673, y: 232.79997}
+    position: {x: 32.80008, y: 71.91937}
     Name: 
     description: 
   child: {fileID: -1780146597622572514}
@@ -376,7 +429,7 @@ MonoBehaviour:
     started: 0
     guid: fb58f63dd29b9c2409c9c3faa88bcbc6
     Tree: {fileID: 11400000}
-    position: {x: 36.411194, y: 503.9999}
+    position: {x: -408.79993, y: 373.59995}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -401,9 +454,33 @@ MonoBehaviour:
     started: 0
     guid: 9c9b3b305df7fd642abeb3e1374c1022
     Tree: {fileID: 11400000}
-    position: {x: 186.39996, y: 657.60004}
+    position: {x: 187.20007, y: 527.2001}
     Name: 
     description: 
   linkNode: {fileID: 0}
   clipName: Attack2
   clipNameIndex: 2
+--- !u!114 &5258483318436590830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: b259edda2ca49404c8df99575789151e
+    Tree: {fileID: 11400000}
+    position: {x: -151.19995, y: 373.59995}
+    Name: 
+    description: 
+  children:
+  - {fileID: -686705336669999392}
+  - {fileID: -1314991034204845829}
+  successType: 1
