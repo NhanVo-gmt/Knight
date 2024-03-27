@@ -9,7 +9,7 @@ public class Trap : MonoBehaviour
     
     
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.TryGetComponent<Combat>(out Combat target) && target.CompareTag("Player"))
+        if (other.TryGetComponent<Combat>(out Combat target) && target.GetDamagerType() == IDamageable.DamagerTarget.Player)
         {
             target.TakeDamage(damage, IDamageable.DamagerTarget.Trap, Vector2.up, NeedToResetPlayerPosition); 
         }
