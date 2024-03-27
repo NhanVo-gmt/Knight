@@ -9,6 +9,8 @@ public class HitState : State
 {
     protected Movement movement { get => _movement ??= core.GetCoreComponent<Movement>(); }
     private Movement _movement;
+
+    public bool needToResetPlayerPosition = false;
     
     protected ParticleSystemController particleController
     {
@@ -24,11 +26,28 @@ public class HitState : State
     {
         base.Enter();
         
+        if (needToResetPlayerPosition)
+        {
+            GameManager.Instance.Sleep(data.hitData.hitResetSleepTime, () => BeforeHit(), () => AfterHit());
+            
+        }
+        else
+        {
+            GameManager.Instance.Sleep(data.hitData.hitSleepTime);
+        }
+    }
+
+    void BeforeHit()
+    {
         SpawnVFX();
         anim.Play(animId);
         CameraController.Instance.Shake(data.hitData.camShakeData.shakeDuration, data.hitData.camShakeData.shakeAmount, 
             data.hitData.camShakeData.shakeFrequency);
-        GameManager.Instance.Sleep(data.hitData.hitSleepTime);
+    }
+    
+    void AfterHit()
+    {
+        player.ResetGroundPosition();
     }
 
     private void SpawnVFX()

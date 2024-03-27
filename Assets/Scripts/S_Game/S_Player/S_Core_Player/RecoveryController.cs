@@ -57,7 +57,7 @@ public class RecoveryController : CoreComponent
     
     void Recovering()
     {
-        if (!IsInInvulnerabiltyTime() || !canRecover) return;
+        if (!IsInInvulnerabilityTime() || !canRecover) return;
 
         if (hitTime + hitData.invulnerableTime < Time.time)
         {
@@ -66,10 +66,12 @@ public class RecoveryController : CoreComponent
         }
     }
     
-    void TakeDamage()
+    void TakeDamage(bool needToResetPlayerPosition)
     {
         hitTime = Time.time;
         isInvulnerable = true;
+        
+        if (needToResetPlayerPosition) hitTime += hitData.resetGroundPlayerPositionTime;
 
         combat.DisableCollider();
     }
@@ -81,7 +83,7 @@ public class RecoveryController : CoreComponent
         combat.DisableCollider();
     }
     
-    public bool IsInInvulnerabiltyTime()
+    public bool IsInInvulnerabilityTime()
     {
         return isInvulnerable;
     }

@@ -29,7 +29,7 @@ public class InputManager : MonoBehaviour
         playerControls.Disable();
     }
 
-    public void SetActive(bool isActive)
+    public void Toggle(bool isActive)
     {
         if (isActive)
             playerControls.Enable();
@@ -77,7 +77,13 @@ public class InputManager : MonoBehaviour
 
     #region Input Handle
 
-    public void ResetInput()
+    public void ResetAllInput()
+    {
+        movementInput = Vector2.zero;
+        ResetAbilityInput();
+    }
+
+    public void ResetAbilityInput()
     {
         jumpInput = false;
         meleeAttackInput = false;
@@ -89,7 +95,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.started) 
         {
-            ResetInput();
+            ResetAbilityInput();
             dashInput = true;
         }
         
@@ -105,7 +111,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.started) 
         {
-            ResetInput();
+            ResetAbilityInput();
             jumpCutInput = false;
             jumpInput = true;
         }
@@ -132,7 +138,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.started) 
         {
-            ResetInput();
+            ResetAbilityInput();
             meleeAttackInput = true;
         }
 
@@ -148,7 +154,7 @@ public class InputManager : MonoBehaviour
     {
         if (context.started)
         {
-            ResetInput();
+            ResetAbilityInput();
             interactionInput = true;
         }
 

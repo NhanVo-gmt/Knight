@@ -111,6 +111,11 @@ public class Movement : CoreComponent
         return rb.position;
     }
 
+    public void SetPosition(Vector2 newPos)
+    {
+        rb.position = newPos;
+    }
+
     #endregion
 
     #region Direction

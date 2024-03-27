@@ -46,6 +46,8 @@ public class GroundState : State
         base.LogicsUpdate();
         
         LerpCamera();
+        
+        UpdateGroundRespawn();
 
         if (!stateMachine.canChangeState) return;
 
@@ -103,6 +105,21 @@ public class GroundState : State
         else
         {
             CameraController.Instance.LookNormal();
+        }
+    }
+
+    private float checkRespawnGroundTime = 0.01f;    
+    private float checkRespawnGroundTimeElapse = 0f;    
+    
+    void UpdateGroundRespawn()
+    {
+        if (checkRespawnGroundTimeElapse + checkRespawnGroundTime < Time.time)
+        {
+            checkRespawnGroundTimeElapse = Time.time;
+            if (collisionSenses.isGroundRespawn)
+            {
+                player.lastGroundPosition = movement.GetPosition();
+            }
         }
     }
 

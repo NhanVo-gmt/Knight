@@ -31,6 +31,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         currentRegion = GetRegion(currentScene);
     }
 
+    #region Get Methods
+    
     public SceneLoaderEnum.Scene GetCurrentScene()
     {
         return currentScene;
@@ -61,6 +63,10 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         return SceneLoaderEnum.Region.None;
     }
 
+    #endregion
+
+    #region Load Scene
+    
     public void StartGame()
     {
         OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
@@ -78,7 +84,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
         yield return new WaitForSeconds(1f);
         
-        Player.Instance.ChangeScenePosition(playerStartPos);
+        Player.Instance.ChangePosition(playerStartPos);
 
         currentScene = scene;
         
@@ -104,7 +110,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
         yield return new WaitForSeconds(1f);
         
-        Player.Instance.ChangeScenePosition(newPos);
+        Player.Instance.ChangePosition(newPos);
         currentScene = scene;
         
         SceneLoaderEnum.Region newRegion = GetRegion(currentScene);
@@ -117,6 +123,21 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         loadingOperation = SceneManager.LoadSceneAsync(scene.ToString());
         OnSceneLoadingStarted?.Invoke(this, EventArgs.Empty);
     }
+    
+    IEnumerator OnSceneLoadingCompletedCoroutine()
+    {
+        OnSceneLoadingCompleted?.Invoke(this, EventArgs.Empty);
+
+        yield return new WaitForSeconds(1f);
+        
+        OnSceneReadyToPlay?.Invoke(this, EventArgs.Empty);
+
+        yield return new WaitForSeconds(0.5f);
+        
+        OnScenePlay?.Invoke(this, EventArgs.Empty);
+    }
+
+    #endregion
     
 
     void Update() {
@@ -133,19 +154,14 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         }
     }
 
-    IEnumerator OnSceneLoadingCompletedCoroutine()
-    {
-        OnSceneLoadingCompleted?.Invoke(this, EventArgs.Empty);
+    #region Respawn
 
-        yield return new WaitForSeconds(1f);
-        
-        OnSceneReadyToPlay?.Invoke(this, EventArgs.Empty);
-
-        yield return new WaitForSeconds(0.5f);
-        
-        OnScenePlay?.Invoke(this, EventArgs.Empty);
-    }
     
+
+    #endregion
+    
+    #region Save Load
+
     public void LoadData(GameData gameData)
     {
         if (Enum.TryParse(gameData.sceneName, out SceneLoaderEnum.Scene scene))
@@ -162,4 +178,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     {
         data.sceneName = currentScene.ToString();
     }
+    
+
+    #endregion
+    
 }

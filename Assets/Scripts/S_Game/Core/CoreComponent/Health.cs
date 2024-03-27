@@ -9,11 +9,11 @@ public class Health : CoreComponent
     [SerializeField] int health; //todo set private
     private int maxHealth;
 
-    public Action OnTakeDamage;
+    public Action<bool> OnTakeDamage;
     public Action OnDie;
     public Action<int> OnUpdateHealth;
 
-    
+    public Action OnResetGroundPosition;
 
     private bool isDie = false;
 
@@ -32,8 +32,13 @@ public class Health : CoreComponent
     {
         base.Awake();
     }
-    
+
     public bool TakeDamage(int damage)
+    {
+        return TakeDamage(damage, false);
+    }
+    
+    public bool TakeDamage(int damage, bool needToResetPlayerPosition)
     {
         if (health <= 0 || IsInvulnerable()) return false;
 
@@ -43,7 +48,7 @@ public class Health : CoreComponent
 
         if (health > 0)
         {
-            TakeDamage();
+            TakeDamage(needToResetPlayerPosition);
         }
         else
         {
@@ -58,9 +63,9 @@ public class Health : CoreComponent
         return false;
     }
 
-    void TakeDamage()
+    void TakeDamage(bool needToResetPlayerPosition)
     {
-        OnTakeDamage?.Invoke();
+        OnTakeDamage?.Invoke(needToResetPlayerPosition);
     }
 
     private void Die()

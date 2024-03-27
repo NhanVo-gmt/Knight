@@ -49,8 +49,9 @@ public abstract class State
         health.OnTakeDamage += ChangeToHitState;
     }
 
-    void ChangeToHitState()
+    void ChangeToHitState(bool needToResetPlayerPosition)
     {
+        player.hitState.needToResetPlayerPosition = needToResetPlayerPosition;
         stateMachine.ChangeState(player.hitState);
     }
 

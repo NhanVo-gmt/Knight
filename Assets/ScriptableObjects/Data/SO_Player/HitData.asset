@@ -13,8 +13,10 @@ MonoBehaviour:
   m_Name: HitData
   m_EditorClassIdentifier: 
   invulnerableTime: 1
+  resetGroundPlayerPositionTime: 1
   hitSleepTime: 0.3
+  hitResetSleepTime: 0.5
   vfx:
   - {fileID: 11400000, guid: c5fe2863c3bb38045bb154de828c9a02, type: 2}
   clip: {fileID: 0}
-  camShakeData: {fileID: 11400000, guid: d62b7a84a8628554ab8e8f64675f506b, type: 2}
+  camShakeData: {fileID: 11400000, guid: d8f3e6cfa94ad5846bf1811fa5130591, type: 2}

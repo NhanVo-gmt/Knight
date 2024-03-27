@@ -5,10 +5,9 @@ using UnityEngine;
 public class StateMachine
 {
     public State currentState {get; private set;}
-
     public bool canChangeState {get; private set;}
 
-    public void Initialize(State firstState) 
+    public void Initialize(State firstState)
     {
         currentState = firstState;
         currentState.Enter();

@@ -80,12 +80,18 @@ public class Combat : CoreComponent, IDamageable
     {
         return damagerTarget;
     }
-
+    
     public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
     {
+        TakeDamage(damage, damagerType, attackDirection, false);
+    }
+
+    public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection, bool needResetPlayerPosition)
+    {
         if (this.damagerTarget == damagerType) return;
-        if(!health.TakeDamage(damage)) return;
-        
+        if(!health.TakeDamage(damage, needResetPlayerPosition)) return;
+        if (needResetPlayerPosition) return;
+
         if (attackDirection == Vector2.zero)
         {
             hitDirection = -movement.faceDirection;
