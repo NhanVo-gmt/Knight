@@ -46,12 +46,12 @@ public class LoadingUI : MonoBehaviour
     }
 
 
-    IEnumerator FadeIn()
+    public IEnumerator FadeIn()
     {
         yield return Fade(1, 1);
     }
 
-    IEnumerator FadeOut()
+    public IEnumerator FadeOut()
     {
         if (LoadCoroutine != null)
         {

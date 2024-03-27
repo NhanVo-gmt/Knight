@@ -153,12 +153,6 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
             StartCoroutine(OnSceneLoadingCompletedCoroutine());
         }
     }
-
-    #region Respawn
-
-    
-
-    #endregion
     
     #region Save Load
 

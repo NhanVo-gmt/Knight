@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Knight.Inventory;
 using Knight.Manager;
+using Knight.UI;
 using UnityEngine;
 
 public class Player : SingletonObject<Player>, IDataPersistence
@@ -226,6 +227,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     #region Player Methods
 
     private readonly float RespawnPosYOffset = 0.3f;
+    private readonly float TimeBeforeFadeIn = 1f;
     
     public void ChangePosition(Vector2 newPos)
     {
@@ -234,14 +236,17 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     private IEnumerator ChangePositionCoroutine(Vector2 newPos)
     {
+        yield return GameCanvas.Instance.FadeInLoadingUI();
+        
         newPos.y += RespawnPosYOffset;
         
         inputManager.Toggle(false);
-        
         inputManager.ResetAllInput();
+        
         movement.SetPosition(newPos);
 
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(TimeBeforeFadeIn);
+        yield return GameCanvas.Instance.FadeOutLoadingUI();
         
         movement.SetVelocityZero();
         inputManager.Toggle(true);
