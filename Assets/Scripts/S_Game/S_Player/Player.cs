@@ -227,7 +227,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     #region Player Methods
 
     private readonly float RespawnPosYOffset = 0.3f;
-    private readonly float TimeBeforeFadeIn = 1f;
+    private readonly float TimeBeforeFadeIn = 0.2f;
     
     public void ChangePosition(Vector2 newPos)
     {
@@ -236,7 +236,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     private IEnumerator ChangePositionCoroutine(Vector2 newPos)
     {
-        yield return GameCanvas.Instance.FadeInLoadingUI();
+        yield return LightManager.Instance.FadeIn();
         
         newPos.y += RespawnPosYOffset;
         
@@ -246,7 +246,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
         movement.SetPosition(newPos);
 
         yield return new WaitForSeconds(TimeBeforeFadeIn);
-        yield return GameCanvas.Instance.FadeOutLoadingUI();
+        yield return LightManager.Instance.FadeOut();
         
         movement.SetVelocityZero();
         inputManager.Toggle(true);
