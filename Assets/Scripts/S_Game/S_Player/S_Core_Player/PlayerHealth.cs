@@ -14,6 +14,6 @@ public class PlayerHealth : Health
 
     protected override bool IsInvulnerable()
     {
-        return recoveryController != null && recoveryController.IsInInvulnerabiltyTime();
+        return recoveryController != null && recoveryController.IsInInvulnerabilityTime();
     }
 }

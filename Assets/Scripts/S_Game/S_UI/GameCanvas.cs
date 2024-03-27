@@ -18,12 +18,14 @@ namespace Knight.UI
         
         [SerializeField] CanvasGroup inGameUI;
         private PlayerMenuUI playerMenuUI;
+        private LoadingUI loadingUI;
 
         protected override void Awake()
         {
             base.Awake();
             currentState = CanvasState.None;
             playerMenuUI = GetComponentInChildren<PlayerMenuUI>();
+            loadingUI = GetComponentInChildren<LoadingUI>();
         }
 
         private void Start()
@@ -31,6 +33,8 @@ namespace Knight.UI
             SceneLoader.Instance.OnSceneBeforeLoading += HideGameUI;
             SceneLoader.Instance.OnSceneReadyToPlay += ShowGameUI;
         }
+
+        #region In Game UI
 
         private void HideGameUI(object sender, EventArgs e)
         {
@@ -43,6 +47,11 @@ namespace Knight.UI
             inGameUI.alpha = 1f;
             //todo dialogue
         }
+
+        #endregion
+
+
+        #region Menu UI
 
         public void TogglePlayerMenuUI()
         {
@@ -68,10 +77,28 @@ namespace Knight.UI
             playerMenuUI.OpenPreviousTab();
         }
 
+        #endregion
+
+
         public bool IsOpen()
         {
             return currentState != CanvasState.None;
         }
+
+        #region Loading UI
+
+        public IEnumerator FadeInLoadingUI()
+        {
+            yield return loadingUI.FadeIn();
+        }
+        
+        public IEnumerator FadeOutLoadingUI()
+        {
+            yield return loadingUI.FadeOut();
+        }
+
+        #endregion
+
     }
     
 }

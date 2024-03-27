@@ -105,7 +105,7 @@ public class AnimatorController : CoreComponent
 
     #region Effect
 
-    public void StartHitVFX()
+    public void StartHitVFX(bool needToResetPlayerPosition = false)
     {
         StartBlinking();
         StartFlashing();

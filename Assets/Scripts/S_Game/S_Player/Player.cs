@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Knight.Inventory;
 using Knight.Manager;
+using Knight.UI;
 using UnityEngine;
 
 public class Player : SingletonObject<Player>, IDataPersistence
@@ -34,20 +35,23 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
     #region Core Component
 
-    InteractionController interactionController;
+    private InteractionController interactionController;
     private Movement movement;
+    private Combat combat;
 
     #endregion
 
     [Header("Data")]
     [SerializeField] PlayerData data;
-    StateMachine stateMachine;
-    Core core;
+    public Vector2 lastGroundPosition;
+    
+    private StateMachine stateMachine;
+    private Core core;
     private Rigidbody2D rb;
+    public InputManager inputManager {get; private set;}
 
     private string initState = "IdleState";
     
-    public InputManager inputManager {get; private set;}
 
     private bool isGamePaused = false;
 
@@ -86,12 +90,12 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     private void SceneLoader_OnSceneBeforeLoading(object sender, EventArgs e)
     {
-        inputManager.SetActive(false);
+        inputManager.Toggle(false);
     }
     
     private void SceneLoader_OnScenePlay(object sender, EventArgs e)
     {
-        inputManager.SetActive(true);
+        inputManager.Toggle(true);
         rb.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
 
         if (stateMachine.currentState == restState) return;
@@ -119,6 +123,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
         {
             stateMachine.Initialize(idleState);
         }
+
+        lastGroundPosition = transform.position;
     }
 
     void GetCoreComponent()
@@ -126,8 +132,9 @@ public class Player : SingletonObject<Player>, IDataPersistence
         interactionController = core.GetCoreComponent<InteractionController>();
         movement = core.GetCoreComponent<Movement>();
         movement.InitializeData(data);
-        
-        SetupCombatComponent(core.GetCoreComponent<Combat>());
+
+        combat = core.GetCoreComponent<Combat>();
+        SetupCombatComponent(combat);
         SetupHealthComponent(core.GetCoreComponent<Health>());
         SetupRecoveryComponent(core.GetCoreComponent<RecoveryController>());
         SetupCollisionSenseComponent(core.GetCoreComponent<CollisionSenses>());
@@ -217,14 +224,54 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     #endregion
 
-    public void ChangeScenePosition(Vector2 newPos)
+    #region Player Methods
+
+    private readonly float RespawnPosYOffset = 0.3f;
+    private readonly float TimeBeforeFadeIn = 0.2f;
+    
+    public void ChangePosition(Vector2 newPos)
     {
-        inputManager.ResetInput();
+        StartCoroutine(ChangePositionCoroutine(newPos));
+    }
+    
+    private IEnumerator ChangePositionCoroutine(Vector2 newPos)
+    {
+        yield return LightManager.Instance.FadeIn();
+        
+        newPos.y += RespawnPosYOffset;
+        
+        inputManager.Toggle(false);
+        inputManager.ResetAllInput();
+        
+        movement.SetPosition(newPos);
+
+        yield return new WaitForSeconds(TimeBeforeFadeIn);
+        yield return LightManager.Instance.FadeOut();
+        
         movement.SetVelocityZero();
-        transform.position = newPos;
+        inputManager.Toggle(true);
     }
 
-    #region Get 
+    public void UpdateLastGroundPosition(Vector2 newGroundPosition)
+    {
+        lastGroundPosition = newGroundPosition;
+    }
+
+    public void ResetGroundPosition()
+    {
+        StartCoroutine(ResetGroundPositionCoroutine());
+    }
+
+    private IEnumerator ResetGroundPositionCoroutine()
+    {
+        yield return new WaitForSeconds(0.01f);
+        ChangePosition(lastGroundPosition);
+    }
+
+    #endregion
+
+
+    #region Get Methods
 
     public T GetCoreComponent<T>() where T : CoreComponent
     {
@@ -246,7 +293,9 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
 
     #endregion
-    
+
+    #region Save Load
+
     public void LoadData(GameData gameData)
     {
         // Player movePos will be load by scene loader
@@ -266,4 +315,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         gameData.playerPos = transform.position;
     }
+    
+
+    #endregion
+    
 }

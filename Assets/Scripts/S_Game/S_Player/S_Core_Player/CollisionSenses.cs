@@ -11,6 +11,15 @@ public class CollisionSenses : CoreComponent
     [SerializeField] LayerMask groundMask;
     [SerializeField] LayerMask jumpThroughMask;
     [SerializeField] private Transform noGroundCheck;
+
+    [Header("Respawn check")] 
+    [SerializeField] private Transform[] respawnChecks;
+    [SerializeField] private Vector2 respawnCheckBox;
+    
+    [Header("Trap check")]
+    [SerializeField] private Transform trapCheck;
+    [SerializeField] private Vector2 trapCheckBox;
+    [SerializeField] private LayerMask trapMask;
     
     [Header("Wall Check")]
     [SerializeField] Transform climableWallCheck;
@@ -45,7 +54,36 @@ public class CollisionSenses : CoreComponent
                 Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, jumpThroughMask)) &&
                !Physics2D.OverlapBox(noGroundCheck.position, groundCheckBox, 0, groundMask);
     }
-    
+
+    public bool isGroundRespawn
+    {
+        get
+        {
+            return !isTrap && (IsGroundRespawn(groundMask) || IsGroundRespawn(jumpThroughMask));
+        }
+    }
+
+    public bool IsGroundRespawn(int mask)
+    {
+        foreach (Transform respawnCheck in respawnChecks)
+        {
+            if (!Physics2D.OverlapBox(respawnCheck.position, respawnCheckBox, 0, mask))
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public bool isTrap
+    {
+        get
+        {
+            return Physics2D.OverlapBox(trapCheck.position, trapCheckBox, 0, trapMask);
+        }
+    }
+
     public bool isJumpThroughPlatform
     {
         get => Physics2D.OverlapBox(groundCheck.position, groundCheckBox, 0, jumpThroughMask) &&
@@ -90,6 +128,14 @@ public class CollisionSenses : CoreComponent
         Gizmos.DrawWireCube(groundCheck.position, groundCheckBox);
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(noGroundCheck.position, groundCheckBox);
+
+        Gizmos.color = Color.yellow;
+        foreach (Transform respawnCheck in respawnChecks)
+        {
+            Gizmos.DrawWireCube(respawnCheck.position, respawnCheckBox);
+        }
+        
+        Gizmos.DrawWireCube(trapCheck.position, trapCheckBox);
 
         Gizmos.color = Color.blue;
         Gizmos.DrawRay(climableWallCheck.position, Vector2.left * climableWallCheckDistance);

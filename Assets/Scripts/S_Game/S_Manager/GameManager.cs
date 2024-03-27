@@ -86,17 +86,29 @@ namespace Knight.Manager
         }
 
         #region General Methods
-
+        
         public void Sleep(float duration)
         {
-            StartCoroutine(PerformSleep(duration));
+            StartCoroutine(PerformSleep(duration, null, null));
         }
 
-        IEnumerator PerformSleep(float duration)
+        public void Sleep(float duration, Action methodsBeforeSleep, Action methodsAfterSleep)
         {
+            StartCoroutine(PerformSleep(duration, methodsBeforeSleep, methodsAfterSleep));
+        }
+
+
+        IEnumerator PerformSleep(float duration, Action methodsBeforeSleep, Action methodsAfterSleep)
+        {
+            methodsBeforeSleep?.Invoke();
+            
+            yield return new WaitForSeconds(0.01f);
+            
             Time.timeScale = 0f;
             yield return new WaitForSecondsRealtime(duration);
             Time.timeScale = 1f;
+            
+            methodsAfterSleep?.Invoke();
         }
 
         #endregion
