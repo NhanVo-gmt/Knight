@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Manager;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Enemy : MonoBehaviour
 {
@@ -21,16 +23,16 @@ public class Enemy : MonoBehaviour
         combat = core.GetCoreComponent<Combat>();
         health = core.GetCoreComponent<Health>();
         SetupComponent();
-        
+
+        health.OnTakeDamage += PlayHitClip;
         health.OnDie += Die;
     }
-    
+
     void SetupComponent()
     {
         combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.KnockbackType);
         health.SetHealth(data.healthData); 
     }
-
 
     private void Die()
     {
@@ -40,4 +42,13 @@ public class Enemy : MonoBehaviour
         }
         gameObject.SetActive(false);
     }
+
+    #region Play Sound
+    
+    private void PlayHitClip(bool obj)
+    {
+        SoundManager.Instance.PlayOneShot(data.GetRandomHitClip());
+    }
+
+    #endregion
 }

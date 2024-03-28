@@ -11,4 +11,12 @@ public class EnemyData : ScriptableObject
     public IDamageable.KnockbackType KnockbackType = IDamageable.KnockbackType.weak;
 
     [Header("Drop")] public int numberOfSoulDropped;
+
+    [Header("Sound")] 
+    public AudioClip[] hitClips;
+
+    public AudioClip GetRandomHitClip()
+    {
+        return hitClips[Random.Range(0, hitClips.Length)];
+    }
 }
