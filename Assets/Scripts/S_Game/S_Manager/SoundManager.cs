@@ -57,7 +57,6 @@ namespace Knight.Manager
         public void PlayOneShot(AudioClip clip)
         {
             audioSource.PlayOneShot(clip);
-            Debug.Log(clip);
         }
 
         #region Environment Sound

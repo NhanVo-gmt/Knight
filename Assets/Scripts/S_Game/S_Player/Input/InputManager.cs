@@ -147,6 +147,7 @@ public class InputManager : MonoBehaviour
 
     public void UseMeleeAttackInput()
     {
+        // ResetAllInput();
         meleeAttackInput = false;
     }
 
