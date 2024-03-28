@@ -45,7 +45,7 @@ public class MoveState : GroundState
         if (lastSoundPlayTime <= 0f)
         {
             lastSoundPlayTime = soundPlayInterval;
-            SoundManager.Instance.PlayOneShot(data.moveData.clip);
+            SoundManager.Instance.PlayMoveClip();
         }
     }
 

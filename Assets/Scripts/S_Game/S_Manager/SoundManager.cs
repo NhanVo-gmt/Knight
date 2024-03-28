@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 namespace Knight.Manager
@@ -13,25 +14,29 @@ namespace Knight.Manager
         {
             public SceneLoaderEnum.Region region;
             public List<AudioClip> clips;
+            public AudioClip moveClip;
+            public AudioClip landClip;
         }
         
         [SerializeField] private List<RegionClip> regionClips;
+
+        private RegionClip currentRegionClip;
         
         private SceneLoader sceneLoader;
-        
-        [SerializeField] private AudioSource backgroundAudioSource;
-        [SerializeField] private AudioSource environmentAudioSource;
+        private AudioSource audioSource;
 
         protected override void Awake()
         {
             base.Awake();
-            
+
+            audioSource = GetComponent<AudioSource>();
             sceneLoader = GetComponentInParent<SceneLoader>();
         }
 
         private void OnEnable()
         {
             sceneLoader.OnChangedRegion += ChangeBackgroundMusic;
+            ChangeBackgroundMusic(this, sceneLoader.GetCurrentRegion());
         }
 
         private void ChangeBackgroundMusic(object sender, SceneLoaderEnum.Region newRegion)
@@ -40,8 +45,10 @@ namespace Knight.Manager
             {
                 if (regionClip.region == newRegion)
                 {
-                    backgroundAudioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
-                    backgroundAudioSource.Play();
+                    currentRegionClip = regionClip;
+                    
+                    audioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
+                    audioSource.Play();
                     return;
                 }
             }
@@ -49,7 +56,8 @@ namespace Knight.Manager
 
         public void PlayOneShot(AudioClip clip)
         {
-            backgroundAudioSource.PlayOneShot(clip);
+            audioSource.PlayOneShot(clip);
+            Debug.Log(clip);
         }
 
         #region Environment Sound
@@ -61,8 +69,18 @@ namespace Knight.Manager
         {
             PlayOneShot(grassHitClip);
         }
-        
 
+        public void PlayLandClip()
+        {
+            PlayOneShot(currentRegionClip.landClip);
+        }
+
+        public void PlayMoveClip()
+        {
+            PlayOneShot(currentRegionClip.moveClip);
+        }
+        
         #endregion
+
     }
 }

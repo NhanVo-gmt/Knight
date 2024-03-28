@@ -17,13 +17,14 @@ public class AttackState : AbilityState
     {
         base.Enter();
 
+        
         movement.SetVelocityZero();
         PlaySound();
     }
     
     private void PlaySound()
     {
-        SoundManager.Instance.PlayOneShot(data.jumpData.clip);
+        SoundManager.Instance.PlayOneShot(data.jumpData.clip); //todo
     }
 
     public override void Exit()

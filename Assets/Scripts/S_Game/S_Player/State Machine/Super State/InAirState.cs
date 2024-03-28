@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Knight.Camera;
+using Knight.Manager;
 using UnityEngine;
 
 public class InAirState : State
@@ -70,7 +71,7 @@ public class InAirState : State
         {
             stateMachine.ChangeState(player.idleState);
             SpawnLandVFX();
-            particleController.PlaylandParticle(true);
+            PlaySound();
         }
     }
     
@@ -87,6 +88,12 @@ public class InAirState : State
     void SpawnLandVFX()
     {
         vfx.SpawnPooledPrefab(data.jumpData.jumpVFX, movement.transform.position, movement.faceDirection);
+        particleController.PlaylandParticle(true);
+    }
+
+    void PlaySound()
+    {
+        SoundManager.Instance.PlayLandClip();
     }
 
     void PlayAnimation()
