@@ -5347,6 +5347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 1
 --- !u!212 &97426110
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6121,6 +6122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 1
 --- !u!4 &366421320 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3977834672351874045, guid: 40966e2911f9e7248b2f656795a959e2, type: 3}
@@ -13256,6 +13258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 0
 --- !u!1 &658165969
 GameObject:
   m_ObjectHideFlags: 0
@@ -13785,6 +13788,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 0
 --- !u!4 &854304695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8147196407887802442, guid: 2fbc058aeea4891408a62ffb0c78e7a9, type: 3}
@@ -14473,6 +14477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 0
 --- !u!1 &1005363127
 GameObject:
   m_ObjectHideFlags: 0
@@ -15055,6 +15060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 0
 --- !u!1 &1216697920
 GameObject:
   m_ObjectHideFlags: 0
@@ -15192,13 +15198,13 @@ Transform:
   - {fileID: 1532949091}
   - {fileID: 97426107}
   - {fileID: 346864007}
+  - {fileID: 1880540149}
   - {fileID: 842331448}
   - {fileID: 2103319941}
   - {fileID: 1003375271}
   - {fileID: 648800376}
   - {fileID: 853243930}
   - {fileID: 1168142046}
-  - {fileID: 1880540149}
   - {fileID: 994887142}
   - {fileID: 1370165231}
   - {fileID: 366421320}
@@ -15739,6 +15745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 1
 --- !u!1 &1578293361
 GameObject:
   m_ObjectHideFlags: 0
@@ -16828,6 +16835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 1
 --- !u!1 &1903646489
 GameObject:
   m_ObjectHideFlags: 0
@@ -17664,6 +17672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db78a152443640c4e8949fc5bfa4fd3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPlaySound: 0
 --- !u!1001 &2144928934
 PrefabInstance:
   m_ObjectHideFlags: 0

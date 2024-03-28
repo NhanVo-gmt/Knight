@@ -32,6 +32,7 @@ public class GameSettings : SingletonObject<GameSettings>
 
     public Material flashGlowMat;
 
+
     public Action OnGameInitialized;
 
     public void StartGame()
@@ -48,9 +49,5 @@ public class GameSettings : SingletonObject<GameSettings>
     {
         return mapData.GetExit(scene, id);
     }
-    //
-    // public void AssignExit()
-    // {
-    //     Exit 
-    // }
+
 }

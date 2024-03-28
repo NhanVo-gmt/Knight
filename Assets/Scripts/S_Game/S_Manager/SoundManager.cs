@@ -17,15 +17,16 @@ namespace Knight.Manager
         
         [SerializeField] private List<RegionClip> regionClips;
         
-        private AudioSource audioSource;
         private SceneLoader sceneLoader;
+        
+        [SerializeField] private AudioSource backgroundAudioSource;
+        [SerializeField] private AudioSource environmentAudioSource;
 
         protected override void Awake()
         {
             base.Awake();
             
-            audioSource = GetComponent<AudioSource>();
-            sceneLoader = GetComponent<SceneLoader>();
+            sceneLoader = GetComponentInParent<SceneLoader>();
         }
 
         private void OnEnable()
@@ -39,8 +40,8 @@ namespace Knight.Manager
             {
                 if (regionClip.region == newRegion)
                 {
-                    audioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
-                    audioSource.Play();
+                    backgroundAudioSource.clip = regionClip.clips[Random.Range(0, regionClip.clips.Count)];
+                    backgroundAudioSource.Play();
                     return;
                 }
             }
@@ -48,7 +49,20 @@ namespace Knight.Manager
 
         public void PlayOneShot(AudioClip clip)
         {
-            audioSource.PlayOneShot(clip);
+            backgroundAudioSource.PlayOneShot(clip);
         }
+
+        #region Environment Sound
+        
+        [Header("Sound Effect")] 
+        public AudioClip grassHitClip;
+        
+        public void PlayGrassHitClip()
+        {
+            PlayOneShot(grassHitClip);
+        }
+        
+
+        #endregion
     }
 }
