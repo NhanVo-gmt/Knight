@@ -34,6 +34,11 @@ public class LightManager : SingletonObject<LightManager>
 
     private void LoadGlobalLight()
     {
+        if (GameObject.FindWithTag("GlobalLight") == null)
+        {
+            Debug.LogError("Please add global light with the same Tag");
+        }
+        
         globalLight = GameObject.FindWithTag("GlobalLight").GetComponent<Light2D>();
         currentIntensity = globalLight.intensity;
 

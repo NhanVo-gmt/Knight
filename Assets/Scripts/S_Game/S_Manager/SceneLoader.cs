@@ -17,8 +17,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public EventHandler OnScenePlay;
     public EventHandler<SceneLoaderEnum.Region> OnChangedRegion;
 
-    private SceneLoaderEnum.Scene currentScene = SceneLoaderEnum.Scene.FarmScene;
-    private SceneLoaderEnum.Region currentRegion = SceneLoaderEnum.Region.Farm;
+    [SerializeField] private SceneLoaderEnum.Scene currentScene = SceneLoaderEnum.Scene.FarmScene;
+    [SerializeField] private SceneLoaderEnum.Region currentRegion = SceneLoaderEnum.Region.Farm;
 
     private Vector2 playerStartPos;
 
@@ -29,6 +29,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         base.Awake();
         currentScene = GetSceneFromUnityScene(SceneManager.GetActiveScene().name);
         currentRegion = GetRegion(currentScene);
+        OnChangedRegion?.Invoke(this, currentRegion);
     }
 
     #region Get Methods

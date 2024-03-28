@@ -14,13 +14,13 @@ namespace Knight.Manager
         {
             public SceneLoaderEnum.Region region;
             public List<AudioClip> clips;
-            public AudioClip moveClip;
+            public AudioClip[] moveClips;
             public AudioClip landClip;
         }
         
         [SerializeField] private List<RegionClip> regionClips;
 
-        private RegionClip currentRegionClip;
+        [SerializeField] private RegionClip currentRegionClip;
         
         private SceneLoader sceneLoader;
         private AudioSource audioSource;
@@ -36,7 +36,6 @@ namespace Knight.Manager
         private void OnEnable()
         {
             sceneLoader.OnChangedRegion += ChangeBackgroundMusic;
-            ChangeBackgroundMusic(this, sceneLoader.GetCurrentRegion());
         }
 
         private void ChangeBackgroundMusic(object sender, SceneLoaderEnum.Region newRegion)
@@ -76,7 +75,7 @@ namespace Knight.Manager
 
         public void PlayMoveClip()
         {
-            PlayOneShot(currentRegionClip.moveClip);
+            PlayOneShot(currentRegionClip.moveClips[Random.Range(0, currentRegionClip.moveClips.Length)]);
         }
         
         #endregion

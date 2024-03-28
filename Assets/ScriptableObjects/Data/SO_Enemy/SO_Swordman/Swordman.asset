@@ -15,3 +15,5 @@ MonoBehaviour:
   healthData: {fileID: 11400000, guid: d6117beb622795a43bc489b926a4034a, type: 2}
   KnockbackType: 1
   numberOfSoulDropped: 2
+  hitClips:
+  - {fileID: 8300000, guid: a445cca456a56b548bc4ae7408a12064, type: 3}

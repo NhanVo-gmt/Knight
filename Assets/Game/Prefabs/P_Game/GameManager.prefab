@@ -50,11 +50,27 @@ MonoBehaviour:
   - region: 1
     clips:
     - {fileID: 8300000, guid: 75ba0e103f87521438087c5c579b81ff, type: 3}
-  - region: 2
+    moveClips:
+    - {fileID: 8300000, guid: ea133985f2442984e8e200eaa3018a2d, type: 3}
+    landClip: {fileID: 8300000, guid: 89dd0dcb2a475944c9a7c25ca5ef827d, type: 3}
+  - region: 3
     clips:
     - {fileID: 8300000, guid: 056ab0f3d00865944a32e75a467ad2b3, type: 3}
-  backgroundAudioSource: {fileID: 5944004602486292804}
-  environmentAudioSource: {fileID: 0}
+    moveClips:
+    - {fileID: 8300000, guid: ea133985f2442984e8e200eaa3018a2d, type: 3}
+    landClip: {fileID: 8300000, guid: 89dd0dcb2a475944c9a7c25ca5ef827d, type: 3}
+  - region: 2
+    clips:
+    - {fileID: 8300000, guid: 4f4b8738363c5154cb237e465233fb46, type: 3}
+    moveClips:
+    - {fileID: 8300000, guid: 034e37fd7f384ef46bd4c1158d76efc3, type: 3}
+    - {fileID: 8300000, guid: 4ca6c8f1ea5ae2b44b5cbd688a470b62, type: 3}
+    landClip: {fileID: 0}
+  currentRegionClip:
+    region: 0
+    clips: []
+    moveClips: []
+    landClip: {fileID: 0}
   grassHitClip: {fileID: 8300000, guid: d08c78a3cd75db448ac3ef918c0cd57f, type: 3}
 --- !u!82 &5944004602486292804
 AudioSource:
@@ -352,6 +368,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f8249489dd83647b3edb0417281089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentScene: 100
+  currentRegion: 1
 --- !u!114 &8198752495978295821
 MonoBehaviour:
   m_ObjectHideFlags: 0
