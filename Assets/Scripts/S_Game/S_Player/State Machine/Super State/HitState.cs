@@ -29,11 +29,10 @@ public class HitState : State
         if (needToResetPlayerPosition)
         {
             GameManager.Instance.Sleep(data.hitData.hitResetSleepTime, () => BeforeHit(), () => AfterHit());
-            
         }
         else
         {
-            GameManager.Instance.Sleep(data.hitData.hitSleepTime);
+            GameManager.Instance.Sleep(data.hitData.hitSleepTime, () => BeforeHit(), null);
         }
     }
 

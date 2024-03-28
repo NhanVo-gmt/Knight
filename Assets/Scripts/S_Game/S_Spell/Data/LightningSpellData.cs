@@ -19,7 +19,7 @@ public class LightningSpellData : SpellData
     private Transform playerTransform;
     private Animator anim;
 
-    private int lightningID = Animator.StringToHash("lightning");
+    private int lightningID = Animator.StringToHash("thunder");
     
     public override void Initialize(SpellParams spellParams)
     {
