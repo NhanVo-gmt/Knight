@@ -9,12 +9,15 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyData data;
     
-    Core core;
-    Collider2D col;
-    Health health;
-    Combat combat;
+    private Collider2D col;
+    private AudioSource source;
+    private Core core;
+    private Health health;
+    private Combat combat;
 
-    void Awake() {
+    void Awake()
+    {
+        source = GetComponent<AudioSource>();
         core = GetComponentInChildren<Core>();
     }
 
@@ -47,7 +50,7 @@ public class Enemy : MonoBehaviour
     
     private void PlayHitClip(bool obj)
     {
-        SoundManager.Instance.PlayOneShot(data.GetRandomHitClip());
+        source.PlayOneShot(data.GetRandomHitClip());
     }
 
     #endregion

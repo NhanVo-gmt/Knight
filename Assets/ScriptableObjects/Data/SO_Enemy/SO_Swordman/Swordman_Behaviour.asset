@@ -45,7 +45,7 @@ MonoBehaviour:
     description: 
   children:
   - {fileID: 5797330247967763411}
-  - {fileID: -6262050734411869432}
+  - {fileID: -1850024857829916043}
   - {fileID: -2689560405998143607}
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
@@ -168,7 +168,7 @@ MonoBehaviour:
     started: 0
     guid: d57851457efcfb8429c0af3ae0f7d49e
     Tree: {fileID: 11400000}
-    position: {x: 1798.3501, y: 741.1501}
+    position: {x: 1867.2002, y: 903.0002}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -201,6 +201,28 @@ MonoBehaviour:
   - {fileID: -2569019614002215591}
   - {fileID: -6669614294686334415}
   successType: 1
+--- !u!114 &-4223635108672468623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a727d3bd068ebb438263919d033e8a2, type: 3}
+  m_Name: AudioNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 4e55b003b9ebda242844e0abf5a40718
+    Tree: {fileID: 11400000}
+    position: {x: 1681.6005, y: 903.20026}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  clip: {fileID: 8300000, guid: bb1a1ec0bccc11c46b03ffb6cea54a65, type: 3}
 --- !u!114 &-3277262657561509140
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -399,6 +421,30 @@ MonoBehaviour:
   Title: 
   Description: 
   Position: {x: 0, y: 0}
+--- !u!114 &-1850024857829916043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: f0ac29a3013299242be069c2561b148a
+    Tree: {fileID: 11400000}
+    position: {x: 1784.4004, y: 740.8002}
+    Name: 
+    description: 
+  children:
+  - {fileID: -4223635108672468623}
+  - {fileID: -6262050734411869432}
+  successType: 1
 --- !u!114 &-1371449174156355120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +575,8 @@ MonoBehaviour:
   - {fileID: -161630774649195765}
   - {fileID: 7642780046652607835}
   - {fileID: -6264938787769378730}
+  - {fileID: -1850024857829916043}
+  - {fileID: -4223635108672468623}
   groups:
   - {fileID: -415846026619501417}
   - {fileID: -1371449174156355120}

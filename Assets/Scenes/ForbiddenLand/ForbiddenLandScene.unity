@@ -4629,6 +4629,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Swordman
       objectReference: {fileID: 0}
+    - target: {fileID: 5217418139784082804, guid: a1ff69b7f7ef4ee45901b27f9409e68d, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
