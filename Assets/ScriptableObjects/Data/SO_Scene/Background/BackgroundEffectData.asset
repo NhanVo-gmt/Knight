@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d248b919c521dc42979b51fb41d5ac9, type: 3}
+  m_Name: BackgroundEffectData
+  m_EditorClassIdentifier: 
+  BackgroundEffects:
+  - Name: Front
+    parallax: 0.7
+    blurMat: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - Name: Mid
+    parallax: 0.75
+    blurMat: {fileID: 2100000, guid: a8887bf47bcb4164ea977f92baecb42d, type: 2}
+  - Name: Back
+    parallax: 0.8
+    blurMat: {fileID: 2100000, guid: f82e5ef2c8da58845a8a20d859a64c3d, type: 2}
+  - Name: Backback
+    parallax: 0.85
+    blurMat: {fileID: 2100000, guid: f82e5ef2c8da58845a8a20d859a64c3d, type: 2}
+  - Name: Last
+    parallax: 0.9
+    blurMat: {fileID: 2100000, guid: 8d47eb8774c02b247b705786626d3d32, type: 2}
+  - Name: Sky
+    parallax: 0.9
+    blurMat: {fileID: 2100000, guid: 8d47eb8774c02b247b705786626d3d32, type: 2}

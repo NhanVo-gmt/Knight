@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 public static class SceneDesignMethods
 {
     private static readonly string SceneDataPath = "Assets/ScriptableObjects/Data/SO_Scene/SceneData.asset";
+    private static readonly string BackgroundEffectDataPath = "Assets/ScriptableObjects/Data/SO_Scene/Background/BackgroundEffectData.asset";
     
     [MenuItem("Knight/Scene/Exit Assigning")]
     static void AssigningExitInScene()
@@ -29,7 +30,6 @@ public static class SceneDesignMethods
 
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
     }
-
     
     static MapData LoadSceneData()
     {
@@ -56,7 +56,7 @@ public static class SceneDesignMethods
             {
                 foreach (Parallax parallax in parallaxArr)
                 {
-                    AssigningValue(parallax);
+                    AssigningParallaxValue(parallax);
                     AssigningStartPos(parallax, mapData);
                     
                     Debug.Log($"Assign for game object: {gameObject.name}");
@@ -71,24 +71,59 @@ public static class SceneDesignMethods
         parallax.startCamPos = mapData.GetImageStartPos(SceneManager.GetActiveScene().name);
     }
 
-    private static Dictionary<string, float> parallaxNameDictionary = new Dictionary<string, float>()
+    static void AssigningParallaxValue(Parallax parallax)
     {
-        {"Front", .7f},
-        {"Mid", .75f},
-        {"Back", .8f},
-        {"Backback", .85f},
-        {"Last", 0.9f},
-        {"Sky", 1},
-    };
-
-    static void AssigningValue(Parallax parallax)
-    {
-        foreach (string key in parallaxNameDictionary.Keys)
+        BackgroundEffectData data = LoadBackgroundEffectData();
+        if (data == null)
         {
-            if (parallax.gameObject.name.ToUpper().Equals(key.ToUpper()))
-            {
-                parallax.parralaxEffect = parallaxNameDictionary[key];
-            }
+            return;
+        }
+
+        SingleBackgroundEffect effect = data.GetEffect(parallax.gameObject.name);
+        if (effect != null)
+        {
+            parallax.parralaxEffect = effect.parallax;
+            return;
         }
     }
+    
+    static BackgroundEffectData LoadBackgroundEffectData()
+    {
+        BackgroundEffectData data = (BackgroundEffectData)AssetDatabase.LoadAssetAtPath(BackgroundEffectDataPath, typeof(BackgroundEffectData));
+        if (data != null)
+        {
+            return data;
+        }
+
+        Debug.LogError($"There is no Background Effect Data at path {BackgroundEffectDataPath}");
+        return null;
+    }
+    
+    [MenuItem("Knight/Scene/Blur Assigning")]
+    static void AutoAssigningBlur()
+    {
+        BackgroundEffectData data = LoadBackgroundEffectData();
+        if (data == null) return;
+        
+        foreach (GameObject gameObject in GameObject.FindObjectsOfType<GameObject>(true))
+        {
+            if (!gameObject.GetComponent<Parallax>())
+            {
+                continue;
+            }
+            
+            SingleBackgroundEffect effect = data.GetEffect(gameObject.name);
+            if (effect != null)
+            {
+                foreach (SpriteRenderer sprite in gameObject.GetComponentsInChildren<SpriteRenderer>())
+                {
+                    sprite.material = effect.blurMat;
+                    
+                    Debug.Log($"Assign for game object: {sprite. gameObject.name}");
+                }
+            }
+        }
+        EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
+    }
+
 }
