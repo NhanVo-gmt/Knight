@@ -10,14 +10,12 @@ public class Enemy : MonoBehaviour
     [SerializeField] private EnemyData data;
     
     private Collider2D col;
-    private AudioSource source;
     private Core core;
     private Health health;
     private Combat combat;
 
     void Awake()
     {
-        source = GetComponent<AudioSource>();
         core = GetComponentInChildren<Core>();
     }
 
@@ -39,6 +37,8 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        PlayHitClip();
+        
         for (int i = 0; i < data.numberOfSoulDropped; i++)
         {
             ObjectPoolManager.Instance.SpawnPooledPrefab(GameSettings.Instance.soul, transform.position, Vector2.left);
@@ -48,9 +48,9 @@ public class Enemy : MonoBehaviour
 
     #region Play Sound
     
-    private void PlayHitClip(bool obj)
+    private void PlayHitClip(bool obj = false)
     {
-        source.PlayOneShot(data.GetRandomHitClip());
+        SoundManager.Instance.PlayOneShot(data.GetRandomHitClip());
     }
 
     #endregion
