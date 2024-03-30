@@ -73,7 +73,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -85,7 +85,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638393670161104426
+  platformSettingsDirtyTick: 638474235260658977
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,7 +119,407 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: ForestBackground1
+  - name: Background_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.19047618}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1078
+      width: 600
+      height: 168
+    spriteID: 1f23ac6a9ebeaa14db8e50d778b47481
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1078}
+  - name: Background_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.19047618}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 612
+      y: 1078
+      width: 600
+      height: 168
+    spriteID: 942b977c3902b794d912475c377c1755
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 612, y: 1078}
+  - name: Background_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.19047618}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 1078
+      width: 600
+      height: 168
+    spriteID: 865d79679e9dc214db42edf9bb4ae055
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 1078}
+  - name: Background_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.19047618}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1254
+      width: 600
+      height: 168
+    spriteID: eb4ae6d1918320c4dbd5ca3a8d410f76
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1254}
+  - name: Background_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.19047618}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 612
+      y: 1254
+      width: 600
+      height: 168
+    spriteID: 446de7792b83b194682176dbe5ed61dc
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 612, y: 1254}
+  - name: Grass_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 1254
+      width: 600
+      height: 38
+    spriteID: 97aeb89b0787f0145b4a622f4817ad30
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 1254}
+  - name: Grass_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 1300
+      width: 600
+      height: 38
+    spriteID: e6b31fc4163b74f4fb1a4c67b4e9077c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 1300}
+  - name: Grass_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 1346
+      width: 600
+      height: 38
+    spriteID: 933dd33efa416b34abcaaf1fc495ad51
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 1346}
+  - name: Grass_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 418
+      y: 1430
+      width: 600
+      height: 38
+    spriteID: 7bde8ed790e1ba742b13fdda273f5fad
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 418, y: 1430}
+  - name: Grass_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.8421052}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1026
+      y: 1430
+      width: 600
+      height: 38
+    spriteID: 0a4e848c1a3f508499a2e0a0addc733f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1026, y: 1430}
+  - name: Background2_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.19791666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 242
+      width: 600
+      height: 192
+    spriteID: d5a5f2a1f7c276b4989326eb18d61ad6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 242}
+  - name: Background2_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.19791666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 480
+      width: 600
+      height: 192
+    spriteID: d3005b97f575da14fae048e14cf793fa
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 480}
+  - name: Background2_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.19791666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 612
+      y: 480
+      width: 600
+      height: 192
+    spriteID: 68980f75354ea7442a1992bb2e8cc5e2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 612, y: 480}
+  - name: Background2_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.19791666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 480
+      width: 600
+      height: 192
+    spriteID: f963f9fd015744d41870cf0765babe39
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 480}
+  - name: Background2_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.19791666}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 680
+      width: 600
+      height: 192
+    spriteID: d6a84c975fd91f740ba3c3cc91de8be2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 680}
+  - name: UpperGrass_Frame_0
+    originalName: 
+    pivot: {x: 0.5, y: -0.21052633}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 612
+      y: 680
+      width: 600
+      height: 190
+    spriteID: 3196af5952f711e47ac82faa6aaec7c7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 612, y: 680}
+  - name: UpperGrass_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: -0.21052633}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 680
+      width: 600
+      height: 190
+    spriteID: 0f560480de08b9f45b8cc089e419e4ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 680}
+  - name: UpperGrass_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: -0.21052633}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 880
+      width: 600
+      height: 190
+    spriteID: 2a7437ad67172b54aa4f9e4385d02060
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 880}
+  - name: UpperGrass_Frame_3
+    originalName: 
+    pivot: {x: 0.5, y: -0.21052633}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 612
+      y: 880
+      width: 600
+      height: 190
+    spriteID: 5aad6cb8b25f8e449af7b55adb138e56
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 612, y: 880}
+  - name: UpperGrass_Frame_4
+    originalName: 
+    pivot: {x: 0.5, y: -0.21052633}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 880
+      width: 600
+      height: 190
+    spriteID: 4f7eb1f597ecb984d877fc47368fad7b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 880}
+  - name: Lake_Frame_0
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -130,7 +530,7 @@ ScriptedImporter:
       y: 4
       width: 600
       height: 230
-    spriteID: d9f7cb58cee9cdb458b7921e946d7d9b
+    spriteID: 03f498795d7069e4ea61e2f908aac915
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,7 +539,47 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: ForestBackground1_Frame_1
+  - name: Lake_Frame_1
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 612
+      y: 4
+      width: 600
+      height: 230
+    spriteID: 291d3df903d9f9f4fa53d7123444cff4
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 612, y: 4}
+  - name: Lake_Frame_2
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1220
+      y: 4
+      width: 600
+      height: 230
+    spriteID: 28aabb0cee88ec84f84848ddead50bd7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1220, y: 4}
+  - name: Lake_Frame_3
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
@@ -150,7 +590,7 @@ ScriptedImporter:
       y: 242
       width: 600
       height: 230
-    spriteID: fbffcd12ae071ba46a0b7b47ff19ca0c
+    spriteID: ce5d2a4896917ac47b37bbf973732230
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -159,18 +599,18 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 242}
-  - name: ForestBackground1_Frame_2
+  - name: Lake_Frame_4
     originalName: 
     pivot: {x: 0.5, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 480
+      x: 612
+      y: 242
       width: 600
       height: 230
-    spriteID: 764967aeb7fe437458cc0fa8891c4dbc
+    spriteID: 9272c6225d1a460489841a84c4c70807
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +618,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 480}
-  - name: ForestBackground1_Frame_3
+    uvTransform: {x: 612, y: 242}
+  - name: Waterfall_Frame_0
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.45762715, y: -0.13861385}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 718
-      width: 600
-      height: 230
-    spriteID: d01063f39a1a13e488db43c4529baf9c
+      x: 292
+      y: 1430
+      width: 118
+      height: 202
+    spriteID: dd14f822f32d9c342bb7b37427a4db54
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,19 +638,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 718}
-  - name: ForestBackground1_Frame_4
+    uvTransform: {x: 292, y: 1430}
+  - name: Waterfall_Frame_1
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.46874997, y: -0.12745097}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 956
-      width: 600
-      height: 230
-    spriteID: 350d332b05989b64cad49add8cba2ce9
+      x: 156
+      y: 1430
+      width: 128
+      height: 204
+    spriteID: 0a7595329a089f54fb309f1f833fc174
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,56 +658,510 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 956}
+    uvTransform: {x: 156, y: 1430}
+  - name: Waterfall_Frame_2
+    originalName: 
+    pivot: {x: 0.45833337, y: -0.10576923}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 1430
+      width: 144
+      height: 208
+    spriteID: e63c5f59961982445a5ca12250d11784
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 1430}
+  - name: Waterfall_Frame_3
+    originalName: 
+    pivot: {x: 0.44871795, y: -0.084905654}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1828
+      y: 242
+      width: 156
+      height: 212
+    spriteID: 05406d5ff0bc4924f807f93e87ed0b78
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1828, y: 242}
+  - name: Waterfall_Frame_4
+    originalName: 
+    pivot: {x: 0.475, y: -0.06481481}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1828
+      y: 4
+      width: 160
+      height: 216
+    spriteID: 772d03204fa0edf4ab44130516efab52
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1828, y: 4}
+  - name: WaterfallRock_Frame_0
+    originalName: 
+    pivot: {x: 0.49999994, y: -2.9999998}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1932
+      y: 1346
+      width: 44
+      height: 44
+    spriteID: 6b3b3429dcfec474ea04c0e861c4f6ef
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1932, y: 1346}
+  - name: WaterfallRock_Frame_1
+    originalName: 
+    pivot: {x: 0.5416665, y: -0.17105263}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1996
+      y: 4
+      width: 48
+      height: 152
+    spriteID: 925b5ccf062130e4397bdecf2b990b43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1996, y: 4}
+  - name: WaterfallRock_Frame_2
+    originalName: 
+    pivot: {x: 0.49999994, y: -2.8695652}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1996
+      y: 164
+      width: 44
+      height: 46
+    spriteID: 8f8a75af9d11b094d94c1062a7552f87
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1996, y: 164}
+  - name: WaterfallRock_Frame_3
+    originalName: 
+    pivot: {x: 0.49999994, y: -2.8695652}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1828
+      y: 1346
+      width: 44
+      height: 46
+    spriteID: 149e7b05ca7b67d43b0809b9eb9d8281
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1828, y: 1346}
+  - name: WaterfallRock_Frame_4
+    originalName: 
+    pivot: {x: 0.49999994, y: -2.8695652}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1880
+      y: 1346
+      width: 44
+      height: 46
+    spriteID: 08b53aa3781343d44a5541f9a01d27c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1880, y: 1346}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 95855638
-    name: ForestBackground1
-    layerFlags: 0
+    guid: -1021688250
+    name: Background
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: ForestBackground1_Frame_0
+    - name: Background_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 168
+      spriteId: 1f23ac6a9ebeaa14db8e50d778b47481
+    - name: Background_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 168
+      spriteId: 942b977c3902b794d912475c377c1755
+    - name: Background_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 168
+      spriteId: 865d79679e9dc214db42edf9bb4ae055
+    - name: Background_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 168
+      spriteId: eb4ae6d1918320c4dbd5ca3a8d410f76
+    - name: Background_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 168
+      spriteId: 446de7792b83b194682176dbe5ed61dc
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -454194219
+    name: Grass
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Grass_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 38
+      spriteId: 97aeb89b0787f0145b4a622f4817ad30
+    - name: Grass_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 38
+      spriteId: e6b31fc4163b74f4fb1a4c67b4e9077c
+    - name: Grass_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 38
+      spriteId: 933dd33efa416b34abcaaf1fc495ad51
+    - name: Grass_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 38
+      spriteId: 7bde8ed790e1ba742b13fdda273f5fad
+    - name: Grass_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 32
+        width: 600
+        height: 38
+      spriteId: 0a4e848c1a3f508499a2e0a0addc733f
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 2007196062
+    name: Background2
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Background2_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 38
+        width: 600
+        height: 192
+      spriteId: d5a5f2a1f7c276b4989326eb18d61ad6
+    - name: Background2_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 38
+        width: 600
+        height: 192
+      spriteId: d3005b97f575da14fae048e14cf793fa
+    - name: Background2_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 38
+        width: 600
+        height: 192
+      spriteId: 68980f75354ea7442a1992bb2e8cc5e2
+    - name: Background2_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 38
+        width: 600
+        height: 192
+      spriteId: f963f9fd015744d41870cf0765babe39
+    - name: Background2_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 38
+        width: 600
+        height: 192
+      spriteId: d6a84c975fd91f740ba3c3cc91de8be2
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 343904159
+    name: UpperGrass
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: UpperGrass_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 40
+        width: 600
+        height: 190
+      spriteId: 3196af5952f711e47ac82faa6aaec7c7
+    - name: UpperGrass_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 0
+        y: 40
+        width: 600
+        height: 190
+      spriteId: 0f560480de08b9f45b8cc089e419e4ee
+    - name: UpperGrass_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 0
+        y: 40
+        width: 600
+        height: 190
+      spriteId: 2a7437ad67172b54aa4f9e4385d02060
+    - name: UpperGrass_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 0
+        y: 40
+        width: 600
+        height: 190
+      spriteId: 5aad6cb8b25f8e449af7b55adb138e56
+    - name: UpperGrass_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 0
+        y: 40
+        width: 600
+        height: 190
+      spriteId: 4f7eb1f597ecb984d877fc47368fad7b
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: 885374143
+    name: Lake
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Lake_Frame_0
       frameIndex: 0
       cellRect:
         x: 0
         y: 0
         width: 600
         height: 230
-      spriteId: d9f7cb58cee9cdb458b7921e946d7d9b
-    - name: ForestBackground1_Frame_1
+      spriteId: 03f498795d7069e4ea61e2f908aac915
+    - name: Lake_Frame_1
       frameIndex: 1
       cellRect:
         x: 0
         y: 0
         width: 600
         height: 230
-      spriteId: fbffcd12ae071ba46a0b7b47ff19ca0c
-    - name: ForestBackground1_Frame_2
+      spriteId: 291d3df903d9f9f4fa53d7123444cff4
+    - name: Lake_Frame_2
       frameIndex: 2
       cellRect:
         x: 0
         y: 0
         width: 600
         height: 230
-      spriteId: 764967aeb7fe437458cc0fa8891c4dbc
-    - name: ForestBackground1_Frame_3
+      spriteId: 28aabb0cee88ec84f84848ddead50bd7
+    - name: Lake_Frame_3
       frameIndex: 3
       cellRect:
         x: 0
         y: 0
         width: 600
         height: 230
-      spriteId: d01063f39a1a13e488db43c4529baf9c
-    - name: ForestBackground1_Frame_4
+      spriteId: ce5d2a4896917ac47b37bbf973732230
+    - name: Lake_Frame_4
       frameIndex: 4
       cellRect:
         x: 0
         y: 0
         width: 600
         height: 230
-      spriteId: 350d332b05989b64cad49add8cba2ce9
+      spriteId: 9272c6225d1a460489841a84c4c70807
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 5
+    guid: -161537195
+    name: Waterfall
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Waterfall_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 246
+        y: 28
+        width: 118
+        height: 202
+      spriteId: dd14f822f32d9c342bb7b37427a4db54
+    - name: Waterfall_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 240
+        y: 26
+        width: 128
+        height: 204
+      spriteId: 0a7595329a089f54fb309f1f833fc174
+    - name: Waterfall_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 234
+        y: 22
+        width: 144
+        height: 208
+      spriteId: e63c5f59961982445a5ca12250d11784
+    - name: Waterfall_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 230
+        y: 18
+        width: 156
+        height: 212
+      spriteId: 05406d5ff0bc4924f807f93e87ed0b78
+    - name: Waterfall_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 224
+        y: 14
+        width: 160
+        height: 216
+      spriteId: 772d03204fa0edf4ab44130516efab52
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 6
+    guid: -1371688395
+    name: WaterfallRock
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: WaterfallRock_Frame_0
+      frameIndex: 0
+      cellRect:
+        x: 278
+        y: 132
+        width: 44
+        height: 44
+      spriteId: 6b3b3429dcfec474ea04c0e861c4f6ef
+    - name: WaterfallRock_Frame_1
+      frameIndex: 1
+      cellRect:
+        x: 274
+        y: 26
+        width: 48
+        height: 152
+      spriteId: 925b5ccf062130e4397bdecf2b990b43
+    - name: WaterfallRock_Frame_2
+      frameIndex: 2
+      cellRect:
+        x: 278
+        y: 132
+        width: 44
+        height: 46
+      spriteId: 8f8a75af9d11b094d94c1062a7552f87
+    - name: WaterfallRock_Frame_3
+      frameIndex: 3
+      cellRect:
+        x: 278
+        y: 132
+        width: 44
+        height: 46
+      spriteId: 149e7b05ca7b67d43b0809b9eb9d8281
+    - name: WaterfallRock_Frame_4
+      frameIndex: 4
+      cellRect:
+        x: 278
+        y: 132
+        width: 44
+        height: 46
+      spriteId: 08b53aa3781343d44a5541f9a01d27c2
     linkedCells: []
     parentIndex: -1
   platformSettings:

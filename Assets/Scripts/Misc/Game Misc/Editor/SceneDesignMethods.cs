@@ -56,7 +56,6 @@ public static class SceneDesignMethods
             {
                 foreach (Parallax parallax in parallaxArr)
                 {
-                    
                     AssigningValue(parallax);
                     AssigningStartPos(parallax, mapData);
                     
