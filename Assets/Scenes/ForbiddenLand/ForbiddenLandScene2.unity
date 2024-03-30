@@ -8389,6 +8389,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 302285794}
     m_Modifications:
+    - target: {fileID: -7870212349452803843, guid: e6a9bf40010831c47ac57d0f262c7954, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d47eb8774c02b247b705786626d3d32, type: 2}
+    - target: {fileID: -6319623934938742946, guid: e6a9bf40010831c47ac57d0f262c7954, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f82e5ef2c8da58845a8a20d859a64c3d, type: 2}
+    - target: {fileID: -4942411935227247682, guid: e6a9bf40010831c47ac57d0f262c7954, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f82e5ef2c8da58845a8a20d859a64c3d, type: 2}
     - target: {fileID: -2253911629886400664, guid: e6a9bf40010831c47ac57d0f262c7954, type: 3}
       propertyPath: m_Name
       value: ForbiddenLand1_Background
@@ -8397,6 +8409,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3477745501288433634, guid: e6a9bf40010831c47ac57d0f262c7954, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8d47eb8774c02b247b705786626d3d32, type: 2}
     - target: {fileID: 7878350319992209165, guid: e6a9bf40010831c47ac57d0f262c7954, type: 3}
       propertyPath: m_LocalPosition.x
       value: 536.23
@@ -8437,6 +8453,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8312712272891160255, guid: e6a9bf40010831c47ac57d0f262c7954, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a8887bf47bcb4164ea977f92baecb42d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13000,7 +13020,7 @@ GameObject:
   - component: {fileID: 494104760}
   m_Layer: 0
   m_Name: Light 2D
-  m_TagString: Untagged
+  m_TagString: GlobalLight
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
