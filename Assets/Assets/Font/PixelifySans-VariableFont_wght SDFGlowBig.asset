@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 68e6db2ebdc24f95958faec2be5558d6, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - GLOW_ON
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -60,9 +61,9 @@ Material:
     - _FaceUVSpeedX: 0
     - _FaceUVSpeedY: 0
     - _GlowInner: 0
-    - _GlowOffset: -0.11
+    - _GlowOffset: -1
     - _GlowOuter: 0.28
-    - _GlowPower: 0.21
+    - _GlowPower: 0.2
     - _GradientScale: 6
     - _LightAngle: 3.98
     - _MaskSoftnessX: 0
@@ -166,11 +167,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: PixelifySans-VariableFont_wght SDF
+  m_Name: PixelifySans-VariableFont_wght SDFGlowBig
   m_EditorClassIdentifier: 
-  hashCode: 657844267
+  hashCode: -639759884
   material: {fileID: -2016999128096262646}
-  materialHashCode: 581052203
+  materialHashCode: 453679828
   m_Version: 1.1.0
   m_SourceFontFileGUID: b846452545e84b441be4a95a65342f64
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b846452545e84b441be4a95a65342f64, type: 3}
