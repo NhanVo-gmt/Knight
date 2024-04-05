@@ -11,11 +11,12 @@ namespace Knight.Manager
     {
         public enum GameState
         {
+            Menu,
             Running,
             Paused,
         }
 
-        private GameState currentGameState = GameState.Running;
+        private GameState currentGameState = GameState.Running; //todo in build change to Menu
         public Action<GameState> OnChangedGameState;
 
         private GameManagerInput gameManagerInput;

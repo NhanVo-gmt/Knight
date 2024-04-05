@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Camera;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -17,10 +18,10 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public EventHandler OnScenePlay;
     public EventHandler<SceneLoaderEnum.Region> OnChangedRegion;
 
-    [SerializeField] private SceneLoaderEnum.Scene currentScene = SceneLoaderEnum.Scene.FarmScene;
-    [SerializeField] private SceneLoaderEnum.Region currentRegion = SceneLoaderEnum.Region.Farm;
+    [SerializeField] private SceneLoaderEnum.Scene currentScene = SceneLoaderEnum.Scene.MenuScene;
+    [SerializeField] private SceneLoaderEnum.Region currentRegion = SceneLoaderEnum.Region.None;
 
-    private Vector2 playerStartPos;
+    private Vector2 playerStartPos = new Vector2(0, 100);
 
     AsyncOperation loadingOperation;
 
@@ -73,14 +74,13 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
         OnSceneBeforeLoading?.Invoke(this, EventArgs.Empty);
     }
 
-    public void LoadFirstScene()
+    public void LoadFirstScene(SceneLoaderEnum.Scene scene)
     {
-        StartCoroutine(LoadFirstSceneCoroutine(currentScene));
+        StartCoroutine(LoadFirstSceneCoroutine(scene));
     }
 
     IEnumerator LoadFirstSceneCoroutine(SceneLoaderEnum.Scene scene)
     {
-        
         OnFirstStartGame?.Invoke(this, EventArgs.Empty);
 
         yield return new WaitForSeconds(1f);
@@ -159,14 +159,16 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
     public void LoadData(GameData gameData)
     {
-        if (Enum.TryParse(gameData.sceneName, out SceneLoaderEnum.Scene scene))
-            currentScene = scene;
-        else currentScene = SceneLoaderEnum.Scene.FarmScene;
-        currentRegion = GetRegion(currentScene);
-
         playerStartPos = gameData.playerPos;
-        
-        LoadFirstScene();
+        if (Enum.TryParse(gameData.sceneName, out SceneLoaderEnum.Scene scene))
+        {
+            LoadFirstScene(scene);
+        }
+        else
+        {
+            Debug.LogError("There is error with data load farm scene");
+            LoadFirstScene(SceneLoaderEnum.Scene.FarmScene);
+        }
     }
 
     public void SaveData(ref GameData data)

@@ -81,12 +81,23 @@ namespace Knight.Camera
 
         void Start()
         {
+            PopulatePlayerToCamera();
             SceneLoader.Instance.OnFirstStartGame += SceneLoader_OnFirstStartGame;
             SceneLoader.Instance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
             SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
             SceneLoader.Instance.OnSceneReadyToPlay += SceneLoader_OnSceneReadyToPlay;
         }
-        
+
+        private void PopulatePlayerToCamera()
+        {
+            for (int i = 0; i < virtualCameras.Length; i++)
+            {
+                virtualCameras[i].cam.Follow = Player.Instance.transform;
+                virtualCameras[i].cam.LookAt = Player.Instance.transform;
+            }
+        }
+
+
         private void SceneLoader_OnFirstStartGame(object sender, EventArgs e)
         {
             for (int i = 0; i < virtualCameras.Length; i++)

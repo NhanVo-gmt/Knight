@@ -70,6 +70,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         CreateState();
         GetCoreComponent();
+        DisablePlayer();
 
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
         SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneBeforeLoading;
@@ -90,12 +91,12 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     private void SceneLoader_OnSceneBeforeLoading(object sender, EventArgs e)
     {
-        inputManager.Toggle(false);
+        DisablePlayer();
     }
     
     private void SceneLoader_OnScenePlay(object sender, EventArgs e)
     {
-        inputManager.Toggle(true);
+        EnablePlayer();
         rb.constraints = RigidbodyConstraints2D.None | RigidbodyConstraints2D.FreezeRotation;
 
         if (stateMachine.currentState == restState) return;
@@ -228,6 +229,18 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
     private readonly float RespawnPosYOffset = 0.3f;
     private readonly float TimeBeforeFadeIn = 0.2f;
+
+    public void DisablePlayer()
+    {
+        movement.SetGravityZero();
+        inputManager.Toggle(false);
+    }
+
+    public void EnablePlayer()
+    {
+        movement.SetGravityNormal();
+        inputManager.Toggle(true);
+    }
     
     public void ChangePosition(Vector2 newPos)
     {
@@ -240,16 +253,10 @@ public class Player : SingletonObject<Player>, IDataPersistence
         
         newPos.y += RespawnPosYOffset;
         
-        inputManager.Toggle(false);
-        inputManager.ResetAllInput();
-        
         movement.SetPosition(newPos);
 
         yield return new WaitForSeconds(TimeBeforeFadeIn);
         yield return LightManager.Instance.FadeOut();
-        
-        movement.SetVelocityZero();
-        inputManager.Toggle(true);
     }
 
     public void UpdateLastGroundPosition(Vector2 newGroundPosition)

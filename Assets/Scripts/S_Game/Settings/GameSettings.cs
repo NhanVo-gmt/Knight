@@ -15,6 +15,8 @@ public class GameSettings : SingletonObject<GameSettings>
     public int maxHealth;
     public Material playerMat;
 
+    public GameObject playerUI;
+
     [Header("Player Cam")]
     public Camera playerCam;
 
@@ -37,8 +39,10 @@ public class GameSettings : SingletonObject<GameSettings>
 
     public void StartGame()
     {
-        player.SetActive(true);
-        playerCam.gameObject.SetActive(true);
+        Instantiate(player, Vector2.zero, Quaternion.identity);
+        Instantiate(playerCam, Vector2.zero, Quaternion.identity);
+        Instantiate(playerUI, Vector2.zero, Quaternion.identity);
+
         OnGameInitialized?.Invoke();
     }
 

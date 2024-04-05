@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5757711534352896760}
   - component: {fileID: 7104097118696170772}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Loading Img
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 8806444846666202572}
   - component: {fileID: 2654980041621966729}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Loading Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -235,8 +235,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 109}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: 0, y: 102}
+  m_SizeDelta: {x: 613.182, y: 79.0519}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8806444846666202572
 CanvasRenderer:
@@ -268,8 +268,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Loading
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 480623a109915d14fbe07936b4076028, type: 2}
+  m_sharedMaterial: {fileID: -2016999128096262646, guid: 480623a109915d14fbe07936b4076028, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
