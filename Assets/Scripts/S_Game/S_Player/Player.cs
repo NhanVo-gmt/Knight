@@ -5,6 +5,7 @@ using Knight.Inventory;
 using Knight.Manager;
 using Knight.UI;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Player : SingletonObject<Player>, IDataPersistence
 {
@@ -49,10 +50,10 @@ public class Player : SingletonObject<Player>, IDataPersistence
     private Core core;
     private Rigidbody2D rb;
     public InputManager inputManager {get; private set;}
+    public Light2D light;
 
     private string initState = "IdleState";
     
-
     private bool isGamePaused = false;
 
     #region Set up

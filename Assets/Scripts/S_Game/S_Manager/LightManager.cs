@@ -6,7 +6,6 @@ using UnityEngine.Rendering.Universal;
 
 public class LightManager : SingletonObject<LightManager>
 {
-    [SerializeField] 
     private Light2D playerLight;
     private float currentPlayerIntensity;
     private readonly float fadePlayerLightDuration = 0.8f;
@@ -30,6 +29,7 @@ public class LightManager : SingletonObject<LightManager>
     private void OnSceneLoadCompleted(object sender, EventArgs e)
     {
         LoadGlobalLight();
+        LoadPlayerLight();
     }
 
     private void LoadGlobalLight()
@@ -42,6 +42,12 @@ public class LightManager : SingletonObject<LightManager>
         globalLight = GameObject.FindWithTag("GlobalLight").GetComponent<Light2D>();
         currentIntensity = globalLight.intensity;
 
+        
+    }
+
+    private void LoadPlayerLight()
+    {
+        playerLight = Player.Instance.light;
         currentPlayerIntensity = playerLight.intensity;
     }
     

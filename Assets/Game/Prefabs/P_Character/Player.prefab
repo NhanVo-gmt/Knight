@@ -25332,6 +25332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: d039a9af0e0826a4c8d300ff4e95c948, type: 2}
   lastGroundPosition: {x: 0, y: 0}
+  light: {fileID: 2927682794531746360}
 --- !u!114 &2309008187566777790
 MonoBehaviour:
   m_ObjectHideFlags: 0
