@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LockedDoor : MonoBehaviour
+public class LockedDoor : MonoBehaviour, IDamageable
 {
     public enum LockedType
     {
@@ -55,5 +55,20 @@ public class LockedDoor : MonoBehaviour
         }
 
         transform.position = endPos;
+    }
+
+    public IDamageable.DamagerTarget GetDamagerType()
+    {
+        return IDamageable.DamagerTarget.Puzzle;
+    }
+
+    public IDamageable.KnockbackType GetKnockbackType()
+    {
+        return IDamageable.KnockbackType.none;
+    }
+
+    public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection)
+    {
+        return;
     }
 }

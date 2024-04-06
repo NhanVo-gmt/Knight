@@ -7,7 +7,7 @@ using UnityEngine.Tilemaps;
 public class JumpThroughPlatform : MonoBehaviour
 {
     private TilemapCollider2D col;
-    private float waitTimeBeforeTurnOnCollider = 0.5f;
+    private float waitTimeBeforeTurnOnCollider = 0.3f;
 
     private void Awake()
     {

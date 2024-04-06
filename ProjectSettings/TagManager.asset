@@ -54,11 +54,11 @@ TagManager:
   - name: Ground
     uniqueID: 1242986017
     locked: 0
-  - name: GroundDecoration
-    uniqueID: 3047281737
-    locked: 0
   - name: MidGround
     uniqueID: 281225647
+    locked: 0
+  - name: GroundDecoration
+    uniqueID: 3047281737
     locked: 0
   - name: VFX
     uniqueID: 4061205035

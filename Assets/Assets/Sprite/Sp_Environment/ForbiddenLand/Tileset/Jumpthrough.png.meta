@@ -135,9 +135,8 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -1, y: -8}
-        - {x: 4, y: -7}
-        - {x: 7, y: -5}
+      - - {x: -1, y: -2}
+        - {x: 8, y: -2}
         - {x: 8, y: 2}
         - {x: -1, y: 2}
       tessellationDetail: 0
@@ -186,8 +185,8 @@ TextureImporter:
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape:
-      - - {x: -8, y: -8}
-        - {x: 1, y: -8}
+      - - {x: -8, y: -2}
+        - {x: 1, y: -2}
         - {x: 1, y: 2}
         - {x: -8, y: 2}
       tessellationDetail: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 24356499b2bd5664ab5e1bcb6d531d55
+guid: f1700219e9e9ac742a8704cc39197dfd
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -73,7 +73,7 @@ ScriptedImporter:
   previousAsepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -85,7 +85,7 @@ ScriptedImporter:
   asepriteImporterSettings:
     fileImportMode: 1
     importHiddenLayers: 0
-    layerImportMode: 1
+    layerImportMode: 0
     defaultPivotSpace: 0
     defaultPivotAlignment: 7
     customPivotPosition: {x: 0.5, y: 0.5}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638480491617957728
+  platformSettingsDirtyTick: 638480437957025825
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Door
+  - name: Frontground
     originalName: 
-    pivot: {x: 0.5, y: 0}
+    pivot: {x: 0.5, y: -0.33333334}
     alignment: 9
-    border: {x: 18, y: 0, z: 0, w: 0}
+    border: {x: 0, y: 15, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 20
-      height: 40
-    spriteID: 4da55007f89e5ad48bfc92d2ecfc1471
+      width: 100
+      height: 24
+    spriteID: 724a4acb14790a1488775c67cf8aad48
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -139,23 +139,60 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
+  - name: MidGround
+    originalName: 
+    pivot: {x: 0.5, y: -0.33333334}
+    alignment: 9
+    border: {x: 0, y: 14, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 36
+      width: 100
+      height: 24
+    spriteID: 17aa3ff16ae2c324e8d1a83f5f72298d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 36}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1909541106
-    name: Door
-    layerFlags: 0
+    guid: 1993353854
+    name: Frontground
+    layerFlags: 3
     layerType: 0
     blendMode: 0
     cells:
-    - name: Door
+    - name: Frontground
       frameIndex: 0
       cellRect:
         x: 0
-        y: 0
-        width: 20
-        height: 40
-      spriteId: 4da55007f89e5ad48bfc92d2ecfc1471
+        y: 8
+        width: 100
+        height: 24
+      spriteId: 724a4acb14790a1488775c67cf8aad48
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: 1549085484
+    name: MidGround
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MidGround
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 8
+        width: 100
+        height: 24
+      spriteId: 17aa3ff16ae2c324e8d1a83f5f72298d
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -209,4 +246,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 20, y: 40}
+  canvasSize: {x: 100, y: 32}

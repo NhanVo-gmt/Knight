@@ -6,7 +6,8 @@ public interface IDamageable
     {
         Player,
         Enemy,
-        Trap
+        Trap,
+        Puzzle
     }
 
     public enum KnockbackType
