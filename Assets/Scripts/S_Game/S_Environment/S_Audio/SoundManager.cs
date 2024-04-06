@@ -62,10 +62,17 @@ namespace Knight.Manager
         
         [Header("Sound Effect")] 
         public AudioClip grassHitClip;
+
+        public AudioClip buttonClip;
         
         public void PlayGrassHitClip()
         {
             PlayOneShot(grassHitClip);
+        }
+
+        public void PlayButtonClip()
+        {
+            PlayOneShot(buttonClip);
         }
 
         public void PlayLandClip()

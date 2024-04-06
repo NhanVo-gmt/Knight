@@ -41,8 +41,6 @@ public class LightManager : SingletonObject<LightManager>
         
         globalLight = GameObject.FindWithTag("GlobalLight").GetComponent<Light2D>();
         currentIntensity = globalLight.intensity;
-
-        
     }
 
     private void LoadPlayerLight()
@@ -66,6 +64,8 @@ public class LightManager : SingletonObject<LightManager>
 
     public static IEnumerator FadeLight(Light2D light, float targetIntensity, float duration)
     {
+        if (light == null) yield break;
+        
         float startIntensity = light.intensity;
         
         float time = 0;

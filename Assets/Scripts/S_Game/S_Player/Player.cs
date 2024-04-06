@@ -71,7 +71,6 @@ public class Player : SingletonObject<Player>, IDataPersistence
     {
         CreateState();
         GetCoreComponent();
-        DisablePlayer();
 
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
         SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneBeforeLoading;

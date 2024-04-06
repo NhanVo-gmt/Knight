@@ -59,6 +59,7 @@ namespace Knight.Camera
                 if (virtualCameras[i].camType == CameraClass.CameraType.CenterPlayer)
                 {
                     currentCamera = virtualCameras[i].cam;
+                    currentCamera.enabled = true;
                     currentCamType = CameraClass.CameraType.CenterPlayer;
                     framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
                     cameraShake.Initialize(currentCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>());

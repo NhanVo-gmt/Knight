@@ -32,7 +32,7 @@ MonoBehaviour:
     imageStartPos: {x: 338, y: -2.5}
     exit: {fileID: 11400000, guid: 020039fb4ab6a77499b9b2a8f0077d76, type: 2}
   - scene: 301
-    imageStartPos: {x: 425, y: -5}
+    imageStartPos: {x: 425, y: -2}
     exit: {fileID: 11400000, guid: 58b5bbc794b3b1b49a75e3ae43207c1a, type: 2}
   - scene: 302
     imageStartPos: {x: 537.7, y: 1.6}
