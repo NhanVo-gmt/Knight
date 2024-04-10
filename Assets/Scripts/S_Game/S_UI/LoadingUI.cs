@@ -26,6 +26,7 @@ public class LoadingUI : MonoBehaviour
 
     private void SceneLoader_OnSceneReadyToPlay(object sender, EventArgs e)
     {
+        if (canvasGroup == null) return;
         if (canvasGroup.alpha != 0)
         {
             StartCoroutine(FadeOut());

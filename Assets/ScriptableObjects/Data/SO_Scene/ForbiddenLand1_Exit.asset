@@ -15,10 +15,10 @@ MonoBehaviour:
   exitSettings:
   - id: 0
     spawnPos: {x: 400, y: -3.3}
-    destination: 300
+    destination: 400
   - id: 1
-    spawnPos: {x: 508, y: 10.4}
-    destination: 300
+    spawnPos: {x: 511, y: 12}
+    destination: 302
   - id: 2
-    spawnPos: {x: 510, y: 4}
-    destination: 300
+    spawnPos: {x: 511, y: 4}
+    destination: 302

@@ -18,5 +18,5 @@ MonoBehaviour:
   hitResetSleepTime: 0.5
   vfx:
   - {fileID: 11400000, guid: c5fe2863c3bb38045bb154de828c9a02, type: 2}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: 58848fef1e0a8f142a1ce8ad075b8688, type: 3}
   camShakeData: {fileID: 11400000, guid: d8f3e6cfa94ad5846bf1811fa5130591, type: 2}

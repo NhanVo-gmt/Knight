@@ -40,6 +40,7 @@ public class HitState : State
     {
         SpawnVFX();
         anim.Play(animId);
+        SoundManager.Instance.PlayOneShot(data.hitData.clip);
         CameraController.Instance.Shake(data.hitData.camShakeData.shakeDuration, data.hitData.camShakeData.shakeAmount, 
             data.hitData.camShakeData.shakeFrequency);
     }
