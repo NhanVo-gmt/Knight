@@ -9,7 +9,7 @@ using UnityEngine.Rendering.Universal;
 #if UNITY_EDITOR
 
 [RequireComponent(typeof(CompositeCollider2D))]
-public class CustomShadowCaster : MonoBehaviour
+public class ShadowCaster2DTileMap : MonoBehaviour
 {
 	[SerializeField]
 	private bool selfShadows = true;
@@ -49,6 +49,8 @@ public class CustomShadowCaster : MonoBehaviour
 			meshField.SetValue(shadowCasterComponent, new Mesh());
 			generateShadowMeshMethod.Invoke(shadowCasterComponent,
 			new object[] { meshField.GetValue(shadowCasterComponent), shapePathField.GetValue(shadowCasterComponent) });
+
+			shadowCaster.transform.localPosition = Vector2.zero;
 		}
 	}
 	public void DestroyOldShadowCasters()
@@ -62,7 +64,7 @@ public class CustomShadowCaster : MonoBehaviour
 	}
 }
 
-[CustomEditor(typeof(CustomShadowCaster))]
+[CustomEditor(typeof(ShadowCaster2DTileMap))]
 public class ShadowCaster2DTileMapEditor : Editor
 {
 	public override void OnInspectorGUI()
@@ -72,13 +74,13 @@ public class ShadowCaster2DTileMapEditor : Editor
 		EditorGUILayout.BeginHorizontal();
 		if (GUILayout.Button("Create"))
 		{
-			var creator = (CustomShadowCaster)target;
+			var creator = (ShadowCaster2DTileMap)target;
 			creator.Create();
 		}
 
 		if (GUILayout.Button("Remove Shadows"))
 		{
-			var creator = (CustomShadowCaster)target;
+			var creator = (ShadowCaster2DTileMap)target;
 			creator.DestroyOldShadowCasters();
 		}
 		EditorGUILayout.EndHorizontal();
