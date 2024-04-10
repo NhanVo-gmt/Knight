@@ -15391,7 +15391,7 @@ MonoBehaviour:
   m_NormalMapDistance: 3
   m_NormalMapQuality: 2
   m_UseNormalMap: 0
-  m_ShadowIntensityEnabled: 0
+  m_ShadowIntensityEnabled: 1
   m_ShadowIntensity: 0.75
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
@@ -36073,7 +36073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingOrder
@@ -36244,7 +36244,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingLayer
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5708980476024491408, guid: 695724d6dcadd824592cd9cc066f28cc, type: 3}
       propertyPath: m_SortingOrder
