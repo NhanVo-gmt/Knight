@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8226774367534675540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc86f223502300145b3416ae79aa5852, type: 3}
+  m_Name: ParallelNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 376cdf0c20b2e844382e720e6a73174e
+    Tree: {fileID: 11400000}
+    position: {x: 191.99998, y: 494.3999}
+    Name: 
+    description: 
+  children:
+  - {fileID: 1102053548796419594}
+  - {fileID: -7217869697607381726}
+  successType: 1
 --- !u!114 &-7328829595185410791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17,12 +41,35 @@ MonoBehaviour:
     started: 0
     guid: 4a6c02d5f6c4fbb40a2d9fc2c598596b
     Tree: {fileID: 11400000}
-    position: {x: -478.40002, y: 620.8}
+    position: {x: -646.39996, y: 621.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
   clipName: Move
   clipNameIndex: 1
+--- !u!114 &-7217869697607381726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a57fc3dc79df944da7fe5a7460ab2db, type: 3}
+  m_Name: AnimationNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 136f97f925e950d4cbcef107633304b0
+    Tree: {fileID: 11400000}
+    position: {x: 309.59998, y: 616.7999}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  clipName: Idle
+  clipNameIndex: 2
 --- !u!114 &-7035439463129004112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,7 +179,7 @@ MonoBehaviour:
     started: 0
     guid: f2abb6eeacef237439e2145651da6dbd
     Tree: {fileID: 11400000}
-    position: {x: -32.799942, y: 893.6}
+    position: {x: -219.30132, y: 982.3998}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -141,14 +188,14 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 8
     size: {x: 1, y: 0.97}
-    relativeStartPos: {x: -1.2, y: 0}
+    relativeStartPos: {x: 1.47, y: 0}
     gizmosColor: {r: 1, g: 0, b: 0, a: 1}
     shouldBe: 1
   - layerMask:
       serializedVersion: 2
       m_Bits: 8
     size: {x: 1, y: 2.17}
-    relativeStartPos: {x: -1.3, y: 2}
+    relativeStartPos: {x: 1.44, y: 2}
     gizmosColor: {r: 1, g: 0.7805252, b: 0, a: 1}
     shouldBe: 0
 --- !u!114 &-6262050734411869432
@@ -284,7 +331,7 @@ MonoBehaviour:
     started: 0
     guid: ddf451b9401ad204cbec5a26f03eaaba
     Tree: {fileID: 11400000}
-    position: {x: 228.79999, y: 608}
+    position: {x: 42.29869, y: 696.7998}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -357,10 +404,10 @@ MonoBehaviour:
     Name: 
     description: 
   linkNode: {fileID: 7300237956029237319}
-  checkType: 0
-  checkRelativePos: {x: 0, y: 1}
-  radius: 5.15
-  size: {x: 0, y: 0}
+  checkType: 1
+  checkRelativePos: {x: -5, y: 1.5}
+  radius: 5.06
+  size: {x: 10, y: 3}
 --- !u!114 &-2502043293506409101
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +425,7 @@ MonoBehaviour:
     started: 0
     guid: 6c7e031d1378dbe409c4adeb796da710
     Tree: {fileID: 11400000}
-    position: {x: -726.9876, y: 620.8}
+    position: {x: -895.2, y: 621.6}
     Name: 
     description: 
   child: {fileID: -63799275957969701}
@@ -492,7 +539,7 @@ MonoBehaviour:
     started: 0
     guid: 74f6421f973c65e4091ce3b6bddf914d
     Tree: {fileID: 11400000}
-    position: {x: 70.40007, y: 608}
+    position: {x: -116.10126, y: 696.7998}
     Name: 
     description: 
   child: {fileID: 7642780046652607835}
@@ -513,7 +560,7 @@ MonoBehaviour:
     started: 0
     guid: 19976837fb3e2e546b38626bc1b389d2
     Tree: {fileID: 11400000}
-    position: {x: -727.19995, y: 763.165}
+    position: {x: -895.2, y: 763.2001}
     Name: 
     description: 
   children:
@@ -577,6 +624,9 @@ MonoBehaviour:
   - {fileID: -6264938787769378730}
   - {fileID: -1850024857829916043}
   - {fileID: -4223635108672468623}
+  - {fileID: -8226774367534675540}
+  - {fileID: -7217869697607381726}
+  - {fileID: 1102053548796419594}
   groups:
   - {fileID: -415846026619501417}
   - {fileID: -1371449174156355120}
@@ -608,6 +658,7 @@ MonoBehaviour:
   - {fileID: 4279327163997402406}
   - {fileID: 782753904893326275}
   - {fileID: 2702309313316615648}
+  - {fileID: -8226774367534675540}
   currentIndex: -1
 --- !u!114 &382483470962243157
 MonoBehaviour:
@@ -626,7 +677,7 @@ MonoBehaviour:
     started: 0
     guid: 62ad9841b5c2b51498ee38322a560589
     Tree: {fileID: 11400000}
-    position: {x: -905.6774, y: 499}
+    position: {x: -1073.5999, y: 499.20004}
     Name: 
     description: 
   child: {fileID: 7300237956029237319}
@@ -716,7 +767,7 @@ MonoBehaviour:
     started: 0
     guid: e3bc0089f19b46b4bb7926f9a1113655
     Tree: {fileID: 11400000}
-    position: {x: -235.67749, y: 499}
+    position: {x: -403.99994, y: 499.20004}
     Name: 
     description: 
   children:
@@ -748,6 +799,28 @@ MonoBehaviour:
   checkRelativePos: {x: 0, y: 1.06}
   radius: 2
   size: {x: 0, y: 0}
+--- !u!114 &1102053548796419594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 59837c655f7149243b626194d1fef4ad
+    Tree: {fileID: 11400000}
+    position: {x: 117.60002, y: 616.7999}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  idleTime: 2
 --- !u!114 &1793646627920395141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -765,7 +838,7 @@ MonoBehaviour:
     started: 0
     guid: 168c43f3f89b8ea438627f34d34f9435
     Tree: {fileID: 11400000}
-    position: {x: 220.80002, y: 860.8}
+    position: {x: 34.29866, y: 949.59985}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -790,7 +863,7 @@ MonoBehaviour:
     started: 0
     guid: eba79029cf5de924783e0b5e3661d36e
     Tree: {fileID: 11400000}
-    position: {x: 145.60004, y: 410.80005}
+    position: {x: -40.90129, y: 499.1999}
     Name: 
     description: 
   children:
@@ -861,7 +934,7 @@ MonoBehaviour:
     started: 0
     guid: 3fc4bf76e62b2da4eb0e9e1280bd28d4
     Tree: {fileID: 11400000}
-    position: {x: -628.6774, y: 499}
+    position: {x: -796.7999, y: 499.20004}
     Name: 
     description: 
   children:
@@ -885,7 +958,7 @@ MonoBehaviour:
     started: 0
     guid: 3250ea9d33977c44e80e8823d3854eaa
     Tree: {fileID: 11400000}
-    position: {x: -606.6775, y: 906.4}
+    position: {x: -774.39996, y: 907.2}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -972,7 +1045,7 @@ MonoBehaviour:
     started: 0
     guid: da18d098dc55cc449a874fbb935c2657
     Tree: {fileID: 11400000}
-    position: {x: -118.67748, y: 621}
+    position: {x: -286.3999, y: 621.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -995,7 +1068,7 @@ MonoBehaviour:
     started: 0
     guid: c65e6ab44cac35f42a08e9369b3a2e3d
     Tree: {fileID: 11400000}
-    position: {x: -310.67746, y: 621}
+    position: {x: -478.4, y: 621.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1017,7 +1090,7 @@ MonoBehaviour:
     started: 0
     guid: 019f7cd9133c9184783cde06c2b271fe
     Tree: {fileID: 11400000}
-    position: {x: -830.8, y: 906.8001}
+    position: {x: -1045.6, y: 907.2}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1053,14 +1126,14 @@ MonoBehaviour:
     started: 0
     guid: 737512a262ff6da43855c53d60246bcf
     Tree: {fileID: 11400000}
-    position: {x: -933.6, y: 620.8}
+    position: {x: -1073.5999, y: 621.6}
     Name: CheckBeforeAttack
     description: 
   linkNode: {fileID: 0}
-  checkType: 0
-  checkRelativePos: {x: -0.3, y: 1}
+  checkType: 1
+  checkRelativePos: {x: -5, y: 1.5}
   radius: 5.06
-  size: {x: 0, y: 0}
+  size: {x: 10, y: 3}
 --- !u!114 &7642780046652607835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,7 +1151,7 @@ MonoBehaviour:
     started: 0
     guid: 04b98987afec0b24b8f16709c29d63fa
     Tree: {fileID: 11400000}
-    position: {x: 70.40007, y: 749.60004}
+    position: {x: -116.10126, y: 835.9999}
     Name: 
     description: 
   children:
