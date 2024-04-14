@@ -126,8 +126,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 4
+      x: 69
+      y: 463
       width: 33
       height: 43
     spriteID: 3adbaba84b4612c438dd7857fde36994
@@ -138,7 +138,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 4}
+    uvTransform: {x: 69, y: 463}
   - name: ShieldMan_Frame_1
     originalName: 
     pivot: {x: 0.21212119, y: -0.27906978}
@@ -146,8 +146,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 55
+      x: 203
+      y: 4
       width: 33
       height: 43
     spriteID: d0972ae7805cd624ebadb9f3b259af40
@@ -158,7 +158,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 55}
+    uvTransform: {x: 203, y: 4}
   - name: ShieldMan_Frame_2
     originalName: 
     pivot: {x: 0.21212119, y: -0.27906978}
@@ -166,8 +166,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 106
+      x: 203
+      y: 55
       width: 33
       height: 43
     spriteID: 8a30aa59117084946803edac0b5d9341
@@ -178,7 +178,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 106}
+    uvTransform: {x: 203, y: 55}
   - name: ShieldMan_Frame_3
     originalName: 
     pivot: {x: 0.21212119, y: -0.2857143}
@@ -186,8 +186,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 366
+      x: 203
+      y: 463
       width: 33
       height: 42
     spriteID: a5cb3bb4bf4d02e449b5c8ccf96b4647
@@ -198,7 +198,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 366}
+    uvTransform: {x: 203, y: 463}
   - name: ShieldMan_Frame_4
     originalName: 
     pivot: {x: 0.21212119, y: -0.27906978}
@@ -206,8 +206,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 157
+      x: 203
+      y: 106
       width: 33
       height: 43
     spriteID: e3bea1eb37b9fea459730d15c313b7cd
@@ -218,7 +218,7 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 157}
+    uvTransform: {x: 203, y: 106}
   - name: ShieldMan_Frame_5
     originalName: 
     pivot: {x: 0.21212119, y: -0.27906978}
@@ -226,8 +226,8 @@ ScriptedImporter:
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 208
+      x: 203
+      y: 157
       width: 33
       height: 43
     spriteID: 64c81970900a28f43a297475be8011e2
@@ -238,18 +238,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 208}
+    uvTransform: {x: 203, y: 157}
   - name: ShieldMan_Frame_6
     originalName: 
-    pivot: {x: 0.18421051, y: -0.22222222}
+    pivot: {x: 0.21212119, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 315
-      width: 38
-      height: 45
+      x: 203
+      y: 208
+      width: 33
+      height: 43
     spriteID: 9e50b1d1edc0c6249939393c718336ec
     spriteBone: []
     spriteOutline: []
@@ -258,18 +258,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 315}
+    uvTransform: {x: 203, y: 208}
   - name: ShieldMan_Frame_7
     originalName: 
-    pivot: {x: 0.14893617, y: -0.27906978}
+    pivot: {x: 0.21212119, y: -0.27272725}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 112
-      width: 47
-      height: 43
+      x: 69
+      y: 411
+      width: 33
+      height: 44
     spriteID: ceee6152fd9e0504886c5acc9c33f407
     spriteBone: []
     spriteOutline: []
@@ -278,18 +278,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 112}
+    uvTransform: {x: 69, y: 411}
   - name: ShieldMan_Frame_8
     originalName: 
-    pivot: {x: 0.16326529, y: -0.2857143}
+    pivot: {x: 0.21212119, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 340
-      width: 49
-      height: 42
+      x: 203
+      y: 259
+      width: 33
+      height: 43
     spriteID: 08124164293a6bf478af37e29b30d870
     spriteBone: []
     spriteOutline: []
@@ -298,18 +298,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 340}
+    uvTransform: {x: 203, y: 259}
   - name: ShieldMan_Frame_9
     originalName: 
-    pivot: {x: 0.16326529, y: -0.2857143}
+    pivot: {x: 0.21212119, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 390
-      width: 49
-      height: 42
+      x: 203
+      y: 310
+      width: 33
+      height: 43
     spriteID: 44fd2f9423068e944b09887af6fe9ee9
     spriteBone: []
     spriteOutline: []
@@ -318,17 +318,17 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 390}
+    uvTransform: {x: 203, y: 310}
   - name: ShieldMan_Frame_10
     originalName: 
-    pivot: {x: 0.5333333, y: -0.27906978}
+    pivot: {x: 0.21212119, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 163
-      width: 45
+      x: 203
+      y: 361
+      width: 33
       height: 43
     spriteID: ca6cfb948f1b54a4eb9823e4330345be
     spriteBone: []
@@ -338,18 +338,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 163}
+    uvTransform: {x: 203, y: 361}
   - name: ShieldMan_Frame_11
     originalName: 
-    pivot: {x: 0.5333333, y: -0.25}
+    pivot: {x: 0.18421051, y: -0.22222221}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 176
-      width: 45
-      height: 48
+      x: 69
+      y: 307
+      width: 38
+      height: 45
     spriteID: f2d4fbea22aa5a542915fc6ec3ee97db
     spriteBone: []
     spriteOutline: []
@@ -358,18 +358,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 176}
+    uvTransform: {x: 69, y: 307}
   - name: ShieldMan_Frame_12
     originalName: 
-    pivot: {x: 0.27586207, y: -0.25}
+    pivot: {x: 0.14893617, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 310
-      width: 29
-      height: 48
+      x: 69
+      y: 104
+      width: 47
+      height: 43
     spriteID: 583cd7c85bb59864aa6e738c2656d3fd
     spriteBone: []
     spriteOutline: []
@@ -378,18 +378,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 310}
+    uvTransform: {x: 69, y: 104}
   - name: ShieldMan_Frame_13
     originalName: 
-    pivot: {x: 0.2580645, y: -0.26086956}
+    pivot: {x: 0.16326529, y: -0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 129
-      y: 4
-      width: 31
-      height: 46
+      x: 4
+      y: 403
+      width: 49
+      height: 42
     spriteID: f68852004bc5906409d14f6fb1f4eb80
     spriteBone: []
     spriteOutline: []
@@ -398,18 +398,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 129, y: 4}
+    uvTransform: {x: 4, y: 403}
   - name: ShieldMan_Frame_14
     originalName: 
-    pivot: {x: 0.51063824, y: -0.27272728}
+    pivot: {x: 0.16326529, y: -0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 288
-      width: 47
-      height: 44
+      y: 453
+      width: 49
+      height: 42
     spriteID: 11f7a8e413d63f340a8d5c4f4d869e8f
     spriteBone: []
     spriteOutline: []
@@ -418,18 +418,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 288}
+    uvTransform: {x: 4, y: 453}
   - name: ShieldMan_Frame_15
     originalName: 
-    pivot: {x: 0.48837206, y: -0.2857143}
+    pivot: {x: 0.5333333, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 265
-      width: 43
-      height: 42
+      x: 69
+      y: 155
+      width: 45
+      height: 43
     spriteID: e9c20168ff373204fa3f0461e2b62a60
     spriteBone: []
     spriteOutline: []
@@ -438,18 +438,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 265}
+    uvTransform: {x: 69, y: 155}
   - name: ShieldMan_Frame_16
     originalName: 
-    pivot: {x: 0.16326529, y: -0.2857143}
+    pivot: {x: 0.5333333, y: -0.25}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
-      y: 440
-      width: 49
-      height: 42
+      y: 239
+      width: 45
+      height: 48
     spriteID: ae5cf1ac38f6e464ea53a77e4ac4b9a4
     spriteBone: []
     spriteOutline: []
@@ -458,18 +458,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 440}
+    uvTransform: {x: 4, y: 239}
   - name: ShieldMan_Frame_17
     originalName: 
-    pivot: {x: 0.16326529, y: -0.2857143}
+    pivot: {x: 0.27586207, y: -0.25}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 62
-      width: 49
-      height: 42
+      x: 126
+      y: 60
+      width: 29
+      height: 48
     spriteID: 0ae69f5700f5d6545a688f5c04d61c92
     spriteBone: []
     spriteOutline: []
@@ -478,18 +478,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 62}
+    uvTransform: {x: 126, y: 60}
   - name: ShieldMan_Frame_18
     originalName: 
-    pivot: {x: 0.21212119, y: -0.27906978}
+    pivot: {x: 0.2580645, y: -0.26086956}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 259
-      width: 33
-      height: 43
+      x: 164
+      y: 4
+      width: 31
+      height: 46
     spriteID: 647e4ce05eba2c4479e7819ae609c093
     spriteBone: []
     spriteOutline: []
@@ -498,18 +498,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 259}
+    uvTransform: {x: 164, y: 4}
   - name: ShieldMan_Frame_19
     originalName: 
-    pivot: {x: 0.26666665, y: -0.2857143}
+    pivot: {x: 0.51063824, y: -0.27272725}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 168
-      y: 416
-      width: 30
-      height: 42
+      x: 4
+      y: 351
+      width: 47
+      height: 44
     spriteID: 964ed29e7cc9ff543889b735b5e9b35c
     spriteBone: []
     spriteOutline: []
@@ -518,18 +518,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 168, y: 416}
+    uvTransform: {x: 4, y: 351}
   - name: ShieldMan_Frame_20
     originalName: 
-    pivot: {x: 0.5333333, y: -0.27906978}
+    pivot: {x: 0.48837206, y: -0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 214
-      width: 45
-      height: 43
+      x: 69
+      y: 257
+      width: 43
+      height: 42
     spriteID: 5e7aeb27309341140a2a9fe8e97afa80
     spriteBone: []
     spriteOutline: []
@@ -538,18 +538,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 214}
+    uvTransform: {x: 69, y: 257}
   - name: ShieldMan_Frame_21
     originalName: 
-    pivot: {x: 0.26666665, y: -0.25}
+    pivot: {x: 0.16326529, y: -0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 419
-      width: 30
-      height: 48
+      x: 69
+      y: 4
+      width: 49
+      height: 42
     spriteID: 4adbb21e1d98dce4da813aa1ad4774cd
     spriteBone: []
     spriteOutline: []
@@ -558,18 +558,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 419}
+    uvTransform: {x: 69, y: 4}
   - name: ShieldMan_Frame_22
     originalName: 
-    pivot: {x: 0.17777777, y: -0.25}
+    pivot: {x: 0.16326529, y: -0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 232
-      width: 45
-      height: 48
+      x: 69
+      y: 54
+      width: 49
+      height: 42
     spriteID: eb67522f309d7c64690304e10f321283
     spriteBone: []
     spriteOutline: []
@@ -578,18 +578,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 232}
+    uvTransform: {x: 69, y: 54}
   - name: ShieldMan_Frame_23
     originalName: 
-    pivot: {x: 0.17391303, y: -0.25}
+    pivot: {x: 0.21212119, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 120
-      width: 46
-      height: 48
+      x: 203
+      y: 412
+      width: 33
+      height: 43
     spriteID: 49916697e5012bf438351abe85e5b12a
     spriteBone: []
     spriteOutline: []
@@ -598,18 +598,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 120}
+    uvTransform: {x: 203, y: 412}
   - name: ShieldMan_Frame_24
     originalName: 
-    pivot: {x: 0.37037033, y: -0.23529413}
+    pivot: {x: 0.26666665, y: -0.2857143}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 4
-      width: 54
-      height: 51
+      x: 126
+      y: 116
+      width: 30
+      height: 42
     spriteID: 72a646bf852c82440a2b9ee5e534739e
     spriteBone: []
     spriteOutline: []
@@ -618,18 +618,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 4}
+    uvTransform: {x: 126, y: 116}
   - name: ShieldMan_Frame_25
     originalName: 
-    pivot: {x: 0.5434782, y: -0.1632653}
+    pivot: {x: 0.5333333, y: -0.27906975}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 63
-      width: 46
-      height: 49
+      x: 69
+      y: 206
+      width: 45
+      height: 43
     spriteID: 448b6e9f078bc0f43b4c626ff6a00dcd
     spriteBone: []
     spriteOutline: []
@@ -638,18 +638,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 63}
+    uvTransform: {x: 69, y: 206}
   - name: ShieldMan_Frame_26
     originalName: 
-    pivot: {x: 0.61818177, y: -0.08}
+    pivot: {x: 0.26666665, y: -0.25}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
+      x: 126
       y: 4
-      width: 55
-      height: 50
+      width: 30
+      height: 48
     spriteID: cbc2213c03ea97447bebea0da9a8849d
     spriteBone: []
     spriteOutline: []
@@ -658,18 +658,18 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 4}
+    uvTransform: {x: 126, y: 4}
   - name: ShieldMan_Frame_27
     originalName: 
-    pivot: {x: 0.46153843, y: -0.25581396}
+    pivot: {x: 0.17777777, y: -0.25}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 66
-      y: 368
-      width: 39
-      height: 43
+      x: 4
+      y: 295
+      width: 45
+      height: 48
     spriteID: 52583a2f2b7f707488e3c9fcebf9b591
     spriteBone: []
     spriteOutline: []
@@ -678,7 +678,107 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 66, y: 368}
+    uvTransform: {x: 4, y: 295}
+  - name: ShieldMan_Frame_28
+    originalName: 
+    pivot: {x: 0.17391303, y: -0.25}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 183
+      width: 46
+      height: 48
+    spriteID: f68c768c530b45344b81521b50728c0b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 183}
+  - name: ShieldMan_Frame_29
+    originalName: 
+    pivot: {x: 0.35087717, y: -0.21428572}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 57
+      height: 56
+    spriteID: d284f1b7d23f0134d8b4c309441beb43
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: ShieldMan_Frame_30
+    originalName: 
+    pivot: {x: 0.5434782, y: -0.1632653}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 126
+      width: 46
+      height: 49
+    spriteID: af668019bb9931b439e541a135eccd5c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 126}
+  - name: ShieldMan_Frame_31
+    originalName: 
+    pivot: {x: 0.61818177, y: -0.08}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 68
+      width: 55
+      height: 50
+    spriteID: 942d3725aa23dbf409d0a5d3ec976f70
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 68}
+  - name: ShieldMan_Frame_32
+    originalName: 
+    pivot: {x: 0.46153843, y: -0.25581396}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 69
+      y: 360
+      width: 39
+      height: 43
+    spriteID: 40082b60e990ae748b8193c786e6de2d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 69, y: 360}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
@@ -740,178 +840,218 @@ ScriptedImporter:
       frameIndex: 6
       cellRect:
         x: 44
-        y: 10
-        width: 38
-        height: 45
+        y: 12
+        width: 33
+        height: 43
       spriteId: 9e50b1d1edc0c6249939393c718336ec
     - name: ShieldMan_Frame_7
       frameIndex: 7
       cellRect:
         x: 44
         y: 12
-        width: 47
-        height: 43
+        width: 33
+        height: 44
       spriteId: ceee6152fd9e0504886c5acc9c33f407
     - name: ShieldMan_Frame_8
       frameIndex: 8
       cellRect:
-        x: 43
+        x: 44
         y: 12
-        width: 49
-        height: 42
+        width: 33
+        height: 43
       spriteId: 08124164293a6bf478af37e29b30d870
     - name: ShieldMan_Frame_9
       frameIndex: 9
       cellRect:
-        x: 43
+        x: 44
         y: 12
-        width: 49
-        height: 42
+        width: 33
+        height: 43
       spriteId: 44fd2f9423068e944b09887af6fe9ee9
     - name: ShieldMan_Frame_10
       frameIndex: 10
       cellRect:
-        x: 27
+        x: 44
         y: 12
-        width: 45
+        width: 33
         height: 43
       spriteId: ca6cfb948f1b54a4eb9823e4330345be
     - name: ShieldMan_Frame_11
       frameIndex: 11
       cellRect:
-        x: 27
-        y: 12
-        width: 45
-        height: 48
+        x: 44
+        y: 10
+        width: 38
+        height: 45
       spriteId: f2d4fbea22aa5a542915fc6ec3ee97db
     - name: ShieldMan_Frame_12
       frameIndex: 12
       cellRect:
-        x: 43
+        x: 44
         y: 12
-        width: 29
-        height: 48
+        width: 47
+        height: 43
       spriteId: 583cd7c85bb59864aa6e738c2656d3fd
     - name: ShieldMan_Frame_13
       frameIndex: 13
       cellRect:
         x: 43
         y: 12
-        width: 31
-        height: 46
+        width: 49
+        height: 42
       spriteId: f68852004bc5906409d14f6fb1f4eb80
     - name: ShieldMan_Frame_14
       frameIndex: 14
-      cellRect:
-        x: 27
-        y: 12
-        width: 47
-        height: 44
-      spriteId: 11f7a8e413d63f340a8d5c4f4d869e8f
-    - name: ShieldMan_Frame_15
-      frameIndex: 15
-      cellRect:
-        x: 30
-        y: 12
-        width: 43
-        height: 42
-      spriteId: e9c20168ff373204fa3f0461e2b62a60
-    - name: ShieldMan_Frame_16
-      frameIndex: 16
       cellRect:
         x: 43
         y: 12
         width: 49
         height: 42
+      spriteId: 11f7a8e413d63f340a8d5c4f4d869e8f
+    - name: ShieldMan_Frame_15
+      frameIndex: 15
+      cellRect:
+        x: 27
+        y: 12
+        width: 45
+        height: 43
+      spriteId: e9c20168ff373204fa3f0461e2b62a60
+    - name: ShieldMan_Frame_16
+      frameIndex: 16
+      cellRect:
+        x: 27
+        y: 12
+        width: 45
+        height: 48
       spriteId: ae5cf1ac38f6e464ea53a77e4ac4b9a4
     - name: ShieldMan_Frame_17
       frameIndex: 17
       cellRect:
         x: 43
         y: 12
-        width: 49
-        height: 42
+        width: 29
+        height: 48
       spriteId: 0ae69f5700f5d6545a688f5c04d61c92
     - name: ShieldMan_Frame_18
       frameIndex: 18
       cellRect:
-        x: 44
+        x: 43
         y: 12
-        width: 33
-        height: 43
+        width: 31
+        height: 46
       spriteId: 647e4ce05eba2c4479e7819ae609c093
     - name: ShieldMan_Frame_19
       frameIndex: 19
       cellRect:
-        x: 43
+        x: 27
         y: 12
-        width: 30
-        height: 42
+        width: 47
+        height: 44
       spriteId: 964ed29e7cc9ff543889b735b5e9b35c
     - name: ShieldMan_Frame_20
       frameIndex: 20
       cellRect:
-        x: 27
+        x: 30
         y: 12
-        width: 45
-        height: 43
+        width: 43
+        height: 42
       spriteId: 5e7aeb27309341140a2a9fe8e97afa80
     - name: ShieldMan_Frame_21
       frameIndex: 21
       cellRect:
         x: 43
         y: 12
-        width: 30
-        height: 48
+        width: 49
+        height: 42
       spriteId: 4adbb21e1d98dce4da813aa1ad4774cd
     - name: ShieldMan_Frame_22
       frameIndex: 22
       cellRect:
         x: 43
         y: 12
-        width: 45
-        height: 48
+        width: 49
+        height: 42
       spriteId: eb67522f309d7c64690304e10f321283
     - name: ShieldMan_Frame_23
       frameIndex: 23
+      cellRect:
+        x: 44
+        y: 12
+        width: 33
+        height: 43
+      spriteId: 49916697e5012bf438351abe85e5b12a
+    - name: ShieldMan_Frame_24
+      frameIndex: 24
+      cellRect:
+        x: 43
+        y: 12
+        width: 30
+        height: 42
+      spriteId: 72a646bf852c82440a2b9ee5e534739e
+    - name: ShieldMan_Frame_25
+      frameIndex: 25
+      cellRect:
+        x: 27
+        y: 12
+        width: 45
+        height: 43
+      spriteId: 448b6e9f078bc0f43b4c626ff6a00dcd
+    - name: ShieldMan_Frame_26
+      frameIndex: 26
+      cellRect:
+        x: 43
+        y: 12
+        width: 30
+        height: 48
+      spriteId: cbc2213c03ea97447bebea0da9a8849d
+    - name: ShieldMan_Frame_27
+      frameIndex: 27
+      cellRect:
+        x: 43
+        y: 12
+        width: 45
+        height: 48
+      spriteId: 52583a2f2b7f707488e3c9fcebf9b591
+    - name: ShieldMan_Frame_28
+      frameIndex: 28
       cellRect:
         x: 43
         y: 12
         width: 46
         height: 48
-      spriteId: 49916697e5012bf438351abe85e5b12a
-    - name: ShieldMan_Frame_24
-      frameIndex: 24
+      spriteId: f68c768c530b45344b81521b50728c0b
+    - name: ShieldMan_Frame_29
+      frameIndex: 29
       cellRect:
         x: 31
         y: 12
-        width: 54
-        height: 51
-      spriteId: 72a646bf852c82440a2b9ee5e534739e
-    - name: ShieldMan_Frame_25
-      frameIndex: 25
+        width: 57
+        height: 56
+      spriteId: d284f1b7d23f0134d8b4c309441beb43
+    - name: ShieldMan_Frame_30
+      frameIndex: 30
       cellRect:
         x: 26
         y: 8
         width: 46
         height: 49
-      spriteId: 448b6e9f078bc0f43b4c626ff6a00dcd
-    - name: ShieldMan_Frame_26
-      frameIndex: 26
+      spriteId: af668019bb9931b439e541a135eccd5c
+    - name: ShieldMan_Frame_31
+      frameIndex: 31
       cellRect:
         x: 17
         y: 4
         width: 55
         height: 50
-      spriteId: cbc2213c03ea97447bebea0da9a8849d
-    - name: ShieldMan_Frame_27
-      frameIndex: 27
+      spriteId: 942d3725aa23dbf409d0a5d3ec976f70
+    - name: ShieldMan_Frame_32
+      frameIndex: 32
       cellRect:
         x: 33
         y: 11
         width: 39
         height: 43
-      spriteId: 52583a2f2b7f707488e3c9fcebf9b591
+      spriteId: 40082b60e990ae748b8193c786e6de2d
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -965,4 +1105,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 102, y: 64}
+  canvasSize: {x: 102, y: 73}
