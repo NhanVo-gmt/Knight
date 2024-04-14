@@ -54,7 +54,7 @@ public class AttackNode : ActionNode
         {
             if (col.TryGetComponent<IDamageable>(out IDamageable target))
             {
-                target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, Vector2.zero); // todo
+                target.TakeDamage(1, IDamageable.DamagerTarget.Enemy, movement.faceDirection); 
             }
         }
     }

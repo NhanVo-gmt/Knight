@@ -15,6 +15,7 @@ public class ParticleSystemController : CoreComponent
         public ParticleSystem runParticle;
         public ParticleSystem landParticle;
         public ParticleSystem[] particleSystems;
+        public GameObject[] particleObjects;
         public bool hasLight;
 
         public void SetActive(bool isActive)
@@ -25,6 +26,11 @@ public class ParticleSystemController : CoreComponent
             foreach (ParticleSystem singleParticle in particleSystems)
             {
                 singleParticle.gameObject.SetActive(isActive);
+            }
+            
+            foreach (GameObject singleObject in particleObjects)
+            {
+                singleObject.SetActive(isActive);
             }
         }
     }
