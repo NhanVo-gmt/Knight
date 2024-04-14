@@ -19,6 +19,7 @@ public class Combat : CoreComponent, IDamageable
     GameSettings settings;
     MeleeCombat meleeCombat;
     TouchCombat touchCombat;
+    private ShieldCombat shieldCombat;
 
     private bool canTouchCombat = true;
 
@@ -28,12 +29,13 @@ public class Combat : CoreComponent, IDamageable
 
     #region Set up
     
-    public void SetUpCombatComponent(IDamageable.DamagerTarget damagerTarget, IDamageable.KnockbackType knockbackType)
+    public void SetUpCombatComponent(IDamageable.DamagerTarget damagerTarget, IDamageable.KnockbackType knockbackType, bool hasShield = false)
     {
         this.damagerTarget = damagerTarget;
         this.knockbackType = knockbackType;
         
         meleeCombat = new MeleeCombat(col, damagerTarget);
+        shieldCombat = new ShieldCombat(movement, hasShield);
 
         if (damagerTarget == IDamageable.DamagerTarget.Player) return ;
         touchCombat = new TouchCombat(col, damagerTarget);
@@ -89,6 +91,7 @@ public class Combat : CoreComponent, IDamageable
     public void TakeDamage(int damage, IDamageable.DamagerTarget damagerType, Vector2 attackDirection, bool needResetPlayerPosition)
     {
         if (this.damagerTarget == damagerType) return;
+        if (shieldCombat.CanShield(attackDirection)) return;
         if(!health.TakeDamage(damage, needResetPlayerPosition)) return;
         if (needResetPlayerPosition) return;
 

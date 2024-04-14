@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
 
     void SetupComponent()
     {
-        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.KnockbackType);
+        combat.SetUpCombatComponent(IDamageable.DamagerTarget.Enemy, data.KnockbackType, data.hasShield);
         health.SetHealth(data.healthData); 
     }
 
