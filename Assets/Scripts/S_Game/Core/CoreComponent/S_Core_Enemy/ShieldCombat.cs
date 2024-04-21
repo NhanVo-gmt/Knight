@@ -11,11 +11,13 @@ public class ShieldCombat
     public ShieldCombat(Movement movement, bool hasShield)
     {
         this.movement = movement;
-        ToggleShield(false);
+        ToggleShield(hasShield);
     }
 
     public bool CanShield (Vector2 attackDirection)
     {
+        if (!canUseShield) return false;
+        
         float angle = Vector2.Angle(-movement.faceDirection, attackDirection);
         if (angle <= 90)
         {

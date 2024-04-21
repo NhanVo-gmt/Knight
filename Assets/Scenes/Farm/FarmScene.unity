@@ -2259,6 +2259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShieldMan
       objectReference: {fileID: 0}
+    - target: {fileID: 2701152839743279008, guid: 296c6ee1b206a85438b1f7e40727b25e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6351160408507441157, guid: 296c6ee1b206a85438b1f7e40727b25e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 27.568989
@@ -2590,6 +2594,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: -------TEST----------
       objectReference: {fileID: 0}
+    - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6922453380909707681, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -2641,6 +2649,14 @@ PrefabInstance:
     - target: {fileID: 7831832849339889417, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7991140627092512130, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047810716478708877, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

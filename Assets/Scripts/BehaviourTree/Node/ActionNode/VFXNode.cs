@@ -21,7 +21,7 @@ public class VFXNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
-        ObjectPoolManager.Instance.SpawnPooledPrefab(data, movement.transform.position);
+        ObjectPoolManager.Instance.SpawnPooledPrefab(data, movement.transform.position, movement.faceDirection);
     }
 
     protected override void OnStop()
