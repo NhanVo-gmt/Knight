@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Manager;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
@@ -39,7 +40,7 @@ public class GrassExternalVelocityTrigger : MonoBehaviour
             if (!easeInCoroutineRunning &&
                 Mathf.Abs(playerRb.velocity.x) > Mathf.Abs(grassVelocityController.VelocityThreshold))
             {
-                // if (canPlaySound) SoundManager.Instance.PlayGrassHitClip(); todo
+                if (canPlaySound) SoundManager.Instance.PlayGrassHitClip(); 
                 StartCoroutine(EaseIn(playerRb.velocity.x * grassVelocityController.ExternalInfluenceStrength));
             }
         }

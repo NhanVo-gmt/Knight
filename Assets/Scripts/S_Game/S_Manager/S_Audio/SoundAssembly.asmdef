@@ -1,11 +1,10 @@
 {
-    "name": "EnvironmentAssembly",
+    "name": "SoundAssembly",
     "rootNamespace": "",
     "references": [
         "GUID:ff71803575276e14b911ab3765323b00",
-        "GUID:fd4ce569e88ed8f438b8865accacb6ea",
         "GUID:79365834d52eed542862b46928e50f11",
-        "GUID:1b54687c36824804fb77dd34c11fe14f"
+        "GUID:fd4ce569e88ed8f438b8865accacb6ea"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
