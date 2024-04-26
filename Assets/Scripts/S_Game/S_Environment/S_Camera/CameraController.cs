@@ -12,6 +12,10 @@ namespace Knight.Camera
 {
     public class CameraController : SingletonObject<CameraController>
     {
+        // Main cam brain
+        private CinemachineBrain brain;
+        
+        // Child cam
         [Serializable]
         public class CameraClass
         {
@@ -52,6 +56,7 @@ namespace Knight.Camera
         protected override void Awake() 
         {
             base.Awake();
+            brain = GetComponent<CinemachineBrain>();
             cameraShake = GetComponent<CameraShake>();
             
             for (int i = 0; i < virtualCameras.Length; i++)
@@ -109,6 +114,20 @@ namespace Knight.Camera
                 }
             }
         }
+
+        #region Cinamechine Brain
+
+        public void OnPlatform()
+        {
+            brain.m_UpdateMethod = CinemachineBrain.UpdateMethod.FixedUpdate;
+        }
+
+        public void DefaultUpdate()
+        {
+            brain.m_UpdateMethod = CinemachineBrain.UpdateMethod.SmartUpdate;
+        }
+
+        #endregion
 
         #region Confiner
 

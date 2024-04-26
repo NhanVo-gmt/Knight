@@ -1,41 +1,30 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerParent : SingletonObject<PlayerParent>
 {
     // moving platform, elevators
-    private Transform parentTransform;
-
-    private Transform playerStartParent; // null in build, Test in dev
-
-    private void Start()
+    private MovingPlatform platform;
+    
+    Vector2 GetPlatformVelocity()
     {
-        playerStartParent = Player.Instance.transform.parent;
+        if (!platform) return Vector2.zero;
+
+        return platform.GetVelocity();
     }
 
-    public void SetTransform(Transform newTransform)
+    public void SetMovingPlatform(MovingPlatform platform)
     {
-        parentTransform = newTransform;
-        Player.Instance.transform.parent = transform;
+        this.platform = platform;
     }
 
-    public void RemoveTransform()
+    public void UnsetMovingPlatform()
     {
-        parentTransform = null;
-        Player.Instance.transform.parent = playerStartParent;
+        platform = null;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (parentTransform == null) return;
-        
-        Move();
-    }
-
-    void Move()
-    {
-        transform.position = parentTransform.position;
+        Player.Instance.SetPlatformVelocity(GetPlatformVelocity());
     }
 }

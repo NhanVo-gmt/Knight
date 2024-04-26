@@ -7,54 +7,59 @@ using UnityEngine.Serialization;
 
 public class MovingPlatform : MonoBehaviour
 {
-    public List<Vector2> _checkpoints;
+    [Header("Check points")]
+    public List<Vector2> localCheckpoints;
 
-    private List<Vector2> checkPoints;
-    private List<Vector2> reverseCheckPoint;
+    private List<Vector2> worldCheckPoints;
 
-    private float speed = 10f;
+    [SerializeField] private float speed = 10f;
+    [SerializeField] private int currentIndex = 0;
+    [SerializeField] private int nextIndex = 0;
+    [SerializeField] private int targetIndex = 0;
     
-    private int currentIndex = 0;
-    private int targetIndex = 0;
-    private Vector3 target;
-    private Vector3 direction;
+    private Vector2 destination;
+    private Vector2 direction;
+
+    [Header("Switch")] 
+    [SerializeField] private Switch moveSwitch;
+
+    private Rigidbody2D rb;
+    private Vector2 velocity;
     
     private void Awake()
     {
-        checkPoints = _checkpoints;
-        reverseCheckPoint = _checkpoints.Reverse<Vector2>();
-    }
-
-    public void SetTarget(int targetIndex)
-    {
-        this.targetIndex = targetIndex;
-    }
-
-    public void SetNextTarget()
-    {
-        if (currentIndex > targetIndex)
-        {
-            currentIndex--;
-        }
-        else if (currentIndex < targetIndex)
-        {
-            currentIndex++;
-        }
-
-        target = transform.position + (Vector3)_checkpoints[currentIndex];
-        direction = (target - transform.position).normalized;
-    }
-
-    public void Move()
-    {
-        if (currentIndex == targetIndex) return;
+        rb = GetComponent<Rigidbody2D>();
         
-        if (Vector2.Distance(transform.position, target) < 0.1f)
-        {
-            SetNextTarget();
-        }
+        worldCheckPoints = localCheckpoints.Select(x => x + (Vector2)transform.position).ToList();
+        if (moveSwitch) moveSwitch.OnTrigger += OnSwitchTrigger;
+    }
+    
+    private void Start()
+    {
+        destination = transform.position;
+        nextIndex = currentIndex;
+    }
 
-        transform.position += direction * speed * Time.deltaTime;
+    private void OnSwitchTrigger()
+    {
+        if (targetIndex == 0) targetIndex = worldCheckPoints.Count - 1;
+        else targetIndex = 0;
+    }
+
+    void SetNextTarget()
+    {
+        if (nextIndex > targetIndex)
+        {
+            nextIndex--;
+        }
+        else if (nextIndex < targetIndex)
+        {
+            nextIndex++;
+        }
+        else return;
+        
+        destination = worldCheckPoints[nextIndex];
+        direction = (destination - (Vector2)transform.position).normalized;
     }
 
     private void Update()
@@ -62,13 +67,56 @@ public class MovingPlatform : MonoBehaviour
         Move();
     }
 
+    void Move()
+    {
+        if (currentIndex == targetIndex) return;
+        if (Vector2.Distance(transform.position, destination) < 0.3f)
+        {
+            direction = Vector2.zero;
+            currentIndex = nextIndex;
+            SetNextTarget();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        velocity = direction * speed * Time.fixedDeltaTime;
+        rb.MovePosition(rb.position + velocity);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
+        {
+            PlayerParent.Instance.SetMovingPlatform(this);
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.collider.CompareTag("Player"))
+        {
+            PlayerParent.Instance.UnsetMovingPlatform();
+        }
+    }
+
+    #region Get Methods
+
+    public Vector2 GetVelocity()
+    {
+        return velocity;
+    }
+
+    #endregion
+
 
     private void OnDrawGizmosSelected()
     {
-        for (int i = 0; i < _checkpoints.Count; i++)
+        for (int i = 0; i < localCheckpoints.Count; i++)
         {
-            CustomGizmos.DrawString(i.ToString(), _checkpoints[i] + (Vector2)transform.position, Color.blue);
-            Gizmos.DrawSphere(_checkpoints[i] + (Vector2)transform.position, 0.1f);
+            CustomGizmos.DrawString(i.ToString(), localCheckpoints[i] + (Vector2)transform.position, Color.blue);
+            Gizmos.DrawSphere(localCheckpoints[i] + (Vector2)transform.position, 0.1f);
         }
     }
 }

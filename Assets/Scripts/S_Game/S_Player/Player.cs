@@ -275,6 +275,11 @@ public class Player : SingletonObject<Player>, IDataPersistence
         ChangePosition(lastGroundPosition);
     }
 
+    public void SetPlatformVelocity(Vector2 velocity)
+    {
+        movement.SetPlatformVelocity(velocity);
+    }
+
     #endregion
 
 

@@ -57,7 +57,7 @@ public class MoveState : GroundState
         Move();
     }
 
-    void Move() 
+    void Move()
     {
         if (movement.isDashAttacking)
         {

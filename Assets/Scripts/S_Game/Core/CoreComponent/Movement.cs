@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,9 @@ public class Movement : CoreComponent
 
     bool canSetVelocity = true;
     float gravityScale;
+    private Vector2 platformVelocity = Vector2.zero;
     
+    public bool isAddingForce { get; private set; }
     public bool isDashing { get; private set; }
     public bool isDashAttacking { get; private set; }
     
@@ -79,7 +82,23 @@ public class Movement : CoreComponent
 
     public void AddForce(Vector2 direction, float amount)
     {
-        rb.AddForce(direction * amount, ForceMode2D.Impulse);
+        isAddingForce = true;
+        StartCoroutine(AddForceCoroutine(direction, amount));
+    }
+
+    IEnumerator AddForceCoroutine(Vector2 direction, float amount)
+    {
+        Vector2 forceDirection = direction + platformVelocity;
+        rb.AddForce(forceDirection * amount, ForceMode2D.Impulse);
+        
+        yield return new WaitForSeconds(0.1f);
+
+        isAddingForce = false;
+    }
+
+    public void SetPlatformVelocity(Vector2 velocity)
+    {
+        platformVelocity = velocity;
     }
 
     #endregion
@@ -177,17 +196,17 @@ public class Movement : CoreComponent
 
         #endregion
         
-        // #region Conserve Momentum
-        //
-        // // Wont slow player when they are moving in the same direction 
-        // if (data.moveData.doConserveMomentum && Mathf.Abs(rb.velocity.x) > Mathf.Abs(targetSpeed) &&
-        //     Mathf.Sign(rb.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f)
-        // {
-        //     // Prevent any deceleration from happening
-        //     accelRate = 0f;
-        // }
-        //
-        // #endregion
+        #region Conserve Momentum
+        
+        // Wont slow player when they are moving in the same direction 
+        if (data.moveData.doConserveMomentum && Mathf.Abs(rb.velocity.x) > Mathf.Abs(targetSpeed) &&
+            Mathf.Sign(rb.velocity.x) == Mathf.Sign(targetSpeed) && Mathf.Abs(targetSpeed) > 0.01f)
+        {
+            // Prevent any deceleration from happening
+            accelRate = 0f;
+        }
+        
+        #endregion
 
         float speedDiff = targetSpeed - rb.velocity.x;
         
@@ -195,6 +214,8 @@ public class Movement : CoreComponent
         rb.AddForce(movement * Vector2.right, ForceMode2D.Force);
     }
 
+    #region Dash
+    
     public void Dash()
     {
         isDashing = true;
@@ -239,7 +260,13 @@ public class Movement : CoreComponent
         isDashing = false;
     }
 
+    #endregion
 
+    public void MovePosition(Vector2 velocity)
+    {
+        rb.MovePosition(rb.position + velocity);
+    }
+    
     public void MoveToPos(Vector2 endPos, float lerpTime)
     {
         SetVelocityZero();
@@ -264,4 +291,14 @@ public class Movement : CoreComponent
     }
 
     #endregion
+
+    private void FixedUpdate()
+    {
+        if (isDashing || isAddingForce) return;
+        
+        if (platformVelocity != Vector2.zero)
+        {
+            MovePosition(platformVelocity);
+        }
+    }
 }

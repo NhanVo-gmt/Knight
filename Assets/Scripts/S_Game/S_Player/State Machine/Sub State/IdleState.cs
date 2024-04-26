@@ -34,5 +34,7 @@ public class IdleState : GroundState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+        
+        movement.Move(0f, 1f);
     }
 }
