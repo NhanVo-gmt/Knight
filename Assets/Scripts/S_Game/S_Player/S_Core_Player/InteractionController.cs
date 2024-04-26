@@ -11,6 +11,8 @@ public class InteractionController : CoreComponent
     public bool canRest { get; private set; }
     public Vector2 restPos { get; private set; }
 
+    private InteractableArea interactableArea;
+
     [SerializeField] bool isInteracting = false;
 
     protected override void Awake()
@@ -55,6 +57,10 @@ public class InteractionController : CoreComponent
             dialogueController.StartConversation();
             isInteracting = true;
         }
+        else if (interactableArea != null)
+        {
+            interactableArea.Interact();
+        }
     }
     
     void FinishInteract()
@@ -78,6 +84,20 @@ public class InteractionController : CoreComponent
         }
     }
     
+    #endregion
+
+    #region Interactable Area
+
+    public void SetInteractableArea(InteractableArea interactableArea)
+    {
+        this.interactableArea = interactableArea;
+    }
+
+    public void UnSetInteractableArea()
+    {
+        interactableArea = null;
+    }
+
     #endregion
 
     #region Rest

@@ -1,0 +1,17 @@
+{
+    "name": "InteractableAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9234a8d13ac937342a29591d5ee5e39c",
+        "GUID:79365834d52eed542862b46928e50f11"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

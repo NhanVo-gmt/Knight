@@ -5,7 +5,34 @@ public class PlayerParent : SingletonObject<PlayerParent>
 {
     // moving platform, elevators
     private MovingPlatform platform;
-    
+    private MovingPlatform[] platforms;
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
+    private void Start()
+    {
+        SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
+        FindAllMovingPlatformsInScene();
+    }
+
+    private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)
+    {
+        FindAllMovingPlatformsInScene();
+    }
+
+    void FindAllMovingPlatformsInScene()
+    {
+        platforms = FindObjectsOfType<MovingPlatform>();
+        foreach (MovingPlatform movingPlatform in platforms)
+        {
+            movingPlatform.OnPlayerOnPlatform += SetMovingPlatform;
+        }
+    }
+
+
     Vector2 GetPlatformVelocity()
     {
         if (!platform) return Vector2.zero;
@@ -16,11 +43,6 @@ public class PlayerParent : SingletonObject<PlayerParent>
     public void SetMovingPlatform(MovingPlatform platform)
     {
         this.platform = platform;
-    }
-
-    public void UnsetMovingPlatform()
-    {
-        platform = null;
     }
 
     private void FixedUpdate()

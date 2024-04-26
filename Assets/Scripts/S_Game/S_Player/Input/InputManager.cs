@@ -45,7 +45,6 @@ public class InputManager : MonoBehaviour
         InteractionRegister();
     }
 
-
     #region Register
 
     void DashInputRegister()

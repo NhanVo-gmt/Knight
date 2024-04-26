@@ -56,6 +56,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
     
     private bool isGamePaused = false;
 
+
     #region Set up
     
     protected override void Awake() 
@@ -191,9 +192,9 @@ public class Player : SingletonObject<Player>, IDataPersistence
         {
             interactionController.EnableResting(checkPoint.GetRestPos());
         }
-        else if (other.GetComponent<Exit>())
+        else if (other.TryGetComponent<InteractableArea>(out InteractableArea interactableArea))
         {
-            
+            interactionController.SetInteractableArea(interactableArea);
         }
     }
 
@@ -203,6 +204,10 @@ public class Player : SingletonObject<Player>, IDataPersistence
         if (other.CompareTag("CheckPoint"))
         {
             interactionController.DisableResting();
+        }
+        else if (other.GetComponent<InteractableArea>())
+        {
+            interactionController.UnSetInteractableArea();
         }
     }
 
@@ -283,18 +288,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
     #endregion
 
-
-    #region Get Methods
-
-    public T GetCoreComponent<T>() where T : CoreComponent
-    {
-        return core.GetCoreComponent<T>();
-    }
-
-    #endregion
-
     #region On Draw Gizmos
-    
     
     private void OnDrawGizmosSelected() 
     {
@@ -303,8 +297,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
         Gizmos.DrawWireSphere(data.meleeAttackData.leftAttackPos + (Vector2)transform.position, data.meleeAttackData.radius);    
         Gizmos.DrawWireSphere(data.meleeAttackData.rightAttackPos + (Vector2)transform.position, data.meleeAttackData.radius);    
     }
-
-
+    
     #endregion
 
     #region Save Load
@@ -329,7 +322,6 @@ public class Player : SingletonObject<Player>, IDataPersistence
         gameData.playerPos = transform.position;
     }
     
-
     #endregion
     
 }

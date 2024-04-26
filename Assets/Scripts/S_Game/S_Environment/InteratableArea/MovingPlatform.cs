@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class MovingPlatform : MonoBehaviour
+public class MovingPlatform : InteractableArea
 {
     [Header("Check points")]
     public List<Vector2> localCheckpoints;
@@ -20,30 +20,22 @@ public class MovingPlatform : MonoBehaviour
     private Vector2 destination;
     private Vector2 direction;
 
-    [Header("Switch")] 
-    [SerializeField] private Switch moveSwitch;
-
     private Rigidbody2D rb;
     private Vector2 velocity;
+
+    public Action<MovingPlatform> OnPlayerOnPlatform;
     
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         
         worldCheckPoints = localCheckpoints.Select(x => x + (Vector2)transform.position).ToList();
-        if (moveSwitch) moveSwitch.OnTrigger += OnSwitchTrigger;
     }
     
     private void Start()
     {
         destination = transform.position;
         nextIndex = currentIndex;
-    }
-
-    private void OnSwitchTrigger()
-    {
-        if (targetIndex == 0) targetIndex = worldCheckPoints.Count - 1;
-        else targetIndex = 0;
     }
 
     void SetNextTarget()
@@ -89,7 +81,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.collider.CompareTag("Player"))
         {
-            PlayerParent.Instance.SetMovingPlatform(this);
+            OnPlayerOnPlatform?.Invoke(this);
         }
     }
 
@@ -97,7 +89,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if (other.collider.CompareTag("Player"))
         {
-            PlayerParent.Instance.UnsetMovingPlatform();
+            OnPlayerOnPlatform?.Invoke(null);
         }
     }
 
@@ -118,5 +110,11 @@ public class MovingPlatform : MonoBehaviour
             CustomGizmos.DrawString(i.ToString(), localCheckpoints[i] + (Vector2)transform.position, Color.blue);
             Gizmos.DrawSphere(localCheckpoints[i] + (Vector2)transform.position, 0.1f);
         }
+    }
+
+    public override void Interact()
+    {
+        if (targetIndex == 0) targetIndex = worldCheckPoints.Count - 1;
+        else targetIndex = 0;
     }
 }
