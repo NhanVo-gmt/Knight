@@ -1,7 +1,9 @@
 {
-    "name": "ScriptHelperAssembly",
+    "name": "SaveLoadAssembly",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:79365834d52eed542862b46928e50f11"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

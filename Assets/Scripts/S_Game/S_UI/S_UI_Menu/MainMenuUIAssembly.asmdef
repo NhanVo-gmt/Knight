@@ -1,0 +1,20 @@
+{
+    "name": "MainMenuUIAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:fd4ce569e88ed8f438b8865accacb6ea",
+        "GUID:051a29855f010b64c940f8efa0aedf14",
+        "GUID:79365834d52eed542862b46928e50f11",
+        "GUID:ff71803575276e14b911ab3765323b00",
+        "GUID:13dee9145ad6a944d870fec27c4d557c"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

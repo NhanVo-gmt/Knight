@@ -1,7 +1,10 @@
 {
-    "name": "ScriptHelperAssembly",
+    "name": "InventoryAssembly",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:79365834d52eed542862b46928e50f11",
+        "GUID:fe4327a1e78f02c46b30a899c5a9bcab"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

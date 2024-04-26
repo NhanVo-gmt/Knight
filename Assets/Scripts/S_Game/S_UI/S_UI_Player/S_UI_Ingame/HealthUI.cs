@@ -22,7 +22,7 @@ public class HealthUI : MonoBehaviour
     {
         SpawnHealthImage();
         
-        health = FindObjectOfType<Player>().GetCoreComponent<Health>();
+        health = GameObject.FindWithTag("Player").GetComponentInChildren<Health>();
         health.OnUpdateHealth += UpdateHealthUI;
     }
 

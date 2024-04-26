@@ -75,6 +75,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
         SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneBeforeLoading;
         SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
+        SceneLoader.Instance.OnChangedPlayerPosition += ((sender, position) => ChangePosition(position));
     }
 
     private void GameManager_OnChangedGameState(GameManager.GameState gameState)

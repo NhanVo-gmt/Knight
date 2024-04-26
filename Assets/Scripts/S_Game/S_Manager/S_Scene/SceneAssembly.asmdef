@@ -1,7 +1,11 @@
 {
-    "name": "ScriptHelperAssembly",
+    "name": "SceneAssembly",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:fd4ce569e88ed8f438b8865accacb6ea",
+        "GUID:79365834d52eed542862b46928e50f11",
+        "GUID:051a29855f010b64c940f8efa0aedf14"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

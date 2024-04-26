@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Knight.Camera;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
@@ -17,6 +16,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public EventHandler OnSceneReadyToPlay;
     public EventHandler OnScenePlay;
     public EventHandler<SceneLoaderEnum.Region> OnChangedRegion;
+
+    public EventHandler<Vector2> OnChangedPlayerPosition;
 
     [SerializeField] private SceneLoaderEnum.Scene currentScene = SceneLoaderEnum.Scene.MenuScene;
     [SerializeField] private SceneLoaderEnum.Region currentRegion = SceneLoaderEnum.Region.None;
@@ -85,7 +86,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
         yield return new WaitForSeconds(1f);
         
-        Player.Instance.ChangePosition(playerStartPos);
+        OnChangedPlayerPosition?.Invoke(this, playerStartPos);
 
         currentScene = scene;
         
@@ -111,7 +112,7 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
         yield return new WaitForSeconds(1f);
         
-        Player.Instance.ChangePosition(newPos);
+        OnChangedPlayerPosition?.Invoke(this, newPos);
         currentScene = scene;
         
         SceneLoaderEnum.Region newRegion = GetRegion(currentScene);

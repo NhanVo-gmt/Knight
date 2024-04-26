@@ -26,10 +26,10 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     private void Start()
     {
-        SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
+        // SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
     }
 
-    private void SceneLoader_OnScenePlay(object sender, EventArgs e)
+    public void SceneLoader_OnScenePlay(object sender, EventArgs e)
     {
         canSaveGame = true;
     }

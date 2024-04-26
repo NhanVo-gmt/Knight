@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Knight.Camera;
 using UnityEngine;
 
 public class Parallax : MonoBehaviour

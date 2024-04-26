@@ -16,7 +16,7 @@ public class GameData
     
     public GameData()
     {
-        sceneName = SceneLoaderEnum.Scene.FarmScene.ToString(); 
+        sceneName = "FarmScene";
         playerPos = Vector2.zero;
         playerState = "IdleState";
         bossDefeated = new List<string>();

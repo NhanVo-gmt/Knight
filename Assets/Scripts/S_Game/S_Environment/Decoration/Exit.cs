@@ -14,7 +14,7 @@ public class Exit : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        if (other.GetComponent<Player>())
+        if (other.CompareTag("Player"))
         {
             SceneLoader.Instance.ChangeScene(scene, spawnPos);
         }
