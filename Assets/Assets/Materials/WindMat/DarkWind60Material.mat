@@ -66,6 +66,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
+    - _BlurAmount: 0
     - _EnableExternalAlpha: 0
     - _ExternalInfluence: 0
     - _FlashAmount: 0.6
