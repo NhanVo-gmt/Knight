@@ -31,3 +31,9 @@ MonoBehaviour:
   - Name: Sky
     parallax: 0.9
     blurMat: {fileID: 2100000, guid: 8d47eb8774c02b247b705786626d3d32, type: 2}
+  - Name: MidDecoration
+    parallax: 0.1
+    blurMat: {fileID: 2100000, guid: a8887bf47bcb4164ea977f92baecb42d, type: 2}
+  - Name: BackDecoration
+    parallax: 0.2
+    blurMat: {fileID: 2100000, guid: f82e5ef2c8da58845a8a20d859a64c3d, type: 2}
