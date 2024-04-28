@@ -92,7 +92,8 @@ public class Combat : CoreComponent, IDamageable
     {
         if (this.damagerTarget == damagerType) return;
         if (shieldCombat.CanShield(attackDirection)) return;
-        if(!health.TakeDamage(damage, needResetPlayerPosition)) return;
+        if (!health.TakeDamage(damage, needResetPlayerPosition)) return;
+        if (health.isDie) return;
         if (needResetPlayerPosition) return;
 
         if (attackDirection == Vector2.zero)

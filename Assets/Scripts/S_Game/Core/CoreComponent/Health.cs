@@ -15,7 +15,7 @@ public class Health : CoreComponent
 
     public Action OnResetGroundPosition;
 
-    private bool isDie = false;
+    public bool isDie = false;
 
     #region Set up
     
