@@ -36036,6 +36036,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: -------TEST----------
       objectReference: {fileID: 0}
+    - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6242080086664122474, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.z
       value: -10
@@ -36099,6 +36103,10 @@ PrefabInstance:
     - target: {fileID: 7831832849339889417, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.y
       value: -1.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8047810716478708877, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8133096720823220321, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_TrackedObjectOffset.z
