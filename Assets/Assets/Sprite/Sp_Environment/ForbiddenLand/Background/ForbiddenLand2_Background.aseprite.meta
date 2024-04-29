@@ -1,0 +1,443 @@
+fileFormatVersion: 2
+guid: 00e0e128ecac5f14fbb94998748adc32
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 16
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 0
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 638500311284391706
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: BackbackGround
+    originalName: 
+    pivot: {x: 0.5, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 740
+      height: 200
+    spriteID: 0c01406c43409524eb63506fc2b4a728
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Background
+    originalName: 
+    pivot: {x: 0.5006766, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 212
+      width: 739
+      height: 200
+    spriteID: 0d52ebeb64ffac245b84d7285fc83a31
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 212}
+  - name: Mid2ground
+    originalName: 
+    pivot: {x: 0.5006766, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 420
+      width: 739
+      height: 134
+    spriteID: 6fb68ed6358751643a808951d338b8ee
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 420}
+  - name: MidGround
+    originalName: 
+    pivot: {x: 0.5006766, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 562
+      width: 739
+      height: 65
+    spriteID: 825ea056826aa244bb651b3a1830f62f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 562}
+  - name: FrontGround
+    originalName: 
+    pivot: {x: 0.5006766, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 635
+      width: 739
+      height: 44
+    spriteID: 0b88ee6e5e29b7c4bafce371d55bbcd2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 635}
+  - name: Rock
+    originalName: 
+    pivot: {x: 0.50000006, y: -0.6153846}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 735
+      width: 734
+      height: 26
+    spriteID: 202728490896a474cb951d39bafee1e0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 735}
+  - name: Sheet
+    originalName: 
+    pivot: {x: 0.5006766, y: 0}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 687
+      width: 739
+      height: 40
+    spriteID: 3db54b142a6ebfb42a4506226efe4f25
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 687}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -322093587
+    name: BackbackGround
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: BackbackGround
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 740
+        height: 200
+      spriteId: 0c01406c43409524eb63506fc2b4a728
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 1
+    guid: -1021688249
+    name: Background
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Background
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 739
+        height: 200
+      spriteId: 0d52ebeb64ffac245b84d7285fc83a31
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 2
+    guid: 1888433565
+    name: Mid2ground
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Mid2ground
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 739
+        height: 134
+      spriteId: 6fb68ed6358751643a808951d338b8ee
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 3
+    guid: 1549085486
+    name: MidGround
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: MidGround
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 739
+        height: 65
+      spriteId: 825ea056826aa244bb651b3a1830f62f
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 4
+    guid: -713259659
+    name: Front
+    layerFlags: 3
+    layerType: 1
+    blendMode: 0
+    cells: []
+    linkedCells: []
+    parentIndex: -1
+  - layerIndex: 8
+    guid: -693756266
+    name: FrontGround
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: FrontGround
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 739
+        height: 44
+      spriteId: 0b88ee6e5e29b7c4bafce371d55bbcd2
+    linkedCells: []
+    parentIndex: 4
+  - layerIndex: 9
+    guid: 419320364
+    name: Rock
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Rock
+      frameIndex: 0
+      cellRect:
+        x: 3
+        y: 16
+        width: 734
+        height: 26
+      spriteId: 202728490896a474cb951d39bafee1e0
+    linkedCells: []
+    parentIndex: 4
+  - layerIndex: 10
+    guid: -496706263
+    name: Sheet
+    layerFlags: 3
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Sheet
+      frameIndex: 0
+      cellRect:
+        x: 0
+        y: 0
+        width: 739
+        height: 40
+      spriteId: 3db54b142a6ebfb42a4506226efe4f25
+    linkedCells: []
+    parentIndex: 4
+  platformSettings:
+  - name: DefaultTexturePlatform
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Standalone
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Server
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  - name: Windows Store Apps
+    overridden: 0
+    ignorePlatformSupport: 0
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    androidETC2FallbackOverride: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 740, y: 200}

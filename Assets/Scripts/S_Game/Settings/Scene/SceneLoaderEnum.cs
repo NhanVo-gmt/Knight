@@ -12,7 +12,7 @@ public static class SceneLoaderEnum
         ForbiddenLandScene3 = 303,
         ForbiddenLandScene4 = 304,
         ForbiddenLandScene5 = 305,
-        ForbiddenLandScene6 = 306,
+        ForbiddenLandSceneBoss = 306,
         ForbiddenLandScene7 = 307,
         ForbiddenLandScene8 = 308,
         ForbiddenLandScene9 = 309,
