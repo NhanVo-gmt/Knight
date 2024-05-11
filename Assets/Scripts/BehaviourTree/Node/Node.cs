@@ -31,6 +31,7 @@ public abstract class Node : ScriptableObject
 
     public virtual Node Clone()
     {
+        
         return Instantiate(this);
     }
 

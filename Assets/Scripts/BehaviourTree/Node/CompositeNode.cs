@@ -27,6 +27,7 @@ public abstract class CompositeNode : Node
     public override Node Clone()
     {
         CompositeNode compositeNode = Instantiate(this);
+        compositeNode.NodeComponent.description = this.NodeComponent.description;
         compositeNode.children = children.ConvertAll(n => n.Clone());
         return compositeNode;
     }

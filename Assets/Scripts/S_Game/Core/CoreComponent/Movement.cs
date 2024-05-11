@@ -166,6 +166,11 @@ public class Movement : CoreComponent
         rb.transform.Rotate(0, 180, 0);
     }
 
+    public Vector2 GetDirectionLeftRightFromPlayer(Vector2 playerPos)
+    {
+        return playerPos.x < transform.position.x ? Vector2.left : Vector2.right;
+    }
+
     public float GetDirectionMagnitude()
     {
         return faceDirection == Vector2.left ? -1 : 1;
