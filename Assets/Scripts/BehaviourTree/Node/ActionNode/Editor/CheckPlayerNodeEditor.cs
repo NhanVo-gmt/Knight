@@ -7,7 +7,9 @@ using UnityEngine;
 public class CheckPlayerNodeEditor : ActionNodeEditor
 {
     private SerializedProperty checkTypeProperty;
+    private SerializedProperty checkPosTypeProperty;
     private SerializedProperty checkRelativePosProperty;
+    private SerializedProperty checkPosProperty;
     private SerializedProperty radiusProperty;
     private SerializedProperty sizeProperty;
 
@@ -18,7 +20,9 @@ public class CheckPlayerNodeEditor : ActionNodeEditor
         base.OnEnable();
 
         checkTypeProperty = serializedObject.FindProperty("checkType");
+        checkPosTypeProperty = serializedObject.FindProperty("checkPosType");
         checkRelativePosProperty = serializedObject.FindProperty("checkRelativePos");
+        checkPosProperty = serializedObject.FindProperty("checkPos");
         radiusProperty = serializedObject.FindProperty("radius");
         sizeProperty = serializedObject.FindProperty("size");
     }
@@ -37,15 +41,26 @@ public class CheckPlayerNodeEditor : ActionNodeEditor
         if (!HasLinkNode())
         {
             EditorGUILayout.PropertyField(checkTypeProperty);
-            EditorGUILayout.PropertyField(checkRelativePosProperty);
-            
-            if (checkPlayerNode.checkType == CheckPlayerNode.CheckType.Box)
+            EditorGUILayout.PropertyField(checkPosTypeProperty);
+
+            switch (checkPlayerNode.checkPosType)
             {
-                EditorGUILayout.PropertyField(sizeProperty);
+                case CheckPlayerNode.CheckPositionType.Relative:
+                    EditorGUILayout.PropertyField(checkRelativePosProperty);
+                    break;
+                case CheckPlayerNode.CheckPositionType.World:
+                    EditorGUILayout.PropertyField(checkPosProperty);
+                    break;
             }
-            else if (checkPlayerNode.checkType == CheckPlayerNode.CheckType.Circle)
+
+            switch (checkPlayerNode.checkType)
             {
-                EditorGUILayout.PropertyField(radiusProperty);
+                case CheckPlayerNode.CheckType.Box:
+                    EditorGUILayout.PropertyField(sizeProperty);
+                    break;
+                case CheckPlayerNode.CheckType.Circle:
+                    EditorGUILayout.PropertyField(radiusProperty);
+                    break;
             }
         }
         

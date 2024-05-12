@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: Shadow Knight_Frame_0
+  - name: The Prince_Frame_0
     originalName: 
     pivot: {x: -0.9772728, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 493
+      x: 356
+      y: 215
       width: 44
       height: 37
-    spriteID: ecf5adda98060ca4ea0819f9a5aea715
+    spriteID: 920c14754ee0f7848b8f1851f25c1e56
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -138,19 +138,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 493}
-  - name: Shadow Knight_Frame_1
+    uvTransform: {x: 356, y: 215}
+  - name: The Prince_Frame_1
     originalName: 
     pivot: {x: -2.48, y: -0.71052635}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 229
-      y: 227
+      x: 4
+      y: 363
       width: 25
       height: 38
-    spriteID: 1b94c446e7599df4699b39d9e1a728f3
+    spriteID: 7e48c07e484ca814d9b0294a0f902bfd
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -158,19 +158,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 229, y: 227}
-  - name: Shadow Knight_Frame_2
+    uvTransform: {x: 4, y: 363}
+  - name: The Prince_Frame_2
     originalName: 
     pivot: {x: -2.48, y: -0.71052635}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 86
-      y: 977
+      x: 37
+      y: 363
       width: 25
       height: 38
-    spriteID: dae0979159aee6445a13a21d7f5abf3c
+    spriteID: 232c39acda4bcae488e7f984c00a4c11
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -178,19 +178,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 86, y: 977}
-  - name: Shadow Knight_Frame_3
+    uvTransform: {x: 37, y: 363}
+  - name: The Prince_Frame_3
     originalName: 
     pivot: {x: -2.48, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 83
-      y: 748
+      x: 103
+      y: 363
       width: 25
       height: 37
-    spriteID: 4b2ebc03b7365684ea7f145099f9b88b
+    spriteID: 0e0e1650e5899e34aa6f555c49bdb304
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -198,19 +198,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 83, y: 748}
-  - name: Shadow Knight_Frame_4
+    uvTransform: {x: 103, y: 363}
+  - name: The Prince_Frame_4
     originalName: 
     pivot: {x: -2.48, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 81
-      y: 635
+      x: 136
+      y: 363
       width: 25
       height: 37
-    spriteID: a2b79a0edf2ce0b4c8b72058bba4f94a
+    spriteID: 48cd91922d7e05a4aa31a4f8bb3360ae
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -218,19 +218,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 81, y: 635}
-  - name: Shadow Knight_Frame_5
+    uvTransform: {x: 136, y: 363}
+  - name: The Prince_Frame_5
     originalName: 
     pivot: {x: -2.48, y: -0.71052635}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 86
-      y: 804
+      x: 70
+      y: 363
       width: 25
       height: 38
-    spriteID: 067b7ab3c024a9542a8e8f9158eac68c
+    spriteID: 71e4d12b068ab9348ad4d4fea7923167
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -238,19 +238,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 86, y: 804}
-  - name: Shadow Knight_Frame_6
+    uvTransform: {x: 70, y: 363}
+  - name: The Prince_Frame_6
     originalName: 
     pivot: {x: -2.48, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 87
-      y: 508
+      x: 169
+      y: 363
       width: 25
       height: 37
-    spriteID: c3c59ef198c657d468d9522312ae5bf0
+    spriteID: afd6b10439b789e46bf212b692c1cebb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -258,19 +258,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 87, y: 508}
-  - name: Shadow Knight_Frame_7
+    uvTransform: {x: 169, y: 363}
+  - name: The Prince_Frame_7
     originalName: 
     pivot: {x: -2.48, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 84
-      y: 571
+      x: 202
+      y: 363
       width: 25
       height: 37
-    spriteID: ba043b8fd61c73e42b6182806ee0f421
+    spriteID: fb929c21f033118498620f22d4952dd2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -278,19 +278,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 84, y: 571}
-  - name: Shadow Knight_Frame_8
+    uvTransform: {x: 202, y: 363}
+  - name: The Prince_Frame_8
     originalName: 
     pivot: {x: -2.48, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 83
-      y: 439
+      x: 235
+      y: 363
       width: 25
       height: 37
-    spriteID: b6f8da1d44120f24d938d091de359194
+    spriteID: 9201601f220091a4087bede5d5c2a881
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -298,19 +298,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 83, y: 439}
-  - name: Shadow Knight_Frame_9
+    uvTransform: {x: 235, y: 363}
+  - name: The Prince_Frame_9
     originalName: 
     pivot: {x: -2.48, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 498
+      x: 268
+      y: 363
       width: 25
       height: 37
-    spriteID: 3d6199c43babd9f4d80540689fe8052a
+    spriteID: e794381af9ce7a840938b887e09a7bba
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -318,19 +318,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 498}
-  - name: Shadow Knight_Frame_10
+    uvTransform: {x: 268, y: 363}
+  - name: The Prince_Frame_10
     originalName: 
     pivot: {x: -2.48, y: -0.7297298}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 543
+      x: 301
+      y: 363
       width: 25
       height: 37
-    spriteID: 182f53049cca12647bd6ebffdc02ddbf
+    spriteID: eb07ccbb6acb85a428c16f0573d111c2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -338,19 +338,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 543}
-  - name: Shadow Knight_Frame_11
+    uvTransform: {x: 301, y: 363}
+  - name: The Prince_Frame_11
     originalName: 
     pivot: {x: -1.90625, y: -0.7941177}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 419
+      x: 4
+      y: 321
       width: 32
       height: 34
-    spriteID: 5fbd73132b17c8040b10c5e781e3252c
+    spriteID: 1f199ac0570141f408df6dd52af4ceeb
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -358,19 +358,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 419}
-  - name: Shadow Knight_Frame_12
+    uvTransform: {x: 4, y: 321}
+  - name: The Prince_Frame_12
     originalName: 
     pivot: {x: -1.6944444, y: -0.64285713}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 73
-      y: 924
+      x: 155
+      y: 161
       width: 36
       height: 42
-    spriteID: 2fe75a3274666dc4ab48118954ba5748
+    spriteID: 47381a4548ebec14f95119ec31e843f1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -378,19 +378,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 73, y: 924}
-  - name: Shadow Knight_Frame_13
+    uvTransform: {x: 155, y: 161}
+  - name: The Prince_Frame_13
     originalName: 
     pivot: {x: -1.4634147, y: -0.675}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 70
-      y: 858
+      x: 307
+      y: 215
       width: 41
       height: 40
-    spriteID: f3a233d3ce3f0034c809cf70a1e3e8b2
+    spriteID: c7ceeb35229cb004486a7d6313b94c01
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -398,19 +398,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 70, y: 858}
-  - name: Shadow Knight_Frame_14
+    uvTransform: {x: 307, y: 215}
+  - name: The Prince_Frame_14
     originalName: 
     pivot: {x: -0.12499996, y: -0.4821429}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 571
+      x: 166
+      y: 92
       width: 72
       height: 56
-    spriteID: 5552f64cb830a7648baa92f80db24247
+    spriteID: d13b0f6bfa2e0d540bc546cca371a73e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -418,19 +418,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 571}
-  - name: Shadow Knight_Frame_15
+    uvTransform: {x: 166, y: 92}
+  - name: The Prince_Frame_15
     originalName: 
     pivot: {x: -0.15189879, y: -0.48888886}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 695
+      x: 323
+      y: 92
       width: 79
       height: 45
-    spriteID: 9eb51c743e3138f4fad0b75a23c4e3e1
+    spriteID: a441e0602aea6f04d87e339835d178c5
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -438,19 +438,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 695}
-  - name: Shadow Knight_Frame_16
+    uvTransform: {x: 323, y: 92}
+  - name: The Prince_Frame_16
     originalName: 
     pivot: {x: -1.525, y: -0.84375006}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 758
+      x: 344
+      y: 161
       width: 40
       height: 32
-    spriteID: 27b1a37dc708a1a4586811b519b7013d
+    spriteID: d3b856eb347cfac4596965c4cbb0c5fc
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -458,19 +458,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 758}
-  - name: Shadow Knight_Frame_17
+    uvTransform: {x: 344, y: 161}
+  - name: The Prince_Frame_17
     originalName: 
     pivot: {x: -1.525, y: -0.84375006}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 798
+      x: 392
+      y: 161
       width: 40
       height: 32
-    spriteID: 4bfb7d5128c4d8f4cb3ce195865d3f7a
+    spriteID: b356426c147e80f43bf44731ce0e5533
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -478,19 +478,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 798}
-  - name: Shadow Knight_Frame_18
+    uvTransform: {x: 392, y: 161}
+  - name: The Prince_Frame_18
     originalName: 
     pivot: {x: -1.5526315, y: -0.65789473}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 667
+      x: 253
+      y: 161
       width: 38
       height: 38
-    spriteID: 44387bc7dc203bf4c9f67c548252013d
+    spriteID: 9b636437d8347fb4188676f4f55bd1c7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -498,19 +498,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 667}
-  - name: Shadow Knight_Frame_19
+    uvTransform: {x: 253, y: 161}
+  - name: The Prince_Frame_19
     originalName: 
     pivot: {x: -0.5714287, y: -0.6388889}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 333
+      x: 428
+      y: 45
       width: 63
       height: 36
-    spriteID: 53e5a3e273de48249b7dfba4832d4532
+    spriteID: 7fed417137c12db42b4dfe52a4a8b43c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -518,19 +518,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 333}
-  - name: Shadow Knight_Frame_20
+    uvTransform: {x: 428, y: 45}
+  - name: The Prince_Frame_20
     originalName: 
     pivot: {x: -0.26760557, y: -0.4375}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 748
+      x: 410
+      y: 92
       width: 71
       height: 48
-    spriteID: 9d6dfb7fa06a6ba409a1c11d9bc1515f
+    spriteID: c1ecb2ff97b446043a54f8514893a25f
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -538,8 +538,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 748}
-  - name: Shadow Knight_Frame_21
+    uvTransform: {x: 410, y: 92}
+  - name: The Prince_Frame_21
     originalName: 
     pivot: {x: -0.36619705, y: -0.44262296}
     alignment: 9
@@ -547,10 +547,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 439
+      y: 92
       width: 71
       height: 61
-    spriteID: 5c41170f38e12224c9c63cbaaa56fa0c
+    spriteID: 6a7b28dfbb6bdd84aa6671510dcadf8b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -558,19 +558,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 439}
-  - name: Shadow Knight_Frame_22
+    uvTransform: {x: 4, y: 92}
+  - name: The Prince_Frame_22
     originalName: 
     pivot: {x: -1.6216215, y: -0.9310345}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 988
+      x: 145
+      y: 281
       width: 37
       height: 29
-    spriteID: 66ba500b9a7c67f4e891e5f42123c64d
+    spriteID: db4a3d9b69b99a14bb886786baa9d5e8
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -578,19 +578,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 988}
-  - name: Shadow Knight_Frame_23
+    uvTransform: {x: 145, y: 281}
+  - name: The Prince_Frame_23
     originalName: 
     pivot: {x: -1.4634147, y: -1.037037}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 918
+      x: 47
+      y: 281
       width: 41
       height: 27
-    spriteID: be50558cd979e31488be698667277545
+    spriteID: 2a502b49d242e374ca4274c8d3f35811
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -598,19 +598,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 918}
-  - name: Shadow Knight_Frame_24
+    uvTransform: {x: 47, y: 281}
+  - name: The Prince_Frame_24
     originalName: 
     pivot: {x: -1.4634147, y: -1.037037}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 953
+      x: 96
+      y: 281
       width: 41
       height: 27
-    spriteID: d06fcf133a950e343b4d2dba0f2a5ca4
+    spriteID: 6ee8333d637939841978ddb8409a6d35
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -618,19 +618,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 953}
-  - name: Shadow Knight_Frame_25
+    uvTransform: {x: 96, y: 281}
+  - name: The Prince_Frame_25
     originalName: 
     pivot: {x: -0.71249986, y: -0.6969697}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 365
+      x: 258
+      y: 4
       width: 80
       height: 66
-    spriteID: 7732a487dcab9f140acf3d7d9348e0d1
+    spriteID: fe5d0525ca51cab4ea51ec8c5c877642
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -638,19 +638,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 365}
-  - name: Shadow Knight_Frame_26
+    uvTransform: {x: 258, y: 4}
+  - name: The Prince_Frame_26
     originalName: 
     pivot: {x: -0.7333334, y: -0.90909094}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 508
+      x: 83
+      y: 92
       width: 75
       height: 55
-    spriteID: 1023e00076379b64db92f8fb2cbd5562
+    spriteID: 9897092764dec3440a77887a6101ed72
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -658,19 +658,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 508}
-  - name: Shadow Knight_Frame_27
+    uvTransform: {x: 83, y: 92}
+  - name: The Prince_Frame_27
     originalName: 
     pivot: {x: -0.90163946, y: -1.2444444}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 4
-      y: 924
+      x: 86
+      y: 161
       width: 61
       height: 45
-    spriteID: acad99ef05a15874085e60404793641d
+    spriteID: 23c8eeeb6b7a2ad4287a121a7c35a791
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -678,19 +678,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 4, y: 924}
-  - name: Shadow Knight_Frame_28
+    uvTransform: {x: 86, y: 161}
+  - name: The Prince_Frame_28
     originalName: 
     pivot: {x: -1.1956524, y: -1.6470588}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 585
+      x: 457
+      y: 215
       width: 46
       height: 34
-    spriteID: 9cce9208c78fcf04c93b7ab5038eacce
+    spriteID: 77b76a89a0e7cb44c8bc2eabafdb74b4
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -698,19 +698,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 585}
-  - name: Shadow Knight_Frame_29
+    uvTransform: {x: 457, y: 215}
+  - name: The Prince_Frame_29
     originalName: 
     pivot: {x: -1.0384617, y: -1.117647}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 333
+      x: 70
+      y: 215
       width: 52
       height: 51
-    spriteID: f5f585461df26c04c97c22e42245a277
+    spriteID: c9c9198ae6a8d5b418efc16bdf9d6ea9
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -718,19 +718,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 333}
-  - name: Shadow Knight_Frame_30
+    uvTransform: {x: 70, y: 215}
+  - name: The Prince_Frame_30
     originalName: 
     pivot: {x: -1.1777779, y: -1.2127659}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 392
+      x: 130
+      y: 215
       width: 45
       height: 47
-    spriteID: c2bce26e22d53bf4a95d080df6667eae
+    spriteID: 402f777d09af53644b0f7741fa3a9f4b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -738,19 +738,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 392}
-  - name: Shadow Knight_Frame_31
+    uvTransform: {x: 130, y: 215}
+  - name: The Prince_Frame_31
     originalName: 
     pivot: {x: -1.2682928, y: -1.4358974}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 538
+      x: 408
+      y: 215
       width: 41
       height: 39
-    spriteID: 92440c2c803fcd24c8750106536e3323
+    spriteID: 312f350cb8738ac4c8b913978bcece89
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -758,8 +758,8 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 538}
-  - name: Shadow Knight_Frame_32
+    uvTransform: {x: 408, y: 215}
+  - name: The Prince_Frame_32
     originalName: 
     pivot: {x: 0.24074075, y: -0.3125}
     alignment: 9
@@ -767,490 +767,10 @@ ScriptedImporter:
     rect:
       serializedVersion: 2
       x: 4
-      y: 277
+      y: 4
       width: 108
       height: 80
-    spriteID: 619bb48542282634f814e407bb116aa3
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 277}
-  - name: Shadow Knight_Frame_33
-    originalName: 
-    pivot: {x: 0.3692308, y: -0.4791667}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 120
-      y: 277
-      width: 130
-      height: 48
-    spriteID: c274553da15230e4bb3f1c249a6a08e7
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 120, y: 277}
-  - name: Shadow Knight_Frame_34
-    originalName: 
-    pivot: {x: 0.43055555, y: -0.75757575}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 263
-      y: 4
-      width: 144
-      height: 33
-    spriteID: 8d6044105df0f53468f747c1ce6c1e7c
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 263, y: 4}
-  - name: Shadow Knight_Frame_35
-    originalName: 
-    pivot: {x: -1.1621622, y: -0.7297298}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 120
-      y: 713
-      width: 37
-      height: 37
-    spriteID: 0b2fc1a4bda37654c9fbffe25b359c8a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 120, y: 713}
-  - name: Shadow Knight_Frame_36
-    originalName: 
-    pivot: {x: -0.44827572, y: -0.55172414}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 858
-      width: 58
-      height: 58
-    spriteID: 4e917feeeacaafa44ae2361b267ec18e
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 858}
-  - name: Shadow Knight_Frame_41
-    originalName: 
-    pivot: {x: -0.2608695, y: -0.5576923}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 635
-      width: 69
-      height: 52
-    spriteID: bc53454350d499444b9a17d286c383ee
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 635}
-  - name: Shadow Knight_Frame_42
-    originalName: 
-    pivot: {x: -0.36486477, y: -0.5652174}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 804
-      width: 74
-      height: 46
-    spriteID: fd4ffd6cc2be3c7488c5c72f321980cd
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 804}
-  - name: Shadow Knight_Frame_43
-    originalName: 
-    pivot: {x: -0.36486477, y: -0.7297298}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 977
-      width: 74
-      height: 37
-    spriteID: 850dc4f4c7db86c4ba7f4a68cb948768
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 977}
-  - name: Shadow Knight_Frame_44
-    originalName: 
-    pivot: {x: -0.6290322, y: -0.7941177}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 377
-      width: 62
-      height: 34
-    spriteID: 28e6ffd7c1b55d643a294a215751ca17
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 377}
-  - name: Shadow Knight_Frame_45
-    originalName: 
-    pivot: {x: -1.1956524, y: -0.84375006}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 120
-      y: 627
-      width: 46
-      height: 32
-    spriteID: 8b266081b1436e440a7ebcefab86136b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 120, y: 627}
-  - name: Shadow Knight_Frame_46
-    originalName: 
-    pivot: {x: -1.525, y: -0.84375006}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 120
-      y: 838
-      width: 40
-      height: 32
-    spriteID: b8b70295cf6537b4dbffbddc856ba8aa
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 120, y: 838}
-  - name: Shadow Knight_Frame_47
-    originalName: 
-    pivot: {x: -2.222222, y: -0.8709678}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 588
-      width: 27
-      height: 31
-    spriteID: 9759981c70cb8c34892403eedc3b55f9
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 588}
-  - name: Shadow Knight_Frame_48
-    originalName: 
-    pivot: {x: -1.8999997, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 220
-      y: 419
-      width: 30
-      height: 29
-    spriteID: 92186b8cd6b94cb4a92002fc67516ed2
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 220, y: 419}
-  - name: Shadow Knight_Frame_49
-    originalName: 
-    pivot: {x: -2.222222, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 627
-      width: 27
-      height: 29
-    spriteID: 76c46153a42b9c34c8341cd9d938c261
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 627}
-  - name: Shadow Knight_Frame_50
-    originalName: 
-    pivot: {x: -2.222222, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 664
-      width: 27
-      height: 29
-    spriteID: 5465b252d98f95840bf8dc518864231a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 664}
-  - name: Shadow Knight_Frame_51
-    originalName: 
-    pivot: {x: -2.222222, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 701
-      width: 27
-      height: 29
-    spriteID: f3eeae1f80a3136409b741cbc7c1dbc5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 701}
-  - name: Shadow Knight_Frame_52
-    originalName: 
-    pivot: {x: -1.4166666, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 461
-      width: 36
-      height: 29
-    spriteID: 98e388425cf817640a195a4f0d87393a
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 461}
-  - name: Shadow Knight_Frame_53
-    originalName: 
-    pivot: {x: -2.222222, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 738
-      width: 27
-      height: 29
-    spriteID: 2a4591fa3f936a34fbd1df4eb208b839
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 738}
-  - name: Shadow Knight_Frame_54
-    originalName: 
-    pivot: {x: -2.222222, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 180
-      y: 775
-      width: 27
-      height: 29
-    spriteID: a6744e87d97b7594e940c889422fbd4b
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 180, y: 775}
-  - name: Shadow Knight_Frame_55
-    originalName: 
-    pivot: {x: -0.060975738, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 415
-      y: 4
-      width: 82
-      height: 29
-    spriteID: 8041ad8f4f65009408c6dd2aa9da9f89
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 415, y: 4}
-  - name: Shadow Knight_Frame_56
-    originalName: 
-    pivot: {x: 0.3916084, y: -0.9310345}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 263
-      y: 45
-      width: 143
-      height: 29
-    spriteID: 32a4b8e06a322ac4d9966cafa8b05fae
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 263, y: 45}
-  - name: Shadow Knight_Frame_57
-    originalName: 
-    pivot: {x: 0.5990783, y: -0.6190476}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 227
-      width: 217
-      height: 42
-    spriteID: 799db8f54dcb1014aa9314b07708fea8
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 227}
-  - name: Shadow Knight_Frame_58
-    originalName: 
-    pivot: {x: 0.62660944, y: -0.41269842}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 156
-      width: 233
-      height: 63
-    spriteID: a58fc3ca32b6cdc4494a8b10ba726dea
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 156}
-  - name: Shadow Knight_Frame_59
-    originalName: 
-    pivot: {x: 0.62660944, y: -0.41538462}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 83
-      width: 233
-      height: 65
-    spriteID: 83f3482fa8b0cfb4fb3a396ec93abce5
-    spriteBone: []
-    spriteOutline: []
-    vertices: []
-    spritePhysicsOutline: []
-    indices: 
-    edges: []
-    tessellationDetail: 0
-    uvTransform: {x: 4, y: 83}
-  - name: Shadow Knight_Frame_60
-    originalName: 
-    pivot: {x: 0.6533864, y: -0.38028172}
-    alignment: 9
-    border: {x: 0, y: 0, z: 0, w: 0}
-    rect:
-      serializedVersion: 2
-      x: 4
-      y: 4
-      width: 251
-      height: 71
-    spriteID: 220eed748bf70844e84ab2a4bb6ae295
+    spriteID: 2bed79758495ffa4698e4f5e860bed5a
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1259,18 +779,498 @@ ScriptedImporter:
     edges: []
     tessellationDetail: 0
     uvTransform: {x: 4, y: 4}
-  - name: Shadow Knight_Frame_61
+  - name: The Prince_Frame_33
+    originalName: 
+    pivot: {x: 0.3692308, y: -0.4791667}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 120
+      y: 4
+      width: 130
+      height: 48
+    spriteID: e38b72c993261794285c821a76bebd75
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 120, y: 4}
+  - name: The Prince_Frame_34
+    originalName: 
+    pivot: {x: 0.43055555, y: -0.75757575}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 346
+      y: 4
+      width: 144
+      height: 33
+    spriteID: 9c9a034bb3c704d4b803d55cd1fe5cbe
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 346, y: 4}
+  - name: The Prince_Frame_35
+    originalName: 
+    pivot: {x: -1.1621622, y: -0.7297298}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 299
+      y: 161
+      width: 37
+      height: 37
+    spriteID: 29afd03deaedf024c9a8a3ddc0253a2f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 299, y: 161}
+  - name: The Prince_Frame_36
+    originalName: 
+    pivot: {x: -0.44827572, y: -0.55172414}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 215
+      width: 58
+      height: 58
+    spriteID: a2c8ddcd1aa7cfb4faec39817d9d1660
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 215}
+  - name: The Prince_Frame_41
+    originalName: 
+    pivot: {x: -0.2608695, y: -0.5576923}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 246
+      y: 92
+      width: 69
+      height: 52
+    spriteID: f58c4615e8e3ad3429c7ee90950288f7
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 246, y: 92}
+  - name: The Prince_Frame_42
+    originalName: 
+    pivot: {x: -0.36486477, y: -0.5652174}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 161
+      width: 74
+      height: 46
+    spriteID: eb183ed31ea65ae4ca224bf27aae60b1
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 161}
+  - name: The Prince_Frame_43
+    originalName: 
+    pivot: {x: -0.36486477, y: -0.7297298}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 346
+      y: 45
+      width: 74
+      height: 37
+    spriteID: 384b31a0a3425914f8c3cbaf4488ad20
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 346, y: 45}
+  - name: The Prince_Frame_44
+    originalName: 
+    pivot: {x: -0.6290322, y: -0.7941177}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 183
+      y: 215
+      width: 62
+      height: 34
+    spriteID: c7891aa4fd8b14a49946c3b3b671e446
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 183, y: 215}
+  - name: The Prince_Frame_45
+    originalName: 
+    pivot: {x: -1.1956524, y: -0.84375006}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 199
+      y: 161
+      width: 46
+      height: 32
+    spriteID: d2c8a7a720085a74d888781811a1714d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 199, y: 161}
+  - name: The Prince_Frame_46
+    originalName: 
+    pivot: {x: -1.525, y: -0.84375006}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 440
+      y: 161
+      width: 40
+      height: 32
+    spriteID: fcb579831114e45409f8187f19250a9b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 440, y: 161}
+  - name: The Prince_Frame_47
+    originalName: 
+    pivot: {x: -2.222222, y: -0.8709678}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 372
+      y: 363
+      width: 27
+      height: 31
+    spriteID: fc91b9b1c8075f94eb8ff469adaa7f07
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 372, y: 363}
+  - name: The Prince_Frame_48
+    originalName: 
+    pivot: {x: -1.8999997, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 334
+      y: 363
+      width: 30
+      height: 29
+    spriteID: 64180d7179c3eb74ea9f61b0036c767b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 334, y: 363}
+  - name: The Prince_Frame_49
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 407
+      y: 363
+      width: 27
+      height: 29
+    spriteID: 350a3158558be0e4daea5e1b70c2a4a8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 407, y: 363}
+  - name: The Prince_Frame_50
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 442
+      y: 363
+      width: 27
+      height: 29
+    spriteID: 6d012b71381026b4e86ea6e83a87acda
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 442, y: 363}
+  - name: The Prince_Frame_51
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 477
+      y: 363
+      width: 27
+      height: 29
+    spriteID: 294becc005861f04aa8bd1f8899f4721
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 477, y: 363}
+  - name: The Prince_Frame_52
+    originalName: 
+    pivot: {x: -1.4166666, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 190
+      y: 281
+      width: 36
+      height: 29
+    spriteID: 309d6212d03423f45aec72332bc73c41
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 190, y: 281}
+  - name: The Prince_Frame_53
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 234
+      y: 281
+      width: 27
+      height: 29
+    spriteID: 38bc952bdd296d046b75463e327b541d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 234, y: 281}
+  - name: The Prince_Frame_54
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 269
+      y: 281
+      width: 27
+      height: 29
+    spriteID: b7dd46e366476d54da8bbe617b75527f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 269, y: 281}
+  - name: The Prince_Frame_55
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 304
+      y: 281
+      width: 27
+      height: 29
+    spriteID: f07f2edd3fe5531418fa32a179a8a0c2
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 304, y: 281}
+  - name: The Prince_Frame_56
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 339
+      y: 281
+      width: 27
+      height: 29
+    spriteID: 27a390f3f1ed3dc4dbcdf609e9faf93b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 339, y: 281}
+  - name: The Prince_Frame_57
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 374
+      y: 281
+      width: 27
+      height: 29
+    spriteID: 182d764189300f0489edf732f4120753
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 374, y: 281}
+  - name: The Prince_Frame_58
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 409
+      y: 281
+      width: 27
+      height: 29
+    spriteID: 299450fbe638f534cadb12f9d1da767e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 409, y: 281}
+  - name: The Prince_Frame_59
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 444
+      y: 281
+      width: 27
+      height: 29
+    spriteID: 228a71021aa7e3d49b70d2ca3dacdb4d
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 444, y: 281}
+  - name: The Prince_Frame_60
+    originalName: 
+    pivot: {x: -2.222222, y: -0.9310345}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 479
+      y: 281
+      width: 27
+      height: 29
+    spriteID: 6f03707fbfe9bfb42b7ccbea115af172
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 479, y: 281}
+  - name: The Prince_Frame_61
     originalName: 
     pivot: {x: -1.8888888, y: -1.037037}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 920
+      x: 149
+      y: 321
       width: 27
       height: 27
-    spriteID: c3fa4fde1c9850844b5540315a744a39
+    spriteID: 7196422bfb50f3443baa09a4e9fccc64
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1278,19 +1278,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 920}
-  - name: Shadow Knight_Frame_62
+    uvTransform: {x: 149, y: 321}
+  - name: The Prince_Frame_62
     originalName: 
     pivot: {x: -1.8888888, y: -1.037037}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 955
+      x: 184
+      y: 321
       width: 27
       height: 27
-    spriteID: 7eb749a244804b34690699309edcf183
+    spriteID: afd3689f1a64fd34e866eebd2d5540f7
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1298,19 +1298,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 955}
-  - name: Shadow Knight_Frame_63
+    uvTransform: {x: 184, y: 321}
+  - name: The Prince_Frame_63
     originalName: 
     pivot: {x: -1.8888888, y: -1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 812
+      x: 44
+      y: 321
       width: 27
       height: 28
-    spriteID: ec620302cb7a7fd4498b11253b6ccf7d
+    spriteID: 024b8bc70b8846c408c66303936335b2
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1318,19 +1318,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 812}
-  - name: Shadow Knight_Frame_64
+    uvTransform: {x: 44, y: 321}
+  - name: The Prince_Frame_64
     originalName: 
     pivot: {x: -1.8888888, y: -1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 848
+      x: 79
+      y: 321
       width: 27
       height: 28
-    spriteID: 71795847bc5dbe14988dd7e320fb25fa
+    spriteID: d69c406e88cf7ff4cb37251b23923377
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1338,19 +1338,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 848}
-  - name: Shadow Knight_Frame_65
+    uvTransform: {x: 79, y: 321}
+  - name: The Prince_Frame_65
     originalName: 
     pivot: {x: -1.8888888, y: -1}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 884
+      x: 114
+      y: 321
       width: 27
       height: 28
-    spriteID: 62129c6df75c7564799112c4069782a8
+    spriteID: 217f220e9ea720c48843dd7a8cf4ba6c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1358,19 +1358,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 884}
-  - name: Shadow Knight_Frame_37
+    uvTransform: {x: 114, y: 321}
+  - name: The Prince_Frame_37
     originalName: 
     pivot: {x: -0.6086955, y: -1.0263157}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 447
+      x: 253
+      y: 215
       width: 46
       height: 38
-    spriteID: ee303c1ee120e8d499b721c57f0418b1
+    spriteID: 752a115b371899b49a2900490770980b
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1378,19 +1378,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 447}
-  - name: Shadow Knight_Frame_38
+    uvTransform: {x: 253, y: 215}
+  - name: The Prince_Frame_38
     originalName: 
     pivot: {x: -0.9142858, y: -1.3125}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 120
-      y: 878
+      x: 4
+      y: 281
       width: 35
       height: 32
-    spriteID: 968ba5b3427343e4e88a6de5aaa7a125
+    spriteID: d5087d89e37032c41816ab43ec84b4e1
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1398,19 +1398,19 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 120, y: 878}
-  - name: Shadow Knight_Frame_39
+    uvTransform: {x: 4, y: 281}
+  - name: The Prince_Frame_39
     originalName: 
     pivot: {x: -1.2666665, y: -2.5}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
-      x: 180
-      y: 990
+      x: 120
+      y: 60
       width: 30
       height: 18
-    spriteID: 48816adec07d1cc458f8da7079b3719d
+    spriteID: 50ff78c948319be4abcecb9574ee2953
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -1418,536 +1418,536 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: 180, y: 990}
+    uvTransform: {x: 120, y: 60}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1827713621
-    name: Shadow Knight
+    guid: 794303242
+    name: The Prince
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: Shadow Knight_Frame_0
+    - name: The Prince_Frame_0
       frameIndex: 0
       cellRect:
         x: 218
         y: 27
         width: 44
         height: 37
-      spriteId: ecf5adda98060ca4ea0819f9a5aea715
-    - name: Shadow Knight_Frame_1
+      spriteId: 920c14754ee0f7848b8f1851f25c1e56
+    - name: The Prince_Frame_1
       frameIndex: 1
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 38
-      spriteId: 1b94c446e7599df4699b39d9e1a728f3
-    - name: Shadow Knight_Frame_2
+      spriteId: 7e48c07e484ca814d9b0294a0f902bfd
+    - name: The Prince_Frame_2
       frameIndex: 2
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 38
-      spriteId: dae0979159aee6445a13a21d7f5abf3c
-    - name: Shadow Knight_Frame_3
+      spriteId: 232c39acda4bcae488e7f984c00a4c11
+    - name: The Prince_Frame_3
       frameIndex: 3
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 37
-      spriteId: 4b2ebc03b7365684ea7f145099f9b88b
-    - name: Shadow Knight_Frame_4
+      spriteId: 0e0e1650e5899e34aa6f555c49bdb304
+    - name: The Prince_Frame_4
       frameIndex: 4
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 37
-      spriteId: a2b79a0edf2ce0b4c8b72058bba4f94a
-    - name: Shadow Knight_Frame_5
+      spriteId: 48cd91922d7e05a4aa31a4f8bb3360ae
+    - name: The Prince_Frame_5
       frameIndex: 5
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 38
-      spriteId: 067b7ab3c024a9542a8e8f9158eac68c
-    - name: Shadow Knight_Frame_6
+      spriteId: 71e4d12b068ab9348ad4d4fea7923167
+    - name: The Prince_Frame_6
       frameIndex: 6
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 37
-      spriteId: c3c59ef198c657d468d9522312ae5bf0
-    - name: Shadow Knight_Frame_7
+      spriteId: afd6b10439b789e46bf212b692c1cebb
+    - name: The Prince_Frame_7
       frameIndex: 7
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 37
-      spriteId: ba043b8fd61c73e42b6182806ee0f421
-    - name: Shadow Knight_Frame_8
+      spriteId: fb929c21f033118498620f22d4952dd2
+    - name: The Prince_Frame_8
       frameIndex: 8
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 37
-      spriteId: b6f8da1d44120f24d938d091de359194
-    - name: Shadow Knight_Frame_9
+      spriteId: 9201601f220091a4087bede5d5c2a881
+    - name: The Prince_Frame_9
       frameIndex: 9
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 37
-      spriteId: 3d6199c43babd9f4d80540689fe8052a
-    - name: Shadow Knight_Frame_10
+      spriteId: e794381af9ce7a840938b887e09a7bba
+    - name: The Prince_Frame_10
       frameIndex: 10
       cellRect:
         x: 237
         y: 27
         width: 25
         height: 37
-      spriteId: 182f53049cca12647bd6ebffdc02ddbf
-    - name: Shadow Knight_Frame_11
+      spriteId: eb07ccbb6acb85a428c16f0573d111c2
+    - name: The Prince_Frame_11
       frameIndex: 11
       cellRect:
         x: 236
         y: 27
         width: 32
         height: 34
-      spriteId: 5fbd73132b17c8040b10c5e781e3252c
-    - name: Shadow Knight_Frame_12
+      spriteId: 1f199ac0570141f408df6dd52af4ceeb
+    - name: The Prince_Frame_12
       frameIndex: 12
       cellRect:
         x: 236
         y: 27
         width: 36
         height: 42
-      spriteId: 2fe75a3274666dc4ab48118954ba5748
-    - name: Shadow Knight_Frame_13
+      spriteId: 47381a4548ebec14f95119ec31e843f1
+    - name: The Prince_Frame_13
       frameIndex: 13
       cellRect:
         x: 235
         y: 27
         width: 41
         height: 40
-      spriteId: f3a233d3ce3f0034c809cf70a1e3e8b2
-    - name: Shadow Knight_Frame_14
+      spriteId: c7ceeb35229cb004486a7d6313b94c01
+    - name: The Prince_Frame_14
       frameIndex: 14
       cellRect:
         x: 184
         y: 27
         width: 72
         height: 56
-      spriteId: 5552f64cb830a7648baa92f80db24247
-    - name: Shadow Knight_Frame_15
+      spriteId: d13b0f6bfa2e0d540bc546cca371a73e
+    - name: The Prince_Frame_15
       frameIndex: 15
       cellRect:
         x: 187
         y: 22
         width: 79
         height: 45
-      spriteId: 9eb51c743e3138f4fad0b75a23c4e3e1
-    - name: Shadow Knight_Frame_16
+      spriteId: a441e0602aea6f04d87e339835d178c5
+    - name: The Prince_Frame_16
       frameIndex: 16
       cellRect:
         x: 236
         y: 27
         width: 40
         height: 32
-      spriteId: 27b1a37dc708a1a4586811b519b7013d
-    - name: Shadow Knight_Frame_17
+      spriteId: d3b856eb347cfac4596965c4cbb0c5fc
+    - name: The Prince_Frame_17
       frameIndex: 17
       cellRect:
         x: 236
         y: 27
         width: 40
         height: 32
-      spriteId: 4bfb7d5128c4d8f4cb3ce195865d3f7a
-    - name: Shadow Knight_Frame_18
+      spriteId: b356426c147e80f43bf44731ce0e5533
+    - name: The Prince_Frame_18
       frameIndex: 18
       cellRect:
         x: 234
         y: 25
         width: 38
         height: 38
-      spriteId: 44387bc7dc203bf4c9f67c548252013d
-    - name: Shadow Knight_Frame_19
+      spriteId: 9b636437d8347fb4188676f4f55bd1c7
+    - name: The Prince_Frame_19
       frameIndex: 19
       cellRect:
         x: 211
         y: 23
         width: 63
         height: 36
-      spriteId: 53e5a3e273de48249b7dfba4832d4532
-    - name: Shadow Knight_Frame_20
+      spriteId: 7fed417137c12db42b4dfe52a4a8b43c
+    - name: The Prince_Frame_20
       frameIndex: 20
       cellRect:
         x: 194
         y: 21
         width: 71
         height: 48
-      spriteId: 9d6dfb7fa06a6ba409a1c11d9bc1515f
-    - name: Shadow Knight_Frame_21
+      spriteId: c1ecb2ff97b446043a54f8514893a25f
+    - name: The Prince_Frame_21
       frameIndex: 21
       cellRect:
         x: 201
         y: 27
         width: 71
         height: 61
-      spriteId: 5c41170f38e12224c9c63cbaaa56fa0c
-    - name: Shadow Knight_Frame_22
+      spriteId: 6a7b28dfbb6bdd84aa6671510dcadf8b
+    - name: The Prince_Frame_22
       frameIndex: 22
       cellRect:
         x: 235
         y: 27
         width: 37
         height: 29
-      spriteId: 66ba500b9a7c67f4e891e5f42123c64d
-    - name: Shadow Knight_Frame_23
+      spriteId: db4a3d9b69b99a14bb886786baa9d5e8
+    - name: The Prince_Frame_23
       frameIndex: 23
       cellRect:
         x: 235
         y: 28
         width: 41
         height: 27
-      spriteId: be50558cd979e31488be698667277545
-    - name: Shadow Knight_Frame_24
+      spriteId: 2a502b49d242e374ca4274c8d3f35811
+    - name: The Prince_Frame_24
       frameIndex: 24
       cellRect:
         x: 235
         y: 28
         width: 41
         height: 27
-      spriteId: d06fcf133a950e343b4d2dba0f2a5ca4
-    - name: Shadow Knight_Frame_25
+      spriteId: 6ee8333d637939841978ddb8409a6d35
+    - name: The Prince_Frame_25
       frameIndex: 25
       cellRect:
         x: 232
         y: 46
         width: 80
         height: 66
-      spriteId: 7732a487dcab9f140acf3d7d9348e0d1
-    - name: Shadow Knight_Frame_26
+      spriteId: fe5d0525ca51cab4ea51ec8c5c877642
+    - name: The Prince_Frame_26
       frameIndex: 26
       cellRect:
         x: 230
         y: 50
         width: 75
         height: 55
-      spriteId: 1023e00076379b64db92f8fb2cbd5562
-    - name: Shadow Knight_Frame_27
+      spriteId: 9897092764dec3440a77887a6101ed72
+    - name: The Prince_Frame_27
       frameIndex: 27
       cellRect:
         x: 230
         y: 56
         width: 61
         height: 45
-      spriteId: acad99ef05a15874085e60404793641d
-    - name: Shadow Knight_Frame_28
+      spriteId: 23c8eeeb6b7a2ad4287a121a7c35a791
+    - name: The Prince_Frame_28
       frameIndex: 28
       cellRect:
         x: 230
         y: 56
         width: 46
         height: 34
-      spriteId: 9cce9208c78fcf04c93b7ab5038eacce
-    - name: Shadow Knight_Frame_29
+      spriteId: 77b76a89a0e7cb44c8bc2eabafdb74b4
+    - name: The Prince_Frame_29
       frameIndex: 29
       cellRect:
         x: 229
         y: 57
         width: 52
         height: 51
-      spriteId: f5f585461df26c04c97c22e42245a277
-    - name: Shadow Knight_Frame_30
+      spriteId: c9c9198ae6a8d5b418efc16bdf9d6ea9
+    - name: The Prince_Frame_30
       frameIndex: 30
       cellRect:
         x: 228
         y: 57
         width: 45
         height: 47
-      spriteId: c2bce26e22d53bf4a95d080df6667eae
-    - name: Shadow Knight_Frame_31
+      spriteId: 402f777d09af53644b0f7741fa3a9f4b
+    - name: The Prince_Frame_31
       frameIndex: 31
       cellRect:
         x: 227
         y: 56
         width: 41
         height: 39
-      spriteId: 92440c2c803fcd24c8750106536e3323
-    - name: Shadow Knight_Frame_32
+      spriteId: 312f350cb8738ac4c8b913978bcece89
+    - name: The Prince_Frame_32
       frameIndex: 32
       cellRect:
         x: 149
         y: 25
         width: 108
         height: 80
-      spriteId: 619bb48542282634f814e407bb116aa3
-    - name: Shadow Knight_Frame_33
+      spriteId: 2bed79758495ffa4698e4f5e860bed5a
+    - name: The Prince_Frame_33
       frameIndex: 33
       cellRect:
         x: 127
         y: 23
         width: 130
         height: 48
-      spriteId: c274553da15230e4bb3f1c249a6a08e7
-    - name: Shadow Knight_Frame_34
+      spriteId: e38b72c993261794285c821a76bebd75
+    - name: The Prince_Frame_34
       frameIndex: 34
       cellRect:
         x: 113
         y: 25
         width: 144
         height: 33
-      spriteId: 8d6044105df0f53468f747c1ce6c1e7c
-    - name: Shadow Knight_Frame_35
+      spriteId: 9c9a034bb3c704d4b803d55cd1fe5cbe
+    - name: The Prince_Frame_35
       frameIndex: 35
       cellRect:
         x: 218
         y: 27
         width: 37
         height: 37
-      spriteId: 0b2fc1a4bda37654c9fbffe25b359c8a
-    - name: Shadow Knight_Frame_36
+      spriteId: 29afd03deaedf024c9a8a3ddc0253a2f
+    - name: The Prince_Frame_36
       frameIndex: 36
       cellRect:
         x: 201
         y: 32
         width: 58
         height: 58
-      spriteId: 4e917feeeacaafa44ae2361b267ec18e
-    - name: Shadow Knight_Frame_41
+      spriteId: a2c8ddcd1aa7cfb4faec39817d9d1660
+    - name: The Prince_Frame_41
       frameIndex: 41
       cellRect:
         x: 193
         y: 29
         width: 69
         height: 52
-      spriteId: bc53454350d499444b9a17d286c383ee
-    - name: Shadow Knight_Frame_42
+      spriteId: f58c4615e8e3ad3429c7ee90950288f7
+    - name: The Prince_Frame_42
       frameIndex: 42
       cellRect:
         x: 202
         y: 26
         width: 74
         height: 46
-      spriteId: fd4ffd6cc2be3c7488c5c72f321980cd
-    - name: Shadow Knight_Frame_43
+      spriteId: eb183ed31ea65ae4ca224bf27aae60b1
+    - name: The Prince_Frame_43
       frameIndex: 43
       cellRect:
         x: 202
         y: 27
         width: 74
         height: 37
-      spriteId: 850dc4f4c7db86c4ba7f4a68cb948768
-    - name: Shadow Knight_Frame_44
+      spriteId: 384b31a0a3425914f8c3cbaf4488ad20
+    - name: The Prince_Frame_44
       frameIndex: 44
       cellRect:
         x: 214
         y: 27
         width: 62
         height: 34
-      spriteId: 28e6ffd7c1b55d643a294a215751ca17
-    - name: Shadow Knight_Frame_45
+      spriteId: c7891aa4fd8b14a49946c3b3b671e446
+    - name: The Prince_Frame_45
       frameIndex: 45
       cellRect:
         x: 230
         y: 27
         width: 46
         height: 32
-      spriteId: 8b266081b1436e440a7ebcefab86136b
-    - name: Shadow Knight_Frame_46
+      spriteId: d2c8a7a720085a74d888781811a1714d
+    - name: The Prince_Frame_46
       frameIndex: 46
       cellRect:
         x: 236
         y: 27
         width: 40
         height: 32
-      spriteId: b8b70295cf6537b4dbffbddc856ba8aa
-    - name: Shadow Knight_Frame_47
+      spriteId: fcb579831114e45409f8187f19250a9b
+    - name: The Prince_Frame_47
       frameIndex: 47
       cellRect:
         x: 235
         y: 27
         width: 27
         height: 31
-      spriteId: 9759981c70cb8c34892403eedc3b55f9
-    - name: Shadow Knight_Frame_48
+      spriteId: fc91b9b1c8075f94eb8ff469adaa7f07
+    - name: The Prince_Frame_48
       frameIndex: 48
       cellRect:
         x: 232
         y: 27
         width: 30
         height: 29
-      spriteId: 92186b8cd6b94cb4a92002fc67516ed2
-    - name: Shadow Knight_Frame_49
+      spriteId: 64180d7179c3eb74ea9f61b0036c767b
+    - name: The Prince_Frame_49
       frameIndex: 49
       cellRect:
         x: 235
         y: 27
         width: 27
         height: 29
-      spriteId: 76c46153a42b9c34c8341cd9d938c261
-    - name: Shadow Knight_Frame_50
+      spriteId: 350a3158558be0e4daea5e1b70c2a4a8
+    - name: The Prince_Frame_50
       frameIndex: 50
       cellRect:
         x: 235
         y: 27
         width: 27
         height: 29
-      spriteId: 5465b252d98f95840bf8dc518864231a
-    - name: Shadow Knight_Frame_51
+      spriteId: 6d012b71381026b4e86ea6e83a87acda
+    - name: The Prince_Frame_51
       frameIndex: 51
       cellRect:
         x: 235
         y: 27
         width: 27
         height: 29
-      spriteId: f3eeae1f80a3136409b741cbc7c1dbc5
-    - name: Shadow Knight_Frame_52
+      spriteId: 294becc005861f04aa8bd1f8899f4721
+    - name: The Prince_Frame_52
       frameIndex: 52
       cellRect:
         x: 226
         y: 27
         width: 36
         height: 29
-      spriteId: 98e388425cf817640a195a4f0d87393a
-    - name: Shadow Knight_Frame_53
+      spriteId: 309d6212d03423f45aec72332bc73c41
+    - name: The Prince_Frame_53
       frameIndex: 53
       cellRect:
         x: 235
         y: 27
         width: 27
         height: 29
-      spriteId: 2a4591fa3f936a34fbd1df4eb208b839
-    - name: Shadow Knight_Frame_54
+      spriteId: 38bc952bdd296d046b75463e327b541d
+    - name: The Prince_Frame_54
       frameIndex: 54
       cellRect:
         x: 235
         y: 27
         width: 27
         height: 29
-      spriteId: a6744e87d97b7594e940c889422fbd4b
-    - name: Shadow Knight_Frame_55
+      spriteId: b7dd46e366476d54da8bbe617b75527f
+    - name: The Prince_Frame_55
       frameIndex: 55
       cellRect:
-        x: 180
+        x: 235
         y: 27
-        width: 82
+        width: 27
         height: 29
-      spriteId: 8041ad8f4f65009408c6dd2aa9da9f89
-    - name: Shadow Knight_Frame_56
+      spriteId: f07f2edd3fe5531418fa32a179a8a0c2
+    - name: The Prince_Frame_56
       frameIndex: 56
       cellRect:
-        x: 119
+        x: 235
         y: 27
-        width: 143
+        width: 27
         height: 29
-      spriteId: 32a4b8e06a322ac4d9966cafa8b05fae
-    - name: Shadow Knight_Frame_57
+      spriteId: 27a390f3f1ed3dc4dbcdf609e9faf93b
+    - name: The Prince_Frame_57
       frameIndex: 57
       cellRect:
-        x: 45
-        y: 26
-        width: 217
-        height: 42
-      spriteId: 799db8f54dcb1014aa9314b07708fea8
-    - name: Shadow Knight_Frame_58
+        x: 235
+        y: 27
+        width: 27
+        height: 29
+      spriteId: 182d764189300f0489edf732f4120753
+    - name: The Prince_Frame_58
       frameIndex: 58
       cellRect:
-        x: 29
-        y: 26
-        width: 233
-        height: 63
-      spriteId: a58fc3ca32b6cdc4494a8b10ba726dea
-    - name: Shadow Knight_Frame_59
+        x: 235
+        y: 27
+        width: 27
+        height: 29
+      spriteId: 299450fbe638f534cadb12f9d1da767e
+    - name: The Prince_Frame_59
       frameIndex: 59
       cellRect:
-        x: 29
+        x: 235
         y: 27
-        width: 233
-        height: 65
-      spriteId: 83f3482fa8b0cfb4fb3a396ec93abce5
-    - name: Shadow Knight_Frame_60
+        width: 27
+        height: 29
+      spriteId: 228a71021aa7e3d49b70d2ca3dacdb4d
+    - name: The Prince_Frame_60
       frameIndex: 60
       cellRect:
-        x: 11
+        x: 235
         y: 27
-        width: 251
-        height: 71
-      spriteId: 220eed748bf70844e84ab2a4bb6ae295
-    - name: Shadow Knight_Frame_61
+        width: 27
+        height: 29
+      spriteId: 6f03707fbfe9bfb42b7ccbea115af172
+    - name: The Prince_Frame_61
       frameIndex: 61
       cellRect:
         x: 226
         y: 28
         width: 27
         height: 27
-      spriteId: c3fa4fde1c9850844b5540315a744a39
-    - name: Shadow Knight_Frame_62
+      spriteId: 7196422bfb50f3443baa09a4e9fccc64
+    - name: The Prince_Frame_62
       frameIndex: 62
       cellRect:
         x: 226
         y: 28
         width: 27
         height: 27
-      spriteId: 7eb749a244804b34690699309edcf183
-    - name: Shadow Knight_Frame_63
+      spriteId: afd3689f1a64fd34e866eebd2d5540f7
+    - name: The Prince_Frame_63
       frameIndex: 63
       cellRect:
         x: 226
         y: 28
         width: 27
         height: 28
-      spriteId: ec620302cb7a7fd4498b11253b6ccf7d
-    - name: Shadow Knight_Frame_64
+      spriteId: 024b8bc70b8846c408c66303936335b2
+    - name: The Prince_Frame_64
       frameIndex: 64
       cellRect:
         x: 226
         y: 28
         width: 27
         height: 28
-      spriteId: 71795847bc5dbe14988dd7e320fb25fa
-    - name: Shadow Knight_Frame_65
+      spriteId: d69c406e88cf7ff4cb37251b23923377
+    - name: The Prince_Frame_65
       frameIndex: 65
       cellRect:
         x: 226
         y: 28
         width: 27
         height: 28
-      spriteId: 62129c6df75c7564799112c4069782a8
-    - name: Shadow Knight_Frame_37
+      spriteId: 217f220e9ea720c48843dd7a8cf4ba6c
+    - name: The Prince_Frame_37
       frameIndex: 37
       cellRect:
         x: 203
         y: 39
         width: 46
         height: 38
-      spriteId: ee303c1ee120e8d499b721c57f0418b1
-    - name: Shadow Knight_Frame_38
+      spriteId: 752a115b371899b49a2900490770980b
+    - name: The Prince_Frame_38
       frameIndex: 38
       cellRect:
         x: 207
         y: 42
         width: 35
         height: 32
-      spriteId: 968ba5b3427343e4e88a6de5aaa7a125
-    - name: Shadow Knight_Frame_39
+      spriteId: d5087d89e37032c41816ab43ec84b4e1
+    - name: The Prince_Frame_39
       frameIndex: 39
       cellRect:
         x: 213
         y: 45
         width: 30
         height: 18
-      spriteId: 48816adec07d1cc458f8da7079b3719d
+      spriteId: 50ff78c948319be4abcecb9574ee2953
     linkedCells: []
     parentIndex: -1
   platformSettings:

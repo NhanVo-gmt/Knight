@@ -9,15 +9,22 @@ public class CheckPlayerNode : ActionNode
         Box
     }
 
+    public enum CheckPositionType
+    {
+        Relative,
+        World
+    }
+
     public CheckType checkType = CheckType.Circle;
+    public CheckPositionType checkPosType = CheckPositionType.Relative;
     
     public Vector2 checkRelativePos;
+    public Vector2 checkPos;
     public float radius;
 
     public Vector2 size;
 
     private Vector2 playerPos;
-    private Vector2 checkPos;
     
     public override void CopyNode(Node copyNode)
     {
@@ -43,7 +50,8 @@ public class CheckPlayerNode : ActionNode
 
         
         playerPos = treeComponent.player.transform.position;
-        checkPos = movement.GetWorldPosFromRelativePos(checkRelativePos);
+        if (checkPosType == CheckPositionType.Relative)
+            checkPos = movement.GetWorldPosFromRelativePos(checkRelativePos);
     }
 
     protected override void OnStop()
@@ -75,13 +83,32 @@ public class CheckPlayerNode : ActionNode
     public override void DrawGizmos(GameObject selectedGameObject)
     {
         GizmosDrawer.color = Color.red;
-        if (checkType == CheckType.Circle)
+        switch (checkPosType)
         {
-            GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position + checkRelativePos, radius);
+            case CheckPositionType.Relative:
+                if (checkType == CheckType.Circle)
+                {
+                    GizmosDrawer.DrawWireSphere((Vector2)selectedGameObject.transform.position + checkRelativePos, radius);
+                }
+                else
+                {
+                    GizmosDrawer.DrawWireCube((Vector2)selectedGameObject.transform.position + checkRelativePos, size);
+                }
+
+                break;
+            
+            case CheckPositionType.World:
+                if (checkType == CheckType.Circle)
+                {
+                    GizmosDrawer.DrawWireSphere(checkPos, radius);
+                }
+                else
+                {
+                    GizmosDrawer.DrawWireCube(checkPos, size);
+                }
+
+                break;
         }
-        else
-        {
-            GizmosDrawer.DrawWireCube((Vector2)selectedGameObject.transform.position + checkRelativePos, size);
-        }
+        
     }
 }
