@@ -11,9 +11,12 @@ namespace Knight.Editor
             "Move", 
             "Die",
             "Tele", "Teleport", "Teleback",
+            "Teleport1",
             "ReadyToAttack", "Attack", "RecoverFromAttack",
             "ReadyToAttack2", "Attack2", "RecoverFromAttack2",
             "ReadyToAttack3", "Attack3", "RecoverFromAttack3",
+            "ReadyToAttack4", "Attack4", "RecoverFromAttack4",
+            "ReadyToAttack5", "Attack5", "RecoverFromAttack5",
             "Fly", "Hit"};
     }
 }

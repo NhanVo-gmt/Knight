@@ -6180,6 +6180,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: ThePrince
       objectReference: {fileID: 0}
+    - target: {fileID: 6797130419164141562, guid: 834fa1e1489d3f8498225e326236b153, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2195983
+      objectReference: {fileID: 0}
+    - target: {fileID: 6797130419164141562, guid: 834fa1e1489d3f8498225e326236b153, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.39020085
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
