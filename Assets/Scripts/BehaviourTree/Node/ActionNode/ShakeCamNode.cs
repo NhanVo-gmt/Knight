@@ -8,6 +8,10 @@ public class ShakeCamNode : ActionNode
     public override void CopyNode(Node copyNode)
     {
         ShakeCamNode node = copyNode as ShakeCamNode;
+        if (node)
+        {
+            camShakeData = node.camShakeData;
+        }
     }
     
     public override void OnInitialize(BehaviourTreeComponent component)

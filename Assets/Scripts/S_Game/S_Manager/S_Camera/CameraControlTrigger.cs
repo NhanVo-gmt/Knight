@@ -21,6 +21,12 @@ public class CameraControlTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (customInspectorObjects.swapCameras)
+            {
+                Vector2 exitDistance = (other.transform.position - col.bounds.center).normalized;
+                CameraController.Instance.SwapCamera(customInspectorObjects.cameraOnLeft, customInspectorObjects.cameraOnRight, exitDistance, customInspectorObjects.roomToFollow);
+            }
+            
             if (customInspectorObjects.panCameraOnContact)
             {
                 CameraController.Instance.PanCameraOnContact(customInspectorObjects.panDistance, customInspectorObjects.panTime, customInspectorObjects.panDirection, false);

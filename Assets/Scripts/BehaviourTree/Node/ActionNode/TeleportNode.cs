@@ -1,8 +1,16 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class TeleportNode : ActionNode
 {
-    [SerializeField] public Vector2 relativePos;
+    public enum TeleportType
+    {
+        Relative,
+        World,
+    }
+
+    public TeleportType type;   
+    [FormerlySerializedAs("relativePos")] [SerializeField] public Vector2 position;
     private Vector2 destinationPos;
     
     public override void CopyNode(Node copyNode)
@@ -11,7 +19,7 @@ public class TeleportNode : ActionNode
 
         if (node)
         {
-            relativePos = node.relativePos;
+            position = node.position;
         }
     }
     
@@ -23,7 +31,7 @@ public class TeleportNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
-        destinationPos = relativePos;
+        destinationPos = position;
         treeComponent.transform.position = treeComponent.transform.position - (Vector3)destinationPos * movement.GetDirectionMagnitude();
     }
 
@@ -40,6 +48,14 @@ public class TeleportNode : ActionNode
 
     public override void DrawGizmos(GameObject selectedGameObject)
     {
-        GizmosDrawer.DrawSphere(selectedGameObject.transform.position + (Vector3)relativePos, .3f);
+        switch (type)
+        {
+            case TeleportType.Relative:
+                GizmosDrawer.DrawSphere(selectedGameObject.transform.position + (Vector3)position, .3f);
+                break;
+            case TeleportType.World:
+                GizmosDrawer.DrawSphere(position, .3f);
+                break;
+        }
     }
 }

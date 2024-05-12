@@ -7,7 +7,9 @@ public class MoveDirectionNode : ActionNode
         Left = -1,
         Right = 1,
         Player,
+        PlayerReverse,
         CurrentDirection,
+        CurrentDirectionReverse,
     }
 
     public Direction direction = Direction.Left;
@@ -43,8 +45,14 @@ public class MoveDirectionNode : ActionNode
             case Direction.CurrentDirection:
                 directionVec = movement.faceDirection;
                 break;
+            case Direction.CurrentDirectionReverse:
+                directionVec = -movement.faceDirection;
+                break;
             case Direction.Player:
                 directionVec = movement.GetDirectionLeftRightFromPlayer(treeComponent.player.transform.position);
+                break;
+            case Direction.PlayerReverse:
+                directionVec = - movement.GetDirectionLeftRightFromPlayer(treeComponent.player.transform.position);
                 break;
             default:
                 break;

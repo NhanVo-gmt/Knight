@@ -52,6 +52,7 @@ namespace Knight.Camera
 
         private Transform cam;
         private CameraConfiner confiner;
+        private bool canLook = true;
 
         protected override void Awake() 
         {
@@ -166,17 +167,35 @@ namespace Knight.Camera
 
         public void LookNormal()
         {
+            if (!canLook) return;
             SwapCamera(currentCamType, CameraClass.CameraType.CenterPlayer);
         }
         
         public void LookUp()
         {
+            if (!canLook) return;
             SwapCamera(currentCamType, CameraClass.CameraType.LookupPlayer);
         }
 
         public void LookDown()
         {
+            if (!canLook) return;
             SwapCamera(currentCamType, CameraClass.CameraType.LookdownPlayer);
+        }
+
+        public bool CanLookCamera(CameraClass.CameraType camType)
+        {
+            return !(camType == CameraClass.CameraType.NoYFollow ||
+                     camType == CameraClass.CameraType.LockedPositionRoom);
+        }
+
+        public void SetLookCamera(CameraClass.CameraType camType)
+        {
+            if (CanLookCamera(camType))
+            {
+                canLook = true;
+            }
+            else canLook = false;
         }
         
         IEnumerator LerpYTrackObjectCoroutine(Vector2 offset)
@@ -300,7 +319,7 @@ namespace Knight.Camera
         
         #region Swap Camera
 
-        public void SwapCamera(CinemachineVirtualCamera fromCam, CinemachineVirtualCamera toCam)
+        private void SwapCamera(CinemachineVirtualCamera fromCam, CinemachineVirtualCamera toCam)
         {
             fromCam.enabled = false;
             toCam.enabled = true;
@@ -308,10 +327,11 @@ namespace Knight.Camera
             framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         }
         
-        public void SwapCamera(CameraClass.CameraType fromCamType, CameraClass.CameraType toCamType)
+        private void SwapCamera(CameraClass.CameraType fromCamType, CameraClass.CameraType toCamType)
         {
             if (fromCamType == toCamType) return;
             
+            SetLookCamera(toCamType);
             CinemachineVirtualCamera currentCam = FindCamera(fromCamType); 
             CinemachineVirtualCamera toCam = FindCamera(toCamType);
 
@@ -324,13 +344,11 @@ namespace Knight.Camera
         {
             //todo refactor
             
-            CinemachineVirtualCamera camRight = FindCamera(cameraFromRight); 
-            CinemachineVirtualCamera camLeft = FindCamera(cameraFromLeft); 
             // If the camera on the left and exit direction was on the right
-            if (currentCamera == camLeft && triggerExitDirection.x > 0f)
+            if (currentCamType == cameraFromLeft && triggerExitDirection.x > 0f)
             {
                 currentCamType = cameraFromRight;
-                SwapCamera(camLeft, camRight);
+                SwapCamera(cameraFromLeft, cameraFromRight);
                 
                 if (cameraFromRight == CameraClass.CameraType.LockedPositionRoom)
                 {
@@ -338,10 +356,10 @@ namespace Knight.Camera
                 }
             }
             
-            else if (currentCamera == camRight && triggerExitDirection.x < 0f)
+            else if (currentCamType == cameraFromRight && triggerExitDirection.x < 0f)
             {
                 currentCamType = cameraFromLeft;
-                SwapCamera(camRight, camLeft);
+                SwapCamera(cameraFromRight, cameraFromLeft);
                 
                 if (cameraFromLeft == CameraClass.CameraType.LockedPositionRoom)
                 {

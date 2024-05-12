@@ -17,7 +17,7 @@ MonoBehaviour:
     started: 0
     guid: cd061c8cd7486784aa34f3cbdb9f9865
     Tree: {fileID: 11400000}
-    position: {x: 2940, y: 690.39996}
+    position: {x: 3170.4, y: 1025.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -40,7 +40,7 @@ MonoBehaviour:
     started: 0
     guid: 7c6b94b605e03a34a8acf208b39b1012
     Tree: {fileID: 11400000}
-    position: {x: 2539.3276, y: 1037.6}
+    position: {x: 1902.3999, y: 1849.6001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -67,6 +67,29 @@ MonoBehaviour:
     description: 
   children:
   - {fileID: -292172748300690852}
+  - {fileID: 2153053609074726757}
+  percentList: 0200000003000000
+--- !u!114 &-7562581233400066833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25674a34a5cef8d49a6bdcbf8d9b98bf, type: 3}
+  m_Name: DisableTouchCombatNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: fe97bf25112d7e046a51f58b7a86ecb3
+    Tree: {fileID: 11400000}
+    position: {x: 2281.6, y: 1025.5999}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
 --- !u!114 &-7344143964585853201
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,11 +107,33 @@ MonoBehaviour:
     started: 0
     guid: 4179b88c2611e364091b2c0f2c4f38d8
     Tree: {fileID: 11400000}
-    position: {x: 1478.3673, y: 1176.8}
+    position: {x: 841.6001, y: 1988.8002}
     Name: 
     description: 
   linkNode: {fileID: 0}
   idleTime: 0.3
+--- !u!114 &-7283544963815298269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42045f462b2051f4c88617eee1eff392, type: 3}
+  m_Name: ShakeCamNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 2fc071ec541b51a4286328836dd4723f
+    Tree: {fileID: 11400000}
+    position: {x: 3260.8003, y: 1297.6001}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  camShakeData: {fileID: 11400000, guid: d8f3e6cfa94ad5846bf1811fa5130591, type: 2}
 --- !u!114 &-7035439463129004112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -106,7 +151,7 @@ MonoBehaviour:
     started: 0
     guid: 367bdb780961af14786db34dc06bf748
     Tree: {fileID: 11400000}
-    position: {x: 733.1998, y: 1039.2}
+    position: {x: 96.799805, y: 1851.2001}
     Name: 
     description: 
   children:
@@ -200,7 +245,7 @@ MonoBehaviour:
     started: 0
     guid: d57851457efcfb8429c0af3ae0f7d49e
     Tree: {fileID: 11400000}
-    position: {x: 855.2001, y: 1311.2001}
+    position: {x: 218.3999, y: 2123.2002}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -226,7 +271,7 @@ MonoBehaviour:
     started: 0
     guid: 96bbad5bf15d3ee419039c2c0af32b87
     Tree: {fileID: 11400000}
-    position: {x: 1868.9277, y: 1037.6}
+    position: {x: 1232, y: 1849.6001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -272,7 +317,7 @@ MonoBehaviour:
     started: 0
     guid: cb9108259ed860446b9261826c94240f
     Tree: {fileID: 11400000}
-    position: {x: 393.6, y: 1178.4}
+    position: {x: -243.2002, y: 1990.4001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -295,7 +340,7 @@ MonoBehaviour:
     started: 0
     guid: d295f7f6bd7514a4b8e5beeb0ea01b18
     Tree: {fileID: 11400000}
-    position: {x: 1956.1277, y: 909.60004}
+    position: {x: 1319.2, y: 1721.6001}
     Name: 
     description: 
   children:
@@ -319,12 +364,13 @@ MonoBehaviour:
     started: 0
     guid: 1f5559cc05d670c4ea9e56fced629f8b
     Tree: {fileID: 11400000}
-    position: {x: 2058.5278, y: 1176.8}
+    position: {x: 1421.5999, y: 1988.8002}
     Name: 
     description: 
   children:
   - {fileID: 4868420566671968884}
   - {fileID: 122688940680804350}
+  - {fileID: 9028513393238601430}
   successType: 1
 --- !u!114 &-4223635108672468623
 MonoBehaviour:
@@ -343,7 +389,7 @@ MonoBehaviour:
     started: 0
     guid: 4e55b003b9ebda242844e0abf5a40718
     Tree: {fileID: 11400000}
-    position: {x: 657.9999, y: 1311.2}
+    position: {x: 21.600098, y: 2123.2002}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -365,7 +411,7 @@ MonoBehaviour:
     started: 0
     guid: 79b7f7ae3fc73eb47afec491435aaf9d
     Tree: {fileID: 11400000}
-    position: {x: 1237.0399, y: 803.2}
+    position: {x: 600, y: 1615.2001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -387,12 +433,35 @@ MonoBehaviour:
     started: 0
     guid: 090abf061cac2db4ebdf8c45b94f1f31
     Tree: {fileID: 11400000}
-    position: {x: 1004.3999, y: 1039.2}
+    position: {x: 368, y: 1851.2001}
     Name: 
     description: 
   linkNode: {fileID: 0}
   clipName: Idle
   clipNameIndex: 1
+--- !u!114 &-2914437535438714710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf62d7a8575d74442b8935b3d7fefa23, type: 3}
+  m_Name: MoveDirectionNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 3cb06814c5e64c449a67123e55d377ec
+    Tree: {fileID: 11400000}
+    position: {x: 2348, y: 1164.8}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  direction: 3
+  force: 40
 --- !u!114 &-2886896763517979471
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -431,7 +500,7 @@ MonoBehaviour:
     started: 0
     guid: 785454abc5dc8544bb8efc94521d05a7
     Tree: {fileID: 11400000}
-    position: {x: 914.7998, y: 1178.3999}
+    position: {x: 278.3999, y: 1990.4001}
     Name: 
     description: After attack
   linkNode: {fileID: 0}
@@ -453,7 +522,7 @@ MonoBehaviour:
     started: 0
     guid: 7d93029fcaaf6e54bb3aa8d76d7b6489
     Tree: {fileID: 11400000}
-    position: {x: 1064.3999, y: 911.19995}
+    position: {x: 428, y: 1723.2001}
     Name: 
     description: 
   children:
@@ -477,7 +546,7 @@ MonoBehaviour:
     started: 0
     guid: 5eeafa01419859e469ca68aaf64ffb3b
     Tree: {fileID: 11400000}
-    position: {x: 1881.7278, y: 1176.8}
+    position: {x: 1244.8, y: 1988.8002}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -521,6 +590,29 @@ MonoBehaviour:
   Title: 
   Description: 
   Position: {x: 0, y: 0}
+--- !u!114 &-1937342107497730404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c7f12d3fe78b94c80531d07d537ead, type: 3}
+  m_Name: TeleportNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 679decc60bc4aff43aad9f11b0926510
+    Tree: {fileID: 11400000}
+    position: {x: 2511.1997, y: 356.00006}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  type: 1
+  position: {x: 646.5, y: 5.29}
 --- !u!114 &-1887277252475660215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,10 +630,11 @@ MonoBehaviour:
     started: 0
     guid: fef0699d2252c844da7eef1cec1809c3
     Tree: {fileID: 11400000}
-    position: {x: 3000, y: 562.39996}
+    position: {x: 3170.4, y: 897.5999}
     Name: 
     description: 
   children:
+  - {fileID: 5623151778785900605}
   - {fileID: -8504108488051441764}
   - {fileID: 3874277467118168322}
   successType: 1
@@ -562,13 +655,36 @@ MonoBehaviour:
     started: 0
     guid: f0ac29a3013299242be069c2561b148a
     Tree: {fileID: 11400000}
-    position: {x: 733.1998, y: 1178.3999}
+    position: {x: 96.799805, y: 1990.4001}
     Name: 
     description: 
   children:
   - {fileID: -4223635108672468623}
   - {fileID: -6262050734411869432}
+  - {fileID: -1545627736366459980}
   successType: 1
+--- !u!114 &-1545627736366459980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42045f462b2051f4c88617eee1eff392, type: 3}
+  m_Name: ShakeCamNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 253ede2eba6035f4a9a9ea52c6efc99c
+    Tree: {fileID: 11400000}
+    position: {x: 384.8577, y: 2121.6}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  camShakeData: {fileID: 11400000, guid: d62b7a84a8628554ab8e8f64675f506b, type: 2}
 --- !u!114 &-1371449174156355120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -601,7 +717,7 @@ MonoBehaviour:
     started: 0
     guid: d8baf21d8c55aea4c96ae9405ec8fa81
     Tree: {fileID: 11400000}
-    position: {x: 2058.5278, y: 1037.6}
+    position: {x: 1421.5999, y: 1849.6001}
     Name: 
     description: 
   children:
@@ -610,6 +726,32 @@ MonoBehaviour:
   - {fileID: -2510809390930250862}
   - {fileID: -4330454661806821516}
   - {fileID: 6381592911134668617}
+--- !u!114 &-1241007807967993565
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f4a21ff486b184e8bbf013bf096b03, type: 3}
+  m_Name: AttackNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 54385e464a3913f4a997ace5ca2b5059
+    Tree: {fileID: 11400000}
+    position: {x: 3020, y: 1297.5999}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  shape: 0
+  damage: 1
+  attackPos: {x: -4.7, y: 0.5}
+  boxSize: {x: 3, y: 0.4}
+  circleRadius: 2.5
 --- !u!114 &-597004954848189975
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -627,10 +769,11 @@ MonoBehaviour:
     started: 0
     guid: 57d8bddab95e5214983a7b6eb3cf4c8c
     Tree: {fileID: 11400000}
-    position: {x: 2669.6, y: 690.39996}
+    position: {x: 2688, y: 1025.5999}
     Name: 
     description: 
   children:
+  - {fileID: -2914437535438714710}
   - {fileID: 6958465399087529031}
   - {fileID: -202122186489890686}
   - {fileID: 1427105388010546889}
@@ -666,7 +809,7 @@ MonoBehaviour:
     started: 0
     guid: e7478f9e5317e4f4cbcbddbd85afaf25
     Tree: {fileID: 11400000}
-    position: {x: 2594.4, y: 962.39996}
+    position: {x: 2612.7998, y: 1297.5999}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -688,7 +831,7 @@ MonoBehaviour:
     started: 0
     guid: b38a35cd671da0f4989fa3fa6e471f5a
     Tree: {fileID: 11400000}
-    position: {x: 1215.2, y: 649.5999}
+    position: {x: 600, y: 1445.5088}
     Name: 
     description: 
   children:
@@ -713,12 +856,14 @@ MonoBehaviour:
     started: 0
     guid: 21d7ea3b585728e419214f6d1ca1b11a
     Tree: {fileID: 11400000}
-    position: {x: 2669.6, y: 829.5999}
+    position: {x: 2688, y: 1164.8}
     Name: 
     description: 
   children:
   - {fileID: -381164735272043374}
   - {fileID: 6100361484668307561}
+  - {fileID: -1241007807967993565}
+  - {fileID: -7283544963815298269}
   successType: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -791,6 +936,14 @@ MonoBehaviour:
   - {fileID: 6090394652446546953}
   - {fileID: -7344143964585853201}
   - {fileID: 5075185624207137995}
+  - {fileID: -2914437535438714710}
+  - {fileID: -1241007807967993565}
+  - {fileID: -7562581233400066833}
+  - {fileID: 5623151778785900605}
+  - {fileID: -1937342107497730404}
+  - {fileID: -7283544963815298269}
+  - {fileID: 9028513393238601430}
+  - {fileID: -1545627736366459980}
   groups:
   - {fileID: -415846026619501417}
   - {fileID: -1371449174156355120}
@@ -814,7 +967,7 @@ MonoBehaviour:
     started: 0
     guid: 55670d6459cf24a4ab89462abd8404c1
     Tree: {fileID: 11400000}
-    position: {x: 2179.3276, y: 1309.6}
+    position: {x: 1542.3999, y: 2121.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -840,7 +993,7 @@ MonoBehaviour:
     started: 0
     guid: 689141925501c404fbf63fe73764272e
     Tree: {fileID: 11400000}
-    position: {x: 840.3999, y: 780}
+    position: {x: 204, y: 1592.0001}
     Name: 
     description: Attack
   children:
@@ -863,7 +1016,7 @@ MonoBehaviour:
     started: 0
     guid: 34494a1de3666f24ead1f1e8f5751c79
     Tree: {fileID: 11400000}
-    position: {x: 1195.8909, y: 1037.6}
+    position: {x: 559.19995, y: 1849.6001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -885,7 +1038,7 @@ MonoBehaviour:
     started: 0
     guid: aef7d6df3fbaf6f4aa50284d858a95ae
     Tree: {fileID: 11400000}
-    position: {x: 543.59985, y: 1039.2}
+    position: {x: -92.80005, y: 1851.2001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -908,7 +1061,7 @@ MonoBehaviour:
     started: 0
     guid: 1aab4e15ac830484d91f70e8c1d07434
     Tree: {fileID: 11400000}
-    position: {x: 200.89912, y: 1178.3998}
+    position: {x: -436, y: 1990.4001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -930,7 +1083,7 @@ MonoBehaviour:
     started: 0
     guid: 80cfaa4649a943e43a54f95813bb2eec
     Tree: {fileID: 11400000}
-    position: {x: 2328.9277, y: 1037.6}
+    position: {x: 1692, y: 1849.6001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -953,7 +1106,7 @@ MonoBehaviour:
     started: 0
     guid: 78d4f4d9a0570f349a0d17f01c3c482d
     Tree: {fileID: 11400000}
-    position: {x: 2851.2, y: 829.5999}
+    position: {x: 2869.6, y: 1164.8}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -975,7 +1128,7 @@ MonoBehaviour:
     started: 0
     guid: 373ca5a9f941e574682d89df604daff5
     Tree: {fileID: 11400000}
-    position: {x: 2744.8, y: 431.99994}
+    position: {x: 2763.1997, y: 767.2}
     Name: 
     description: Attack 3
   children:
@@ -998,7 +1151,7 @@ MonoBehaviour:
     started: 0
     guid: eabca20ba38fa4142a983bd1342d900f
     Tree: {fileID: 11400000}
-    position: {x: 2480, y: 690.39996}
+    position: {x: 2498.4, y: 1025.5999}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1044,7 +1197,7 @@ MonoBehaviour:
     started: 0
     guid: 3349b3e743b9d524aa6a037598cf2872
     Tree: {fileID: 11400000}
-    position: {x: 2133.7278, y: 779.2}
+    position: {x: 1496.8, y: 1591.2001}
     Name: 
     description: Attack 2
   children:
@@ -1067,7 +1220,7 @@ MonoBehaviour:
     started: 0
     guid: b748ce1f6d9e3f943ad5f68bfe428231
     Tree: {fileID: 11400000}
-    position: {x: 3150.4, y: 690.39996}
+    position: {x: 3397.8, y: 1025.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1089,7 +1242,7 @@ MonoBehaviour:
     started: 0
     guid: dfc533eb6f36a6549aa546e3bdf555ab
     Tree: {fileID: 11400000}
-    position: {x: 630.7998, y: 911.19995}
+    position: {x: -5.6000977, y: 1723.2001}
     Name: 
     description: 
   children:
@@ -1113,10 +1266,11 @@ MonoBehaviour:
     started: 0
     guid: ef1095fd52005864ab841a31aff003a2
     Tree: {fileID: 11400000}
-    position: {x: 2567.2, y: 562.39996}
+    position: {x: 2585.6, y: 897.5999}
     Name: 
     description: 
   children:
+  - {fileID: -7562581233400066833}
   - {fileID: 3458283671944524501}
   - {fileID: -597004954848189975}
   successType: 1
@@ -1152,7 +1306,7 @@ MonoBehaviour:
     started: 0
     guid: ca667e17821c4664fa62b8ed35ad5377
     Tree: {fileID: 11400000}
-    position: {x: 1983.3278, y: 1309.6}
+    position: {x: 1346.3999, y: 2121.6}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1197,7 +1351,7 @@ MonoBehaviour:
     started: 0
     guid: 0a99c3b5553b3a94abc7e7741f88a1be
     Tree: {fileID: 11400000}
-    position: {x: 1437.6001, y: 803.2}
+    position: {x: 800.7998, y: 1615.2001}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1205,6 +1359,27 @@ MonoBehaviour:
   checkRelativePos: {x: 0, y: 1.06}
   radius: 3
   size: {x: 0, y: 0}
+--- !u!114 &5623151778785900605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b00700791e70b945ae49ae898ff3884, type: 3}
+  m_Name: EnableTouchCombatNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 50fc713cbb0466544809f1b2ba82b0f3
+    Tree: {fileID: 11400000}
+    position: {x: 2942.6, y: 1025.6}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
 --- !u!114 &5755743550055697948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1222,7 +1397,7 @@ MonoBehaviour:
     started: 0
     guid: 034f25d82ab82fb47928c6e19a635d56
     Tree: {fileID: 11400000}
-    position: {x: 2388.9277, y: 909.60004}
+    position: {x: 1752, y: 1721.6001}
     Name: 
     description: 
   children:
@@ -1246,7 +1421,7 @@ MonoBehaviour:
     started: 0
     guid: e8b473ea3001416418522830be89000c
     Tree: {fileID: 11400000}
-    position: {x: 583.19995, y: 1178.3998}
+    position: {x: -53.600098, y: 1990.4001}
     Name: 
     description: Before attack
   linkNode: {fileID: 0}
@@ -1268,7 +1443,7 @@ MonoBehaviour:
     started: 0
     guid: d8383341633d57a4199849bb145d1fc1
     Tree: {fileID: 11400000}
-    position: {x: 1671.1674, y: 1176.8}
+    position: {x: 1034.3999, y: 1988.8002}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1291,14 +1466,14 @@ MonoBehaviour:
     started: 0
     guid: 36cceb9b2b757cd408a26060c3cb5737
     Tree: {fileID: 11400000}
-    position: {x: 2790.4, y: 962.39996}
+    position: {x: 2808.7998, y: 1297.5999}
     Name: 
     description: 
   linkNode: {fileID: 0}
   shape: 1
   damage: 1
   attackPos: {x: -2.5, y: 1.4}
-  boxSize: {x: 0, y: 0}
+  boxSize: {x: 2.38, y: 0.46}
   circleRadius: 2.5
 --- !u!114 &6268569449364434779
 MonoBehaviour:
@@ -1341,7 +1516,7 @@ MonoBehaviour:
     started: 0
     guid: d1a89704c8d423341bce01102376ebb3
     Tree: {fileID: 11400000}
-    position: {x: 2240.128, y: 1176.8}
+    position: {x: 1603.2002, y: 1988.8002}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1363,7 +1538,7 @@ MonoBehaviour:
     started: 0
     guid: f8cbe70273ae3864195718e979b41210
     Tree: {fileID: 11400000}
-    position: {x: 2492.8, y: 829.5999}
+    position: {x: 2511.1997, y: 1164.8}
     Name: 
     description: 
   linkNode: {fileID: 0}
@@ -1439,3 +1614,25 @@ MonoBehaviour:
   checkRelativePos: {x: 0, y: 1.06}
   radius: 3
   size: {x: 0, y: 0}
+--- !u!114 &9028513393238601430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42045f462b2051f4c88617eee1eff392, type: 3}
+  m_Name: ShakeCamNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 5052380b6c51dc540807b0f84a13c768
+    Tree: {fileID: 11400000}
+    position: {x: 1827.2001, y: 2121.6}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  camShakeData: {fileID: 11400000, guid: d62b7a84a8628554ab8e8f64675f506b, type: 2}
