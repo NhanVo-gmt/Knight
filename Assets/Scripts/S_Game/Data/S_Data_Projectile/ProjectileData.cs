@@ -16,6 +16,7 @@ public class ProjectileData : PooledObjectData
     {
         public Transform transform;
         public Rigidbody2D rb;
+        public Animator anim;
     }
     
     public ProjectileComponent component = new ProjectileComponent();
@@ -61,16 +62,18 @@ public class ProjectileData : PooledObjectData
 
     #region Methods
 
-    public virtual void Initialize(Transform transform, Rigidbody2D rb)
+    public virtual void Initialize(Transform transform, Rigidbody2D rb, Animator anim)
     {
         component.transform = transform;
         component.rb = rb;
+        component.anim = anim;
     }
     
     public virtual void Move()
     {
         component.rb.velocity = -component.transform.right * velocity;
     }
+    
 
     #endregion
 }

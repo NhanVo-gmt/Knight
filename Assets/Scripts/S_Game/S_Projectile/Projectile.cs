@@ -28,7 +28,7 @@ public class Projectile : PooledObject
         
         projectileData = (ProjectileData)data;
         
-        projectileData.Initialize(transform, rb);
+        projectileData.Initialize(transform, rb, anim);
         
         SetUp();
         

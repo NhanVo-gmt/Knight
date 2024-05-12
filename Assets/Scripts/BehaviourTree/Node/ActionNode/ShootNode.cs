@@ -26,7 +26,7 @@ public class ShootNode : ActionNode
     {
         base.OnStart();
 
-        ObjectPoolManager.Instance.SpawnPooledPrefab(data, movement.GetPosition(), movement.faceDirection);
+        ObjectPoolManager.Instance.SpawnPooledPrefab(data.Clone<ProjectileData>(), movement.GetPosition(), movement.faceDirection);
     }
 
     protected override void OnStop()
