@@ -9,6 +9,7 @@ public class Projectile : PooledObject
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
+    private BoxCollider2D col;
 
     [SerializeField] private bool isExplode;
 
@@ -17,6 +18,7 @@ public class Projectile : PooledObject
         base.Awake();
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
+        col = GetComponent<BoxCollider2D>();
     }
     
 
@@ -27,10 +29,18 @@ public class Projectile : PooledObject
         projectileData = (ProjectileData)data;
         
         projectileData.Initialize(transform, rb);
-        anim.runtimeAnimatorController = projectileData.GetRuntimeAnim();
-        sprite.sprite = projectileData.GetSprite();
+        
+        SetUp();
         
         isExplode = false;
+    }
+
+    void SetUp()
+    {
+        anim.runtimeAnimatorController = projectileData.GetRuntimeAnim();
+        sprite.sprite = projectileData.GetSprite();
+        col.size = projectileData.GetCollider2D().size;
+        col.offset = projectileData.GetCollider2D().offset;
     }
 
 

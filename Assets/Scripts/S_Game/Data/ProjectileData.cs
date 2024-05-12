@@ -27,7 +27,7 @@ public class ProjectileData : PooledObjectData
     
     private Sprite sprite;
     private RuntimeAnimatorController runtimeAnim;
-    private Collider2D col;
+    private BoxCollider2D col;
 
     public Sprite GetSprite()
     {
@@ -41,9 +41,9 @@ public class ProjectileData : PooledObjectData
         return runtimeAnim;
     }
 
-    public Collider2D GetCollider2D()
+    public BoxCollider2D GetCollider2D()
     {
-        if (!col) col = projectile.GetComponent<Collider2D>();
+        if (!col) col = projectile.GetComponent<BoxCollider2D>();
         return col;
     }
 
