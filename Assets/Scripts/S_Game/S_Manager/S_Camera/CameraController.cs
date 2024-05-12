@@ -342,8 +342,6 @@ namespace Knight.Camera
         public void SwapCamera(CameraClass.CameraType cameraFromLeft, CameraClass.CameraType cameraFromRight,
             Vector2 triggerExitDirection, GameObject followObject)
         {
-            //todo refactor
-            
             // If the camera on the left and exit direction was on the right
             if (currentCamType == cameraFromLeft && triggerExitDirection.x > 0f)
             {

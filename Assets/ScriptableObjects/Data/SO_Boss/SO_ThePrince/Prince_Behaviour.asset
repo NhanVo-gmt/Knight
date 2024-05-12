@@ -321,7 +321,7 @@ MonoBehaviour:
     Name: 
     description: 
   linkNode: {fileID: 0}
-  direction: 2
+  direction: 4
   force: 10
 --- !u!114 &-4380512839951174096
 MonoBehaviour:
@@ -1447,7 +1447,7 @@ MonoBehaviour:
     Name: 
     description: 
   linkNode: {fileID: 0}
-  direction: 2
+  direction: 4
   force: 10
 --- !u!114 &6100361484668307561
 MonoBehaviour:
