@@ -62,7 +62,7 @@ MonoBehaviour:
     started: 0
     guid: b0ae3a7c371350d4f869a4acc1cd8c58
     Tree: {fileID: 11400000}
-    position: {x: 1382.0001, y: 432.39996}
+    position: {x: 1609.4813, y: 630.1209}
     Name: 
     description: 
   children:
@@ -607,12 +607,12 @@ MonoBehaviour:
     started: 0
     guid: 679decc60bc4aff43aad9f11b0926510
     Tree: {fileID: 11400000}
-    position: {x: 2511.1997, y: 356.00006}
+    position: {x: 1412.7999, y: 496.24008}
     Name: 
-    description: 
+    description: Teleport Right
   linkNode: {fileID: 0}
   type: 1
-  position: {x: 646.5, y: 5.29}
+  position: {x: 649.3, y: 5.29}
 --- !u!114 &-1887277252475660215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -944,6 +944,8 @@ MonoBehaviour:
   - {fileID: -7283544963815298269}
   - {fileID: 9028513393238601430}
   - {fileID: -1545627736366459980}
+  - {fileID: 2402757867258035901}
+  - {fileID: 2670088364511088406}
   groups:
   - {fileID: -415846026619501417}
   - {fileID: -1371449174156355120}
@@ -1134,6 +1136,51 @@ MonoBehaviour:
   children:
   - {fileID: 4530846593674885939}
   - {fileID: -1887277252475660215}
+--- !u!114 &2402757867258035901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 987adf93acf05af4c9a3f385ca8652e7, type: 3}
+  m_Name: SequencerNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 0484e13d0c59afd40900150269937f04
+    Tree: {fileID: 11400000}
+    position: {x: 1459.1998, y: 353.04007}
+    Name: 
+    description: 
+  children:
+  - {fileID: -1937342107497730404}
+  - {fileID: 2670088364511088406}
+--- !u!114 &2670088364511088406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 739273a058b8f854d826d1955c199fda, type: 3}
+  m_Name: IdleNode
+  m_EditorClassIdentifier: 
+  NodeComponent:
+    state: 0
+    started: 0
+    guid: 56b5125677c1d33438696b1a00d425f2
+    Tree: {fileID: 11400000}
+    position: {x: 1664.7999, y: 496.24008}
+    Name: 
+    description: 
+  linkNode: {fileID: 0}
+  idleTime: 1
 --- !u!114 &3458283671944524501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1333,7 +1380,7 @@ MonoBehaviour:
     description: 
   children:
   - {fileID: 8559897050971699677}
-  - {fileID: -7589762919647484620}
+  - {fileID: 2402757867258035901}
 --- !u!114 &5075185624207137995
 MonoBehaviour:
   m_ObjectHideFlags: 0

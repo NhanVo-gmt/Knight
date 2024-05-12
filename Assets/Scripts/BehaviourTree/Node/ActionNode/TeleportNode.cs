@@ -11,7 +11,6 @@ public class TeleportNode : ActionNode
 
     public TeleportType type;   
     [FormerlySerializedAs("relativePos")] [SerializeField] public Vector2 position;
-    private Vector2 destinationPos;
     
     public override void CopyNode(Node copyNode)
     {
@@ -19,6 +18,7 @@ public class TeleportNode : ActionNode
 
         if (node)
         {
+            type = node.type;
             position = node.position;
         }
     }
@@ -31,8 +31,17 @@ public class TeleportNode : ActionNode
     protected override void OnStart()
     {
         base.OnStart();
-        destinationPos = position;
-        treeComponent.transform.position = treeComponent.transform.position - (Vector3)destinationPos * movement.GetDirectionMagnitude();
+        
+        switch (type)
+        {
+            case TeleportType.Relative:
+                treeComponent.transform.position = treeComponent.transform.position - (Vector3)position * movement.GetDirectionMagnitude();
+                break;
+            case TeleportType.World:
+                treeComponent.transform.position = position;
+                break;
+        }
+        
     }
 
     protected override void OnStop()
