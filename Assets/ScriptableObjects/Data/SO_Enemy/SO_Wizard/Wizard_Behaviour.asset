@@ -253,7 +253,8 @@ MonoBehaviour:
     Name: 
     description: 
   linkNode: {fileID: 0}
-  relativePos: {x: -15, y: 0}
+  type: 0
+  position: {x: -15, y: 0}
 --- !u!114 &-4560600322938292651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,7 +388,9 @@ MonoBehaviour:
     description: 
   linkNode: {fileID: 0}
   checkType: 1
+  checkPosType: 0
   checkRelativePos: {x: -6.77, y: 2}
+  checkPos: {x: 0, y: 0}
   radius: 0
   size: {x: 12, y: 4}
 --- !u!114 &-1951905611097406761
@@ -844,7 +847,9 @@ MonoBehaviour:
     description: 
   linkNode: {fileID: 0}
   checkType: 0
+  checkPosType: 0
   checkRelativePos: {x: -1.5, y: 1}
+  checkPos: {x: 0, y: 0}
   radius: 1
   size: {x: 0, y: 0}
 --- !u!114 &3236921343099510848
@@ -1055,7 +1060,9 @@ MonoBehaviour:
     description: 
   linkNode: {fileID: 0}
   checkType: 1
+  checkPosType: 0
   checkRelativePos: {x: 0, y: 6}
+  checkPos: {x: 0, y: 0}
   radius: 0
   size: {x: 30, y: 4}
 --- !u!114 &6933476678333478666
@@ -1265,7 +1272,9 @@ MonoBehaviour:
     description: 
   linkNode: {fileID: 0}
   checkType: 1
+  checkPosType: 0
   checkRelativePos: {x: 0, y: -3}
+  checkPos: {x: 0, y: 0}
   radius: 0
   size: {x: 30, y: 4}
 --- !u!114 &9143276528797056157
@@ -1291,6 +1300,7 @@ MonoBehaviour:
   children:
   - {fileID: 4186119952146776076}
   - {fileID: 4243087236390738935}
+  percentList: 0100000001000000
 --- !u!114 &9203709204819457276
 MonoBehaviour:
   m_ObjectHideFlags: 0

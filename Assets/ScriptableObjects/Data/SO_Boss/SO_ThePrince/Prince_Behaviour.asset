@@ -1211,6 +1211,7 @@ MonoBehaviour:
     description: 
   children:
   - {fileID: 8879877967373692265}
+  - {fileID: 8011434785755635328}
   successType: 1
 --- !u!114 &529901099291332650
 MonoBehaviour:
@@ -2119,11 +2120,11 @@ MonoBehaviour:
     started: 0
     guid: da6baf9ee6fb9c94a9cfbb13b55a8c11
     Tree: {fileID: 11400000}
-    position: {x: 3242.5923, y: 391.2}
+    position: {x: 3182.4, y: 391.2}
     Name: 
     description: 
   linkNode: {fileID: 0}
-  data: {fileID: 0}
+  data: {fileID: 11400000, guid: d06414811cd409d4cb35ff4046acad0d, type: 2}
 --- !u!114 &8061003672499560513
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class Projectile : PooledObject
         base.Initialize(data);
         
         projectileData = (ProjectileData)data;
+        
+        projectileData.Initialize(transform, rb);
         anim.runtimeAnimatorController = projectileData.GetRuntimeAnim();
         sprite.sprite = projectileData.GetSprite();
         
@@ -43,7 +45,7 @@ public class Projectile : PooledObject
     {
         if (!projectileData) return;
         
-        rb.velocity = -transform.right * projectileData.velocity;
+        projectileData.Move();
     }
 
     public ProjectileData GetData()

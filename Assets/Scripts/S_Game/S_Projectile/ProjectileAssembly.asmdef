@@ -1,0 +1,19 @@
+{
+    "name": "ProjectileAssembly",
+    "rootNamespace": "",
+    "references": [
+        "GUID:1d985b7e3891a9d41814b005a2cd4cab",
+        "GUID:fe4327a1e78f02c46b30a899c5a9bcab",
+        "GUID:9234a8d13ac937342a29591d5ee5e39c",
+        "GUID:44031ad05fe568945bd43bfc2eeca698"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

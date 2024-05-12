@@ -6,14 +6,28 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ProjectileData", menuName = "ScriptableObjects/Data/PooledObjectData/ProjectileData")]
 public class ProjectileData : PooledObjectData
 {
-    [Header("Projectile")] public GameObject projectile;
+    [Header("Projectile")] 
+    public GameObject projectile;
     public int damage;
     public float velocity;
 
-    private Sprite sprite;
-    private RuntimeAnimatorController runtimeAnim;
+    // Initialize Component
+    public struct ProjectileComponent
+    {
+        public Transform transform;
+        public Rigidbody2D rb;
+    }
+    
+    public ProjectileComponent component = new ProjectileComponent();
+    public Action OnRelease;
+
 
     #region Get
+    
+    
+    private Sprite sprite;
+    private RuntimeAnimatorController runtimeAnim;
+    private Collider2D col;
 
     public Sprite GetSprite()
     {
@@ -27,6 +41,12 @@ public class ProjectileData : PooledObjectData
         return runtimeAnim;
     }
 
+    public Collider2D GetCollider2D()
+    {
+        if (!col) col = projectile.GetComponent<Collider2D>();
+        return col;
+    }
+
     public virtual void GetDirection()
     {
         //todo
@@ -35,6 +55,21 @@ public class ProjectileData : PooledObjectData
     public virtual void GetPrefabAfterExplosion()
     {
         //todo
+    }
+
+    #endregion
+
+    #region Methods
+
+    public virtual void Initialize(Transform transform, Rigidbody2D rb)
+    {
+        component.transform = transform;
+        component.rb = rb;
+    }
+    
+    public virtual void Move()
+    {
+        component.rb.velocity = -component.transform.right * velocity;
     }
 
     #endregion
