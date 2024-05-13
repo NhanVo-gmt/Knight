@@ -17,11 +17,14 @@ public class ProjectileData : PooledObjectData
         public Transform transform;
         public Rigidbody2D rb;
         public Animator anim;
+        public float startTime;
     }
     
     public ProjectileComponent component = new ProjectileComponent();
+    public Action OnBeginRelease;
     public Action OnRelease;
 
+    public bool hasExploded { get; protected set; }
 
     #region Get
     
@@ -67,13 +70,34 @@ public class ProjectileData : PooledObjectData
         component.transform = transform;
         component.rb = rb;
         component.anim = anim;
+        component.startTime = Time.time;
+        hasExploded = false;
+    }
+
+    public virtual void Update()
+    {
+        Move();
     }
     
-    public virtual void Move()
+    protected virtual void Move()
     {
         component.rb.velocity = -component.transform.right * velocity;
     }
-    
+
+    public virtual void OnHitTarget()
+    {
+        hasExploded = true;
+        component.rb.velocity = Vector2.zero;
+    }
+
+    public virtual IEnumerator ReleaseCoroutine()
+    {
+        component.anim.Play("explosion");
+
+        yield return new WaitForSeconds(.2f);
+        
+        OnRelease?.Invoke();
+    }
 
     #endregion
 }

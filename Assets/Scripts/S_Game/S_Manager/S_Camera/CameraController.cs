@@ -38,6 +38,7 @@ namespace Knight.Camera
         
         [SerializeField] private CinemachineVirtualCamera currentCamera;
         private CinemachineFramingTransposer framingTransposer;
+        private CinemachineBasicMultiChannelPerlin basicMultiChannelPerlin;
         private float normYPanAmount;
         private Vector2 startingTrackedObjectOffset;
         
@@ -68,7 +69,9 @@ namespace Knight.Camera
                     currentCamera.enabled = true;
                     currentCamType = CameraClass.CameraType.CenterPlayer;
                     framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-                    cameraShake.Initialize(currentCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>());
+                    basicMultiChannelPerlin =
+                        currentCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+                    cameraShake.Initialize(basicMultiChannelPerlin);
                     confiner = currentCamera.GetComponent<CameraConfiner>();
                 }
             }
@@ -325,6 +328,8 @@ namespace Knight.Camera
             toCam.enabled = true;
             currentCamera = toCam;
             framingTransposer = currentCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+            basicMultiChannelPerlin = currentCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            if (basicMultiChannelPerlin) cameraShake.Initialize(basicMultiChannelPerlin);
         }
         
         private void SwapCamera(CameraClass.CameraType fromCamType, CameraClass.CameraType toCamType)

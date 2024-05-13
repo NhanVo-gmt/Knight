@@ -11,8 +11,6 @@ public class Projectile : PooledObject
     private SpriteRenderer sprite;
     private BoxCollider2D col;
 
-    [SerializeField] private bool isExplode;
-
     protected override void Awake() 
     {
         base.Awake();
@@ -31,32 +29,27 @@ public class Projectile : PooledObject
         projectileData.Initialize(transform, rb, anim);
         
         SetUp();
-        
-        isExplode = false;
     }
 
     void SetUp()
     {
-        anim.runtimeAnimatorController = projectileData.GetRuntimeAnim();
         sprite.sprite = projectileData.GetSprite();
+        anim.runtimeAnimatorController = projectileData.GetRuntimeAnim();
         col.size = projectileData.GetCollider2D().size;
         col.offset = projectileData.GetCollider2D().offset;
+
+        projectileData.OnBeginRelease += BeginRelease;
+        projectileData.OnRelease += Release;
     }
 
 
     private void Update()
     {
-        if (isExplode) return;
-        
-        Move();
-    }
-
-    private void Move()
-    {
         if (!projectileData) return;
         
-        projectileData.Move();
+        projectileData.Update();
     }
+
 
     public ProjectileData GetData()
     {
@@ -70,23 +63,18 @@ public class Projectile : PooledObject
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isExplode) return;
+        if (projectileData.hasExploded) return;
         
         if (other.TryGetComponent<Combat>(out Combat combat))
         {
-            isExplode = true;
-            rb.velocity = Vector2.zero;
+            projectileData.OnHitTarget();
             combat.TakeDamage(projectileData.damage, IDamageable.DamagerTarget.Enemy, GetDirection());
-            StartCoroutine(ReleaseCoroutine());
+            BeginRelease();
         }
     }
 
-    IEnumerator ReleaseCoroutine()
+    void BeginRelease()
     {
-        anim.Play("explosion");
-
-        yield return new WaitForSeconds(.2f);
-        
-        Release();
+        StartCoroutine(projectileData.ReleaseCoroutine());
     }
 }

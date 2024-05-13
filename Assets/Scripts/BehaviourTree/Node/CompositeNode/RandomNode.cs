@@ -20,7 +20,11 @@ public class RandomNode : CompositeNode
     public override void OnInitialize(BehaviourTreeComponent component)
     {
         base.OnInitialize(component);
-        
+
+        if (percentList.Count < children.Count)
+        {
+            Debug.LogError($"Dont have enough percent List in {name}");
+        }
         // Ensure more percent is not valid
         for (int i = 0; i < children.Count; i++)
         {

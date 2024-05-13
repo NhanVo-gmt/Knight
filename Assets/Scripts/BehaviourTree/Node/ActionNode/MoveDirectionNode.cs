@@ -12,6 +12,7 @@ public class MoveDirectionNode : ActionNode
         CurrentDirectionReverse,
     }
 
+
     public Direction direction = Direction.Left;
     public float force;
     
@@ -57,8 +58,11 @@ public class MoveDirectionNode : ActionNode
             default:
                 break;
         }
+
         movement.AddForce(directionVec, force);
     }
+
+
 
     protected override void OnStop()
     {

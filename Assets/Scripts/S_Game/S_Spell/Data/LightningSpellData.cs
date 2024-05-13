@@ -4,7 +4,7 @@ using Knight.Camera;
 using UnityEngine;
 
 
-[CreateAssetMenu(menuName = "LightningSpell", fileName = "ScriptableObjects/Data/Spell/Lightning")]
+[CreateAssetMenu(fileName = "LightningSpell", menuName = "ScriptableObjects/Data/Spell/Lightning")]
 public class LightningSpellData : SpellData
 {
     [Header("Spell Attribute")]

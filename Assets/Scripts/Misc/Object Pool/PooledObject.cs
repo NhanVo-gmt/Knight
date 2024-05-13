@@ -8,7 +8,7 @@ public class PooledObject : MonoBehaviour
 {
     public IObjectPool<GameObject> pool;
     protected Animator anim;
-
+    private bool isReleased = false;
 
     protected virtual void Awake() 
     {
@@ -17,6 +17,7 @@ public class PooledObject : MonoBehaviour
 
     public virtual void Initialize(PooledObjectData data)
     {
+        isReleased = false;
         Invoke("Release", data.lifeTime);
     }
 
@@ -24,6 +25,9 @@ public class PooledObject : MonoBehaviour
     // Used in animation clip
     public void Release()
     {
+        if (isReleased) return;
+
+        isReleased = true;
         CancelInvoke();
         if (anim != null)
         {
