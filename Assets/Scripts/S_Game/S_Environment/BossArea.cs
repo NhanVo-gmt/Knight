@@ -8,8 +8,8 @@ public class BossArea : MonoBehaviour, IDataPersistence
 {
     public enum Boss
     {
-        Wildboar,
-        HeadlessKnight
+        Wildboar = 100,
+        Prince = 200,
     }
 
     [SerializeField] private Boss boss;
