@@ -20,6 +20,13 @@ public static class SceneLoaderEnum
         ForestScene1 = 201,
         ForestScene2 = 202,
         ForestScene3 = 203,
+        ForestScene4 = 204,
+        ForestScene5 = 205,
+        ForestScene6 = 206,
+        ForestScene7 = 207,
+        ForestScene8 = 208,
+        ForestScene9 = 209,
+        ForestScene10 = 210,
     }
     public enum Region {
         None,
