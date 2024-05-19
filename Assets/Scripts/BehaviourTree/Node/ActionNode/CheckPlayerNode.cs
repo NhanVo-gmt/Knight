@@ -48,7 +48,6 @@ public class CheckPlayerNode : ActionNode
     {
         base.OnStart();
 
-        
         playerPos = treeComponent.player.transform.position;
         if (checkPosType == CheckPositionType.Relative)
             checkPos = movement.GetWorldPosFromRelativePos(checkRelativePos);

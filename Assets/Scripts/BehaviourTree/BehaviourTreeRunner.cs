@@ -22,6 +22,7 @@ public class BehaviourTreeRunner : MonoBehaviour
 
     public void InitializeTreeComponent() 
     {
+        Debug.Log(GameObject.FindWithTag("Player"));
         treeComponent = BehaviourTreeComponent.CreateTreeComponentFromGameObject(gameObject, GameObject.FindWithTag("Player"));
     }
 

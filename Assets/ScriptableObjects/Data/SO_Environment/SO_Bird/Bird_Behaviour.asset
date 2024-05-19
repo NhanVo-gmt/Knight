@@ -16,7 +16,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: aee5c94236fdafd43b642a9117482c7d
+    Tree: {fileID: 11400000}
     position: {x: -207.5626, y: 513.99994}
+    Name: 
     description: 
   children:
   - {fileID: -4356397731155295681}
@@ -38,10 +40,17 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4fe7ccfff1874c4418142bc5b061eb83
+    Tree: {fileID: 11400000}
     position: {x: 973.7848, y: 521.5338}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
+  checkType: 0
+  checkPosType: 0
+  checkRelativePos: {x: 0, y: 0}
   checkPos: {x: 0, y: 0}
   radius: 6
+  size: {x: 0, y: 0}
 --- !u!114 &-6828568204210144354
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,10 +67,17 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 7541547e114affe419862ff5094267b1
+    Tree: {fileID: 11400000}
     position: {x: -520.5626, y: 643.99994}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
+  checkType: 0
+  checkPosType: 0
+  checkRelativePos: {x: 0, y: 0}
   checkPos: {x: 0, y: 0}
   radius: 6
+  size: {x: 0, y: 0}
 --- !u!114 &-6742680835363187829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +94,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: b381e16b19d0f9740bcd0a41cc28e059
+    Tree: {fileID: 11400000}
     position: {x: 216, y: 102.29551}
+    Name: 
     description: 
   child: {fileID: 6582034677143276226}
 --- !u!114 &-6346838761104196138
@@ -97,7 +115,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: f0887bd1816a5c64290bfdcb2256e524
+    Tree: {fileID: 11400000}
     position: {x: 145.99997, y: 521}
+    Name: 
     description: 
   child: {fileID: 1097251744859659599}
 --- !u!114 &-4854864789095156251
@@ -116,8 +136,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4fcfe8db15df7314aa8e38b21702d3c8
+    Tree: {fileID: 11400000}
     position: {x: 290.99988, y: 644}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
   idleTime: 2
 --- !u!114 &-4784724178239944971
 MonoBehaviour:
@@ -135,8 +158,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: a72686f0bcaebf645ab1028c35e702b8
+    Tree: {fileID: 11400000}
     position: {x: 1154.8887, y: 677.00006}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
   speed: 5
   canFly: 1
   movePosition: 4
@@ -161,8 +187,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 13093cfb4344aa04a9ef65cff804b093
+    Tree: {fileID: 11400000}
     position: {x: -334.56262, y: 643.99994}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
   idleTime: 3
 --- !u!114 &-3911997845013833671
 MonoBehaviour:
@@ -180,8 +209,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: bfe8850c3519a064391aec542d046581
+    Tree: {fileID: 11400000}
     position: {x: 478.82343, y: 644}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
   clipName: Idle1
   clipNameIndex: 1
 --- !u!114 &-3875070756041554493
@@ -200,8 +232,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: aa005109010904748b89f915783cf19c
+    Tree: {fileID: 11400000}
     position: {x: -132.56268, y: 643.99994}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
   clipName: Idle
   clipNameIndex: 0
 --- !u!114 &-2886896763517979471
@@ -220,7 +255,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: a797f669e5b942e4783a93252797d8a6
+    Tree: {fileID: 11400000}
     position: {x: 216, y: -37.87838}
+    Name: 
     description: 
   child: {fileID: -6742680835363187829}
 --- !u!114 &-2886477226154632863
@@ -239,7 +276,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 3e66982aa59ed23498d3db50dfa1f04e
+    Tree: {fileID: 11400000}
     position: {x: -520.5626, y: 523.99994}
+    Name: 
     description: 
   child: {fileID: -6828568204210144354}
 --- !u!114 &-2856845896997666476
@@ -258,7 +297,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 9935d2019b109a14da2498ba70994ecc
+    Tree: {fileID: 11400000}
     position: {x: 419.70776, y: 522}
+    Name: 
     description: 
   children:
   - {fileID: -4854864789095156251}
@@ -280,7 +321,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 974869f6ab1bc5b4bb5653b25e2c3682
+    Tree: {fileID: 11400000}
     position: {x: -320.56265, y: 385.99994}
+    Name: 
     description: 
   children:
   - {fileID: -2886477226154632863}
@@ -322,6 +365,7 @@ MonoBehaviour:
   - {fileID: -6346838761104196138}
   - {fileID: 8533415439079423720}
   - {fileID: 3387078979695730677}
+  groups: []
   offset: {x: 300, y: 0}
 --- !u!114 &1097251744859659599
 MonoBehaviour:
@@ -339,10 +383,17 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 93a4d76034f07c04d800da245898ec22
+    Tree: {fileID: 11400000}
     position: {x: 102.99999, y: 644}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
+  checkType: 0
+  checkPosType: 0
+  checkRelativePos: {x: 0, y: 0}
   checkPos: {x: 0, y: 0}
   radius: 6
+  size: {x: 0, y: 0}
 --- !u!114 &3387078979695730677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -359,8 +410,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 9b47da66859bdd641b414579794147d5
+    Tree: {fileID: 11400000}
     position: {x: 1408, y: 522}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
   isActive: 0
 --- !u!114 &4713541579339488842
 MonoBehaviour:
@@ -378,7 +432,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 4050143bff42afc43858c2d27a9fb3ad
+    Tree: {fileID: 11400000}
     position: {x: 1214.0001, y: 522}
+    Name: 
     description: 
   children:
   - {fileID: -4784724178239944971}
@@ -400,7 +456,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: e78761a18fcea7e41a0338e7116cde45
+    Tree: {fileID: 11400000}
     position: {x: 1063.8927, y: 378}
+    Name: 
     description: 
   children:
   - {fileID: -6978983311898258789}
@@ -422,12 +480,15 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 72f6b8e0a1c237345b2cc4906a3612eb
+    Tree: {fileID: 11400000}
     position: {x: 253, y: 252}
+    Name: 
     description: 
   children:
   - {fileID: -2496431986759994799}
   - {fileID: 8533415439079423720}
   - {fileID: 5255512716884308351}
+  percentList: 010000000100000001000000
 --- !u!114 &7608728941228091552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -444,8 +505,11 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 5c7a9296536524446b04fbace9d9e92d
+    Tree: {fileID: 11400000}
     position: {x: 1379.8887, y: 677.00006}
+    Name: 
     description: 
+  linkNode: {fileID: 0}
   clipName: Move
   clipNameIndex: 2
 --- !u!114 &8533415439079423720
@@ -464,7 +528,9 @@ MonoBehaviour:
     state: 0
     started: 0
     guid: 34b2af3356d17144ca4bbdc4e1c86330
+    Tree: {fileID: 11400000}
     position: {x: 242.65002, y: 393.30002}
+    Name: 
     description: 
   children:
   - {fileID: -6346838761104196138}

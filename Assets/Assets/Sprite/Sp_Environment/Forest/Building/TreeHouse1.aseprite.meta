@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0d4824bc4e1ff06469d0004c3568862e
+guid: 04def386e5324854a82134dbafe65856
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -95,7 +95,7 @@ ScriptedImporter:
     addSortingGroup: 1
     addShadowCasters: 0
   importFileNodeState: 1
-  platformSettingsDirtyTick: 638517731471675089
+  platformSettingsDirtyTick: 638517731471685091
   textureAssetName: 
   singleSpriteImportData:
   - name: 
@@ -119,18 +119,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: TreeHouse
+  - name: TreeHouse1
     originalName: 
-    pivot: {x: 0.47478992, y: -0.03614458}
+    pivot: {x: 0.5151515, y: -0.09876543}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 119
-      height: 166
-    spriteID: 3f86a52cf80a75f47b49cc79a459a3a7
+      width: 165
+      height: 81
+    spriteID: c235d5eaa4c9079439b458d2fe1d490c
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -142,20 +142,20 @@ ScriptedImporter:
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: -1767541814
-    name: TreeHouse
+    guid: 1244015387
+    name: TreeHouse1
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: TreeHouse
+    - name: TreeHouse1
       frameIndex: 0
       cellRect:
-        x: 24
-        y: 6
-        width: 119
-        height: 166
-      spriteId: 3f86a52cf80a75f47b49cc79a459a3a7
+        x: 19
+        y: 8
+        width: 165
+        height: 81
+      spriteId: c235d5eaa4c9079439b458d2fe1d490c
     linkedCells: []
     parentIndex: -1
   platformSettings:
@@ -209,4 +209,4 @@ ScriptedImporter:
     androidETC2FallbackOverride: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 161, y: 200}
+  canvasSize: {x: 208, y: 122}
