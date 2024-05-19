@@ -40,8 +40,14 @@ namespace Knight.UI
 
         public void Toggle()
         {
+            StartCoroutine(ToggleCoroutine());
+        }
+
+        IEnumerator ToggleCoroutine()
+        {
             CloseAllTabs();
-            canvasGroup.alpha = 1 - canvasGroup.alpha;
+            yield return canvasGroup.Fade(1 - canvasGroup.alpha, 0.1f);
+            
             currentTabIndex = 0;
             OpenTab(0);
         }

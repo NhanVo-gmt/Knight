@@ -43,8 +43,8 @@ public abstract class State
 
     void AddEvent()
     {
-        anim.onAnimationFinishTrigger += AnimationFinishTrigger;
-        anim.onAnimationTrigger += AnimationTrigger;
+        anim.OnAnimationFinishTrigger += AnimationFinishTrigger;
+        anim.OnAnimationTrigger += AnimationTrigger;
 
         health.OnTakeDamage += ChangeToHitState;
     }
@@ -67,8 +67,8 @@ public abstract class State
 
     void RemoveEvent()
     {
-        anim.onAnimationFinishTrigger -= AnimationFinishTrigger;
-        anim.onAnimationTrigger -= AnimationTrigger;
+        anim.OnAnimationFinishTrigger -= AnimationFinishTrigger;
+        anim.OnAnimationTrigger -= AnimationTrigger;
 
         health.OnTakeDamage -= ChangeToHitState;
     }

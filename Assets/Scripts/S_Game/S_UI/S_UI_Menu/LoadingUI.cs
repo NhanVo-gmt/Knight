@@ -29,7 +29,7 @@ public class LoadingUI : MonoBehaviour
         if (canvasGroup == null) return;
         if (canvasGroup.alpha != 0)
         {
-            StartCoroutine(FadeOut());
+            FadeOut();
         }
 
         slider.value = 0f;
@@ -38,7 +38,7 @@ public class LoadingUI : MonoBehaviour
 
     private void SceneLoader_OnSceneLoadingStarted(object sender, EventArgs e)
     {
-        LoadCoroutine = StartCoroutine(FadeIn());
+        FadeIn();
     }
 
     private void SceneLoader_OnSceneLoadingProgressChanged(object sender, float progress)
@@ -46,33 +46,18 @@ public class LoadingUI : MonoBehaviour
         slider.value = Mathf.Clamp01(progress/ 0.9f);
     }
 
-
-    public IEnumerator FadeIn()
+    public void FadeIn()
     {
-        yield return Fade(1, 1);
+        StartCoroutine(canvasGroup.FadeIn());
     }
 
-    public IEnumerator FadeOut()
+    public void FadeOut()
     {
         if (LoadCoroutine != null)
         {
-            yield return LoadCoroutine;
-        }
-        
-        yield return Fade(0, 1);
-    }
-
-    IEnumerator Fade(float targetAlpha, float duration)
-    {
-        float startAlpha = canvasGroup.alpha;
-        float time = 0;
-        while (time < duration)
-        {
-            canvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, time / duration);
-            time += Time.deltaTime;
-            yield return null;
+            return;
         }
 
-        canvasGroup.alpha = targetAlpha;    
+        StartCoroutine(canvasGroup.FadeOut());
     }
 }

@@ -47,6 +47,6 @@ public class PlayerParent : SingletonObject<PlayerParent>
 
     private void FixedUpdate()
     {
-        Player.Instance.SetPlatformVelocity(GetPlatformVelocity());
+        if (Player.Instance) Player.Instance.SetPlatformVelocity(GetPlatformVelocity());
     }
 }

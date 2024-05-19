@@ -87,15 +87,6 @@ namespace Knight.UI
 
         #region Loading UI
 
-        public IEnumerator FadeInLoadingUI()
-        {
-            yield return loadingUI.FadeIn();
-        }
-        
-        public IEnumerator FadeOutLoadingUI()
-        {
-            yield return loadingUI.FadeOut();
-        }
 
         #endregion
 

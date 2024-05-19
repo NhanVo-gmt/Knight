@@ -33,14 +33,14 @@ public class AnimationNode : ActionNode
 
     // protected void AddAnimationEvent() // to do
     // {
-    //     anim.onAnimationTrigger += AnimationTrigger;
-    //     anim.onAnimationFinishTrigger += AnimationFinishTrigger;
+    //     anim.OnAnimationTrigger += AnimationTrigger;
+    //     anim.OnAnimationFinishTrigger += AnimationFinishTrigger;
     // }
 
     // protected void RemoveAnimationEvent()
     // {
-    //     anim.onAnimationTrigger -= AnimationTrigger;
-    //     anim.onAnimationFinishTrigger -= AnimationFinishTrigger;
+    //     anim.OnAnimationTrigger -= AnimationTrigger;
+    //     anim.OnAnimationFinishTrigger -= AnimationFinishTrigger;
     // }
 
     protected virtual void AnimationTrigger(){}

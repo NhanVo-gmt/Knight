@@ -2619,6 +2619,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6430891122398228148, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6430891122398228148, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6922453380909707681, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4166,7 +4174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 551398627696587337, guid: 066f728a4850e724880c26bdb4de6789, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: 14.5746765
+      value: 14.200189
       objectReference: {fileID: 0}
     - target: {fileID: 551398627696587337, guid: 066f728a4850e724880c26bdb4de6789, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
@@ -4174,15 +4182,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 551398627696587337, guid: 066f728a4850e724880c26bdb4de6789, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -5.511712
+      value: -4.048594
       objectReference: {fileID: 0}
     - target: {fileID: 551398627696587337, guid: 066f728a4850e724880c26bdb4de6789, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: 78.77479
+      value: 79.0021
       objectReference: {fileID: 0}
     - target: {fileID: 551398627696587337, guid: 066f728a4850e724880c26bdb4de6789, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: -8.373966
+      value: -3.776666
       objectReference: {fileID: 0}
     - target: {fileID: 551398627696587337, guid: 066f728a4850e724880c26bdb4de6789, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x

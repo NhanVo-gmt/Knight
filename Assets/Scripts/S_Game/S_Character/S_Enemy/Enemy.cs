@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     private Core core;
     private Health health;
     private Combat combat;
+    private AnimatorController animator;
 
     void Awake()
     {
@@ -23,10 +24,12 @@ public class Enemy : MonoBehaviour
     {
         combat = core.GetCoreComponent<Combat>();
         health = core.GetCoreComponent<Health>();
+        animator = core.GetCoreComponent<AnimatorController>();
         SetupComponent();
 
         health.OnTakeDamage += PlayHitClip;
         health.OnDie += Die;
+        animator.OnDie += TurnOffObject;
     }
 
     void SetupComponent()
@@ -43,6 +46,11 @@ public class Enemy : MonoBehaviour
         {
             ObjectPoolManager.Instance.SpawnPooledPrefab(GameSettings.Instance.soul, transform.position, Vector2.left);
         }
+        
+    }
+
+    private void TurnOffObject()
+    {
         gameObject.SetActive(false);
     }
 

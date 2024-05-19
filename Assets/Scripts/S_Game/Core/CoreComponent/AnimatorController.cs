@@ -2,14 +2,16 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class AnimatorController : CoreComponent
 {
     [SerializeField] bool canBlink;
     [SerializeField] bool canFlash;
     
-    public Action onAnimationTrigger;
-    public Action onAnimationFinishTrigger;
+    public Action OnAnimationTrigger;
+    public Action OnAnimationFinishTrigger;
+    public Action OnDie;
 
     private Health health;
     private SpriteRenderer sprite;
@@ -61,6 +63,7 @@ public class AnimatorController : CoreComponent
         yield return new WaitUntil(() => core.GetCoreComponent<Health>() != null);
         health = core.GetCoreComponent<Health>();
         health.OnTakeDamage += StartHitVFX;
+        health.OnDie += Die;
     }
 
     private void OnDisable()
@@ -88,12 +91,12 @@ public class AnimatorController : CoreComponent
 
     public void AnimationTrigger()
     {
-        onAnimationTrigger?.Invoke();
+        OnAnimationTrigger?.Invoke();
     }
 
     public void AnimationFinishTrigger()
     {
-        onAnimationFinishTrigger?.Invoke();
+        OnAnimationFinishTrigger?.Invoke();
     }
 
     public void ToggleSprite(bool isActive)
@@ -151,6 +154,17 @@ public class AnimatorController : CoreComponent
         sprite.material.SetFloat(_flashAmount, minFlashAmount);
         sprite.material = GameSettings.Instance.playerMat;
         
+    }
+
+    public void Die()
+    {
+        StartCoroutine(DieCoroutine());
+    }
+
+    IEnumerator DieCoroutine()
+    {
+        yield return sprite.FadeOut();
+        OnDie?.Invoke();
     }
 
     #endregion
