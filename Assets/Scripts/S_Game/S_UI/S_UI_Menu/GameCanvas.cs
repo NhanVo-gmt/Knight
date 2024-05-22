@@ -28,10 +28,16 @@ namespace Knight.UI
             loadingUI = GetComponentInChildren<LoadingUI>();
         }
 
-        private void Start()
+        private void OnEnable()
         {
             SceneLoader.Instance.OnSceneBeforeLoading += HideGameUI;
             SceneLoader.Instance.OnSceneReadyToPlay += ShowGameUI;
+        }
+
+        private void OnDisable()
+        {
+            SceneLoader.Instance.OnSceneBeforeLoading -= HideGameUI;
+            SceneLoader.Instance.OnSceneReadyToPlay -= ShowGameUI;
         }
 
         #region In Game UI

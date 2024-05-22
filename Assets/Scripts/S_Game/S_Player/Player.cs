@@ -68,15 +68,26 @@ public class Player : SingletonObject<Player>, IDataPersistence
         rb = GetComponent<Rigidbody2D>();
     }
 
-    void Start() 
+    private void OnEnable()
     {
-        CreateState();
-        GetCoreComponent();
-
         GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
         SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneBeforeLoading;
         SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
         SceneLoader.Instance.OnChangedPlayerPosition += ((sender, position) => ChangePosition(position));
+    }
+
+    private void OnDisable()
+    {
+        GameManager.Instance.OnChangedGameState -= GameManager_OnChangedGameState;
+        SceneLoader.Instance.OnSceneBeforeLoading -= SceneLoader_OnSceneBeforeLoading;
+        SceneLoader.Instance.OnScenePlay -= SceneLoader_OnScenePlay;
+        SceneLoader.Instance.OnChangedPlayerPosition -= ((sender, position) => ChangePosition(position));
+    }
+
+    void Start() 
+    {
+        CreateState();
+        GetCoreComponent();
     }
 
     private void GameManager_OnChangedGameState(GameManager.GameState gameState)

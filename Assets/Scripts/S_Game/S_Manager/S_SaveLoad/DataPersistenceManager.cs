@@ -26,6 +26,7 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
 
     private void Start()
     {
+        // todo
         // SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
     }
 

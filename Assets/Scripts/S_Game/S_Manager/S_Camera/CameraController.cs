@@ -89,13 +89,25 @@ namespace Knight.Camera
             volume.profile.TryGet(out bloom);
         }
 
-        void Start()
+        private void OnEnable()
         {
-            PopulatePlayerToCamera();
             SceneLoader.Instance.OnFirstStartGame += SceneLoader_OnFirstStartGame;
             SceneLoader.Instance.OnSceneLoadingStarted += SceneLoader_OnSceneLoadingStarted;
             SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
             SceneLoader.Instance.OnSceneReadyToPlay += SceneLoader_OnSceneReadyToPlay;
+        }
+
+        private void OnDisable()
+        {
+            SceneLoader.Instance.OnFirstStartGame -= SceneLoader_OnFirstStartGame;
+            SceneLoader.Instance.OnSceneLoadingStarted -= SceneLoader_OnSceneLoadingStarted;
+            SceneLoader.Instance.OnSceneLoadingCompleted -= SceneLoader_OnSceneLoadingCompleted;
+            SceneLoader.Instance.OnSceneReadyToPlay -= SceneLoader_OnSceneReadyToPlay;
+        }
+
+        void Start()
+        {
+            PopulatePlayerToCamera();
         }
 
         private void PopulatePlayerToCamera()

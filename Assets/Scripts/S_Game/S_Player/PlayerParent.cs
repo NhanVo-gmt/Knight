@@ -12,10 +12,16 @@ public class PlayerParent : SingletonObject<PlayerParent>
         base.Awake();
     }
 
-    private void Start()
+
+    private void OnEnable()
     {
         SceneLoader.Instance.OnSceneLoadingCompleted += SceneLoader_OnSceneLoadingCompleted;
         FindAllMovingPlatformsInScene();
+    }
+
+    private void OnDisable()
+    {
+        SceneLoader.Instance.OnSceneLoadingCompleted -= SceneLoader_OnSceneLoadingCompleted;
     }
 
     private void SceneLoader_OnSceneLoadingCompleted(object sender, EventArgs e)

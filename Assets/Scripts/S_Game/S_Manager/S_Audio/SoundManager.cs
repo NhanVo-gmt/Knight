@@ -38,6 +38,11 @@ namespace Knight.Manager
             sceneLoader.OnChangedRegion += ChangeBackgroundMusic;
         }
 
+        private void OnDisable()
+        {
+            sceneLoader.OnChangedRegion -= ChangeBackgroundMusic;
+        }
+
         private void ChangeBackgroundMusic(object sender, SceneLoaderEnum.Region newRegion)
         {
             foreach (RegionClip regionClip in regionClips)
