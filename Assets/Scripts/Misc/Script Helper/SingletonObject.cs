@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
 {
+    private static T intance;
     public static T Instance;
 
     protected virtual void Awake() 
     {
         if (Instance != null)
         {
-            Destroy(gameObject);
+            Destroy(this);
         }
         else
         {
@@ -18,4 +19,5 @@ public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
             DontDestroyOnLoad(Instance);
         }
     }
+    
 }

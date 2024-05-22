@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -20,12 +21,19 @@ public class LightManager : SingletonObject<LightManager>
         base.Awake();
     }
 
-    private void Start()
+
+    private void OnEnable()
     {
         SceneLoader.Instance.OnSceneLoadingCompleted += OnSceneLoadCompleted;
         LoadGlobalLight();
     }
-    
+
+
+    private void OnDisable()
+    {
+        SceneLoader.Instance.OnSceneLoadingCompleted -= OnSceneLoadCompleted;
+    }
+
     private void OnSceneLoadCompleted(object sender, EventArgs e)
     {
         LoadGlobalLight();
