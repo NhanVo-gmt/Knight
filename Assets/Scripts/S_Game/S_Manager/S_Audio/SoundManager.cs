@@ -82,11 +82,15 @@ namespace Knight.Manager
 
         public void PlayLandClip()
         {
+            if (currentRegionClip.landClip == null) return;
+            
             PlayOneShot(currentRegionClip.landClip);
         }
 
         public void PlayMoveClip()
         {
+            if (currentRegionClip.moveClips.Length <= 0) return;
+
             PlayOneShot(currentRegionClip.moveClips[Random.Range(0, currentRegionClip.moveClips.Length)]);
         }
         
