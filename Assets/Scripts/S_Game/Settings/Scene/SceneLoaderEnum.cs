@@ -27,6 +27,17 @@ public static class SceneLoaderEnum
         ForestScene8 = 208,
         ForestScene9 = 209,
         ForestScene10 = 210,
+        CrystalCastleScene = 500,
+        CrystalCastleScene1 = 501,
+        CrystalCastleScene2 = 502,
+        CrystalCastleScene3 = 503,
+        CrystalCastleScene4 = 504,
+        CrystalCastleScene5 = 505,
+        CrystalCastleScene6 = 506,
+        CrystalCastleScene7 = 507,
+        CrystalCastleScene8 = 508,
+        CrystalCastleScene9 = 509,
+        CrystalCastleScene10 = 510,
     }
     public enum Region {
         None,

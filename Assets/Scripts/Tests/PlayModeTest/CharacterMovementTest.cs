@@ -21,11 +21,7 @@ public class CharacterMovementTest : InputTestFixture
     [OneTimeSetUp]
     public void Init()
     {
-        // SceneManager.LoadScene("Scenes/Test/TestScene");
         SceneManager.LoadScene("FarmScene");
-        
-        // keyboard = InputSystem.AddDevice<Keyboard>();
-        // mouse = InputSystem.AddDevice<Mouse>();
     }
 
     [UnityTest]
@@ -61,5 +57,31 @@ public class CharacterMovementTest : InputTestFixture
         Press(keyboard.aKey);
         yield return new WaitForSeconds(1f);
         Assert.That(player.transform.position.x, Is.LessThan(startPos.x));
+    }
+    
+    [UnityTest]
+    public IEnumerator TestPlayerJump()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        yield return null;
+        
+        Vector2 startPos = player.transform.position;
+        
+        Press(keyboard.spaceKey);
+        yield return new WaitForSeconds(.5f);
+        Assert.That(player.transform.position.y, Is.GreaterThan(startPos.y));
+    }
+
+    [UnityTest]
+    public IEnumerator TestPlayerDash()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        yield return null;
+        
+        Vector2 startPos = player.transform.position;
+        
+        Press(keyboard.cKey);
+        yield return new WaitForSeconds(.5f);
+        Assert.That(player.transform.position.y, Is.LessThan(startPos.y));
     }
 }
