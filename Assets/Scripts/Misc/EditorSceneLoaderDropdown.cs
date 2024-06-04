@@ -6,8 +6,8 @@ public partial class EditorSceneLoader
         public static void LoadCaveScene() { OpenScene("Assets/Scenes/CaveScene.unity"); }
         [MenuItem("Scenes/MenuScene")]
         public static void LoadMenuScene() { OpenScene("Assets/Scenes/MenuScene.unity"); }
-        [MenuItem("Scenes/TestScene")]
-        public static void LoadTestScene() { OpenScene("Assets/Scenes/TestScene.unity"); }
+        [MenuItem("Scenes/CrystalCastle/CrystalCastleScene")]
+        public static void LoadCrystalCastleScene() { OpenScene("Assets/Scenes/CrystalCastle/CrystalCastleScene.unity"); }
         [MenuItem("Scenes/Farm/FarmScene")]
         public static void LoadFarmScene() { OpenScene("Assets/Scenes/Farm/FarmScene.unity"); }
         [MenuItem("Scenes/Festival/FestivalScene")]
@@ -32,5 +32,7 @@ public partial class EditorSceneLoader
         public static void LoadForestScene3() { OpenScene("Assets/Scenes/Forest/ForestScene3.unity"); }
         [MenuItem("Scenes/Forest/ForestScene5")]
         public static void LoadForestScene5() { OpenScene("Assets/Scenes/Forest/ForestScene5.unity"); }
+        [MenuItem("Scenes/Test/TestScene")]
+        public static void LoadTestScene() { OpenScene("Assets/Scenes/Test/TestScene.unity"); }
 #endif
     }
