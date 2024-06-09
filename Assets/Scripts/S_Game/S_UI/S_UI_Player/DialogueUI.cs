@@ -4,20 +4,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class DialogueUI : MonoBehaviour
+public class DialogueUI : PageUI
 {
-    [SerializeField] private CanvasGroup imageCanvasGroup;
     [SerializeField] TextMeshProUGUI text;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         ToggleConversation(false);
     }
 
     public void ToggleConversation(bool active)
     {
-        if (active) imageCanvasGroup.alpha = 1;
-        else imageCanvasGroup.alpha = 0;
+        if (active) canvasGroup.alpha = 1;
+        else canvasGroup.alpha = 0;
     }
 
     public void StartConversation()

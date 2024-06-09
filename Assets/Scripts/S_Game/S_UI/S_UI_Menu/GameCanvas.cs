@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 namespace Knight.UI
@@ -15,17 +16,23 @@ namespace Knight.UI
         }
         
         public CanvasState currentState { get; private set; }
-        
-        [SerializeField] CanvasGroup inGameUI;
-        private PlayerMenuUI playerMenuUI;
-        private LoadingUI loadingUI;
+
+        private static Dictionary<Type, PageUI> TypeToPages = new();
 
         protected override void Awake()
         {
             base.Awake();
             currentState = CanvasState.None;
-            playerMenuUI = GetComponentInChildren<PlayerMenuUI>();
-            loadingUI = GetComponentInChildren<LoadingUI>();
+            
+            PopulatePages();
+        }
+
+        void PopulatePages()
+        {
+            foreach (PageUI page in GetComponentsInChildren<PageUI>())
+            {
+                TypeToPages[page.GetType()] = page;
+            }
         }
 
         private void OnEnable()
@@ -40,17 +47,38 @@ namespace Knight.UI
             SceneLoader.Instance.OnSceneReadyToPlay -= ShowGameUI;
         }
 
+        public static void ShowPage<T>() where T : PageUI
+        {
+            Type pageType = typeof(T);
+            PageUI page = TypeToPages[pageType];
+            
+            page.Show();
+        }
+        
+        public static void HidePage<T>() where T : PageUI
+        {
+            Type pageType = typeof(T);
+            PageUI page = TypeToPages[pageType];
+            
+            page.Hide();
+        }
+
+        public static T GetPage<T>() where T : PageUI
+        {
+            return TypeToPages[typeof(T)] as T;
+        }
+
         #region In Game UI
 
         private void HideGameUI(object sender, EventArgs e)
         {
-            inGameUI.alpha = 0f;
+            HidePage<InGameUI>();
             //todo dialogue
         }
         
         private void ShowGameUI(object sender, EventArgs e)
         {
-            inGameUI.alpha = 1f;
+            ShowPage<InGameUI>();
             //todo dialogue
         }
 
@@ -64,23 +92,23 @@ namespace Knight.UI
             if (currentState == CanvasState.None)
             {
                 currentState = CanvasState.Menu;
-                playerMenuUI.Toggle();
+                ShowPage<PlayerMenuUI>();
             }
             else if (currentState == CanvasState.Menu)
             {
                 currentState = CanvasState.None;
-                playerMenuUI.Toggle();
+                HidePage<PlayerMenuUI>();
             }
         }
 
         public void OpenNextTabPlayerMenu()
         {
-            playerMenuUI.OpenNextTab();
+            GetPage<PlayerMenuUI>().OpenNextTab();
         }
         
         public void OpenPrevTabPlayerMenu()
         {
-            playerMenuUI.OpenPreviousTab();
+            GetPage<PlayerMenuUI>().OpenPreviousTab();
         }
 
         #endregion
@@ -90,11 +118,6 @@ namespace Knight.UI
         {
             return currentState != CanvasState.None;
         }
-
-        #region Loading UI
-
-
-        #endregion
 
     }
     

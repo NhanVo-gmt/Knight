@@ -2607,6 +2607,10 @@ PrefabInstance:
       propertyPath: m_BoundingShape2D
       value: 
       objectReference: {fileID: 1190236627}
+    - target: {fileID: 3011828741725777807, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: imageCanvasGroup
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3391289980272624157, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -2618,14 +2622,6 @@ PrefabInstance:
     - target: {fileID: 4909500424647683236, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430891122398228148, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
-      propertyPath: m_Interactable
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6430891122398228148, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6922453380909707681, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_AnchorMax.y

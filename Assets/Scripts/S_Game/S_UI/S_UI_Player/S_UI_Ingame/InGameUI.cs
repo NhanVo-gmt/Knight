@@ -3,10 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InGameUI : MonoBehaviour
+public class InGameUI : PageUI
 {
     [SerializeField] private HealthUI healthUI;
     [SerializeField] private EnergyUI energyUI;
+
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     private void Start()
     {

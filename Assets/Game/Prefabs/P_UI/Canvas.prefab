@@ -278,8 +278,9 @@ GameObject:
   m_Component:
   - component: {fileID: 558521494247365675}
   - component: {fileID: 2739970970005402284}
+  - component: {fileID: 2283054916232395729}
   m_Layer: 5
-  m_Name: DialogueHolder
+  m_Name: Dialogue UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -317,8 +318,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acef5d500eb22464f84c368c96f286c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageCanvasGroup: {fileID: 7000516272880602075}
+  imageCanvasGroup: {fileID: 0}
   text: {fileID: 5464822370877840570}
+--- !u!225 &2283054916232395729
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352505212617155708}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &1004805614423824882
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,7 +378,6 @@ GameObject:
   - component: {fileID: 6773347719491801692}
   - component: {fileID: 6942889018622372089}
   - component: {fileID: 2751878253551453209}
-  - component: {fileID: 7000516272880602075}
   m_Layer: 5
   m_Name: image
   m_TagString: Untagged
@@ -431,18 +443,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!225 &7000516272880602075
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1147007535585526036}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 0
-  m_BlocksRaycasts: 0
-  m_IgnoreParentGroups: 0
 --- !u!1 &1660783090062744585
 GameObject:
   m_ObjectHideFlags: 0
@@ -609,8 +609,8 @@ CanvasGroup:
   m_GameObject: {fileID: 2053989918117492944}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &7518537233880434476
 MonoBehaviour:
@@ -1285,8 +1285,8 @@ CanvasGroup:
   m_GameObject: {fileID: 5156269228930574701}
   m_Enabled: 1
   m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!114 &5610092525326683547
 MonoBehaviour:

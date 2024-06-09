@@ -2,13 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 namespace Knight.UI
 {
-    public class PlayerMenuUI : MonoBehaviour
+    public class PlayerMenuUI : PageUI
     {
         public enum Tab
         {
@@ -29,27 +30,32 @@ namespace Knight.UI
         [SerializeField] private TextMeshProUGUI currentTabText;
         [SerializeField] private TextMeshProUGUI nextTabText;
         
-        private CanvasGroup canvasGroup;
-        private int currentTabIndex = 0;
+        [SerializeField] [ReadOnly] private int currentTabIndex = 0;
 
-        private void Awake()
+        protected override void Awake()
         {
-            canvasGroup = GetComponent<CanvasGroup>();
+            base.Awake();
             canvasGroup.alpha = 0;
         }
 
-        public void Toggle()
+        public override void Show()
         {
-            StartCoroutine(ToggleCoroutine());
+            StartCoroutine(ShowCoroutine());
         }
 
-        IEnumerator ToggleCoroutine()
+        IEnumerator ShowCoroutine()
         {
             CloseAllTabs();
             yield return canvasGroup.Fade(1 - canvasGroup.alpha, 0.1f);
             
             currentTabIndex = 0;
             OpenTab(0);
+        }
+
+        public override void Hide()
+        {
+            CloseAllTabs();
+            base.Hide();
         }
 
         public void OpenNextTab()
