@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public abstract class PageUI : MonoBehaviour
 {
     protected CanvasGroup canvasGroup;
+    protected bool isOpened;
 
     protected virtual void Awake()
     {
@@ -16,16 +17,36 @@ public abstract class PageUI : MonoBehaviour
 
     public virtual void Toggle()
     {
-        
+        if (isOpened)
+        {
+            Hide();
+        }
+        else
+        {
+            Show();
+        }
     }
 
     public virtual void Show()
     {
+        if (isOpened) return;
+        StopAllCoroutines();
+        
+        isOpened = true;
         StartCoroutine(canvasGroup.Fade(1, 0.1f));
     }
 
     public virtual void Hide()
     {
+        if (!isOpened) return;
+        StopAllCoroutines();
+        
+        isOpened = false;
         StartCoroutine(canvasGroup.Fade(0f, 0.1f));
+    }
+
+    public bool IsOpen()
+    {
+        return isOpened;
     }
 }

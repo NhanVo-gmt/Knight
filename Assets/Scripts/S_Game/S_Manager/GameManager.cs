@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Knight.UI;
+using Unity.Collections;
 using UnityEngine;
 
 namespace Knight.Manager
@@ -16,6 +17,7 @@ namespace Knight.Manager
             Paused,
         }
 
+        [SerializeField] [ReadOnlyInspector] 
         private GameState currentGameState = GameState.Running; //todo in build change to Menu
         public Action<GameState> OnChangedGameState;
 
@@ -44,18 +46,19 @@ namespace Knight.Manager
             if (gameManagerInput.prevTabInput)
             {
                 gameManagerInput.UsePrevTabInput();
-                GameCanvas.Instance.OpenPrevTabPlayerMenu();
+                GameCanvas.GetPage<PlayerMenuUI>().OpenPreviousTab();
             }
             if (gameManagerInput.nextTabInput)
             {
                 gameManagerInput.UseNextTabInput();
-                GameCanvas.Instance.OpenNextTabPlayerMenu();
+                GameCanvas.GetPage<PlayerMenuUI>().OpenNextTab();
             }
         }
 
         public void TogglePlayerMenuUI()
         {
-            if (GameCanvas.Instance.IsOpen())
+            PlayerMenuUI menuUI = GameCanvas.GetPage<PlayerMenuUI>();
+            if (menuUI.IsOpen())
             {
                 ChangeGameState(GameState.Running);
             }
@@ -64,7 +67,7 @@ namespace Knight.Manager
                 ChangeGameState(GameState.Paused);
             }
             
-            GameCanvas.Instance.TogglePlayerMenuUI();
+            menuUI.Toggle();
         }
 
 

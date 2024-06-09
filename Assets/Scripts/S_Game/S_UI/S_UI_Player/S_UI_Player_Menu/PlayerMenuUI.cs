@@ -4,8 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
 namespace Knight.UI
 {
@@ -30,7 +28,7 @@ namespace Knight.UI
         [SerializeField] private TextMeshProUGUI currentTabText;
         [SerializeField] private TextMeshProUGUI nextTabText;
         
-        [SerializeField] [ReadOnly] private int currentTabIndex = 0;
+        [SerializeField] [ReadOnlyInspector] private int currentTabIndex = 0;
 
         protected override void Awake()
         {
@@ -40,6 +38,7 @@ namespace Knight.UI
 
         public override void Show()
         {
+            isOpened = true;
             StartCoroutine(ShowCoroutine());
         }
 

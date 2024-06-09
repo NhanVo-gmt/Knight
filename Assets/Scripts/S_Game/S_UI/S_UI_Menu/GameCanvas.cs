@@ -14,8 +14,8 @@ namespace Knight.UI
             Menu,
             Shop
         }
-        
-        public CanvasState currentState { get; private set; }
+
+        public static CanvasState currentState;
 
         private static Dictionary<Type, PageUI> TypeToPages = new();
 
@@ -62,56 +62,36 @@ namespace Knight.UI
             
             page.Hide();
         }
+        
+        public static void TogglePage<T>() where T : PageUI
+        {
+            Type pageType = typeof(T);
+            PageUI page = TypeToPages[pageType];
+            
+            page.Toggle();
+        }
 
         public static T GetPage<T>() where T : PageUI
         {
             return TypeToPages[typeof(T)] as T;
         }
 
-        #region In Game UI
+        #region Event
 
         private void HideGameUI(object sender, EventArgs e)
         {
             HidePage<InGameUI>();
-            //todo dialogue
+            HidePage<DialogueUI>();
         }
         
         private void ShowGameUI(object sender, EventArgs e)
         {
             ShowPage<InGameUI>();
-            //todo dialogue
+            ShowPage<DialogueUI>();
         }
 
         #endregion
-
-
-        #region Menu UI
-
-        public void TogglePlayerMenuUI()
-        {
-            if (currentState == CanvasState.None)
-            {
-                currentState = CanvasState.Menu;
-                ShowPage<PlayerMenuUI>();
-            }
-            else if (currentState == CanvasState.Menu)
-            {
-                currentState = CanvasState.None;
-                HidePage<PlayerMenuUI>();
-            }
-        }
-
-        public void OpenNextTabPlayerMenu()
-        {
-            GetPage<PlayerMenuUI>().OpenNextTab();
-        }
         
-        public void OpenPrevTabPlayerMenu()
-        {
-            GetPage<PlayerMenuUI>().OpenPreviousTab();
-        }
-
-        #endregion
 
 
         public bool IsOpen()
