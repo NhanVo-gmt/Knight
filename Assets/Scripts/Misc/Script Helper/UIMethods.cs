@@ -25,6 +25,16 @@ public static class UIMethods
             yield return null;
         }
 
-        canvasGroup.alpha = targetAlpha;    
+        canvasGroup.alpha = targetAlpha;
+        if (Mathf.Approximately(canvasGroup.alpha, 1f))
+        {
+            canvasGroup.interactable = true;
+            canvasGroup.blocksRaycasts = true;
+        }
+        else
+        {
+            canvasGroup.interactable = false;
+            canvasGroup.blocksRaycasts = false;
+        }
     }
 }

@@ -10,6 +10,8 @@ public abstract class PageUI : MonoBehaviour
     protected CanvasGroup canvasGroup;
     protected bool isOpened;
 
+    public Action<PageUI> OnOpen;
+
     protected virtual void Awake()
     {
         canvasGroup = GetComponent<CanvasGroup>();
@@ -32,6 +34,7 @@ public abstract class PageUI : MonoBehaviour
         if (isOpened) return;
         StopAllCoroutines();
         
+        OnOpen?.Invoke(this);
         isOpened = true;
         StartCoroutine(canvasGroup.Fade(1, 0.1f));
     }

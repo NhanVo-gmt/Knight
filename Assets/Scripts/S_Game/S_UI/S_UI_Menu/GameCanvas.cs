@@ -15,7 +15,7 @@ namespace Knight.UI
             Shop
         }
 
-        public static CanvasState currentState;
+        private static CanvasState currentState;
 
         private static Dictionary<Type, PageUI> TypeToPages = new();
 
@@ -39,13 +39,36 @@ namespace Knight.UI
         {
             SceneLoader.Instance.OnSceneBeforeLoading += HideGameUI;
             SceneLoader.Instance.OnSceneReadyToPlay += ShowGameUI;
+            
+            foreach (PageUI page in TypeToPages.Values)
+            {
+                page.OnOpen += ChangePage;
+            }
         }
 
         private void OnDisable()
         {
             SceneLoader.Instance.OnSceneBeforeLoading -= HideGameUI;
             SceneLoader.Instance.OnSceneReadyToPlay -= ShowGameUI;
+            
+            foreach (PageUI page in TypeToPages.Values)
+            {
+                page.OnOpen -= ChangePage;
+            }
         }
+
+        private void ChangePage(PageUI page)
+        {
+            if (page is PlayerMenuUI)
+            {
+                ChangeState(CanvasState.Menu);
+            }
+            else if (page is ShopUI)
+            {
+                ChangeState(CanvasState.Shop);
+            }
+        }
+
 
         public static void ShowPage<T>() where T : PageUI
         {
@@ -61,6 +84,7 @@ namespace Knight.UI
             PageUI page = TypeToPages[pageType];
             
             page.Hide();
+            
         }
         
         public static void TogglePage<T>() where T : PageUI
@@ -74,6 +98,11 @@ namespace Knight.UI
         public static T GetPage<T>() where T : PageUI
         {
             return TypeToPages[typeof(T)] as T;
+        }
+
+        void ChangeState(CanvasState newState)
+        {
+            currentState = newState;
         }
 
         #region Event

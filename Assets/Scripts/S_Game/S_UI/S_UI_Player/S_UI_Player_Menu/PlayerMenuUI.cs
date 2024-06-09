@@ -38,23 +38,16 @@ namespace Knight.UI
 
         public override void Show()
         {
-            isOpened = true;
-            StartCoroutine(ShowCoroutine());
-        }
-
-        IEnumerator ShowCoroutine()
-        {
+            base.Show();
             CloseAllTabs();
-            yield return canvasGroup.Fade(1 - canvasGroup.alpha, 0.1f);
-            
             currentTabIndex = 0;
             OpenTab(0);
         }
 
         public override void Hide()
         {
-            CloseAllTabs();
             base.Hide();
+            CloseAllTabs();
         }
 
         public void OpenNextTab()
