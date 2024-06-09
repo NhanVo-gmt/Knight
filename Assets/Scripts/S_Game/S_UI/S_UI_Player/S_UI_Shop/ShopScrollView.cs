@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopScrollView : MonoBehaviour
 {
@@ -22,12 +23,74 @@ public class ShopScrollView : MonoBehaviour
     [Header("For Testing only")]
     [SerializeField] private int listCount = 1;
 
+    private ShopItemButton[] children;
+
     private void Awake()
     {
         if (listCount > 0)
         {
             CreateItems(listCount);
+            UpdateAllButtonNavigationalReferences();
         }
+    }
+
+    private void Start()
+    {
+        StartCoroutine(DelaySelectChild(defaultSelectIndex));
+    }
+
+    IEnumerator DelaySelectChild(int index)
+    {
+        yield return new WaitForSeconds(1f);
+
+        SelectChild(index);
+    }
+
+    public void SelectChild (int index)
+    {
+        if (index >= children.Length) return;
+        
+        children[index].ObtainSelectionFocus();
+    }
+        
+
+    private void UpdateAllButtonNavigationalReferences()
+    {
+        children = content.transform.GetComponentsInChildren<ShopItemButton>();
+        if (children.Length < 2)
+        {
+            return;
+        }
+
+        for (int i = 0; i < children.Length; i++)
+        {
+            ShopItemButton item = children[i];
+            Navigation navigation = item.gameObject.GetComponent<Navigation>();
+
+            navigation.selectOnUp = GetNavigationUp(i, children);
+            navigation.selectOnDown = GetNavigationDown(i, children);
+        }
+        
+    }
+
+    private Selectable GetNavigationUp(int index, ShopItemButton[] children)
+    {
+        if (index == 0)
+        {
+            return children[children.Length - 1].GetComponent<Selectable>();
+        }
+
+        return children[index - 1].GetComponent<Selectable>();
+    }
+
+    private Selectable GetNavigationDown(int index, ShopItemButton[] children)
+    {
+        if (index == children.Length - 1)
+        {
+            return children[0].GetComponent<Selectable>();
+        }
+
+        return children[index + 1].GetComponent<Selectable>();
     }
 
     private void CreateItems(int count)
