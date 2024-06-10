@@ -9,10 +9,23 @@ public class ShopScrollViewAutoScroll : MonoBehaviour
     [SerializeField] private RectTransform content;
     [SerializeField] private float transitionDuration = 0.2f;
 
+    private TransitionHelper transitionHelper = new TransitionHelper();
+
     private void Update()
+    {
+        if (transitionHelper.inProgress)
+        {
+            transitionHelper.Update();
+            content.transform.localPosition = transitionHelper.posCurrent;
+        }
+    }
+
+    public void HandleOnSelectChange(GameObject go)
     {
         
     }
+    
+    
     
     private class TransitionHelper
     {
