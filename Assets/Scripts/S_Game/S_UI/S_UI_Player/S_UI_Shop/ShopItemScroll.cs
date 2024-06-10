@@ -2,21 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 public class ShopItemScroll : MonoBehaviour
 {
-    [SerializeField] private ShopItemButton itemButtonPrefab;
-    [SerializeField]
-    private ScrollRect scrollRect; //your scroll rect component
-    [SerializeField]
-    RectTransform _container; //content transform of the scrollrect
+    [SerializeField] RectTransform content; 
 
+    private ScrollRect scrollRect; 
     private ShopItemButton[] ShopItemButtons;
 
     private void Awake()
     {
-        ShopItemButtons = _container.GetComponentsInChildren<ShopItemButton>();
+        scrollRect = GetComponent<ScrollRect>();
+        ShopItemButtons = content.GetComponentsInChildren<ShopItemButton>();
     }
 
     private void OnEnable()
@@ -29,10 +28,10 @@ public class ShopItemScroll : MonoBehaviour
 
     void OnSelectItem(ShopItemButton item)
     {
-        EnsureVisibility(scrollRect, item.GetComponent<RectTransform>());
+        EnsureVisibility(item.GetComponent<RectTransform>());
     }
 
-    public void EnsureVisibility(ScrollRect scrollRect, RectTransform child, float padding=0)
+    public void EnsureVisibility(RectTransform child, float padding=0)
     {
         Debug.Assert(child.parent == scrollRect.content,
             "EnsureVisibility assumes that 'child' is directly nested in the content of 'scrollRect'");
