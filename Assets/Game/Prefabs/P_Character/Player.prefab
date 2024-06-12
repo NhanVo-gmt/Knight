@@ -5028,6 +5028,7 @@ MonoBehaviour:
   typingSpeed: 0.05
   inGameUI: {fileID: 0}
   dialogueUI: {fileID: 0}
+  dialogueHolder: {fileID: 0}
   currentDialogue: {fileID: 0}
 --- !u!1 &1788519682076354359
 GameObject:
@@ -25545,6 +25546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  isDie: 0
 --- !u!1 &7976571517332469366
 GameObject:
   m_ObjectHideFlags: 0
@@ -25652,7 +25654,7 @@ SpriteRenderer:
   m_SortingLayerID: 1459171875
   m_SortingLayer: 2
   m_SortingOrder: 100
-  m_Sprite: {fileID: 7540318275844240100, guid: 704866e4193e1d94b98c7d9674b09577, type: 3}
+  m_Sprite: {fileID: 0, guid: 704866e4193e1d94b98c7d9674b09577, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

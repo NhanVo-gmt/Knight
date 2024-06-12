@@ -16,6 +16,14 @@ public class DialogueController : MonoBehaviour
     [ReadOnlyInspector] public DialogueHolder        dialogueHolder;
     [ReadOnlyInspector] public DSDialogueContainerSO currentDialogue; 
     DSDialogueSO                                     currentNode;
+    
+    private InputManager inputManager;
+
+    private void Awake()
+    {
+        inputManager = GetComponentInParent<InputManager>();
+        
+    }
 
     private void Start()
     {
@@ -38,6 +46,12 @@ public class DialogueController : MonoBehaviour
         string textType = "";
         foreach(char character in text)
         {
+            if (inputManager.interactionInput)
+            {
+                inputManager.UseInteractionInput();
+                break;
+            }
+            
             textType += character;
             dialogueUI.DisplayText(textType);
             yield return new WaitForSeconds(typingSpeed);
@@ -45,7 +59,7 @@ public class DialogueController : MonoBehaviour
 
         dialogueUI.DisplayText(text);
         
-        yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.E));
+        yield return new WaitUntil(() => IsMoveToNextDialogue());
 
         if (HaveNextNode())
         {
@@ -55,6 +69,17 @@ public class DialogueController : MonoBehaviour
         {
             ToggleDialogueUI(false);
         }
+    }
+
+    bool IsMoveToNextDialogue()
+    {
+        if (inputManager.interactionInput)
+        {
+            inputManager.UseInteractionInput();
+            return true;
+        }
+
+        return false;
     }
     
     public void ToggleDialogueUI(bool isActive)

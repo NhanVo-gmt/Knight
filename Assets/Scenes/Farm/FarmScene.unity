@@ -2747,7 +2747,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.00018310547}
+  m_AnchoredPosition: {x: 0, y: 1090}
   m_SizeDelta: {x: 600, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &280287952
@@ -4148,8 +4148,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 207157517}
   m_HandleRect: {fileID: 207157516}
   m_Direction: 2
-  m_Value: 0.99999976
-  m_Size: 0.3144654
+  m_Value: -0.00000016798667
+  m_Size: 0.3143947
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -7403,9 +7403,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fb9768b2fd7564696946b12a5d5c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueContainer: {fileID: 11400000, guid: 029ce7aea8632d04a906badb0ce108c6, type: 2}
-  dialogueGroup: {fileID: 11400000, guid: 5069b77c9379cf545af01ef739dd24a8, type: 2}
-  dialogue: {fileID: 11400000, guid: 8a0629fe1315dc548a1fe4177075b6cd, type: 2}
+  dialogueContainer: {fileID: 11400000, guid: c4f2dfd97c067cc4c8b840361d9fefe2, type: 2}
+  dialogueGroup: {fileID: 11400000, guid: b5de681d3a20f824898e16798219dc7f, type: 2}
+  dialogue: {fileID: 11400000, guid: 5a2c5babf67a18144af981e9b2c46e0e, type: 2}
   groupedDialogues: 1
   startingDialoguesOnly: 0
   selectedDialogueGroupIndex: 0

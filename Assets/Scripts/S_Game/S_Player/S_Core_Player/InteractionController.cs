@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using DS.ScriptableObjects;
@@ -46,11 +47,10 @@ public class InteractionController : CoreComponent
     void Interact()
     {
         if (canRest) return;
+        if (isInteracting) return;
         
         inputManager.UseInteractionInput();
         
-        if (isInteracting) return;
-
         if (dialogueController.currentDialogue != null)
         {
             dialogueController.StartConversation();
