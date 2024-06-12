@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,10 +6,12 @@ using UnityEngine;
 [RequireComponent(typeof(DialogueHolder))]
 public class NPC : MonoBehaviour
 {
-    private DialogueHolder DialogueHolder;
+    private DialogueHolder dialogueHolder;
+    private NPCCore        core;
 
-    private ShopHolder  shopHolder;
-    private QuestHolder questHolder;
-    
+    private void Awake()
+    {
+        core = GetComponentInChildren<NPCCore>();
+    }
     
 }
