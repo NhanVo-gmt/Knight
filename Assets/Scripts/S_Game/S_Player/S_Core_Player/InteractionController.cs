@@ -5,15 +5,14 @@ using UnityEngine;
 
 public class InteractionController : CoreComponent
 {
-    InputManager inputManager;
+    [SerializeField] [ReadOnlyInspector] bool isInteracting = false;
 
-    DialogueController dialogueController;
-    public bool canRest { get; private set; }
+    public bool    canRest { get; private set; }
     public Vector2 restPos { get; private set; }
-
+    
+    private InputManager inputManager;
+    private DialogueController dialogueController;
     private InteractableArea interactableArea;
-
-    [SerializeField] bool isInteracting = false;
 
     protected override void Awake()
     {
@@ -71,15 +70,17 @@ public class InteractionController : CoreComponent
 
     #region Dialogue
 
-    public void SetDialogue(DSDialogueContainerSO dialogue)
+    public void SetDialogue(DialogueHolder holder)
     {
-        dialogueController.currentDialogue = dialogue;
+        dialogueController.dialogueHolder  = holder;
+        dialogueController.currentDialogue = holder.GetDialogue();
     }
 
-    public void UnsetDialogue(DSDialogueContainerSO dialogue)
+    public void UnsetDialogue(DialogueHolder holder)
     {
-        if (dialogueController.currentDialogue == dialogue)
+        if (dialogueController.dialogueHolder == holder)
         {
+            dialogueController.dialogueHolder  = null;
             dialogueController.currentDialogue = null;
         }
     }

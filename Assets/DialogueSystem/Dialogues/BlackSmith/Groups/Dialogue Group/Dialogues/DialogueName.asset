@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: DialogueName
   m_EditorClassIdentifier: 
   DialogueName: DialogueName
-  Text: Hello
+  Text: Hi, I'm the blacksmith in the town
   Choices:
   - Text: Next Dialogue
-    NextDialogue: {fileID: 0}
+    NextDialogue: {fileID: 11400000, guid: 69a4327e817f42f4ba3f70cdbfd5ac6d, type: 2}
   DialogueType: 0
-  IsStartingDialogue: 0
+  IsStartingDialogue: 1

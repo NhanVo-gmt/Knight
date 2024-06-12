@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1194f7b0ad6149448a2796f9336ff98f, type: 3}
-  m_Name: DialoguesFileNameGraph
+  m_Name: BlackSmithGraph
   m_EditorClassIdentifier: 
-  FileName: DialoguesFileName
+  FileName: BlackSmith
   Groups:
   - ID: a3d9523e-da1c-46ce-b6b6-74e9c9fe7d86
     Name: Dialogue Group
-    Position: {x: 171.2, y: 125.59999}
+    Position: {x: 171.2, y: 125.599976}
   Nodes:
   - ID: 07a85a68-1b2a-4852-973c-d322466973ae
     Name: DialogueName
-    Text: Hi
+    Text: Hi, I'm the blacksmith in the town
     Choices:
     - Text: Next Dialogue
       NodeID: 0d78fd74-45f3-48a5-be89-b5308cb0e717
@@ -29,7 +29,7 @@ MonoBehaviour:
     Position: {x: 196.8, y: 185.59999}
   - ID: 0d78fd74-45f3-48a5-be89-b5308cb0e717
     Name: DialogueName
-    Text: Hello
+    Text: What do you need ?
     Choices:
     - Text: Next Dialogue
       NodeID: 

@@ -3,16 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using DS.ScriptableObjects;
+using Knight.UI;
 using UnityEngine.Serialization;
 
 public class DialogueController : MonoBehaviour
 {
     [SerializeField] float typingSpeed = 0.05f;
-    [SerializeField] public GameObject inGameUI; 
-    [SerializeField] DialogueUI dialogueUI;
     
-    [HideInInspector] public DSDialogueContainerSO currentDialogue; 
-    DSDialogueSO currentNode;
+    [SerializeField] [ReadOnlyInspector] private InGameUI   inGameUI; 
+    [SerializeField] [ReadOnlyInspector] private DialogueUI dialogueUI;
+
+    [ReadOnlyInspector] public DialogueHolder        dialogueHolder;
+    [ReadOnlyInspector] public DSDialogueContainerSO currentDialogue; 
+    DSDialogueSO                                     currentNode;
+
+    private void Start()
+    {
+        inGameUI   = GameCanvas.GetPage<InGameUI>();
+        dialogueUI = GameCanvas.GetPage<DialogueUI>();
+    }
 
     public Action onFinishDialogue;
 
@@ -51,7 +60,8 @@ public class DialogueController : MonoBehaviour
     public void ToggleDialogueUI(bool isActive)
     {
         dialogueUI.gameObject.SetActive(isActive);
-        inGameUI.SetActive(!isActive);
+        inGameUI.gameObject.SetActive(!isActive);
+        
         if (isActive)
         {
             dialogueUI.StartConversation();
@@ -59,7 +69,10 @@ public class DialogueController : MonoBehaviour
         else
         {
             dialogueUI.EndConversation();
+            
             onFinishDialogue?.Invoke();
+            
+            dialogueHolder.EndConversation();
         }
     }
 

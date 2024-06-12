@@ -227,7 +227,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
         DialogueHolder npcDialogue = other.GetComponent<DialogueHolder>();
         if (npcDialogue != null)
         {
-            interactionController.SetDialogue(npcDialogue.GetDialogue());
+            interactionController.SetDialogue(npcDialogue);
         }
     }
 
@@ -236,7 +236,7 @@ public class Player : SingletonObject<Player>, IDataPersistence
         DialogueHolder npcDialogue = other.GetComponent<DialogueHolder>();
         if (npcDialogue != null)
         {
-            interactionController.UnsetDialogue(npcDialogue.GetDialogue());
+            interactionController.UnsetDialogue(npcDialogue);
         }
     }
     
