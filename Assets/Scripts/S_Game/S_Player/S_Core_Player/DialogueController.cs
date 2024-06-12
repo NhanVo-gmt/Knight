@@ -9,6 +9,7 @@ using UnityEngine.Serialization;
 public class DialogueController : MonoBehaviour
 {
     [SerializeField] float typingSpeed = 0.05f;
+    [SerializeField] float typingFastSpeed = 0.01f;
     
     [SerializeField] [ReadOnlyInspector] private InGameUI   inGameUI; 
     [SerializeField] [ReadOnlyInspector] private DialogueUI dialogueUI;
@@ -18,6 +19,7 @@ public class DialogueController : MonoBehaviour
     DSDialogueSO                                     currentNode;
     
     private InputManager inputManager;
+    private bool         isSpeedup = false;
 
     private void Awake()
     {
@@ -43,18 +45,24 @@ public class DialogueController : MonoBehaviour
 
     IEnumerator TextTypingCoroutine(string text)
     {
+        isSpeedup = false;
         string textType = "";
         foreach(char character in text)
         {
             if (inputManager.interactionInput)
             {
                 inputManager.UseInteractionInput();
-                break;
+                isSpeedup = true;
             }
             
             textType += character;
             dialogueUI.DisplayText(textType);
-            yield return new WaitForSeconds(typingSpeed);
+
+            if (isSpeedup)
+            {
+                yield return new WaitForSeconds(typingFastSpeed);
+            }
+            else yield return new WaitForSeconds(typingSpeed);
         }
 
         dialogueUI.DisplayText(text);
