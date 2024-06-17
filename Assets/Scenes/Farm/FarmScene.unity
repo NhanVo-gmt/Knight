@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4500244de424bc240b445b80b1e14331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: c4f2dfd97c067cc4c8b840361d9fefe2, type: 2}
+  dialogue: {fileID: 0}
 --- !u!61 &199693553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5218,6 +5218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874789b8eca633e4b984ff0eec845e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shopItemUI: {fileID: 0}
 --- !u!4 &920911075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 6df071c94565ee741986ede79ca83fac, type: 3}
@@ -7411,7 +7412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5fb9768b2fd7564696946b12a5d5c1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueContainer: {fileID: 11400000, guid: c4f2dfd97c067cc4c8b840361d9fefe2, type: 2}
+  dialogueContainer: {fileID: 0}
   dialogueGroup: {fileID: 11400000, guid: b5de681d3a20f824898e16798219dc7f, type: 2}
   dialogue: {fileID: 11400000, guid: 5a2c5babf67a18144af981e9b2c46e0e, type: 2}
   groupedDialogues: 1

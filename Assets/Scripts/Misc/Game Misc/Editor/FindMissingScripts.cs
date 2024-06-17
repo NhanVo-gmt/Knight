@@ -6,7 +6,7 @@ using UnityEngine;
 
 public static class FindMissingScripts
 {
-    [MenuItem("Knight/Missing Scripts/Find missing script in project")]
+    [MenuItem("Knight/Missing Scripts/Find missing script in project", false, 11)]
     static void FindingMissingScriptsInProjectMenuItem()
     {
         string[] prefabPaths = AssetDatabase.GetAllAssetPaths()
@@ -25,7 +25,7 @@ public static class FindMissingScripts
         }
     }
 
-    [MenuItem("Knight/Missing Scripts/Find missing scripts in scene")]
+    [MenuItem("Knight/Missing Scripts/Find missing scripts in scene", false, 10)]
     static void FindingMissingScriptsInScene()
     {
         foreach (GameObject gameObject in GameObject.FindObjectsOfType<GameObject>(true))

@@ -16,7 +16,7 @@ public partial class EditorSceneLoader
     private const string PATH_TO_OUTPUT_ENUM_SCRIPT_FILE = "/Scripts/Misc/Game Misc/SceneLoaderEnum.cs";
     private const string ASSETS_SCENE_PATH = "Assets/Scenes/";
 
-    [MenuItem("Knight/Scene/Editor/Generate Scene Load Menu Code")]
+    [MenuItem("Knight/Scene/Editor/Generate Scene Load Menu Code", false, 1)]
     public static void GenerateSceneLoadMenuCode()
     {
         StringBuilder result = new StringBuilder();

@@ -12,7 +12,7 @@ public class CreatePrefabFromAnimationClip : MonoBehaviour
     static string EnemyObjectPath = "Assets/Game/Prefabs/P_Character/Enemy.prefab";
     [NonSerialized] static List<AnimationClip> clipSelected = new List<AnimationClip>();
 
-    [MenuItem("Knight/Create empty prefab from animation clip")]
+    [MenuItem("Knight/Create empty prefab from animation clip", false, 5)]
     static void CreatePooledPrefab()
     {
         OnSelectionChange();

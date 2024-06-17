@@ -200,6 +200,12 @@ namespace DS.Utilities
                 node.DialogueType, 
                 node.IsStartingNode()
             );
+
+            if (node is DSShopNode shopNode)
+            {
+                dialogue.ShopItem = shopNode.itemData;
+            }
+            
             
             createdDialogues.Add(node.ID, dialogue);
             

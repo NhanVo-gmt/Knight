@@ -14,8 +14,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FileName: BlackSmith
   Groups: []
-  Nodes: []
+  Nodes:
+  - ID: 94f3d639-e7a4-4821-96b0-a3028c8d5c6a
+    Name: DialogueName
+    Text: Dialogue Text.
+    Choices:
+    - Text: Next Dialogue
+      NodeID: 
+    GroupID: 
+    DialogueType: 0
+    Position: {x: 292.8, y: 229.59999}
   OldGroupNames: []
-  OldUngroupedNodeNames: []
+  OldUngroupedNodeNames:
+  - DialogueName
   OldGroupedNodeNames:
     list: []

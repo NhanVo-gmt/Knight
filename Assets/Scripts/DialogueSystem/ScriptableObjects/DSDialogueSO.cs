@@ -11,9 +11,11 @@ namespace DS.ScriptableObjects
     {
         public string DialogueName;
         [TextArea] public string Text;
-        public List<DSDialogueChoiceData> Choices;
         public DSDialogueType DialogueType;
         public bool IsStartingDialogue;
+        
+        public List<DSDialogueChoiceData> Choices;
+        public ShopItemData               ShopItem;
 
         public void Initialize(string dialogueName, string text, List<DSDialogueChoiceData> choices, DSDialogueType dialogueType,
             bool isStartingDialogue)
@@ -34,6 +36,7 @@ namespace DS.ScriptableObjects
         {
             return Choices.Where(x => x.Text == choice).FirstOrDefault()?.NextDialogue;
         } 
+        
     }
     
 }

@@ -9,6 +9,9 @@ using UnityEngine.UIElements;
 
 namespace DS.Utilities
 {
+    using UnityEditor.UIElements;
+    using Object = UnityEngine.Object;
+
     public static class DSElementUtility
     {
         public static Button CreateButton(string text, Action onClick = null)
@@ -57,6 +60,18 @@ namespace DS.Utilities
             TextField textArea = CreateTextField(value, label, onValueChanged);
             textArea.multiline = true;
             return textArea;
+        }
+
+        public static ObjectField CreateObjectField<T>(Object value = null, string label = null, EventCallback<ChangeEvent<string>> onValueChanged = null)
+        {
+            ObjectField objectField = new ObjectField()
+            {
+                value = value,
+                label = label,
+                objectType = typeof(T)
+            };
+
+            return objectField;
         }
     }
 }

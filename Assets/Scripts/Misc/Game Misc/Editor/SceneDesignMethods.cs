@@ -10,7 +10,7 @@ public static class SceneDesignMethods
     private static readonly string SceneDataPath = "Assets/ScriptableObjects/Data/SO_Scene/SceneData.asset";
     private static readonly string BackgroundEffectDataPath = "Assets/ScriptableObjects/Data/SO_Scene/Background/BackgroundEffectData.asset";
     
-    [MenuItem("Knight/Scene/Exit Assigning")]
+    [MenuItem("Knight/Scene/Exit Assigning", false, 100)]
     static void AssigningExitInScene()
     {
         MapData mapData = LoadSceneData();
@@ -43,7 +43,7 @@ public static class SceneDesignMethods
         return null;
     }
 
-    [MenuItem("Knight/Scene/Parallax Assigning")]
+    [MenuItem("Knight/Scene/Parallax Assigning", false, 100)]
     static void AutoAssigningParallax()
     {
         MapData mapData = LoadSceneData();

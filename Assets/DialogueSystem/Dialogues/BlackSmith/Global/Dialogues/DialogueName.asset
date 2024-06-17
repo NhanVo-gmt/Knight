@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecaa5275ae7c26489d074bd19f1c1e1, type: 3}
-  m_Name: BlackSmith
+  m_Script: {fileID: 11500000, guid: 1ca0bd0c3de4f1c42863ba21086fc41b, type: 3}
+  m_Name: DialogueName
   m_EditorClassIdentifier: 
-  FileName: BlackSmith
-  DialogueGroups:
-    list: []
-  UngroupedDialogues:
-  - {fileID: 11400000, guid: 69a4327e817f42f4ba3f70cdbfd5ac6d, type: 2}
+  DialogueName: DialogueName
+  Text: Dialogue Text.
+  Choices:
+  - Text: Next Dialogue
+    NextDialogue: {fileID: 0}
+  DialogueType: 0
+  IsStartingDialogue: 1

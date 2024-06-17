@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using DS.Enumerations;
 using DS.ScriptableObjects;
 using Knight.UI;
-using UnityEngine.Serialization;
 
 public class DialogueController : MonoBehaviour
 {
@@ -71,7 +71,21 @@ public class DialogueController : MonoBehaviour
 
         if (HaveNextNode())
         {
-            StartCoroutine(TextTypingCoroutine(currentNode.Text));
+            if (IsDialogueNode())
+            {
+                StartCoroutine(TextTypingCoroutine(currentNode.Text));
+            }
+            else
+            {
+                switch (currentNode.DialogueType)
+                {
+                    case DSDialogueType.Shop:
+                        //todo open shop
+                        break;
+                    case DSDialogueType.Quest:
+                        break;
+                }
+            }
         }
         else
         {
@@ -112,6 +126,7 @@ public class DialogueController : MonoBehaviour
 
     bool HaveNextNode()
     {
+        // todo add multiple node
         currentNode = currentNode.GetNextDialogueByIndex(0);
 
         if (currentNode == null)
@@ -122,5 +137,19 @@ public class DialogueController : MonoBehaviour
         {
             return true;
         }
+    }
+
+    bool IsDialogueNode()
+    {
+        return currentNode.DialogueType == DSDialogueType.SingleChoice ||
+               currentNode.DialogueType == DSDialogueType.MultipleChoice;
+    }
+    
+    public void OpenShop()
+    {
+        ShopUI shopUI = GameCanvas.GetPage<ShopUI>();
+        shopUI.PopulateShopItems(currentNode.ShopItem);
+        
+        shopUI.Toggle();
     }
 }

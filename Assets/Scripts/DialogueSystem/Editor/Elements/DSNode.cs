@@ -54,6 +54,17 @@ namespace DS.Elements
 
         public virtual void Draw()
         {
+            CreateTitleContainer();
+            
+            CreateInputContainer();
+            
+            CreateExtensionContainer();
+        }
+
+        #region Utility Methods
+
+        public void CreateTitleContainer()
+        {
             // Title container
             TextField dialogueNameTextField = DSElementUtility.CreateTextField(DialogueName, null, callback =>
             {
@@ -97,11 +108,17 @@ namespace DS.Elements
             );
             
             titleContainer.Insert(0, dialogueNameTextField);
-            
+        }
+
+        public void CreateInputContainer()
+        {
             // Input container
             Port inputPort = this.CreatePort("Dialogue Connection", Orientation.Horizontal, Direction.Input, Port.Capacity.Multi);
             inputContainer.Add(inputPort);
-            
+        }
+
+        public virtual void CreateExtensionContainer()
+        {
             // Extension container
             VisualElement customDataContainer = new VisualElement();
             customDataContainer.AddClasses("ds-node__custom-data-container");
@@ -123,8 +140,6 @@ namespace DS.Elements
             
             extensionContainer.Add(customDataContainer);
         }
-
-        #region Utility Methods
 
         public void DisconnectAllPorts()
         {

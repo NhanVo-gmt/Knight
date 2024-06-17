@@ -14,7 +14,7 @@ public class BehaviourTreeEditor : EditorWindow
 
     private ToolbarMenu toolbarMenu;
     
-    [MenuItem("Knight/BehaviourTreeEditor")]
+    [MenuItem("Knight/BehaviourTreeEditor", false, 400)]
     public static void OpenWindow()
     {
         BehaviourTreeEditor wnd = GetWindow<BehaviourTreeEditor>();

@@ -24,7 +24,7 @@ namespace DS.Window
         private Button saveBtn;
         private Button minimapBtn;
             
-        [MenuItem("Knight/Dialogue Window")]
+        [MenuItem("Knight/Dialogue Window", false, 100)]
         public static void OpenWindow()
         {
             GetWindow<DSEditorWindow>("Dialogue Graph");

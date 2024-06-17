@@ -7,7 +7,9 @@ namespace DS.Enumerations
     public enum DSDialogueType
     {
         SingleChoice,
-        MultipleChoice
+        MultipleChoice,
+        Shop,
+        Quest
     }
         
 }
