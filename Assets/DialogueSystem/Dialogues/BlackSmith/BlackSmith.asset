@@ -14,9 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FileName: BlackSmith
   DialogueGroups:
-    list:
-    - Key: {fileID: 11400000, guid: b5de681d3a20f824898e16798219dc7f, type: 2}
-      Value:
-      - {fileID: 11400000, guid: 5a2c5babf67a18144af981e9b2c46e0e, type: 2}
-  UngroupedDialogues:
-  - {fileID: 11400000, guid: 69a4327e817f42f4ba3f70cdbfd5ac6d, type: 2}
+    list: []
+  UngroupedDialogues: []

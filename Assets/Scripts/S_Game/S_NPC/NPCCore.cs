@@ -29,4 +29,9 @@ public class NPCCore : MonoBehaviour
 
         return component;
     }
+
+    public NPCComponents GetFirstComponent()
+    {
+        return npcCoreComponentList.FirstOrDefault();
+    }
 }

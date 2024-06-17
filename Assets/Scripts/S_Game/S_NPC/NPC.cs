@@ -13,5 +13,20 @@ public class NPC : MonoBehaviour
     {
         core = GetComponentInChildren<NPCCore>();
     }
-    
+
+    private void OnEnable()
+    {
+        dialogueHolder.OnFinishDialogue += OpenHolder;
+    }
+
+    private void OnDisable()
+    {
+        dialogueHolder.OnFinishDialogue -= OpenHolder;
+    }
+
+
+    private void OpenHolder()
+    {
+        //todo open quest or shop
+    }
 }
