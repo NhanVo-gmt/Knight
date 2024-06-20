@@ -18,5 +18,5 @@ MonoBehaviour:
   lifeTime: 0
   id: 2
   itemName: Moonstone
-  sprite: {fileID: 0}
+  sprite: {fileID: -2957470451182139061, guid: 830a49e5ddd5f9d44b7b0d1103b3187c, type: 3}
   itemDescription: Material for upgrading weapon

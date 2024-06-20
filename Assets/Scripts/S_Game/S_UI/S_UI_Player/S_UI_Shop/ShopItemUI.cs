@@ -29,5 +29,10 @@ public class ShopItemUI : MonoBehaviour
             
             button.gameObject.SetActive(true);
         }
+
+        for (int i = shopItems.Count; i < shopItemButtons.Length; i++)
+        {
+            shopItemButtons[i].gameObject.SetActive(false);
+        }
     }
 }
