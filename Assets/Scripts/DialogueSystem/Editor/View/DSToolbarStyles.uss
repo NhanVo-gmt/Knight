@@ -65,6 +65,19 @@ TextField:focus > .unity-text-field__label
     color: var(--ds-colors-window-yellow);
 }
 
+.ds-toolbar__delete_button 
+{
+    background-color: var(--ds-colors-window-red-1);
+    border-color: var(--ds-colors-window-red-1);
+    margin: var(--ds-metrics-window-pixels-4);
+    max-height: var(--ds-metrics-window-pixels-25);
+}
+
+.ds-toolbar__delete_button:hover
+{
+    background-color:  var(--ds-colors-window-red-2);
+}
+
 .unity-popup-field
 {
     margin: var(--ds-metrics-window-pixels-4);

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ecaa5275ae7c26489d074bd19f1c1e1, type: 3}
+  m_Name: BlackSmith1
+  m_EditorClassIdentifier: 
+  FileName: BlackSmith1
+  DialogueGroups:
+    list: []
+  UngroupedDialogues:
+  - {fileID: 11400000, guid: 07bbc4755cee76043a3b695a1e7b9b98, type: 2}
+  - {fileID: 11400000, guid: 27cc6724ad15f5a499300782a1604c9b, type: 2}
+  - {fileID: 11400000, guid: 0296e0d4300ed164aa0e61bed00f3b2a, type: 2}

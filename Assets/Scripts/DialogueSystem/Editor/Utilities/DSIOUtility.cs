@@ -72,6 +72,17 @@ namespace DS.Utilities
             SaveAsset(dialogueContainer);
         }
 
+        public static void Delete(DSGraphSaveDataSO data)
+        {
+            containerFolderPath = $"Assets/DialogueSystem/Dialogues/{data.FileName}";
+
+            // Remove Container
+            MoveAssetToTrash(containerFolderPath);
+            
+            // Remove Graph
+            MoveAssetToTrash($"{GRAPH_FOLDER_PATH}/{data.name}.asset");
+        }
+
         #region Groups
         
         private static void SaveGroups(DSGraphSaveDataSO graphData, DSDialogueContainerSO dialogueContainer)
@@ -160,6 +171,7 @@ namespace DS.Utilities
             UpdateOldGroupedNodes(groupedNodeNames, graphData);
             UpdateOldUngroupedNodes(ungroupedNodeNames, graphData);
         }
+        
 
         private static void SaveNodeToGraph(DSNode node, DSGraphSaveDataSO graphData)
         {
@@ -494,6 +506,18 @@ namespace DS.Utilities
         public static void RemoveAsset(string path, string assetName)
         {
             AssetDatabase.DeleteAsset($"{path}/{assetName}.asset");
+        }
+
+        public static void MoveAssetToTrash(string path)
+        {
+            if (AssetDatabase.MoveAssetToTrash(path))
+            {
+                Debug.Log($"Successfully move asset to trash at {path}");
+                return;
+            }
+            
+            Debug.LogError($"Can't delete assets from {path}");
+            return;
         }
         
         public static void SaveAsset(UnityEngine.Object asset)

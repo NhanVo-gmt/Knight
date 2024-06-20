@@ -27,6 +27,7 @@ namespace DS.Window
         private Button        minimapBtn;
         private DropdownField dropdownField;
 
+        private static DSGraphSaveDataSO                     currentGraphData;
         private static Dictionary<string, DSGraphSaveDataSO> GraphSaveDataDictionary = new();
             
         [MenuItem("Knight/Dialogue Window", false, 100)]
@@ -39,11 +40,11 @@ namespace DS.Window
         [OnOpenAsset(0)]
         public static bool OnOpenAsset(int instanceID, int line)
         {
-            DSGraphSaveDataSO graphData = EditorUtility.InstanceIDToObject(instanceID) as DSGraphSaveDataSO;
-            if (graphData != null)
+            currentGraphData = EditorUtility.InstanceIDToObject(instanceID) as DSGraphSaveDataSO;
+            if (currentGraphData != null)
             {
                 OpenWindow();
-                Load(graphData);
+                Load(currentGraphData);
                 return true;
             }
 
@@ -73,14 +74,6 @@ namespace DS.Window
             {
                 fileNameTextField.value = callback.newValue.RemoveWhitespaces();
             });
-            
-            saveBtn = DSElementUtility.CreateButton("Save", () => Save());
-            Button loadBtn = DSElementUtility.CreateButton("Load", () => Load());
-            Button clearBtn = DSElementUtility.CreateButton("Clear", () => Clear());
-            Button resetBtn = DSElementUtility.CreateButton("Reset", () => ResetGraph());
-            minimapBtn    = DSElementUtility.CreateButton("MiniMap", () => ToggleMiniMap());
-
-            
             dropdownField = DSElementUtility.CreateDropdownField("Assets", "Assets", GraphSaveDataDictionary.Keys.ToList(),
                 callback =>
                 {
@@ -89,15 +82,24 @@ namespace DS.Window
                         Load(GraphSaveDataDictionary[callback.newValue.RemoveWhitespaces()]);
                     }
                 });
-
+            
+            saveBtn = DSElementUtility.CreateButton("Save", () => Save());
+            Button loadBtn = DSElementUtility.CreateButton("Load", () => Load());
+            Button clearBtn = DSElementUtility.CreateButton("Clear", () => Clear());
+            Button resetBtn = DSElementUtility.CreateButton("Reset", () => ResetGraph());
+            minimapBtn    = DSElementUtility.CreateButton("MiniMap", () => ToggleMiniMap());
+            Button deleteBtn = DSElementUtility.CreateButton("Delete", () => Delete());
+            deleteBtn.AddToClassList("ds-toolbar__delete_button");
+            
 
             toolbar.Add(fileNameTextField);
+            toolbar.Add(dropdownField);
             toolbar.Add(saveBtn);
             toolbar.Add(loadBtn);
             toolbar.Add(clearBtn);
             toolbar.Add(resetBtn);
             toolbar.Add(minimapBtn);
-            toolbar.Add(dropdownField);
+            toolbar.Add(deleteBtn);
             toolbar.AddStyleSheets(toolbarStylePath);
             
             rootVisualElement.Add(toolbar);
@@ -157,6 +159,13 @@ namespace DS.Window
             minimapBtn.ToggleInClassList("ds-toolbar__button__selected");
         }
 
+        private void Delete()
+        {
+            DSIOUtility.Delete(currentGraphData);
+            
+            Clear();
+        }
+
         #endregion
 
         #region Utility Methods
@@ -164,9 +173,11 @@ namespace DS.Window
         public static void Load(DSGraphSaveDataSO graphData)
         {
             Clear();
-                
+            
             DSIOUtility.Initialize(graphView, graphData.name);
             DSIOUtility.Load();
+
+            currentGraphData = graphData;
         }
 
         public static void UpdateFileName(string newFileName)

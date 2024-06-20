@@ -9,11 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ecaa5275ae7c26489d074bd19f1c1e1, type: 3}
-  m_Name: DialoguesFileName
+  m_Script: {fileID: 11500000, guid: 1ca0bd0c3de4f1c42863ba21086fc41b, type: 3}
+  m_Name: 123
   m_EditorClassIdentifier: 
-  FileName: DialoguesFileName
-  DialogueGroups:
-    list: []
-  UngroupedDialogues:
-  - {fileID: 11400000, guid: be22d9fe7bb032745b8332f2f0940a3e, type: 2}
+  DialogueName: 123
+  Text: Dialogue Text.
+  DialogueType: 0
+  IsStartingDialogue: 0
+  Choices:
+  - Text: Next Dialogue
+    NextDialogue: {fileID: 0}
+  ShopItem: {fileID: 0}
