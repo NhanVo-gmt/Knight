@@ -77,10 +77,12 @@ public class DialogueController : MonoBehaviour
             }
             else
             {
+                ToggleDialogueUI(false);
+                
                 switch (currentNode.DialogueType)
                 {
                     case DSDialogueType.Shop:
-                        //todo open shop
+                        OpenShop();
                         break;
                     case DSDialogueType.Quest:
                         break;

@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class ShopUI : PageUI
 {
-    [SerializeField] private ShopItemUI shopItemUI;
+    private ShopItemUI shopItemUI;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        shopItemUI = GetComponentInChildren<ShopItemUI>();
+    }
 
     public void PopulateShopItems(ShopItemData shopItemData)
     {

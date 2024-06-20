@@ -2217,7 +2217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4500244de424bc240b445b80b1e14331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 0}
+  dialogue: {fileID: 11400000, guid: c4f2dfd97c067cc4c8b840361d9fefe2, type: 2}
 --- !u!61 &199693553
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2844,7 +2844,7 @@ PrefabInstance:
     - target: {fileID: 179089299198334798, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0, guid: 704866e4193e1d94b98c7d9674b09577, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 179089299198334798, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_WasSpriteAssigned
       value: 1
@@ -3623,6 +3623,7 @@ GameObject:
   - component: {fileID: 481008065}
   - component: {fileID: 481008066}
   - component: {fileID: 481008067}
+  - component: {fileID: 481008068}
   m_Layer: 5
   m_Name: Item
   m_TagString: Untagged
@@ -3694,6 +3695,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content: {fileID: 280287951}
+--- !u!114 &481008068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481008064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8faedef2b4fb26b49a6bf3570c4abb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shopItems: []
 --- !u!1001 &493293026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4157,7 +4171,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 207157516}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.31446543
+  m_Size: 0.31446537
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
