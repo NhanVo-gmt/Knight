@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca0bd0c3de4f1c42863ba21086fc41b, type: 3}
-  m_Name: DialogueName
+  m_Name: Greeting
   m_EditorClassIdentifier: 
-  DialogueName: DialogueName
-  Text: Dialogue Text.
-  DialogueType: 2
+  DialogueName: Greeting
+  Text: Dear traveller
+  DialogueType: 0
   IsStartingDialogue: 1
-  Choices: []
-  ShopItem: {fileID: 11400000, guid: ce2ef65bc9ff47146adcbddce1a87bc1, type: 2}
+  Choices:
+  - Text: Next Dialogue
+    NextDialogue: {fileID: 11400000, guid: 5b2973325dd34dc42b2b0bc667191ace, type: 2}
+  ShopItem: {fileID: 0}

@@ -16,36 +16,46 @@ MonoBehaviour:
   Groups: []
   Nodes:
   - ID: 94f3d639-e7a4-4821-96b0-a3028c8d5c6a
-    Name: DialogueName
-    Text: Dialogue Text.
+    Name: Greeting
+    Text: Dear traveller
     Choices:
     - Text: Next Dialogue
       NodeID: 09324563-0eee-4fbe-b2e3-e8938426527e
     GroupID: 
     DialogueType: 0
-    Position: {x: 155.2, y: 188.8}
+    Position: {x: 56, y: 215.2}
+    ShopItemPath: 
   - ID: 09324563-0eee-4fbe-b2e3-e8938426527e
-    Name: 123
-    Text: Dialogue Text.
+    Name: Shop
+    Text: Use my shop
     Choices:
     - Text: Next Dialogue
-      NodeID: 
+      NodeID: 4b9cb45e-cccb-409e-a3f0-8a0c7e20b5e3
     GroupID: 
     DialogueType: 0
-    Position: {x: 464, y: 249.59999}
-  - ID: d243f220-46a3-48fe-8a9a-3ca8ca1b0dc3
-    Name: 13
+    Position: {x: 390.4, y: 215.2}
+    ShopItemPath: 
+  - ID: 4b9cb45e-cccb-409e-a3f0-8a0c7e20b5e3
+    Name: OpenShop
     Text: Dialogue Text.
-    Choices:
-    - Text: Next Dialogue
-      NodeID: 
+    Choices: []
     GroupID: 
-    DialogueType: 0
-    Position: {x: 498.4, y: 136.8}
+    DialogueType: 2
+    Position: {x: 784, y: 220}
+    ShopItemPath: Assets/ScriptableObjects/Data/SO_Item/SO_Shop/ShopItems.asset
+  - ID: d67d7159-1cca-40b8-8c8a-419aee59beaf
+    Name: DialogueName
+    Text: Dialogue Text.
+    Choices: []
+    GroupID: 
+    DialogueType: 2
+    Position: {x: 845.6, y: 350.40002}
+    ShopItemPath: Assets/ScriptableObjects/Data/SO_Item/SO_Shop/ShopItems.asset
   OldGroupNames: []
   OldUngroupedNodeNames:
+  - Greeting
+  - Shop
+  - OpenShop
   - DialogueName
-  - 123
-  - 13
   OldGroupedNodeNames:
     list: []

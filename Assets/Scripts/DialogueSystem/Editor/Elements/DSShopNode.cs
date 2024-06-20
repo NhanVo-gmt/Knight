@@ -13,7 +13,7 @@ namespace DS.Elements
 
     public class DSShopNode : DSNode
     {
-        public ShopItemData itemData { get; private set; }
+        public ShopItemData itemData;
         
         public override void Initialize(string nodeName, DSGraphView dsGraphView, Vector2 position)
         {
@@ -37,10 +37,13 @@ namespace DS.Elements
 
             Foldout textFoldout = DSElementUtility.CreateFoldout("Dialogue Text");
 
-            ObjectField objectField = DSElementUtility.CreateObjectField<ShopItemData>(itemData, null, callback =>
-            {
-                Text = callback.newValue;
-            });
+            ObjectField objectField = DSElementUtility.CreateObjectField<ShopItemData>(itemData, null);
+            objectField.RegisterValueChangedCallback(
+                evt =>
+                {
+                    itemData = evt.newValue as ShopItemData;
+                }
+            );
 
             objectField.AddClasses(
                 "ds-node__textfield",

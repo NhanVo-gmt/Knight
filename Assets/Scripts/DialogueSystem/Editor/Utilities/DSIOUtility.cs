@@ -177,6 +177,12 @@ namespace DS.Utilities
         {
             List<DSChoiceSaveData> choices = CloneNodeChoices(node.Choices);
 
+            string itemPath = "";
+            if (node is DSShopNode shopNode && shopNode.itemData != null)
+            {
+                itemPath = AssetDatabase.GetAssetPath(shopNode.itemData);
+            }
+            
             DSNodeSaveData nodeData = new DSNodeSaveData()
             {
                 ID = node.ID,
@@ -185,7 +191,8 @@ namespace DS.Utilities
                 Text = node.Text,
                 GroupID = node.Group?.ID,
                 DialogueType = node.DialogueType,
-                Position = node.GetPosition().position
+                Position = node.GetPosition().position,
+                ShopItemPath = itemPath
             };
             
             graphData.Nodes.Add(nodeData);
@@ -370,6 +377,11 @@ namespace DS.Utilities
                 node.ID = nodeData.ID;
                 node.Choices = choices;
                 node.Text = nodeData.Text;
+
+                if (nodeData.ShopItemPath != null && node is DSShopNode shopNode)
+                {
+                    shopNode.itemData = AssetDatabase.LoadAssetAtPath<ShopItemData>(nodeData.ShopItemPath);
+                }
                 
                 node.Draw();
                 graphView.AddElement(node);

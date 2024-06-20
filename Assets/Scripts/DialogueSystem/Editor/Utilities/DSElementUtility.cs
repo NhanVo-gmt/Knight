@@ -62,7 +62,7 @@ namespace DS.Utilities
             return textArea;
         }
 
-        public static ObjectField CreateObjectField<T>(Object value = null, string label = null, EventCallback<ChangeEvent<string>> onValueChanged = null)
+        public static ObjectField CreateObjectField<T>(Object value = null, string label = null)
         {
             ObjectField objectField = new ObjectField()
             {
