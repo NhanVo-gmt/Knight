@@ -8,6 +8,8 @@ using UnityEngine.UIElements;
 
 namespace DS.Window
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Utilities;
     using Data.Save;
     
@@ -21,12 +23,16 @@ namespace DS.Window
         private readonly string defaultFileName = "DialoguesFileName";
         private static TextField fileNameTextField;
         
-        private Button saveBtn;
-        private Button minimapBtn;
+        private Button        saveBtn;
+        private Button        minimapBtn;
+        private DropdownField dropdownField;
+
+        private static Dictionary<string, DSGraphSaveDataSO> GraphSaveDataDictionary = new();
             
         [MenuItem("Knight/Dialogue Window", false, 100)]
         public static void OpenWindow()
         {
+            GraphSaveDataDictionary = DSIOUtility.FindAllGraphs().ToDictionary(x => x.FileName, y => y);
             GetWindow<DSEditorWindow>("Dialogue Graph");
         }
         
@@ -72,7 +78,17 @@ namespace DS.Window
             Button loadBtn = DSElementUtility.CreateButton("Load", () => Load());
             Button clearBtn = DSElementUtility.CreateButton("Clear", () => Clear());
             Button resetBtn = DSElementUtility.CreateButton("Reset", () => ResetGraph());
-            minimapBtn = DSElementUtility.CreateButton("MiniMap", () => ToggleMiniMap());
+            minimapBtn    = DSElementUtility.CreateButton("MiniMap", () => ToggleMiniMap());
+
+            
+            dropdownField = DSElementUtility.CreateDropdownField("Assets", "Assets", GraphSaveDataDictionary.Keys.ToList(),
+                callback =>
+                {
+                    if (GraphSaveDataDictionary[callback.newValue.RemoveWhitespaces()] != null)
+                    {
+                        Load(GraphSaveDataDictionary[callback.newValue.RemoveWhitespaces()]);
+                    }
+                });
 
 
             toolbar.Add(fileNameTextField);
@@ -81,6 +97,7 @@ namespace DS.Window
             toolbar.Add(clearBtn);
             toolbar.Add(resetBtn);
             toolbar.Add(minimapBtn);
+            toolbar.Add(dropdownField);
             toolbar.AddStyleSheets(toolbarStylePath);
             
             rootVisualElement.Add(toolbar);
@@ -165,6 +182,11 @@ namespace DS.Window
         public void DisableSaving()
         {
             saveBtn.SetEnabled(false);
+        }
+
+        public void PopulateGraph()
+        {
+            
         }
         
         #endregion

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1ca0bd0c3de4f1c42863ba21086fc41b, type: 3}
-  m_Name: DialogueName
+  m_Name: 123
   m_EditorClassIdentifier: 
-  DialogueName: DialogueName
+  DialogueName: 123
   Text: Dialogue Text.
   DialogueType: 0
-  IsStartingDialogue: 1
+  IsStartingDialogue: 0
   Choices:
   - Text: Next Dialogue
-    NextDialogue: {fileID: 11400000, guid: 82bf6fa9241cf9b4585b9dcfc230af9e, type: 2}
+    NextDialogue: {fileID: 0}
   ShopItem: {fileID: 0}

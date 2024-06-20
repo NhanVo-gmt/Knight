@@ -18,5 +18,5 @@ MonoBehaviour:
   IsStartingDialogue: 1
   Choices:
   - Text: Next Dialogue
-    NextDialogue: {fileID: 11400000, guid: 82bf6fa9241cf9b4585b9dcfc230af9e, type: 2}
+    NextDialogue: {fileID: 0}
   ShopItem: {fileID: 0}

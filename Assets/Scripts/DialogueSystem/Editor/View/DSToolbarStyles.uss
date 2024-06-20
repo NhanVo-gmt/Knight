@@ -31,6 +31,7 @@ Button:active
     color: var(--ds-colors-window-yellow);
 }
 
+
 /* BUILT-IN */
 
 .unity-text-field__label
@@ -53,7 +54,8 @@ TextField:focus > .unity-text-field__label
     padding-left: var(--ds-metrics-window-pixels-6);
 }
 
-.unity-text-field__input:focus
+.unity-text-field__input:focus,
+.unity-base-popup-field__text:focus
 {
     color: var(--ds-colors-window-yellow);
 }
@@ -61,4 +63,16 @@ TextField:focus > .unity-text-field__label
 .ds-toolbar__button__selected
 {
     color: var(--ds-colors-window-yellow);
+}
+
+.unity-popup-field
+{
+    margin: var(--ds-metrics-window-pixels-4);
+}
+
+.unity-popup-field__input
+{
+    background-color: var(--ds-colors-window-dark-grey-5);
+    border-color: var(--ds-colors-window-dark-grey-1);
+    padding: var(--ds-metrics-window-pixels-4);
 }

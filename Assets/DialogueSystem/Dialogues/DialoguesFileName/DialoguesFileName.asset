@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ecaa5275ae7c26489d074bd19f1c1e1, type: 3}
-  m_Name: BlackSmith
+  m_Name: DialoguesFileName
   m_EditorClassIdentifier: 
-  FileName: BlackSmith
+  FileName: DialoguesFileName
   DialogueGroups:
     list: []
   UngroupedDialogues:
-  - {fileID: 11400000, guid: 69a4327e817f42f4ba3f70cdbfd5ac6d, type: 2}
-  - {fileID: 11400000, guid: 82bf6fa9241cf9b4585b9dcfc230af9e, type: 2}
-  - {fileID: 11400000, guid: 6442a3e99c91c9a419843e777cec2a51, type: 2}
+  - {fileID: 11400000, guid: be22d9fe7bb032745b8332f2f0940a3e, type: 2}

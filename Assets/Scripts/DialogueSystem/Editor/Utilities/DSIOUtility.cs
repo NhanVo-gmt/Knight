@@ -18,6 +18,8 @@ namespace DS.Utilities
     public static class DSIOUtility
     {
         private static DSGraphView graphView;
+
+        private static readonly string GRAPH_FOLDER_PATH = "Assets/DialogueSystem/Editor/Graphs";
         
         private static string graphFileName;
         private static string containerFolderPath;
@@ -56,7 +58,7 @@ namespace DS.Utilities
 
             GetElementsFromGraphView();
             
-            DSGraphSaveDataSO graphData = CreateAsset<DSGraphSaveDataSO>("Assets/DialogueSystem/Editor/Graphs", $"{graphFileName}Graph");
+            DSGraphSaveDataSO graphData = CreateAsset<DSGraphSaveDataSO>(GRAPH_FOLDER_PATH, $"{graphFileName}Graph");
             graphData.Initialize(graphFileName);
 
             DSDialogueContainerSO dialogueContainer =
@@ -471,6 +473,24 @@ namespace DS.Utilities
             return AssetDatabase.LoadAssetAtPath<T>(fullPath);
         }
 
+        public static IEnumerable<T> LoadAllAssetsAtPath<T>(string path) where T : ScriptableObject
+        {
+            return AssetDatabase.LoadAllAssetsAtPath(path).OfType<T>();
+        }
+        
+        public static List<T> FindAssets<T>(params string[] paths) where T : Object
+        {
+            string[] assetGUIDs = AssetDatabase.FindAssets("t:" + typeof(T), paths);
+            List<T>  assets     = new List<T>();
+            foreach (string guid in assetGUIDs)
+            {
+                string assetPath = AssetDatabase.GUIDToAssetPath(guid);
+                T      asset     = AssetDatabase.LoadAssetAtPath<T>(assetPath);
+                assets.Add(asset);
+            }
+            return assets;
+        }
+
         public static void RemoveAsset(string path, string assetName)
         {
             AssetDatabase.DeleteAsset($"{path}/{assetName}.asset");
@@ -498,6 +518,12 @@ namespace DS.Utilities
             }
 
             return choices;
+        }
+
+        public static List<DSGraphSaveDataSO> FindAllGraphs()
+        {
+            List<DSGraphSaveDataSO> graphList = FindAssets<DSGraphSaveDataSO>(GRAPH_FOLDER_PATH);
+            return graphList;
         }
         
         #endregion
