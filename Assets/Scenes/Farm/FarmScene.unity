@@ -5232,7 +5232,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 874789b8eca633e4b984ff0eec845e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shopItemUI: {fileID: 0}
 --- !u!4 &920911075 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 6df071c94565ee741986ede79ca83fac, type: 3}
