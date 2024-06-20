@@ -512,7 +512,7 @@ namespace DS.Utilities
         {
             if (AssetDatabase.MoveAssetToTrash(path))
             {
-                Debug.Log($"Successfully move asset to trash at {path}");
+                Debug.Log($"Successfully delete assets at {path}");
                 return;
             }
             
