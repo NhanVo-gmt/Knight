@@ -5,22 +5,12 @@ using UnityEngine;
 
 namespace Knight.Inventory
 {
-    [Serializable]
-    class InventoryItem
-    {
-        public ItemData itemData;
-        public int number;
-
-        public InventoryItem(ItemData itemData, int number)
-        {
-            this.itemData = itemData;
-            this.number = number;
-        }
-    }
+    using AYellowpaper.SerializedCollections;
     
     public class InventorySystem : SingletonObject<InventorySystem>
     {
-        [SerializeField] private List<InventoryItem> itemList = new List<InventoryItem>(); // todo remove serial
+        [SerializedDictionary("ItemData", "Information")]
+        public SerializedDictionary<ItemData, int> itemDict = new();
 
         public Action<ItemData, int> OnChangedItem;
 
@@ -29,46 +19,21 @@ namespace Knight.Inventory
             base.Awake();
         }
 
-        int GetItemIndex(ItemData itemData)
-        {
-            for (int i = 0; i < itemList.Count; i++)
-            {
-                if (itemList[i].itemData.id == itemData.id)
-                {
-                    return i;
-                }
-            }
-
-            return -1;
-        }
-
         public void AddItem(ItemData itemData, int number)
         {
-            int itemIndex = GetItemIndex(itemData);
-            if (itemIndex == -1)
+            if (!itemDict.ContainsKey(itemData))
             {
-                itemList.Add(new InventoryItem(itemData, number));
-                itemIndex = itemList.Count - 1;
+                itemDict[itemData] = 0;
             }
-            else
-            {
-                itemList[itemIndex].number += number;
-            }
+            itemDict[itemData] += number;
             
-            OnChangedItem?.Invoke(itemData, itemList[itemIndex].number);
+            OnChangedItem?.Invoke(itemData, itemDict[itemData]);
         }
-
-        public void UseItem(ItemData itemData, int number)
+        
+        public void BuyItem(ShopItemData.ShopSingleItemData singleItemData, int number)
         {
-            foreach (InventoryItem item in itemList)
-            {
-                if (item.itemData.id == itemData.id)
-                {
-                    item.number -= number;
-                    break;
-                }
-            }
-            OnChangedItem.Invoke(itemData, number);
+            // ItemData currencyData = GameS
         }
+            
     }
 }

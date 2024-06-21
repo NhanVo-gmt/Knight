@@ -1,15 +1,49 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Knight.Inventory;
 using UnityEngine;
 
 public class ShopUI : PageUI
 {
-    private ShopItemUI shopItemUI;
+    private ShopItemUI     shopItemUI;
+    private ShopItemDescUI shopItemDescUI;
+    private ShopBuyBtn     shopBuyBtn;
+
+    private ShopItemData.ShopSingleItemData currentItemData;
 
     protected override void Awake()
     {
         base.Awake();
-        shopItemUI = GetComponentInChildren<ShopItemUI>();
+        shopItemUI     = GetComponentInChildren<ShopItemUI>();
+        shopItemDescUI = GetComponentInChildren<ShopItemDescUI>();
+        shopBuyBtn     = GetComponentInChildren<ShopBuyBtn>();
+    }
+
+
+    private void OnEnable()
+    {
+        shopItemUI.OnSelectItem += UpdateSelectedShopItem;
+        shopBuyBtn.OnClick      += BuyItem;
+    }
+
+    private void OnDisable()
+    {
+        shopItemUI.OnSelectItem -= UpdateSelectedShopItem;
+        shopBuyBtn.OnClick      -= BuyItem;
+    }
+
+
+    private void UpdateSelectedShopItem(ShopItemData.ShopSingleItemData singleItemData)
+    {
+        currentItemData = singleItemData;
+        shopItemDescUI.UpdateUI(singleItemData.ItemData);
+    }
+    
+    private void BuyItem()
+    {
+        // todo 
+        // InventorySystem.Instance.UseItem();
     }
 
     public void PopulateShopItems(ShopItemData shopItemData)

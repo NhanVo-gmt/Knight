@@ -17,6 +17,6 @@ MonoBehaviour:
   needPlayerDirection: 0
   lifeTime: 0
   id: 3
-  itemName: Plastic Flower
-  sprite: {fileID: 0}
-  itemDescription: '"Delicacy flower'
+  itemName: Black Rose
+  sprite: {fileID: -4106687164770367347, guid: 4c80c4c19cd625341b1f9d3442107f0d, type: 3}
+  itemDescription: flower

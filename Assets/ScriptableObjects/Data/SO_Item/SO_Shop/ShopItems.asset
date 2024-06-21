@@ -16,3 +16,6 @@ MonoBehaviour:
   - ItemData: {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
     Number: 1
     Price: 100
+  - ItemData: {fileID: 11400000, guid: 7132e0afa8f3b6347a6c2fea3ef539cf, type: 2}
+    Number: 1
+    Price: 100

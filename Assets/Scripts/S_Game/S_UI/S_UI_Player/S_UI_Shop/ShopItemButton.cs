@@ -22,6 +22,11 @@ public class ShopItemButton : MonoBehaviour, ISelectHandler
         UpdateUI();
     }
 
+    public ShopItemData.ShopSingleItemData GetData()
+    {
+        return data;
+    }
+
     void UpdateUI()
     {
         image.sprite = data.ItemData.sprite;
@@ -30,6 +35,12 @@ public class ShopItemButton : MonoBehaviour, ISelectHandler
     
     public void OnSelect(BaseEventData eventData)
     {
+        OnSelectItem?.Invoke(this);
+    }
+
+    public void ObtainSelectionFocus()
+    {
+        EventSystem.current.SetSelectedGameObject(gameObject);
         OnSelectItem?.Invoke(this);
     }
 }

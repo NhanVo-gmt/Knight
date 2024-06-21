@@ -10,21 +10,31 @@ public class ShopItemScroll : MonoBehaviour
     [SerializeField] RectTransform content; 
 
     private ScrollRect scrollRect; 
-    private ShopItemButton[] ShopItemButtons;
+    private ShopItemButton[] shopItemButtons;
 
     private void Awake()
     {
         scrollRect = GetComponent<ScrollRect>();
-        ShopItemButtons = content.GetComponentsInChildren<ShopItemButton>();
+        shopItemButtons = content.GetComponentsInChildren<ShopItemButton>();
     }
 
     private void OnEnable()
     {
-        foreach (ShopItemButton item in ShopItemButtons)
+        foreach (ShopItemButton item in shopItemButtons)
         {
             item.OnSelectItem += OnSelectItem;
         }
     }
+
+    private void OnDisable()
+    {
+        foreach (ShopItemButton item in shopItemButtons)
+        {
+            item.OnSelectItem -= OnSelectItem;
+        }
+    }
+    
+    
 
     void OnSelectItem(ShopItemButton item)
     {
