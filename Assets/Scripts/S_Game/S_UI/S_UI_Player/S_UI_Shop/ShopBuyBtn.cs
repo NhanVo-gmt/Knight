@@ -1,10 +1,12 @@
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopBuyBtn : MonoBehaviour
+public class ShopBuyBtn : MonoBehaviour, ISelectHandler
 {
-    private Button button;
+    [SerializeField] private ShopItemUI shopItemUI;
+    private                  Button     button;
 
     public Action OnClick;
 
@@ -37,5 +39,19 @@ public class ShopBuyBtn : MonoBehaviour
     public void Enable()
     {
         button.interactable = true;
+    }
+    public void OnSelect(BaseEventData eventData)
+    {
+        UpdateNavigationButton();
+    }
+    
+    private void UpdateNavigationButton()
+    {
+        if (shopItemUI.lastSelectBtn == null) return;
+        
+        Navigation navigation = button.navigation;
+        navigation.selectOnLeft = shopItemUI.lastSelectBtn.GetComponent<Button>();
+
+        button.navigation = navigation;
     }
 }

@@ -75,9 +75,19 @@ public class GroundState : State
         {
             stateMachine.ChangeState(player.inAirState);
         }
-        else if (player.inputManager.interactionInput && interactionController.canRest)
+        else if (player.inputManager.interactionInput)
         {
-            stateMachine.ChangeState(player.restState);
+            if (interactionController.canRest)
+            {
+                stateMachine.ChangeState(player.restState);
+            }
+            else if (interactionController.canTalk)
+            {
+                stateMachine.DisableChangeState();
+                stateMachine.ChangeState(player.idleState);
+                interactionController.StartConversation();
+                player.inputManager.UseInteractionInput();
+            }
         }
     }
 

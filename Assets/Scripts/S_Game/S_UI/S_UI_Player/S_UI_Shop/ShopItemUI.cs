@@ -7,8 +7,11 @@ using UnityEngine.UI;
 
 public class ShopItemUI : MonoBehaviour
 {
+    [SerializeField] private Button                                buyBtn;
     [SerializeField] private List<ShopItemData.ShopSingleItemData> shopItems = new();
     private                  ShopItemButton[]                      shopItemButtons;
+    
+    public ShopItemButton lastSelectBtn { get; private set; }
 
     public Action<ShopItemData.ShopSingleItemData> OnSelectItem;
 
@@ -26,8 +29,9 @@ public class ShopItemUI : MonoBehaviour
         {
             Navigation navigation = buttons[i].navigation;
             
-            navigation.selectOnUp = buttons[i - 1 >= 0 ? i - 1 : buttons.Length - 1];
-            navigation.selectOnDown = buttons[i + 1 >= buttons.Length ? 0 : i + 1];
+            navigation.selectOnUp    = buttons[i - 1 >= 0 ? i - 1 : buttons.Length - 1];
+            navigation.selectOnDown  = buttons[i + 1 >= buttons.Length ? 0 : i + 1];
+            navigation.selectOnRight = buyBtn;
 
             buttons[i].navigation = navigation;
         }
@@ -51,6 +55,7 @@ public class ShopItemUI : MonoBehaviour
     }
     private void SelectNewItemButton(ShopItemButton itemButton)
     {
+        lastSelectBtn = itemButton;
         OnSelectItem?.Invoke(itemButton.GetData());
     }
 

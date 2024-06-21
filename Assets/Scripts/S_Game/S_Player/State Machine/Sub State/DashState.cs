@@ -47,6 +47,9 @@ public class DashState : AbilityState
     public override void LogicsUpdate()
     {
         base.LogicsUpdate();
+
+        if (movement.isDashAttacking) return;
+        
         if (player.inputManager.movementInput.x * movement.faceDirection.x == -1)
         {
             if (collisionSenses.isGround)

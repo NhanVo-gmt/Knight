@@ -11,18 +11,24 @@ public class IdleState : GroundState
     public override void Enter()
     {
         base.Enter();
+        
         movement.SetVelocityZero();
+        interactionController.OnFinishInteract += stateMachine.EnableChangeState;
     }
 
 
     public override void Exit()
     {
         base.Exit();
+        
+        interactionController.OnFinishInteract -= stateMachine.EnableChangeState;
     }
 
 
     public override void LogicsUpdate()
     {
+        if (!stateMachine.canChangeState) return;
+        
         base.LogicsUpdate();
 
         if (player.inputManager.movementInput.x != 0)

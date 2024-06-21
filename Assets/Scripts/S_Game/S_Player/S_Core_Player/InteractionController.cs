@@ -2,25 +2,30 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using DS.ScriptableObjects;
+using Knight.UI;
 using UnityEngine;
 
 public class InteractionController : CoreComponent
 {
     [SerializeField] [ReadOnlyInspector] bool isInteracting = false;
 
-    public bool    canRest { get; private set; }
-    public Vector2 restPos { get; private set; }
+    [SerializeField] [ReadOnlyInspector] public bool    canRest;
+    [SerializeField] [ReadOnlyInspector] public bool    canTalk;
+    public                                      Vector2 restPos { get; private set; }
     
     private InputManager inputManager;
     private DialogueController dialogueController;
     private InteractableArea interactableArea;
 
+    public Action OnFinishInteract;
+
     protected override void Awake()
     {
         base.Awake();
 
-        canRest = false;
-        inputManager = GetComponentInParent<InputManager>();
+        canRest            = false;
+        canTalk            = false;
+        inputManager       = GetComponentInParent<InputManager>();
         dialogueController = GetComponentInChildren<DialogueController>();
     }
 
@@ -49,22 +54,25 @@ public class InteractionController : CoreComponent
         if (canRest) return;
         if (isInteracting) return;
         
-        inputManager.UseInteractionInput();
-        
+        if (interactableArea != null)
+        {
+            interactableArea.Interact();
+        }
+    }
+
+    public void StartConversation()
+    {
         if (dialogueController.currentDialogue != null)
         {
             dialogueController.StartConversation();
             isInteracting = true;
-        }
-        else if (interactableArea != null)
-        {
-            interactableArea.Interact();
         }
     }
     
     void FinishInteract()
     {
         isInteracting = false;
+        OnFinishInteract?.Invoke();
     }
     
 
@@ -72,6 +80,7 @@ public class InteractionController : CoreComponent
 
     public void SetDialogue(DialogueHolder holder)
     {
+        canTalk                            = true;
         dialogueController.dialogueHolder  = holder;
         dialogueController.currentDialogue = holder.GetDialogue();
     }
@@ -80,6 +89,7 @@ public class InteractionController : CoreComponent
     {
         if (dialogueController.dialogueHolder == holder)
         {
+            canTalk                            = false;
             dialogueController.dialogueHolder  = null;
             dialogueController.currentDialogue = null;
         }
@@ -91,6 +101,7 @@ public class InteractionController : CoreComponent
 
     public void SetInteractableArea(InteractableArea interactableArea)
     {
+
         this.interactableArea = interactableArea;
     }
 

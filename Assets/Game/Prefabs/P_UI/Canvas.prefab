@@ -2026,6 +2026,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8faedef2b4fb26b49a6bf3570c4abb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buyBtn: {fileID: 5397771648875216915}
   shopItems: []
 --- !u!1 &4195171543857890926
 GameObject:
