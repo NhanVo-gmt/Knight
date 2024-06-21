@@ -11,7 +11,9 @@ public class DialogueUI : PageUI
     protected override void Awake()
     {
         base.Awake();
+        
         ToggleConversation(false);
+        Hide();
     }
 
     public void ToggleConversation(bool active)

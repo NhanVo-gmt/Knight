@@ -29,10 +29,26 @@ namespace Knight.Inventory
             
             OnChangedItem?.Invoke(itemData, itemDict[itemData]);
         }
+
+        public bool UseItem(ItemData itemData, int number)
+        {
+            if (itemDict[itemData] >= number)
+            {
+                itemDict[itemData] -= number;
+                return true;
+            }
+            
+            Debug.LogError($"You have {itemDict[itemData]}{itemData} not enough {number}");
+            return false;
+        }
         
         public void BuyItem(ShopItemData.ShopSingleItemData singleItemData, int number)
         {
-            // ItemData currencyData = GameS
+            ItemData currencyData = GameSettings.Instance.CurrencyDict[CurrencyType.Soul];
+            if (UseItem(currencyData, singleItemData.Price * number))
+            {
+                AddItem(singleItemData.ItemData, number);
+            }
         }
             
     }

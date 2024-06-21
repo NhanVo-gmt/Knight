@@ -41,7 +41,6 @@ public abstract class PageUI : MonoBehaviour
 
     public virtual void Hide()
     {
-        if (!isOpened) return;
         StopAllCoroutines();
         
         isOpened = false;

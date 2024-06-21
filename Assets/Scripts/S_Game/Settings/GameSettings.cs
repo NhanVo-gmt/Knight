@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -31,8 +31,11 @@ public class GameSettings : SingletonObject<GameSettings>
     [Header("Flash")] 
     public Material flashMat;
     public float flashCoolDown;
-
     public Material flashGlowMat;
+
+    [Header("Currency")]
+    [SerializedDictionary("Currency", "Data")]
+    public SerializedDictionary<CurrencyType, ItemData> CurrencyDict;
 
 
     public Action OnGameInitialized;

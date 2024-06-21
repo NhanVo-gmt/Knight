@@ -18,6 +18,8 @@ public class ShopUI : PageUI
         shopItemUI     = GetComponentInChildren<ShopItemUI>();
         shopItemDescUI = GetComponentInChildren<ShopItemDescUI>();
         shopBuyBtn     = GetComponentInChildren<ShopBuyBtn>();
+        
+        Hide();
     }
 
 
@@ -42,8 +44,7 @@ public class ShopUI : PageUI
     
     private void BuyItem()
     {
-        // todo 
-        // InventorySystem.Instance.UseItem();
+        InventorySystem.Instance.BuyItem(currentItemData, 1);
     }
 
     public void PopulateShopItems(ShopItemData shopItemData)
