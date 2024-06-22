@@ -15,7 +15,7 @@ namespace Knight.UI
             Shop
         }
 
-        private static CanvasState         currentState;
+        [field: SerializeField] private static CanvasState         currentState;
         public         Action<CanvasState> OnChangeState;
 
         private static Dictionary<Type, PageUI> TypeToPages = new();
@@ -26,11 +26,6 @@ namespace Knight.UI
             currentState = CanvasState.None;
             
             PopulatePages();
-        }
-
-        private void Update()
-        {
-            Debug.Log(currentState);
         }
 
         void PopulatePages()

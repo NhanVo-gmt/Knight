@@ -375,9 +375,9 @@ MonoBehaviour:
   playerMat: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   playerUI: {fileID: 9152289177338738096, guid: f641eb559f5a5134282732e202e8e8ab, type: 3}
   playerCam: {fileID: 5459631380006579413, guid: 1f7bda5857b59194cbf25b54de5c2ce8, type: 3}
-  PlayerKnockbackAmount: 100
-  WeakKnockbackAmount: 200
-  StrongKnockbackAmount: 10000
+  PlayerKnockbackAmount: 10
+  WeakKnockbackAmount: 15
+  StrongKnockbackAmount: 20
   soul: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
   flashMat: {fileID: 2100000, guid: b92ee72cbc0aa6340ad49ccb19f8c7c3, type: 2}
   flashCoolDown: 0.2
