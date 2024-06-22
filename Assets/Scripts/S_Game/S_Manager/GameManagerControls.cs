@@ -53,6 +53,15 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""CloseMenu"",
+                    ""type"": ""Button"",
+                    ""id"": ""1e974924-0ee0-44e5-9f6b-fce9c8fc597c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -88,6 +97,17 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
                     ""action"": ""NextTab"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5e990086-f462-4d5c-898c-f61f0179732b"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CloseMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -99,6 +119,7 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
         m_Global_Menu = m_Global.FindAction("Menu", throwIfNotFound: true);
         m_Global_PrevTab = m_Global.FindAction("PrevTab", throwIfNotFound: true);
         m_Global_NextTab = m_Global.FindAction("NextTab", throwIfNotFound: true);
+        m_Global_CloseMenu = m_Global.FindAction("CloseMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -163,6 +184,7 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Global_Menu;
     private readonly InputAction m_Global_PrevTab;
     private readonly InputAction m_Global_NextTab;
+    private readonly InputAction m_Global_CloseMenu;
     public struct GlobalActions
     {
         private @GameManagerControls m_Wrapper;
@@ -170,6 +192,7 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
         public InputAction @Menu => m_Wrapper.m_Global_Menu;
         public InputAction @PrevTab => m_Wrapper.m_Global_PrevTab;
         public InputAction @NextTab => m_Wrapper.m_Global_NextTab;
+        public InputAction @CloseMenu => m_Wrapper.m_Global_CloseMenu;
         public InputActionMap Get() { return m_Wrapper.m_Global; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -188,6 +211,9 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
             @NextTab.started += instance.OnNextTab;
             @NextTab.performed += instance.OnNextTab;
             @NextTab.canceled += instance.OnNextTab;
+            @CloseMenu.started += instance.OnCloseMenu;
+            @CloseMenu.performed += instance.OnCloseMenu;
+            @CloseMenu.canceled += instance.OnCloseMenu;
         }
 
         private void UnregisterCallbacks(IGlobalActions instance)
@@ -201,6 +227,9 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
             @NextTab.started -= instance.OnNextTab;
             @NextTab.performed -= instance.OnNextTab;
             @NextTab.canceled -= instance.OnNextTab;
+            @CloseMenu.started -= instance.OnCloseMenu;
+            @CloseMenu.performed -= instance.OnCloseMenu;
+            @CloseMenu.canceled -= instance.OnCloseMenu;
         }
 
         public void RemoveCallbacks(IGlobalActions instance)
@@ -223,5 +252,6 @@ public partial class @GameManagerControls: IInputActionCollection2, IDisposable
         void OnMenu(InputAction.CallbackContext context);
         void OnPrevTab(InputAction.CallbackContext context);
         void OnNextTab(InputAction.CallbackContext context);
+        void OnCloseMenu(InputAction.CallbackContext context);
     }
 }

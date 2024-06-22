@@ -38,7 +38,7 @@ namespace Knight.Inventory
                 return true;
             }
             
-            Debug.LogError($"You have {itemDict[itemData]}{itemData} not enough {number}");
+            Debug.LogError($"You have {itemDict[itemData]} {itemData} not enough {number}");
             return false;
         }
         

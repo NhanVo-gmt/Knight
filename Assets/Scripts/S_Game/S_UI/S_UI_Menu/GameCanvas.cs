@@ -15,7 +15,8 @@ namespace Knight.UI
             Shop
         }
 
-        private static CanvasState currentState;
+        private static CanvasState         currentState;
+        public         Action<CanvasState> OnChangeState;
 
         private static Dictionary<Type, PageUI> TypeToPages = new();
 
@@ -25,6 +26,11 @@ namespace Knight.UI
             currentState = CanvasState.None;
             
             PopulatePages();
+        }
+
+        private void Update()
+        {
+            Debug.Log(currentState);
         }
 
         void PopulatePages()
@@ -67,6 +73,10 @@ namespace Knight.UI
             {
                 ChangeState(CanvasState.Shop);
             }
+            else if (page is InGameUI)
+            {
+                ChangeState(CanvasState.None);
+            }
         }
 
 
@@ -84,7 +94,6 @@ namespace Knight.UI
             PageUI page = TypeToPages[pageType];
             
             page.Hide();
-            
         }
         
         public static void TogglePage<T>() where T : PageUI
@@ -100,9 +109,24 @@ namespace Knight.UI
             return TypeToPages[typeof(T)] as T;
         }
 
+        public static void CloseAllPage()
+        {
+            foreach (PageUI page in TypeToPages.Values)
+            {
+                if (page is InGameUI)
+                {
+                    page.Show();
+                    continue;
+                }
+                
+                page.Hide();
+            }
+        }
+
         void ChangeState(CanvasState newState)
         {
             currentState = newState;
+            OnChangeState?.Invoke(currentState);
         }
 
         #region Event

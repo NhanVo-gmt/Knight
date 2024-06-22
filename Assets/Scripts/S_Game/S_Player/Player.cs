@@ -47,10 +47,10 @@ public class Player : SingletonObject<Player>, IDataPersistence
     public Vector2 lastGroundPosition;
     
     private StateMachine stateMachine;
-    private Core core;
-    private Rigidbody2D rb;
-    public InputManager inputManager {get; private set;}
-    public Light2D light;
+    private Core         core;
+    private Rigidbody2D  rb;
+    public  InputManager inputManager {get; private set;}
+    public  Light2D      light;
 
     private string initState = "IdleState";
     
@@ -70,10 +70,12 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
     private void OnEnable()
     {
-        GameManager.Instance.OnChangedGameState += GameManager_OnChangedGameState;
-        SceneLoader.Instance.OnSceneBeforeLoading += SceneLoader_OnSceneBeforeLoading;
-        SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
+        GameManager.Instance.OnChangedGameState      += GameManager_OnChangedGameState;
+        SceneLoader.Instance.OnSceneBeforeLoading    += SceneLoader_OnSceneBeforeLoading;
+        SceneLoader.Instance.OnScenePlay             += SceneLoader_OnScenePlay;
         SceneLoader.Instance.OnChangedPlayerPosition += ((sender, position) => ChangePosition(position));
+
+        GameCanvas.Instance.OnChangeState += ChangePlayerState;
     }
 
     private void OnDisable()
@@ -82,6 +84,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
         SceneLoader.Instance.OnSceneBeforeLoading -= SceneLoader_OnSceneBeforeLoading;
         SceneLoader.Instance.OnScenePlay -= SceneLoader_OnScenePlay;
         SceneLoader.Instance.OnChangedPlayerPosition -= ((sender, position) => ChangePosition(position));
+        
+        GameCanvas.Instance.OnChangeState -= ChangePlayerState;
     }
 
     void Start() 
@@ -274,6 +278,14 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
         yield return new WaitForSeconds(TimeBeforeFadeIn);
         yield return LightManager.Instance.FadeOut();
+    }
+    
+    private void ChangePlayerState(GameCanvas.CanvasState canvasState)
+    {
+        if (canvasState == GameCanvas.CanvasState.None)
+        {
+            stateMachine.EnableChangeState();
+        }
     }
 
     public void UpdateLastGroundPosition(Vector2 newGroundPosition)

@@ -38,6 +38,11 @@ namespace Knight.Manager
 
         private void GetInput()
         {
+            if (gameManagerInput.closeMenuInput)
+            {
+                gameManagerInput.UseCloseMenuInput();
+                CloseAllPages();
+            }
             if (gameManagerInput.menuInput)
             {
                 gameManagerInput.UseMenuInput();
@@ -53,6 +58,10 @@ namespace Knight.Manager
                 gameManagerInput.UseNextTabInput();
                 GameCanvas.GetPage<PlayerMenuUI>().OpenNextTab();
             }
+        }
+        private void CloseAllPages()
+        {
+            GameCanvas.CloseAllPage();
         }
 
         public void TogglePlayerMenuUI()

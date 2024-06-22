@@ -77,8 +77,6 @@ public class DialogueController : MonoBehaviour
             }
             else
             {
-                ToggleDialogueUI(false);
-                
                 switch (currentNode.DialogueType)
                 {
                     case DSDialogueType.Shop:
@@ -108,8 +106,8 @@ public class DialogueController : MonoBehaviour
     
     public void ToggleDialogueUI(bool isActive)
     {
-        dialogueUI.gameObject.SetActive(isActive);
-        inGameUI.gameObject.SetActive(!isActive);
+        dialogueUI.Toggle(isActive);
+        inGameUI.Toggle(!isActive);
         
         if (isActive)
         {
@@ -149,9 +147,13 @@ public class DialogueController : MonoBehaviour
     
     public void OpenShop()
     {
+        dialogueUI.Toggle(false);
+        inGameUI.Toggle(false);
+        
         ShopUI shopUI = GameCanvas.GetPage<ShopUI>();
         shopUI.PopulateShopItems(currentNode.ShopItem);
         
+        // todo toggle shop tat het o trong game ui
         shopUI.Toggle();
     }
 }

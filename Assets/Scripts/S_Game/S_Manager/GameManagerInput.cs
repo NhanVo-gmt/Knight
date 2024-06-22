@@ -11,9 +11,10 @@ namespace Knight.Manager
     {
         private GameManagerControls gameManagerControls;
         
-        public bool menuInput { get; private set; }
-        public bool prevTabInput { get; private set; }
-        public bool nextTabInput { get; private set; }
+        public bool menuInput      { get; private set; }
+        public bool prevTabInput   { get; private set; }
+        public bool nextTabInput   { get; private set; }
+        public bool closeMenuInput { get; private set; }
         
         private void Awake()
         {
@@ -23,6 +24,9 @@ namespace Knight.Manager
         private void OnEnable()
         {
             gameManagerControls.Enable();
+            
+            MenuRegister();
+            TabRegister();
         }
 
         private void OnDisable()
@@ -30,15 +34,10 @@ namespace Knight.Manager
             gameManagerControls.Disable();
         }
 
-        private void Start()
+        void MenuRegister()
         {
-            InventoryRegister();
-            TabRegister();
-        }
-
-        void InventoryRegister()
-        {
-            gameManagerControls.Global.Menu.started += OnMenuInput;
+            gameManagerControls.Global.Menu.started      += OnMenuInput;
+            gameManagerControls.Global.CloseMenu.started += OnCloseMenuInput;
         }
         
         void TabRegister()
@@ -53,6 +52,15 @@ namespace Knight.Manager
             {
                 ResetInput();
                 menuInput = true;
+            }
+        }
+
+        private void OnCloseMenuInput(InputAction.CallbackContext context)
+        {
+            if (context.started)
+            {
+                ResetInput();
+                closeMenuInput = true;
             }
         }
         
@@ -81,6 +89,11 @@ namespace Knight.Manager
         public void UseMenuInput()
         {
             menuInput = false;
+        }
+
+        public void UseCloseMenuInput()
+        {
+            closeMenuInput = false;
         }
         
         public void UsePrevTabInput()

@@ -29,6 +29,14 @@ public abstract class PageUI : MonoBehaviour
         }
     }
 
+    public virtual void Toggle(bool isActive)
+    {
+        if (isActive)
+        {
+            Show();
+        } else Hide();
+    }
+
     public virtual void Show()
     {
         if (isOpened) return;
@@ -41,6 +49,7 @@ public abstract class PageUI : MonoBehaviour
 
     public virtual void Hide()
     {
+        if (!isOpened) return;
         StopAllCoroutines();
         
         isOpened = false;
