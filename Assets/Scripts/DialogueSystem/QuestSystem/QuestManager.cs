@@ -27,23 +27,24 @@ public class QuestManager : SingletonObject<QuestManager>
         base.Awake();
         QuestEvent = new QuestEvent();
         questMap   = CreateQuestMap();
-        
-        Quest quest = GetQuestById("CollectCoinsQuest");
     }
 
 
     private void OnEnable()
     {
-        QuestEvent.OnStartQuest   += StartQuest;
-        QuestEvent.OnAdvanceQuest += AdvanceQuest;
-        QuestEvent.OnFinishQuest  += FinishQuest;
+        QuestEvent.OnStartOrContinueQuest += StartOrContinueQuest;
+        QuestEvent.OnStartQuest           += StartQuest;
+        QuestEvent.OnAdvanceQuest         += AdvanceQuest;
+        QuestEvent.OnFinishQuest          += FinishQuest;
+        // QuestEvent.OnQuestStateChange += ChangeQuestState;
     }
 
     private void OnDisable()
     {
-        QuestEvent.OnStartQuest   -= StartQuest;
-        QuestEvent.OnAdvanceQuest -= AdvanceQuest;
-        QuestEvent.OnFinishQuest  -= FinishQuest;
+        QuestEvent.OnStartOrContinueQuest -= StartOrContinueQuest;
+        QuestEvent.OnStartQuest           -= StartQuest;
+        QuestEvent.OnAdvanceQuest         -= AdvanceQuest;
+        QuestEvent.OnFinishQuest          -= FinishQuest;
     }
 
     private void Start()
@@ -76,21 +77,92 @@ public class QuestManager : SingletonObject<QuestManager>
         return meetRequirement;
     }
 
+    private void StartOrContinueQuest(string id)
+    {
+        Quest quest = GetQuestById(id);
+        
+        Debug.Log($"{quest.info.displayName}: {quest.state}");
+        
+        switch (quest.state)
+        {
+            case QuestState.REQUIREMENT_NOT_MET:
+                if (CheckRequirementMet(quest))
+                {
+                    StartQuest(quest);
+                }
+                break;
+            case QuestState.CAN_START:
+                StartQuest(quest);
+                break;
+            case QuestState.IN_PROGRESS:
+                if (quest.IsFinishedCurrentStep())
+                {
+                    AdvanceQuest(quest);
+                }
+                break;
+            case QuestState.CAN_FINISH:
+                FinishQuest(quest);
+                break;
+            case QuestState.FINISHED:
+                break;
+        }
+    }
+
     private void StartQuest(string id)
     {
-        Debug.Log($"Start Quest: {id}");
+        Quest quest = GetQuestById(id);
+        StartQuest(quest);
+    }
+    
+    private void StartQuest(Quest quest)
+    {
+        Debug.Log($"Start Quest: {quest.info.displayName}");
+        
+        quest.InstantiateCurrentQuestStep(this.transform);
+        ChangeQuestState(quest.info.Id, QuestState.IN_PROGRESS);
     }
 
     private void AdvanceQuest(string id)
     {
-        Debug.Log($"Advance Quest: {id}");
+        Quest quest = GetQuestById(id);
+        
+        AdvanceQuest(quest);
+    }
+    
+    private void AdvanceQuest(Quest quest)
+    {
+        Debug.Log($"Advance Quest: {quest.info.displayName}");
+        
+        quest.MoveToNextStep();
+        if (quest.CurrentStepExists())
+        {
+            quest.InstantiateCurrentQuestStep(this.transform);
+        }
+        else
+        {
+            ChangeQuestState(quest.info.Id, QuestState.CAN_FINISH);
+        }
     }
 
     private void FinishQuest(string id)
     {
-        Debug.Log($"Finish Quest: {id}");
+        Quest quest = GetQuestById(id);
+        
+        FinishQuest(quest);
     }
 
+    private void FinishQuest(Quest quest)
+    {
+        Debug.Log($"Finish Quest: {quest.info.displayName}");
+
+        ClaimRewards(quest);
+        ChangeQuestState(quest.info.Id, QuestState.FINISHED);
+    }
+    
+    private void ClaimRewards(Quest quest)
+    {
+        //todo claim reward    
+    }
 
     private Dictionary<string, Quest> CreateQuestMap()
     {
@@ -116,5 +188,15 @@ public class QuestManager : SingletonObject<QuestManager>
         }
 
         return quest;
+    }
+
+    public void Save()
+    {
+        
+    }
+
+    public void Load()
+    {
+        
     }
 }

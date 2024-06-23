@@ -11,7 +11,7 @@ public class QuestPoint
     private string     questId;
     private QuestState currentQuestState;
 
-    private void Awake()
+    private void Initalize()
     {
         questId = questInfoPoint.Id;
     }

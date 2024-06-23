@@ -5,6 +5,7 @@ using System;
 using DS.Enumerations;
 using DS.ScriptableObjects;
 using Knight.UI;
+using UnityEngine.Serialization;
 
 public class DialogueController : MonoBehaviour
 {
@@ -14,13 +15,17 @@ public class DialogueController : MonoBehaviour
     [SerializeField] [ReadOnlyInspector] private InGameUI   inGameUI; 
     [SerializeField] [ReadOnlyInspector] private DialogueUI dialogueUI;
 
+    [Header("Dialogue")]
     [ReadOnlyInspector] public DialogueHolder        dialogueHolder;
     [ReadOnlyInspector] public DSDialogueContainerSO currentDialogue; 
     DSDialogueSO                                     currentNode;
+
     
     private InputManager inputManager;
     private bool         isSpeedup = false;
 
+    public Action OnFinishDialogue;
+    
     private void Awake()
     {
         inputManager = GetComponentInParent<InputManager>();
@@ -33,7 +38,6 @@ public class DialogueController : MonoBehaviour
         dialogueUI = GameCanvas.GetPage<DialogueUI>();
     }
 
-    public Action onFinishDialogue;
 
     public void StartConversation()
     {
@@ -123,7 +127,7 @@ public class DialogueController : MonoBehaviour
         {
             dialogueUI.EndConversation();
             
-            onFinishDialogue?.Invoke();
+            OnFinishDialogue?.Invoke();
             
             dialogueHolder.EndConversation();
         }
@@ -165,10 +169,10 @@ public class DialogueController : MonoBehaviour
 
     public void OpenQuest()
     {
+        ToggleDialogueUI(false);
+        
         if (currentNode.QuestInfo == null) return;
         
-        QuestManager.Instance.QuestEvent.StartQuest(currentNode.QuestInfo.Id);
-        QuestManager.Instance.QuestEvent.AdvanceQuest(currentNode.QuestInfo.Id);
-        QuestManager.Instance.QuestEvent.FinishQuest(currentNode.QuestInfo.Id);
+        dialogueHolder.StartOrContinueQuest();
     }
 }

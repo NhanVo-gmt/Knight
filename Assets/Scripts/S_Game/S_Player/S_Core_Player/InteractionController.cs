@@ -32,12 +32,12 @@ public class InteractionController : CoreComponent
 
     void OnEnable() 
     {
-        dialogueController.onFinishDialogue += FinishInteract;
+        dialogueController.OnFinishDialogue += FinishInteract;
     }
 
     void OnDisable() 
     {
-        dialogueController.onFinishDialogue -= FinishInteract;
+        dialogueController.OnFinishDialogue -= FinishInteract;
     }
 
     void Update() 

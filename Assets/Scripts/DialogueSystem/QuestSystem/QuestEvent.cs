@@ -3,6 +3,15 @@ using System;
 
 public class QuestEvent
 {
+    public event Action<string> OnStartOrContinueQuest;
+    public void StartOrContinueQuest(string id)
+    {
+        if (OnStartOrContinueQuest != null)
+        {
+            OnStartOrContinueQuest(id);
+        }
+    }
+    
     public event Action<string> OnStartQuest;
     public void StartQuest(string id)
     {
