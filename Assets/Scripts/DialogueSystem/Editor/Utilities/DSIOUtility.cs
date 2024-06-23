@@ -177,10 +177,15 @@ namespace DS.Utilities
         {
             List<DSChoiceSaveData> choices = CloneNodeChoices(node.Choices);
 
-            string itemPath = "";
+            string itemPath  = "";
+            string questPath = "";
             if (node is DSShopNode shopNode && shopNode.itemData != null)
             {
                 itemPath = AssetDatabase.GetAssetPath(shopNode.itemData);
+            }
+            else if (node is DSQuestNode questNode && questNode.questData != null)
+            {
+                questPath = AssetDatabase.GetAssetPath(questNode.questData);
             }
             
             DSNodeSaveData nodeData = new DSNodeSaveData()
@@ -192,7 +197,8 @@ namespace DS.Utilities
                 GroupID = node.Group?.ID,
                 DialogueType = node.DialogueType,
                 Position = node.GetPosition().position,
-                ShopItemPath = itemPath
+                ShopItemPath = itemPath,
+                QuestInfoPath = questPath
             };
             
             graphData.Nodes.Add(nodeData);
@@ -225,6 +231,10 @@ namespace DS.Utilities
             if (node is DSShopNode shopNode)
             {
                 dialogue.ShopItem = shopNode.itemData;
+            }
+            else if (node is DSQuestNode questNode)
+            {
+                dialogue.QuestInfo = questNode.questData;
             }
             
             
@@ -381,6 +391,10 @@ namespace DS.Utilities
                 if (nodeData.ShopItemPath != null && node is DSShopNode shopNode)
                 {
                     shopNode.itemData = AssetDatabase.LoadAssetAtPath<ShopItemData>(nodeData.ShopItemPath);
+                }
+                if (nodeData.QuestInfoPath != null && node is DSQuestNode questNode)
+                {
+                    questNode.questData = AssetDatabase.LoadAssetAtPath<QuestInfoSO>(nodeData.QuestInfoPath);
                 }
                 
                 node.Draw();

@@ -69,6 +69,11 @@ public class DialogueController : MonoBehaviour
         
         yield return new WaitUntil(() => IsMoveToNextDialogue());
 
+        MoveToNextNode();   
+    }
+
+    void MoveToNextNode()
+    {
         if (HaveNextNode())
         {
             if (IsDialogueNode())
@@ -83,6 +88,7 @@ public class DialogueController : MonoBehaviour
                         OpenShop();
                         break;
                     case DSDialogueType.Quest:
+                        OpenQuest();
                         break;
                 }
             }
@@ -155,5 +161,14 @@ public class DialogueController : MonoBehaviour
         
         // todo toggle shop tat het o trong game ui
         shopUI.Toggle();
+    }
+
+    public void OpenQuest()
+    {
+        if (currentNode.QuestInfo == null) return;
+        
+        QuestManager.Instance.QuestEvent.StartQuest(currentNode.QuestInfo.Id);
+        QuestManager.Instance.QuestEvent.AdvanceQuest(currentNode.QuestInfo.Id);
+        QuestManager.Instance.QuestEvent.FinishQuest(currentNode.QuestInfo.Id);
     }
 }

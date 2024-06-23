@@ -113,6 +113,7 @@ namespace DS.Window
             this.AddManipulator(CreateNodeContextualMenu("Add Node (Single Choice)", DSDialogueType.SingleChoice));
             this.AddManipulator(CreateNodeContextualMenu("Add Node (Multiple Choice)", DSDialogueType.MultipleChoice));
             this.AddManipulator(CreateNodeContextualMenu("Add Shop Node", DSDialogueType.Shop));
+            this.AddManipulator(CreateNodeContextualMenu("Add Quest Node", DSDialogueType.Quest));
             
             this.AddManipulator(CreateGroupContextualMenu());
         }

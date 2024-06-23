@@ -54,6 +54,28 @@ public class QuestManager : SingletonObject<QuestManager>
         }
     }
 
+    private void ChangeQuestState(string id, QuestState state)
+    {
+        Quest quest = GetQuestById(id);
+        quest.state = state;
+        QuestEvent.QuestStateChange(quest);
+    }
+
+    private bool CheckRequirementMet(Quest quest)
+    {
+        bool meetRequirement = true;
+
+        foreach (QuestInfoSO prerequisiteQuestInfo in quest.info.questPrerequisites)
+        {
+            if (GetQuestById(prerequisiteQuestInfo.Id).state != QuestState.FINISHED)
+            {
+                meetRequirement = false;
+            }
+        }
+
+        return meetRequirement;
+    }
+
     private void StartQuest(string id)
     {
         Debug.Log($"Start Quest: {id}");

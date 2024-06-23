@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
 namespace DS.Elements
 {
     using DS.Enumerations;
     using DS.Utilities;
     using DS.Window;
     using UnityEditor.UIElements;
+    using UnityEngine.Serialization;
     using UnityEngine.UIElements;
 
-    public class DSShopNode : DSNode
+    public class DSQuestNode : DSNode
     {
-        public ShopItemData itemData;
+        public QuestInfoSO questData;
         
         public override void Initialize(string nodeName, DSGraphView dsGraphView, Vector2 position)
         {
             base.Initialize(nodeName, dsGraphView, position);
 
-            DialogueType = DSDialogueType.Shop;
+            DialogueType = DSDialogueType.Quest;
         }
 
         public override void Draw()
@@ -35,13 +35,13 @@ namespace DS.Elements
             VisualElement customDataContainer = new VisualElement();
             customDataContainer.AddClasses("ds-node__custom-data-container");
 
-            Foldout textFoldout = DSElementUtility.CreateFoldout("Shop Item");
+            Foldout textFoldout = DSElementUtility.CreateFoldout("Quest");
 
-            ObjectField objectField = DSElementUtility.CreateObjectField<ShopItemData>(itemData, null);
+            ObjectField objectField = DSElementUtility.CreateObjectField<QuestInfoSO>(questData, null);
             objectField.RegisterValueChangedCallback(
                 evt =>
                 {
-                    itemData = evt.newValue as ShopItemData;
+                    questData = evt.newValue as QuestInfoSO;
                 }
             );
 

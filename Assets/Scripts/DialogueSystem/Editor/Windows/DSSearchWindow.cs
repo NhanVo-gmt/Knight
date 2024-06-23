@@ -36,6 +36,16 @@ namespace DS.Window
                     level = 2,
                     userData = DSDialogueType.MultipleChoice
                 },
+                new SearchTreeEntry(new GUIContent("Shop", indentationIcon))
+                {
+                    level = 2,
+                    userData = DSDialogueType.Shop
+                },
+                new SearchTreeEntry(new GUIContent("Quest", indentationIcon))
+                {
+                    level = 2,
+                    userData = DSDialogueType.Quest
+                },
                 new SearchTreeGroupEntry(new GUIContent("Dialogue Group"), 1),
                 new SearchTreeEntry(new GUIContent("Single Group", indentationIcon))
                 {
@@ -63,6 +73,18 @@ namespace DS.Window
                 {
                     DSMultipleChoiceNode multipleChoiceNode = (DSMultipleChoiceNode)graphView.CreateNode("DialogueName", DSDialogueType.MultipleChoice, localMousePosition);
                     graphView.Add(multipleChoiceNode);
+                    return true;
+                }
+                case DSDialogueType.Shop:
+                {
+                    DSShopNode shopNode = (DSShopNode)graphView.CreateNode("DialogueName", DSDialogueType.Shop, localMousePosition);
+                    graphView.Add(shopNode);
+                    return true;
+                }
+                case DSDialogueType.Quest:
+                {
+                    DSQuestNode questNode = (DSQuestNode)graphView.CreateNode("DialogueName", DSDialogueType.Quest, localMousePosition);
+                    graphView.Add(questNode);
                     return true;
                 }
                 case Group _:

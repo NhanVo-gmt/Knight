@@ -15,6 +15,7 @@ public class InteractionController : CoreComponent
     
     private InputManager inputManager;
     private DialogueController dialogueController;
+    
     private InteractableArea interactableArea;
 
     public Action OnFinishInteract;

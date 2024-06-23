@@ -19,5 +19,6 @@ namespace DS.Data.Save
         public DSDialogueType         DialogueType;
         public Vector2                Position;
         public string                 ShopItemPath;
+        public string                 QuestInfoPath;
     }
 }
