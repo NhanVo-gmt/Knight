@@ -13,4 +13,25 @@ public static class HelperMethods
         }
         return res;
     }
+    
+    
 }
+#if UNITY_EDITOR
+public static class EditorHelperMethods
+{
+    public static List<T> FindAssets<T>(params string[] paths) where T : Object
+    {
+        string[] assetGUIDs = UnityEditor.AssetDatabase.FindAssets("t:" + typeof(T), paths);
+        List<T>  assets     = new List<T>();
+        foreach (string guid in assetGUIDs)
+        {
+            string assetPath = UnityEditor.AssetDatabase.GUIDToAssetPath(guid);
+            T      asset     = UnityEditor.AssetDatabase.LoadAssetAtPath<T>(assetPath);
+            assets.Add(asset);
+        }
+        return assets;
+    }
+}
+#endif
+
+
