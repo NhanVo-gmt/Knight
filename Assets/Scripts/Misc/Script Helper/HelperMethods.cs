@@ -13,7 +13,17 @@ public static class HelperMethods
         }
         return res;
     }
-    
+
+    public static Dictionary<TKey, TValue> Clone<TKey, TValue>(this Dictionary<TKey, TValue> original) where TValue : ICloneable<TValue>
+    {
+        Dictionary<TKey, TValue> ret = new Dictionary<TKey, TValue>(original.Count,
+            original.Comparer);
+        foreach (KeyValuePair<TKey, TValue> entry in original)
+        {
+            ret.Add(entry.Key, (TValue) entry.Value.Clone());
+        }
+        return ret;
+    }
     
 }
 #if UNITY_EDITOR

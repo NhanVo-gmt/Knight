@@ -2263,7 +2263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4500244de424bc240b445b80b1e14331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue: {fileID: 11400000, guid: 37b9d399fa4b2b9408c832316fa1c4f5, type: 2}
+  dialogue: {fileID: 11400000, guid: c4f2dfd97c067cc4c8b840361d9fefe2, type: 2}
   questInfo: {fileID: 11400000, guid: 5112f3842e054bf459965dda97b3bc68, type: 2}
   startPoint: 1
   finishPoint: 1
@@ -2551,6 +2551,23 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7878350319992209165, guid: 094a53c41d8a7be42b94157bcc9be47c, type: 3}
   m_PrefabInstance: {fileID: 1987780137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &347225644 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4891403201365052623, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+  m_PrefabInstance: {fileID: 356537100}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &347225648
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 347225644}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &347863735
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2974,7 +2991,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
     - target: {fileID: 5247166235921743093, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: itemDict._serializedList.Array.data[0].Value
-      value: 3
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5247166235921743093, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: itemDict._serializedList.Array.data[0].Value.number
@@ -3306,7 +3323,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 1264248802217786655, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       insertIndex: -1
       addedObject: {fileID: 159002802}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4891403201365052623, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 347225648}
   m_SourcePrefab: {fileID: 100100000, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
 --- !u!4 &356537103 stripped
 Transform:

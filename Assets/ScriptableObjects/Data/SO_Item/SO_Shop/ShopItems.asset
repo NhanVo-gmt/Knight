@@ -12,10 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ced38aff28053f341a181c896e8ed66f, type: 3}
   m_Name: ShopItems
   m_EditorClassIdentifier: 
-  ItemDatas:
-  - ItemData: {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
-    Number: 1
-    Price: 100
-  - ItemData: {fileID: 11400000, guid: 7132e0afa8f3b6347a6c2fea3ef539cf, type: 2}
-    Number: 1
-    Price: 100
+  itemDictionary:
+    _serializedList:
+    - Key: {fileID: 11400000, guid: 7132e0afa8f3b6347a6c2fea3ef539cf, type: 2}
+      Value:
+        ItemData: {fileID: 11400000, guid: 7132e0afa8f3b6347a6c2fea3ef539cf, type: 2}
+        Number: 2
+        CurrencyType: 0
+        Price: 10
+    - Key: {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
+      Value:
+        ItemData: {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
+        Number: 2
+        CurrencyType: 0
+        Price: 10

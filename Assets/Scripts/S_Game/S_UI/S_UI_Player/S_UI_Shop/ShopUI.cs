@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Knight.Inventory;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ public class ShopUI : PageUI
     private ShopItemDescUI shopItemDescUI;
     private ShopBuyBtn     shopBuyBtn;
 
+    private ShopItemData                    shopItemData;
     private ShopItemData.ShopSingleItemData currentItemData;
 
     protected override void Awake()
@@ -44,11 +46,19 @@ public class ShopUI : PageUI
     
     private void BuyItem()
     {
-        InventorySystem.Instance.BuyItem(currentItemData, 1);
+        int selectedNumber = 1;
+        if (InventorySystem.Instance.BuyItem(currentItemData, selectedNumber))
+        {
+            shopItemData.RemoveItem(currentItemData.ItemData, selectedNumber);
+        }
+        shopItemDescUI.HideUI();
+        
+        PopulateShopItems(shopItemData);
     }
-
+    
     public void PopulateShopItems(ShopItemData shopItemData)
     {
-        shopItemUI.PopulateList(shopItemData.ItemDatas);
+        this.shopItemData = shopItemData;
+        shopItemUI.PopulateList(shopItemData.GetListShopItems());
     }
 }

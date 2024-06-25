@@ -63,13 +63,16 @@ namespace Knight.Inventory
             return false;
         }
         
-        public void BuyItem(ShopItemData.ShopSingleItemData singleItemData, int number)
+        public bool BuyItem(ShopItemData.ShopSingleItemData singleItemData, int number)
         {
             ItemData currencyData = GameSettings.Instance.CurrencyDict[CurrencyType.Soul];
             if (UseItem(currencyData, singleItemData.Price * number))
             {
                 AddItem(singleItemData.ItemData, number);
+                return true;
             }
+
+            return false;
         }
             
     }
