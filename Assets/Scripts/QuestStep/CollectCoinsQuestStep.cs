@@ -17,6 +17,8 @@ public class CollectCoinsQuestStep : QuestStep
 
     private void OnDisable()
     {
+        if (QuitUtils.isQuitting) return;
+        
         InventorySystem.Instance.OnChangedItem -= CollectCoin;
     }
 

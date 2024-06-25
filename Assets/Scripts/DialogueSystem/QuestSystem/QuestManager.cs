@@ -20,13 +20,13 @@ public class QuestManager : SingletonObject<QuestManager>
     #endif
     
     private Dictionary<string, Quest> questMap = new();
-    public  QuestEvent                QuestEvent { get; private set; }
+    public  QuestEvent                QuestEvent { get; private set; } = new();
 
     protected override void Awake()
     {
-        base.Awake();
-        QuestEvent = new QuestEvent();
         questMap   = CreateQuestMap();
+        
+        base.Awake();
     }
 
 
@@ -36,7 +36,6 @@ public class QuestManager : SingletonObject<QuestManager>
         QuestEvent.OnStartQuest           += StartQuest;
         QuestEvent.OnAdvanceQuest         += AdvanceQuest;
         QuestEvent.OnFinishQuest          += FinishQuest;
-        // QuestEvent.OnQuestStateChange += ChangeQuestState;
     }
 
     private void OnDisable()
@@ -154,14 +153,18 @@ public class QuestManager : SingletonObject<QuestManager>
     private void FinishQuest(Quest quest)
     {
         Debug.Log($"Finish Quest: {quest.info.displayName}");
+        ChangeQuestState(quest.info.Id, QuestState.FINISHED);
 
         ClaimRewards(quest);
-        ChangeQuestState(quest.info.Id, QuestState.FINISHED);
     }
     
     private void ClaimRewards(Quest quest)
     {
-        //todo claim reward    
+        Debug.Log($"Claim Reward Quest: {quest.info.displayName}");
+        
+        QuestEvent.ClaimRewardQuest(quest);
+        
+        ChangeQuestState(quest.info.Id, QuestState.CLAIM_REWARD);
     }
 
     private Dictionary<string, Quest> CreateQuestMap()

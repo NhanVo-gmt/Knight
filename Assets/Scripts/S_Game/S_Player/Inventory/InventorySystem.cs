@@ -19,6 +19,27 @@ namespace Knight.Inventory
             base.Awake();
         }
 
+        private void OnEnable()
+        {
+            QuestManager.Instance.QuestEvent.OnQuestClaimRewards += ClaimQuestReward;
+        }
+
+        private void OnDisable()
+        {
+            if (QuitUtils.isQuitting) return;
+            
+            QuestManager.Instance.QuestEvent.OnQuestClaimRewards -= ClaimQuestReward;
+        }
+
+        private void ClaimQuestReward(QuestInfoSO.Reward[] rewards)
+        {
+            Debug.Log("Claim Rewards");
+            foreach (QuestInfoSO.Reward reward in rewards)
+            {
+                AddItem(reward.itemData, reward.number);
+            }
+        }
+
         public void AddItem(ItemData itemData, int number)
         {
             if (!itemDict.ContainsKey(itemData))

@@ -46,5 +46,14 @@ public class QuestEvent
         {
             OnQuestStateChange(quest);
         }
-    } 
+    }
+
+    public event Action<QuestInfoSO.Reward[]> OnQuestClaimRewards;
+    public void ClaimRewardQuest(Quest quest)
+    {
+        if (OnQuestClaimRewards != null)
+        {
+            OnQuestClaimRewards(quest.info.rewards);
+        }
+    }
 }

@@ -20,9 +20,14 @@ public class QuestInfoSO : ScriptableObject
     public GameObject[] questStepPrefabs;
 
     [Header("Rewards")]
-    public int goldReward;
-
-    public int experienceReward;
+    public Reward[] rewards;
+    
+    [Serializable]
+    public class Reward
+    {
+        public ItemData itemData;
+        public int      number;
+    }
 
     private void OnValidate()
     {
