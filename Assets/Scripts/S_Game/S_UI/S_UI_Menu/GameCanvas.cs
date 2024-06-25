@@ -49,6 +49,8 @@ namespace Knight.UI
 
         private void OnDisable()
         {
+            if (QuitUtils.isQuitting) return;
+            
             SceneLoader.Instance.OnSceneBeforeLoading -= HideGameUI;
             SceneLoader.Instance.OnSceneReadyToPlay -= ShowGameUI;
             

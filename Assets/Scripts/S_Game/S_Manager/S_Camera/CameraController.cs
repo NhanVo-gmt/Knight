@@ -99,6 +99,8 @@ namespace Knight.Camera
 
         private void OnDisable()
         {
+            if (QuitUtils.isQuitting) return;
+            
             SceneLoader.Instance.OnFirstStartGame -= SceneLoader_OnFirstStartGame;
             SceneLoader.Instance.OnSceneLoadingStarted -= SceneLoader_OnSceneLoadingStarted;
             SceneLoader.Instance.OnSceneLoadingCompleted -= SceneLoader_OnSceneLoadingCompleted;

@@ -32,6 +32,8 @@ public class DialogueHolder : MonoBehaviour
 
     private void OnDisable()
     {
+        if (QuitUtils.isQuitting) return;
+        
         QuestManager.Instance.QuestEvent.OnQuestStateChange -= QuestStateChange;
     }
 

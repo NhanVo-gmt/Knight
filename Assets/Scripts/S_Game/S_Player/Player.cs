@@ -80,6 +80,8 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
     private void OnDisable()
     {
+        if (QuitUtils.isQuitting) return;
+        
         GameManager.Instance.OnChangedGameState -= GameManager_OnChangedGameState;
         SceneLoader.Instance.OnSceneBeforeLoading -= SceneLoader_OnSceneBeforeLoading;
         SceneLoader.Instance.OnScenePlay -= SceneLoader_OnScenePlay;

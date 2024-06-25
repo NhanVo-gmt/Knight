@@ -31,6 +31,8 @@ public class LightManager : SingletonObject<LightManager>
 
     private void OnDisable()
     {
+        if (QuitUtils.isQuitting) return;
+        
         SceneLoader.Instance.OnSceneLoadingCompleted -= OnSceneLoadCompleted;
     }
 

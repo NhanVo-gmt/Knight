@@ -19,7 +19,7 @@ public class QuestManager : SingletonObject<QuestManager>
     
     #endif
     
-    private Dictionary<string, Quest> questMap;
+    private Dictionary<string, Quest> questMap = new();
     public  QuestEvent                QuestEvent { get; private set; }
 
     protected override void Awake()
@@ -166,7 +166,7 @@ public class QuestManager : SingletonObject<QuestManager>
 
     private Dictionary<string, Quest> CreateQuestMap()
     {
-        Dictionary<string, Quest> idToQuestMap = new Dictionary<string, Quest>();
+        Dictionary<string, Quest> idToQuestMap = new();
         foreach (QuestInfoSO questInfo in allQuests)
         {
             if (idToQuestMap.ContainsKey(questInfo.Id))
@@ -192,7 +192,7 @@ public class QuestManager : SingletonObject<QuestManager>
 
     public void Save()
     {
-        
+        // todo save
     }
 
     public void Load()

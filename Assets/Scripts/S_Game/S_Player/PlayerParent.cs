@@ -21,6 +21,8 @@ public class PlayerParent : SingletonObject<PlayerParent>
 
     private void OnDisable()
     {
+        if (QuitUtils.isQuitting) return;
+        
         SceneLoader.Instance.OnSceneLoadingCompleted -= SceneLoader_OnSceneLoadingCompleted;
     }
 
