@@ -53,7 +53,15 @@ public class Combat : CoreComponent, IDamageable
         settings = FindObjectOfType<GameSettings>();
     }
 
+    private void OnEnable()
+    {
+        health.OnDie += DisableTouchCombat;
+    }
 
+    private void OnDisable()
+    {
+        health.OnDie -= DisableTouchCombat;
+    }
 
     #endregion
 

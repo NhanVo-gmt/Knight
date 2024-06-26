@@ -9,11 +9,11 @@ public class InAirState : State
     protected Movement movement {get => _movement ??= core.GetCoreComponent<Movement>();}
     private Movement _movement;
     
-    protected ParticleSystemController particleController
+    protected PlayerParticleSystemController particleController
     {
-        get => _particleController ??= core.GetCoreComponent<ParticleSystemController>(); 
+        get => _particleController ??= core.GetCoreComponent<PlayerParticleSystemController>(); 
     }
-    private ParticleSystemController _particleController;
+    private PlayerParticleSystemController _particleController;
 
     private bool isPlayed;
     private float fallSpeedYDampingChangeThreshold;

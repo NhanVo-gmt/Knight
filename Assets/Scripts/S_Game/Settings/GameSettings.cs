@@ -25,6 +25,9 @@ public class GameSettings : SingletonObject<GameSettings>
     public float WeakKnockbackAmount = 200;
     public float StrongKnockbackAmount = 10000;
 
+    [Header("Enemy")]
+    public ParticleData deathParticle;
+
     [Header("Drop")] 
     public PooledObjectData soul;
 

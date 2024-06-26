@@ -6,12 +6,12 @@ using UnityEngine.Serialization;
 
 public class Health : CoreComponent
 {
-    [SerializeField] int health; //todo set private
+    [SerializeField] [ReadOnlyInspector] private int health;
     private int maxHealth;
 
+    public Action<int> OnUpdateHealth;
     public Action<bool> OnTakeDamage;
     public Action OnDie;
-    public Action<int> OnUpdateHealth;
 
     public Action OnResetGroundPosition;
 

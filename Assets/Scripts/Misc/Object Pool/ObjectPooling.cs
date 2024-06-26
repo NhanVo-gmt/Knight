@@ -29,8 +29,14 @@ public class ObjectPooling : MonoBehaviour
 
         GameObject CreatePooledItem()
         {
-            GameObject createdGO = GameObject.Instantiate(prefab);
-            createdGO.GetComponent<PooledObject>().pool = pool;
+            GameObject createdGO = Instantiate(prefab);
+
+            if (!createdGO.TryGetComponent<PooledObject>(out PooledObject pooledObject))
+            {
+                pooledObject = createdGO.AddComponent<PooledObject>();
+            }
+            
+            pooledObject.pool = pool;
             DontDestroyOnLoad(createdGO);
             return createdGO;
         }

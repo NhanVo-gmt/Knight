@@ -23,7 +23,8 @@ public class Core : MonoBehaviour
 
         if (component == null)
         {
-            Debug.LogError($"There is no component {typeof(T)} on this {gameObject.name}");
+            Debug.LogWarning($"There is no component {typeof(T)} on this {gameObject.name}");
+            return GetComponentInChildren<T>();
         }
 
         return component;

@@ -2622,7 +2622,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4958187610873031202, guid: a1ff69b7f7ef4ee45901b27f9409e68d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3001,6 +3001,22 @@ PrefabInstance:
       propertyPath: itemDict._serializedList.Array.data[0].Value.itemData
       value: 
       objectReference: {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
+    - target: {fileID: 5427306036223338723, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: pooledPrefabList.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427306036223338723, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: pooledPrefabList.Array.data[5].prefab
+      value: 
+      objectReference: {fileID: 4294183598340322918, guid: e70ddaeafb450ef4f85809df583734d1, type: 3}
+    - target: {fileID: 5427306036223338723, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: pooledPrefabList.Array.data[5].poolType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5427306036223338723, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: pooledPrefabList.Array.data[5].amountToPool
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5523433867184744012, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_Alpha
       value: 0
@@ -3198,6 +3214,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
     - target: {fileID: 7421027141986219752, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
+      propertyPath: deathParticle
+      value: 
+      objectReference: {fileID: 11400000, guid: 405b60e25123961428088df7073600cc, type: 2}
+    - target: {fileID: 7421027141986219752, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: CurrencyDict._serializedList.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -3219,7 +3239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7660235967936336526, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: 374.27142
       objectReference: {fileID: 0}
     - target: {fileID: 7831832849339889417, guid: 387c1a2665f638947ac61dcbc1c4cd33, type: 3}
       propertyPath: m_LocalPosition.x
