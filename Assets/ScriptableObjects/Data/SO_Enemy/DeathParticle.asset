@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50a961975200104ba3099d5e096b1ff, type: 3}
   m_Name: DeathParticle
   m_EditorClassIdentifier: 
-  spawnPos: {x: 0, y: 1.5}
-  spawnRot: {x: -15, y: 90, z: 0}
+  spawnPos: {x: -0.2, y: 1.3}
+  spawnRot: {x: -25, y: 90, z: 0}
   needPlayerDirection: 1
   lifeTime: 5
   particleSystem: {fileID: 4294183598340322918, guid: e70ddaeafb450ef4f85809df583734d1, type: 3}
