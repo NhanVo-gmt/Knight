@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using UnityEditor;
 using UnityEngine;
 
 public static class HelperMethods
@@ -40,6 +42,16 @@ public static class EditorHelperMethods
             assets.Add(asset);
         }
         return assets;
+    }
+
+    public static string GetAssetPath(Object obj)
+    {
+        return AssetDatabase.GetAssetPath(obj);
+    }
+
+    public static string GetFolderAssetPath(Object obj)
+    {
+        return Path.GetDirectoryName(AssetDatabase.GetAssetPath(obj));
     }
 }
 #endif

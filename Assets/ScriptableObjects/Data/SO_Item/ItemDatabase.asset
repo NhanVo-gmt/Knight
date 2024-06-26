@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e877fec4cce667a4c8e6ee07390f1ff6, type: 3}
   m_Name: ItemDatabase
   m_EditorClassIdentifier: 
-  itemDataList:
-  - {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
-  - {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
-  - {fileID: 11400000, guid: 7132e0afa8f3b6347a6c2fea3ef539cf, type: 2}
+  itemDataDictionary:
+    _serializedList:
+    - Key: 2
+      Value: {fileID: 11400000, guid: 789a49ac164c1b94b83d7e7077c2d895, type: 2}
+    - Key: 3
+      Value: {fileID: 11400000, guid: fb80afc047b7fcb41875dd9544c1557d, type: 2}
+    - Key: 1
+      Value: {fileID: 11400000, guid: 3fbf15fece40f3f4ab361d078bc95edd, type: 2}

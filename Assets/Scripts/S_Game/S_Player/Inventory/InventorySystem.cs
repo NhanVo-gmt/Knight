@@ -7,10 +7,12 @@ namespace Knight.Inventory
 {
     using AYellowpaper.SerializedCollections;
     
-    public class InventorySystem : SingletonObject<InventorySystem>
+    public class InventorySystem : SingletonObject<InventorySystem>, IDataPersistence
     {
         [SerializedDictionary("ItemData", "Information")]
         public SerializedDictionary<ItemData, int> itemDict = new();
+
+        [SerializeField] public ItemDatabaseData ItemDatabaseData;
 
         public Action<ItemData, int> OnChangedItem;
 
@@ -74,6 +76,22 @@ namespace Knight.Inventory
 
             return false;
         }
-            
+
+        public void LoadData(GameData gameData)
+        {
+            itemDict = new();
+            foreach (var item in gameData.itemInventoryDict)
+            {
+                itemDict.Add(ItemDatabaseData.GetItem(item.Key), item.Value);
+            }
+        }
+        public void SaveData(ref GameData data)
+        {
+            data.itemInventoryDict = new();
+            foreach (var item in itemDict)
+            {
+                data.itemInventoryDict.Add(item.Key.id, item.Value);
+            }
+        }
     }
 }

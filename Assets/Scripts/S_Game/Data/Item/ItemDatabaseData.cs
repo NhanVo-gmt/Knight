@@ -2,40 +2,35 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ItemDatabase", menuName = "ScriptableObjects/Data/Item/Itemdatabase")]
 public class ItemDatabaseData : ScriptableObject
 {
-    [SerializeField] private List<ItemData> itemDataList = new List<ItemData>(); //todo for visibility
-    private Dictionary<int, ItemData> itemDataDictionary = new Dictionary<int, ItemData>(); // used to query
+    [SerializedDictionary("Id", "Item Data")]
+    [SerializeField] private SerializedDictionary<string, ItemData> itemDataDictionary = new(); // used to query
 #if  UNITY_EDITOR
+
     public void AddItem(ItemData itemData)
     {
-        itemDataList.Add(itemData);
+        itemDataDictionary.Add(itemData.id, itemData);
     }
-
-    public void SortItem()
-    {
-        itemDataList.Sort((x,y) => x.id.CompareTo(y.id));
-        UpdateDictionary();
-    }
-
-    private void OnValidate()
-    {
-        UpdateDictionary();
-    }
-
+    
+    [ContextMenu("Update Dictionary")]
     private void UpdateDictionary()
     {
         itemDataDictionary.Clear();
+
+        string         folderPath = EditorHelperMethods.GetFolderAssetPath(this);
+        List<ItemData> itemDataList  = EditorHelperMethods.FindAssets<ItemData>(folderPath);
+        itemDataDictionary = new(itemDataList.ToDictionary(x => x.id, y => y));
         
-        itemDataDictionary = itemDataList.ToList().ToDictionary(x => x.id, x => x);
         Debug.Log("Updating dictionary");
     }
 #endif
 
-    public ItemData GetItem(int id)
+    public ItemData GetItem(string id)
     {
         if (itemDataDictionary.TryGetValue(id, out ItemData itemData))
         {
