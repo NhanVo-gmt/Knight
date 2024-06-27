@@ -14,15 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemDictionary:
     _serializedList:
-    - Key: {fileID: 11400000, guid: 7132e0afa8f3b6347a6c2fea3ef539cf, type: 2}
+    - Key: {fileID: 11400000, guid: 789a49ac164c1b94b83d7e7077c2d895, type: 2}
       Value:
-        ItemData: {fileID: 11400000, guid: 7132e0afa8f3b6347a6c2fea3ef539cf, type: 2}
+        ItemData: {fileID: 11400000, guid: 789a49ac164c1b94b83d7e7077c2d895, type: 2}
         Number: 2
         CurrencyType: 0
         Price: 10
-    - Key: {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
+    - Key: {fileID: 11400000, guid: fb80afc047b7fcb41875dd9544c1557d, type: 2}
       Value:
-        ItemData: {fileID: 11400000, guid: b5a2dd58e71849948b99c8e796c2f43a, type: 2}
+        ItemData: {fileID: 11400000, guid: fb80afc047b7fcb41875dd9544c1557d, type: 2}
         Number: 2
         CurrencyType: 0
         Price: 10

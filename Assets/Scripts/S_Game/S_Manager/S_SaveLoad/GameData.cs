@@ -11,7 +11,9 @@ public class GameData
     public string sceneName;
     public Vector2 playerPos;
     public string playerState;
-    
+
+    [Header("NPC")]
+    public SerializedDictionary<string, NPCSaveData> npcDict = new();
     
     [Header("Inventory")]
     public SerializedDictionary<string, int> itemInventoryDict = new();
@@ -26,5 +28,18 @@ public class GameData
         
         itemInventoryDict = new();
         bossDefeated      = new List<string>();
+    }
+    
+    [Serializable]
+    public class NPCSaveData
+    {
+        public string                                                        Id;
+        public SerializedDictionary<string, ShopItemData.ShopSingleItemData> ShopSaveData = new();
+
+        public NPCSaveData(string id)
+        {
+            Id           = id;
+            ShopSaveData = new();
+        }
     }
 }

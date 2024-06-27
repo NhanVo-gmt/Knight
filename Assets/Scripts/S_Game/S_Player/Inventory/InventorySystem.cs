@@ -12,8 +12,6 @@ namespace Knight.Inventory
         [SerializedDictionary("ItemData", "Information")]
         public SerializedDictionary<ItemData, int> itemDict = new();
 
-        [SerializeField] public ItemDatabaseData ItemDatabaseData;
-
         public Action<ItemData, int> OnChangedItem;
 
         protected override void Awake()
@@ -77,12 +75,17 @@ namespace Knight.Inventory
             return false;
         }
 
+        public bool IsLoadFirstTime()
+        {
+            return true;
+        }
+        
         public void LoadData(GameData gameData)
         {
             itemDict = new();
             foreach (var item in gameData.itemInventoryDict)
             {
-                itemDict.Add(ItemDatabaseData.GetItem(item.Key), item.Value);
+                itemDict.Add(GameSettings.Instance.ItemDatabaseData.GetItem(item.Key), item.Value);
             }
         }
         public void SaveData(ref GameData data)

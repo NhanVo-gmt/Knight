@@ -327,6 +327,11 @@ public class Player : SingletonObject<Player>, IDataPersistence
 
     #region Save Load
 
+    public bool IsLoadFirstTime()
+    {
+        return true;
+    }
+    
     public void LoadData(GameData gameData)
     {
         // Player movePos will be load by scene loader

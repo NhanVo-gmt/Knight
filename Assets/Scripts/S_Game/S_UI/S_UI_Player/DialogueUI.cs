@@ -13,7 +13,6 @@ public class DialogueUI : PageUI
         base.Awake();
         
         ToggleConversation(false);
-        Hide();
     }
 
     public void ToggleConversation(bool active)

@@ -15,8 +15,8 @@ MonoBehaviour:
   spawnPos: {x: 0, y: 0}
   spawnRot: {x: 0, y: 0, z: 0}
   needPlayerDirection: 0
-  lifeTime: 0
-  id: 
+  lifeTime: 100
+  id: 1
   itemName: Soul
-  sprite: {fileID: 0}
+  sprite: {fileID: 8871522976523488456, guid: f9f5457e3719d6a4eacb5f3df8179dbf, type: 3}
   itemDescription: Currency for buying and trading item

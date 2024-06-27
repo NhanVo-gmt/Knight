@@ -43,8 +43,7 @@ public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
                 }
 
                 Debug.LogWarning($"[{nameof(MonoBehaviour)}<{typeof(T)}>] An instance is needed in the scene and no existing instances were found, so a new instance will be created.");
-                return _instance = new GameObject($"({nameof(MonoBehaviour)}){typeof(T)}")
-                    .AddComponent<T>();
+                return null;
             }
         }
     }

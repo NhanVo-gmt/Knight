@@ -37,7 +37,7 @@ public class ItemDatabaseData : ScriptableObject
             return itemData;
         }
 
-        Debug.LogError("There is no items on the dictionary");
+        Debug.LogError($"There is no item with id {id} on the dictionary");
         return null;
     }
 

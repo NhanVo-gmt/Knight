@@ -131,13 +131,11 @@ namespace Knight.UI
         private void HideGameUI(object sender, EventArgs e)
         {
             HidePage<InGameUI>();
-            HidePage<DialogueUI>();
         }
         
         private void ShowGameUI(object sender, EventArgs e)
         {
             ShowPage<InGameUI>();
-            ShowPage<DialogueUI>();
         }
 
         #endregion

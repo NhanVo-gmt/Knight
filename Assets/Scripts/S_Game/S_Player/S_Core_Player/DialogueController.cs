@@ -29,7 +29,6 @@ public class DialogueController : MonoBehaviour
     private void Awake()
     {
         inputManager = GetComponentInParent<InputManager>();
-        
     }
 
     private void Start()
@@ -161,7 +160,7 @@ public class DialogueController : MonoBehaviour
         inGameUI.Toggle(false);
         
         ShopUI shopUI = GameCanvas.GetPage<ShopUI>();
-        shopUI.PopulateShopItems(currentNode.ShopItem);
+        shopUI.PopulateShopItems(dialogueHolder.GetShopData());
         
         // todo toggle shop tat het o trong game ui
         shopUI.Toggle();

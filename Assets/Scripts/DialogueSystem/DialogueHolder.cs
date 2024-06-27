@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using DS.ScriptableObjects;
 using UnityEngine;
 using System;
+using System.Linq;
 
-public class DialogueHolder : MonoBehaviour
+public class DialogueHolder : MonoBehaviour, IDataPersistence
 {
+    [Header("NPC")]
+    [SerializeField] private string id;
+    
     [Header("Dialogue")]
     [SerializeField] private DSDialogueContainerSO dialogue;
     
     [Header("Quest")]
-    [SerializeField] private QuestInfoSO           questInfo;
+    [SerializeField] private QuestInfoSO questInfo;
+
+    [Header("Shop")]
+    [SerializeField] private ShopItemData shopItemData;
 
     [SerializeField] private bool startPoint;
     [SerializeField] private bool finishPoint;
@@ -51,6 +58,15 @@ public class DialogueHolder : MonoBehaviour
 
     #endregion
 
+    #region Shop
+
+    public ShopItemData GetShopData()
+    {
+        return shopItemData;
+    }
+
+    #endregion
+
 
     #region Quest
 
@@ -71,4 +87,28 @@ public class DialogueHolder : MonoBehaviour
     }
 
     #endregion
+
+    public bool IsLoadFirstTime()
+    {
+        return false;
+    }
+    public void LoadData(GameData gameData)
+    {
+        if (gameData.npcDict.TryGetValue(id, out GameData.NPCSaveData npcSaveData))
+        {
+            shopItemData.ItemDictionary =
+                new(npcSaveData.ShopSaveData.ToDictionary(x => GameSettings.Instance.ItemDatabaseData.GetItem(x.Key),
+                    y => y.Value));
+        }
+    }
+    
+    public void SaveData(ref GameData data)
+    {
+        if (!data.npcDict.ContainsKey(id))
+        {
+            data.npcDict.Add(id, new(id));
+        }
+
+        data.npcDict[id].ShopSaveData = new(shopItemData.ItemDictionary.ToDictionary(x => x.Key.id, y => y.Value));
+    }
 }
