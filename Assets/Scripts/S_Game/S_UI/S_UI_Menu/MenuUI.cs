@@ -61,6 +61,7 @@ namespace Knight.UI
         
         IEnumerator LoadGameCoroutine()
         {
+            listener.enabled = false;
             SceneLoader.Instance.StartGame();
             GameSettings.Instance.StartGame();
             canvasGroup.alpha = 0f;
