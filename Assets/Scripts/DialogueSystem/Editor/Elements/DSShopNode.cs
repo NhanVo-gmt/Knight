@@ -35,7 +35,7 @@ namespace DS.Elements
             VisualElement customDataContainer = new VisualElement();
             customDataContainer.AddClasses("ds-node__custom-data-container");
 
-            Foldout textFoldout = DSElementUtility.CreateFoldout("Dialogue Text");
+            Foldout textFoldout = DSElementUtility.CreateFoldout("Shop Item");
 
             ObjectField objectField = DSElementUtility.CreateObjectField<ShopItemData>(itemData, null);
             objectField.RegisterValueChangedCallback(

@@ -25,6 +25,9 @@ public class GameSettings : SingletonObject<GameSettings>
     public float WeakKnockbackAmount = 200;
     public float StrongKnockbackAmount = 10000;
 
+    [Header("Enemy")]
+    public ParticleData deathParticle;
+
     [Header("Drop")] 
     public PooledObjectData soul;
 
@@ -37,14 +40,16 @@ public class GameSettings : SingletonObject<GameSettings>
     [SerializedDictionary("Currency", "Data")]
     public SerializedDictionary<CurrencyType, ItemData> CurrencyDict;
 
+    [Header("Item Database")]
+    [SerializeField] public ItemDatabaseData ItemDatabaseData;
 
     public Action OnGameInitialized;
 
     public void StartGame()
     {
+        Instantiate(playerUI, Vector2.zero, Quaternion.identity);
         Instantiate(player, Vector2.zero, Quaternion.identity);
         Instantiate(playerCam, Vector2.zero, Quaternion.identity);
-        Instantiate(playerUI, Vector2.zero, Quaternion.identity);
 
         OnGameInitialized?.Invoke();
     }

@@ -49,6 +49,11 @@ public class BossArea : MonoBehaviour, IDataPersistence
         }
     }
 
+    public bool IsLoadFirstTime()
+    {
+        return false;
+    }
+    
     public void LoadData(GameData gameData)
     {
         foreach (string bossStr in gameData.bossDefeated)

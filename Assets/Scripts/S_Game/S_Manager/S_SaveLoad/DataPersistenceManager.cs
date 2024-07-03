@@ -24,19 +24,8 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
         FindAllDataPersistenceObjects();
     }
 
-    private void Start()
-    {
-        // todo
-        // SceneLoader.Instance.OnScenePlay += SceneLoader_OnScenePlay;
-    }
 
-    public void SceneLoader_OnScenePlay(object sender, EventArgs e)
-    {
-        canSaveGame = true;
-    }
-
-
-    private void FindAllDataPersistenceObjects()
+    public void FindAllDataPersistenceObjects()
     {
         IEnumerable<IDataPersistence> dataPersistenceObjects =
             FindObjectsOfType<MonoBehaviour>().OfType<IDataPersistence>();
@@ -56,7 +45,7 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
         }
     }
 
-    public void LoadGame()
+    public void LoadGame(bool loadFirstTime = false)
     {
         Debug.Log("Load Game");
         
@@ -73,6 +62,8 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
         // push the loaded data to all other scripts
         foreach (IDataPersistence dataPersistence in dataPersistenceObjects)
         {
+            if (!loadFirstTime && dataPersistence.IsLoadFirstTime()) continue;
+            
             dataPersistence.LoadData(gameData);
         }
     }
@@ -99,5 +90,12 @@ public class DataPersistenceManager : SingletonObject<DataPersistenceManager>
         gameData = fileDataHandler.Load();
         
         return gameData != null;
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (!canSaveGame) return;
+        
+        SaveGame();
     }
 }

@@ -356,6 +356,7 @@ Transform:
   - {fileID: 5936059061492827463}
   - {fileID: 5461152627857106470}
   - {fileID: 1302909654475907028}
+  - {fileID: 3711370989520600573}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6911535378620299280
@@ -378,12 +379,15 @@ MonoBehaviour:
   PlayerKnockbackAmount: 10
   WeakKnockbackAmount: 15
   StrongKnockbackAmount: 20
-  soul: {fileID: 11400000, guid: 8bbdff5752294f04d90ce9914254cec2, type: 2}
+  deathParticle: {fileID: 11400000, guid: 405b60e25123961428088df7073600cc, type: 2}
+  soul: {fileID: 11400000, guid: 3fbf15fece40f3f4ab361d078bc95edd, type: 2}
   flashMat: {fileID: 2100000, guid: b92ee72cbc0aa6340ad49ccb19f8c7c3, type: 2}
   flashCoolDown: 0.2
   flashGlowMat: {fileID: 2100000, guid: 3805b295fc0d4e044a42c035399d2676, type: 2}
   CurrencyDict:
-    _serializedList: []
+    _serializedList:
+    - Key: 0
+      Value: {fileID: 11400000, guid: 3fbf15fece40f3f4ab361d078bc95edd, type: 2}
   mapData: {fileID: 11400000, guid: adba4b9a6a74d6d40826207827676b8a, type: 2}
 --- !u!114 &8234785762340972059
 MonoBehaviour:
@@ -413,6 +417,9 @@ MonoBehaviour:
   - prefab: {fileID: 8726307433354808246, guid: 5d7d5c53ab79cd74d81db820b7203b52, type: 3}
     poolType: 2
     amountToPool: 10
+  - prefab: {fileID: 4294183598340322918, guid: e70ddaeafb450ef4f85809df583734d1, type: 3}
+    poolType: 2
+    amountToPool: 10
 --- !u!114 &8203831248180815338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -440,7 +447,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemDict:
-    _serializedList: []
+    _serializedList:
+    - Key: {fileID: 11400000, guid: 3fbf15fece40f3f4ab361d078bc95edd, type: 2}
+      Value: 100
+  ItemDatabaseData: {fileID: 11400000, guid: e4abbeaf3422c7640a730aba10dd4a2e, type: 2}
 --- !u!114 &5157018599685425844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -516,6 +526,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e051fcf9b24201d4686550ecb7334bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &7853823367785100117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3711370989520600573}
+  - component: {fileID: 5468731453991592186}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3711370989520600573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853823367785100117}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2926776286104564711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5468731453991592186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7853823367785100117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a030c4f98cdc2bd45ac3bd2d56120f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  allQuests:
+  - {fileID: 11400000, guid: 5112f3842e054bf459965dda97b3bc68, type: 2}
 --- !u!1 &8032379813406300702
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,7 +632,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 100
   m_TargetDisplay: 0
 --- !u!114 &594073887287027770
 MonoBehaviour:
@@ -590,10 +646,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3

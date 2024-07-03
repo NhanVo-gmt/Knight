@@ -78,6 +78,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     public void LoadFirstScene(SceneLoaderEnum.Scene scene)
     {
         StartCoroutine(LoadFirstSceneCoroutine(scene));
+        
+        DataPersistenceManager.Instance.FindAllDataPersistenceObjects();
     }
 
     IEnumerator LoadFirstSceneCoroutine(SceneLoaderEnum.Scene scene)
@@ -103,6 +105,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
     public void ChangeScene(SceneLoaderEnum.Scene scene, Vector2 newPos)
     {
+        DataPersistenceManager.Instance.SaveGame();
+        
         StartCoroutine(ChangeSceneCoroutine(scene, newPos));
     }
 
@@ -128,6 +132,8 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     
     IEnumerator OnSceneLoadingCompletedCoroutine()
     {
+        DataPersistenceManager.Instance.FindAllDataPersistenceObjects();
+        DataPersistenceManager.Instance.LoadGame();
         OnSceneLoadingCompleted?.Invoke(this, EventArgs.Empty);
 
         yield return new WaitForSeconds(1f);
@@ -144,7 +150,6 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
 
     void Update() {
         if (loadingOperation == null) return;
-
         if (!loadingOperation.isDone)
         {
             OnSceneLoadingProgressChanged?.Invoke(this, loadingOperation.progress);
@@ -158,6 +163,11 @@ public partial class SceneLoader : SingletonObject<SceneLoader>, IDataPersistenc
     
     #region Save Load
 
+    public bool IsLoadFirstTime()
+    {
+        return true;
+    }
+    
     public void LoadData(GameData gameData)
     {
         playerStartPos = gameData.playerPos;

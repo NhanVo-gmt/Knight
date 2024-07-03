@@ -16,6 +16,7 @@ namespace DS.ScriptableObjects
         
         public List<DSDialogueChoiceData> Choices;
         public ShopItemData               ShopItem;
+        public QuestInfoSO                QuestInfo;
 
         public void Initialize(string dialogueName, string text, List<DSDialogueChoiceData> choices, DSDialogueType dialogueType,
             bool isStartingDialogue)

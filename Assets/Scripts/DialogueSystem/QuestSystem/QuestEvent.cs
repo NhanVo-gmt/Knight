@@ -3,6 +3,15 @@ using System;
 
 public class QuestEvent
 {
+    public event Action<string> OnStartOrContinueQuest;
+    public void StartOrContinueQuest(string id)
+    {
+        if (OnStartOrContinueQuest != null)
+        {
+            OnStartOrContinueQuest(id);
+        }
+    }
+    
     public event Action<string> OnStartQuest;
     public void StartQuest(string id)
     {
@@ -37,5 +46,14 @@ public class QuestEvent
         {
             OnQuestStateChange(quest);
         }
-    } 
+    }
+
+    public event Action<QuestInfoSO.Reward[]> OnQuestClaimRewards;
+    public void ClaimRewardQuest(Quest quest)
+    {
+        if (OnQuestClaimRewards != null)
+        {
+            OnQuestClaimRewards(quest.info.rewards);
+        }
+    }
 }

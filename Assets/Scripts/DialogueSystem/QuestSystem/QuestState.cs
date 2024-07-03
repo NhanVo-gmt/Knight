@@ -9,4 +9,5 @@ public enum QuestState
     IN_PROGRESS = 2,
     CAN_FINISH = 3,
     FINISHED = 4,
+    CLAIM_REWARD = 5,
 }

@@ -49,6 +49,8 @@ namespace Knight.UI
 
         private void OnDisable()
         {
+            if (QuitUtils.isQuitting) return;
+            
             SceneLoader.Instance.OnSceneBeforeLoading -= HideGameUI;
             SceneLoader.Instance.OnSceneReadyToPlay -= ShowGameUI;
             
@@ -129,13 +131,11 @@ namespace Knight.UI
         private void HideGameUI(object sender, EventArgs e)
         {
             HidePage<InGameUI>();
-            HidePage<DialogueUI>();
         }
         
         private void ShowGameUI(object sender, EventArgs e)
         {
             ShowPage<InGameUI>();
-            ShowPage<DialogueUI>();
         }
 
         #endregion

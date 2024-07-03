@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,9 +7,21 @@ using UnityEngine;
 public class ItemData : PooledObjectData
 {
     [Header("Item")]
-    public int id;
+    public string id;
 
     public string itemName;
     public Sprite sprite;
     [TextArea(5, 10)] public string itemDescription;
+
+#if UNITY_EDITOR
+
+    private void OnValidate()
+    {
+        if (string.IsNullOrWhiteSpace(id))
+        {
+            id = System.Guid.NewGuid().ToString();
+        }
+    }
+
+#endif
 }

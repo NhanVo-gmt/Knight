@@ -4,14 +4,14 @@ using UnityEngine;
 
 public static class SpriteMethods
 {
-    public static IEnumerator FadeIn(this SpriteRenderer sprite)
+    public static IEnumerator FadeIn(this SpriteRenderer sprite, float duration = 0.5f)
     {
-        yield return Fade(sprite, 1f);
+        yield return Fade(sprite, 1f, duration);
     }
 
-    public static IEnumerator FadeOut(this SpriteRenderer sprite)
+    public static IEnumerator FadeOut(this SpriteRenderer sprite, float duration = 0.5f)
     {
-        yield return Fade(sprite, 0f);
+        yield return Fade(sprite, 0f, duration);
     }
     
     public static IEnumerator Fade(this SpriteRenderer sprite, float targetAlpha, float duration = 0.5f)

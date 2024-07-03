@@ -5,6 +5,7 @@ using System;
 using DS.Enumerations;
 using DS.ScriptableObjects;
 using Knight.UI;
+using UnityEngine.Serialization;
 
 public class DialogueController : MonoBehaviour
 {
@@ -14,17 +15,20 @@ public class DialogueController : MonoBehaviour
     [SerializeField] [ReadOnlyInspector] private InGameUI   inGameUI; 
     [SerializeField] [ReadOnlyInspector] private DialogueUI dialogueUI;
 
+    [Header("Dialogue")]
     [ReadOnlyInspector] public DialogueHolder        dialogueHolder;
     [ReadOnlyInspector] public DSDialogueContainerSO currentDialogue; 
     DSDialogueSO                                     currentNode;
+
     
     private InputManager inputManager;
     private bool         isSpeedup = false;
 
+    public Action OnFinishDialogue;
+    
     private void Awake()
     {
         inputManager = GetComponentInParent<InputManager>();
-        
     }
 
     private void Start()
@@ -33,7 +37,6 @@ public class DialogueController : MonoBehaviour
         dialogueUI = GameCanvas.GetPage<DialogueUI>();
     }
 
-    public Action onFinishDialogue;
 
     public void StartConversation()
     {
@@ -69,6 +72,11 @@ public class DialogueController : MonoBehaviour
         
         yield return new WaitUntil(() => IsMoveToNextDialogue());
 
+        MoveToNextNode();   
+    }
+
+    void MoveToNextNode()
+    {
         if (HaveNextNode())
         {
             if (IsDialogueNode())
@@ -83,6 +91,7 @@ public class DialogueController : MonoBehaviour
                         OpenShop();
                         break;
                     case DSDialogueType.Quest:
+                        OpenQuest();
                         break;
                 }
             }
@@ -117,7 +126,7 @@ public class DialogueController : MonoBehaviour
         {
             dialogueUI.EndConversation();
             
-            onFinishDialogue?.Invoke();
+            OnFinishDialogue?.Invoke();
             
             dialogueHolder.EndConversation();
         }
@@ -151,9 +160,18 @@ public class DialogueController : MonoBehaviour
         inGameUI.Toggle(false);
         
         ShopUI shopUI = GameCanvas.GetPage<ShopUI>();
-        shopUI.PopulateShopItems(currentNode.ShopItem);
+        shopUI.PopulateShopItems(dialogueHolder.GetShopData());
         
         // todo toggle shop tat het o trong game ui
         shopUI.Toggle();
+    }
+
+    public void OpenQuest()
+    {
+        ToggleDialogueUI(false);
+        
+        if (currentNode.QuestInfo == null) return;
+        
+        dialogueHolder.StartOrContinueQuest();
     }
 }

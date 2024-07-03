@@ -15,6 +15,7 @@ public class InteractionController : CoreComponent
     
     private InputManager inputManager;
     private DialogueController dialogueController;
+    
     private InteractableArea interactableArea;
 
     public Action OnFinishInteract;
@@ -31,12 +32,12 @@ public class InteractionController : CoreComponent
 
     void OnEnable() 
     {
-        dialogueController.onFinishDialogue += FinishInteract;
+        dialogueController.OnFinishDialogue += FinishInteract;
     }
 
     void OnDisable() 
     {
-        dialogueController.onFinishDialogue -= FinishInteract;
+        dialogueController.OnFinishDialogue -= FinishInteract;
     }
 
     void Update() 

@@ -1,13 +1,15 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class Quest
 {
     public QuestInfoSO info;
+    [SerializeField][ReadOnlyInspector] private List<QuestStep> currentQuestStep = new();
 
     public  QuestState state;
     private int        currentQuestStepIndex;
+
 
     public Quest(QuestInfoSO questInfo)
     {
@@ -26,12 +28,27 @@ public class Quest
         return currentQuestStepIndex < info.questStepPrefabs.Length;
     }
 
+    public bool IsFinishedCurrentStep()
+    {
+        return currentQuestStep.Count == 0;
+    }
+
     public void InstantiateCurrentQuestStep(Transform parentTransform)
     {
         GameObject questStepPrefab = GetCurrentQuestStepPrefab();
         if (questStepPrefab != null)
         {
-            Object.Instantiate<GameObject>(questStepPrefab, parentTransform);
+            // todo object pooling
+            QuestStep questStep = Object.Instantiate<GameObject>(questStepPrefab, parentTransform).GetComponent<QuestStep>();
+            questStep.InitializeQuestStep(info.Id);
+            questStep.OnFinish += OnQuestStepFinish;
+            
+            currentQuestStep.Add(questStep);
+        }
+
+        void OnQuestStepFinish(QuestStep questStep)
+        {
+            currentQuestStep.Remove(questStep);
         }
     }
 

@@ -47,23 +47,11 @@ public class AnimatorController : CoreComponent
         }
     }
 
-    void Start() 
-    {
-        health = core.GetCoreComponent<Health>();
-        health.OnTakeDamage += StartHitVFX;
-    }
-
     private void OnEnable()
     {
-        StartCoroutine(OnEnableCoroutine());
-    }
-
-    IEnumerator OnEnableCoroutine()
-    {
-        yield return new WaitUntil(() => core.GetCoreComponent<Health>() != null);
-        health = core.GetCoreComponent<Health>();
+        health              =  core.GetCoreComponent<Health>();
         health.OnTakeDamage += StartHitVFX;
-        health.OnDie += Die;
+        health.OnDie        += Die;
     }
 
     private void OnDisable()
@@ -163,7 +151,8 @@ public class AnimatorController : CoreComponent
 
     IEnumerator DieCoroutine()
     {
-        yield return sprite.FadeOut();
+        yield return new WaitForSeconds(1f);
+        yield return sprite.FadeOut(1f);
         OnDie?.Invoke();
     }
 

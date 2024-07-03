@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class ParticleSystemController : CoreComponent
+public class PlayerParticleSystemController : CoreComponent
 {
     [Serializable]
     class ParticleRegion

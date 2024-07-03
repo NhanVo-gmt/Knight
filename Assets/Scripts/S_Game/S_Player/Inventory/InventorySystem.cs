@@ -7,7 +7,7 @@ namespace Knight.Inventory
 {
     using AYellowpaper.SerializedCollections;
     
-    public class InventorySystem : SingletonObject<InventorySystem>
+    public class InventorySystem : SingletonObject<InventorySystem>, IDataPersistence
     {
         [SerializedDictionary("ItemData", "Information")]
         public SerializedDictionary<ItemData, int> itemDict = new();
@@ -17,6 +17,27 @@ namespace Knight.Inventory
         protected override void Awake()
         {
             base.Awake();
+        }
+
+        private void OnEnable()
+        {
+            QuestManager.Instance.QuestEvent.OnQuestClaimRewards += ClaimQuestReward;
+        }
+
+        private void OnDisable()
+        {
+            if (QuitUtils.isQuitting) return;
+            
+            QuestManager.Instance.QuestEvent.OnQuestClaimRewards -= ClaimQuestReward;
+        }
+
+        private void ClaimQuestReward(QuestInfoSO.Reward[] rewards)
+        {
+            Debug.Log("Claim Rewards");
+            foreach (QuestInfoSO.Reward reward in rewards)
+            {
+                AddItem(reward.itemData, reward.number);
+            }
         }
 
         public void AddItem(ItemData itemData, int number)
@@ -42,14 +63,38 @@ namespace Knight.Inventory
             return false;
         }
         
-        public void BuyItem(ShopItemData.ShopSingleItemData singleItemData, int number)
+        public bool BuyItem(ShopItemData.ShopSingleItemData singleItemData, int number)
         {
             ItemData currencyData = GameSettings.Instance.CurrencyDict[CurrencyType.Soul];
             if (UseItem(currencyData, singleItemData.Price * number))
             {
                 AddItem(singleItemData.ItemData, number);
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsLoadFirstTime()
+        {
+            return true;
+        }
+        
+        public void LoadData(GameData gameData)
+        {
+            itemDict = new();
+            foreach (var item in gameData.itemInventoryDict)
+            {
+                itemDict.Add(GameSettings.Instance.ItemDatabaseData.GetItem(item.Key), item.Value);
             }
         }
-            
+        public void SaveData(ref GameData data)
+        {
+            data.itemInventoryDict = new();
+            foreach (var item in itemDict)
+            {
+                data.itemInventoryDict.Add(item.Key.id, item.Value);
+            }
+        }
     }
 }

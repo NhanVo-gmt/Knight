@@ -45,6 +45,7 @@ public class ObjectPoolFactory : MonoBehaviour
         SetUpSpawnPrefab(spawnedPrefab, data);
         SetPrefabPosition(spawnedPrefab, data, characterPos, faceDirection);
         SetPrefabRotation(spawnedPrefab, data, faceDirection);
+        spawnedPrefab.SetActive(true);
         return spawnedPrefab;
     }
     

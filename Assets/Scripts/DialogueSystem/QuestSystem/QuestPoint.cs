@@ -3,17 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CircleCollider2D))]
-public class QuestPoint : MonoBehaviour
+public class QuestPoint
 {
-    [Header("Quest")]
-    [SerializeField] private QuestInfoSO questInfoPoint;
+    [SerializeField] [ReadOnlyInspector] private QuestInfoSO questInfoPoint;
 
     private bool       playerIsNear = false;
     private string     questId;
     private QuestState currentQuestState;
 
-    private void Awake()
+    private void Initalize()
     {
         questId = questInfoPoint.Id;
     }
@@ -35,20 +33,5 @@ public class QuestPoint : MonoBehaviour
             currentQuestState = quest.state;
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIsNear = true;
-        }
-    }
     
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerIsNear = false;
-        }
-    }
 }

@@ -21,6 +21,8 @@ public class PlayerParent : SingletonObject<PlayerParent>
 
     private void OnDisable()
     {
+        if (QuitUtils.isQuitting) return;
+        
         SceneLoader.Instance.OnSceneLoadingCompleted -= SceneLoader_OnSceneLoadingCompleted;
     }
 
@@ -53,6 +55,8 @@ public class PlayerParent : SingletonObject<PlayerParent>
 
     private void FixedUpdate()
     {
-        if (Player.Instance) Player.Instance.SetPlatformVelocity(GetPlatformVelocity());
+        if (Player.Instance == null) return; 
+            
+        Player.Instance.SetPlatformVelocity(GetPlatformVelocity());
     }
 }

@@ -30,11 +30,11 @@ public class CSVToSO
             if (!File.Exists(savePath))
             {
                 ItemData itemData = ScriptableObject.CreateInstance<ItemData>();
-                itemData.id = int.Parse(splitData[0]);
-                itemData.itemName = splitData[1];
+                itemData.id              = splitData[0];
+                itemData.itemName        = splitData[1];
                 itemData.itemDescription = splitData[2].Replace("\"", "");
                 
-                savePath = AssetDatabase.GenerateUniqueAssetPath(savePath);
+                savePath = AssetDatabase.GenerateUniqueAssetPath(relativeSavePath);
                 Debug.Log($"Creating item for {savePath}");
                 AssetDatabase.CreateAsset(itemData, savePath);
                 AssetDatabase.SaveAssets();
@@ -46,8 +46,8 @@ public class CSVToSO
                 ItemData itemData = (ItemData)AssetDatabase.LoadAssetAtPath(relativeSavePath, typeof(ItemData));
                 if (itemData)
                 {
-                    itemData.id = int.Parse(splitData[0]);
-                    itemData.itemName = splitData[1];
+                    itemData.id              = splitData[0];
+                    itemData.itemName        = splitData[1];
                     itemData.itemDescription = splitData[2].Replace("\"", "");
                     
                     Debug.Log($"Override item for {splitData[1]}");
@@ -55,7 +55,7 @@ public class CSVToSO
             }
         }
         
-        itemDatabaseData.SortItem();
+        // itemDatabaseData.SortItem();
     }
 
     private static ItemDatabaseData GetItemDatabase()

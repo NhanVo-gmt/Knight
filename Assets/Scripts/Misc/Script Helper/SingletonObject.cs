@@ -12,12 +12,20 @@ public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
     [NotNull]
     // ReSharper disable once StaticMemberInGenericType
     private static readonly object Lock = new object();
+    
+    public static bool Quitting { get; private set; }
 
     [NotNull]
     public static T Instance
     {
         get
         {
+            if (Quitting)
+            {
+                Debug.LogWarning($"[{nameof(_instance)}<{typeof(T)}>] Instance will not be returned because the application is quitting.");
+                // ReSharper disable once AssignNullToNotNullAttribute
+                return null;
+            }
             lock (Lock)
             {
                 if (_instance != null)
@@ -35,8 +43,7 @@ public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
                 }
 
                 Debug.LogWarning($"[{nameof(MonoBehaviour)}<{typeof(T)}>] An instance is needed in the scene and no existing instances were found, so a new instance will be created.");
-                return _instance = new GameObject($"({nameof(MonoBehaviour)}){typeof(T)}")
-                    .AddComponent<T>();
+                return null;
             }
         }
     }
@@ -62,21 +69,17 @@ public class SingletonObject<T> : MonoBehaviour where T : SingletonObject<T>
 
     protected virtual void Awake() 
     {
-        // if (Instance != null)
-        // {
-        //     Destroy(this);
-        // }
-        // else
-        // {
-        //     Instance = this as T;
-        //     DontDestroyOnLoad(Instance);
-        // }
         if (Instance != this as T)
         {
-            Destroy(gameObject);
+            Destroy(this);
             return;
         }
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(Instance);
+    }
+    
+    private void OnApplicationQuit()
+    {
+        Quitting = true;
     }
 
 }

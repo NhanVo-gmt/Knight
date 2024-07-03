@@ -12,11 +12,11 @@ public class HitState : State
 
     public bool needToResetPlayerPosition = false;
     
-    protected ParticleSystemController particleController
+    protected PlayerParticleSystemController particleController
     {
-        get => _particleController ??= core.GetCoreComponent<ParticleSystemController>(); 
+        get => _particleController ??= core.GetCoreComponent<PlayerParticleSystemController>(); 
     }
-    private ParticleSystemController _particleController;
+    private PlayerParticleSystemController _particleController;
     
     public HitState(Player player, Core core, StateMachine stateMachine, PlayerData data, int animId) : base(player, core, stateMachine, data, animId)
     {
